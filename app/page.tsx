@@ -57,13 +57,28 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Demande de site — ${prenom} ${nom}`);
-    const body = encodeURIComponent(
-      `Prénom: ${prenom}\nNom: ${nom}\nEmail: ${email}\n\nProjet:\n${description}`
-    );
-    window.location.href = `mailto:contactstudioftt@gmail.com?subject=${subject}&body=${body}`;
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prenom, nom, email, description }),
+      });
+      if (!res.ok) throw new Error("Erreur serveur");
+      setSent(true);
+      setPrenom(""); setNom(""); setEmail(""); setDescription("");
+    } catch {
+      setError("Une erreur est survenue. Réessayez ou écrivez-nous directement.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -274,9 +289,21 @@ export default function Home() {
                 required
                 className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2 resize-none"
               />
-              <button type="submit" className="btn btn--dark md:col-span-2 justify-self-start">
-                Envoyer le mail <span className="btn__arrow">→</span>
+              <button
+                type="submit"
+                disabled={sending}
+                className="btn btn--dark md:col-span-2 justify-self-start disabled:opacity-50"
+              >
+                {sending ? "Envoi en cours…" : "Envoyer le message"} <span className="btn__arrow">→</span>
               </button>
+              {sent && (
+                <p className="md:col-span-2 text-green-400 text-sm">
+                  ✅ Message envoyé ! Nous vous répondrons rapidement.
+                </p>
+              )}
+              {error && (
+                <p className="md:col-span-2 text-red-400 text-sm">{error}</p>
+              )}
             </form>
           </div>
         </div>
