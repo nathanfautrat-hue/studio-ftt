@@ -55,20 +55,21 @@ export default function ProjectCard({
               />
             ) : null}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute top-4 left-4 z-10">
+          </div>
+          <div className="p-6 md:p-8">
+            <div className="mb-5">
               {status === "client" ? (
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 px-3 py-1 text-[10px] tracking-[0.2em] uppercase font-medium">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/40 px-4 py-1.5 text-xs tracking-[0.25em] uppercase font-semibold shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                   Site client
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/5 text-white/60 border border-white/10 px-3 py-1 text-[10px] tracking-[0.2em] uppercase font-medium">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/5 text-white/70 border border-white/20 px-4 py-1.5 text-xs tracking-[0.25em] uppercase font-semibold">
+                  <span className="h-2 w-2 rounded-full bg-white/40" />
                   Concept démo
                 </span>
               )}
             </div>
-          </div>
-          <div className="p-6 md:p-8">
             <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 mb-3">
               {category}
             </div>
