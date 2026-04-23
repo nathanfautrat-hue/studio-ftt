@@ -56,7 +56,6 @@ export default function Home() {
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
-
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
@@ -87,7 +86,6 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative min-h-[100dvh] pt-28 overflow-hidden">
-        {/* backdrop gradient */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(232,53,42,0.18),transparent_60%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_90%_80%,rgba(232,53,42,0.12),transparent_60%)]" />
@@ -128,16 +126,12 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="flex flex-col md:items-end gap-4"
             >
-              <p className="text-white/60 max-w-sm md:text-right">
-                Agence web spécialisée artisans & entreprises — design, développement, SEO local, maintenance.
-              </p>
               <a href="#projets" className="btn btn--solid self-start md:self-end">
                 Voir nos projets <span className="btn__arrow">→</span>
               </a>
             </motion.div>
           </div>
 
-          {/* marquee */}
           <div className="mt-24 overflow-hidden border-y border-white/5 -mx-6">
             <div className="flex gap-16 py-5 whitespace-nowrap animate-[marquee_40s_linear_infinite]">
               {[
@@ -159,10 +153,7 @@ export default function Home() {
                   "Sarthe · France",
                 ])
                 .map((t, i) => (
-                  <span
-                    key={i}
-                    className="text-xs tracking-[0.3em] uppercase text-white/40"
-                  >
+                  <span key={i} className="text-xs tracking-[0.3em] uppercase text-white/40">
                     {t} <span className="text-[#E8352A] ml-16">●</span>
                   </span>
                 ))}
@@ -172,12 +163,8 @@ export default function Home() {
 
         <style jsx>{`
           @keyframes marquee {
-            from {
-              transform: translateX(0);
-            }
-            to {
-              transform: translateX(-50%);
-            }
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
           }
         `}</style>
       </section>
@@ -189,34 +176,23 @@ export default function Home() {
             <span className="text-white/30 mr-2">01</span>Approche
           </div>
           <div>
-            <h2 className="font-display text-4xl md:text-6xl leading-[1.05] max-w-3xl mb-8">
+            <h2 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-5xl mb-10 tracking-tight">
               Du sur-mesure. <span className="text-white/40">Chaque site est pensé pour vous. Et avec vous.</span>
             </h2>
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
+            <p className="text-white/70 text-lg md:text-2xl leading-relaxed max-w-3xl mb-4">
+              De la première maquette à la mise en ligne, on s&apos;occupe de tout — et on vous laisse le contrôle.
+            </p>
+            <p className="text-white/50 text-base md:text-lg leading-relaxed max-w-3xl">
+              Hébergement offert. Pas d&apos;abonnement caché. À partir de 500€.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 mt-20">
               {[
-                {
-                  n: "01",
-                  t: "Stratégie",
-                  d: "On comprend votre métier, vos clients et vos objectifs avant la moindre ligne de code.",
-                },
-                {
-                  n: "02",
-                  t: "Design",
-                  d: "Interfaces soignées, typographies fortes, mobile-first. Tout est pensé pour convertir.",
-                },
-                {
-                  n: "03",
-                  t: "Livraison",
-                  d: "Le site est livré avec une vidéo explicative.",
-                },
+                { n: "01", t: "Création", d: "Un site responsive pensé pour votre activité — design, contenus, formulaire de contact." },
+                { n: "02", t: "Visibilité", d: "Référencement local et fiche Google pour que vos clients vous trouvent dans votre région." },
+                { n: "03", t: "Autonomie", d: "Une vidéo explicative livrée avec le site. Maintenance annuelle en option si vous préférez être tranquille." },
               ].map((s) => (
-                <div
-                  key={s.n}
-                  className="border-t border-white/10 pt-6"
-                >
-                  <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">
-                    {s.n}
-                  </div>
+                <div key={s.n} className="border-t border-white/10 pt-6">
+                  <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">{s.n}</div>
                   <h3 className="font-display text-2xl mb-3 tracking-wide">{s.t}</h3>
                   <p className="text-white/60 text-sm leading-relaxed">{s.d}</p>
                 </div>
@@ -232,11 +208,8 @@ export default function Home() {
           <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-4">
             <span className="text-white/30 mr-2">02</span>Projets
           </div>
-          <h2 className="font-display text-5xl md:text-7xl leading-none">
-            Mes projets
-          </h2>
+          <h2 className="font-display text-5xl md:text-7xl leading-none">Mes projets</h2>
         </div>
-
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {projects.map((p, i) => (
             <ProjectCard key={p.title} {...p} index={i} />
@@ -244,66 +217,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA — formulaire contact */}
+      {/* CONTACT */}
       <section id="contact-form" className="container py-24 md:py-32 border-t border-white/5">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#E8352A] via-[#c62920] to-[#7a1a14] p-10 md:p-16">
           <div className="absolute inset-0 noise" />
           <div className="relative">
-            <div className="text-[10px] tracking-[0.3em] uppercase text-white/70 mb-4">
-              Prochain projet — le vôtre ?
-            </div>
-            <h3 className="font-display text-4xl md:text-6xl leading-[0.95] max-w-3xl mb-10">
-              Parlons de votre site.
-            </h3>
-            <form
-              onSubmit={handleSubmit}
-              className="grid md:grid-cols-2 gap-4 max-w-3xl"
-            >
-              <input
-                value={prenom}
-                onChange={e => setPrenom(e.target.value)}
-                placeholder="Prénom"
-                required
-                className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition"
-              />
-              <input
-                value={nom}
-                onChange={e => setNom(e.target.value)}
-                placeholder="Nom"
-                required
-                className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition"
-              />
-              <input
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                type="email"
-                placeholder="Email"
-                required
-                className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2"
-              />
-              <textarea
-                value={description}
-                onChange={e => setDescription(e.target.value)}
-                placeholder="Décrivez votre projet…"
-                rows={5}
-                required
-                className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2 resize-none"
-              />
-              <button
-                type="submit"
-                disabled={sending}
-                className="btn btn--dark md:col-span-2 justify-self-start disabled:opacity-50"
-              >
+            <div className="text-[10px] tracking-[0.3em] uppercase text-white/70 mb-4">Prochain projet — le vôtre ?</div>
+            <h3 className="font-display text-4xl md:text-6xl leading-[0.95] max-w-3xl mb-10">Parlons de votre site.</h3>
+            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-4 max-w-3xl">
+              <input value={prenom} onChange={e => setPrenom(e.target.value)} placeholder="Prénom" required className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition" />
+              <input value={nom} onChange={e => setNom(e.target.value)} placeholder="Nom" required className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition" />
+              <input value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" required className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2" />
+              <textarea value={description} onChange={e => setDescription(e.target.value)} placeholder="Décrivez votre projet…" rows={5} required className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2 resize-none" />
+              <button type="submit" disabled={sending} className="btn btn--dark md:col-span-2 justify-self-start disabled:opacity-50">
                 {sending ? "Envoi en cours…" : "Envoyer le message"} <span className="btn__arrow">→</span>
               </button>
-              {sent && (
-                <p className="md:col-span-2 text-green-400 text-sm">
-                  ✅ Message envoyé ! Nous vous répondrons rapidement.
-                </p>
-              )}
-              {error && (
-                <p className="md:col-span-2 text-red-400 text-sm">{error}</p>
-              )}
+              {sent && <p className="md:col-span-2 text-green-400 text-sm">✅ Message envoyé ! Nous vous répondrons rapidement.</p>}
+              {error && <p className="md:col-span-2 text-red-400 text-sm">{error}</p>}
             </form>
           </div>
         </div>
