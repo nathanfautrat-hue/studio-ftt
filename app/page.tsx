@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -51,6 +52,20 @@ const projects = [
 ];
 
 export default function Home() {
+  const [prenom, setPrenom] = useState("");
+  const [nom, setNom] = useState("");
+  const [email, setEmail] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Demande de site — ${prenom} ${nom}`);
+    const body = encodeURIComponent(
+      `Prénom: ${prenom}\nNom: ${nom}\nEmail: ${email}\n\nProjet:\n${description}`
+    );
+    window.location.href = `mailto:contactstudioftt@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <main className="bg-black text-white">
       <Navbar />
@@ -226,32 +241,34 @@ export default function Home() {
               Parlons de votre site.
             </h3>
             <form
-              action="mailto:contactstudioftt@gmail.com"
-              method="post"
-              encType="text/plain"
+              onSubmit={handleSubmit}
               className="grid md:grid-cols-2 gap-4 max-w-3xl"
             >
               <input
-                name="Prenom"
+                value={prenom}
+                onChange={e => setPrenom(e.target.value)}
                 placeholder="Prénom"
                 required
                 className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition"
               />
               <input
-                name="Nom"
+                value={nom}
+                onChange={e => setNom(e.target.value)}
                 placeholder="Nom"
                 required
                 className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition"
               />
               <input
-                name="Email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
                 type="email"
                 placeholder="Email"
                 required
                 className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2"
               />
               <textarea
-                name="Description_projet"
+                value={description}
+                onChange={e => setDescription(e.target.value)}
                 placeholder="Décrivez votre projet…"
                 rows={5}
                 required
