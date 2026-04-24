@@ -34,7 +34,7 @@ export default function MentionsLegales() {
               <br />
               7 rue du Fromenteau, 72270 Arthezé, France
               <br />
-              SIRET&nbsp;: 1040486400015 [À VÉRIFIER]
+              SIRET&nbsp;: 10404864000015
               <br />
               Email&nbsp;:{" "}
               <a
