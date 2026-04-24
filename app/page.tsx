@@ -9,6 +9,8 @@ import {
   ScavbackPreview,
   SprayfilmPreview,
   PLCPreview,
+  OctavePreview,
+  MarceauPreview,
   MedicentPreview,
 } from "@/components/ProjectPreviews";
 
@@ -38,6 +40,24 @@ const projects = [
       "Landing page SaaS pour logiciel B2B — agent IA pour optimiser la gestion d'entreprise.",
     preview: <PLCPreview />,
     href: "/projets/plc",
+    status: "demo" as const,
+  },
+  {
+    title: "Maison Octave",
+    category: "Restaurant gastronomique",
+    description:
+      "Site vitrine pour un restaurant gastronomique — carte, expériences et réservation en ligne.",
+    preview: <OctavePreview />,
+    href: "/projets/octave",
+    status: "demo" as const,
+  },
+  {
+    title: "Atelier Marceau",
+    category: "Plombier artisan",
+    description:
+      "Site vitrine pour un plombier artisan au Mans — services, zone d'intervention, urgence 24/7 et devis en ligne.",
+    preview: <MarceauPreview />,
+    href: "/projets/marceau",
     status: "demo" as const,
   },
   {
@@ -86,6 +106,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative min-h-[100dvh] pt-28 overflow-hidden">
+        {/* backdrop gradient */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(232,53,42,0.18),transparent_60%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_90%_80%,rgba(232,53,42,0.12),transparent_60%)]" />
@@ -132,6 +153,7 @@ export default function Home() {
             </motion.div>
           </div>
 
+          {/* marquee */}
           <div className="mt-24 overflow-hidden border-y border-white/5 -mx-6">
             <div className="flex gap-16 py-5 whitespace-nowrap animate-[marquee_40s_linear_infinite]">
               {[
@@ -153,7 +175,10 @@ export default function Home() {
                   "Sarthe · France",
                 ])
                 .map((t, i) => (
-                  <span key={i} className="text-xs tracking-[0.3em] uppercase text-white/40">
+                  <span
+                    key={i}
+                    className="text-xs tracking-[0.3em] uppercase text-white/40"
+                  >
                     {t} <span className="text-[#E8352A] ml-16">●</span>
                   </span>
                 ))}
@@ -163,8 +188,12 @@ export default function Home() {
 
         <style jsx>{`
           @keyframes marquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
           }
         `}</style>
       </section>
@@ -187,12 +216,29 @@ export default function Home() {
             </p>
             <div className="grid md:grid-cols-3 gap-8 mt-20">
               {[
-                { n: "01", t: "Création", d: "Un site responsive pensé pour votre activité — design, contenus, formulaire de contact." },
-                { n: "02", t: "Visibilité", d: "Référencement local et fiche Google pour que vos clients vous trouvent dans votre région." },
-                { n: "03", t: "Autonomie", d: "Une vidéo explicative livrée avec le site. Maintenance annuelle en option si vous préférez être tranquille." },
+                {
+                  n: "01",
+                  t: "Création",
+                  d: "Un site responsive pensé pour votre activité — design, contenus, formulaire de contact.",
+                },
+                {
+                  n: "02",
+                  t: "Visibilité",
+                  d: "Référencement local et fiche Google pour que vos clients vous trouvent dans votre région.",
+                },
+                {
+                  n: "03",
+                  t: "Autonomie",
+                  d: "Une vidéo explicative livrée avec le site. Maintenance annuelle en option si vous préférez être tranquille.",
+                },
               ].map((s) => (
-                <div key={s.n} className="border-t border-white/10 pt-6">
-                  <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">{s.n}</div>
+                <div
+                  key={s.n}
+                  className="border-t border-white/10 pt-6"
+                >
+                  <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">
+                    {s.n}
+                  </div>
                   <h3 className="font-display text-2xl mb-3 tracking-wide">{s.t}</h3>
                   <p className="text-white/60 text-sm leading-relaxed">{s.d}</p>
                 </div>
@@ -208,8 +254,11 @@ export default function Home() {
           <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-4">
             <span className="text-white/30 mr-2">02</span>Projets
           </div>
-          <h2 className="font-display text-5xl md:text-7xl leading-none">Mes projets</h2>
+          <h2 className="font-display text-5xl md:text-7xl leading-none">
+            Mes projets
+          </h2>
         </div>
+
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {projects.map((p, i) => (
             <ProjectCard key={p.title} {...p} index={i} />
@@ -217,23 +266,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* CTA — formulaire contact */}
       <section id="contact-form" className="container py-24 md:py-32 border-t border-white/5">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#E8352A] via-[#c62920] to-[#7a1a14] p-10 md:p-16">
           <div className="absolute inset-0 noise" />
           <div className="relative">
-            <div className="text-[10px] tracking-[0.3em] uppercase text-white/70 mb-4">Prochain projet — le vôtre ?</div>
-            <h3 className="font-display text-4xl md:text-6xl leading-[0.95] max-w-3xl mb-10">Parlons de votre site.</h3>
-            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-4 max-w-3xl">
-              <input value={prenom} onChange={e => setPrenom(e.target.value)} placeholder="Prénom" required className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition" />
-              <input value={nom} onChange={e => setNom(e.target.value)} placeholder="Nom" required className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition" />
-              <input value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" required className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2" />
-              <textarea value={description} onChange={e => setDescription(e.target.value)} placeholder="Décrivez votre projet…" rows={5} required className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2 resize-none" />
-              <button type="submit" disabled={sending} className="btn btn--dark md:col-span-2 justify-self-start disabled:opacity-50">
+            <div className="text-[10px] tracking-[0.3em] uppercase text-white/70 mb-4">
+              Prochain projet — le vôtre ?
+            </div>
+            <h3 className="font-display text-4xl md:text-6xl leading-[0.95] max-w-3xl mb-10">
+              Parlons de votre site.
+            </h3>
+            <form
+              onSubmit={handleSubmit}
+              className="grid md:grid-cols-2 gap-4 max-w-3xl"
+            >
+              <input
+                value={prenom}
+                onChange={e => setPrenom(e.target.value)}
+                placeholder="Prénom"
+                required
+                className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition"
+              />
+              <input
+                value={nom}
+                onChange={e => setNom(e.target.value)}
+                placeholder="Nom"
+                required
+                className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition"
+              />
+              <input
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                type="email"
+                placeholder="Email"
+                required
+                className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2"
+              />
+              <textarea
+                value={description}
+                onChange={e => setDescription(e.target.value)}
+                placeholder="Décrivez votre projet…"
+                rows={5}
+                required
+                className="bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/60 focus:bg-white/15 transition md:col-span-2 resize-none"
+              />
+              <button
+                type="submit"
+                disabled={sending}
+                className="btn btn--dark md:col-span-2 justify-self-start disabled:opacity-50"
+              >
                 {sending ? "Envoi en cours…" : "Envoyer le message"} <span className="btn__arrow">→</span>
               </button>
-              {sent && <p className="md:col-span-2 text-green-400 text-sm">✅ Message envoyé ! Nous vous répondrons rapidement.</p>}
-              {error && <p className="md:col-span-2 text-red-400 text-sm">{error}</p>}
+              {sent && (
+                <p className="md:col-span-2 text-green-400 text-sm">
+                  ✅ Message envoyé ! Nous vous répondrons rapidement.
+                </p>
+              )}
+              {error && (
+                <p className="md:col-span-2 text-red-400 text-sm">{error}</p>
+              )}
             </form>
           </div>
         </div>

@@ -126,6 +126,102 @@ export function PLCPreview() {
   );
 }
 
+export function OctavePreview() {
+  return (
+    <div className="absolute inset-0 overflow-hidden" style={{ backgroundColor: "#12100c" }}>
+      {/* dark restaurant image overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-50"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80')",
+        }}
+      />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(18,16,12,0.4) 0%, rgba(18,16,12,0.85) 100%)" }} />
+      {/* top bar */}
+      <div className="absolute top-3 left-4 right-4 flex items-center justify-between text-[8px] tracking-[0.3em] uppercase" style={{ color: "#C8A760" }}>
+        <span>Maison Octave</span>
+        <span className="hidden md:inline text-white/60">La Maison · Carte · Réserver</span>
+      </div>
+      {/* ornament */}
+      <div className="absolute left-1/2 top-[28%] -translate-x-1/2 flex items-center gap-2 text-[7px] tracking-[0.4em] uppercase" style={{ color: "#C8A760" }}>
+        <span className="h-px w-6" style={{ backgroundColor: "#C8A760" }} />
+        <span>Gastronomie</span>
+        <span className="h-px w-6" style={{ backgroundColor: "#C8A760" }} />
+      </div>
+      {/* big serif title */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4" style={{ fontFamily: "var(--font-playfair), serif" }}>
+        <div className="text-white text-5xl md:text-7xl leading-[0.95] tracking-tight text-center">
+          Maison
+          <br />
+          <em style={{ color: "#C8A760" }}>Octave</em>
+        </div>
+      </div>
+      {/* bottom */}
+      <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[8px] tracking-[0.3em] uppercase text-white/70">
+        <span>Depuis 1923</span>
+        <span style={{ color: "#C8A760" }}>Réserver →</span>
+      </div>
+    </div>
+  );
+}
+
+export function MarceauPreview() {
+  return (
+    <div className="absolute inset-0 overflow-hidden" style={{ backgroundColor: "#0F2C47" }}>
+      {/* grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.08]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+      {/* orange glow top right */}
+      <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full" style={{ background: "radial-gradient(circle, rgba(230,126,34,0.35), transparent 70%)" }} />
+      {/* top strip */}
+      <div className="absolute top-0 inset-x-0 flex items-center justify-between px-4 py-2" style={{ backgroundColor: "#E67E22" }}>
+        <div className="flex items-center gap-1.5 text-white text-[8px] tracking-[0.2em] uppercase">
+          <span className="h-1 w-1 rounded-full bg-white animate-pulse" />
+          Urgence 24/7
+        </div>
+        <span className="text-white text-[8px] font-semibold">02 43 52 18 90</span>
+      </div>
+      {/* nav */}
+      <div className="absolute top-10 left-4 right-4 flex items-center justify-between text-[8px] tracking-[0.2em] uppercase text-white/60">
+        <span style={{ fontFamily: "var(--font-playfair), serif", fontSize: 12 }} className="normal-case tracking-tight">
+          <span className="text-white">Atelier</span>
+          <span style={{ color: "#E67E22" }}> Marceau</span>
+        </span>
+        <div className="hidden md:flex gap-3">
+          <span>Services</span><span>Zone</span><span>Contact</span>
+        </div>
+      </div>
+      {/* title */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 pt-6">
+        <div
+          className="text-white text-3xl md:text-5xl text-center leading-[0.95] tracking-tight"
+          style={{ fontFamily: "var(--font-playfair), serif" }}
+        >
+          Un plombier
+          <br />
+          <em style={{ color: "#E67E22" }}>de confiance</em>.
+        </div>
+      </div>
+      {/* CTA pills */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="text-[8px] tracking-[0.2em] uppercase px-3 py-1.5 rounded font-bold" style={{ backgroundColor: "#E67E22", color: "#fff" }}>
+          02 43 52 18 90
+        </div>
+        <div className="text-[8px] tracking-[0.2em] uppercase px-3 py-1.5 rounded border border-white/30 text-white">
+          Devis →
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function MedicentPreview() {
   return (
     <div className="absolute inset-0 overflow-hidden">
