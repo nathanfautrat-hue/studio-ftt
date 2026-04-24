@@ -1,17 +1,33 @@
-import { NextRequest, NextResponse } from "next/server";
+// Cloudflare Pages Function — POST /api/contact
+// Replaces the previous Next.js API route. Same shape, same URL.
 
-export async function POST(req: NextRequest) {
+interface Env {
+  RESEND_API_KEY: string;
+}
+
+const json = (data: unknown, status = 200) =>
+  new Response(JSON.stringify(data), {
+    status,
+    headers: { "Content-Type": "application/json" },
+  });
+
+export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   try {
-    const { prenom, nom, email, description } = await req.json();
+    const { prenom, nom, email, description } = await request.json<{
+      prenom?: string;
+      nom?: string;
+      email?: string;
+      description?: string;
+    }>();
 
     if (!prenom || !nom || !email || !description) {
-      return NextResponse.json({ error: "Champs manquants" }, { status: 400 });
+      return json({ error: "Champs manquants" }, 400);
     }
 
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -33,12 +49,12 @@ export async function POST(req: NextRequest) {
     if (!res.ok) {
       const err = await res.text();
       console.error("Resend error:", err);
-      return NextResponse.json({ error: "Erreur envoi email" }, { status: 500 });
+      return json({ error: "Erreur envoi email" }, 500);
     }
 
-    return NextResponse.json({ success: true });
+    return json({ success: true });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
+    return json({ error: "Erreur serveur" }, 500);
   }
-}
+};
