@@ -55,6 +55,20 @@ export default function Footer() {
       <div className="border-t border-white/5">
         <div className="container py-6 flex flex-col md:flex-row gap-4 items-center justify-between text-xs text-white/40">
           <span>Studio FTT © 2025 — Tous droits réservés</span>
+          <div className="flex gap-6">
+            <Link
+              href="/mentions-legales"
+              className="hover:text-white transition-colors"
+            >
+              Mentions légales
+            </Link>
+            <Link
+              href="/confidentialite"
+              className="hover:text-white transition-colors"
+            >
+              Confidentialité
+            </Link>
+          </div>
           <span>Made with care in Sarthe, France</span>
         </div>
       </div>
