@@ -33,6 +33,13 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${bebas.variable} ${dm.variable} ${playfair.variable}`}>
       <body>{children}</body>
+      {/* Cloudflare Web Analytics */}
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "abf2189bcc544af68e8bfed20af49935"}'
+      />
+      {/* End Cloudflare Web Analytics */}
     </html>
   );
 }
