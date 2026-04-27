@@ -28,11 +28,12 @@ export default function ProjectStack({ projects }: ProjectStackProps) {
         {projects.map((p, i) => {
           const isActive = active === i;
           return (
-            <button
+            <Link
               key={p.id}
+              href={p.href}
               onMouseEnter={() => setActive(i)}
-              onClick={() => setActive(i)}
-              className="flex justify-between items-center w-full text-left bg-transparent border-none cursor-pointer relative"
+              onFocus={() => setActive(i)}
+              className="flex justify-between items-center w-full text-left bg-transparent border-none cursor-pointer relative no-underline"
               style={{
                 padding: "20px 0",
                 borderTop: "1px solid var(--ftt-line)",
@@ -42,6 +43,7 @@ export default function ProjectStack({ projects }: ProjectStackProps) {
                 paddingLeft: isActive ? 16 : 0,
                 transition:
                   "color 0.35s cubic-bezier(0.2,0.7,0.2,1), padding-left 0.4s cubic-bezier(0.2,0.7,0.2,1)",
+                textDecoration: "none",
               }}
             >
               {isActive && (
@@ -75,7 +77,7 @@ export default function ProjectStack({ projects }: ProjectStackProps) {
                   {p.name.toUpperCase()}
                 </span>
               </span>
-            </button>
+            </Link>
           );
         })}
       </div>
