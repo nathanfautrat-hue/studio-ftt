@@ -8,7 +8,7 @@
 
 export const siteConfig = {
   // Domaine canonique du site (sans slash final)
-  url: "https://studio-ftt-portfolio.pages.dev",
+  url: "https://studio-ftt.pages.dev",
 
   // Nom et description
   name: "Studio FTT",

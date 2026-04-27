@@ -20,6 +20,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.resolve(__dirname, "..", "out");
 const SITE_URL = siteConfig.url;
 const EXCLUDE = new Set(["404.html"]);
+// Fichiers à exclure du sitemap (mais qui restent servis publiquement)
+const EXCLUDE_PATTERNS = [
+  /^google[a-f0-9]+\.html$/, // fichiers de vérification Google Search Console
+];
 const TODAY = new Date().toISOString().slice(0, 10);
 
 /**
@@ -50,6 +54,7 @@ function findHtmlFiles(dir, base = dir) {
     } else if (entry.isFile() && entry.name.endsWith(".html")) {
       const rel = path.relative(base, full).replace(/\\/g, "/");
       if (EXCLUDE.has(rel)) continue;
+      if (EXCLUDE_PATTERNS.some((p) => p.test(rel))) continue;
       files.push(rel);
     }
   }

@@ -45,7 +45,7 @@ SIRET : 10404864000015
 - **Email** (canal principal) : contactstudioftt@gmail.com
 - **Instagram** : https://www.instagram.com/studio_ftt___/
 - **LinkedIn** : https://www.linkedin.com/in/studio-ftt
-- **Site web** : https://studio-ftt-portfolio.pages.dev
+- **Site web** : https://studio-ftt.pages.dev
 
 Délai de réponse moyen : sous 24 heures jours ouvrés.
 
@@ -159,24 +159,24 @@ R : Lancé le 21 avril 2026 par Nathan Fautrat, autodidacte basé en Sarthe. Stu
 
 ## Resources
 
-- [Site web](https://studio-ftt-portfolio.pages.dev) : site officiel Studio FTT
-- [Mentions légales](https://studio-ftt-portfolio.pages.dev/mentions-legales) : informations légales
-- [Politique de confidentialité](https://studio-ftt-portfolio.pages.dev/confidentialite) : politique RGPD
+- [Site web](https://studio-ftt.pages.dev) : site officiel Studio FTT
+- [Mentions légales](https://studio-ftt.pages.dev/mentions-legales) : informations légales
+- [Politique de confidentialité](https://studio-ftt.pages.dev/confidentialite) : politique RGPD
 
 ## Markdown Mirrors
 
 Versions Markdown propres de chaque page (sans HTML, scripts ni navigation), optimisées pour la lecture par les LLM. Servies en `text/plain`.
 
-- [Homepage](https://studio-ftt-portfolio.pages.dev/index.md)
-- [Mentions légales](https://studio-ftt-portfolio.pages.dev/mentions-legales.md)
-- [Politique de confidentialité](https://studio-ftt-portfolio.pages.dev/confidentialite.md)
-- [Tarifs](https://studio-ftt-portfolio.pages.dev/tarifs.md)
-- [Projet — Scavback (collectif artistique)](https://studio-ftt-portfolio.pages.dev/projets/scavback.md)
-- [Projet — Sprayfilm (production audiovisuelle)](https://studio-ftt-portfolio.pages.dev/projets/sprayfilm.md)
-- [Projet — PLC (SaaS Agent IA B2B)](https://studio-ftt-portfolio.pages.dev/projets/plc.md)
-- [Projet — Maison Octave (restaurant gastronomique)](https://studio-ftt-portfolio.pages.dev/projets/octave.md)
-- [Projet — Atelier Marceau (plombier artisan)](https://studio-ftt-portfolio.pages.dev/projets/marceau.md)
-- [Projet — Medicent (naturopathe)](https://studio-ftt-portfolio.pages.dev/projets/medicent.md)
+- [Homepage](https://studio-ftt.pages.dev/index.md)
+- [Mentions légales](https://studio-ftt.pages.dev/mentions-legales.md)
+- [Politique de confidentialité](https://studio-ftt.pages.dev/confidentialite.md)
+- [Tarifs](https://studio-ftt.pages.dev/tarifs.md)
+- [Projet — Scavback (collectif artistique)](https://studio-ftt.pages.dev/projets/scavback.md)
+- [Projet — Sprayfilm (production audiovisuelle)](https://studio-ftt.pages.dev/projets/sprayfilm.md)
+- [Projet — PLC (SaaS Agent IA B2B)](https://studio-ftt.pages.dev/projets/plc.md)
+- [Projet — Maison Octave (restaurant gastronomique)](https://studio-ftt.pages.dev/projets/octave.md)
+- [Projet — Atelier Marceau (plombier artisan)](https://studio-ftt.pages.dev/projets/marceau.md)
+- [Projet — Medicent (naturopathe)](https://studio-ftt.pages.dev/projets/medicent.md)
 
 ---
 
