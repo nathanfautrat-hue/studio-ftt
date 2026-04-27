@@ -1,0 +1,14 @@
+# Cloudflare Pages — custom headers
+# Force les fichiers .md à s'afficher en clair dans le navigateur (pas en download)
+/*.md
+  Content-Type: text/plain; charset=utf-8
+  X-Robots-Tag: index, follow
+
+/projets/*.md
+  Content-Type: text/plain; charset=utf-8
+  X-Robots-Tag: index, follow
+
+# Force le llms.txt en text/plain aussi (sécurité)
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  X-Robots-Tag: index, follow
