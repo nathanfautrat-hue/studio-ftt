@@ -14,6 +14,7 @@ import {
   MarceauPreview,
   MedicentPreview,
 } from "@/components/ProjectPreviews";
+import { siteConfig } from "@/lib/site-config";
 
 const PROJECTS: StackProject[] = [
   {
@@ -522,18 +523,18 @@ export default function Home() {
                 {[
                   {
                     l: "Email",
-                    v: "contactstudioftt@gmail.com",
-                    h: "mailto:contactstudioftt@gmail.com",
+                    v: siteConfig.email,
+                    h: `mailto:${siteConfig.email}`,
                   },
                   {
                     l: "Instagram",
                     v: "@studio_ftt___",
-                    h: "https://www.instagram.com/studio_ftt___/",
+                    h: siteConfig.instagram,
                   },
                   {
                     l: "LinkedIn",
-                    v: "Studio FTT",
-                    h: "https://www.linkedin.com/in/studio-ftt",
+                    v: siteConfig.name,
+                    h: siteConfig.linkedin,
                   },
                 ].map((c) => (
                   <a

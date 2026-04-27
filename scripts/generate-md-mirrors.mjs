@@ -17,10 +17,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import * as cheerio from "cheerio";
 import TurndownService from "turndown";
+import { siteConfig } from "../site.config.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.resolve(__dirname, "..", "out");
-const SITE_URL = "https://studio-ftt-portfolio.pages.dev";
+const SITE_URL = siteConfig.url;
 const EXCLUDE = new Set(["404.html"]);
 
 const turndown = new TurndownService({

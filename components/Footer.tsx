@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LogoMark from "./LogoMark";
+import { siteConfig } from "@/lib/site-config";
 
 export default function Footer() {
   return (
@@ -44,7 +45,7 @@ export default function Footer() {
             Contact
           </h4>
           <a
-            href="mailto:contactstudioftt@gmail.com"
+            href={`mailto:${siteConfig.email}`}
             className="lift"
             style={{
               color: "var(--ftt-cream)",
@@ -52,7 +53,7 @@ export default function Footer() {
               fontSize: 15,
             }}
           >
-            contactstudioftt@gmail.com
+            {siteConfig.email}
           </a>
         </div>
 
@@ -72,7 +73,7 @@ export default function Footer() {
           <ul className="space-y-2" style={{ listStyle: "none", padding: 0, margin: 0 }}>
             <li>
               <a
-                href="https://www.instagram.com/studio_ftt___/"
+                href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="lift"
@@ -83,7 +84,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/studio-ftt"
+                href={siteConfig.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="lift"
