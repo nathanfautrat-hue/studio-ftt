@@ -12,7 +12,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   return (
     <header
-      className="sticky top-0 z-50 flex items-center justify-between gap-3"
+      className="nav-blur sticky top-0 z-50 flex items-center justify-between gap-3"
       style={{
         padding: "16px clamp(20px, 4vw, 36px)",
         backdropFilter: "blur(18px)",

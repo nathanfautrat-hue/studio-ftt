@@ -147,34 +147,11 @@ export default function Home() {
         <CursorBlob containerRef={heroRef} />
 
         {/* Top row */}
-        <div className="relative z-10 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+        <div className="relative z-10">
           <Reveal>
             <div className="eyebrow">
               <span className="dot" />
               Studio FTT — Sites web sur-mesure
-            </div>
-          </Reveal>
-          <Reveal delay={1}>
-            <div className="text-left sm:text-right">
-              <div
-                className="font-mono"
-                style={{
-                  fontSize: 11,
-                  letterSpacing: "0.22em",
-                  color: "var(--ftt-text-dim)",
-                }}
-              >
-                EN ACTIVITÉ
-              </div>
-              <div
-                className="font-display"
-                style={{
-                  fontSize: "clamp(20px, 3vw, 28px)",
-                  marginTop: 4,
-                }}
-              >
-                SARTHE — FR
-              </div>
             </div>
           </Reveal>
         </div>
@@ -309,7 +286,7 @@ export default function Home() {
               maxWidth: 1100,
             }}
           >
-            DU SUR-MESURE.<br />
+            DU SUR-MESURE.{" "}
             <em
               className="font-serif"
               style={{

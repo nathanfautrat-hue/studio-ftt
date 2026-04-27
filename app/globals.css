@@ -170,6 +170,7 @@ html {
 
 /* ============================================
    CURSOR BLOB (hero ambient light)
+   Desktop only — coûteux sur mobile (filter blur + mix-blend-mode)
    ============================================ */
 .blob {
   position: absolute;
@@ -184,9 +185,13 @@ html {
   left: 0;
   will-change: transform;
 }
+@media (hover: none), (max-width: 1023px) {
+  .blob { display: none; }
+}
 
 /* ============================================
    FILM GRAIN OVERLAY
+   Desktop only — mix-blend-mode coûteux sur scroll mobile
    ============================================ */
 .ftt-grain {
   position: relative;
@@ -200,6 +205,9 @@ html {
   mix-blend-mode: overlay;
   opacity: 0.18;
   z-index: 1;
+}
+@media (hover: none), (max-width: 767px) {
+  .ftt-grain::after { display: none; }
 }
 
 /* ============================================
@@ -221,6 +229,17 @@ html {
   opacity: 0.35;
   pointer-events: none;
   mix-blend-mode: overlay;
+}
+
+/* ============================================
+   PERF MOBILE — désactive backdrop-filter coûteux au scroll
+   ============================================ */
+@media (hover: none), (max-width: 767px) {
+  .nav-blur {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(5, 5, 5, 0.92) !important;
+  }
 }
 
 /* ============================================
