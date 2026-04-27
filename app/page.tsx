@@ -139,17 +139,15 @@ export default function Home() {
       {/* HERO */}
       <section
         ref={heroRef}
-        className="relative overflow-hidden flex flex-col justify-between"
+        className="hero-pad relative overflow-hidden flex flex-col justify-between gap-10"
         style={{
-          minHeight: "calc(100vh - 80px)",
-          maxHeight: "calc(100vh - 80px)",
-          padding: "32px 36px 28px",
+          minHeight: "calc(100svh - 80px)",
         }}
       >
         <CursorBlob containerRef={heroRef} />
 
         {/* Top row */}
-        <div className="relative z-10 flex justify-between items-start flex-wrap gap-4">
+        <div className="relative z-10 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
           <Reveal>
             <div className="eyebrow">
               <span className="dot" />
@@ -157,7 +155,7 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={1}>
-            <div style={{ textAlign: "right" }}>
+            <div className="text-left sm:text-right">
               <div
                 className="font-mono"
                 style={{
@@ -168,7 +166,13 @@ export default function Home() {
               >
                 EN ACTIVITÉ
               </div>
-              <div className="font-display" style={{ fontSize: 28, marginTop: 4 }}>
+              <div
+                className="font-display"
+                style={{
+                  fontSize: "clamp(20px, 3vw, 28px)",
+                  marginTop: 4,
+                }}
+              >
                 SARTHE — FR
               </div>
             </div>
@@ -181,9 +185,9 @@ export default function Home() {
             <h1
               className="font-display"
               style={{
-                fontSize: "clamp(48px, 9vw, 150px)",
+                fontSize: "clamp(44px, 11vw, 150px)",
                 margin: 0,
-                lineHeight: 0.88,
+                lineHeight: 0.92,
                 letterSpacing: "-0.01em",
               }}
             >
@@ -230,14 +234,11 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={2}>
-            <div
-              className="flex flex-wrap items-end justify-between"
-              style={{ marginTop: 28, gap: 24 }}
-            >
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-10 mt-8 lg:mt-10">
               <p
                 style={{
                   maxWidth: 460,
-                  fontSize: 17,
+                  fontSize: "clamp(15px, 1.5vw, 17px)",
                   lineHeight: 1.5,
                   color: "var(--ftt-text-mid)",
                   margin: 0,
@@ -247,11 +248,17 @@ export default function Home() {
                 développe, on référence — vous obtenez un site qui rassure, et
                 qui vous amène des clients.
               </p>
-              <div className="flex gap-3 flex-wrap">
-                <a href="#projets" className="btn btn--ghost">
+              <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                <a
+                  href="#projets"
+                  className="btn btn--ghost justify-center w-full sm:w-auto"
+                >
                   Voir les projets <span className="btn__arrow">→</span>
                 </a>
-                <a href="#contact" className="btn btn--solid">
+                <a
+                  href="#contact"
+                  className="btn btn--solid justify-center w-full sm:w-auto"
+                >
                   Démarrer le mien <span className="btn__arrow">→</span>
                 </a>
               </div>
@@ -264,8 +271,8 @@ export default function Home() {
       {/* APPROCHE */}
       <section
         id="approche"
-        className="mx-auto"
-        style={{ padding: "120px 36px", maxWidth: 1320 }}
+        className="mx-auto section-x section-y"
+        style={{ maxWidth: 1320 }}
       >
         <Reveal>
           <div
@@ -296,9 +303,9 @@ export default function Home() {
           <h2
             className="font-display"
             style={{
-              fontSize: "clamp(48px, 8vw, 130px)",
+              fontSize: "clamp(40px, 8vw, 130px)",
               margin: 0,
-              lineHeight: 0.9,
+              lineHeight: 0.95,
               maxWidth: 1100,
             }}
           >
@@ -328,23 +335,22 @@ export default function Home() {
           </h2>
         </Reveal>
 
-        <div
-          className="grid md:grid-cols-3"
-          style={{ marginTop: 96, gap: 24 }}
-        >
+        <div className="grid md:grid-cols-3 gap-5 mt-12 md:mt-20 lg:mt-24">
           {APPROCHE.map((c, i) => (
             <Reveal key={c.n} delay={((i + 1) as 1 | 2 | 3)}>
               <div
                 className="lift flex flex-col justify-between"
                 style={{
                   position: "relative",
-                  padding: "32px 28px 28px",
-                  height: 360,
+                  padding: "clamp(24px, 3vw, 32px) clamp(20px, 2.5vw, 28px) clamp(20px, 2.5vw, 28px)",
+                  minHeight: 320,
+                  height: "100%",
                   borderRadius: 18,
                   overflow: "hidden",
                   background:
                     "linear-gradient(180deg, rgba(232,53,42,0.05), rgba(255,255,255,0.02))",
                   border: "1px solid var(--ftt-line)",
+                  gap: 24,
                 }}
               >
                 <div className="flex justify-between items-start">
@@ -362,7 +368,7 @@ export default function Home() {
                   <span
                     className="font-display"
                     style={{
-                      fontSize: 80,
+                      fontSize: "clamp(56px, 6vw, 80px)",
                       lineHeight: 1,
                       color: "var(--ftt-red)",
                     }}
@@ -374,9 +380,10 @@ export default function Home() {
                   <h3
                     className="font-serif"
                     style={{
-                      fontSize: 36,
+                      fontSize: "clamp(28px, 3.5vw, 36px)",
                       margin: "0 0 14px",
                       fontWeight: 500,
+                      lineHeight: 1.1,
                     }}
                   >
                     {c.t}
@@ -414,8 +421,8 @@ export default function Home() {
       {/* PROJETS — interactive stack */}
       <section
         id="projets"
-        className="mx-auto"
-        style={{ padding: "40px 36px 120px", maxWidth: 1320 }}
+        className="mx-auto section-x section-y-sm"
+        style={{ maxWidth: 1320 }}
       >
         <Reveal>
           <div
@@ -446,9 +453,9 @@ export default function Home() {
           <h2
             className="font-display"
             style={{
-              fontSize: "clamp(56px, 9vw, 140px)",
-              margin: "0 0 64px",
-              lineHeight: 0.9,
+              fontSize: "clamp(48px, 9vw, 140px)",
+              margin: "0 0 clamp(40px, 5vw, 64px)",
+              lineHeight: 0.95,
             }}
           >
             LES PROJETS.
@@ -461,9 +468,8 @@ export default function Home() {
       {/* CONTACT */}
       <section
         id="contact"
-        className="relative overflow-hidden"
+        className="relative overflow-hidden section-x section-y"
         style={{
-          padding: "120px 36px",
           borderTop: "1px solid var(--ftt-line)",
         }}
       >
@@ -498,9 +504,9 @@ export default function Home() {
             <h2
               className="font-display"
               style={{
-                fontSize: "clamp(64px, 12vw, 200px)",
+                fontSize: "clamp(48px, 11vw, 200px)",
                 margin: 0,
-                lineHeight: 0.85,
+                lineHeight: 0.92,
               }}
             >
               PROCHAIN PROJET<br />
@@ -517,15 +523,12 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div
-            className="grid lg:grid-cols-2 items-start"
-            style={{ marginTop: 80, gap: 64 }}
-          >
+          <div className="grid lg:grid-cols-2 items-start mt-12 md:mt-16 lg:mt-20 gap-10 lg:gap-16">
             {/* Gauche : description + cartes contact */}
             <Reveal delay={2}>
               <p
                 style={{
-                  fontSize: 19,
+                  fontSize: "clamp(16px, 2vw, 19px)",
                   lineHeight: 1.5,
                   color: "var(--ftt-text-mid)",
                   maxWidth: 460,
@@ -600,7 +603,7 @@ export default function Home() {
                 className="grid"
                 style={{
                   gap: 16,
-                  padding: 28,
+                  padding: "clamp(20px, 3vw, 28px)",
                   borderRadius: 18,
                   background: "rgba(255,255,255,0.02)",
                   border: "1px solid var(--ftt-line-strong)",

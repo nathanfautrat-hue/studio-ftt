@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        padding: "64px 32px 40px",
+        padding: "clamp(48px, 6vw, 64px) clamp(20px, 4vw, 32px) clamp(28px, 4vw, 40px)",
         borderTop: "1px solid var(--ftt-line)",
         background: "var(--ftt-black)",
       }}

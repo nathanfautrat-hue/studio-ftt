@@ -18,13 +18,86 @@ type ProjectStackProps = {
 };
 
 export default function ProjectStack({ projects }: ProjectStackProps) {
+  return (
+    <>
+      {/* MOBILE / TABLET — cards stackées avec preview au-dessus */}
+      <div className="grid gap-6 sm:gap-8 lg:hidden">
+        {projects.map((p, i) => (
+          <Link
+            key={p.id}
+            href={p.href}
+            className="lift block no-underline"
+            style={{
+              borderRadius: 18,
+              overflow: "hidden",
+              border: "1px solid var(--ftt-line-strong)",
+              color: "var(--ftt-cream)",
+              textDecoration: "none",
+            }}
+          >
+            {/* Preview */}
+            <div
+              className="relative w-full"
+              style={{
+                aspectRatio: "16 / 10",
+                background: "var(--ftt-black-2)",
+              }}
+            >
+              {p.preview}
+            </div>
+
+            {/* Footer card */}
+            <div className="flex items-center justify-between gap-4 px-5 sm:px-6 py-5">
+              <div className="flex items-center gap-3 min-w-0">
+                <span
+                  className="font-mono shrink-0"
+                  style={{
+                    fontSize: 11,
+                    letterSpacing: "0.18em",
+                    opacity: 0.6,
+                  }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span
+                  className="font-display truncate"
+                  style={{
+                    fontSize: "clamp(24px, 6vw, 32px)",
+                    lineHeight: 1,
+                  }}
+                >
+                  {p.name.toUpperCase()}
+                </span>
+              </div>
+              <span
+                aria-hidden
+                className="shrink-0"
+                style={{
+                  color: "var(--ftt-red)",
+                  fontSize: 22,
+                }}
+              >
+                →
+              </span>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* DESKTOP — stack interactif (≥ lg) */}
+      <DesktopStack projects={projects} />
+    </>
+  );
+}
+
+function DesktopStack({ projects }: { projects: StackProject[] }) {
   const [active, setActive] = useState(0);
   const current = projects[active];
 
   return (
-    <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
+    <div className="hidden lg:grid lg:grid-cols-[1fr_1.3fr] gap-16 items-start">
       {/* Index — sticky left */}
-      <div className="lg:sticky lg:top-24">
+      <div className="sticky top-24">
         {projects.map((p, i) => {
           const isActive = active === i;
           return (
@@ -38,7 +111,9 @@ export default function ProjectStack({ projects }: ProjectStackProps) {
                 padding: "20px 0",
                 borderTop: "1px solid var(--ftt-line)",
                 borderBottom:
-                  i === projects.length - 1 ? "1px solid var(--ftt-line)" : "none",
+                  i === projects.length - 1
+                    ? "1px solid var(--ftt-line)"
+                    : "none",
                 color: isActive ? "var(--ftt-cream)" : "var(--ftt-text-dim)",
                 paddingLeft: isActive ? 16 : 0,
                 transition:
@@ -83,7 +158,7 @@ export default function ProjectStack({ projects }: ProjectStackProps) {
       </div>
 
       {/* Big preview — sticky right */}
-      <div className="lg:sticky lg:top-24" style={{ height: "min(580px, 70vh)" }}>
+      <div className="sticky top-24" style={{ height: "min(580px, 70vh)" }}>
         <div
           className="relative h-full overflow-hidden"
           style={{

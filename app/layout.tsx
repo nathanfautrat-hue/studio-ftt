@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const bebas = Bebas_Neue({
@@ -41,14 +42,15 @@ export default function RootLayout({
       lang="fr"
       className={`${bebas.variable} ${dm.variable} ${playfair.variable} ${mono.variable}`}
     >
-      <body>{children}</body>
-      {/* Cloudflare Web Analytics */}
-      <script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "abf2189bcc544af68e8bfed20af49935"}'
-      />
-      {/* End Cloudflare Web Analytics */}
+      <body>
+        {children}
+        {/* Cloudflare Web Analytics */}
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          strategy="afterInteractive"
+          data-cf-beacon='{"token": "abf2189bcc544af68e8bfed20af49935"}'
+        />
+      </body>
     </html>
   );
 }

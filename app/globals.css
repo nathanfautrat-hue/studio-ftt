@@ -224,6 +224,27 @@ html {
 }
 
 /* ============================================
+   RESPONSIVE LAYOUT HELPERS
+   ============================================ */
+.section-x {
+  padding-left: clamp(20px, 4vw, 36px);
+  padding-right: clamp(20px, 4vw, 36px);
+}
+.section-y {
+  padding-top: clamp(64px, 10vw, 120px);
+  padding-bottom: clamp(64px, 10vw, 120px);
+}
+.section-y-sm {
+  padding-top: clamp(40px, 6vw, 64px);
+  padding-bottom: clamp(64px, 10vw, 120px);
+}
+
+/* Hero specific */
+.hero-pad {
+  padding: clamp(24px, 4vw, 32px) clamp(20px, 4vw, 36px) clamp(28px, 4vw, 32px);
+}
+
+/* ============================================
    FORM INPUTS (contact)
    ============================================ */
 .input-modern {

@@ -12,16 +12,16 @@ const NAV_LINKS = [
 export default function Navbar() {
   return (
     <header
-      className="sticky top-0 z-50 flex items-center justify-between"
+      className="sticky top-0 z-50 flex items-center justify-between gap-3"
       style={{
-        padding: "20px 36px",
+        padding: "16px clamp(20px, 4vw, 36px)",
         backdropFilter: "blur(18px)",
         WebkitBackdropFilter: "blur(18px)",
         background: "rgba(5,5,5,0.55)",
         borderBottom: "1px solid var(--ftt-line)",
       }}
     >
-      <Link href="/" aria-label="Studio FTT — accueil" className="lift">
+      <Link href="/" aria-label="Studio FTT — accueil" className="lift shrink-0">
         <LogoMark size={30} />
       </Link>
 
@@ -53,19 +53,21 @@ export default function Navbar() {
         ))}
       </nav>
 
+      {/* CTA — visible toujours, compact mobile */}
       <a
         href="#contact"
-        className="hidden sm:inline-flex items-center"
+        className="inline-flex items-center shrink-0"
         style={{
-          gap: 12,
-          padding: "14px 22px",
+          gap: 8,
+          padding: "10px 16px",
           borderRadius: 999,
           background: "var(--ftt-red)",
           color: "#fff",
-          fontSize: 14,
+          fontSize: 13,
           fontWeight: 500,
           textDecoration: "none",
           transition: "all 0.35s cubic-bezier(0.2,0.7,0.2,1)",
+          whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.background = "var(--ftt-red-deep)";
@@ -79,7 +81,9 @@ export default function Navbar() {
           e.currentTarget.style.boxShadow = "none";
         }}
       >
-        Démarrer un projet <span aria-hidden>→</span>
+        <span className="hidden sm:inline">Démarrer un projet</span>
+        <span className="sm:hidden">Démarrer</span>
+        <span aria-hidden>→</span>
       </a>
     </header>
   );
