@@ -99,13 +99,6 @@ const APPROCHE = [
   },
 ];
 
-const STATS = [
-  { v: "06", l: "Projets livrés" },
-  { v: "500€", l: "À partir de" },
-  { v: "4 sem.", l: "De maquette à mise en ligne" },
-  { v: "24h", l: "Réponse à votre demande" },
-];
-
 export default function Home() {
   const heroRef = useRef<HTMLElement | null>(null);
 
@@ -125,7 +118,7 @@ export default function Home() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prenom: nom, nom: "", email, description }),
+        body: JSON.stringify({ nom, email, description }),
       });
       if (!res.ok) throw new Error("Erreur serveur");
       setSent(true);
@@ -148,8 +141,9 @@ export default function Home() {
         ref={heroRef}
         className="relative overflow-hidden flex flex-col justify-between"
         style={{
-          minHeight: "92vh",
-          padding: "64px 36px 36px",
+          minHeight: "calc(100vh - 80px)",
+          maxHeight: "calc(100vh - 80px)",
+          padding: "32px 36px 28px",
         }}
       >
         <CursorBlob containerRef={heroRef} />
@@ -187,9 +181,9 @@ export default function Home() {
             <h1
               className="font-display"
               style={{
-                fontSize: "clamp(72px, 16vw, 280px)",
+                fontSize: "clamp(48px, 9vw, 150px)",
                 margin: 0,
-                lineHeight: 0.82,
+                lineHeight: 0.88,
                 letterSpacing: "-0.01em",
               }}
             >
@@ -238,7 +232,7 @@ export default function Home() {
           <Reveal delay={2}>
             <div
               className="flex flex-wrap items-end justify-between"
-              style={{ marginTop: 56, gap: 32 }}
+              style={{ marginTop: 28, gap: 24 }}
             >
               <p
                 style={{
@@ -255,7 +249,7 @@ export default function Home() {
               </p>
               <div className="flex gap-3 flex-wrap">
                 <a href="#projets" className="btn btn--ghost">
-                  Voir 06 projets <span className="btn__arrow">→</span>
+                  Voir les projets <span className="btn__arrow">→</span>
                 </a>
                 <a href="#contact" className="btn btn--solid">
                   Démarrer le mien <span className="btn__arrow">→</span>
@@ -265,38 +259,6 @@ export default function Home() {
           </Reveal>
         </div>
 
-        {/* Stat row */}
-        <div
-          className="relative z-10 grid grid-cols-2 md:grid-cols-4"
-          style={{
-            marginTop: 64,
-            paddingTop: 24,
-            borderTop: "1px solid var(--ftt-line)",
-            gap: 32,
-          }}
-        >
-          {STATS.map((s, i) => (
-            <Reveal key={s.l} delay={((i % 4) + 1) as 1 | 2 | 3 | 4}>
-              <div>
-                <div className="font-display" style={{ fontSize: 64, lineHeight: 1 }}>
-                  {s.v}
-                </div>
-                <div
-                  className="font-mono"
-                  style={{
-                    fontSize: 11,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    color: "var(--ftt-text-dim)",
-                    marginTop: 6,
-                  }}
-                >
-                  {s.l}
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
       </section>
 
       {/* APPROCHE */}
@@ -590,7 +552,7 @@ export default function Home() {
                   },
                   {
                     l: "LinkedIn",
-                    v: "Nathan Fautrat",
+                    v: "Studio FTT",
                     h: "https://www.linkedin.com/in/fautrat-nathan-ba790a404",
                   },
                 ].map((c) => (

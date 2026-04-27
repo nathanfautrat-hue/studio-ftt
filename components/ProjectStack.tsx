@@ -75,9 +75,6 @@ export default function ProjectStack({ projects }: ProjectStackProps) {
                   {p.name.toUpperCase()}
                 </span>
               </span>
-              <span className="font-mono text-[10px] tracking-[0.18em] uppercase hidden sm:inline">
-                {p.tag}
-              </span>
             </button>
           );
         })}

@@ -1,5 +1,5 @@
 // Cloudflare Pages Function — POST /api/contact
-// Replaces the previous Next.js API route. Same shape, same URL.
+// Reçoit : { nom, email, description }
 
 interface Env {
   RESEND_API_KEY: string;
@@ -13,14 +13,13 @@ const json = (data: unknown, status = 200) =>
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   try {
-    const { prenom, nom, email, description } = await request.json<{
-      prenom?: string;
+    const { nom, email, description } = await request.json<{
       nom?: string;
       email?: string;
       description?: string;
     }>();
 
-    if (!prenom || !nom || !email || !description) {
+    if (!nom || !email || !description) {
       return json({ error: "Champs manquants" }, 400);
     }
 
@@ -34,10 +33,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
         from: "Studio FTT <onboarding@resend.dev>",
         to: ["contactstudioftt@gmail.com"],
         reply_to: email,
-        subject: `Demande de site — ${prenom} ${nom}`,
+        subject: `Demande de site — ${nom}`,
         html: `
           <h2>Nouvelle demande de contact</h2>
-          <p><strong>Prénom :</strong> ${prenom}</p>
           <p><strong>Nom :</strong> ${nom}</p>
           <p><strong>Email :</strong> ${email}</p>
           <p><strong>Projet :</strong></p>
