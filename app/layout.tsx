@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, DM_Sans, Playfair_Display } from "next/font/google";
+import { Bebas_Neue, DM_Sans, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const bebas = Bebas_Neue({
@@ -18,11 +18,17 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
   display: "swap",
 });
+const mono = JetBrains_Mono({
+  weight: ["300", "400", "500"],
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Studio FTT — Agence web Sarthe",
   description:
-    "Agence web spécialisée artisans & entreprises. On crée des sites qui convertissent.",
+    "Studio indépendant pour artisans et PME. On dessine, on développe, on référence — vous obtenez un site qui rassure, et qui vous amène des clients.",
 };
 
 export default function RootLayout({
@@ -31,7 +37,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${bebas.variable} ${dm.variable} ${playfair.variable}`}>
+    <html
+      lang="fr"
+      className={`${bebas.variable} ${dm.variable} ${playfair.variable} ${mono.variable}`}
+    >
       <body>{children}</body>
       {/* Cloudflare Web Analytics */}
       <script

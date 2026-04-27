@@ -1,40 +1,82 @@
 import Link from "next/link";
-import Image from "next/image";
+import LogoMark from "./LogoMark";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-white/5 bg-black">
-      <div className="container py-16 grid gap-12 md:grid-cols-3">
+    <footer
+      style={{
+        padding: "64px 32px 40px",
+        borderTop: "1px solid var(--ftt-line)",
+        background: "var(--ftt-black)",
+      }}
+    >
+      <div
+        className="mx-auto grid gap-12 md:grid-cols-[2fr_1fr_1fr]"
+        style={{ maxWidth: 1320 }}
+      >
         <div>
-          <div className="flex items-center gap-3">
-            <Image
-              src="/logo_ftt.png"
-              alt="Studio FTT"
-              width={44}
-              height={44}
-              className="rounded-lg"
-            />
-            <span className="font-display tracking-[0.2em] text-sm">STUDIO FTT</span>
-          </div>
+          <LogoMark size={30} />
+          <p
+            style={{
+              marginTop: 18,
+              maxWidth: 420,
+              fontSize: 15,
+              lineHeight: 1.55,
+              color: "var(--ftt-text-mid)",
+            }}
+          >
+            Studio indépendant basé en Sarthe. On crée des sites pour artisans
+            et PME — propres, rapides, qui amènent des clients.
+          </p>
         </div>
+
         <div>
-          <h4 className="text-xs tracking-[0.25em] uppercase text-white/50 mb-4">Contact</h4>
+          <h4
+            className="font-mono"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--ftt-text-dim)",
+              marginBottom: 14,
+            }}
+          >
+            Contact
+          </h4>
           <a
             href="mailto:contactstudioftt@gmail.com"
-            className="text-white hover:text-[#E8352A] transition-colors"
+            className="lift"
+            style={{
+              color: "var(--ftt-cream)",
+              textDecoration: "none",
+              fontSize: 15,
+            }}
           >
             contactstudioftt@gmail.com
           </a>
         </div>
+
         <div>
-          <h4 className="text-xs tracking-[0.25em] uppercase text-white/50 mb-4">Suivre</h4>
-          <ul className="space-y-2 text-white/70">
+          <h4
+            className="font-mono"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--ftt-text-dim)",
+              marginBottom: 14,
+            }}
+          >
+            Suivre
+          </h4>
+          <ul className="space-y-2" style={{ listStyle: "none", padding: 0, margin: 0 }}>
             <li>
               <a
                 href="https://www.instagram.com/studio_ftt___/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
+                className="lift"
+                style={{ color: "var(--ftt-cream)", textDecoration: "none", fontSize: 15 }}
               >
                 Instagram
               </a>
@@ -44,7 +86,8 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/fautrat-nathan-ba790a404"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
+                className="lift"
+                style={{ color: "var(--ftt-cream)", textDecoration: "none", fontSize: 15 }}
               >
                 LinkedIn
               </a>
@@ -52,25 +95,66 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/5">
-        <div className="container py-6 flex flex-col md:flex-row gap-4 items-center justify-between text-xs text-white/40">
-          <span>Studio FTT © 2025 — Tous droits réservés</span>
-          <div className="flex gap-6">
-            <Link
-              href="/mentions-legales"
-              className="hover:text-white transition-colors"
-            >
-              Mentions légales
-            </Link>
-            <Link
-              href="/confidentialite"
-              className="hover:text-white transition-colors"
-            >
-              Confidentialité
-            </Link>
-          </div>
-          <span>Made with care in Sarthe, France</span>
+
+      <div
+        className="mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+        style={{
+          maxWidth: 1320,
+          marginTop: 56,
+          paddingTop: 24,
+          borderTop: "1px solid var(--ftt-line)",
+        }}
+      >
+        <span
+          className="font-mono"
+          style={{
+            fontSize: 11,
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "var(--ftt-text-dim)",
+          }}
+        >
+          Studio FTT © 2026
+        </span>
+        <div className="flex gap-6">
+          <Link
+            href="/mentions-legales"
+            className="font-mono"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--ftt-text-dim)",
+              textDecoration: "none",
+            }}
+          >
+            Mentions légales
+          </Link>
+          <Link
+            href="/confidentialite"
+            className="font-mono"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--ftt-text-dim)",
+              textDecoration: "none",
+            }}
+          >
+            Confidentialité
+          </Link>
         </div>
+        <span
+          className="font-mono"
+          style={{
+            fontSize: 11,
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "var(--ftt-text-dim)",
+          }}
+        >
+          Made with care — Sarthe, FR
+        </span>
       </div>
     </footer>
   );
