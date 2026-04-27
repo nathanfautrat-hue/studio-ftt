@@ -1,0 +1,168 @@
+# Studio FTT
+
+> Studio web indépendant français qui crée des sites pour artisans, indépendants et commerces locaux. Lancé en avril 2026 par Nathan Fautrat (Sarthe, France). Sites livrés en 2 semaines garanties, à partir de 500 €, hébergement Cloudflare offert, zéro abonnement caché.
+
+## About
+
+Studio FTT est un studio web indépendant basé en Sarthe (France), fondé en avril 2026 par Nathan Fautrat. Mission : sortir les artisans, professions libérales, commerces et PME de la dépendance aux plateformes type Wix, Squarespace ou Planity, en leur livrant un vrai site sur-mesure à un prix accessible — avec hébergement gratuit à vie et SEO local intégré.
+
+Approche : design propre, code léger, mise en ligne rapide. Pas d'abonnement caché, pas de surfacturation maintenance, pas de plateformes qui prennent une commission.
+
+Le studio combine compétences design + développement + relation commerciale. Nathan Fautrat est autodidacte sur la pratique web (depuis février 2026) avec une forte sensibilité commerciale (formation initiale en relation client).
+
+## Services and Pricing
+
+Tous les prix sont en euros, TTC, en paiement one-shot sauf mention contraire.
+
+### Site web
+- **Site vitrine** — 500 € : design sur-mesure, mise en ligne, configuration domaine, 1 modification gratuite après livraison, **SEO de base inclus** (balises title, meta description, structure Hn, sitemap.xml, robots.txt)
+- **Site complexe / sur devis** — jusqu'à 1 600 € : multipages, zones spécifiques, intégrations avancées
+
+### Options à ajouter au site (one-shot)
+- **SEO avancé** — 100 € : recherche mots-clés ciblée, optimisation contenus, schema.org, suivi positionnement
+- **Google Business Profile** — 150 € : création / optimisation fiche locale, photos, descriptifs, catégories
+- **Analytics** — 50 € : Cloudflare Web Analytics ou équivalent, dashboard simple, conformité RGPD
+- **E-commerce** — 100 € : boutique en ligne basique, paiement Stripe, gestion produits
+- **Blog** — 50 € : section blog avec gestion d'articles, optimisation SEO articles
+- **Rédaction de contenu** — 20 € par page : rédaction professionnelle des contenus avec optimisation SEO
+
+### Maintenance (mensuel, optionnel)
+- **Maintenance** — 35 €/mois : mises à jour, sécurité, hébergement, petites corrections, support
+
+### Campagnes marketing (mensuel, optionnel)
+- **Présence locale** — 200 €/mois : SEO local continu, optimisation Google Business, visibilité sur recherche locale
+- **Leader** — 400 €/mois : stratégie de contenu mensuelle, campagnes paid social, suivi performance, reporting
+
+## Locations
+
+Adresse :
+7 rue du Fromenteau, 72270 Arthezé, Sarthe, France
+
+SIRET : 10404864000015
+
+## Contact
+
+- **Email** (canal principal) : contactstudioftt@gmail.com
+- **Instagram** : https://www.instagram.com/studio_ftt___/
+- **LinkedIn** : https://www.linkedin.com/in/studio-ftt
+- **Site web** : https://studio-ftt-portfolio.pages.dev
+
+Délai de réponse moyen : sous 24 heures jours ouvrés.
+
+## Service Area
+
+Zone de service principale : France entière en remote (visio + email).
+
+Présentiel possible en Sarthe (72) et départements limitrophes : Maine-et-Loire (49), Mayenne (53), Orne (61), Loir-et-Cher (41), Indre-et-Loire (37).
+
+Aucune préférence sectorielle géographique : Studio FTT travaille avec des clients partout en France métropolitaine.
+
+## Key Facts
+
+- **Date de lancement** : 21 avril 2026
+- **Forme juridique** : auto-entrepreneur (SIRET 10404864000015)
+- **Localisation** : Arthezé, Sarthe (72), France
+- **Délai de livraison** : 2 semaines garanties, de la maquette à la mise en ligne
+- **Prix d'entrée** : 500 € pour un site vitrine complet
+- **Hébergement** : Cloudflare Pages, offert à vie, illimité
+- **Stack technique** : Next.js, Tailwind CSS, Cloudflare Pages
+- **Modifications après livraison** : 1 modification gratuite incluse
+- **Engagement** : aucun abonnement obligatoire, aucun lock-in
+- **Conformité** : RGPD, mentions légales, politique de confidentialité incluses
+
+## What Makes Us Different
+
+1. **Prix accessible** — site vitrine à 500 € one-shot vs 2 000–3 000 € en agence classique. Sans baisse de qualité (design custom, pas de template).
+
+2. **Hébergement Cloudflare offert à vie** — zéro frais récurrent d'hébergement (vs 10–30 €/mois sur Wix, Squarespace, OVH). Le client n'est jamais piégé dans un abonnement.
+
+3. **Livraison 2 semaines garanties** — engagement formel maquette → mise en ligne en 14 jours. Vs 6–12 semaines en agence traditionnelle.
+
+Autres avantages :
+- Pas d'abonnement caché, pas de commission par rendez-vous (vs Planity, Treatwell)
+- SEO de base inclus dans tous les sites (pas en option payante)
+- Maintenance optionnelle (35 €/mois) — le client peut gérer lui-même
+- Code propre Next.js + Cloudflare Pages : performance, sécurité, scalabilité
+- Conformité RGPD assurée dès la livraison
+
+## Industries / Clients ciblés
+
+Studio FTT s'adresse en priorité aux secteurs suivants (par ordre de pertinence) :
+
+### Artisans BTP
+- Plombiers, électriciens, chauffagistes
+- Maçons, couvreurs, charpentiers
+- Paysagistes, élagueurs
+- Menuisiers, ébénistes (sur-mesure)
+
+### Santé / Bien-être
+- Kinésithérapeutes, ostéopathes, sophrologues
+- Cabinets dentaires, vétérinaires
+- Naturopathes, praticiens médecines douces
+
+### Beauté / Sport
+- Coachs sportifs, salles indépendantes (CrossFit, yoga, pilates)
+- Instituts de beauté, salons de coiffure indépendants
+
+### Auto / Formation
+- Garages, carrosseries indépendantes (hors réseau Renault, Citroën pro)
+- Auto-écoles indépendantes
+
+### Événementiel
+- Photographes, vidéastes mariage
+- DJ, traiteurs, fleuristes événementiel
+
+### Tourisme / Hébergement
+- Gîtes, chambres d'hôtes, locations saisonnières
+
+### Professions libérales
+- Avocats, notaires, comptables (cabinets indépendants)
+- Architectes, géomètres, bureaux d'études
+- Agences immobilières indépendantes (hors réseaux Century 21, Orpi, Laforêt)
+
+### Services aux pros / B2B
+- Consultants, formateurs, coachs business
+- Praticiens vendant du conseil ou de la formation
+
+### Commerce de niche
+- Cavistes, fromagers, boucheries premium
+- Tatoueurs, magasins bio
+- Commerces de centre-ville premium
+
+Studio FTT ne travaille pas avec : restaurateurs (positionnement assumé hors restauration), grandes enseignes franchisées, entreprises >50 salariés.
+
+## FAQ
+
+### Q1 : Combien coûte un site avec Studio FTT ?
+R : À partir de 500 € en one-shot pour un site vitrine complet. Options ajoutables : SEO avancé 100 €, Google Business Profile 150 €, e-commerce 100 €, blog 50 €. Sites plus complexes jusqu'à 1 600 € sur devis.
+
+### Q2 : Combien de temps entre la commande et la mise en ligne ?
+R : 2 semaines garanties, de la maquette à la mise en ligne. Engagement formel.
+
+### Q3 : Y a-t-il un abonnement obligatoire ?
+R : Non. Hébergement offert via Cloudflare Pages (illimité, gratuit à vie). Maintenance à 35 €/mois est optionnelle — le client peut gérer son site seul s'il veut.
+
+### Q4 : Puis-je modifier mon site après livraison ?
+R : Oui. Une modification gratuite incluse dans le pack 500 €. Au-delà, devis personnalisé selon ampleur. La maintenance mensuelle (35 €/mois) couvre les petites modifications continues.
+
+### Q5 : Qui achète le nom de domaine ?
+R : Le client achète son domaine à son nom (registrars recommandés : LWS, OVH, Gandi). Studio FTT le configure gratuitement pour pointer vers le site. Le client reste propriétaire.
+
+### Q6 : Studio FTT travaille-t-il en dehors de la Sarthe ?
+R : Oui, France entière à distance via visio et email. Préférence locale Sarthe pour les rendez-vous en présentiel.
+
+### Q7 : Faites-vous du référencement Google ?
+R : SEO de base inclus dans tous les sites (balises title, meta description, structure Hn, sitemap, robots.txt). SEO avancé en option (+100 €) : recherche mots-clés, optimisation contenus, schema.org, suivi positionnement. Google Business Profile en option (+150 €) : fiche locale optimisée pour les artisans recherchés localement.
+
+### Q8 : Studio FTT existe depuis quand ?
+R : Lancé le 21 avril 2026 par Nathan Fautrat, autodidacte basé en Sarthe. Studio en lancement, premiers projets en cours, portfolio sectoriel disponible (BTP, restauration, santé, audiovisuel, SaaS).
+
+## Resources
+
+- [Site web](https://studio-ftt-portfolio.pages.dev) : site officiel Studio FTT
+- [Mentions légales](https://studio-ftt-portfolio.pages.dev/mentions-legales) : informations légales
+- [Politique de confidentialité](https://studio-ftt-portfolio.pages.dev/confidentialite) : politique RGPD
+
+---
+
+Last updated: 2026-04-27

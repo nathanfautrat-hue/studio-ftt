@@ -533,7 +533,7 @@ export default function Home() {
                   {
                     l: "LinkedIn",
                     v: "Studio FTT",
-                    h: "https://www.linkedin.com/in/fautrat-nathan-ba790a404",
+                    h: "https://www.linkedin.com/in/studio-ftt",
                   },
                 ].map((c) => (
                   <a

@@ -83,7 +83,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/fautrat-nathan-ba790a404"
+                href="https://www.linkedin.com/in/studio-ftt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="lift"
