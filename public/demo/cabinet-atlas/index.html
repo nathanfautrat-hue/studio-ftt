@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cabinet Atlas — Kinésithérapie &amp; Ostéopathie · Sarthe</title>
+<meta name="description" content="Cabinet de kinésithérapie et ostéopathie en Sarthe. Adultes, sportifs, enfants — bilan complet, suivi sur-mesure, conventionné Secteur 1." />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --sand:#F5EFE6;
+  --sand-dark:#EDE5D8;
+  --sand-line:#E8DDD0;
+  --navy:#1E3A5F;
+  --navy-soft:#27466F;
+  --ocre:#C8854D;
+  --ocre-soft:#D89A65;
+  --white:#FFFFFF;
+  --ink:#1E3A5F;
+  --gray:#5A6A7A;
+  --gray-light:#8A98A6;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--sand);color:var(--ink);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;border:0;background:none;cursor:pointer;color:inherit;}
+::selection{background:var(--ocre);color:var(--white);}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--sand);}
+::-webkit-scrollbar-thumb{background:var(--ocre);}
+.serif{font-family:"Fraunces",Georgia,serif;}
+.container{max-width:1240px;margin:0 auto;padding:0 32px;}
+@media (max-width:600px){.container{padding:0 20px;}}
+
+/* ========== Studio FTT bar ========== */
+.ftt-bar{background:#0F1F32;color:#A4B6CB;padding:9px 0;font-size:11px;letter-spacing:.22em;text-transform:uppercase;}
+.ftt-bar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:0;padding-bottom:0;}
+.ftt-bar a{color:var(--ocre);font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:opacity .2s;}
+.ftt-bar a:hover{opacity:.7;}
+.ftt-bar .arrow{display:inline-block;transform:rotate(180deg);}
+
+/* ========== demo banner ========== */
+.demo-banner{background:var(--ocre);color:var(--white);padding:7px 0;text-align:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;font-family:"Inter";}
+
+/* ========== Sticky info bar ========== */
+.info-bar{background:var(--navy);color:var(--sand);padding:11px 0;font-family:"Fraunces";font-weight:300;font-size:13px;}
+.info-bar .container{display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap;}
+.info-bar .item{display:inline-flex;align-items:center;gap:7px;}
+.info-bar a.book{color:var(--ocre);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-style:italic;}
+.info-bar a.book:hover{color:var(--ocre-soft);}
+@media (max-width:768px){.info-bar{font-size:12px;}.info-bar .container{gap:14px;}.info-bar .item.hide-mobile{display:none;}}
+
+/* ========== NAV ========== */
+.nav{position:sticky;top:0;z-index:50;background:var(--sand);border-bottom:1px solid var(--sand-line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:24px;}
+.brand{display:flex;align-items:center;gap:14px;}
+.brand-name{font-family:"Fraunces";font-weight:400;color:var(--navy);font-size:20px;letter-spacing:.12em;text-transform:uppercase;}
+.brand-sep{color:var(--ocre);font-size:18px;opacity:.6;display:none;}
+@media (min-width:900px){.brand-sep{display:inline;}}
+.nav-links{display:none;gap:32px;font-size:13px;font-weight:400;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;}
+.nav-links a{transition:color .2s;}
+.nav-links a:hover{color:var(--ocre);}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--sand);padding:11px 22px;font-family:"Fraunces";font-weight:400;font-size:14px;border-radius:2px;transition:background .2s;}
+.nav-cta:hover{background:var(--navy-soft);}
+@media (min-width:900px){.nav-links{display:flex;}}
+
+/* ========== HERO ========== */
+.hero{padding:64px 0 96px;background:var(--sand);overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:start;}
+@media (min-width:900px){.hero-grid{grid-template-columns:1fr .3fr 1.7fr;gap:0;align-items:stretch;}}
+.hero-info{display:flex;flex-direction:column;justify-content:center;}
+.hero-eyebrow{font-family:"Inter";font-weight:500;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ocre);margin-bottom:24px;}
+.hero-title{font-family:"Fraunces";font-weight:400;color:var(--navy);font-size:clamp(40px,5vw,64px);line-height:1.05;letter-spacing:-.005em;margin-bottom:24px;}
+.hero-title em{font-style:italic;font-weight:300;color:var(--ocre);}
+.hero-sub{font-size:15px;color:var(--gray);max-width:420px;margin-bottom:24px;line-height:1.65;}
+.hero-rule{width:48px;height:1px;background:var(--ocre);border:0;margin:24px 0 28px;}
+.hero-hours{background:var(--sand-dark);padding:18px 22px;border-radius:4px;margin-bottom:28px;}
+.hero-hours h3{font-family:"Inter";font-weight:500;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);margin-bottom:12px;}
+.hero-hours .row{display:grid;grid-template-columns:48px 1fr;gap:12px;font-family:"Inter";font-weight:400;font-size:13px;color:var(--navy);padding:5px 0;}
+.hero-hours .row .day{color:var(--gray);text-transform:uppercase;letter-spacing:.05em;font-size:12px;}
+.hero-hours .row.today{background:var(--navy);color:var(--sand);margin:2px -10px;padding:6px 10px;border-radius:3px;}
+.hero-hours .row.today .day{color:var(--sand);}
+.hero-cta-row{display:flex;flex-direction:column;gap:10px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;font-family:"Fraunces";font-weight:400;font-size:15px;border-radius:2px;transition:background .2s,color .2s,border-color .2s;cursor:pointer;}
+.btn-primary{background:var(--navy);color:var(--sand);border:1px solid var(--navy);}
+.btn-primary:hover{background:var(--navy-soft);border-color:var(--navy-soft);}
+.btn-secondary{background:transparent;color:var(--navy);border:1px solid var(--navy);}
+.btn-secondary:hover{background:var(--navy);color:var(--sand);}
+.btn-ocre{background:var(--ocre);color:var(--white);border:1px solid var(--ocre);}
+.btn-ocre:hover{background:var(--ocre-soft);border-color:var(--ocre-soft);}
+.btn-outline-light{background:transparent;color:var(--navy);border:1px solid var(--navy);}
+.hero-spacer{display:none;}
+@media (min-width:900px){.hero-spacer{display:block;}}
+.hero-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:#222;}
+@media (min-width:900px){.hero-photo{margin-right:-40px;height:auto;aspect-ratio:auto;min-height:560px;}}
+.hero-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(1.05) saturate(.85) contrast(.95);}
+.hero-card{position:absolute;left:18px;bottom:18px;background:var(--white);padding:16px 20px;box-shadow:0 6px 30px rgba(30,58,95,0.15);min-width:240px;}
+.hero-card .name{font-family:"Fraunces";font-style:italic;font-weight:400;color:var(--navy);font-size:16px;line-height:1.2;margin-bottom:4px;}
+.hero-card .role{font-family:"Inter";font-size:12px;color:var(--ocre);font-weight:500;letter-spacing:.05em;margin-bottom:8px;}
+.hero-card .rating{font-family:"Inter";font-size:11px;color:var(--gray);display:flex;align-items:center;gap:6px;}
+.hero-card .stars{color:var(--ocre);letter-spacing:1px;}
+
+/* ========== Sections génériques ========== */
+.section{padding:80px 0;}
+.section-white{background:var(--white);}
+.section-sand{background:var(--sand);}
+.section-navy{background:var(--navy);color:var(--sand);}
+.section-h{margin-bottom:48px;text-align:center;}
+.section-h .label{font-family:"Inter";font-weight:500;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ocre);margin-bottom:14px;display:inline-block;}
+.section-h h2{font-family:"Fraunces";font-weight:400;color:var(--navy);font-size:clamp(32px,4vw,46px);line-height:1.1;letter-spacing:-.005em;}
+.section-navy .section-h h2{color:var(--sand);}
+.section-h .lead{margin-top:14px;font-family:"Fraunces";font-style:italic;font-weight:300;font-size:17px;color:var(--gray);}
+.section-navy .section-h .lead{color:#A4B6CB;}
+
+/* ========== Valeurs ========== */
+.values{display:grid;grid-template-columns:1fr;gap:40px;}
+@media (min-width:800px){.values{grid-template-columns:repeat(3,1fr);gap:0;}.values > div{padding:0 32px;border-right:1px solid var(--sand-line);}.values > div:first-child{padding-left:0;}.values > div:last-child{border-right:0;padding-right:0;}}
+.value-ico{width:32px;height:32px;color:var(--navy);margin-bottom:18px;}
+.value h3{font-family:"Fraunces";font-weight:400;font-size:21px;color:var(--navy);margin-bottom:10px;letter-spacing:-.005em;}
+.value p{font-size:14px;color:var(--gray);line-height:1.65;}
+
+/* ========== Équipe ========== */
+.team-grid{display:grid;grid-template-columns:1fr;gap:24px;}
+@media (min-width:700px){.team-grid{grid-template-columns:repeat(2,1fr);}}
+@media (min-width:1000px){.team-grid{grid-template-columns:repeat(3,1fr);}}
+.team-card{background:var(--white);border-radius:4px;box-shadow:0 2px 20px rgba(30,58,95,0.07);padding:32px 24px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;}
+.team-photo{width:120px;height:120px;border-radius:50%;overflow:hidden;background:#ddd;margin-bottom:18px;border:3px solid var(--sand);box-shadow:0 4px 14px rgba(200,133,77,0.18);}
+.team-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(1.03) saturate(.9);}
+.team-name{font-family:"Fraunces";font-weight:400;font-size:19px;color:var(--navy);margin-bottom:4px;}
+.team-role{font-family:"Inter";font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ocre);font-weight:500;margin-bottom:12px;}
+.team-spec{font-size:13px;color:var(--gray);line-height:1.55;margin-bottom:14px;}
+.team-rule{width:32px;height:1px;background:var(--ocre);border:0;margin:8px 0 14px;}
+.team-bio{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:20px;flex:1;}
+.team-cta{display:inline-flex;align-items:center;gap:6px;font-family:"Fraunces";font-weight:400;font-size:13px;color:var(--navy);border:1px solid var(--navy);padding:8px 18px;border-radius:2px;transition:background .2s,color .2s;}
+.team-cta:hover{background:var(--navy);color:var(--sand);}
+
+/* ========== Soins (liste éditoriale 2 colonnes) ========== */
+.soins-grid{display:grid;grid-template-columns:1fr;gap:0;}
+@media (min-width:800px){.soins-grid{grid-template-columns:1fr 1fr;gap:0 48px;}}
+.soin{display:grid;grid-template-columns:32px 1fr;gap:16px;padding:18px 12px;border-bottom:1px solid var(--sand-line);transition:background .2s;}
+.soin:hover{background:var(--sand);}
+.soin-num{font-family:"Inter";font-weight:500;font-size:11px;color:var(--ocre);letter-spacing:.05em;padding-top:4px;}
+.soin-title{font-family:"Fraunces";font-weight:400;font-size:17px;color:var(--navy);margin-bottom:4px;}
+.soin-desc{font-size:13px;color:var(--gray);line-height:1.55;}
+
+/* ========== Parcours patient ========== */
+.parcours{position:relative;display:grid;grid-template-columns:1fr;gap:32px;margin-top:24px;}
+@media (min-width:800px){.parcours{grid-template-columns:repeat(4,1fr);gap:0;position:relative;}.parcours::before{content:"";position:absolute;top:18px;left:8%;right:8%;height:1px;background:var(--ocre);opacity:.5;}}
+.etape{text-align:center;position:relative;padding:0 12px;}
+.etape-dot{width:36px;height:36px;border-radius:50%;background:var(--ocre);color:var(--white);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-family:"Fraunces";font-weight:400;font-size:14px;position:relative;z-index:1;border:4px solid var(--navy);}
+.etape h4{font-family:"Fraunces";font-weight:400;font-size:18px;color:var(--sand);margin-bottom:8px;}
+.etape p{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:13px;color:#A4B6CB;line-height:1.6;}
+
+/* ========== Infos pratiques ========== */
+.infos-grid{display:grid;grid-template-columns:1fr;gap:24px;}
+@media (min-width:800px){.infos-grid{grid-template-columns:repeat(3,1fr);}}
+.info-card{background:var(--white);border-radius:4px;padding:28px 24px;box-shadow:0 2px 20px rgba(30,58,95,0.07);}
+.info-card h3{font-family:"Fraunces";font-weight:400;font-size:20px;color:var(--navy);margin-bottom:14px;letter-spacing:-.005em;}
+.info-card .map{aspect-ratio:4/3;overflow:hidden;border-radius:3px;margin-bottom:14px;background:#E5E0D5;}
+.info-card .map iframe{width:100%;height:100%;filter:grayscale(.55) contrast(.95);border:0;}
+.info-card p, .info-card li{font-size:13px;color:var(--gray);line-height:1.7;}
+.info-card ul{list-style:none;padding:0;}
+.info-card .row-h{display:grid;grid-template-columns:60px 1fr;padding:6px 0;font-size:13px;border-bottom:1px solid var(--sand-line);}
+.info-card .row-h:last-child{border-bottom:0;}
+.info-card .row-h.today{background:var(--sand-dark);margin:2px -8px;padding:6px 8px;}
+.info-card .row-h .d{color:var(--gray);text-transform:uppercase;letter-spacing:.05em;font-size:11px;}
+.info-card .row-h .h{color:var(--navy);font-weight:500;}
+.info-card .badge{display:inline-block;background:var(--ocre);color:var(--white);padding:5px 11px;border-radius:2px;font-family:"Fraunces";font-weight:400;font-size:12px;margin-top:10px;}
+
+/* ========== Contact final ========== */
+.contact-final{text-align:center;padding:88px 0;}
+.contact-final h2{font-family:"Fraunces";font-weight:400;color:var(--navy);font-size:clamp(36px,4.5vw,52px);line-height:1.1;margin-bottom:14px;letter-spacing:-.005em;}
+.contact-final h2 em{font-style:italic;color:var(--ocre);font-weight:300;}
+.contact-final .sub{font-family:"Fraunces";font-style:italic;font-weight:300;font-size:16px;color:var(--gray);margin-bottom:32px;}
+.contact-final .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.contact-final .urgence{margin-top:32px;font-family:"Fraunces";font-style:italic;font-weight:300;font-size:13px;color:var(--gray-light);}
+
+/* ========== Footer ========== */
+.footer{background:var(--navy);color:#A4B6CB;padding:0;}
+.footer-rule{height:1px;background:var(--ocre);}
+.footer-content{padding:56px 0 24px;display:grid;grid-template-columns:1fr;gap:36px;}
+@media (min-width:800px){.footer-content{grid-template-columns:1.5fr 1fr 1fr;}}
+.footer-brand{font-family:"Fraunces";font-weight:400;color:var(--sand);font-size:22px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;}
+.footer-text{font-family:"Inter";font-size:13px;line-height:1.7;color:#A4B6CB;}
+.footer-h{font-family:"Fraunces";font-weight:400;color:var(--ocre);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;}
+.footer-l{font-size:13px;line-height:2;color:#A4B6CB;}
+.footer-l a:hover{color:var(--ocre);}
+.footer-bottom{border-top:1px solid #2C4A6E;padding:18px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:11px;color:#7A8FA8;letter-spacing:.05em;}
+.footer-bottom a{color:var(--ocre);}
+
+/* ========== Mobile sticky ========== */
+.sticky-rdv{position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:var(--sand);padding:14px;text-align:center;font-family:"Fraunces";font-weight:400;font-size:15px;z-index:100;display:flex;align-items:center;justify-content:center;gap:8px;border-top:1px solid var(--ocre);}
+@media (min-width:900px){.sticky-rdv{display:none;}}
+@media (max-width:899px){body{padding-bottom:60px;}}
+</style>
+</head>
+<body>
+
+<!-- Studio FTT bar -->
+<div class="ftt-bar">
+  <div class="container">
+    <a href="/"><span class="arrow">→</span> Retour au portfolio Studio FTT</a>
+    <span>Concept démo · Avatar : Cabinet kiné &amp; ostéo</span>
+  </div>
+</div>
+
+<!-- demo banner -->
+<div class="demo-banner">SITE DÉMO — Tous les noms, témoignages et données sont fictifs ou placeholder</div>
+
+<!-- Sticky info bar -->
+<div class="info-bar">
+  <div class="container">
+    <span class="item">📍 12 place de l'Église · 72270 Vion</span>
+    <span class="item hide-mobile">📞 02 43 00 00 00</span>
+    <span class="item hide-mobile">🕐 Lun–Ven 8h–19h · Sam 8h–13h</span>
+    <span class="item">🗓️ <a class="book" href="#contact">Réserver sur Doctolib</a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-name">Cabinet Atlas</span>
+      <span class="brand-sep">|</span>
+      <span class="brand-name" style="font-size:12px;letter-spacing:.18em;color:var(--gray);">Kiné · Ostéo</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#equipe">L'équipe</a>
+      <a href="#soins">Nos soins</a>
+      <a href="#infos">Infos</a>
+      <a href="#contact">Prendre RDV</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Prendre RDV</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-info">
+      <div class="hero-eyebrow">Kinésithérapie · Ostéopathie · Vion</div>
+      <h1 class="hero-title">Prendre soin de vous, <em>vraiment</em>.</h1>
+      <p class="hero-sub">Le Cabinet Atlas accueille adultes, sportifs et enfants. Chaque praticien prend le temps du bilan, de l'écoute, du suivi.</p>
+      <hr class="hero-rule" />
+      <div class="hero-hours">
+        <h3>Horaires</h3>
+        <div class="row" data-day="1"><span class="day">Lun</span><span>8h00 — 19h00</span></div>
+        <div class="row" data-day="2"><span class="day">Mar</span><span>8h00 — 19h00</span></div>
+        <div class="row" data-day="3"><span class="day">Mer</span><span>8h00 — 19h00</span></div>
+        <div class="row" data-day="4"><span class="day">Jeu</span><span>8h00 — 19h00</span></div>
+        <div class="row" data-day="5"><span class="day">Ven</span><span>8h00 — 19h00</span></div>
+        <div class="row" data-day="6"><span class="day">Sam</span><span>8h00 — 13h00</span></div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn btn-primary">Réserver en ligne</a>
+        <a href="tel:+33000000000" class="btn btn-secondary">Nous appeler</a>
+      </div>
+    </div>
+    <div class="hero-spacer"></div>
+    <div class="hero-photo">
+      <img src="https://images.pexels.com/photos/4506217/pexels-photo-4506217.jpeg?w=900&auto=compress" alt="Séance de kinésithérapie au Cabinet Atlas" loading="eager" />
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section class="section section-white">
+  <div class="container values">
+    <div class="value">
+      <svg class="value-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 18a6 6 0 100-12 6 6 0 000 12z"/><path d="M12 14v.01M9.5 9.5a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 3"/></svg>
+      <h3>L'écoute d'abord</h3>
+      <p>Chaque séance commence par un bilan. On ne traite pas une douleur, on traite une personne.</p>
+    </div>
+    <div class="value">
+      <svg class="value-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <h3>Le suivi dans le temps</h3>
+      <p>Vous avez votre praticien référent. Il connaît votre corps, votre histoire, vos objectifs.</p>
+    </div>
+    <div class="value">
+      <svg class="value-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12l4 4 14-14"/><path d="M12 19a7 7 0 110-14"/></svg>
+      <h3>La transparence</h3>
+      <p>Conventionné Secteur 1. Carte Vitale acceptée. Pas de surprise sur la facture.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ÉQUIPE -->
+<section id="equipe" class="section section-sand">
+  <div class="container">
+    <div class="section-h">
+      <span class="label">L'équipe</span>
+      <h2>Votre équipe</h2>
+      <p class="lead">Des praticiens qui prennent le temps</p>
+    </div>
+    <div class="team-grid">
+      <article class="team-card">
+        <div class="team-photo"><img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?w=300&auto=compress" alt="Praticien 1 — placeholder" loading="lazy" /></div>
+        <div class="team-name">Praticien 1</div>
+        <div class="team-role">Kinésithérapeute D.E.</div>
+        <p class="team-spec">Rééducation orthopédique · Sport · Post-opératoire</p>
+        <hr class="team-rule" />
+        <p class="team-bio">"Passionnée de biomécanique et de course à pied, j'aime accompagner mes patients jusqu'au retour à leur sport."</p>
+        <a href="#contact" class="team-cta">Prendre RDV</a>
+      </article>
+      <article class="team-card">
+        <div class="team-photo"><img src="https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?w=300&auto=compress" alt="Praticien 2 — placeholder" loading="lazy" /></div>
+        <div class="team-name">Praticien 2</div>
+        <div class="team-role">Ostéopathe D.O.</div>
+        <p class="team-spec">Douleurs chroniques · Pédiatrie · Femme enceinte</p>
+        <hr class="team-rule" />
+        <p class="team-bio">"Je crois à une approche douce, attentive, qui respecte le rythme de chacun — du nourrisson au senior."</p>
+        <a href="#contact" class="team-cta">Prendre RDV</a>
+      </article>
+      <article class="team-card">
+        <div class="team-photo"><img src="https://images.pexels.com/photos/5327653/pexels-photo-5327653.jpeg?w=300&auto=compress" alt="Praticien 3 — placeholder" loading="lazy" /></div>
+        <div class="team-name">Praticien 3</div>
+        <div class="team-role">Kinésithérapeute D.E.</div>
+        <p class="team-spec">Neurologie · Gériatrie · Respiratoire</p>
+        <hr class="team-rule" />
+        <p class="team-bio">"Mon métier, c'est rendre le mouvement possible — même quand il semble perdu. Patience et précision."</p>
+        <a href="#contact" class="team-cta">Prendre RDV</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SOINS -->
+<section id="soins" class="section section-white">
+  <div class="container">
+    <div class="section-h">
+      <span class="label">Nos soins</span>
+      <h2>Ce que nous traitons</h2>
+      <p class="lead">Une équipe pluridisciplinaire pour adultes, sportifs et enfants</p>
+    </div>
+    <div class="soins-grid">
+      <div class="soin"><span class="soin-num">01</span><div><div class="soin-title">Rééducation orthopédique</div><div class="soin-desc">Post-opératoire, fractures, entorses, prothèses de hanche/genou.</div></div></div>
+      <div class="soin"><span class="soin-num">05</span><div><div class="soin-title">Ostéopathie</div><div class="soin-desc">Douleurs chroniques, blocages, migraines, troubles digestifs.</div></div></div>
+      <div class="soin"><span class="soin-num">02</span><div><div class="soin-title">Kinésithérapie du sport</div><div class="soin-desc">Blessures sportives, retour terrain, prévention, prépa physique.</div></div></div>
+      <div class="soin"><span class="soin-num">06</span><div><div class="soin-title">Périnéologie</div><div class="soin-desc">Rééducation pré et post-partum, incontinence, hypopressifs.</div></div></div>
+      <div class="soin"><span class="soin-num">03</span><div><div class="soin-title">Rééducation neurologique</div><div class="soin-desc">AVC, Parkinson, sclérose en plaques, troubles de l'équilibre.</div></div></div>
+      <div class="soin"><span class="soin-num">07</span><div><div class="soin-title">Pédiatrie</div><div class="soin-desc">Plagiocéphalie, torticolis du nourrisson, retards moteurs.</div></div></div>
+      <div class="soin"><span class="soin-num">04</span><div><div class="soin-title">Kinésithérapie respiratoire</div><div class="soin-desc">Adultes et enfants, bronchiolite, BPCO, post-COVID.</div></div></div>
+      <div class="soin"><span class="soin-num">08</span><div><div class="soin-title">Gériatrie</div><div class="soin-desc">Maintien à domicile, prévention des chutes, perte de mobilité.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-h">
+      <span class="label" style="color:var(--ocre);">Parcours patient</span>
+      <h2>Comment ça se passe ?</h2>
+      <p class="lead">Quatre étapes, zéro flou</p>
+    </div>
+    <div class="parcours">
+      <div class="etape">
+        <div class="etape-dot">1</div>
+        <h4>Ordonnance</h4>
+        <p>Votre médecin vous prescrit. Ou venez directement en ostéopathie, sans ordonnance.</p>
+      </div>
+      <div class="etape">
+        <div class="etape-dot">2</div>
+        <h4>Prise de RDV</h4>
+        <p>En ligne sur Doctolib ou par téléphone. Délai moyen : 48–72 h.</p>
+      </div>
+      <div class="etape">
+        <div class="etape-dot">3</div>
+        <h4>Bilan initial</h4>
+        <p>45 minutes pour comprendre votre situation avant de commencer le moindre soin.</p>
+      </div>
+      <div class="etape">
+        <div class="etape-dot">4</div>
+        <h4>Séances + suivi</h4>
+        <p>Programme ajusté à chaque séance selon votre progression et votre ressenti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFOS PRATIQUES -->
+<section id="infos" class="section section-sand">
+  <div class="container">
+    <div class="section-h">
+      <span class="label">Infos pratiques</span>
+      <h2>Tout pour venir sereinement</h2>
+    </div>
+    <div class="infos-grid">
+      <div class="info-card">
+        <h3>Accès &amp; stationnement</h3>
+        <div class="map"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.34%2C47.82%2C-0.30%2C47.85&amp;layer=mapnik&amp;marker=47.836%2C-0.327" loading="lazy" title="Plan du cabinet"></iframe></div>
+        <p>12 place de l'Église, 72270 Vion<br />Parking gratuit en face du cabinet · Bus ligne 4 (arrêt « Mairie »)</p>
+      </div>
+      <div class="info-card">
+        <h3>Horaires complets</h3>
+        <ul>
+          <li class="row-h" data-day="1"><span class="d">Lun</span><span class="h">8 h 00 — 19 h 00</span></li>
+          <li class="row-h" data-day="2"><span class="d">Mar</span><span class="h">8 h 00 — 19 h 00</span></li>
+          <li class="row-h" data-day="3"><span class="d">Mer</span><span class="h">8 h 00 — 19 h 00</span></li>
+          <li class="row-h" data-day="4"><span class="d">Jeu</span><span class="h">8 h 00 — 19 h 00</span></li>
+          <li class="row-h" data-day="5"><span class="d">Ven</span><span class="h">8 h 00 — 19 h 00</span></li>
+          <li class="row-h" data-day="6"><span class="d">Sam</span><span class="h">8 h 00 — 13 h 00</span></li>
+          <li class="row-h" data-day="0"><span class="d">Dim</span><span class="h">Fermé</span></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Tarifs &amp; remboursements</h3>
+        <p>Conventionné Secteur 1 · Carte Vitale acceptée · Mutuelle en tiers payant possible.</p>
+        <p style="margin-top:10px;">Remboursement Sécu 60 % du tarif conventionnel. Feuille de soins remise à chaque séance pour transmission à la mutuelle.</p>
+        <span class="badge">Pas d'avance de frais</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FINAL -->
+<section id="contact" class="contact-final section-white">
+  <div class="container">
+    <h2>Prenons <em>rendez-vous</em>.</h2>
+    <p class="sub">En ligne, par téléphone — vous choisissez.</p>
+    <div class="btns">
+      <a href="#" class="btn btn-primary">Réserver sur Doctolib</a>
+      <a href="tel:+33000000000" class="btn btn-ocre">Nous appeler</a>
+    </div>
+    <p class="urgence">En cas d'urgence, appelez le 15 ou contactez votre médecin traitant.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-rule"></div>
+  <div class="container footer-content">
+    <div>
+      <div class="footer-brand">Cabinet Atlas</div>
+      <p class="footer-text">Cabinet de kinésithérapie et d'ostéopathie en Sarthe. Adultes, sportifs et enfants — bilan, suivi sur-mesure, conventionné Secteur 1.</p>
+    </div>
+    <div>
+      <div class="footer-h">Adresse</div>
+      <div class="footer-l">
+        12 place de l'Église<br />
+        72270 Vion<br />
+        02 43 00 00 00<br />
+        contact@cabinet-atlas.fr
+      </div>
+    </div>
+    <div>
+      <div class="footer-h">Studio FTT</div>
+      <div class="footer-l">
+        <a href="/">← Retour portfolio</a><br />
+        <a href="mailto:contactstudioftt@gmail.com">Devis pour votre cabinet</a><br />
+        <a href="#">Mentions légales</a><br />
+        <a href="#">RGPD</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Cabinet Atlas — concept démo</span>
+    <span>Site réalisé par <a href="/">Studio FTT</a></span>
+  </div>
+</footer>
+
+<a href="#contact" class="sticky-rdv">📅 Prendre rendez-vous</a>
+
+<script>
+// Highlight today's row in hero hours + infos
+(function(){
+  const today = new Date().getDay(); // 0=Sun, 1=Mon, ...
+  document.querySelectorAll('[data-day]').forEach(el=>{
+    if(parseInt(el.dataset.day,10)===today){
+      el.classList.add('today');
+    }
+  });
+})();
+</script>
+</body>
+</html>

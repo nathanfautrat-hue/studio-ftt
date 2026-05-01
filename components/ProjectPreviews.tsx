@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
 /**
  * Mini-previews fidèles aux hero des pages projet.
  * Rendus dans une card 16/10 — reproduisent le look-and-feel
@@ -93,76 +95,76 @@ export function SprayfilmPreview() {
   );
 }
 
-export function PLCPreview() {
+// Live iframe preview — shows the actual demo hero from the live HTML site.
+// Renders the demo at a fixed 1440px viewport, then scales it to fit
+// the card. ResizeObserver keeps the scale in sync with the card width.
+function LiveIframePreview({
+  src,
+  bg,
+  label,
+}: {
+  src: string;
+  bg: string;
+  label: string;
+}) {
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const [scale, setScale] = useState(0.5);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => {
+      const w = entry.contentRect.width;
+      if (w > 0) setScale(w / 1440);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
   return (
-    <div className="absolute inset-0 bg-[#050505] overflow-hidden">
-      {/* green grid */}
-      <div
-        className="absolute inset-0 opacity-40"
+    <div
+      ref={wrapRef}
+      className="absolute inset-0 overflow-hidden"
+      style={{ background: bg }}
+    >
+      <iframe
+        src={src}
+        title={label}
+        loading="lazy"
+        scrolling="no"
+        tabIndex={-1}
+        aria-hidden
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(59,245,156,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(59,245,156,0.15) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
+          width: "1440px",
+          height: "900px",
+          border: 0,
+          pointerEvents: "none",
+          display: "block",
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
         }}
       />
-      {/* green glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_30%,rgba(59,245,156,0.18),transparent_70%)]" />
-      {/* top pill */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 border border-[#3BF59C]/40 rounded-full px-2.5 py-1 text-[8px] tracking-[0.25em] uppercase font-mono">
-        <span className="h-1 w-1 rounded-full bg-[#3BF59C] animate-pulse" />
-        <span className="text-[#3BF59C]">Nouveau · Agent IA autonome</span>
-      </div>
-      {/* title */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-0 px-6 pt-8">
-        <div className="font-display text-white text-4xl md:text-5xl tracking-tight leading-[0.9] text-center">L&apos;AGENT IA QUI GÈRE</div>
-        <div className="font-display text-4xl md:text-5xl tracking-tight leading-[0.9] text-center" style={{ color: "#3BF59C", textShadow: "0 0 20px rgba(59,245,156,0.5)" }}>VOTRE ENTREPRISE.</div>
-      </div>
-      {/* CTA */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        <div className="bg-[#3BF59C] text-black text-[8px] tracking-[0.25em] uppercase px-3 py-1.5 rounded font-bold">Démarrer →</div>
-        <div className="border border-white/30 text-white text-[8px] tracking-[0.25em] uppercase px-3 py-1.5 rounded">Démo →</div>
-      </div>
     </div>
   );
 }
 
-export function OctavePreview() {
+export function GarageKlaxPreview() {
   return (
-    <div className="absolute inset-0 overflow-hidden" style={{ backgroundColor: "#12100c" }}>
-      {/* dark restaurant image overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-50"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80')",
-        }}
-      />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(18,16,12,0.4) 0%, rgba(18,16,12,0.85) 100%)" }} />
-      {/* top bar */}
-      <div className="absolute top-3 left-4 right-4 flex items-center justify-between text-[8px] tracking-[0.3em] uppercase" style={{ color: "#C8A760" }}>
-        <span>Maison Octave</span>
-        <span className="hidden md:inline text-white/60">La Maison · Carte · Réserver</span>
-      </div>
-      {/* ornament */}
-      <div className="absolute left-1/2 top-[28%] -translate-x-1/2 flex items-center gap-2 text-[7px] tracking-[0.4em] uppercase" style={{ color: "#C8A760" }}>
-        <span className="h-px w-6" style={{ backgroundColor: "#C8A760" }} />
-        <span>Gastronomie</span>
-        <span className="h-px w-6" style={{ backgroundColor: "#C8A760" }} />
-      </div>
-      {/* big serif title */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4" style={{ fontFamily: "var(--font-playfair), serif" }}>
-        <div className="text-white text-5xl md:text-7xl leading-[0.95] tracking-tight text-center">
-          Maison
-          <br />
-          <em style={{ color: "#C8A760" }}>Octave</em>
-        </div>
-      </div>
-      {/* bottom */}
-      <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[8px] tracking-[0.3em] uppercase text-white/70">
-        <span>Depuis 1923</span>
-        <span style={{ color: "#C8A760" }}>Réserver →</span>
-      </div>
-    </div>
+    <LiveIframePreview
+      src="/demo/garage-klax/index.html"
+      bg="#F7F5F0"
+      label="Garage Klax — preview"
+    />
+  );
+}
+
+export function SigmaLiftPreview() {
+  return (
+    <LiveIframePreview
+      src="/demo/sigma-lift/index.html"
+      bg="#0A0A0A"
+      label="Sigma Lift — preview"
+    />
   );
 }
 
@@ -222,42 +224,12 @@ export function MarceauPreview() {
   );
 }
 
-export function MedicentPreview() {
+export function CabinetAtlasPreview() {
   return (
-    <div className="absolute inset-0 overflow-hidden">
-      {/* forest background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1280&q=80')",
-        }}
-      />
-      <div className="absolute inset-0 bg-black/20" />
-      {/* phone mockup center */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[32%] aspect-[9/16] rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/20">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-2">
-          <div className="font-serif text-xl md:text-3xl leading-tight tracking-tight" style={{ fontFamily: "var(--font-playfair), serif" }}>
-            Medicent
-          </div>
-          <div className="font-serif text-lg md:text-2xl leading-tight tracking-tight" style={{ fontFamily: "var(--font-playfair), serif" }}>
-            Naturopathe
-          </div>
-        </div>
-      </div>
-      {/* bottom label */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-[10px] text-center drop-shadow-lg">
-        <div>Bien-être naturel</div>
-        <div className="text-white/70 text-[8px] mt-0.5">Scroll pour découvrir ↓</div>
-      </div>
-    </div>
+    <LiveIframePreview
+      src="/demo/cabinet-atlas/index.html"
+      bg="#F5EFE6"
+      label="Cabinet Atlas — preview"
+    />
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, ReactNode } from "react";
+import { useState, ReactNode, ComponentProps } from "react";
 import Link from "next/link";
 
 export type StackProject = {
@@ -11,7 +11,51 @@ export type StackProject = {
   blurb: string;
   href: string;
   preview: ReactNode;
+  isDemo?: boolean;
 };
+
+function DemoBadge() {
+  return (
+    <span
+      className="font-mono shrink-0"
+      style={{
+        fontSize: 9,
+        letterSpacing: "0.22em",
+        textTransform: "uppercase",
+        color: "var(--ftt-red)",
+        border: "1px solid var(--ftt-red)",
+        padding: "3px 7px 2px",
+        borderRadius: 999,
+        lineHeight: 1,
+        whiteSpace: "nowrap",
+      }}
+    >
+      Démo
+    </span>
+  );
+}
+
+// Static demos (under /demo/) live in public/ and are served as raw HTML.
+// Next's <Link> would try to client-route them — use a plain <a> instead.
+function ProjectLink({
+  href,
+  children,
+  ...rest
+}: ComponentProps<typeof Link>) {
+  const isStatic = typeof href === "string" && href.startsWith("/demo/");
+  if (isStatic) {
+    return (
+      <a href={href as string} {...(rest as ComponentProps<"a">)}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} {...rest}>
+      {children}
+    </Link>
+  );
+}
 
 type ProjectStackProps = {
   projects: StackProject[];
@@ -23,7 +67,7 @@ export default function ProjectStack({ projects }: ProjectStackProps) {
       {/* MOBILE / TABLET — cards stackées avec preview au-dessus */}
       <div className="grid gap-6 sm:gap-8 lg:hidden">
         {projects.map((p, i) => (
-          <Link
+          <ProjectLink
             key={p.id}
             href={p.href}
             className="lift block no-underline"
@@ -68,6 +112,7 @@ export default function ProjectStack({ projects }: ProjectStackProps) {
                 >
                   {p.name.toUpperCase()}
                 </span>
+                {p.isDemo && <DemoBadge />}
               </div>
               <span
                 aria-hidden
@@ -80,7 +125,7 @@ export default function ProjectStack({ projects }: ProjectStackProps) {
                 →
               </span>
             </div>
-          </Link>
+          </ProjectLink>
         ))}
       </div>
 
@@ -101,7 +146,7 @@ function DesktopStack({ projects }: { projects: StackProject[] }) {
         {projects.map((p, i) => {
           const isActive = active === i;
           return (
-            <Link
+            <ProjectLink
               key={p.id}
               href={p.href}
               onMouseEnter={() => setActive(i)}
@@ -151,8 +196,9 @@ function DesktopStack({ projects }: { projects: StackProject[] }) {
                 >
                   {p.name.toUpperCase()}
                 </span>
+                {p.isDemo && <DemoBadge />}
               </span>
-            </Link>
+            </ProjectLink>
           );
         })}
       </div>
@@ -225,9 +271,9 @@ function DesktopStack({ projects }: { projects: StackProject[] }) {
                 {current.blurb}
               </div>
             </div>
-            <Link href={current.href} className="btn btn--solid shrink-0">
+            <ProjectLink href={current.href} className="btn btn--solid shrink-0">
               Voir le projet <span className="btn__arrow">→</span>
-            </Link>
+            </ProjectLink>
           </div>
         </div>
       </div>

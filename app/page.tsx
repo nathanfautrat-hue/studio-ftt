@@ -9,10 +9,10 @@ import ProjectStack, { StackProject } from "@/components/ProjectStack";
 import {
   ScavbackPreview,
   SprayfilmPreview,
-  PLCPreview,
-  OctavePreview,
+  GarageKlaxPreview,
+  SigmaLiftPreview,
   MarceauPreview,
-  MedicentPreview,
+  CabinetAtlasPreview,
 } from "@/components/ProjectPreviews";
 import { siteConfig } from "@/lib/site-config";
 
@@ -38,24 +38,26 @@ const PROJECTS: StackProject[] = [
     preview: <SprayfilmPreview />,
   },
   {
-    id: "plc",
-    name: "PLC",
-    kind: "SaaS — Agent IA B2B",
-    tag: "Landing page",
+    id: "garage-klax",
+    name: "Garage Klax",
+    kind: "Garage indépendant",
+    tag: "Site vitrine · Forfaits affichés",
     blurb:
-      "Landing page SaaS pour logiciel B2B — agent IA pour optimiser la gestion d'entreprise.",
-    href: "/projets/plc",
-    preview: <PLCPreview />,
+      "Démo pour un garage indépendant en Sarthe — design industriel brut, forfaits affichés, devis en ligne.",
+    href: "/demo/garage-klax/index.html",
+    preview: <GarageKlaxPreview />,
+    isDemo: true,
   },
   {
-    id: "octave",
-    name: "Maison Octave",
-    kind: "Restaurant gastronomique",
-    tag: "Site vitrine · Réservation",
+    id: "sigma-lift",
+    name: "Sigma Lift",
+    kind: "Coaching sportif en ligne",
+    tag: "Landing · Programmes & dashboard",
     blurb:
-      "Site vitrine pour un restaurant gastronomique — carte, expériences et réservation en ligne.",
-    href: "/projets/octave",
-    preview: <OctavePreview />,
+      "Démo pour un coach sportif en ligne — design performance noir/lime, programmes, dashboard de suivi data.",
+    href: "/demo/sigma-lift/index.html",
+    preview: <SigmaLiftPreview />,
+    isDemo: true,
   },
   {
     id: "marceau",
@@ -66,16 +68,18 @@ const PROJECTS: StackProject[] = [
       "Site vitrine pour un plombier artisan au Mans — services, zone d'intervention, urgence 24/7.",
     href: "/projets/marceau",
     preview: <MarceauPreview />,
+    isDemo: true,
   },
   {
-    id: "medicent",
-    name: "Medicent",
-    kind: "Naturopathe",
-    tag: "Site premium · Scroll immersif",
+    id: "cabinet-atlas",
+    name: "Cabinet Atlas",
+    kind: "Kinésithérapie · Ostéopathie",
+    tag: "Site cabinet · Doctolib · RDV",
     blurb:
-      "Site premium pour naturopathe — intégrant une expérience de scroll immersive unique.",
-    href: "/projets/medicent",
-    preview: <MedicentPreview />,
+      "Démo pour un cabinet pluri kiné/ostéo — design contemporain lumineux (sable, bleu nuit, ocre), photo praticien, équipe, parcours patient.",
+    href: "/demo/cabinet-atlas/index.html",
+    preview: <CabinetAtlasPreview />,
+    isDemo: true,
   },
 ];
 
