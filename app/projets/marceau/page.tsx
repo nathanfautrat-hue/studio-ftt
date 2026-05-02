@@ -464,8 +464,8 @@ export default function MarceauPage() {
         <div className="container grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-24 items-center">
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=900&q=85"
-              alt="Marceau, plombier artisan au Mans"
+              src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?w=900&auto=compress"
+              alt="Plombier artisan au travail — installation tuyauterie cuivre"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover"
@@ -474,9 +474,9 @@ export default function MarceauPage() {
               className="absolute bottom-4 left-4 right-4 backdrop-blur rounded-xl p-4"
               style={{ backgroundColor: "rgba(15,44,71,0.92)", color: "#fff" }}
             >
-              <div className="text-[10px] tracking-[0.3em] uppercase opacity-70">Fondateur</div>
+              <div className="text-[10px] tracking-[0.3em] uppercase opacity-70">Sur le terrain</div>
               <div className="text-lg" style={{ fontFamily: "var(--font-playfair), serif" }}>
-                Thomas Marceau, artisan plombier
+                Cuivre, PER, multicouche — toutes installations
               </div>
             </div>
           </div>
