@@ -532,7 +532,7 @@ export default function Home() {
                   },
                   {
                     l: "Instagram",
-                    v: "@studio_ftt___",
+                    v: "@studio.ftt",
                     h: siteConfig.instagram,
                   },
                   {
