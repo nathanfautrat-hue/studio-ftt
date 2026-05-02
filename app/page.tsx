@@ -532,12 +532,12 @@ export default function Home() {
                   },
                   {
                     l: "Instagram",
-                    v: "@studio.ftt",
+                    v: siteConfig.instagramHandle,
                     h: siteConfig.instagram,
                   },
                   {
                     l: "LinkedIn",
-                    v: siteConfig.name,
+                    v: siteConfig.linkedinHandle,
                     h: siteConfig.linkedin,
                   },
                 ].map((c) => (

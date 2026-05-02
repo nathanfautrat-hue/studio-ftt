@@ -18,7 +18,9 @@ export const siteConfig = {
   // Coordonnées
   email: "contactstudioftt@gmail.com",
   instagram: "https://www.instagram.com/studio.ftt/",
+  instagramHandle: "@studio.ftt",
   linkedin: "https://www.linkedin.com/in/studio-ftt-ba790a404/",
+  linkedinHandle: "Studio FTT",
 
   // Localisation
   address: {

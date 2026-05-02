@@ -13,7 +13,9 @@ export const siteConfig = siteConfigData as {
   description: string;
   email: string;
   instagram: string;
+  instagramHandle: string;
   linkedin: string;
+  linkedinHandle: string;
   address: {
     street: string;
     postalCode: string;
