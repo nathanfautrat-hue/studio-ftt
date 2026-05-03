@@ -98,7 +98,7 @@ export default function Footer() {
       </div>
 
       <div
-        className="mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+        className="mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4 text-center"
         style={{
           maxWidth: 1320,
           marginTop: 56,
@@ -107,62 +107,92 @@ export default function Footer() {
         }}
       >
         <span
-          className="font-mono"
+          className="font-mono order-1"
           style={{
             fontSize: 11,
-            letterSpacing: "0.22em",
+            letterSpacing: "0.18em",
             textTransform: "uppercase",
             color: "var(--ftt-text-dim)",
           }}
         >
           Studio FTT © 2026
         </span>
-        <div className="flex gap-6">
+
+        <div
+          className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 order-3 md:order-2"
+          style={{ rowGap: 8 }}
+        >
           <Link
             href="/mentions-legales"
             className="font-mono"
             style={{
               fontSize: 11,
-              letterSpacing: "0.22em",
+              letterSpacing: "0.18em",
               textTransform: "uppercase",
               color: "var(--ftt-text-dim)",
               textDecoration: "none",
+              whiteSpace: "nowrap",
             }}
           >
             Mentions légales
           </Link>
+          <span
+            aria-hidden
+            className="font-mono"
+            style={{
+              fontSize: 9,
+              color: "var(--ftt-text-dim)",
+              opacity: 0.5,
+            }}
+          >
+            ·
+          </span>
           <Link
             href="/confidentialite"
             className="font-mono"
             style={{
               fontSize: 11,
-              letterSpacing: "0.22em",
+              letterSpacing: "0.18em",
               textTransform: "uppercase",
               color: "var(--ftt-text-dim)",
               textDecoration: "none",
+              whiteSpace: "nowrap",
             }}
           >
             Confidentialité
           </Link>
+          <span
+            aria-hidden
+            className="font-mono"
+            style={{
+              fontSize: 9,
+              color: "var(--ftt-text-dim)",
+              opacity: 0.5,
+            }}
+          >
+            ·
+          </span>
           <Link
             href="/cgv"
             className="font-mono"
             style={{
               fontSize: 11,
-              letterSpacing: "0.22em",
+              letterSpacing: "0.18em",
               textTransform: "uppercase",
               color: "var(--ftt-text-dim)",
               textDecoration: "none",
+              whiteSpace: "nowrap",
             }}
           >
             CGV
           </Link>
         </div>
+
         <span
-          className="font-mono"
+          className="font-mono order-2 md:order-3"
           style={{
             fontSize: 11,
-            letterSpacing: "0.22em",
+            letterSpacing: "0.18em",
             textTransform: "uppercase",
             color: "var(--ftt-text-dim)",
           }}
