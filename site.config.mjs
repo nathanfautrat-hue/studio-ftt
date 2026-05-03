@@ -21,7 +21,7 @@ export const siteConfig = {
   instagramHandle: "@studio.ftt",
   linkedin: "https://www.linkedin.com/in/studio-ftt-ba790a404/",
   linkedinHandle: "Studio FTT",
-  calendly: "https://calendly.com/contactstudioftt/30min",
+  calendly: "https://calendly.com/contactstudioftt/15min",
 
   // Localisation
   address: {
