@@ -54,6 +54,25 @@ export default function MentionsLegales() {
           </div>
 
           <div>
+            <h2 className="font-display text-2xl text-white mb-3">
+              TVA &amp; régime fiscal
+            </h2>
+            <p>
+              Studio FTT est exploité en entreprise individuelle au régime de
+              la micro-entreprise.
+              <br />
+              <strong className="text-white">
+                TVA non applicable, art.&nbsp;293 B du CGI.
+              </strong>
+              <br />
+              Code APE&nbsp;: 6201Z — Programmation informatique.
+              <br />
+              Activité libérale non soumise à inscription au RCS ou au
+              Répertoire des Métiers.
+            </p>
+          </div>
+
+          <div>
             <h2 className="font-display text-2xl text-white mb-3">Hébergeur</h2>
             <p>
               <strong className="text-white">Cloudflare, Inc.</strong>
