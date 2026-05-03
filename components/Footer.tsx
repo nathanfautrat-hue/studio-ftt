@@ -144,6 +144,19 @@ export default function Footer() {
           >
             Confidentialité
           </Link>
+          <Link
+            href="/cgv"
+            className="font-mono"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--ftt-text-dim)",
+              textDecoration: "none",
+            }}
+          >
+            CGV
+          </Link>
         </div>
         <span
           className="font-mono"
