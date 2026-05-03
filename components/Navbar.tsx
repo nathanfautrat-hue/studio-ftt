@@ -6,8 +6,8 @@ import LogoMark from "./LogoMark";
 const NAV_LINKS = [
   { label: "Approche", href: "/#approche" },
   { label: "Projets", href: "/#projets" },
-  { label: "À propos", href: "/a-propos" },
   { label: "Contact", href: "/#contact" },
+  { label: "À propos", href: "/a-propos" },
 ];
 
 export default function Navbar() {
