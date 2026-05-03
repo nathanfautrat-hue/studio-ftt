@@ -526,6 +526,12 @@ export default function Home() {
               >
                 {[
                   {
+                    l: "Réserver un appel · 15 min",
+                    v: "calendly.com/contactstudioftt",
+                    h: siteConfig.calendly,
+                    featured: true,
+                  },
+                  {
                     l: "Email",
                     v: siteConfig.email,
                     h: `mailto:${siteConfig.email}`,
@@ -550,8 +556,12 @@ export default function Home() {
                     style={{
                       padding: "18px 22px",
                       borderRadius: 12,
-                      background: "rgba(255,255,255,0.02)",
-                      border: "1px solid var(--ftt-line)",
+                      background: c.featured
+                        ? "rgba(232,53,42,0.08)"
+                        : "rgba(255,255,255,0.02)",
+                      border: c.featured
+                        ? "1px solid rgba(232,53,42,0.45)"
+                        : "1px solid var(--ftt-line)",
                       textDecoration: "none",
                       color: "var(--ftt-cream)",
                     }}
@@ -563,7 +573,9 @@ export default function Home() {
                           fontSize: 10,
                           letterSpacing: "0.2em",
                           textTransform: "uppercase",
-                          color: "var(--ftt-text-dim)",
+                          color: c.featured
+                            ? "var(--ftt-red)"
+                            : "var(--ftt-text-dim)",
                           display: "block",
                           marginBottom: 4,
                         }}
