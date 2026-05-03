@@ -508,21 +508,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 items-start mt-12 md:mt-16 lg:mt-20 gap-10 lg:gap-16">
             {/* Gauche : description + cartes contact */}
             <Reveal delay={2}>
-              <p
-                style={{
-                  fontSize: "clamp(16px, 2vw, 19px)",
-                  lineHeight: 1.5,
-                  color: "var(--ftt-text-mid)",
-                  maxWidth: 460,
-                  margin: 0,
-                }}
-              >
-                Une activité, deux lignes sur ce que vous voulez, on revient
-                vers vous sous 24h. Honnête, rapide, sans bullshit.
-              </p>
               <div
                 className="grid"
-                style={{ marginTop: 40, gap: 14 }}
+                style={{ gap: 14 }}
               >
                 {[
                   {
