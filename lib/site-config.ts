@@ -16,6 +16,7 @@ export const siteConfig = siteConfigData as {
   instagramHandle: string;
   linkedin: string;
   linkedinHandle: string;
+  calendly: string;
   address: {
     street: string;
     postalCode: string;
