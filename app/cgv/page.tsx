@@ -113,8 +113,12 @@ export default function CGV() {
                 l&apos;acompte.
               </li>
               <li>
-                <strong className="text-white">Solde de 70 %</strong> à la livraison du
-                site, payable sous 14 jours à compter de la mise en ligne.
+                <strong className="text-white">Solde de 70 % avant la mise en ligne.</strong>{" "}
+                Le site est présenté au Client sur une URL de prévisualisation
+                Cloudflare Pages. La mise en ligne sur le nom de domaine final,
+                ainsi que le transfert des accès et du code, ne sont effectués
+                qu&apos;après réception complète du solde. Aucun délai de
+                paiement post-livraison n&apos;est accordé.
               </li>
             </ul>
             <p className="mt-3">
@@ -166,6 +170,18 @@ export default function CGV() {
               Au-delà, toute modification supplémentaire est facturée selon le
               temps passé, sur devis préalable. Tarif horaire indicatif&nbsp;:
               50&nbsp;€ de l&apos;heure.
+            </p>
+            <p className="mt-3">
+              <strong className="text-white">Justification du temps facturé&nbsp;:</strong>{" "}
+              chaque facture précise un descriptif des modifications réalisées
+              (nature des tâches, temps passé estimé). Toute intervention
+              supérieure à une heure fait l&apos;objet d&apos;une estimation
+              préalable communiquée par email&nbsp;; l&apos;accord écrit du
+              Client (réponse par email ou validation explicite) vaut
+              acceptation du temps annoncé. Le Prestataire estime le temps de
+              bonne foi sur la base du temps réellement passé&nbsp;; les outils
+              de versionnage (commits Git, historique de tâches) servent de
+              référence en cas de contestation.
             </p>
           </div>
 

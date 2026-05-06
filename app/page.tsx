@@ -83,24 +83,51 @@ const PROJECTS: StackProject[] = [
   },
 ];
 
+const FAQ = [
+  {
+    q: "Combien coûte un site ?",
+    a: "3 formules : Vitrine à 500 €, Visibilité à 750 € (avec SEO avancé et Google Business Profile), Sur-mesure à partir de 1 000 €. Tout est inclus — design, développement, mise en ligne, SEO de base et 1 modification gratuite.",
+  },
+  {
+    q: "Combien de temps pour livrer ?",
+    a: "Entre 3 jours et 2 semaines après réception de vos contenus.",
+  },
+  {
+    q: "Je n'ai pas de textes ni de photos — vous gérez ?",
+    a: "On peut vous aider à rédiger et on utilise des visuels adaptés à votre secteur en attendant les vôtres. L'essentiel, c'est de démarrer.",
+  },
+  {
+    q: "Est-ce que je peux modifier mon site moi-même ?",
+    a: "Non — c'est nous qui gérons les modifications. Chaque site livré inclut une modification gratuite. Avec la formule maintenance à 35 €/mois, vous avez 3 modifications incluses par mois. Au-delà, les modifications sont facturées 50 €/h.",
+  },
+  {
+    q: "Vous travaillez avec qui ?",
+    a: "Artisans, TPE, PME — principalement en Sarthe et Mayenne, mais on travaille aussi à distance partout en France.",
+  },
+  {
+    q: "Quelle différence avec Wix ou Squarespace ?",
+    a: "Le site est conçu sur-mesure pour votre activité, pas depuis un template générique. Il charge plus vite, il est mieux référencé, et vous n'avez pas d'abonnement mensuel lié à une plateforme.",
+  },
+];
+
 const APPROCHE = [
   {
     n: "01",
-    t: "Création",
-    d: "Un site responsive pensé pour votre activité — design, contenus, formulaire de contact intégré.",
-    a: "Maquette → Dev → Mise en ligne",
+    t: "On s'appelle",
+    d: "15 minutes pour comprendre votre activité, vos clients, ce que vous attendez du site. On vous dit ce qu'on peut faire et comment.",
+    a: "Appel de découverte · 15 min",
   },
   {
     n: "02",
-    t: "Visibilité",
-    d: "Référencement local et fiche Google Business pour que vos clients vous trouvent dans votre région.",
-    a: "SEO local + Google Business",
+    t: "On construit",
+    d: "Design, développement, textes, référencement — on s'occupe de tout. Vous validez avant la mise en ligne.",
+    a: "Design → Dev → Validation",
   },
   {
     n: "03",
-    t: "Autonomie",
-    d: "Vidéo explicative livrée. Maintenance annuelle en option si vous préférez être tranquille.",
-    a: "Doc vidéo + maintenance",
+    t: "On lance",
+    d: "Le site est en ligne. On vous envoie une vidéo explicative pour que vous sachiez exactement ce que vous avez entre les mains.",
+    a: "Mise en ligne + vidéo livrée",
   },
 ];
 
@@ -114,6 +141,7 @@ export default function Home() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -152,11 +180,41 @@ export default function Home() {
         <CursorBlob containerRef={heroRef} />
 
         {/* Top row */}
-        <div className="relative z-10">
+        <div className="relative z-10 flex items-center justify-between flex-wrap gap-3">
           <Reveal>
             <div className="eyebrow">
               <span className="dot" />
               Studio FTT — Sites web sur-mesure
+            </div>
+          </Reveal>
+          <Reveal>
+            <div
+              className="font-mono"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "6px 14px",
+                borderRadius: 999,
+                border: "1px solid rgba(59,245,156,0.28)",
+                background: "rgba(59,245,156,0.05)",
+                fontSize: 11,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "var(--ftt-green)",
+              }}
+            >
+              <span
+                className="animate-pulse"
+                style={{
+                  width: 7,
+                  height: 7,
+                  borderRadius: "50%",
+                  background: "var(--ftt-green)",
+                  flexShrink: 0,
+                }}
+              />
+              Disponible · Projets ouverts
             </div>
           </Reveal>
         </div>
@@ -447,6 +505,105 @@ export default function Home() {
         <ProjectStack projects={PROJECTS} />
       </section>
 
+      {/* FAQ */}
+      <section
+        id="faq"
+        className="mx-auto section-x section-y"
+        style={{ maxWidth: 1320, borderTop: "1px solid var(--ftt-line)" }}
+      >
+        <Reveal>
+          <div className="flex items-baseline" style={{ gap: 14, marginBottom: 32 }}>
+            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>
+              (03)
+            </span>
+            <span
+              className="font-mono"
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--ftt-text-dim)",
+              }}
+            >
+              Questions fréquentes
+            </span>
+          </div>
+        </Reveal>
+
+        <Reveal delay={1}>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "clamp(48px, 9vw, 140px)",
+              margin: "0 0 clamp(40px, 5vw, 64px)",
+              lineHeight: 0.95,
+            }}
+          >
+            FAQ.
+          </h2>
+        </Reveal>
+
+        <div style={{ maxWidth: 860 }}>
+          {FAQ.map((item, i) => {
+            const isOpen = faqOpen === i;
+            return (
+              <Reveal key={i} delay={((Math.min(i + 1, 3)) as 1 | 2 | 3)}>
+                <div style={{ borderBottom: "1px solid var(--ftt-line)" }}>
+                  <button
+                    onClick={() => setFaqOpen(isOpen ? null : i)}
+                    className="w-full text-left flex justify-between items-center"
+                    style={{
+                      padding: "22px 0",
+                      gap: 20,
+                      background: "none",
+                      border: 0,
+                      cursor: "pointer",
+                      color: "var(--ftt-cream)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "clamp(16px, 2vw, 19px)",
+                        fontWeight: 500,
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {item.q}
+                    </span>
+                    <span
+                      style={{
+                        color: "var(--ftt-red)",
+                        fontSize: 28,
+                        lineHeight: 1,
+                        flexShrink: 0,
+                        transform: isOpen ? "rotate(45deg)" : "none",
+                        transition: "transform 0.25s ease",
+                        display: "block",
+                      }}
+                    >
+                      +
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <p
+                      style={{
+                        fontSize: 15,
+                        lineHeight: 1.7,
+                        color: "var(--ftt-text-mid)",
+                        paddingBottom: 24,
+                        margin: 0,
+                      }}
+                    >
+                      {item.a}
+                    </p>
+                  )}
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section
         id="contact"
@@ -479,7 +636,7 @@ export default function Home() {
           <Reveal>
             <div className="eyebrow" style={{ marginBottom: 24 }}>
               <span className="dot" />
-              (03) — Contact
+              (04) — Contact
             </div>
           </Reveal>
           <Reveal delay={1}>
