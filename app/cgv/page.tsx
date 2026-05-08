@@ -399,7 +399,7 @@ export default function CGV() {
               <strong className="text-white">Studio FTT</strong> · Nathan
               Fautrat · Entrepreneur individuel · 7 rue du Fromenteau, 72270
               Arthezé, France · SIRET&nbsp;: 10404864000015 ·
-              contactstudioftt@gmail.com
+              contact@studioftt.fr
             </p>
           </div>
         </div>

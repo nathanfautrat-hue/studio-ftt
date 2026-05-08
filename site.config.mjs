@@ -16,7 +16,7 @@ export const siteConfig = {
     "Studio web indépendant pour artisans, indépendants et commerces locaux. Sites livrés en 2 semaines, à partir de 500 €, hébergement Cloudflare offert.",
 
   // Coordonnées
-  email: "contactstudioftt@gmail.com",
+  email: "contact@studioftt.fr",
   instagram: "https://www.instagram.com/studio.ftt/",
   instagramHandle: "@studio.ftt",
   linkedin: "https://www.linkedin.com/in/studio-ftt-ba790a404/",

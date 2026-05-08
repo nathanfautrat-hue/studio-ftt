@@ -58,10 +58,10 @@ export default function MentionsLegales() {
               <br />
               Email&nbsp;:{" "}
               <a
-                href="mailto:contactstudioftt@gmail.com"
+                href="mailto:contact@studioftt.fr"
                 className="text-white underline hover:text-[#E8352A]"
               >
-                contactstudioftt@gmail.com
+                contact@studioftt.fr
               </a>
             </p>
           </div>
@@ -141,10 +141,10 @@ export default function MentionsLegales() {
               Pour toute question relative au site ou à nos prestations,
               contactez-nous à&nbsp;:{" "}
               <a
-                href="mailto:contactstudioftt@gmail.com"
+                href="mailto:contact@studioftt.fr"
                 className="text-white underline hover:text-[#E8352A]"
               >
-                contactstudioftt@gmail.com
+                contact@studioftt.fr
               </a>
             </p>
           </div>

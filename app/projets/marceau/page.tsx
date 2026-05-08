@@ -852,7 +852,7 @@ export default function MarceauPage() {
               const body = Array.from(data.entries())
                 .map(([k, v]) => `${k}: ${v}`)
                 .join("\n");
-              window.location.href = `mailto:contactstudioftt@gmail.com?subject=Atelier Marceau — Demande de devis&body=${encodeURIComponent(body)}`;
+              window.location.href = `mailto:contact@studioftt.fr?subject=Atelier Marceau — Demande de devis&body=${encodeURIComponent(body)}`;
             }}
             className="bg-white/10 backdrop-blur rounded-2xl p-6 md:p-8 space-y-4 border border-white/20"
           >

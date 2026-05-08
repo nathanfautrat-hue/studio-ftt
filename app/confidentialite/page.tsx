@@ -57,10 +57,10 @@ export default function Confidentialite() {
               <br />
               Email&nbsp;:{" "}
               <a
-                href="mailto:contactstudioftt@gmail.com"
+                href="mailto:contact@studioftt.fr"
                 className="text-white underline hover:text-[#E8352A]"
               >
-                contactstudioftt@gmail.com
+                contact@studioftt.fr
               </a>
             </p>
           </div>
@@ -147,10 +147,10 @@ export default function Confidentialite() {
             <p className="mt-3">
               Pour exercer ces droits, contactez-nous à&nbsp;:{" "}
               <a
-                href="mailto:contactstudioftt@gmail.com"
+                href="mailto:contact@studioftt.fr"
                 className="text-white underline hover:text-[#E8352A]"
               >
-                contactstudioftt@gmail.com
+                contact@studioftt.fr
               </a>
               <br />
               Vous avez également le droit d&apos;introduire une réclamation
