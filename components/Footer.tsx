@@ -118,74 +118,38 @@ export default function Footer() {
           Studio FTT © 2026
         </span>
 
-        <div
-          className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 order-3 md:order-2"
-          style={{ rowGap: 8 }}
-        >
-          <Link
-            href="/mentions-legales"
-            className="font-mono"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "var(--ftt-text-dim)",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Mentions légales
-          </Link>
-          <span
-            aria-hidden
-            className="font-mono"
-            style={{
-              fontSize: 9,
-              color: "var(--ftt-text-dim)",
-              opacity: 0.5,
-            }}
-          >
-            ·
-          </span>
-          <Link
-            href="/confidentialite"
-            className="font-mono"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "var(--ftt-text-dim)",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Confidentialité
-          </Link>
-          <span
-            aria-hidden
-            className="font-mono"
-            style={{
-              fontSize: 9,
-              color: "var(--ftt-text-dim)",
-              opacity: 0.5,
-            }}
-          >
-            ·
-          </span>
-          <Link
-            href="/cgv"
-            className="font-mono"
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "var(--ftt-text-dim)",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-            }}
-          >
-            CGV
-          </Link>
+        {/* Liens légaux — colonne sur mobile, ligne sur desktop */}
+        <div className="flex flex-col md:flex-row items-center justify-center order-3 md:order-2" style={{ gap: 8 }}>
+          {[
+            { href: "/mentions-legales", label: "Mentions légales" },
+            { href: "/confidentialite", label: "Confidentialité" },
+            { href: "/cgv", label: "CGV" },
+          ].map((link, i, arr) => (
+            <span key={link.href} className="flex items-center" style={{ gap: 8 }}>
+              <Link
+                href={link.href}
+                className="font-mono"
+                style={{
+                  fontSize: 11,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "var(--ftt-text-dim)",
+                  textDecoration: "none",
+                }}
+              >
+                {link.label}
+              </Link>
+              {i < arr.length - 1 && (
+                <span
+                  aria-hidden
+                  className="font-mono hidden md:inline"
+                  style={{ fontSize: 9, color: "var(--ftt-text-dim)", opacity: 0.5 }}
+                >
+                  ·
+                </span>
+              )}
+            </span>
+          ))}
         </div>
 
         <span
