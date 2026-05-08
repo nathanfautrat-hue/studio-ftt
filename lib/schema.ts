@@ -51,7 +51,11 @@ export function organizationSchema() {
       addressCountry: "FR",
     },
     email: siteConfig.email,
-    sameAs: [siteConfig.instagram, siteConfig.linkedin],
+    sameAs: [
+      siteConfig.instagram,
+      siteConfig.linkedin,
+      "https://www.google.com/search?q=Studio+FTT&stick=H4sIAAAAAAAA_-NgU1I1qDBLski1MDYysTRKTTEwMje1MqgwNE8yMDNPSjUwNzRPsTQyXsTKFVxSmpKZr-AWEgIABv32ETYAAAA",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -169,7 +173,11 @@ export function professionalServiceSchema() {
         closes: "19:00",
       },
     ],
-    sameAs: [siteConfig.instagram, siteConfig.linkedin],
+    sameAs: [
+      siteConfig.instagram,
+      siteConfig.linkedin,
+      "https://www.google.com/search?q=Studio+FTT&stick=H4sIAAAAAAAA_-NgU1I1qDBLski1MDYysTRKTTEwMje1MqgwNE8yMDNPSjUwNzRPsTQyXsTKFVxSmpKZr-AWEgIABv32ETYAAAA",
+    ],
   };
 }
 
