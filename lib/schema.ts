@@ -56,6 +56,8 @@ export function organizationSchema() {
       siteConfig.linkedin,
       "https://www.google.com/search?q=Studio+FTT&stick=H4sIAAAAAAAA_-NgU1I1qDBLski1MDYysTRKTTEwMje1MqgwNE8yMDNPSjUwNzRPsTQyXsTKFVxSmpKZr-AWEgIABv32ETYAAAA",
       "https://www.societe.com/societe/monsieur-nathan-fautrat-104048640.html",
+      "https://www.pappers.fr/entreprise/fautrat-nathan-104048640",
+      "https://annuaire-entreprises.data.gouv.fr/entreprise/nathan-fautrat-fautrat-studio-ftt-104048640",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -179,6 +181,8 @@ export function professionalServiceSchema() {
       siteConfig.linkedin,
       "https://www.google.com/search?q=Studio+FTT&stick=H4sIAAAAAAAA_-NgU1I1qDBLski1MDYysTRKTTEwMje1MqgwNE8yMDNPSjUwNzRPsTQyXsTKFVxSmpKZr-AWEgIABv32ETYAAAA",
       "https://www.societe.com/societe/monsieur-nathan-fautrat-104048640.html",
+      "https://www.pappers.fr/entreprise/fautrat-nathan-104048640",
+      "https://annuaire-entreprises.data.gouv.fr/entreprise/nathan-fautrat-fautrat-studio-ftt-104048640",
     ],
   };
 }
