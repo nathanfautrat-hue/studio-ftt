@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="fgrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF4A3E"/>
+      <stop offset="55%" stop-color="#E8352A"/>
+      <stop offset="100%" stop-color="#7a1a14"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="200" rx="34" ry="34" fill="#0a0a0a"/>
+  <g transform="translate(0,6)">
+    <!-- F angulaire, fleche en haut -->
+    <path d="M 34 148 L 34 58 L 94 50 L 80 78 L 54 80 L 54 98 L 80 96 L 72 118 L 54 120 L 54 148 Z" fill="url(#fgrad)"/>
+    <!-- T1 -->
+    <path d="M 96 52 L 148 52 L 144 72 L 132 72 L 128 150 L 110 150 L 116 72 L 94 72 Z" fill="#ffffff"/>
+    <!-- T2 -->
+    <path d="M 136 52 L 188 52 L 184 72 L 172 72 L 168 150 L 150 150 L 156 72 L 134 72 Z" fill="#ffffff"/>
+  </g>
+</svg>
