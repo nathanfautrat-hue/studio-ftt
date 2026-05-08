@@ -116,6 +116,18 @@ export function professionalServiceSchema() {
       "Maintenance de site web",
       "Google Business Profile",
     ],
+    knowsAbout: [
+      "Création de site web sur-mesure",
+      "Référencement SEO local",
+      "Next.js",
+      "Cloudflare Pages",
+      "Tailwind CSS",
+      "Schema.org",
+      "Webdesign Sarthe",
+      "Site web artisan",
+      "Site web TPE PME",
+    ],
+    slogan: "Des sites qui convertissent.",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Offres Studio FTT",
@@ -124,24 +136,27 @@ export function professionalServiceSchema() {
           "@type": "Offer",
           name: "Site Vitrine",
           description: "Site sur-mesure, design adapté, SEO de base, mise en ligne, 1 modification incluse.",
-          price: "500",
+          price: 500,
           priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
           url: `${URL}/tarifs`,
         },
         {
           "@type": "Offer",
           name: "Site Visibilité",
           description: "Tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + Google Business Profile.",
-          price: "750",
+          price: 750,
           priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
           url: `${URL}/tarifs`,
         },
         {
           "@type": "Offer",
           name: "Site Sur-mesure",
           description: "Multi-pages, fonctionnalités avancées, devis personnalisé.",
-          price: "1000",
+          price: 1000,
           priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
           url: `${URL}/tarifs`,
         },
       ],
@@ -206,6 +221,25 @@ export function personSchema() {
       "Cloudflare Pages",
       "Tailwind CSS",
     ],
+  };
+}
+
+/**
+ * AboutPage — schéma pour la page /a-propos.
+ * Améliore l'identification de la page comme bio fondateur + studio.
+ */
+export function aboutPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${URL}/a-propos#aboutpage`,
+    url: `${URL}/a-propos`,
+    name: "À propos — Studio FTT",
+    description: "À propos de Nathan Fautrat, fondateur de Studio FTT, studio web indépendant en Sarthe.",
+    inLanguage: "fr-FR",
+    isPartOf: { "@id": `${URL}/#website` },
+    about: { "@id": `${URL}/#organization` },
+    mainEntity: { "@id": `${URL}/#nathan` },
   };
 }
 

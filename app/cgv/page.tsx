@@ -104,12 +104,12 @@ export default function CGV() {
             <p className="mt-3">
               La grille tarifaire en vigueur est consultable sur{" "}
               <a
-                href="https://studio-ftt.pages.dev/tarifs"
+                href="https://studioftt.fr/tarifs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white underline hover:text-[#E8352A]"
               >
-                studio-ftt.pages.dev/tarifs
+                studioftt.fr/tarifs
               </a>
               . Les prix indiqués sont des tarifs «&nbsp;à partir de&nbsp;»&nbsp;;
               le prix final est déterminé sur devis selon la complexité du projet.

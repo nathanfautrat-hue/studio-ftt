@@ -46,7 +46,7 @@ export default function MentionsLegales() {
               Éditeur du site
             </h2>
             <p>
-              Le site studio-ftt.pages.dev est édité par&nbsp;:
+              Le site studioftt.fr est édité par&nbsp;:
               <br />
               <strong className="text-white">Nathan Fautrat</strong>
               <br />

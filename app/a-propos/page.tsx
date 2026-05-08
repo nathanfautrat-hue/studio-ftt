@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/lib/site-config";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbSchema, personSchema } from "@/lib/schema";
+import { breadcrumbSchema, personSchema, aboutPageSchema } from "@/lib/schema";
 
 const TITLE = "À propos — Nathan Fautrat, fondateur de Studio FTT";
 const DESCRIPTION =
@@ -48,6 +48,7 @@ export default function APropos() {
     <main className="bg-black text-white min-h-screen">
       <JsonLd
         data={[
+          aboutPageSchema(),
           breadcrumbSchema([
             { name: "Accueil", url: siteConfig.url },
             { name: "À propos", url: URL_A_PROPOS },
