@@ -96,53 +96,41 @@ export default function Navbar() {
 
           {/* Burger mobile */}
           <button
-            className="md:hidden flex flex-col justify-center items-center shrink-0"
+            className="md:hidden shrink-0"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             style={{
+              position: "relative",
               width: 40,
               height: 40,
               background: "rgba(255,255,255,0.06)",
               border: "1px solid var(--ftt-line)",
               borderRadius: 10,
               cursor: "pointer",
-              gap: 5,
               padding: 0,
             }}
           >
-            <span
-              style={{
-                display: "block",
-                width: 18,
-                height: 1.5,
-                background: "var(--ftt-cream)",
-                borderRadius: 2,
-                transition: "transform 0.25s, opacity 0.25s",
-                transform: open ? "translateY(3.25px) rotate(45deg)" : "none",
-              }}
-            />
-            <span
-              style={{
-                display: "block",
-                width: 18,
-                height: 1.5,
-                background: "var(--ftt-cream)",
-                borderRadius: 2,
-                transition: "opacity 0.2s",
-                opacity: open ? 0 : 1,
-              }}
-            />
-            <span
-              style={{
-                display: "block",
-                width: 18,
-                height: 1.5,
-                background: "var(--ftt-cream)",
-                borderRadius: 2,
-                transition: "transform 0.25s, opacity 0.25s",
-                transform: open ? "translateY(-3.25px) rotate(-45deg)" : "none",
-              }}
-            />
+            {[
+              { y: open ? 0 : -6, rotate: open ? 45 : 0 },
+              { y: 0, rotate: 0, hidden: open },
+              { y: open ? 0 : 6, rotate: open ? -45 : 0 },
+            ].map((bar, i) => (
+              <span
+                key={i}
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  width: 18,
+                  height: 1.5,
+                  background: "var(--ftt-cream)",
+                  borderRadius: 2,
+                  transition: "transform 0.25s ease, opacity 0.2s ease",
+                  transform: `translate(-50%, calc(-50% + ${bar.y}px)) rotate(${bar.rotate}deg)`,
+                  opacity: bar.hidden ? 0 : 1,
+                }}
+              />
+            ))}
           </button>
         </div>
       </header>
