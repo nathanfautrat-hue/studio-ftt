@@ -194,11 +194,11 @@ export default function CGV() {
               suivant la livraison, via le service Cloudflare Pages.
             </p>
             <p className="mt-3">
-              Au-delà de cette première année, l&apos;hébergement reste inclus
-              automatiquement dans le contrat de maintenance mensuelle (35&nbsp;€
-              TTC/mois) si le Client en a souscrit un. Sans contrat de
-              maintenance, un forfait hébergement seul peut être proposé sur
-              demande.
+              Au-delà de cette première année, deux options&nbsp;:
+              <br />— Avec le contrat de maintenance (35&nbsp;€/mois)&nbsp;:
+              l&apos;hébergement est inclus, sans supplément.
+              <br />— Sans maintenance&nbsp;: un forfait hébergement seul est
+              disponible à <strong className="text-white">10&nbsp;€/mois</strong>.
             </p>
             <p className="mt-3">
               <strong className="text-white">Clause d&apos;adaptation&nbsp;:</strong>{" "}
@@ -225,8 +225,8 @@ export default function CGV() {
             <p className="mt-3">
               En cas de résiliation de la maintenance après la première année,
               l&apos;hébergement n&apos;est plus inclus&nbsp;: le Client peut
-              soit migrer son site vers son propre hébergeur, soit souscrire un
-              forfait hébergement seul.
+              soit migrer son site vers son propre hébergeur, soit souscrire le
+              forfait hébergement seul à <strong className="text-white">10&nbsp;€/mois</strong>.
             </p>
           </div>
 
