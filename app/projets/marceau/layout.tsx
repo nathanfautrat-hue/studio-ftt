@@ -3,9 +3,9 @@ import { siteConfig } from "@/lib/site-config";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema, creativeWorkSchema } from "@/lib/schema";
 
-const TITLE = "Atelier Marceau — Site web pour un plombier artisan au Mans";
+const TITLE = "Atelier Marceau — Concept démo Studio FTT (plombier artisan)";
 const DESCRIPTION =
-  "Cas client : site vitrine pour Atelier Marceau, plombier artisan au Mans. Présentation des services (dépannage, salle de bain, chauffage RGE), zone d'intervention en Sarthe, urgence 24/7, demande de devis en ligne.";
+  "Concept démo sectoriel Studio FTT : projet de référence pour un plombier artisan au Mans. Présentation des services (dépannage, salle de bain, chauffage RGE), zone d'intervention en Sarthe, urgence 24/7, demande de devis en ligne. Cas démo non livré à un client réel.";
 
 const URL = `${siteConfig.url}/projets/marceau`;
 
@@ -58,11 +58,10 @@ export default function MarceauLayout({
             { name: "Atelier Marceau", url: URL },
           ]),
           creativeWorkSchema({
-            name: "Atelier Marceau — Site vitrine plombier artisan",
+            name: "Atelier Marceau — Concept démo plombier artisan",
             description: DESCRIPTION,
             url: URL,
-            client: "Atelier Marceau",
-            industry: "Plomberie · Artisanat BTP",
+            industry: "Plomberie · Artisanat BTP — concept démo",
             datePublished: "2026-04-01",
           }),
         ]}
