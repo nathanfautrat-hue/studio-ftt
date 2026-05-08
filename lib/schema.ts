@@ -80,7 +80,7 @@ export function professionalServiceSchema() {
     image: OG_IMAGE,
     logo: LOGO,
     priceRange: "€€",
-    telephone: "",
+    telephone: "+33607033804",
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
