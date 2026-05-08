@@ -82,17 +82,6 @@ export default function Footer() {
                 Instagram
               </a>
             </li>
-            <li>
-              <a
-                href={siteConfig.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="lift"
-                style={{ color: "var(--ftt-cream)", textDecoration: "none", fontSize: 15 }}
-              >
-                LinkedIn
-              </a>
-            </li>
           </ul>
         </div>
       </div>
