@@ -55,6 +55,7 @@ export function organizationSchema() {
       siteConfig.instagram,
       siteConfig.linkedin,
       "https://www.google.com/search?q=Studio+FTT&stick=H4sIAAAAAAAA_-NgU1I1qDBLski1MDYysTRKTTEwMje1MqgwNE8yMDNPSjUwNzRPsTQyXsTKFVxSmpKZr-AWEgIABv32ETYAAAA",
+      "https://www.societe.com/societe/monsieur-nathan-fautrat-104048640.html",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -177,6 +178,7 @@ export function professionalServiceSchema() {
       siteConfig.instagram,
       siteConfig.linkedin,
       "https://www.google.com/search?q=Studio+FTT&stick=H4sIAAAAAAAA_-NgU1I1qDBLski1MDYysTRKTTEwMje1MqgwNE8yMDNPSjUwNzRPsTQyXsTKFVxSmpKZr-AWEgIABv32ETYAAAA",
+      "https://www.societe.com/societe/monsieur-nathan-fautrat-104048640.html",
     ],
   };
 }
