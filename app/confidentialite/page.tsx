@@ -1,15 +1,35 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "Politique de confidentialité — Studio FTT",
+export const metadata: Metadata = {
+  title: "Politique de confidentialité",
   description:
-    "Politique de confidentialité et utilisation des données personnelles sur le site Studio FTT.",
+    "Politique de confidentialité Studio FTT : collecte des données, cookies, durée de conservation, droits RGPD. Aucun tracker tiers, hébergement Cloudflare conforme RGPD.",
+  alternates: {
+    canonical: "/confidentialite",
+    types: {
+      "text/markdown": "/confidentialite.md",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function Confidentialite() {
   return (
     <main className="bg-black text-white min-h-screen">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Politique de confidentialité", url: `${siteConfig.url}/confidentialite` },
+        ])}
+      />
       <Navbar />
 
       <section className="container pt-40 pb-24 max-w-3xl">

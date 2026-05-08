@@ -1,15 +1,32 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "Conditions générales de vente — Studio FTT",
+export const metadata: Metadata = {
+  title: "Conditions générales de vente",
   description:
-    "Conditions générales de vente Studio FTT — création de sites web, hébergement, maintenance et campagnes pour artisans et PME en Sarthe.",
+    "CGV Studio FTT : création de sites web, hébergement, maintenance et campagnes pour artisans et PME en Sarthe. Modalités, paiement, livraison, garanties.",
+  alternates: {
+    canonical: "/cgv",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function CGV() {
   return (
     <main className="bg-black text-white min-h-screen">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Conditions générales de vente", url: `${siteConfig.url}/cgv` },
+        ])}
+      />
       <Navbar />
 
       <section className="container pt-40 pb-24 max-w-3xl">

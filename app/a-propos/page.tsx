@@ -1,16 +1,60 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema, personSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "À propos — Studio FTT",
-  description:
-    "Studio FTT, c'est Nathan, 19 ans, basé en Sarthe. Je crée des sites web pour les artisans, indépendants et petites équipes qui veulent un truc fait pour eux.",
+const TITLE = "À propos — Nathan Fautrat, fondateur de Studio FTT";
+const DESCRIPTION =
+  "Studio FTT, c'est Nathan Fautrat, 19 ans, basé en Sarthe. Designer et développeur web indépendant. Je crée des sites sur-mesure pour les artisans, indépendants et petites équipes qui veulent un site fait pour eux — pas un Wix générique.";
+const URL_A_PROPOS = `${siteConfig.url}/a-propos`;
+
+export const metadata: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    "Nathan Fautrat",
+    "fondateur Studio FTT",
+    "designer web Sarthe",
+    "développeur web indépendant",
+    "studio web Le Mans",
+    "freelance web Sarthe",
+  ],
+  alternates: {
+    canonical: "/a-propos",
+  },
+  openGraph: {
+    type: "profile",
+    locale: "fr_FR",
+    url: URL_A_PROPOS,
+    siteName: siteConfig.name,
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.png"],
+    firstName: "Nathan",
+    lastName: "Fautrat",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.png"],
+  },
 };
 
 export default function APropos() {
   return (
     <main className="bg-black text-white min-h-screen">
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", url: siteConfig.url },
+            { name: "À propos", url: URL_A_PROPOS },
+          ]),
+          personSchema(),
+        ]}
+      />
       <Navbar />
 
       {/* HERO */}

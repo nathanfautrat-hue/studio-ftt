@@ -1,15 +1,35 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "Mentions légales — Studio FTT",
+export const metadata: Metadata = {
+  title: "Mentions légales",
   description:
-    "Mentions légales du site Studio FTT — agence web en Sarthe.",
+    "Mentions légales du site Studio FTT — éditeur, hébergeur, propriété intellectuelle, contact. Conformité LCEN.",
+  alternates: {
+    canonical: "/mentions-legales",
+    types: {
+      "text/markdown": "/mentions-legales.md",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function MentionsLegales() {
   return (
     <main className="bg-black text-white min-h-screen">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Mentions légales", url: `${siteConfig.url}/mentions-legales` },
+        ])}
+      />
       <Navbar />
 
       <section className="container pt-40 pb-24 max-w-3xl">

@@ -19,10 +19,14 @@ import { siteConfig } from "../site.config.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.resolve(__dirname, "..", "out");
 const SITE_URL = siteConfig.url;
-const EXCLUDE = new Set(["404.html"]);
+const EXCLUDE = new Set([
+  "404.html",
+  "og-image-source.html", // utilitaire de génération d'OG image, pas une vraie page
+]);
 // Fichiers à exclure du sitemap (mais qui restent servis publiquement)
 const EXCLUDE_PATTERNS = [
   /^google[a-f0-9]+\.html$/, // fichiers de vérification Google Search Console
+  /^demo\//, // sites démo : servis pour les fiches projet, mais pas dans le sitemap principal
 ];
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -65,9 +69,8 @@ function htmlToUrlPath(rel) {
   // index.html → /
   // confidentialite.html → /confidentialite
   // projets/marceau.html → /projets/marceau
-  // tarifs.html → /tarifs.html (page statique gardée avec son extension)
+  // tarifs.html → /tarifs (page Next.js depuis app/tarifs/page.tsx)
   if (rel === "index.html") return "/";
-  if (rel === "tarifs.html") return "/tarifs.html";
   return "/" + rel.replace(/\.html$/, "");
 }
 

@@ -1,0 +1,110 @@
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+
+const TITLE = "Tarifs : sites web à partir de 500 € — livraison 2 semaines";
+const DESCRIPTION =
+  "Tarifs Studio FTT : site Vitrine 500 €, Visibilité 750 € (SEO avancé + Google Business), Sur-mesure dès 1 000 €. Maintenance 35 €/mois optionnelle. Sans abonnement caché, hébergement Cloudflare offert.";
+
+const URL = `${siteConfig.url}/tarifs`;
+
+export const metadata: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    "prix création site internet",
+    "tarif site web artisan",
+    "tarif agence web Sarthe",
+    "site web 500 euros",
+    "tarifs Studio FTT",
+    "site vitrine pas cher",
+    "création site web indépendant",
+  ],
+  alternates: {
+    canonical: "/tarifs",
+    types: {
+      "text/markdown": "/tarifs.md",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: URL,
+    siteName: siteConfig.name,
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.png"],
+  },
+};
+
+export default function TarifsLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const services = [
+    {
+      name: "Site Vitrine Studio FTT",
+      price: "500",
+      description:
+        "Site sur-mesure complet pour démarrer : design adapté à votre secteur, formulaire de contact, SEO de base (title, meta, Hn, sitemap), mise en ligne incluse, 1 modification gratuite.",
+      features: [
+        "Site sur-mesure (aucun template)",
+        "Design adapté à votre secteur",
+        "Formulaire de contact",
+        "SEO de base (title, meta, structure Hn)",
+        "Mise en ligne incluse",
+        "1 modification gratuite",
+      ],
+      url: URL,
+    },
+    {
+      name: "Site Visibilité Studio FTT",
+      price: "750",
+      description:
+        "Tout ce qu'inclut Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiche Google Business Profile configurée. Le pack le plus choisi par les artisans et indépendants.",
+      features: [
+        "Tout ce qu'inclut Vitrine",
+        "SEO avancé (mots-clés ciblés, schema.org)",
+        "Fiche Google Business Profile configurée",
+        "1 modification gratuite",
+      ],
+      url: URL,
+    },
+    {
+      name: "Site Sur-mesure Studio FTT",
+      price: "1000",
+      description:
+        "Tout ce qu'inclut Visibilité + site multi-pages (5 pages et plus) + fonctionnalités sur mesure selon le projet. Devis personnalisé.",
+      features: [
+        "Tout ce qu'inclut Visibilité",
+        "Site multi-pages (5 pages et plus)",
+        "Fonctionnalités sur mesure selon le projet",
+        "1 modification gratuite",
+      ],
+      url: URL,
+    },
+  ];
+
+  return (
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", url: siteConfig.url },
+            { name: "Tarifs", url: URL },
+          ]),
+          ...services.map(serviceSchema),
+        ]}
+      />
+      {children}
+    </>
+  );
+}

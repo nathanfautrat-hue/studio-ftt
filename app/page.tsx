@@ -15,6 +15,8 @@ import {
   CabinetAtlasPreview,
 } from "@/components/ProjectPreviews";
 import { siteConfig } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import { faqPageSchema } from "@/lib/schema";
 
 const PROJECTS: StackProject[] = [
   {
@@ -167,6 +169,7 @@ export default function Home() {
 
   return (
     <main className="ftt-grain" style={{ background: "var(--ftt-black)", color: "var(--ftt-cream)" }}>
+      <JsonLd data={faqPageSchema(FAQ)} />
       <Navbar />
 
       {/* HERO */}

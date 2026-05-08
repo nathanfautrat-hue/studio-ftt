@@ -1,7 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, DM_Sans, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { siteConfig } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import {
+  organizationSchema,
+  professionalServiceSchema,
+  webSiteSchema,
+  personSchema,
+} from "@/lib/schema";
 
 const bebas = Bebas_Neue({
   weight: "400",
@@ -26,10 +34,108 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const TITLE_DEFAULT = "Studio FTT — Agence web Sarthe · Sites pour artisans et indépendants";
+const TITLE_TEMPLATE = "%s — Studio FTT";
+const DESCRIPTION =
+  "Studio web indépendant en Sarthe. Sites sur-mesure pour artisans, professions libérales et PME — livrés en 2 semaines, à partir de 500 €. SEO local, hébergement Cloudflare offert, zéro abonnement caché.";
+
 export const metadata: Metadata = {
-  title: "Studio FTT — Agence web Sarthe",
-  description:
-    "Studio indépendant pour artisans et PME. On dessine, on développe, on référence — vous obtenez un site qui rassure, et qui vous amène des clients.",
+  metadataBase: new globalThis.URL(siteConfig.url),
+  title: {
+    default: TITLE_DEFAULT,
+    template: TITLE_TEMPLATE,
+  },
+  description: DESCRIPTION,
+  applicationName: "Studio FTT",
+  authors: [{ name: "Nathan Fautrat", url: `${siteConfig.url}/a-propos` }],
+  creator: "Nathan Fautrat",
+  publisher: "Studio FTT",
+  generator: "Next.js",
+  keywords: [
+    "agence web Sarthe",
+    "création site internet Sarthe",
+    "création site internet Le Mans",
+    "site web artisan",
+    "site internet plombier",
+    "site internet kiné",
+    "studio web indépendant",
+    "site sur-mesure",
+    "Next.js Cloudflare Pages",
+    "SEO local Sarthe",
+    "Studio FTT",
+    "Nathan Fautrat",
+  ],
+  category: "Web design and development",
+  alternates: {
+    canonical: "/",
+    types: {
+      "text/markdown": "/index.md",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: TITLE_DEFAULT,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Studio FTT — Agence web sur-mesure en Sarthe",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE_DEFAULT,
+    description: DESCRIPTION,
+    images: ["/og-image.png"],
+    creator: "@studio.ftt",
+    site: "@studio.ftt",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/logo_ftt.png", sizes: "any", type: "image/png" },
+      { url: "/logo_ftt.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/logo_ftt.png",
+    apple: [{ url: "/logo_ftt.png", sizes: "180x180", type: "image/png" }],
+  },
+  manifest: "/manifest.webmanifest",
+  verification: {
+    google: "e0b516b7a7957f16",
+  },
+  other: {
+    "geo.region": "FR-72",
+    "geo.placename": "Arthezé, Sarthe",
+    "geo.position": "47.8311;-0.0883",
+    ICBM: "47.8311, -0.0883",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -42,6 +148,26 @@ export default function RootLayout({
       lang="fr"
       className={`${bebas.variable} ${dm.variable} ${playfair.variable} ${mono.variable}`}
     >
+      <head>
+        {/* JSON-LD global : Organization + WebSite + ProfessionalService + Person en @graph */}
+        <JsonLd
+          data={[
+            organizationSchema(),
+            webSiteSchema(),
+            professionalServiceSchema(),
+            personSchema(),
+          ]}
+        />
+        {/* Préconnect réseaux Google Fonts (déjà géré par next/font, mais sécurise) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        {/* DNS prefetch Cloudflare Insights */}
+        <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
+        {/* Lien explicite vers le sitemap (signal redondant utile) */}
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        {/* llms.txt pour les crawlers AI */}
+        <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+      </head>
       <body>
         {children}
         {/* Cloudflare Web Analytics */}
