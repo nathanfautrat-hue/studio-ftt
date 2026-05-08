@@ -111,10 +111,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/logo_ftt.png", sizes: "any", type: "image/png" },
-      { url: "/logo_ftt.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/logo_ftt.png", sizes: "any", type: "image/png" }],
     shortcut: "/logo_ftt.png",
     apple: [{ url: "/logo_ftt.png", sizes: "180x180", type: "image/png" }],
   },
