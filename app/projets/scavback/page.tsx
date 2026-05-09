@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "@/components/Reveal";
 import BackLink from "@/components/BackLink";
 import Footer from "@/components/Footer";
 
@@ -22,11 +22,7 @@ export default function ScavbackPage() {
 
       {/* HERO */}
       <section className="pt-36 pb-16 container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
+        <div className="fade-in-up">
           <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-4">
             Collectif artistique · 2026
           </div>
@@ -47,7 +43,7 @@ export default function ScavbackPage() {
               Visiter le site <span className="btn__arrow">→</span>
             </a>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* META */}
@@ -115,20 +111,15 @@ export default function ScavbackPage() {
                   d: "Mise en ligne, configuration DNS, suivi post-livraison.",
                 },
               ].map((s, i) => (
-                <motion.div
-                  key={s.t}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="rounded-2xl border border-white/10 bg-white/[0.02] p-8"
-                >
+                <Reveal key={s.t} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
                   <div className="text-[10px] tracking-[0.3em] uppercase text-[#E8352A] mb-3">
                     0{i + 1}
                   </div>
                   <h3 className="font-display text-2xl mb-3">{s.t}</h3>
                   <p className="text-white/60 text-sm leading-relaxed">{s.d}</p>
-                </motion.div>
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>

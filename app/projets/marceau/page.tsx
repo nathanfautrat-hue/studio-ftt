@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "@/components/Reveal";
 import BackLink from "@/components/BackLink";
 
 const NAVY = "#0F2C47";
@@ -422,15 +422,11 @@ export default function MarceauPage() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((s, i) => (
-            <motion.div
-              key={s.t}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="group p-8 rounded-2xl bg-white border transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_30px_60px_-20px_rgba(15,44,71,0.25)]"
-              style={{ borderColor: "rgba(15,44,71,0.08)" }}
-            >
+            <Reveal key={s.t} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
+              <div
+                className="group p-8 rounded-2xl bg-white border transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_30px_60px_-20px_rgba(15,44,71,0.25)]"
+                style={{ borderColor: "rgba(15,44,71,0.08)" }}
+              >
               <div className="flex items-start justify-between mb-6">
                 <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center transition-colors duration-300 group-hover:scale-105"
@@ -454,7 +450,8 @@ export default function MarceauPage() {
               <p className="text-sm leading-relaxed" style={{ color: "rgba(26,29,34,0.65)" }}>
                 {s.d}
               </p>
-            </motion.div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -561,15 +558,11 @@ export default function MarceauPage() {
           </div>
           <div className="grid md:grid-cols-4 gap-6 md:gap-5">
             {etapes.map((e, i) => (
-              <motion.div
-                key={e.n}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative p-8 rounded-2xl"
-                style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
-              >
+              <Reveal key={e.n} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
+                <div
+                  className="relative p-8 rounded-2xl"
+                  style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+                >
                 <div
                   className="text-5xl mb-6"
                   style={{ fontFamily: "var(--font-playfair), serif", color: ORANGE }}
@@ -583,7 +576,8 @@ export default function MarceauPage() {
                   {e.t}
                 </h3>
                 <p className="text-sm opacity-75 leading-relaxed">{e.d}</p>
-              </motion.div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -687,15 +681,11 @@ export default function MarceauPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {avis.map((a, i) => (
-              <motion.div
-                key={a.n}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="p-8 rounded-2xl border"
-                style={{ backgroundColor: CREAM, borderColor: "rgba(15,44,71,0.08)" }}
-              >
+              <Reveal key={a.n} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
+                <div
+                  className="p-8 rounded-2xl border"
+                  style={{ backgroundColor: CREAM, borderColor: "rgba(15,44,71,0.08)" }}
+                >
                 <div style={{ color: ORANGE }} className="text-sm mb-4">★★★★★</div>
                 <h3
                   className="text-xl mb-4 leading-snug"
@@ -715,7 +705,8 @@ export default function MarceauPage() {
                     {a.v}
                   </div>
                 </div>
-              </motion.div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
