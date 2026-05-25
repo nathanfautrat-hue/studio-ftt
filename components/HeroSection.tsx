@@ -116,9 +116,9 @@ export default function HeroSection() {
                 margin: 0,
               }}
             >
-              Studio indépendant pour artisans et PME. On dessine, on développe,
-              on référence — vous obtenez un site qui rassure, et qui vous amène
-              des clients.
+              Studio web basé en Sarthe, au Mans et alentours. On crée des sites
+              internet sur-mesure pour artisans et PME — propres, rapides, et qui
+              vous amènent des clients.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
               <a href="#projets" className="btn btn--ghost justify-center w-full sm:w-auto">

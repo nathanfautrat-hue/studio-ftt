@@ -55,6 +55,31 @@ export default function Footer() {
           >
             {siteConfig.email}
           </a>
+          <a
+            href="tel:+33607033804"
+            className="lift"
+            style={{
+              display: "block",
+              marginTop: 8,
+              color: "var(--ftt-cream)",
+              textDecoration: "none",
+              fontSize: 15,
+            }}
+          >
+            06 07 03 38 04
+          </a>
+          <address
+            style={{
+              marginTop: 10,
+              fontSize: 13,
+              lineHeight: 1.5,
+              color: "var(--ftt-text-dim)",
+              fontStyle: "normal",
+            }}
+          >
+            7 rue du Fromenteau<br />
+            72270 Arthezé, Sarthe
+          </address>
         </div>
 
         <div>

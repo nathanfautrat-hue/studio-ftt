@@ -115,6 +115,14 @@ export function professionalServiceSchema() {
         "@type": "AdministrativeArea",
         name: "Pays de la Loire",
       },
+      {
+        "@type": "City",
+        name: "Le Mans",
+      },
+      {
+        "@type": "City",
+        name: "Arthezé",
+      },
     ],
     serviceType: [
       "Création de site web",

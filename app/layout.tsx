@@ -34,10 +34,10 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-const TITLE_DEFAULT = "Studio FTT — Agence web Sarthe · Sites pour artisans et indépendants";
+const TITLE_DEFAULT = "Studio FTT — Création site internet Sarthe & Le Mans";
 const TITLE_TEMPLATE = "%s — Studio FTT";
 const DESCRIPTION =
-  "Studio web indépendant en Sarthe. Sites sur-mesure pour artisans, professions libérales et PME — livrés en 2 semaines, à partir de 500 €. SEO local, hébergement Cloudflare offert, zéro abonnement caché.";
+  "Création de site internet en Sarthe et au Mans. Sites sur-mesure pour artisans et PME — livrés en 2 semaines, à partir de 500 €. SEO local inclus.";
 
 export const metadata: Metadata = {
   metadataBase: new globalThis.URL(siteConfig.url),
