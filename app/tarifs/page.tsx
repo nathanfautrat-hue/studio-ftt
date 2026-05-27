@@ -343,6 +343,245 @@ export default function Tarifs() {
         </div>
       </section>
 
+      {/* CAMPAGNES */}
+      <section
+        className="mx-auto section-x"
+        style={{
+          maxWidth: 1320,
+          borderTop: "1px solid var(--ftt-line)",
+          paddingTop: "clamp(48px, 6vw, 80px)",
+          paddingBottom: "clamp(64px, 8vw, 120px)",
+        }}
+      >
+        <Reveal>
+          <div className="flex items-baseline" style={{ gap: 14, marginBottom: 24 }}>
+            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(04)</span>
+            <span
+              className="font-mono"
+              style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-text-dim)" }}
+            >
+              Campagnes publicitaires
+            </span>
+          </div>
+        </Reveal>
+
+        <Reveal delay={1}>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 0.95, margin: "0 0 16px" }}
+          >
+            ALLER{" "}
+            <em
+              className="font-serif"
+              style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}
+            >
+              chercher
+            </em>{" "}
+            les clients.
+          </h2>
+        </Reveal>
+
+        <Reveal delay={2}>
+          <p
+            style={{
+              fontSize: 16,
+              color: "var(--ftt-text-mid)",
+              maxWidth: 720,
+              lineHeight: 1.6,
+              marginBottom: 48,
+            }}
+          >
+            Gestion de campagnes Google Ads, Meta (Facebook · Instagram) et SEO local.
+            Tarif mensuel sans engagement —{" "}
+            <span style={{ color: "var(--ftt-cream)", fontWeight: 500 }}>
+              budget publicitaire en plus, payé directement à la plateforme
+            </span>{" "}
+            (≥ 150 €/mois recommandé pour des résultats sérieux).
+          </p>
+        </Reveal>
+
+        <div className="grid md:grid-cols-2 gap-5">
+          {[
+            {
+              id: "presence-locale",
+              name: "Présence locale",
+              price: "300 €",
+              sub: "/mois · hors budget pub",
+              featured: false,
+              desc: "Pour rester visible sur ta zone et capter la demande locale toute l'année.",
+              features: [
+                "1 campagne Google Ads locale",
+                "Fiche Google Business optimisée chaque mois",
+                "1 visuel publicitaire par mois",
+                "Rapport mensuel simple (vues · clics · appels)",
+              ],
+            },
+            {
+              id: "leader",
+              name: "Leader",
+              price: "600 €",
+              sub: "/mois · hors budget pub",
+              featured: true,
+              desc: "Pour devenir le numéro 1 de ton secteur sur ta ville.",
+              features: [
+                "Tout ce qu'inclut Présence locale",
+                "Campagnes Meta (Facebook + Instagram)",
+                "Jusqu'à 4 visuels publicitaires par mois",
+                "A/B test des audiences et créas",
+                "SEO local renforcé (citations, backlinks)",
+                "Rapport détaillé + appel stratégique mensuel",
+              ],
+            },
+          ].map((c, i) => (
+            <Reveal key={c.id} delay={((i + 1) as 1 | 2)}>
+              <div
+                className="flex flex-col"
+                style={{
+                  position: "relative",
+                  height: "100%",
+                  borderRadius: 18,
+                  border: c.featured
+                    ? "1px solid rgba(232,53,42,0.5)"
+                    : "1px solid var(--ftt-line-strong)",
+                  background: c.featured
+                    ? "linear-gradient(160deg, rgba(232,53,42,0.08), rgba(255,255,255,0.01))"
+                    : "rgba(255,255,255,0.02)",
+                  padding: "clamp(24px, 3vw, 36px)",
+                }}
+              >
+                {c.featured && (
+                  <div
+                    className="font-mono"
+                    style={{
+                      position: "absolute",
+                      top: -1,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "var(--ftt-red)",
+                      color: "#fff",
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      textTransform: "uppercase",
+                      padding: "5px 16px",
+                      borderRadius: "0 0 10px 10px",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Le plus complet
+                  </div>
+                )}
+
+                <div style={{ marginBottom: 24, paddingTop: c.featured ? 12 : 0 }}>
+                  <div
+                    className="font-mono"
+                    style={{
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      textTransform: "uppercase",
+                      color: c.featured ? "var(--ftt-red)" : "var(--ftt-text-dim)",
+                      marginBottom: 10,
+                    }}
+                  >
+                    {c.id}
+                  </div>
+                  <div
+                    className="font-display"
+                    style={{ fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1, marginBottom: 6 }}
+                  >
+                    {c.name.toUpperCase()}
+                  </div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>
+                    <span
+                      style={{
+                        fontSize: "clamp(26px, 3vw, 36px)",
+                        fontWeight: 700,
+                        color: c.featured ? "var(--ftt-red)" : "var(--ftt-cream)",
+                        lineHeight: 1,
+                      }}
+                    >
+                      {c.price}
+                    </span>
+                    <span
+                      className="font-mono"
+                      style={{ fontSize: 11, color: "var(--ftt-text-dim)", letterSpacing: "0.1em" }}
+                    >
+                      {c.sub}
+                    </span>
+                  </div>
+                </div>
+
+                <p
+                  style={{
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                    color: "var(--ftt-text-mid)",
+                    marginBottom: 24,
+                    paddingBottom: 24,
+                    borderBottom: "1px solid var(--ftt-line)",
+                  }}
+                >
+                  {c.desc}
+                </p>
+
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: "0 0 32px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 12,
+                    flex: 1,
+                  }}
+                >
+                  {c.features.map((f) => (
+                    <li
+                      key={f}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: 10,
+                        fontSize: 14,
+                        lineHeight: 1.5,
+                        color: "var(--ftt-text-mid)",
+                      }}
+                    >
+                      <span style={{ color: "var(--ftt-red)", flexShrink: 0, marginTop: 1 }}>✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={siteConfig.calendly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={c.featured ? "btn btn--solid" : "btn btn--ghost"}
+                  style={{ justifyContent: "center" }}
+                >
+                  En discuter <span className="btn__arrow">→</span>
+                </a>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={3}>
+          <p
+            style={{
+              fontSize: 13,
+              color: "var(--ftt-text-dim)",
+              marginTop: 24,
+              lineHeight: 1.6,
+              maxWidth: 720,
+            }}
+          >
+            Sans engagement, résiliable à tout moment avec un mois de préavis.
+            Le budget publicitaire (Google, Meta) est payé directement par tes soins à la plateforme — tu gardes la main sur tes dépenses.
+          </p>
+        </Reveal>
+      </section>
+
       {/* CTA FINAL */}
       <section
         className="mx-auto section-x"
