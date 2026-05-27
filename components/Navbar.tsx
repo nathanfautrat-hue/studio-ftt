@@ -63,7 +63,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           {/* CTA */}
           <a
-            href="#contact"
+            href="/#contact"
             className="inline-flex items-center shrink-0"
             style={{
               gap: 8,
