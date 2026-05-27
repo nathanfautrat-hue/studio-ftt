@@ -20,6 +20,13 @@ export default function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Fallback : si IntersectionObserver n'existe pas, on révèle direct.
+    if (typeof IntersectionObserver === "undefined") {
+      el.classList.add("is-in");
+      return;
+    }
+
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -32,7 +39,20 @@ export default function Reveal({
       { threshold: 0.12 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    // Filet de sécurité : si l'observer ne s'est jamais déclenché après 1.2s
+    // (extension navigateur qui bloque, bug rare), on force la révélation.
+    const safety = window.setTimeout(() => {
+      if (!el.classList.contains("is-in")) {
+        el.classList.add("is-in");
+        obs.disconnect();
+      }
+    }, 1200);
+
+    return () => {
+      obs.disconnect();
+      window.clearTimeout(safety);
+    };
   }, []);
 
   const delayClass = delay ? ` delay-${delay}` : "";

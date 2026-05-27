@@ -154,6 +154,11 @@ html {
 .reveal-up.delay-3 { transition-delay: 0.24s; }
 .reveal-up.delay-4 { transition-delay: 0.32s; }
 
+/* Fallback : si JS désactivé, on force tout en visible */
+@media (scripting: none) {
+  .reveal-up { opacity: 1 !important; transform: none !important; }
+}
+
 /* Animation immédiate (équivalent framer-motion animate) */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
