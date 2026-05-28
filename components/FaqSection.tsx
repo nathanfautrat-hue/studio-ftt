@@ -19,7 +19,7 @@ export default function FaqSection() {
       <JsonLd data={faqPageSchema(FAQ)} />
 
       <Reveal>
-        <SectionHeader num="03" label="Questions fréquentes" title="FAQ." />
+        <SectionHeader num="05" label="Questions fréquentes" title="FAQ." />
       </Reveal>
 
       <div style={{ maxWidth: 860 }}>

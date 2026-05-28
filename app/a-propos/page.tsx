@@ -59,17 +59,30 @@ export default function APropos() {
       <Navbar />
 
       {/* HERO */}
-      <section className="container pt-40 pb-20 max-w-3xl">
-        <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-4">
-          À propos
+      <section className="container pt-40 pb-20">
+        <div className="grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-center max-w-5xl">
+          <div>
+            <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-4">
+              À propos
+            </div>
+            <h1 className="font-display text-5xl md:text-7xl leading-[1.05] mb-8">
+              Salut, moi c&apos;est <span className="text-[#E8352A]">Nathan</span>.
+            </h1>
+            <p className="text-xl md:text-2xl text-white/80 leading-relaxed font-light">
+              19 ans, je crée des sites web pour les pros qui veulent un truc fait
+              pour eux, pas un Wix de plus.
+            </p>
+          </div>
+          <div>
+            <img
+              src="/nathan.webp"
+              alt="Nathan Fautrat, fondateur de Studio FTT"
+              width={951}
+              height={1268}
+              className="w-full max-w-[300px] md:max-w-[360px] mx-auto rounded-2xl border border-white/10 object-cover"
+            />
+          </div>
         </div>
-        <h1 className="font-display text-5xl md:text-7xl leading-[1.05] mb-8">
-          Salut, moi c&apos;est <span className="text-[#E8352A]">Nathan</span>.
-        </h1>
-        <p className="text-xl md:text-2xl text-white/80 leading-relaxed font-light">
-          19 ans, je crée des sites web pour les pros qui veulent un truc fait
-          pour eux, pas un Wix de plus.
-        </p>
       </section>
 
       {/* SÉPARATEUR */}

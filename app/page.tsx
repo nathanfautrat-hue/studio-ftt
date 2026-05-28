@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ApprocheSection from "@/components/ApprocheSection";
+import TarifsSection from "@/components/TarifsSection";
+import AproposSection from "@/components/AproposSection";
 import ProjectStack from "@/components/ProjectStack";
 import FaqSection from "@/components/FaqSection";
 import ContactSection from "@/components/ContactSection";
@@ -15,6 +17,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <ApprocheSection />
+      <TarifsSection />
 
       {/* PROJETS */}
       <section
@@ -23,11 +26,12 @@ export default function Home() {
         style={{ maxWidth: 1320 }}
       >
         <Reveal>
-          <SectionHeader num="02" label="Sélection de projets" title="LES PROJETS." />
+          <SectionHeader num="03" label="Sélection de projets" title="LES PROJETS." />
         </Reveal>
         <ProjectStack projects={PROJECTS} />
       </section>
 
+      <AproposSection />
       <FaqSection />
       <ContactSection />
       <Footer />

@@ -149,3 +149,64 @@ export const APPROCHE: ApprocheStep[] = [
     action: "Mise en ligne + vidéo livrée",
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Tarifs (packs sites web) — source unique partagée par /tarifs et la home
+// ---------------------------------------------------------------------------
+
+export type Plan = {
+  id: string;
+  name: string;
+  price: string;
+  sub: string;
+  featured: boolean;
+  desc: string;
+  features: string[];
+};
+
+export const PLANS: Plan[] = [
+  {
+    id: "vitrine",
+    name: "Vitrine",
+    price: "500 €",
+    sub: "one-shot, tout compris",
+    featured: false,
+    desc: "Pour démarrer avec un site propre et référencé.",
+    features: [
+      "Site sur-mesure (aucun template)",
+      "Design adapté à votre secteur",
+      "Formulaire de contact",
+      "SEO de base (title, meta, structure Hn)",
+      "Mise en ligne incluse",
+      "1 modification gratuite",
+    ],
+  },
+  {
+    id: "visibilite",
+    name: "Visibilité",
+    price: "750 €",
+    sub: "one-shot, tout compris",
+    featured: true,
+    desc: "Le choix de la plupart des artisans et indépendants.",
+    features: [
+      "Tout ce qu'inclut Vitrine",
+      "SEO avancé (mots-clés ciblés, schema.org)",
+      "Fiche Google Business Profile configurée",
+      "1 modification gratuite",
+    ],
+  },
+  {
+    id: "sur-mesure",
+    name: "Sur-mesure",
+    price: "à partir de 1 000 €",
+    sub: "devis personnalisé",
+    featured: false,
+    desc: "Pour les projets plus complets ou avec des besoins spécifiques.",
+    features: [
+      "Tout ce qu'inclut Visibilité",
+      "Site multi-pages (5 pages et plus)",
+      "Fonctionnalités sur mesure selon le projet",
+      "1 modification gratuite",
+    ],
+  },
+];

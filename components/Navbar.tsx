@@ -6,10 +6,10 @@ import LogoMark from "./LogoMark";
 
 const NAV_LINKS = [
   { label: "Approche", href: "/#approche" },
+  { label: "Tarifs", href: "/#tarifs" },
   { label: "Projets", href: "/#projets" },
-  { label: "Tarifs", href: "/tarifs" },
-  { label: "Contact", href: "/#contact" },
-  { label: "À propos", href: "/a-propos" },
+  { label: "À propos", href: "/#apropos" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Navbar() {
@@ -61,6 +61,21 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
+          {/* Téléphone */}
+          <a
+            href="tel:+33607033804"
+            className="hidden md:inline-flex items-center lift"
+            style={{
+              color: "var(--ftt-text-mid)",
+              textDecoration: "none",
+              fontSize: 13,
+              fontWeight: 500,
+              whiteSpace: "nowrap",
+            }}
+          >
+            06 07 03 38 04
+          </a>
+
           {/* CTA */}
           <a
             href="/#contact"
