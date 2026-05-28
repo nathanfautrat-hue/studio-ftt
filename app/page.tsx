@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import PourQuiSection from "@/components/PourQuiSection";
 import ApprocheSection from "@/components/ApprocheSection";
 import TarifsSection from "@/components/TarifsSection";
 import AproposSection from "@/components/AproposSection";
@@ -16,6 +17,7 @@ export default function Home() {
     <main className="ftt-grain" style={{ background: "var(--ftt-black)", color: "var(--ftt-cream)" }}>
       <Navbar />
       <HeroSection />
+      <PourQuiSection />
       <ApprocheSection />
       <TarifsSection />
 

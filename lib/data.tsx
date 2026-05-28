@@ -116,6 +116,18 @@ export const FAQ: FaqItem[] = [
     q: "Quelle différence avec Wix ou Squarespace ?",
     a: "Le site est conçu sur-mesure pour votre activité, pas depuis un template générique. Il charge plus vite, il est mieux référencé, et vous n'avez pas d'abonnement mensuel lié à une plateforme.",
   },
+  {
+    q: "Y a-t-il un abonnement ou des frais cachés ?",
+    a: "Non, aucun abonnement obligatoire. L'hébergement est offert la première année, puis 10 €/mois (ou inclus dans la maintenance à 35 €/mois si vous la prenez). Le seul coût récurrent, c'est votre nom de domaine : vous l'achetez à votre nom (une dizaine d'euros par an), il vous appartient, et on le configure gratuitement.",
+  },
+  {
+    q: "Vous travaillez partout en France ?",
+    a: "Oui. On est basé en Sarthe mais on travaille à distance dans toute la France, en visio et par email. Le rendez-vous en présentiel reste possible en Sarthe et alentours.",
+  },
+  {
+    q: "Et après la mise en ligne, vous disparaissez ?",
+    a: "Non. Une modification est offerte à la livraison et on reste joignable ensuite. La maintenance à 35 €/mois couvre les modifications régulières si vous voulez être tranquille.",
+  },
 ];
 
 // ---------------------------------------------------------------------------
