@@ -98,7 +98,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Combien de temps pour livrer ?",
-    a: "Entre 3 jours et 2 semaines après réception de vos contenus.",
+    a: "En 14 jours ouvrés après réception de l'acompte et de vos contenus.",
   },
   {
     q: "Je n'ai pas de textes ni de photos — vous gérez ?",
@@ -133,19 +133,19 @@ export const APPROCHE: ApprocheStep[] = [
   {
     num: "01",
     title: "On s'appelle",
-    desc: "15 minutes pour comprendre votre activité, vos clients, ce que vous attendez du site. On vous dit ce qu'on peut faire et comment.",
+    desc: "15 minutes pour comprendre votre métier et vos clients. On vous dit franchement si on peut vous aider, sans jargon et sans vous pousser à signer.",
     action: "Appel de découverte · 15 min",
   },
   {
     num: "02",
     title: "On construit",
-    desc: "Design, développement, textes, référencement — on s'occupe de tout. Vous validez avant la mise en ligne.",
+    desc: "Design, textes, développement, référencement : on s'occupe de tout. Vous validez la maquette avant qu'on code la moindre ligne, donc vous voyez exactement votre site avant qu'il parte en ligne.",
     action: "Design → Dev → Validation",
   },
   {
     num: "03",
     title: "On lance",
-    desc: "Le site est en ligne. On vous envoie une vidéo explicative pour que vous sachiez exactement ce que vous avez entre les mains.",
+    desc: "Votre site est en ligne. On vous envoie une vidéo personnalisée qui vous présente votre site en détail, pour que vous sachiez exactement ce que vous avez.",
     action: "Mise en ligne + vidéo livrée",
   },
 ];

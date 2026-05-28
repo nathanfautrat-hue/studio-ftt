@@ -37,7 +37,7 @@ const mono = JetBrains_Mono({
 const TITLE_DEFAULT = "Studio FTT — Création site internet Sarthe & Le Mans";
 const TITLE_TEMPLATE = "%s — Studio FTT";
 const DESCRIPTION =
-  "Création de site internet en Sarthe et au Mans. Sites sur-mesure pour artisans et PME — livrés en 2 semaines, à partir de 500 €. SEO local inclus.";
+  "Création de site internet en Sarthe et au Mans. Sites sur-mesure pour artisans et PME — livrés en 14 jours, à partir de 500 €. SEO local inclus.";
 
 export const metadata: Metadata = {
   metadataBase: new globalThis.URL(siteConfig.url),

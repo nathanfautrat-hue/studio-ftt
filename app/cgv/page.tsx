@@ -156,8 +156,8 @@ export default function CGV() {
             </h2>
             <p>
               Le délai standard de création d&apos;un site vitrine est de{" "}
-              <strong className="text-white">2 semaines</strong> à compter de la
-              réception de l&apos;acompte ET de l&apos;ensemble des contenus
+              <strong className="text-white">14 jours ouvrés</strong> à compter de
+              la réception de l&apos;acompte ET de l&apos;ensemble des contenus
               fournis par le Client (textes, photos, logo, accès Google
               Business le cas échéant).
             </p>

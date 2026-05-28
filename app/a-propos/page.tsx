@@ -121,7 +121,7 @@ export default function APropos() {
             </p>
             <p>
               Je livre en{" "}
-              <strong className="text-white">2 semaines</strong>, pas en
+              <strong className="text-white">14 jours</strong>, pas en
               3&nbsp;mois. Devis gratuit et écrit avant de toucher à quoi que
               ce soit. Si je peux pas tenir un délai, je vous préviens avant.
               Pas après.
@@ -181,7 +181,7 @@ export default function APropos() {
                 d: "Écrit, détaillé, sans surprise. Vous savez ce que vous payez avant qu'on démarre.",
               },
               {
-                t: "Site livré en 2 semaines",
+                t: "Site livré en 14 jours",
                 d: "À compter du moment où j'ai vos contenus en main et l'acompte versé.",
               },
               {

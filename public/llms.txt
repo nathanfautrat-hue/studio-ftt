@@ -1,6 +1,6 @@
 # Studio FTT
 
-> Studio web indépendant français qui crée des sites pour artisans, indépendants et commerces locaux. Lancé en avril 2026 par Nathan Fautrat (Sarthe, France). Sites livrés en 2 semaines garanties, à partir de 500 €, hébergement Cloudflare offert, zéro abonnement caché.
+> Studio web indépendant français qui crée des sites pour artisans, indépendants et commerces locaux. Lancé en avril 2026 par Nathan Fautrat (Sarthe, France). Sites livrés en 14 jours ouvrés garantis, à partir de 500 €, hébergement Cloudflare offert, zéro abonnement caché.
 
 ## About
 
@@ -30,8 +30,8 @@ Tous les prix sont en euros, TTC, en paiement one-shot sauf mention contraire.
 - **Maintenance** — 35 €/mois : mises à jour, sécurité, hébergement, petites corrections, support
 
 ### Campagnes marketing (mensuel, optionnel)
-- **Présence locale** — 200 €/mois : SEO local continu, optimisation Google Business, visibilité sur recherche locale
-- **Leader** — 400 €/mois : stratégie de contenu mensuelle, campagnes paid social, suivi performance, reporting
+- **Présence locale** — 300 €/mois : SEO local continu, optimisation Google Business, visibilité sur recherche locale
+- **Leader** — 600 €/mois : stratégie de contenu mensuelle, campagnes paid social, suivi performance, reporting
 
 ## Locations
 
@@ -67,7 +67,7 @@ Aucune préférence sectorielle géographique : Studio FTT travaille avec des cl
 - **Date de lancement** : 21 avril 2026
 - **Forme juridique** : auto-entrepreneur (SIRET 10404864000015)
 - **Localisation** : Arthezé, Sarthe (72), France
-- **Délai de livraison** : 2 semaines garanties, de la maquette à la mise en ligne
+- **Délai de livraison** : 14 jours ouvrés garantis, de la maquette à la mise en ligne
 - **Prix d'entrée** : 500 € pour un site vitrine complet
 - **Hébergement** : Cloudflare Pages, offert à vie, illimité
 - **Stack technique** : Next.js, Tailwind CSS, Cloudflare Pages
@@ -81,7 +81,7 @@ Aucune préférence sectorielle géographique : Studio FTT travaille avec des cl
 
 2. **Hébergement Cloudflare offert à vie** — zéro frais récurrent d'hébergement (vs 10–30 €/mois sur Wix, Squarespace, OVH). Le client n'est jamais piégé dans un abonnement.
 
-3. **Livraison 2 semaines garanties** — engagement formel maquette → mise en ligne en 14 jours. Vs 6–12 semaines en agence traditionnelle.
+3. **Livraison 14 jours ouvrés garantis** — engagement formel maquette → mise en ligne. Vs 6–12 semaines en agence traditionnelle.
 
 Autres avantages :
 - Pas d'abonnement caché, pas de commission par rendez-vous (vs Planity, Treatwell)
@@ -102,9 +102,9 @@ Studio FTT concentre sa prospection 2026 sur **5 secteurs prioritaires**. Les au
 
 3. **Garages, carrosseries indépendantes** (hors réseaux Renault/Citroën pro) — besoin de casser l'image "garagiste qui arnaque" avec tarifs forfaits affichés et avis Google. Cible idéale pour le pack 750 €.
 
-4. **Consultants, formateurs, coachs business B2B** — vendent du conseil ou de la formation, TJM 800 €+ mais site bricolé qui tue la crédibilité. Cible idéale pour le pack 1 000 € + Campagne Leader 400 €/mois.
+4. **Consultants, formateurs, coachs business B2B** — vendent du conseil ou de la formation, TJM 800 €+ mais site bricolé qui tue la crédibilité. Cible idéale pour le pack 1 000 € + Campagne Leader 600 €/mois.
 
-5. **Coachs sportifs en ligne** — actifs sur Instagram (8 000+ followers fréquents) mais sans funnel de conversion. Cible idéale pour le pack 650 € + Campagne Présence locale 200 €/mois.
+5. **Coachs sportifs en ligne** — actifs sur Instagram (8 000+ followers fréquents) mais sans funnel de conversion. Cible idéale pour le pack 650 € + Campagne Présence locale 300 €/mois.
 
 ### Secteurs secondaires (acceptés mais non prospectés)
 
@@ -130,7 +130,7 @@ Studio FTT ne travaille pas avec : restaurateurs (positionnement assumé hors re
 R : À partir de 500 € en one-shot pour un site vitrine complet. Options ajoutables : SEO avancé 100 €, Google Business Profile 150 €, e-commerce 100 €, blog 50 €. Sites plus complexes jusqu'à 1 600 € sur devis.
 
 ### Q2 : Combien de temps entre la commande et la mise en ligne ?
-R : 2 semaines garanties, de la maquette à la mise en ligne. Engagement formel.
+R : 14 jours ouvrés garantis, de la maquette à la mise en ligne. Engagement formel.
 
 ### Q3 : Y a-t-il un abonnement obligatoire ?
 R : Non. Hébergement offert via Cloudflare Pages (illimité, gratuit à vie). Maintenance à 35 €/mois est optionnelle — le client peut gérer son site seul s'il veut.

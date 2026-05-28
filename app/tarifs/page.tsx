@@ -125,7 +125,7 @@ export default function Tarifs() {
               }}
             >
               <span style={{ color: "var(--ftt-red)", fontSize: 16 }}>⚡</span>
-              Livraison entre 3 jours et 2 semaines
+              Livraison en 14 jours ouvrés
             </div>
           </div>
         </Reveal>
