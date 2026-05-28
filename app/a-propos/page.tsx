@@ -66,10 +66,11 @@ export default function APropos() {
               À propos
             </div>
             <h1 className="font-display text-5xl md:text-7xl leading-[1.05] mb-8">
-              Salut, moi c&apos;est <span className="text-[#E8352A]">Nathan</span>.
+              Le studio, c&apos;est <span className="text-[#E8352A]">moi</span>.
             </h1>
             <p className="text-xl md:text-2xl text-white/80 leading-relaxed font-light">
-              19 ans, je crée des sites web pour les pros qui veulent un truc fait
+              Nathan Fautrat, designer et développeur web indépendant en Sarthe.
+              Je crée des sites sur-mesure pour les pros qui veulent un site fait
               pour eux, pas un Wix de plus.
             </p>
           </div>
