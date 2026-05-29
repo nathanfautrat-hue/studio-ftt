@@ -229,6 +229,61 @@ export default function Tarifs() {
         </div>
       </section>
 
+      {/* OPTIONS À LA CARTE */}
+      <section
+        className="mx-auto section-x"
+        style={{
+          maxWidth: 1320,
+          borderTop: "1px solid var(--ftt-line)",
+          paddingTop: "clamp(48px, 6vw, 80px)",
+          paddingBottom: "clamp(48px, 6vw, 80px)",
+        }}
+      >
+        <Reveal>
+          <div className="flex items-baseline" style={{ gap: 14, marginBottom: 32 }}>
+            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>+</span>
+            <span
+              className="font-mono"
+              style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-text-dim)" }}
+            >
+              Options à la carte
+            </span>
+          </div>
+        </Reveal>
+        <div className="grid sm:grid-cols-3 gap-5">
+          {[
+            { name: "Page supplémentaire", price: "300 €", note: "par page, au-delà du pack" },
+            { name: "Rédaction de contenu", price: "250 €", note: "les textes de votre site" },
+            { name: "Blog intégré", price: "350 €", note: "avec 3 articles rédigés" },
+          ].map((o, i) => (
+            <Reveal key={o.name} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
+              <div
+                style={{
+                  padding: "clamp(20px, 2.5vw, 28px)",
+                  borderRadius: 16,
+                  border: "1px solid var(--ftt-line)",
+                  background: "rgba(255,255,255,0.02)",
+                  height: "100%",
+                }}
+              >
+                <div
+                  className="font-display"
+                  style={{ fontSize: "clamp(24px, 2.6vw, 32px)", lineHeight: 1, marginBottom: 12, color: "var(--ftt-cream)" }}
+                >
+                  {o.price}
+                </div>
+                <div style={{ fontSize: 15, color: "var(--ftt-cream)", marginBottom: 4 }}>{o.name}</div>
+                <div
+                  className="font-mono"
+                  style={{ fontSize: 11, letterSpacing: "0.1em", color: "var(--ftt-text-dim)" }}
+                >
+                  {o.note}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
       {/* MAINTENANCE */}
       <section
@@ -289,7 +344,7 @@ export default function Tarifs() {
                 </div>
               ))}
               <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 8, lineHeight: 1.5 }}>
-                Sans maintenance : 1 modification gratuite incluse à la livraison, puis 50 €/h.
+                Sans maintenance : modifications à 50 €/h, à la demande.
               </p>
             </div>
           </Reveal>

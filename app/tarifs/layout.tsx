@@ -54,14 +54,13 @@ export default function TarifsLayout({
       name: "Site Vitrine Studio FTT",
       price: "500",
       description:
-        "Site sur-mesure complet pour démarrer : design adapté à votre secteur, formulaire de contact, SEO de base (title, meta, Hn, sitemap), mise en ligne incluse, 1 modification gratuite.",
+        "Site sur-mesure d'une page pour démarrer : design adapté à votre secteur, formulaire de contact, SEO de base (title, meta, Hn, sitemap), mise en ligne incluse.",
       features: [
-        "Site sur-mesure (aucun template)",
+        "1 page",
         "Design adapté à votre secteur",
         "Formulaire de contact",
         "SEO de base (title, meta, structure Hn)",
         "Mise en ligne incluse",
-        "1 modification gratuite",
       ],
       url: URL,
     },
@@ -71,10 +70,10 @@ export default function TarifsLayout({
       description:
         "Tout ce qu'inclut Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiche Google Business Profile configurée. Le pack le plus choisi par les artisans et indépendants.",
       features: [
+        "Jusqu'à 3 pages",
         "Tout ce qu'inclut Vitrine",
         "SEO avancé (mots-clés ciblés, schema.org)",
         "Fiche Google Business Profile configurée",
-        "1 modification gratuite",
       ],
       url: URL,
     },
@@ -82,12 +81,11 @@ export default function TarifsLayout({
       name: "Site Sur-mesure Studio FTT",
       price: "1000",
       description:
-        "Tout ce qu'inclut Visibilité + site multi-pages (5 pages et plus) + fonctionnalités sur mesure selon le projet. Devis personnalisé.",
+        "Tout ce qu'inclut Visibilité + jusqu'à 5 pages + fonctionnalités sur mesure selon le projet. Devis personnalisé.",
       features: [
+        "Jusqu'à 5 pages",
         "Tout ce qu'inclut Visibilité",
-        "Site multi-pages (5 pages et plus)",
         "Fonctionnalités sur mesure selon le projet",
-        "1 modification gratuite",
       ],
       url: URL,
     },

@@ -94,7 +94,7 @@ export type FaqItem = { q: string; a: string };
 export const FAQ: FaqItem[] = [
   {
     q: "Combien coûte un site ?",
-    a: "3 formules : Vitrine à 500 €, Visibilité à 750 € (avec SEO avancé et Google Business Profile), Sur-mesure à partir de 1 000 €. Tout est inclus — design, développement, mise en ligne, SEO de base et 1 modification gratuite.",
+    a: "3 formules : Vitrine à 500 € (1 page), Visibilité à 750 € (jusqu'à 3 pages, SEO avancé et Google Business Profile), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages). Design, développement, mise en ligne et SEO de base inclus. Pages supplémentaires : 300 € l'unité.",
   },
   {
     q: "Combien de temps pour livrer ?",
@@ -106,7 +106,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Est-ce que je peux modifier mon site moi-même ?",
-    a: "Non — c'est nous qui gérons les modifications. Chaque site livré inclut une modification gratuite. Avec la formule maintenance à 35 €/mois, vous avez 3 modifications incluses par mois. Au-delà, les modifications sont facturées 50 €/h.",
+    a: "Non, c'est nous qui gérons les modifications. À la demande, c'est 50 €/h. Avec la maintenance à 35 €/mois, vous avez 3 modifications incluses chaque mois.",
   },
   {
     q: "Vous travaillez avec qui ?",
@@ -126,7 +126,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Et après la mise en ligne, vous disparaissez ?",
-    a: "Non. Une modification est offerte à la livraison et on reste joignable ensuite. La maintenance à 35 €/mois couvre les modifications régulières si vous voulez être tranquille.",
+    a: "Non, on reste joignable après la mise en ligne. Pour les modifications régulières, la maintenance à 35 €/mois en inclut 3 par mois ; sinon c'est 50 €/h à la demande.",
   },
 ];
 
@@ -185,12 +185,11 @@ export const PLANS: Plan[] = [
     featured: false,
     desc: "Pour démarrer avec un site propre et référencé.",
     features: [
-      "Site sur-mesure (aucun template)",
+      "1 page",
       "Design adapté à votre secteur",
       "Formulaire de contact",
       "SEO de base (title, meta, structure Hn)",
       "Mise en ligne incluse",
-      "1 modification gratuite",
     ],
   },
   {
@@ -201,10 +200,10 @@ export const PLANS: Plan[] = [
     featured: true,
     desc: "Le choix de la plupart des artisans et indépendants.",
     features: [
+      "Jusqu'à 3 pages",
       "Tout ce qu'inclut Vitrine",
       "SEO avancé (mots-clés ciblés, schema.org)",
       "Fiche Google Business Profile configurée",
-      "1 modification gratuite",
     ],
   },
   {
@@ -215,10 +214,9 @@ export const PLANS: Plan[] = [
     featured: false,
     desc: "Pour les projets plus complets ou avec des besoins spécifiques.",
     features: [
+      "Jusqu'à 5 pages",
       "Tout ce qu'inclut Visibilité",
-      "Site multi-pages (5 pages et plus)",
       "Fonctionnalités sur mesure selon le projet",
-      "1 modification gratuite",
     ],
   },
 ];

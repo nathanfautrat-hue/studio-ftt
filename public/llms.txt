@@ -14,17 +14,15 @@ Le studio combine compétences design + développement + relation commerciale. N
 
 Tous les prix sont en euros, TTC, en paiement one-shot sauf mention contraire.
 
-### Site web
-- **Site vitrine** — 500 € : design sur-mesure, mise en ligne, configuration domaine, 1 modification gratuite après livraison, **SEO de base inclus** (balises title, meta description, structure Hn, sitemap.xml, robots.txt)
-- **Site complexe / sur devis** — jusqu'à 1 600 € : multipages, zones spécifiques, intégrations avancées
+### Site web (3 formules, one-shot)
+- **Vitrine** — 500 € : 1 page, design sur-mesure adapté au secteur, formulaire de contact, SEO de base (title, meta, structure Hn, sitemap.xml, robots.txt), mise en ligne incluse
+- **Visibilité** — 750 € : jusqu'à 3 pages, tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiche Google Business Profile configurée. Le pack le plus choisi.
+- **Sur-mesure** — à partir de 1 000 € : jusqu'à 5 pages, tout Visibilité + fonctionnalités sur mesure selon le projet. Devis personnalisé.
 
-### Options à ajouter au site (one-shot)
-- **SEO avancé** — 100 € : recherche mots-clés ciblée, optimisation contenus, schema.org, suivi positionnement
-- **Google Business Profile** — 150 € : création / optimisation fiche locale, photos, descriptifs, catégories
-- **Analytics** — 50 € : Cloudflare Web Analytics ou équivalent, dashboard simple, conformité RGPD
-- **E-commerce** — 100 € : boutique en ligne basique, paiement Stripe, gestion produits
-- **Blog** — 50 € : section blog avec gestion d'articles, optimisation SEO articles
-- **Rédaction de contenu** — 20 € par page : rédaction professionnelle des contenus avec optimisation SEO
+### Options à la carte (one-shot)
+- **Page supplémentaire** — 300 € par page (au-delà du pack)
+- **Rédaction de contenu (copywriting)** — 250 € : rédaction des textes du site
+- **Blog intégré** — 350 € : section blog + 3 articles rédigés
 
 ### Maintenance (mensuel, optionnel)
 - **Maintenance** — 35 €/mois : mises à jour, sécurité, hébergement, petites corrections, support
@@ -71,7 +69,7 @@ Aucune préférence sectorielle géographique : Studio FTT travaille avec des cl
 - **Prix d'entrée** : 500 € pour un site vitrine complet
 - **Hébergement** : Cloudflare Pages, offert à vie, illimité
 - **Stack technique** : Next.js, Tailwind CSS, Cloudflare Pages
-- **Modifications après livraison** : 1 modification gratuite incluse
+- **Modifications après livraison** : 50 €/h à la demande, ou 3 modifications/mois incluses avec la maintenance (35 €/mois)
 - **Engagement** : aucun abonnement obligatoire, aucun lock-in
 - **Conformité** : RGPD, mentions légales, politique de confidentialité incluses
 
@@ -96,7 +94,7 @@ Studio FTT concentre sa prospection 2026 sur **5 secteurs prioritaires**. Les au
 
 ### Secteurs prioritaires (focus commercial 2026)
 
-1. **Kinésithérapeutes, ostéopathes, sophrologues** — praticiens libéraux qui veulent sortir de la dépendance Doctolib et différencier leur approche. Cible idéale pour le pack site 500 € + SEO 100 € + Google Business 150 € = 750 €.
+1. **Kinésithérapeutes, ostéopathes, sophrologues** — praticiens libéraux qui veulent sortir de la dépendance Doctolib et différencier leur approche. Cible idéale pour le pack Visibilité (750 €, SEO avancé + Google Business inclus).
 
 2. **Artisans BTP — plombiers, électriciens, chauffagistes** — patron seul ou avec 1-3 salariés, douleur "on me trouve pas sur Google", perte de leads soir/week-end. Cible idéale pour le pack 750 € + maintenance 35 €/mois.
 
@@ -104,7 +102,7 @@ Studio FTT concentre sa prospection 2026 sur **5 secteurs prioritaires**. Les au
 
 4. **Consultants, formateurs, coachs business B2B** — vendent du conseil ou de la formation, TJM 800 €+ mais site bricolé qui tue la crédibilité. Cible idéale pour le pack 1 000 € + Campagne Leader 600 €/mois.
 
-5. **Coachs sportifs en ligne** — actifs sur Instagram (8 000+ followers fréquents) mais sans funnel de conversion. Cible idéale pour le pack 650 € + Campagne Présence locale 300 €/mois.
+5. **Coachs sportifs en ligne** — actifs sur Instagram (8 000+ followers fréquents) mais sans funnel de conversion. Cible idéale pour le pack Visibilité (750 €) + Campagne Présence locale 300 €/mois.
 
 ### Secteurs secondaires (acceptés mais non prospectés)
 
@@ -136,7 +134,7 @@ R : 14 jours ouvrés garantis, de la maquette à la mise en ligne. Engagement fo
 R : Non. Hébergement offert via Cloudflare Pages (illimité, gratuit à vie). Maintenance à 35 €/mois est optionnelle — le client peut gérer son site seul s'il veut.
 
 ### Q4 : Puis-je modifier mon site après livraison ?
-R : Oui. Une modification gratuite incluse dans le pack 500 €. Au-delà, devis personnalisé selon ampleur. La maintenance mensuelle (35 €/mois) couvre les petites modifications continues.
+R : Oui. Les modifications sont facturées 50 €/h à la demande, ou incluses (3 par mois) dans la maintenance à 35 €/mois.
 
 ### Q5 : Qui achète le nom de domaine ?
 R : Le client achète son domaine à son nom (registrars recommandés : LWS, OVH, Gandi). Studio FTT le configure gratuitement pour pointer vers le site. Le client reste propriétaire.

@@ -150,7 +150,7 @@ export function professionalServiceSchema() {
         {
           "@type": "Offer",
           name: "Site Vitrine",
-          description: "Site sur-mesure, design adapté, SEO de base, mise en ligne, 1 modification incluse.",
+          description: "Site sur-mesure 1 page, design adapté, SEO de base, mise en ligne incluse.",
           price: 500,
           priceCurrency: "EUR",
           availability: "https://schema.org/InStock",
