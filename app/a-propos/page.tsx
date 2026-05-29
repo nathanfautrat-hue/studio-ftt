@@ -203,8 +203,8 @@ export default function APropos() {
                 d: "Sur Cloudflare Pages. Ensuite inclus dans la maintenance à 35€/mois si vous la souscrivez.",
               },
               {
-                t: "Maintenance si vous voulez",
-                d: "35€/mois pour 3 modifications par mois, sinon 50€/h à la demande. Sans engagement.",
+                t: "1 modification gratuite incluse",
+                d: "Après la mise en ligne, pour ajuster ce qui doit l'être.",
               },
               {
                 t: "Vous m'avez en direct",

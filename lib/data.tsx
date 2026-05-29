@@ -94,39 +94,39 @@ export type FaqItem = { q: string; a: string };
 export const FAQ: FaqItem[] = [
   {
     q: "Combien coûte un site ?",
-    a: "3 formules : Vitrine à 500 € (1 page), Visibilité à 750 € (jusqu'à 3 pages, SEO avancé et Google Business Profile), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages). Design, développement, mise en ligne et SEO de base inclus. Pages supplémentaires : 300 € l'unité.",
+    a: "3 formules : Vitrine à 500 € (1 page), Visibilité à 750 € (jusqu'à 3 pages, SEO avancé et Google Business Profile), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages). Design, développement, mise en ligne, SEO de base et 1 modification gratuite inclus. Pages supplémentaires : 300 € l'unité.",
   },
   {
     q: "Combien de temps pour livrer ?",
     a: "En 14 jours ouvrés après réception de l'acompte et de vos contenus.",
   },
   {
-    q: "Je n'ai pas de textes ni de photos — vous gérez ?",
-    a: "On peut vous aider à rédiger et on utilise des visuels adaptés à votre secteur en attendant les vôtres. L'essentiel, c'est de démarrer.",
-  },
-  {
     q: "Est-ce que je peux modifier mon site moi-même ?",
-    a: "Non, c'est nous qui gérons les modifications. À la demande, c'est 50 €/h. Avec la maintenance à 35 €/mois, vous avez 3 modifications incluses chaque mois.",
-  },
-  {
-    q: "Vous travaillez avec qui ?",
-    a: "Artisans, TPE, PME — principalement en Sarthe et Mayenne, mais on travaille aussi à distance partout en France.",
-  },
-  {
-    q: "Quelle différence avec Wix ou Squarespace ?",
-    a: "Le site est conçu sur-mesure pour votre activité, pas depuis un template générique. Il charge plus vite, il est mieux référencé, et vous n'avez pas d'abonnement mensuel lié à une plateforme.",
+    a: "Non, c'est nous qui gérons les modifications. Une modification gratuite est incluse à la livraison. Ensuite, c'est 50 €/h à la demande, ou 3 modifications par mois avec la maintenance à 35 €/mois.",
   },
   {
     q: "Y a-t-il un abonnement ou des frais cachés ?",
     a: "Non, aucun abonnement obligatoire. L'hébergement est offert la première année, puis 10 €/mois (ou inclus dans la maintenance à 35 €/mois si vous la prenez). Le seul coût récurrent, c'est votre nom de domaine : vous l'achetez à votre nom (une dizaine d'euros par an), il vous appartient, et on le configure gratuitement.",
   },
   {
+    q: "Et après la mise en ligne, vous disparaissez ?",
+    a: "Non, on reste joignable après la mise en ligne. Une modification gratuite est incluse à la livraison, et la maintenance à 35 €/mois en couvre 3 par mois si vous voulez être tranquille.",
+  },
+  {
+    q: "Je n'ai pas de textes ni de photos — vous gérez ?",
+    a: "On peut vous aider à rédiger et on utilise des visuels adaptés à votre secteur en attendant les vôtres. L'essentiel, c'est de démarrer.",
+  },
+  {
+    q: "Quelle différence avec Wix ou Squarespace ?",
+    a: "Le site est conçu sur-mesure pour votre activité, pas depuis un template générique. Il charge plus vite, il est mieux référencé, et vous n'avez pas d'abonnement mensuel lié à une plateforme.",
+  },
+  {
     q: "Vous travaillez partout en France ?",
     a: "Oui. On est basé en Sarthe mais on travaille à distance dans toute la France, en visio et par email. Le rendez-vous en présentiel reste possible en Sarthe et alentours.",
   },
   {
-    q: "Et après la mise en ligne, vous disparaissez ?",
-    a: "Non, on reste joignable après la mise en ligne. Pour les modifications régulières, la maintenance à 35 €/mois en inclut 3 par mois ; sinon c'est 50 €/h à la demande.",
+    q: "Vous travaillez avec qui ?",
+    a: "Artisans, TPE, PME — principalement en Sarthe et Mayenne, mais on travaille aussi à distance partout en France.",
   },
 ];
 
@@ -188,8 +188,8 @@ export const PLANS: Plan[] = [
       "1 page",
       "Design adapté à votre secteur",
       "Formulaire de contact",
-      "SEO de base (title, meta, structure Hn)",
-      "Mise en ligne incluse",
+      "SEO de base",
+      "1 modification gratuite",
     ],
   },
   {
@@ -202,8 +202,9 @@ export const PLANS: Plan[] = [
     features: [
       "Jusqu'à 3 pages",
       "Tout ce qu'inclut Vitrine",
-      "SEO avancé (mots-clés ciblés, schema.org)",
+      "SEO avancé",
       "Fiche Google Business Profile configurée",
+      "1 modification gratuite",
     ],
   },
   {
@@ -216,7 +217,8 @@ export const PLANS: Plan[] = [
     features: [
       "Jusqu'à 5 pages",
       "Tout ce qu'inclut Visibilité",
-      "Fonctionnalités sur mesure selon le projet",
+      "Fonctionnalités sur mesure (e-commerce, réservation, espace client…)",
+      "1 modification gratuite",
     ],
   },
 ];

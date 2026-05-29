@@ -253,7 +253,7 @@ export default function Tarifs() {
         <div className="grid sm:grid-cols-3 gap-5">
           {[
             { name: "Page supplémentaire", price: "300 €", note: "par page, au-delà du pack" },
-            { name: "Rédaction de contenu", price: "250 €", note: "les textes de votre site" },
+            { name: "Copywriting", price: "250 €", note: "rédaction des textes de votre site" },
             { name: "Blog intégré", price: "350 €", note: "avec 3 articles rédigés" },
           ].map((o, i) => (
             <Reveal key={o.name} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
@@ -344,7 +344,7 @@ export default function Tarifs() {
                 </div>
               ))}
               <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 8, lineHeight: 1.5 }}>
-                Sans maintenance : modifications à 50 €/h, à la demande.
+                Sans maintenance : 1 modification gratuite incluse à la livraison, puis 50 €/h.
               </p>
             </div>
           </Reveal>

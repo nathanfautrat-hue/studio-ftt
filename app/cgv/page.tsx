@@ -178,17 +178,14 @@ export default function CGV() {
               Article 6 — Modifications &amp; révisions
             </h2>
             <p>
-              Aucune modification gratuite n&apos;est incluse après la
-              livraison. Toute modification est facturée au temps passé, ou
-              incluse dans la formule maintenance à 35&nbsp;€/mois (3
-              modifications par mois). Une modification correspond à un ensemble
-              cohérent de demandes communiquées en une fois (changement de
-              textes, ajustement de couleurs, remplacement de photos sur une
-              page, etc.).
+              Une (1) modification gratuite est incluse après livraison du site.
+              Une modification correspond à un ensemble cohérent de demandes
+              communiquées en une fois (changement de textes, ajustement de
+              couleurs, remplacement de photos sur une page, etc.).
             </p>
             <p className="mt-3">
-              Hors maintenance, toute modification est facturée selon le temps
-              passé, sur devis préalable. Tarif horaire indicatif&nbsp;:
+              Au-delà, toute modification supplémentaire est facturée selon le
+              temps passé, sur devis préalable. Tarif horaire indicatif&nbsp;:
               50&nbsp;€ de l&apos;heure.
             </p>
             <p className="mt-3">

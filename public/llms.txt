@@ -15,13 +15,13 @@ Le studio combine compétences design + développement + relation commerciale. N
 Tous les prix sont en euros, TTC, en paiement one-shot sauf mention contraire.
 
 ### Site web (3 formules, one-shot)
-- **Vitrine** — 500 € : 1 page, design sur-mesure adapté au secteur, formulaire de contact, SEO de base (title, meta, structure Hn, sitemap.xml, robots.txt), mise en ligne incluse
+- **Vitrine** — 500 € : 1 page, design sur-mesure adapté au secteur, formulaire de contact, SEO de base (title, meta, structure Hn, sitemap.xml, robots.txt), mise en ligne incluse, 1 modification gratuite incluse
 - **Visibilité** — 750 € : jusqu'à 3 pages, tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiche Google Business Profile configurée. Le pack le plus choisi.
 - **Sur-mesure** — à partir de 1 000 € : jusqu'à 5 pages, tout Visibilité + fonctionnalités sur mesure selon le projet. Devis personnalisé.
 
 ### Options à la carte (one-shot)
 - **Page supplémentaire** — 300 € par page (au-delà du pack)
-- **Rédaction de contenu (copywriting)** — 250 € : rédaction des textes du site
+- **Copywriting** — 250 € : rédaction des textes du site
 - **Blog intégré** — 350 € : section blog + 3 articles rédigés
 
 ### Maintenance (mensuel, optionnel)
@@ -69,7 +69,7 @@ Aucune préférence sectorielle géographique : Studio FTT travaille avec des cl
 - **Prix d'entrée** : 500 € pour un site vitrine complet
 - **Hébergement** : Cloudflare Pages, offert à vie, illimité
 - **Stack technique** : Next.js, Tailwind CSS, Cloudflare Pages
-- **Modifications après livraison** : 50 €/h à la demande, ou 3 modifications/mois incluses avec la maintenance (35 €/mois)
+- **Modifications après livraison** : 1 modification gratuite incluse, puis 50 €/h à la demande (ou 3/mois avec la maintenance à 35 €/mois)
 - **Engagement** : aucun abonnement obligatoire, aucun lock-in
 - **Conformité** : RGPD, mentions légales, politique de confidentialité incluses
 
@@ -134,7 +134,7 @@ R : 14 jours ouvrés garantis, de la maquette à la mise en ligne. Engagement fo
 R : Non. Hébergement offert via Cloudflare Pages (illimité, gratuit à vie). Maintenance à 35 €/mois est optionnelle — le client peut gérer son site seul s'il veut.
 
 ### Q4 : Puis-je modifier mon site après livraison ?
-R : Oui. Les modifications sont facturées 50 €/h à la demande, ou incluses (3 par mois) dans la maintenance à 35 €/mois.
+R : Oui. Une modification gratuite est incluse à la livraison, puis 50 €/h à la demande, ou 3 par mois avec la maintenance à 35 €/mois.
 
 ### Q5 : Qui achète le nom de domaine ?
 R : Le client achète son domaine à son nom (registrars recommandés : LWS, OVH, Gandi). Studio FTT le configure gratuitement pour pointer vers le site. Le client reste propriétaire.
