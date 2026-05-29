@@ -164,11 +164,8 @@ Versions Markdown propres de chaque page (sans HTML, scripts ni navigation), opt
 - [Tarifs](https://studioftt.fr/tarifs.md)
 - [Projet — Scavback (collectif artistique)](https://studioftt.fr/projets/scavback.md)
 - [Projet — Sprayfilm (production audiovisuelle)](https://studioftt.fr/projets/sprayfilm.md)
-- [Projet — PLC (SaaS Agent IA B2B)](https://studioftt.fr/projets/plc.md)
-- [Projet — Maison Octave (restaurant gastronomique)](https://studioftt.fr/projets/octave.md)
 - [Projet — Atelier Marceau (plombier artisan)](https://studioftt.fr/projets/marceau.md)
-- [Projet — Medicent (naturopathe)](https://studioftt.fr/projets/medicent.md)
 
 ---
 
-Last updated: 2026-04-27
+Last updated: 2026-05-29
