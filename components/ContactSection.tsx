@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import { siteConfig } from "@/lib/site-config";
+import { gtagEvent } from "@/lib/gtag";
 
 type ContactLink = {
   label: string;
@@ -58,6 +59,12 @@ export default function ContactSection() {
       setNom("");
       setEmail("");
       setDescription("");
+      // Conversion GA4 — formulaire contact soumis avec succès
+      gtagEvent("generate_lead", {
+        event_category: "contact",
+        event_label: "form_contact",
+        value: 1,
+      });
     } catch {
       setError("Une erreur est survenue. Réessayez ou écrivez-moi directement.");
     } finally {
@@ -126,6 +133,7 @@ export default function ContactSection() {
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
                   rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  onClick={() => c.featured && gtagEvent("clic_calendly", { event_label: "contact_section" })}
                   className="lift flex justify-between items-center"
                   style={{
                     padding: "18px 22px",

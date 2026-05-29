@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import LogoMark from "./LogoMark";
+import { gtagEvent } from "@/lib/gtag";
 
 const NAV_LINKS = [
   { label: "Approche", href: "/#approche" },
@@ -79,6 +80,7 @@ export default function Navbar() {
           {/* CTA */}
           <a
             href="/#contact"
+            onClick={() => gtagEvent("clic_cta", { event_label: "navbar_demarrer" })}
             className="inline-flex items-center shrink-0"
             style={{
               gap: 8,
