@@ -102,19 +102,19 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Est-ce que je peux modifier mon site moi-même ?",
-    a: "Non, c'est nous qui gérons les modifications. Une modification gratuite est incluse à la livraison. Ensuite, c'est 50 €/h à la demande, ou 3 modifications par mois avec la maintenance à 35 €/mois.",
+    a: "Non, c'est moi qui gère les modifications. Une modification gratuite est incluse à la livraison. Ensuite, c'est 50 €/h à la demande, ou 3 modifications par mois avec la maintenance à 35 €/mois.",
   },
   {
     q: "Y a-t-il un abonnement ou des frais cachés ?",
-    a: "Non, aucun abonnement obligatoire. L'hébergement est offert la première année, puis 10 €/mois (ou inclus dans la maintenance à 35 €/mois si vous la prenez). Le seul coût récurrent, c'est votre nom de domaine : vous l'achetez à votre nom (une dizaine d'euros par an), il vous appartient, et on le configure gratuitement.",
+    a: "Non, aucun abonnement obligatoire. L'hébergement est offert la première année, puis 10 €/mois (ou inclus dans la maintenance à 35 €/mois si vous la prenez). Le seul coût récurrent, c'est votre nom de domaine : vous l'achetez à votre nom (une dizaine d'euros par an), il vous appartient, et je le configure gratuitement.",
   },
   {
     q: "Et après la mise en ligne, vous disparaissez ?",
-    a: "Non, on reste joignable après la mise en ligne. Une modification gratuite est incluse à la livraison, et la maintenance à 35 €/mois en couvre 3 par mois si vous voulez être tranquille.",
+    a: "Non, je reste joignable après la mise en ligne. Une modification gratuite est incluse à la livraison, et la maintenance à 35 €/mois en couvre 3 par mois si vous voulez être tranquille.",
   },
   {
     q: "Je n'ai pas de textes ni de photos — vous gérez ?",
-    a: "On peut vous aider à rédiger et on utilise des visuels adaptés à votre secteur en attendant les vôtres. L'essentiel, c'est de démarrer.",
+    a: "Je peux vous aider à rédiger et j'utilise des visuels adaptés à votre secteur en attendant les vôtres. L'essentiel, c'est de démarrer.",
   },
   {
     q: "Quelle différence avec Wix ou Squarespace ?",
@@ -122,11 +122,11 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Vous travaillez partout en France ?",
-    a: "Oui. On est basé en Sarthe mais on travaille à distance dans toute la France, en visio et par email. Le rendez-vous en présentiel reste possible en Sarthe et alentours.",
+    a: "Oui. Je suis basé en Sarthe mais je travaille à distance dans toute la France, en visio et par email. Le rendez-vous en présentiel reste possible en Sarthe et alentours.",
   },
   {
     q: "Vous travaillez avec qui ?",
-    a: "Artisans, TPE, PME — principalement en Sarthe et Mayenne, mais on travaille aussi à distance partout en France.",
+    a: "Artisans, TPE, PME — principalement en Sarthe et Mayenne, mais je travaille aussi à distance partout en France.",
   },
 ];
 
@@ -144,20 +144,20 @@ export type ApprocheStep = {
 export const APPROCHE: ApprocheStep[] = [
   {
     num: "01",
-    title: "On s'appelle",
-    desc: "15 minutes pour comprendre votre métier et vos clients. On vous dit franchement si on peut vous aider, sans jargon et sans vous pousser à signer.",
+    title: "Je vous appelle",
+    desc: "15 minutes pour comprendre votre métier et vos clients. Je vous dis franchement si je peux vous aider, sans jargon et sans vous pousser à signer.",
     action: "Appel de découverte · 15 min",
   },
   {
     num: "02",
-    title: "On construit",
-    desc: "Design, textes, développement, référencement : on s'occupe de tout. Vous validez la maquette avant qu'on code la moindre ligne, donc vous voyez exactement votre site avant qu'il parte en ligne.",
+    title: "Je construis",
+    desc: "Design, textes, développement, référencement : je m'occupe de tout. Vous validez la maquette avant que je code la moindre ligne, donc vous voyez exactement votre site avant qu'il parte en ligne.",
     action: "Design → Dev → Validation",
   },
   {
     num: "03",
-    title: "On lance",
-    desc: "Votre site est en ligne. On vous envoie une vidéo personnalisée qui vous présente votre site en détail, pour que vous sachiez exactement ce que vous avez.",
+    title: "Je lance",
+    desc: "Votre site est en ligne. Je vous envoie une vidéo personnalisée qui vous présente votre site en détail, pour que vous sachiez exactement ce que vous avez.",
     action: "Mise en ligne + vidéo livrée",
   },
 ];

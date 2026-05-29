@@ -77,7 +77,7 @@ export default function PourQuiSection() {
             }}
           >
             Vous vous reconnaissez ? Site qui date, pas de site, ou refonte
-            complète : on s&apos;occupe de tout.
+            complète : je m&apos;occupe de tout.
           </p>
         </Reveal>
       </div>

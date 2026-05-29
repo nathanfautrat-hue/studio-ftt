@@ -14,7 +14,7 @@ export default function ApprocheSection() {
       <Reveal>
         <SectionHeader
           num="01"
-          label="Notre approche"
+          label="Mon approche"
           title=""
           titleChildren={
             <>

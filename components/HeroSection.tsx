@@ -67,7 +67,7 @@ export default function HeroSection() {
               letterSpacing: "-0.01em",
             }}
           >
-            <span style={{ display: "block" }}>ON CRÉE</span>
+            <span style={{ display: "block" }}>JE CRÉE</span>
             <span style={{ display: "block" }}>DES SITES</span>
             <span style={{ display: "block" }}>
               <span style={{ display: "inline-block", position: "relative" }}>
@@ -116,7 +116,7 @@ export default function HeroSection() {
                 margin: 0,
               }}
             >
-              Studio web basé en Sarthe, au Mans et alentours. On crée des sites
+              Studio web basé en Sarthe, au Mans et alentours. Je crée des sites
               internet sur-mesure pour artisans et PME — propres, rapides, et qui
               vous amènent des clients.
             </p>

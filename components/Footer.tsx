@@ -26,7 +26,7 @@ export default function Footer() {
               color: "var(--ftt-text-mid)",
             }}
           >
-            Studio indépendant basé en Sarthe. On crée des sites pour artisans
+            Studio indépendant basé en Sarthe. Je crée des sites pour artisans
             et PME — propres, rapides, qui amènent des clients.
           </p>
         </div>

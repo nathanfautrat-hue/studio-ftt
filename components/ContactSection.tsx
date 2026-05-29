@@ -59,7 +59,7 @@ export default function ContactSection() {
       setEmail("");
       setDescription("");
     } catch {
-      setError("Une erreur est survenue. Réessayez ou écrivez-nous directement.");
+      setError("Une erreur est survenue. Réessayez ou écrivez-moi directement.");
     } finally {
       setSending(false);
     }
@@ -211,7 +211,7 @@ export default function ContactSection() {
               </button>
               {sent && (
                 <p style={{ color: "var(--ftt-green)", fontSize: 14, margin: 0 }}>
-                  ✅ Message envoyé. On revient vers vous sous 24h.
+                  ✅ Message envoyé. Je reviens vers vous sous 24h.
                 </p>
               )}
               {error && (
