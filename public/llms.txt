@@ -27,9 +27,8 @@ Tous les prix sont en euros, TTC, en paiement one-shot sauf mention contraire.
 ### Maintenance (mensuel, optionnel)
 - **Maintenance** — 35 €/mois : mises à jour, sécurité, hébergement, petites corrections, support
 
-### Campagnes marketing (mensuel, optionnel)
-- **Présence locale** — 300 €/mois : SEO local continu, optimisation Google Business, visibilité sur recherche locale
-- **Leader** — 600 €/mois : stratégie de contenu mensuelle, campagnes paid social, suivi performance, reporting
+### Campagne marketing (mensuel, optionnel)
+- **Google Ads** — 500 €/mois : création et gestion de campagne Google Ads, SEO local renforcé, accès Google Analytics pour le suivi en direct. Budget publicitaire en sus (≥ 300 €/mois recommandé), payé directement à Google.
 
 ## Locations
 
@@ -100,9 +99,9 @@ Studio FTT concentre sa prospection 2026 sur **5 secteurs prioritaires**. Les au
 
 3. **Garages, carrosseries indépendantes** (hors réseaux Renault/Citroën pro) — besoin de casser l'image "garagiste qui arnaque" avec tarifs forfaits affichés et avis Google. Cible idéale pour le pack 750 €.
 
-4. **Consultants, formateurs, coachs business B2B** — vendent du conseil ou de la formation, TJM 800 €+ mais site bricolé qui tue la crédibilité. Cible idéale pour le pack 1 000 € + Campagne Leader 600 €/mois.
+4. **Consultants, formateurs, coachs business B2B** — vendent du conseil ou de la formation, TJM 800 €+ mais site bricolé qui tue la crédibilité. Cible idéale pour le pack 1 000 € + Campagne Google Ads 500 €/mois.
 
-5. **Coachs sportifs en ligne** — actifs sur Instagram (8 000+ followers fréquents) mais sans funnel de conversion. Cible idéale pour le pack Visibilité (750 €) + Campagne Présence locale 300 €/mois.
+5. **Coachs sportifs en ligne** — actifs sur Instagram (8 000+ followers fréquents) mais sans funnel de conversion. Cible idéale pour le pack Visibilité (750 €) + Campagne Google Ads 500 €/mois.
 
 ### Secteurs secondaires (acceptés mais non prospectés)
 

@@ -399,45 +399,29 @@ export default function Tarifs() {
               marginBottom: 48,
             }}
           >
-            Gestion de campagnes Google Ads, Meta (Facebook · Instagram) et SEO local.
+            Gestion de campagnes Google Ads et SEO local.
             Tarif mensuel sans engagement —{" "}
             <span style={{ color: "var(--ftt-cream)", fontWeight: 500 }}>
-              budget publicitaire en plus, payé directement à la plateforme
+              budget publicitaire en plus, payé directement à Google
             </span>{" "}
-            (≥ 150 €/mois recommandé pour des résultats sérieux).
+            (≥ 300 €/mois recommandé pour des résultats sérieux).
           </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="mx-auto" style={{ maxWidth: 540 }}>
           {[
             {
-              id: "presence-locale",
-              name: "Présence locale",
-              price: "300 €",
-              sub: "/mois · hors budget pub",
-              featured: false,
-              desc: "Pour rester visible sur ta zone et capter la demande locale toute l'année.",
-              features: [
-                "1 campagne Google Ads locale",
-                "Fiche Google Business optimisée chaque mois",
-                "1 visuel publicitaire par mois",
-                "Rapport mensuel simple (vues · clics · appels)",
-              ],
-            },
-            {
-              id: "leader",
-              name: "Leader",
-              price: "600 €",
+              id: "google-ads",
+              name: "Google Ads",
+              price: "500 €",
               sub: "/mois · hors budget pub",
               featured: true,
-              desc: "Pour devenir le numéro 1 de ton secteur sur ta ville.",
+              desc: "Pour aller chercher les clients qui tapent vos services sur Google, au moment précis où ils en ont besoin.",
               features: [
-                "Tout ce qu'inclut Présence locale",
-                "Campagnes Meta (Facebook + Instagram)",
-                "Jusqu'à 4 visuels publicitaires par mois",
-                "A/B test des audiences et créas",
-                "SEO local renforcé (citations, backlinks)",
-                "Rapport détaillé + appel stratégique mensuel",
+                "Création et gestion de votre campagne Google Ads",
+                "Optimisation continue (mots-clés, enchères, annonces)",
+                "SEO local renforcé pour remonter dans Google",
+                "Accès Google Analytics pour suivre vos résultats en direct",
               ],
             },
           ].map((c, i) => (
@@ -457,29 +441,7 @@ export default function Tarifs() {
                   padding: "clamp(24px, 3vw, 36px)",
                 }}
               >
-                {c.featured && (
-                  <div
-                    className="font-mono"
-                    style={{
-                      position: "absolute",
-                      top: -1,
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      background: "var(--ftt-red)",
-                      color: "#fff",
-                      fontSize: 10,
-                      letterSpacing: "0.22em",
-                      textTransform: "uppercase",
-                      padding: "5px 16px",
-                      borderRadius: "0 0 10px 10px",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    Le plus complet
-                  </div>
-                )}
-
-                <div style={{ marginBottom: 24, paddingTop: c.featured ? 12 : 0 }}>
+                <div style={{ marginBottom: 24 }}>
                   <div
                     className="font-mono"
                     style={{
@@ -585,7 +547,7 @@ export default function Tarifs() {
             }}
           >
             Sans engagement, résiliable à tout moment avec un mois de préavis.
-            Le budget publicitaire (Google, Meta) est payé directement par tes soins à la plateforme — tu gardes la main sur tes dépenses.
+            Le budget publicitaire Google est payé directement par tes soins à la plateforme, tu gardes la main sur tes dépenses.
           </p>
         </Reveal>
       </section>
