@@ -61,7 +61,7 @@ export default function CGV() {
               <li>Options associées (SEO, Google Business, Analytics, rédaction)</li>
               <li>Hébergement web</li>
               <li>Maintenance mensuelle</li>
-              <li>Campagnes de référencement &amp; visibilité (Présence locale, Leader)</li>
+              <li>Campagne de référencement &amp; publicité (Google Ads)</li>
             </ul>
           </div>
 
@@ -234,11 +234,10 @@ export default function CGV() {
             </h2>
             <p>
               Les prestations récurrentes (maintenance 35&nbsp;€/mois,
-              campagne Présence locale 300&nbsp;€/mois, campagne Leader
-              600&nbsp;€/mois — hors budget publicitaire payé directement par
-              le Client à la plateforme Google ou Meta) sont sans engagement
-              de durée et résiliables à tout moment par email, avec un préavis
-              d&apos;<strong className="text-white">un mois</strong> avant la prochaine échéance.
+              campagne Google Ads 500&nbsp;€/mois — hors budget publicitaire
+              payé directement par le Client à la plateforme Google) sont sans
+              engagement de durée et résiliables à tout moment par email, avec
+              un préavis d&apos;<strong className="text-white">un mois</strong> avant la prochaine échéance.
             </p>
             <p className="mt-3">
               En cas de résiliation de la maintenance après la première année,
