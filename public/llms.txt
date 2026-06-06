@@ -124,7 +124,7 @@ Studio FTT ne travaille pas avec : restaurateurs (positionnement assumé hors re
 ## FAQ
 
 ### Q1 : Combien coûte un site avec Studio FTT ?
-R : À partir de 500 € en one-shot pour un site vitrine complet. Options ajoutables : SEO avancé 100 €, Google Business Profile 150 €, e-commerce 100 €, blog 50 €. Sites plus complexes jusqu'à 1 600 € sur devis.
+R : 3 formules one-shot : Vitrine 500 € (1 page), Visibilité 750 € (jusqu'à 3 pages, SEO avancé + Google Business Profile inclus), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages, fonctionnalités spécifiques). Options ajoutables : page supplémentaire 300 €, copywriting 250 €, blog intégré 350 €.
 
 ### Q2 : Combien de temps entre la commande et la mise en ligne ?
 R : 14 jours ouvrés garantis, de la maquette à la mise en ligne. Engagement formel.
@@ -142,7 +142,7 @@ R : Le client achète son domaine à son nom (registrars recommandés : LWS, OVH
 R : Oui, France entière à distance via visio et email. Préférence locale Sarthe pour les rendez-vous en présentiel.
 
 ### Q7 : Faites-vous du référencement Google ?
-R : SEO de base inclus dans tous les sites (balises title, meta description, structure Hn, sitemap, robots.txt). SEO avancé en option (+100 €) : recherche mots-clés, optimisation contenus, schema.org, suivi positionnement. Google Business Profile en option (+150 €) : fiche locale optimisée pour les artisans recherchés localement.
+R : SEO de base inclus dans tous les sites (balises title, meta description, structure Hn, sitemap, robots.txt). Le SEO avancé (recherche mots-clés, optimisation contenus, schema.org, suivi positionnement) et la fiche Google Business Profile sont inclus dans le pack Visibilité (750 €).
 
 ### Q8 : Studio FTT existe depuis quand ?
 R : Lancé le 21 avril 2026 par Nathan Fautrat, autodidacte basé en Sarthe. Studio en lancement, premiers projets en cours, portfolio sectoriel disponible (BTP, restauration, santé, audiovisuel, SaaS).
