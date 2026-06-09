@@ -11,41 +11,12 @@ import { useEffect, useRef, useState } from "react";
 export function ScavbackPreview() {
   return (
     <div className="absolute inset-0 bg-[#0a0a0a] overflow-hidden">
-      {/* texture grain + vignetting */}
-      <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(ellipse_at_70%_40%,rgba(232,53,42,0.35),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,#000_100%)] opacity-60" />
-      {/* top bar */}
-      <div className="absolute top-3 left-4 right-4 flex items-center justify-between text-[8px] tracking-[0.25em] uppercase text-white/70 font-mono">
-        <div className="flex items-center gap-2">
-          <span className="font-bold text-white">SCAVBACK</span>
-          <span className="text-[#E8352A]">[SYS.ONLINE]</span>
-        </div>
-        <div className="hidden md:flex gap-3 text-white/50">
-          <span>ACCUEIL</span><span>ARTISTES</span><span>RÉSEAUX</span>
-          <span className="text-[#E8352A]">[Presets]</span>
-        </div>
-      </div>
-      {/* coords HUD */}
-      <div className="absolute top-8 left-4 text-[7px] font-mono text-white/50 tracking-wide leading-3">
-        <div>SEC. 01</div>
-        <div>ISO_800</div>
-        <div>SHUTTER_1/48</div>
-      </div>
-      {/* center target */}
-      <div className="absolute left-[16%] top-[38%] w-5 h-5 rounded-full border-2 border-[#E8352A]/80">
-        <div className="absolute inset-0 m-auto w-1 h-1 bg-[#E8352A] rounded-full" />
-      </div>
-      {/* giant title */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="flex items-baseline">
-          <span className="font-display text-white text-5xl md:text-7xl tracking-tight leading-none">SCAV</span>
-          <span className="font-display text-[#E8352A] text-5xl md:text-7xl tracking-tight leading-none">BACK</span>
-        </div>
-      </div>
-      {/* tagline pill */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 border border-white/15 px-3 py-1 text-[8px] tracking-[0.3em] uppercase text-white/70 font-mono bg-black/40">
-        Collectif créatif — Son · Image · Vision
-      </div>
+      <img
+        src="/preview-scavback.webp"
+        alt="Aperçu du site SCAVBACK — collectif créatif"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        loading="lazy"
+      />
     </div>
   );
 }

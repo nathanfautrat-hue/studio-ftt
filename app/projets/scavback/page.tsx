@@ -35,7 +35,7 @@ export default function ScavbackPage() {
           </p>
           <div className="mt-10">
             <a
-              href="https://scavback.base44.app/"
+              href="https://scavback.pages.dev/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn--solid"
