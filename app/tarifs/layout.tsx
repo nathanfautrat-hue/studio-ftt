@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
-const TITLE = "Tarifs : sites web à partir de 500 € — livraison 14 jours";
+const TITLE = "Tarifs : sites web à partir de 500 € — livraison 14 jours ouvrés";
 const DESCRIPTION =
   "Tarifs Studio FTT : site Vitrine 500 €, Visibilité 750 € (SEO avancé + Google Business), Sur-mesure dès 1 000 €. Maintenance 35 €/mois optionnelle. Sans abonnement caché, hébergement Cloudflare offert.";
 
