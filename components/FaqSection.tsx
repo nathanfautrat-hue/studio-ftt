@@ -127,7 +127,7 @@ export default function FaqSection() {
             ou appelez le{" "}
             <a
               href="tel:+33607033804"
-              style={{ color: "var(--ftt-cream)", textDecoration: "underline" }}
+              style={{ color: "var(--ftt-cream)", textDecoration: "underline", whiteSpace: "nowrap" }}
             >
               06 07 03 38 04
             </a>
