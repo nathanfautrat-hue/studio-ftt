@@ -5,7 +5,7 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 const TITLE = "Tarifs : sites web à partir de 500 € — livraison 14 jours ouvrés";
 const DESCRIPTION =
-  "Tarifs Studio FTT : site Vitrine 500 €, Visibilité 750 € (SEO avancé + Google Business), Sur-mesure dès 1 000 €. Maintenance 35 €/mois optionnelle. Sans abonnement caché, hébergement Cloudflare offert.";
+  "Combien coûte un site internet ? Comparatif Wix, freelance, agence. Tarifs Studio FTT : Vitrine 500 €, Visibilité 750 €, Sur-mesure dès 1 000 €. Aucun abonnement obligatoire, hébergement offert la 1ère année.";
 
 const URL = `${siteConfig.url}/tarifs`;
 
