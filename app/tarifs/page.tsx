@@ -12,7 +12,7 @@ import { faqPageSchema } from "@/lib/schema";
 const COMPARATIF = {
   cols: ["Wix / Squarespace", "Freelance classique", "Studio FTT", "Agence web"],
   rows: [
-    { label: "Prix", cells: ["17 à 27 €/mois, à vie", "800 à 1 500 €", "500 à 1 000 € one-shot", "1 800 à 2 500 €+"] },
+    { label: "Prix", cells: ["17 à 30 €/mois, à vie", "800 à 1 500 €", "500 à 1 000 € one-shot", "1 800 à 2 500 €+"] },
     { label: "Qui fait le travail", cells: ["Vous, seul", "Le freelance", "Moi, en direct", "Une équipe + un chef de projet"] },
     { label: "Délai", cells: ["Selon votre temps libre", "Variable", "14 jours ouvrés", "6 à 12 semaines"] },
     { label: "Design", cells: ["Template à adapter", "Selon le profil", "Sur-mesure pour votre métier", "Sur-mesure"] },
@@ -472,8 +472,8 @@ export default function Tarifs() {
             </table>
           </div>
           <p style={{ fontSize: 12, color: "var(--ftt-text-dim)", marginTop: 16, lineHeight: 1.6 }}>
-            Fourchettes constatées en France en 2026 pour un site vitrine de TPE. Forfaits Wix de
-            16,80 à 26,40 €/mois en paiement annuel, nom de domaine en plus dès la 2ème année.
+            Fourchettes constatées en France en 2026 pour un site vitrine de TPE. Forfaits Wix
+            Light à Essentiel : 16,80 à 30 €/mois, nom de domaine en plus dès la 2ème année.
           </p>
         </Reveal>
       </section>
