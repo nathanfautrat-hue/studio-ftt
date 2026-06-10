@@ -81,19 +81,29 @@ export default function FaqSection() {
                     +
                   </span>
                 </button>
-                {isOpen && (
+                {/* Réponse toujours dans le DOM (SEO + conformité FAQPage), repli en CSS */}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateRows: isOpen ? "1fr" : "0fr",
+                    transition: "grid-template-rows 0.25s ease",
+                  }}
+                >
                   <p
                     style={{
+                      overflow: "hidden",
+                      minHeight: 0,
                       fontSize: 15,
                       lineHeight: 1.7,
                       color: "var(--ftt-text-mid)",
-                      paddingBottom: 24,
+                      paddingBottom: isOpen ? 24 : 0,
+                      transition: "padding-bottom 0.25s ease",
                       margin: 0,
                     }}
                   >
                     {item.a}
                   </p>
-                )}
+                </div>
               </div>
             </Reveal>
           );

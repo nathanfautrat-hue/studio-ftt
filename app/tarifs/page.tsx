@@ -547,7 +547,7 @@ export default function Tarifs() {
             }}
           >
             Sans engagement, résiliable à tout moment avec un mois de préavis.
-            Le budget publicitaire Google est payé directement par tes soins à la plateforme, tu gardes la main sur tes dépenses.
+            Le budget publicitaire Google est payé directement par vos soins à la plateforme, vous gardez la main sur vos dépenses.
           </p>
         </Reveal>
       </section>
@@ -576,14 +576,14 @@ export default function Tarifs() {
         </Reveal>
         <Reveal delay={1}>
           <p style={{ fontSize: 16, color: "var(--ftt-text-mid)", marginBottom: 36 }}>
-            15 minutes, sans engagement. On répond à toutes vos questions.
+            15 minutes, sans engagement. Je réponds à toutes vos questions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={siteConfig.calendly} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
             <a href="/#contact" className="btn btn--ghost">
-              Nous écrire <span className="btn__arrow">→</span>
+              M&apos;écrire <span className="btn__arrow">→</span>
             </a>
           </div>
         </Reveal>
