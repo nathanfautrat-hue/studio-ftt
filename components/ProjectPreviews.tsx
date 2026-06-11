@@ -183,11 +183,11 @@ export function MarceauPreview() {
         </div>
       </div>
       {/* CTA pills */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        <div className="text-[8px] tracking-[0.2em] uppercase px-3 py-1.5 rounded font-bold" style={{ backgroundColor: "#E67E22", color: "#fff" }}>
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 whitespace-nowrap">
+        <div className="text-[8px] tracking-[0.2em] uppercase px-3 py-1.5 rounded font-bold whitespace-nowrap" style={{ backgroundColor: "#E67E22", color: "#fff" }}>
           02 43 52 18 90
         </div>
-        <div className="text-[8px] tracking-[0.2em] uppercase px-3 py-1.5 rounded border border-white/30 text-white">
+        <div className="text-[8px] tracking-[0.2em] uppercase px-3 py-1.5 rounded border border-white/30 text-white whitespace-nowrap">
           Devis →
         </div>
       </div>
