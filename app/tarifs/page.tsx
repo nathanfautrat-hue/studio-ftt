@@ -35,10 +35,6 @@ const TARIFS_FAQ = [
     a: "Sur 3 ans, un abonnement Wix revient à environ 600 €, et c'est vous qui faites tout : le design, les textes, le référencement. Si vous arrêtez de payer, votre site disparaît. Chez moi, vous payez une fois, et c'est moi qui construis le site pour votre métier — pas un template à remplir le dimanche soir.",
   },
   {
-    q: "Qu'est-ce qui est compris dans le prix ?",
-    a: "Le design adapté à votre secteur, le développement, le formulaire de contact, le référencement de base, la mise en ligne et une modification gratuite après livraison. La rédaction des textes peut s'ajouter en option à 250 € si vous ne voulez pas les écrire vous-même.",
-  },
-  {
     q: "Y a-t-il des frais après l'achat du site ?",
     a: "Aucun abonnement obligatoire. Deux frais existent quand même : votre nom de domaine, une dizaine d'euros par an, payé à votre nom. Et l'hébergement, offert la première année, puis 10 €/mois ou inclus dans la maintenance à 35 €/mois si vous la prenez.",
   },

@@ -7,87 +7,73 @@ import Reveal from "@/components/Reveal";
 import JsonLd from "@/components/JsonLd";
 import { faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
-import { CabinetAtlasPreview } from "@/components/ProjectPreviews";
+import { SigmaLiftPreview } from "@/components/ProjectPreviews";
 
 const PROBLEMES = [
   {
     num: "01",
-    title: "Une ligne parmi cinquante",
-    desc: "Le patient qui ouvre Doctolib compare des créneaux, pas des approches. Votre formation en thérapie manuelle, vos années de cabinet : rien de tout ça ne se voit dans une liste.",
+    title: "Le décalage se voit tout de suite",
+    desc: "Vous facturez à la journée ce que d'autres facturent à la semaine. Un site bricolé envoie le message inverse, et le prospect le remarque avant même le premier échange.",
   },
   {
     num: "02",
-    title: "Une fiche comme toutes les autres",
-    desc: "Kiné du sport, périnéologie, rééducation vestibulaire ? Sur la plateforme, votre fiche ressemble à celle du cabinet d'à côté. Impossible de montrer ce qui fait venir les patients de loin.",
+    title: "LinkedIn ne suffit pas",
+    desc: "Vos posts touchent votre réseau. Mais le prospect qui vous a repéré vérifie toujours ailleurs : il tape votre nom, cherche une offre claire, des preuves, un endroit pour réserver un échange.",
   },
   {
     num: "03",
-    title: "Même votre nom ne vous appartient plus",
-    desc: "Tapez votre propre nom dans Google : la plateforme sort souvent avant vous. Le patient qu'on vous a recommandé atterrit sur une liste où il peut cliquer ailleurs.",
+    title: "Votre offre n'est posée nulle part",
+    desc: "Qui vous servez, ce que vous livrez, comment on travaille avec vous. Tant que ce n'est pas écrit noir sur blanc, chaque appel découverte repart de zéro.",
   },
 ];
 
 const CONTENU_SITE = [
   {
-    title: "Vos spécialités, expliquées simplement",
-    desc: "Un patient ne sait pas ce qu'est la rééducation vestibulaire. Une page qui l'explique avec ses mots, c'est lui qui comprend qu'il est au bon endroit.",
+    title: "Votre positionnement en une phrase",
+    desc: "Qui vous aidez, à faire quoi, avec quelle méthode. Le visiteur doit le comprendre en cinq secondes, pas après trois paragraphes.",
   },
   {
-    title: "Votre parcours et vos formations",
-    desc: "Diplômes, formations complémentaires, années d'exercice. Factuel, vérifiable, autorisé par votre code de déontologie.",
+    title: "Vos offres, décrites",
+    desc: "Accompagnement, formation, mission : le format, ce que ça couvre, pour qui c'est fait. Le prospect arrive à l'appel en sachant déjà ce qu'il veut.",
   },
   {
-    title: "Les infos pratiques qui évitent 10 appels par jour",
-    desc: "Accès, parking, étage, horaires, conventionnement, ce qu'il faut apporter à la première séance.",
+    title: "Votre parcours et vos références",
+    desc: "Les expériences et les secteurs qui font votre légitimité. Uniquement du réel : ce que vous pouvez nommer, vous le montrez ; le reste, on le formule par secteur.",
   },
   {
-    title: "Votre prise de rendez-vous, intégrée",
-    desc: "Vous gardez Doctolib ou votre secrétariat : le site renvoie dessus. Il ne remplace pas votre agenda, il fait le travail d'avant — convaincre.",
+    title: "Un endroit pour réserver",
+    desc: "Votre lien Calendly ou équivalent, intégré. Le prospect convaincu prend rendez-vous tout de suite, sans échange de mails.",
   },
   {
-    title: "Une fiche Google reliée et configurée",
-    desc: "C'est elle qui vous fait apparaître sur la carte quand on cherche un kiné dans votre ville. Incluse dans le pack Visibilité.",
+    title: "De quoi prouver, si vous en avez",
+    desc: "Articles, conférences, ressources, études de cas. Pas obligatoire pour démarrer, mais le site est structuré pour les accueillir.",
   },
 ];
 
-const AUTORISE = [
-  "Présenter votre parcours, vos diplômes et vos formations",
-  "Expliquer vos spécialités et vos techniques",
-  "Donner les infos pratiques : accès, horaires, conventionnement",
-  "Montrer votre cabinet en photos",
-];
-
-const A_EVITER = [
-  "Les promesses de résultat ou de guérison",
-  "Les comparaisons avec d'autres praticiens",
-  "Les témoignages de patients à visée publicitaire",
-  "Les offres promotionnelles sur les soins",
-];
-
-const KINE_FAQ = [
+const CONSULTANT_FAQ = [
   {
-    q: "Un kinésithérapeute a-t-il le droit d'avoir un site internet ?",
-    a: "Oui. Depuis le décret n° 2020-1663 du 22 décembre 2020, la profession est passée à un principe de libre communication. Vous pouvez présenter votre cabinet, votre parcours et vos spécialités, à condition de rester dans l'information : formulations prudentes et mesurées, pas de publicité commerciale ni de promesses de résultat. Je construis vos pages dans ces règles.",
+    q: "Combien coûte un site de consultant ou de coach ?",
+    a: "Le plus souvent en sur-mesure à partir de 1 000 € : positionnement, pages offre, parcours, intégration de votre lien de réservation. Si vous démarrez, une page Visibilité à 750 € peut suffire dans un premier temps. Prix one-shot, aucun abonnement obligatoire.",
   },
   {
-    q: "Est-ce que le site remplace Doctolib ?",
-    a: "Non, et ce n'est pas le but. Doctolib gère très bien la prise de rendez-vous. Le site fait le travail d'avant : il montre qui vous êtes, ce que vous traitez et comment vous travaillez, puis renvoie vers votre agenda en ligne ou votre téléphone. Les deux se complètent.",
+    q: "J'ai déjà LinkedIn, pourquoi un site ?",
+    a: "LinkedIn est un canal : vos posts y vivent quelques jours, au milieu du bruit. Le site est votre socle : votre offre posée noir sur blanc, à votre nom de domaine, trouvable quand on vous cherche. C'est là que le prospect vérifie avant de vous écrire, et c'est là qu'il réserve.",
   },
   {
-    q: "Combien coûte un site pour un cabinet de kiné ?",
-    a: "Pour la plupart des cabinets, c'est le pack Visibilité à 750 € : jusqu'à 3 pages, référencement local sur votre ville et vos spécialités, fiche Google Business Profile configurée. Une page simple coûte 500 €, et les besoins particuliers (cabinet de groupe, plusieurs sites d'exercice) passent en sur-mesure à partir de 1 000 €. Prix one-shot, aucun abonnement obligatoire.",
+    q: "Je n'ai pas de témoignages clients à montrer.",
+    a: "Pas bloquant. Un positionnement net, un parcours réel et des offres claires crédibilisent déjà beaucoup. Le site est structuré pour accueillir les preuves au fur et à mesure : références, études de cas, contenus. On démarre avec ce que vous avez de vrai.",
   },
   {
-    q: "Qu'est-ce que je peux écrire sans risque avec l'Ordre ?",
-    a: "Tout ce qui relève de l'information factuelle : votre parcours, vos diplômes, vos spécialités, le déroulement d'une séance, les infos pratiques du cabinet. À éviter : les promesses de résultat, les comparaisons avec des confrères et les témoignages de patients utilisés comme publicité. Le Conseil national de l'ordre a publié des recommandations en 2021, je m'y réfère pour chaque page.",
+    q: "Combien de temps ça prend ?",
+    a: "14 jours ouvrés après réception de l'acompte et de vos contenus. On cale votre positionnement à l'appel découverte, vous m'envoyez votre matière, je m'occupe du reste, du design à la mise en ligne.",
   },
   {
-    q: "Je n'ai pas le temps de m'en occuper.",
-    a: "C'est prévu. Un appel de 15 minutes pour comprendre votre cabinet, vous m'envoyez vos contenus (photos, parcours, spécialités), et je m'occupe du reste : textes, design, mise en ligne, fiche Google. Livré en 14 jours ouvrés après réception de l'acompte et de vos contenus.",
+    q: "Vous écrivez les textes ?",
+    a: "Je peux vous aider à rédiger à partir de votre matière — c'est souvent suffisant. Si vous voulez une rédaction complète et travaillée de vos pages, l'option copywriting existe à 250 €.",
   },
 ];
 
-export default function SiteInternetKine() {
+export default function SiteInternetConsultant() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -109,7 +95,7 @@ export default function SiteInternetKine() {
               className="font-mono"
               style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-text-dim)" }}
             >
-              Kinés · Ostéos · Sophrologues
+              Consultants · Formateurs · Coachs
             </span>
           </div>
         </Reveal>
@@ -122,12 +108,12 @@ export default function SiteInternetKine() {
               margin: "0 0 clamp(20px, 2.5vw, 32px)",
             }}
           >
-            ÊTRE CHOISI,{" "}
+            CRÉDIBLE EN RÉUNION,{" "}
             <em
               className="font-serif"
               style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}
             >
-              pas juste réservé
+              invisible en ligne
             </em>
             .
           </h1>
@@ -142,11 +128,12 @@ export default function SiteInternetKine() {
               margin: "0 0 36px",
             }}
           >
-            Doctolib remplit les agendas, très bien. Mais sur Doctolib, vous êtes
-            une ligne parmi cinquante. Un site de cabinet bien fait, c&apos;est ce
-            qui fait qu&apos;un patient vous choisit{" "}
-            <span style={{ color: "var(--ftt-cream)", fontWeight: 500 }}>vous</span>,
-            avant même de cliquer sur « réserver ».
+            Votre expertise vaut cher. Votre site — quand il existe — dit
+            l&apos;inverse. Or le prospect qui vous a repéré{" "}
+            <span style={{ color: "var(--ftt-cream)", fontWeight: 500 }}>
+              vérifie toujours avant d&apos;écrire
+            </span>{" "}
+            : ce qu&apos;il trouve à ce moment-là décide de la suite.
           </p>
         </Reveal>
         <Reveal delay={3}>
@@ -161,7 +148,7 @@ export default function SiteInternetKine() {
         </Reveal>
       </section>
 
-      {/* PROBLÈME DOCTOLIB */}
+      {/* PROBLÈME */}
       <section
         className="mx-auto section-x"
         style={{
@@ -187,9 +174,9 @@ export default function SiteInternetKine() {
             className="font-display"
             style={{ fontSize: "clamp(36px, 6.5vw, 90px)", lineHeight: 0.95, margin: "0 0 40px" }}
           >
-            DOCTOLIB N&apos;EST PAS{" "}
+            LE PROSPECT{" "}
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
-              votre site
+              vérifie
             </em>
             .
           </h2>
@@ -229,126 +216,11 @@ export default function SiteInternetKine() {
               marginTop: 48,
             }}
           >
-            Je ne vous dirai pas de quitter Doctolib : pour la prise de
-            rendez-vous, ça marche. Le site fait autre chose — il vous rend
-            visible sur Google, il raconte votre façon de travailler, et il
-            renvoie vers votre agenda. Chacun son rôle.
-          </p>
-        </Reveal>
-      </section>
-
-      {/* DÉONTOLOGIE */}
-      <section
-        className="mx-auto section-x"
-        style={{
-          maxWidth: 1320,
-          borderTop: "1px solid var(--ftt-line)",
-          paddingTop: "clamp(48px, 6vw, 80px)",
-          paddingBottom: "clamp(64px, 8vw, 120px)",
-        }}
-      >
-        <Reveal>
-          <div className="flex items-baseline" style={{ gap: 14, marginBottom: 24 }}>
-            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(03)</span>
-            <span
-              className="font-mono"
-              style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-text-dim)" }}
-            >
-              Déontologie
-            </span>
-          </div>
-        </Reveal>
-        <Reveal delay={1}>
-          <h2
-            className="font-display"
-            style={{ fontSize: "clamp(36px, 6.5vw, 90px)", lineHeight: 0.95, margin: "0 0 24px" }}
-          >
-            VOTRE ORDRE NE{" "}
-            <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
-              l&apos;interdit pas
-            </em>
-            .
-          </h2>
-        </Reveal>
-        <Reveal delay={2}>
-          <p
-            style={{
-              fontSize: 16,
-              lineHeight: 1.7,
-              color: "var(--ftt-text-mid)",
-              maxWidth: 680,
-              margin: "0 0 48px",
-            }}
-          >
-            Beaucoup de praticiens pensent qu&apos;un site, « ça ne se fait pas »
-            dans la profession. C&apos;était vrai avant. Depuis le décret
-            n° 2020-1663 du 22 décembre 2020, la communication des
-            masseurs-kinésithérapeutes est libre, dans le respect des règles
-            déontologiques : de l&apos;information, pas de publicité racoleuse.
-            Concrètement, voilà la ligne.
-          </p>
-        </Reveal>
-
-        <div className="grid md:grid-cols-2 gap-5">
-          <Reveal delay={2}>
-            <div
-              style={{
-                borderRadius: 18,
-                border: "1px solid var(--ftt-line-strong)",
-                background: "rgba(255,255,255,0.02)",
-                padding: "clamp(24px, 3vw, 36px)",
-                height: "100%",
-              }}
-            >
-              <div
-                className="font-mono"
-                style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-cream)", marginBottom: 20 }}
-              >
-                ✓ Autorisé
-              </div>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
-                {AUTORISE.map((item) => (
-                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14, lineHeight: 1.5, color: "var(--ftt-text-mid)" }}>
-                    <span style={{ color: "var(--ftt-red)", flexShrink: 0, marginTop: 1 }}>✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-          <Reveal delay={3}>
-            <div
-              style={{
-                borderRadius: 18,
-                border: "1px solid var(--ftt-line)",
-                background: "rgba(255,255,255,0.02)",
-                padding: "clamp(24px, 3vw, 36px)",
-                height: "100%",
-              }}
-            >
-              <div
-                className="font-mono"
-                style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-text-dim)", marginBottom: 20 }}
-              >
-                ✕ À éviter
-              </div>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
-                {A_EVITER.map((item) => (
-                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14, lineHeight: 1.5, color: "var(--ftt-text-mid)" }}>
-                    <span style={{ color: "var(--ftt-text-dim)", flexShrink: 0, marginTop: 1 }}>✕</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        </div>
-
-        <Reveal delay={3}>
-          <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 20, lineHeight: 1.6, maxWidth: 680 }}>
-            Le Conseil national de l&apos;ordre a publié des recommandations sur la
-            communication en 2021. Chaque page que je rédige reste dans ce cadre :
-            factuel, prudent, mesuré.
+            Pas besoin d&apos;une usine à gaz. Le funnel minimum d&apos;un
+            indépendant qui vend de l&apos;expertise tient en trois temps : un
+            positionnement compris en cinq secondes, des preuves qui se
+            vérifient, un bouton pour réserver l&apos;appel. C&apos;est
+            exactement ce qu&apos;on construit.
           </p>
         </Reveal>
       </section>
@@ -365,7 +237,7 @@ export default function SiteInternetKine() {
       >
         <Reveal>
           <div className="flex items-baseline" style={{ gap: 14, marginBottom: 24 }}>
-            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(04)</span>
+            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(03)</span>
             <span
               className="font-mono"
               style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-text-dim)" }}
@@ -431,7 +303,7 @@ export default function SiteInternetKine() {
       >
         <Reveal>
           <div className="flex items-baseline" style={{ gap: 14, marginBottom: 24 }}>
-            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(05)</span>
+            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(04)</span>
             <span
               className="font-mono"
               style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-text-dim)" }}
@@ -448,28 +320,28 @@ export default function SiteInternetKine() {
                 className="font-display"
                 style={{ fontSize: "clamp(36px, 5vw, 72px)", lineHeight: 0.95, margin: "0 0 20px" }}
               >
-                CABINET{" "}
+                SIGMA{" "}
                 <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
-                  Atlas
+                  Lift
                 </em>
                 .
               </h2>
             </Reveal>
             <Reveal delay={2}>
               <p style={{ fontSize: 15, lineHeight: 1.7, color: "var(--ftt-text-mid)", margin: "0 0 16px" }}>
-                Une démo que j&apos;ai construite pour montrer ce qu&apos;un site
-                de cabinet peut donner : présentation des spécialités, équipe,
-                infos pratiques, prise de rendez-vous reliée. Ce n&apos;est pas un
-                client réel et les textes sont des exemples — c&apos;est justement
-                le but : voir le rendu avant de décider.
+                Une démo B2B que j&apos;ai construite : l&apos;exercice est le
+                même que pour un consultant — rendre une expertise crédible en
+                quelques secondes, avec un positionnement net et un design qui
+                tient le niveau du tarif. Ce n&apos;est pas un client réel, les
+                textes sont des exemples.
               </p>
             </Reveal>
             <Reveal delay={3}>
               <p style={{ fontSize: 15, lineHeight: 1.7, color: "var(--ftt-text-mid)", margin: "0 0 28px" }}>
-                Pour votre cabinet, on commence par un appel de 15 minutes :
-                vous me parlez de votre activité, je vous dis franchement ce que
-                je ferais. Sans engagement : si ça ne vous parle pas, on en
-                reste là.
+                Pour votre activité, on commence par un appel de 15 minutes :
+                vous me parlez de votre offre, je vous dis franchement ce que je
+                ferais. Sans engagement : si ça ne vous parle pas, on en reste
+                là.
               </p>
             </Reveal>
             <Reveal delay={3}>
@@ -480,10 +352,10 @@ export default function SiteInternetKine() {
           </div>
           <Reveal delay={2}>
             <a
-              href="/demo/cabinet-atlas/index.html"
+              href="/demo/sigma-lift/index.html"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Ouvrir la démo Cabinet Atlas dans un nouvel onglet"
+              aria-label="Ouvrir la démo Sigma Lift dans un nouvel onglet"
               style={{
                 display: "block",
                 position: "relative",
@@ -493,7 +365,7 @@ export default function SiteInternetKine() {
                 border: "1px solid var(--ftt-line-strong)",
               }}
             >
-              <CabinetAtlasPreview />
+              <SigmaLiftPreview />
             </a>
           </Reveal>
         </div>
@@ -511,7 +383,7 @@ export default function SiteInternetKine() {
       >
         <Reveal>
           <div className="flex items-baseline" style={{ gap: 14, marginBottom: 24 }}>
-            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(06)</span>
+            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(05)</span>
             <span
               className="font-mono"
               style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-text-dim)" }}
@@ -527,9 +399,9 @@ export default function SiteInternetKine() {
               className="font-display"
               style={{ fontSize: "clamp(40px, 7vw, 110px)", lineHeight: 0.95, margin: 0 }}
             >
-              750 €{" "}
+              DÈS 1 000 €{" "}
               <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-text-mid)" }}>
-                tout compris.
+                sur devis.
               </em>
             </h2>
           </Reveal>
@@ -537,10 +409,10 @@ export default function SiteInternetKine() {
           <Reveal delay={2}>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
-                "Jusqu'à 3 pages (accueil, spécialités, infos pratiques)",
-                "SEO local : votre ville + vos spécialités",
-                "Fiche Google Business Profile configurée",
-                "Lien de prise de rendez-vous intégré",
+                "Jusqu'à 5 pages (accueil, offres, à propos, contact…)",
+                "Positionnement travaillé ensemble à l'appel découverte",
+                "Votre lien de réservation intégré (Calendly ou autre)",
+                "SEO sur votre expertise et vos mots-clés",
                 "Livré en 14 jours ouvrés",
                 "1 modification gratuite incluse",
               ].map((item) => (
@@ -550,9 +422,8 @@ export default function SiteInternetKine() {
                 </div>
               ))}
               <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 8, lineHeight: 1.6 }}>
-                C&apos;est le pack Visibilité, celui que prennent la plupart des
-                praticiens. Une page simple coûte 500 €, les cabinets de groupe
-                passent en sur-mesure.{" "}
+                C&apos;est le pack Sur-mesure, sur devis personnalisé. Pour
+                démarrer plus léger, le pack Visibilité à 750 € existe aussi.{" "}
                 <a href="/tarifs" style={{ color: "var(--ftt-cream)", textDecoration: "underline" }}>
                   Tous les tarifs en détail
                 </a>
@@ -573,16 +444,16 @@ export default function SiteInternetKine() {
           paddingBottom: "clamp(64px, 8vw, 120px)",
         }}
       >
-        <JsonLd data={faqPageSchema(KINE_FAQ)} />
+        <JsonLd data={faqPageSchema(CONSULTANT_FAQ)} />
 
         <Reveal>
           <div className="flex items-baseline" style={{ gap: 14, marginBottom: 24 }}>
-            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(07)</span>
+            <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>(06)</span>
             <span
               className="font-mono"
               style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ftt-text-dim)" }}
             >
-              Questions de praticiens
+              Questions d&apos;indépendants
             </span>
           </div>
         </Reveal>
@@ -601,7 +472,7 @@ export default function SiteInternetKine() {
         </Reveal>
 
         <div style={{ maxWidth: 860 }}>
-          {KINE_FAQ.map((item, i) => {
+          {CONSULTANT_FAQ.map((item, i) => {
             const isOpen = openFaq === i;
             return (
               <Reveal key={i} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
@@ -685,7 +556,7 @@ export default function SiteInternetKine() {
           >
             ON EN PARLE{" "}
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
-              entre deux patients
+              entre deux missions
             </em>
             ?
           </h2>

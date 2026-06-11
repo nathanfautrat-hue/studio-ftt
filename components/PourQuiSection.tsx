@@ -7,6 +7,8 @@ const PROFILES: Array<{ num: string; title: string; desc: string; href?: string;
     num: "001",
     title: "Artisans & BTP",
     desc: "Vous bossez bien, mais on vous trouve pas sur Google.",
+    href: "/site-internet-artisan",
+    linkLabel: "L'offre artisans",
   },
   {
     num: "002",
@@ -19,11 +21,15 @@ const PROFILES: Array<{ num: string; title: string; desc: string; href?: string;
     num: "003",
     title: "Commerces & services locaux",
     desc: "Le concurrent a un site clinquant, vous êtes invisible.",
+    href: "/site-internet-commerce",
+    linkLabel: "L'offre commerces",
   },
   {
     num: "004",
     title: "Consultants & coachs",
     desc: "Votre expertise vaut cher, votre site dit l'inverse.",
+    href: "/site-internet-consultant",
+    linkLabel: "L'offre consultants",
   },
 ];
 
