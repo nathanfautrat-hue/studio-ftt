@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AutresOffres from "@/components/AutresOffres";
 import Reveal from "@/components/Reveal";
 import JsonLd from "@/components/JsonLd";
 import { faqPageSchema } from "@/lib/schema";
@@ -576,6 +577,8 @@ export default function SiteInternetArtisan() {
           })}
         </div>
       </section>
+
+      <AutresOffres current="/site-internet-artisan" />
 
       {/* CTA FINAL */}
       <section

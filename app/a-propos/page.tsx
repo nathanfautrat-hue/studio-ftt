@@ -7,7 +7,7 @@ import { breadcrumbSchema, personSchema, aboutPageSchema } from "@/lib/schema";
 
 const TITLE = "À propos — Nathan Fautrat, fondateur de Studio FTT";
 const DESCRIPTION =
-  "Studio FTT, c'est Nathan Fautrat, 19 ans, basé en Sarthe. Designer et développeur web indépendant. Je crée des sites sur-mesure pour les artisans, indépendants et petites équipes qui veulent un site fait pour eux — pas un Wix générique.";
+  "Studio FTT, c'est Nathan Fautrat, designer et développeur web indépendant en Sarthe. Des sites sur-mesure pour artisans et indépendants — pas un Wix générique.";
 const URL_A_PROPOS = `${siteConfig.url}/a-propos`;
 
 export const metadata: Metadata = {
