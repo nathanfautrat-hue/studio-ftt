@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import BackLink from "@/components/BackLink";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/lib/site-config";
 
 export default function ScavbackPage() {
   return (
@@ -73,13 +73,47 @@ export default function ScavbackPage() {
           </div>
           <div className="max-w-3xl">
             <h2 className="font-display text-4xl md:text-5xl leading-[1.1] mb-8">
-              Un collectif artistique avait besoin d'un espace pour exister en ligne.
+              Un collectif artistique avait besoin d&apos;un espace pour exister en ligne.
             </h2>
             <p className="text-white/60 text-lg leading-relaxed">
-              Scavback rassemble des artistes indépendants autour d'un univers
-              visuel commun. L'enjeu : créer une plateforme qui reflète leur
-              identité tout en restant fonctionnelle pour présenter les œuvres,
-              les artistes et les événements à venir.
+              Scavback rassemble des artistes indépendants autour d&apos;un univers
+              visuel commun — son, image, vision. L&apos;enjeu : créer une
+              plateforme qui reflète leur identité tout en restant fonctionnelle
+              pour présenter les œuvres, les artistes et les événements à venir.
+            </p>
+            <p className="text-white/60 text-lg leading-relaxed mt-6">
+              Un collectif, ce n&apos;est ni une entreprise ni un artiste solo :
+              le site devait laisser de la place à chaque membre sans diluer
+              l&apos;identité du groupe. C&apos;est ce qui a guidé toutes les
+              décisions, du design à la structure des pages.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PARTI PRIS */}
+      <section className="container py-16 md:py-24 border-t border-white/5">
+        <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-24">
+          <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A]">
+            <span className="text-white/30 mr-2">02</span>Parti pris
+          </div>
+          <div className="max-w-3xl">
+            <h2 className="font-display text-4xl md:text-5xl leading-[1.1] mb-8">
+              Un site qui ressemble à leur scène, pas à une plaquette.
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed">
+              Fond noir, textures sombres, typographie massive en capitales et
+              rouge signature : l&apos;arrivée sur le site pose l&apos;ambiance
+              avant même le premier mot. Le nom du collectif occupe
+              l&apos;écran entier, la navigation se réduit à l&apos;essentiel,
+              et chaque section garde cette tension visuelle plutôt que de
+              l&apos;adoucir.
+            </p>
+            <p className="text-white/60 text-lg leading-relaxed mt-6">
+              Le piège classique pour ce genre de projet, c&apos;est le template
+              de portfolio générique qui aplatit tout. Ici, l&apos;identité du
+              collectif est le point de départ du design, pas un logo posé sur
+              une maquette toute faite.
             </p>
           </div>
         </div>
@@ -89,26 +123,26 @@ export default function ScavbackPage() {
       <section className="container py-16 md:py-24 border-t border-white/5">
         <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-24">
           <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A]">
-            <span className="text-white/30 mr-2">02</span>Ce qu'on a fait
+            <span className="text-white/30 mr-2">03</span>Ce que j&apos;ai fait
           </div>
           <div>
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
                   t: "Design UI",
-                  d: "Identité visuelle forte, typographies contrastées, mise en page éditoriale.",
+                  d: "Identité visuelle forte, typographies contrastées, mise en page éditoriale. Chaque écran a été dessiné pour l'univers du collectif, sans partir d'un template.",
                 },
                 {
                   t: "Développement React",
-                  d: "Application moderne et performante, pensée pour la rapidité et l'expérience.",
+                  d: "Application React compilée avec Vite : navigation fluide, animations maîtrisées, et un site qui reste rapide malgré la densité visuelle.",
                 },
                 {
                   t: "Identité visuelle",
-                  d: "Système de couleurs, logo, déclinaisons sur les réseaux.",
+                  d: "Système de couleurs autour du rouge signature, logo, déclinaisons pensées pour les réseaux du collectif.",
                 },
                 {
                   t: "Déploiement",
-                  d: "Mise en ligne, configuration DNS, suivi post-livraison.",
+                  d: "Build de production, mise en ligne sur Cloudflare Pages, configuration DNS et suivi après livraison.",
                 },
               ].map((s, i) => (
                 <Reveal key={s.t} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
@@ -124,6 +158,56 @@ export default function ScavbackPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* STACK */}
+      <section className="container py-16 md:py-24 border-t border-white/5">
+        <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-24">
+          <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A]">
+            <span className="text-white/30 mr-2">04</span>Côté technique
+          </div>
+          <div className="max-w-3xl">
+            <h2 className="font-display text-4xl md:text-5xl leading-[1.1] mb-8">
+              React + Vite, servi par Cloudflare Pages.
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed">
+              Le site est une application React compilée avec Vite, déployée sur
+              Cloudflare Pages : chaque mise à jour du code part en ligne
+              automatiquement, et les pages sont servies depuis un réseau mondial
+              — le site charge vite, en France comme ailleurs.
+            </p>
+            <p className="text-white/60 text-lg leading-relaxed mt-6">
+              Pour un budget de 500 €, le collectif repart avec un vrai site
+              sur-mesure : pas d&apos;abonnement à une plateforme, pas de
+              template loué, un univers à eux.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="container py-20 md:py-28 border-t border-white/5 text-center">
+        <Reveal>
+          <h2 className="font-display text-4xl md:text-6xl leading-[1.05] mb-6">
+            Un projet du même genre&nbsp;?
+          </h2>
+          <p className="text-white/60 text-lg mb-10">
+            15 minutes au téléphone pour en parler, sans engagement.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={siteConfig.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--solid"
+            >
+              Réserver un appel <span className="btn__arrow">→</span>
+            </a>
+            <a href="/tarifs" className="btn btn--ghost">
+              Voir les tarifs <span className="btn__arrow">→</span>
+            </a>
+          </div>
+        </Reveal>
       </section>
 
       <Footer />

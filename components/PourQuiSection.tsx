@@ -93,7 +93,15 @@ export default function PourQuiSection() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-14 md:mt-20">
         {PROFILES.map((p, i) => (
           <Reveal key={p.num} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
-            <div style={{ paddingTop: 24, borderTop: "1px solid var(--ftt-line)" }}>
+            <div
+              style={{
+                paddingTop: 24,
+                borderTop: "1px solid var(--ftt-line)",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               <div
                 className="font-mono"
                 style={{
@@ -131,7 +139,9 @@ export default function PourQuiSection() {
                   className="font-mono lift"
                   style={{
                     display: "inline-block",
-                    marginTop: 14,
+                    marginTop: "auto",
+                    paddingTop: 14,
+                    alignSelf: "flex-start",
                     fontSize: 11,
                     letterSpacing: "0.18em",
                     textTransform: "uppercase",
