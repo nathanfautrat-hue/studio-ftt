@@ -41,6 +41,9 @@ function priorityFor(urlPath) {
   if (urlPath === "/tarifs.html" || urlPath === "/tarifs") {
     return { priority: "0.9", changefreq: "monthly" };
   }
+  if (urlPath === "/site-internet-kine") {
+    return { priority: "0.9", changefreq: "monthly" };
+  }
   if (urlPath.startsWith("/projets/")) {
     return { priority: "0.8", changefreq: "monthly" };
   }

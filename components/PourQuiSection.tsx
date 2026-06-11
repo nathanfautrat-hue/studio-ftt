@@ -2,7 +2,7 @@
 
 import Reveal from "@/components/Reveal";
 
-const PROFILES = [
+const PROFILES: Array<{ num: string; title: string; desc: string; href?: string; linkLabel?: string }> = [
   {
     num: "001",
     title: "Artisans & BTP",
@@ -12,6 +12,8 @@ const PROFILES = [
     num: "002",
     title: "Santé & bien-être",
     desc: "Noyé sur Doctolib, personne prend de rdv.",
+    href: "/site-internet-kine",
+    linkLabel: "L'offre kinés & ostéos",
   },
   {
     num: "003",
@@ -117,6 +119,23 @@ export default function PourQuiSection() {
               >
                 {p.desc}
               </p>
+              {p.href && (
+                <a
+                  href={p.href}
+                  className="font-mono lift"
+                  style={{
+                    display: "inline-block",
+                    marginTop: 14,
+                    fontSize: 11,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "var(--ftt-red)",
+                    textDecoration: "none",
+                  }}
+                >
+                  {p.linkLabel} →
+                </a>
+              )}
             </div>
           </Reveal>
         ))}
