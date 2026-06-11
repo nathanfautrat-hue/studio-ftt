@@ -3,9 +3,9 @@ import { siteConfig } from "@/lib/site-config";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
-const TITLE = "Site internet pour consultant : un site au niveau de votre TJM";
+const TITLE = "Site internet consultant : au niveau de votre TJM";
 const DESCRIPTION =
-  "Crédible en réunion, invisible en ligne ? Positionnement, offre, preuves, prise de rendez-vous : un site de consultant sur-mesure dès 1 000 €, livré en 14 jours ouvrés.";
+  "Crédible en réunion, invisible en ligne ? Un site de consultant au niveau de votre TJM, sur-mesure dès 1 000 €, livré en 14 jours ouvrés.";
 
 const URL = `${siteConfig.url}/site-internet-consultant`;
 

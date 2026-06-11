@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
-const TITLE = "Site internet pour artisan : être trouvé avant le concurrent";
+const TITLE = "Site internet artisan : être trouvé le premier";
 const DESCRIPTION =
   "Quand un client tape « plombier + votre ville » à 22h, il appelle celui qu'il trouve. Site + fiche Google reliés, 750 € tout compris, livré en 14 jours ouvrés.";
 

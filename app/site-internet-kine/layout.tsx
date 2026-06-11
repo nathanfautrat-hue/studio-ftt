@@ -3,9 +3,9 @@ import { siteConfig } from "@/lib/site-config";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
-const TITLE = "Site internet pour kinésithérapeute : être choisi, pas juste réservé";
+const TITLE = "Site internet kinésithérapeute : être choisi";
 const DESCRIPTION =
-  "Sur Doctolib, vous êtes une ligne parmi cinquante. Un site de kiné bien fait vous rend visible et respecte votre déontologie. Pack 750 € tout compris, livré en 14 jours ouvrés.";
+  "Sur Doctolib, vous êtes une ligne parmi cinquante. Un site de kiné qui vous rend visible et respecte votre déontologie. 750 € tout compris, 14 jours ouvrés.";
 
 const URL = `${siteConfig.url}/site-internet-kine`;
 

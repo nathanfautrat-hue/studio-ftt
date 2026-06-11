@@ -3,9 +3,9 @@ import { siteConfig } from "@/lib/site-config";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
-const TITLE = "Site internet pour commerce et service local : exister sur Google";
+const TITLE = "Site internet garage & commerce local";
 const DESCRIPTION =
-  "Les chaînes ont des sites clinquants, vous avez le métier. Site + fiche Google reliés pour garage, institut, auto-école ou commerce : 750 € tout compris, livré en 14 jours ouvrés.";
+  "Les chaînes ont des sites clinquants, vous avez le métier. Site + fiche Google reliés pour garage ou commerce : 750 € tout compris, livré en 14 jours ouvrés.";
 
 const URL = `${siteConfig.url}/site-internet-commerce`;
 
