@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/og-image.png"],
+    images: ["/og-consultant.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/og-image.png"],
+    images: ["/og-consultant.png"],
   },
 };
 
