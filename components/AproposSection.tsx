@@ -46,6 +46,19 @@ export default function AproposSection() {
               et qui le mets en ligne. Nathan Fautrat, designer et développeur web
               indépendant en Sarthe, disponible dans toute la France.
             </p>
+            <h3
+              className="font-mono"
+              style={{
+                fontSize: 12,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--ftt-text-dim)",
+                fontWeight: 500,
+                margin: "0 0 28px",
+              }}
+            >
+              Création de site internet au Mans, en Sarthe et dans toute la France
+            </h3>
             <a
               href="/a-propos"
               className="lift inline-flex items-center"
