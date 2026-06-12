@@ -20,11 +20,14 @@ export function ScavbackPreview() {
 
 export function SprayfilmPreview() {
   return (
-    <LiveIframePreview
-      src="https://sprayfilm.fr/"
-      bg="#171717"
-      label="Sprayfilm — preview"
-    />
+    <div className="absolute inset-0 bg-[#171717] overflow-hidden">
+      <img
+        src="/preview-sprayfilm.webp"
+        alt="Aperçu du site Sprayfilm — production audiovisuelle"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        loading="lazy"
+      />
+    </div>
   );
 }
 

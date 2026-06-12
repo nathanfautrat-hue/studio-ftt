@@ -204,12 +204,16 @@ function DesktopStack({ projects }: { projects: StackProject[] }) {
       </div>
 
       {/* Big preview — sticky right */}
-      <div className="sticky top-24" style={{ height: "min(580px, 70vh)" }}>
+      <div className="sticky top-24">
+        {/* La card ne contient QUE l'aperçu — le vrai site, en entier.
+            aspect-ratio 16/10 = le viewport exact des previews (1440×900) :
+            l'aperçu remplit la card pile, sans vide ni recadrage. */}
         <div
-          className="relative h-full overflow-hidden"
+          className="relative overflow-hidden"
           style={{
             borderRadius: 18,
             border: "1px solid var(--ftt-line-strong)",
+            aspectRatio: "16 / 10",
           }}
         >
           {projects.map((p, i) => {
@@ -232,49 +236,37 @@ function DesktopStack({ projects }: { projects: StackProject[] }) {
               </div>
             );
           })}
+        </div>
 
-          {/* Overlay bottom */}
-          <div
-            className="absolute inset-x-0 bottom-0 z-10 flex justify-between items-end gap-4"
-            style={{ padding: 24 }}
-          >
+        {/* Texte + bouton sous la card */}
+        <div className="flex justify-between items-center gap-6" style={{ marginTop: 18 }}>
+          <div style={{ minWidth: 0 }}>
             <div
+              className="font-mono"
               style={{
-                background: "rgba(5,5,5,0.7)",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-                padding: "14px 18px",
-                borderRadius: 12,
-                border: "1px solid var(--ftt-line-strong)",
-                maxWidth: 360,
+                fontSize: 10,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "var(--ftt-text-dim)",
+                marginBottom: 6,
               }}
             >
-              <div
-                className="font-mono"
-                style={{
-                  fontSize: 10,
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "var(--ftt-text-dim)",
-                  marginBottom: 6,
-                }}
-              >
-                {current.kind}
-              </div>
-              <div
-                style={{
-                  fontSize: 14,
-                  lineHeight: 1.45,
-                  color: "var(--ftt-cream)",
-                }}
-              >
-                {current.blurb}
-              </div>
+              {current.kind}
             </div>
-            <ProjectLink href={current.href} className="btn btn--solid shrink-0">
-              Voir le projet <span className="btn__arrow">→</span>
-            </ProjectLink>
+            <div
+              style={{
+                fontSize: 14,
+                lineHeight: 1.45,
+                color: "var(--ftt-text-mid)",
+                maxWidth: 480,
+              }}
+            >
+              {current.blurb}
+            </div>
           </div>
+          <ProjectLink href={current.href} className="btn btn--solid shrink-0">
+            Voir le projet <span className="btn__arrow">→</span>
+          </ProjectLink>
         </div>
       </div>
     </div>
