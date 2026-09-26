@@ -34,7 +34,7 @@ export default function Navbar() {
 
         {/* Nav desktop */}
         <nav
-          className="hidden md:flex items-center"
+          className="hidden lg:flex items-center"
           style={{
             gap: 4,
             padding: 4,
@@ -54,6 +54,7 @@ export default function Navbar() {
                 color: "var(--ftt-text-mid)",
                 textDecoration: "none",
                 fontSize: 13,
+                whiteSpace: "nowrap",
               }}
             >
               {l.label}
@@ -65,7 +66,7 @@ export default function Navbar() {
           {/* Téléphone */}
           <a
             href="tel:+33607033804"
-            className="hidden md:inline-flex items-center lift"
+            className="hidden lg:inline-flex items-center lift"
             style={{
               color: "var(--ftt-text-mid)",
               textDecoration: "none",
@@ -113,7 +114,7 @@ export default function Navbar() {
 
           {/* Burger mobile */}
           <button
-            className="md:hidden shrink-0"
+            className="lg:hidden shrink-0"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             style={{
@@ -155,7 +156,7 @@ export default function Navbar() {
       {/* Menu mobile overlay */}
       {open && (
         <div
-          className="md:hidden fixed inset-0 z-40 flex flex-col"
+          className="lg:hidden fixed inset-0 z-40 flex flex-col"
           style={{
             top: 64,
             background: "rgba(5,5,5,0.97)",

@@ -84,8 +84,8 @@ export default function PourQuiSection() {
               margin: 0,
             }}
           >
-            Vous vous reconnaissez ? Site qui date, pas de site, ou refonte
-            complète : je m&apos;occupe de tout.
+            Vous vous reconnaissez ? Site qui n&apos;est plus au goût du jour,
+            pas de site, ou refonte complète : je m&apos;occupe de tout.
           </p>
         </Reveal>
       </div>
