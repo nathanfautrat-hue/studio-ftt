@@ -10,15 +10,15 @@ import JsonLd from "@/components/JsonLd";
 import { faqPageSchema } from "@/lib/schema";
 
 const COMPARATIF = {
-  cols: ["Wix / Squarespace", "Freelance classique", "Studio FTT", "Agence web"],
+  cols: ["Wix / Squarespace", "Générateur IA (Base44…)", "Freelance classique", "Studio FTT", "Agence web"],
   rows: [
-    { label: "Prix", cells: ["17 à 30 €/mois, à vie", "800 à 1 500 €", "500 à 1 000 € one-shot", "1 800 à 2 500 €+"] },
-    { label: "Qui fait le travail", cells: ["Vous, seul", "Le freelance", "Moi, en direct", "Une équipe + un chef de projet"] },
-    { label: "Délai", cells: ["Selon votre temps libre", "Variable", "7 jours ouvrés", "6 à 12 semaines"] },
-    { label: "Design", cells: ["Template à adapter", "Selon le profil", "Sur-mesure pour votre métier", "Sur-mesure"] },
-    { label: "SEO", cells: ["À faire vous-même", "Souvent en option", "Inclus dès 500 €", "Inclus"] },
-    { label: "Google, Bing, Apple Plans", cells: ["À configurer vous-même", "Selon le prestataire", "Fiches configurées dès 750 €", "Selon l'agence"] },
-    { label: "Abonnement", cells: ["Obligatoire, sinon le site disparaît", "Selon le prestataire", "Aucun obligatoire", "Maintenance en supplément"] },
+    { label: "Prix", cells: ["17 à 30 €/mois, à vie", "Gratuit sur une adresse base44.app, dès 16 $/mois avec votre nom de domaine", "800 à 1 500 €", "500 à 1 000 € one-shot", "1 800 à 2 500 €+"] },
+    { label: "Qui fait le travail", cells: ["Vous, seul", "Vous, en décrivant à une IA", "Le freelance", "Moi, en direct", "Une équipe + un chef de projet"] },
+    { label: "Délai", cells: ["Selon votre temps libre", "Quelques heures, si vous savez quoi demander", "Variable", "7 jours ouvrés", "6 à 12 semaines"] },
+    { label: "Design", cells: ["Template à adapter", "Généré par l'IA, à retoucher vous-même", "Selon le profil", "Sur-mesure pour votre métier", "Sur-mesure"] },
+    { label: "SEO", cells: ["À faire vous-même", "À faire vous-même", "Souvent en option", "Inclus dès 500 €", "Inclus"] },
+    { label: "Google, Bing, Apple Plans", cells: ["À configurer vous-même", "À configurer vous-même", "Selon le prestataire", "Fiches configurées dès 750 €", "Selon l'agence"] },
+    { label: "Abonnement", cells: ["Obligatoire, sinon vous perdez votre nom de domaine", "Obligatoire pour garder votre nom de domaine", "Selon le prestataire", "Aucun obligatoire", "Maintenance en supplément"] },
   ],
 };
 
@@ -33,7 +33,11 @@ const TARIFS_FAQ = [
   },
   {
     q: "Wix coûte 17 €/mois, pourquoi payer 500 € ?",
-    a: "Sur 3 ans, un abonnement Wix revient à environ 600 €, et c'est vous qui faites tout : le design, les textes, le référencement. Si vous arrêtez de payer, votre site disparaît. Chez moi, vous payez une fois, et c'est moi qui construis le site pour votre métier — pas un template à remplir le dimanche soir.",
+    a: "Sur 3 ans, un abonnement Wix revient à environ 600 €, et c'est vous qui faites tout : le design, les textes, le référencement. Si vous arrêtez de payer, vous perdez votre nom de domaine et votre site repasse sur une adresse Wix, avec leur publicité. Chez moi, vous payez une fois, et c'est moi qui construis le site pour votre métier — pas un template à remplir le dimanche soir.",
+  },
+  {
+    q: "Pourquoi pas un site fait par une IA comme Base44 ?",
+    a: "Ces outils génèrent un site en quelques minutes, mais c'est vous qui décrivez ce que vous voulez, qui corrigez le résultat et qui gérez le référencement. Et pour garder votre propre nom de domaine, il faut un abonnement. Moi aussi j'utilise l'IA pour aller vite. La différence, c'est que c'est moi qui décide du design, qui écris pour votre métier et qui configure vos fiches Google, Bing et Apple Plans. Vous, vous n'avez rien à faire.",
   },
   {
     q: "Y a-t-il des frais après l'achat du site ?",
@@ -410,7 +414,7 @@ export default function Tarifs() {
             <table
               style={{
                 width: "100%",
-                minWidth: 760,
+                minWidth: 940,
                 borderCollapse: "collapse",
                 fontSize: 14,
                 lineHeight: 1.5,
@@ -466,9 +470,9 @@ export default function Tarifs() {
                         key={ci}
                         style={{
                           padding: "16px",
-                          color: ci === 2 ? "var(--ftt-cream)" : "var(--ftt-text-mid)",
-                          fontWeight: ci === 2 ? 500 : 400,
-                          background: ci === 2 ? "rgba(232,53,42,0.07)" : "transparent",
+                          color: COMPARATIF.cols[ci] === "Studio FTT" ? "var(--ftt-cream)" : "var(--ftt-text-mid)",
+                          fontWeight: COMPARATIF.cols[ci] === "Studio FTT" ? 500 : 400,
+                          background: COMPARATIF.cols[ci] === "Studio FTT" ? "rgba(232,53,42,0.07)" : "transparent",
                           borderBottom: "1px solid var(--ftt-line)",
                           verticalAlign: "top",
                         }}

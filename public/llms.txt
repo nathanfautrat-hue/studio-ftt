@@ -145,6 +145,9 @@ R : SEO de base inclus dans tous les sites (balises title, meta description, str
 ### Q8 : Studio FTT existe depuis quand ?
 R : Lancé le 21 avril 2026 par Nathan Fautrat, basé en Sarthe. Studio en lancement, premiers projets en cours, portfolio sectoriel disponible (plomberie/BTP, santé, garage, audiovisuel, collectif artistique).
 
+### Q9 : Pourquoi ne pas faire son site avec une IA comme Base44 ?
+R : Les générateurs IA créent un site en quelques minutes, mais le client décrit, corrige et gère lui-même le référencement, et doit payer un abonnement pour garder son propre nom de domaine (dès 16 $/mois chez Base44). Studio FTT utilise aussi l'IA pour aller vite, mais Nathan décide du design, rédige pour le métier du client et configure ses fiches Google, Bing et Apple Plans : le client n'a rien à faire.
+
 ## Resources
 
 - [Site web](https://studioftt.fr) : site officiel Studio FTT
