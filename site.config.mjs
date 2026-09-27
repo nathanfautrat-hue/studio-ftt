@@ -24,7 +24,7 @@ export const siteConfig = {
   calendly: "https://calendly.com/contactstudioftt/15min",
   whatsapp:
     "https://wa.me/33607033804?text=" +
-    encodeURIComponent("Bonjour, je viens de studioftt.fr, j'aimerais un site pour mon activité."),
+    encodeURIComponent("Bonjour, je viens de studioftt.fr, j'aimerais en savoir plus sur vos services."),
 
   // Localisation
   address: {
