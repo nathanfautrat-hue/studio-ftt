@@ -84,7 +84,7 @@ const KINE_FAQ = [
   },
   {
     q: "Je n'ai pas le temps de m'en occuper.",
-    a: "C'est prévu. Un appel de 15 minutes pour comprendre votre cabinet, vous m'envoyez vos contenus (photos, parcours, spécialités), et je m'occupe du reste : textes, design, mise en ligne, fiche Google. Livré en 14 jours ouvrés après réception de l'acompte et de vos contenus.",
+    a: "C'est prévu. Un appel de 15 minutes pour comprendre votre cabinet, vous m'envoyez vos contenus (photos, parcours, spécialités), et je m'occupe du reste : textes, design, mise en ligne, fiche Google. Livré en 7 jours ouvrés après réception de l'acompte et de vos contenus, hors temps de validation de votre côté.",
   },
 ];
 
@@ -542,7 +542,7 @@ export default function SiteInternetKine() {
                 "SEO local : votre ville + vos spécialités",
                 "Fiche Google Business Profile configurée",
                 "Lien de prise de rendez-vous intégré",
-                "Livré en 14 jours ouvrés",
+                "Livré en 7 jours ouvrés",
                 "1 modification gratuite incluse",
               ].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--ftt-text-mid)" }}>

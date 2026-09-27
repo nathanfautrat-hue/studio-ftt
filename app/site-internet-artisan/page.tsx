@@ -66,7 +66,7 @@ const ARTISAN_FAQ = [
   },
   {
     q: "Combien de temps ça prend ?",
-    a: "14 jours ouvrés après réception de l'acompte et de vos contenus. Votre seul travail : me transmettre vos photos, vos services et vos infos. Je m'occupe du reste, du design à la mise en ligne.",
+    a: "7 jours ouvrés après réception de l'acompte et de vos contenus, hors temps de validation de votre côté. Votre seul travail : me transmettre vos photos, vos services et vos infos. Je m'occupe du reste, du design à la mise en ligne.",
   },
   {
     q: "Il faut payer tous les mois ?",
@@ -453,7 +453,7 @@ export default function SiteInternetArtisan() {
                 "SEO local : votre ville + vos services",
                 "Fiche Google Business Profile configurée",
                 "Zone d'intervention détaillée",
-                "Livré en 14 jours ouvrés",
+                "Livré en 7 jours ouvrés",
                 "1 modification gratuite incluse",
               ].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--ftt-text-mid)" }}>

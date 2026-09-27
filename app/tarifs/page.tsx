@@ -14,7 +14,7 @@ const COMPARATIF = {
   rows: [
     { label: "Prix", cells: ["17 à 30 €/mois, à vie", "800 à 1 500 €", "500 à 1 000 € one-shot", "1 800 à 2 500 €+"] },
     { label: "Qui fait le travail", cells: ["Vous, seul", "Le freelance", "Moi, en direct", "Une équipe + un chef de projet"] },
-    { label: "Délai", cells: ["Selon votre temps libre", "Variable", "14 jours ouvrés", "6 à 12 semaines"] },
+    { label: "Délai", cells: ["Selon votre temps libre", "Variable", "7 jours ouvrés", "6 à 12 semaines"] },
     { label: "Design", cells: ["Template à adapter", "Selon le profil", "Sur-mesure pour votre métier", "Sur-mesure"] },
     { label: "SEO", cells: ["À faire vous-même", "Souvent en option", "Inclus dès 500 €", "Inclus"] },
     { label: "Abonnement", cells: ["Obligatoire, sinon le site disparaît", "Selon le prestataire", "Aucun obligatoire", "Maintenance en supplément"] },
@@ -43,8 +43,8 @@ const TARIFS_FAQ = [
     a: "Un devis écrit, valable 30 jours. Vous versez un acompte de 30 % à la signature pour lancer les travaux, et le solde se règle avant la mise en ligne. Tout est posé par écrit avant de commencer.",
   },
   {
-    q: "Le délai de 14 jours ouvrés démarre quand ?",
-    a: "À la réception de votre acompte et de vos contenus : textes, photos, logo. C'est le temps qu'il me faut pour concevoir la maquette, la faire valider et mettre le site en ligne. S'il vous manque des éléments, je démarre avec ce que vous avez.",
+    q: "Le délai de 7 jours ouvrés démarre quand ?",
+    a: "Quand j'ai reçu votre acompte de 30 % et tous vos contenus : textes, photos, logo, infos. Les jours où j'attends votre validation ou une réponse de votre part ne comptent pas, et la vérification de la fiche Google (faite par Google) non plus. S'il vous manque des éléments, on en parle et on démarre avec ce que vous avez.",
   },
 ];
 
@@ -120,7 +120,7 @@ export default function Tarifs() {
               }}
             >
               <span style={{ color: "var(--ftt-red)", fontSize: 16 }}>⚡</span>
-              Livraison en 14 jours ouvrés
+              Livraison en 7 jours ouvrés
             </div>
           </div>
         </Reveal>

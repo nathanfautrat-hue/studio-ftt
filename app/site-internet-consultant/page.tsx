@@ -66,7 +66,7 @@ const CONSULTANT_FAQ = [
   },
   {
     q: "Combien de temps ça prend ?",
-    a: "14 jours ouvrés après réception de l'acompte et de vos contenus. On cale votre positionnement à l'appel découverte, vous m'envoyez votre matière, je m'occupe du reste, du design à la mise en ligne.",
+    a: "7 jours ouvrés après réception de l'acompte et de vos contenus, hors temps de validation de votre côté. On cale votre positionnement à l'appel découverte, vous m'envoyez votre matière, je m'occupe du reste, du design à la mise en ligne.",
   },
   {
     q: "Vous écrivez les textes ?",
@@ -414,7 +414,7 @@ export default function SiteInternetConsultant() {
                 "Positionnement travaillé ensemble à l'appel découverte",
                 "Votre lien de réservation intégré (Calendly ou autre)",
                 "SEO sur votre expertise et vos mots-clés",
-                "Livré en 14 jours ouvrés",
+                "Livré en 7 jours ouvrés",
                 "1 modification gratuite incluse",
               ].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--ftt-text-mid)" }}>

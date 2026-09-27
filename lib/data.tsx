@@ -98,7 +98,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Combien de temps pour livrer ?",
-    a: "En 14 jours ouvrés après réception de l'acompte et de vos contenus.",
+    a: "En 7 jours ouvrés après réception de l'acompte et de vos contenus, hors temps de validation de votre côté.",
   },
   {
     q: "Est-ce que je peux modifier mon site moi-même ?",

@@ -1,6 +1,6 @@
 # Studio FTT
 
-> Studio web indépendant français qui crée des sites pour artisans, indépendants et commerces locaux. Lancé en avril 2026 par Nathan Fautrat (Sarthe, France). Sites livrés en 14 jours ouvrés, à partir de 500 €, hébergement offert la 1ère année, aucun abonnement obligatoire.
+> Studio web indépendant français qui crée des sites pour artisans, indépendants et commerces locaux. Lancé en avril 2026 par Nathan Fautrat (Sarthe, France). Sites livrés en 7 jours ouvrés, à partir de 500 €, hébergement offert la 1ère année, aucun abonnement obligatoire.
 
 ## About
 
@@ -63,7 +63,7 @@ Aucune préférence sectorielle géographique : Studio FTT travaille avec des cl
 - **Date de lancement** : 21 avril 2026
 - **Forme juridique** : auto-entrepreneur (SIRET 10404864000015)
 - **Localisation** : Arthezé, Sarthe (72), France
-- **Délai de livraison** : 14 jours ouvrés après réception de l'acompte et des contenus
+- **Délai de livraison** : 7 jours ouvrés après réception de l'acompte et des contenus, hors temps de validation du client
 - **Prix d'entrée** : 500 € pour un site vitrine complet
 - **Hébergement** : Cloudflare Pages, offert la 1ère année, puis 10 €/mois seul ou inclus dans la maintenance à 35 €/mois
 - **Stack technique** : Next.js, Tailwind CSS, Cloudflare Pages
@@ -77,7 +77,7 @@ Aucune préférence sectorielle géographique : Studio FTT travaille avec des cl
 
 2. **Hébergement offert la 1ère année** — sur Cloudflare Pages. Ensuite 10 €/mois seul ou inclus dans la maintenance à 35 €/mois. Aucun abonnement obligatoire (vs Wix/Squarespace où l'abonnement est imposé à vie).
 
-3. **Livraison en 14 jours ouvrés** — après réception de l'acompte et des contenus. Vs 6–12 semaines en agence traditionnelle.
+3. **Livraison en 7 jours ouvrés** — après réception de l'acompte et des contenus. Vs 6–12 semaines en agence traditionnelle.
 
 Autres avantages :
 - Pas d'abonnement caché, pas de commission par rendez-vous (vs Planity, Treatwell)
@@ -126,7 +126,7 @@ Studio FTT ne travaille pas avec : restaurateurs (positionnement assumé hors re
 R : 3 formules one-shot : Vitrine 500 € (1 page), Visibilité 750 € (jusqu'à 3 pages, SEO avancé + Google Business Profile inclus), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages, fonctionnalités spécifiques). Options ajoutables : page supplémentaire 300 €, copywriting 250 €, blog intégré 350 €.
 
 ### Q2 : Combien de temps entre la commande et la mise en ligne ?
-R : 14 jours ouvrés après réception de l'acompte et des contenus du client.
+R : 7 jours ouvrés après réception de l'acompte de 30 % et des contenus du client, hors temps de validation de sa part et hors vérification de la fiche Google par Google.
 
 ### Q3 : Y a-t-il un abonnement obligatoire ?
 R : Non, aucun abonnement obligatoire. L'hébergement est offert la 1ère année, puis 10 €/mois seul ou inclus dans la maintenance optionnelle à 35 €/mois. Le nom de domaine (~10 €/an) est payé par le client à son registrar.

@@ -66,7 +66,7 @@ const COMMERCE_FAQ = [
   },
   {
     q: "Combien de temps ça prend ?",
-    a: "14 jours ouvrés après réception de l'acompte et de vos contenus. Vous me transmettez photos, prestations et infos pratiques, je m'occupe du reste, du design à la mise en ligne.",
+    a: "7 jours ouvrés après réception de l'acompte et de vos contenus, hors temps de validation de votre côté. Vous me transmettez photos, prestations et infos pratiques, je m'occupe du reste, du design à la mise en ligne.",
   },
   {
     q: "Et si je veux changer quelque chose après ?",
@@ -397,7 +397,7 @@ export default function SiteInternetCommerce() {
                 "SEO local : votre ville + vos prestations",
                 "Fiche Google Business Profile configurée et reliée",
                 "Horaires, accès et infos pratiques structurés",
-                "Livré en 14 jours ouvrés",
+                "Livré en 7 jours ouvrés",
                 "1 modification gratuite incluse",
               ].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "var(--ftt-text-mid)" }}>

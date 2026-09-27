@@ -155,16 +155,26 @@ export default function CGV() {
               Article 5 — Délais &amp; livraison
             </h2>
             <p>
-              Le délai standard de création d&apos;un site vitrine est de{" "}
-              <strong className="text-white">14 jours ouvrés</strong> à compter de
-              la réception de l&apos;acompte ET de l&apos;ensemble des contenus
-              fournis par le Client (textes, photos, logo, accès Google
-              Business le cas échéant).
+              Le délai standard de création d&apos;un site est de{" "}
+              <strong className="text-white">7 jours ouvrés</strong>. Il court
+              à compter de la réception de l&apos;acompte de 30&nbsp;% ET de
+              l&apos;ensemble des contenus nécessaires fournis par le Client
+              (textes, photos, logo, informations de l&apos;entreprise, accès
+              Google Business le cas échéant). Tant que ces deux conditions ne
+              sont pas réunies, le délai ne commence pas.
             </p>
             <p className="mt-3">
-              En cas de retard dans la fourniture des contenus par le Client, le
-              délai de livraison est suspendu d&apos;autant. Tout délai
-              spécifique négocié figure sur le devis.
+              Le délai est suspendu pendant les temps de réponse et de
+              validation du Client (validation de la maquette, réponses aux
+              questions du Prestataire, envoi de contenus complémentaires)&nbsp;:
+              chaque jour ouvré d&apos;attente d&apos;une réponse du Client
+              s&apos;ajoute au délai de livraison.
+            </p>
+            <p className="mt-3">
+              La vérification de la fiche Google Business Profile est réalisée
+              par Google (vidéo, courrier ou appel) et ne dépend pas du
+              Prestataire&nbsp;: elle n&apos;est pas comprise dans ce délai.
+              Tout délai spécifique négocié figure sur le devis.
             </p>
             <p className="mt-3">
               La livraison correspond à la mise en ligne du site sur son nom de
