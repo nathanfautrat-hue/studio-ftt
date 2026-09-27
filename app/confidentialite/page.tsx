@@ -121,6 +121,12 @@ export default function Confidentialite() {
                 emails du formulaire de contact
               </li>
             </ul>
+            <p className="mt-3">
+              Si vous choisissez de nous écrire via le lien WhatsApp, l&apos;échange
+              passe par WhatsApp (Meta Platforms Ireland Ltd.), selon sa propre
+              politique de confidentialité. Le site ne transmet aucune donnée à
+              WhatsApp&nbsp;: c&apos;est vous qui ouvrez la conversation.
+            </p>
           </div>
 
           <div>

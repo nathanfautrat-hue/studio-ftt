@@ -6,6 +6,7 @@ import SectionHeader from "@/components/SectionHeader";
 import { FAQ, type FaqItem } from "@/lib/data";
 import { faqPageSchema } from "@/lib/schema";
 import JsonLd from "@/components/JsonLd";
+import { siteConfig } from "@/lib/site-config";
 
 export default function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
@@ -175,6 +176,24 @@ export default function FaqSection() {
               }}
             >
               M&apos;écrire <span aria-hidden>→</span>
+            </a>
+            <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lift inline-flex items-center"
+              style={{
+                gap: 8,
+                padding: "13px 24px",
+                borderRadius: 999,
+                border: "1px solid var(--ftt-line-strong)",
+                color: "var(--ftt-cream)",
+                textDecoration: "none",
+                fontSize: 13,
+                fontWeight: 500,
+              }}
+            >
+              WhatsApp <span aria-hidden>→</span>
             </a>
           </div>
         </div>

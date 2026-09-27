@@ -17,6 +17,7 @@ export const siteConfig = siteConfigData as {
   linkedin: string;
   linkedinHandle: string;
   calendly: string;
+  whatsapp: string;
   address: {
     street: string;
     postalCode: string;

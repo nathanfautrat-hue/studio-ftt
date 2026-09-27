@@ -615,6 +615,9 @@ export default function SiteInternetArtisan() {
             <a href="/#contact" className="btn btn--ghost">
               M&apos;écrire <span className="btn__arrow">→</span>
             </a>
+            <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">
+              WhatsApp <span className="btn__arrow">→</span>
+            </a>
           </div>
         </Reveal>
       </section>

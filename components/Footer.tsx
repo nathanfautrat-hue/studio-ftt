@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LogoMark from "./LogoMark";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Footer() {
@@ -67,6 +68,21 @@ export default function Footer() {
             }}
           >
             06 07 03 38 04
+          </a>
+          <a
+            href={siteConfig.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lift inline-flex items-center"
+            style={{
+              gap: 8,
+              marginTop: 8,
+              color: "var(--ftt-cream)",
+              textDecoration: "none",
+              fontSize: 15,
+            }}
+          >
+            <WhatsAppIcon size={16} /> WhatsApp
           </a>
           <address
             style={{

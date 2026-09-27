@@ -3,7 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import LogoMark from "./LogoMark";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { gtagEvent } from "@/lib/gtag";
+import { siteConfig } from "@/lib/site-config";
 
 const NAV_LINKS = [
   { label: "Approche", href: "/#approche" },
@@ -76,6 +78,27 @@ export default function Navbar() {
             }}
           >
             06 07 03 38 04
+          </a>
+
+          {/* WhatsApp */}
+          <a
+            href={siteConfig.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Écrire sur WhatsApp"
+            title="Écrire sur WhatsApp"
+            onClick={() => gtagEvent("clic_cta", { event_label: "navbar_whatsapp" })}
+            className="lift inline-flex items-center justify-center shrink-0"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 999,
+              border: "1px solid var(--ftt-line)",
+              background: "rgba(255,255,255,0.04)",
+              color: "var(--ftt-cream)",
+            }}
+          >
+            <WhatsAppIcon size={18} />
           </a>
 
           {/* CTA */}
@@ -186,6 +209,25 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
+            <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center"
+              style={{
+                gap: 12,
+                padding: "16px 0",
+                borderTop: "1px solid var(--ftt-line)",
+                color: "var(--ftt-cream)",
+                textDecoration: "none",
+                fontSize: "clamp(22px, 6vw, 32px)",
+                fontWeight: 500,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              <WhatsAppIcon size={26} /> WhatsApp
+            </a>
           </nav>
         </div>
       )}

@@ -20,6 +20,11 @@ const CONTACT_LINKS: ContactLink[] = [
     featured: true,
   },
   {
+    label: "WhatsApp",
+    value: "06 07 03 38 04",
+    href: siteConfig.whatsapp,
+  },
+  {
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,

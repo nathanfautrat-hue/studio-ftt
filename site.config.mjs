@@ -22,6 +22,9 @@ export const siteConfig = {
   linkedin: "https://www.linkedin.com/in/studio-ftt-ba790a404/",
   linkedinHandle: "Studio FTT",
   calendly: "https://calendly.com/contactstudioftt/15min",
+  whatsapp:
+    "https://wa.me/33607033804?text=" +
+    encodeURIComponent("Bonjour, je viens de studioftt.fr, j'aimerais un site pour mon activité."),
 
   // Localisation
   address: {
