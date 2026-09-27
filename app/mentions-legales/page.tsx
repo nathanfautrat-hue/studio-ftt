@@ -56,6 +56,8 @@ export default function MentionsLegales() {
               <br />
               SIRET&nbsp;: 10404864000015
               <br />
+              Téléphone&nbsp;: 06 07 03 38 04
+              <br />
               Email&nbsp;:{" "}
               <a
                 href="mailto:contact@studioftt.fr"

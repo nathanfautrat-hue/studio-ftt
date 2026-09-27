@@ -135,18 +135,22 @@ export default function FaqSection() {
             >
               contact@studioftt.fr
             </a>{" "}
-            ou appelez le{" "}
+            ou sur{" "}
             <a
-              href="tel:+33607033804"
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ color: "var(--ftt-cream)", textDecoration: "underline", whiteSpace: "nowrap" }}
             >
-              06 07 03 38 04
+              WhatsApp
             </a>
             .
           </p>
           <div className="flex flex-wrap" style={{ gap: 12 }}>
             <a
-              href="tel:+33607033804"
+              href={siteConfig.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
               className="lift inline-flex items-center"
               style={{
                 gap: 8,
@@ -159,7 +163,7 @@ export default function FaqSection() {
                 fontWeight: 500,
               }}
             >
-              M&apos;appeler <span aria-hidden>→</span>
+              Réserver un appel <span aria-hidden>→</span>
             </a>
             <a
               href="#contact"

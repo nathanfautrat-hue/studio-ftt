@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { siteConfig } from "@/lib/site-config";
 import { gtagEvent } from "@/lib/gtag";
 
@@ -10,7 +11,10 @@ type ContactLink = {
   value: string;
   href: string;
   featured?: boolean;
+  whatsapp?: boolean;
 };
+
+const WHATSAPP_GREEN = "#25D366";
 
 const CONTACT_LINKS: ContactLink[] = [
   {
@@ -21,8 +25,9 @@ const CONTACT_LINKS: ContactLink[] = [
   },
   {
     label: "WhatsApp",
-    value: "06 07 03 38 04",
+    value: "Réponse rapide",
     href: siteConfig.whatsapp,
+    whatsapp: true,
   },
   {
     label: "Email",
@@ -33,11 +38,6 @@ const CONTACT_LINKS: ContactLink[] = [
     label: "Instagram",
     value: siteConfig.instagramHandle,
     href: siteConfig.instagram,
-  },
-  {
-    label: "LinkedIn",
-    value: siteConfig.linkedinHandle,
-    href: siteConfig.linkedin,
   },
 ];
 
@@ -167,7 +167,16 @@ export default function ContactSection() {
                     >
                       {c.label}
                     </span>
-                    <span style={{ fontSize: 16 }}>{c.value}</span>
+                    {c.whatsapp ? (
+                      <span
+                        className="inline-flex items-center"
+                        style={{ gap: 8, fontSize: 16, color: WHATSAPP_GREEN, fontWeight: 500 }}
+                      >
+                        <WhatsAppIcon size={18} /> {c.value}
+                      </span>
+                    ) : (
+                      <span style={{ fontSize: 16 }}>{c.value}</span>
+                    )}
                   </span>
                   <span aria-hidden>→</span>
                 </a>

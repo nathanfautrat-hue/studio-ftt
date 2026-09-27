@@ -57,32 +57,21 @@ export default function Footer() {
             {siteConfig.email}
           </a>
           <a
-            href="tel:+33607033804"
-            className="lift"
-            style={{
-              display: "block",
-              marginTop: 8,
-              color: "var(--ftt-cream)",
-              textDecoration: "none",
-              fontSize: 15,
-            }}
-          >
-            06 07 03 38 04
-          </a>
-          <a
             href={siteConfig.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="lift inline-flex items-center"
+            aria-label="WhatsApp : 06 07 03 38 04"
+            className="lift flex items-center"
             style={{
               gap: 8,
               marginTop: 8,
+              width: "fit-content",
               color: "var(--ftt-cream)",
               textDecoration: "none",
               fontSize: 15,
             }}
           >
-            <WhatsAppIcon size={16} /> WhatsApp
+            <WhatsAppIcon size={16} /> 06 07 03 38 04
           </a>
           <address
             style={{

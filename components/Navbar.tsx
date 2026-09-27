@@ -65,21 +65,6 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          {/* Téléphone */}
-          <a
-            href="tel:+33607033804"
-            className="hidden lg:inline-flex items-center lift"
-            style={{
-              color: "var(--ftt-text-mid)",
-              textDecoration: "none",
-              fontSize: 13,
-              fontWeight: 500,
-              whiteSpace: "nowrap",
-            }}
-          >
-            06 07 03 38 04
-          </a>
-
           {/* WhatsApp */}
           <a
             href={siteConfig.whatsapp}
