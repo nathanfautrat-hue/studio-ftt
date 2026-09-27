@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
@@ -17,6 +17,7 @@ const COMPARATIF = {
     { label: "Délai", cells: ["Selon votre temps libre", "Variable", "7 jours ouvrés", "6 à 12 semaines"] },
     { label: "Design", cells: ["Template à adapter", "Selon le profil", "Sur-mesure pour votre métier", "Sur-mesure"] },
     { label: "SEO", cells: ["À faire vous-même", "Souvent en option", "Inclus dès 500 €", "Inclus"] },
+    { label: "Google, Bing, Apple Plans", cells: ["À configurer vous-même", "Selon le prestataire", "Fiches configurées dès 750 €", "Selon l'agence"] },
     { label: "Abonnement", cells: ["Obligatoire, sinon le site disparaît", "Selon le prestataire", "Aucun obligatoire", "Maintenance en supplément"] },
   ],
 };
@@ -24,7 +25,7 @@ const COMPARATIF = {
 const TARIFS_FAQ = [
   {
     q: "Combien coûte un site internet pour un artisan ou un indépendant ?",
-    a: "Chez moi, entre 500 et 1 000 €. Le pack Vitrine à 500 € couvre un site d'une page avec formulaire de contact et SEO de base. Le pack Visibilité à 750 € monte jusqu'à 3 pages, avec un référencement plus poussé et votre fiche Google configurée. Au-delà, c'est du sur-mesure sur devis, à partir de 1 000 €. Le prix se paie une fois, pas tous les mois.",
+    a: "Chez moi, entre 500 et 1 000 €. Le pack Vitrine à 500 € couvre un site d'une page avec formulaire de contact et SEO de base. Le pack Visibilité à 750 € monte jusqu'à 3 pages, avec un référencement plus poussé et vos fiches Google, Bing et Apple Plans configurées. Au-delà, c'est du sur-mesure sur devis, à partir de 1 000 €. Le prix se paie une fois, pas tous les mois.",
   },
   {
     q: "Pourquoi 500 € quand une agence facture 1 800 € ?",
@@ -51,6 +52,17 @@ const TARIFS_FAQ = [
 export default function Tarifs() {
   const [open, setOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  // Le saut natif vers #comparatif part trop tôt : les animations Reveal décalent la page ensuite.
+  useEffect(() => {
+    if (window.location.hash !== "#comparatif") return;
+    const t = window.setTimeout(() => {
+      document
+        .getElementById("comparatif")
+        ?.scrollIntoView({ block: "start", behavior: "instant" as ScrollBehavior });
+    }, 600);
+    return () => window.clearTimeout(t);
+  }, []);
 
   return (
     <main
@@ -329,8 +341,10 @@ export default function Tarifs() {
 
       {/* COMPARATIF */}
       <section
+        id="comparatif"
         className="mx-auto section-x"
         style={{
+          scrollMarginTop: 90,
           maxWidth: 1320,
           borderTop: "1px solid var(--ftt-line)",
           paddingTop: "clamp(48px, 6vw, 80px)",

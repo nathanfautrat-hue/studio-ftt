@@ -159,7 +159,7 @@ export function professionalServiceSchema() {
         {
           "@type": "Offer",
           name: "Site Visibilité",
-          description: "Tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + Google Business Profile.",
+          description: "Tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiches Google Business, Bing Places et Apple Plans.",
           price: 750,
           priceCurrency: "EUR",
           availability: "https://schema.org/InStock",

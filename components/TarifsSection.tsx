@@ -99,7 +99,7 @@ export default function TarifsSection() {
       </div>
 
       <Reveal>
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex flex-col items-center" style={{ gap: 18 }}>
           <a
             href="/tarifs"
             className="lift inline-flex items-center"
@@ -116,6 +116,19 @@ export default function TarifsSection() {
             }}
           >
             Voir le détail des tarifs <span aria-hidden>→</span>
+          </a>
+          <a
+            href="/tarifs#comparatif"
+            className="lift"
+            style={{
+              color: "var(--ftt-text-mid)",
+              fontSize: 14,
+              textDecoration: "underline",
+              textUnderlineOffset: 4,
+              textDecorationColor: "var(--ftt-line-strong)",
+            }}
+          >
+            Comparer avec Wix, un freelance ou une agence <span aria-hidden>→</span>
           </a>
         </div>
       </Reveal>

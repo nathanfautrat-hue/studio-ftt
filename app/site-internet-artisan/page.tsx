@@ -54,7 +54,7 @@ const CONTENU_SITE = [
 const ARTISAN_FAQ = [
   {
     q: "Combien coûte un site internet pour un artisan ?",
-    a: "Le plus souvent, 750 € : c'est le pack Visibilité, avec jusqu'à 3 pages, le référencement local sur votre ville et vos services, et votre fiche Google Business Profile configurée. Une page simple coûte 500 €, et les besoins particuliers passent en sur-mesure à partir de 1 000 €. Prix one-shot, aucun abonnement obligatoire.",
+    a: "Le plus souvent, 750 € : c'est le pack Visibilité, avec jusqu'à 3 pages, le référencement local sur votre ville et vos services, et vos fiches Google, Bing et Apple Plans configurées. Une page simple coûte 500 €, et les besoins particuliers passent en sur-mesure à partir de 1 000 €. Prix one-shot, aucun abonnement obligatoire.",
   },
   {
     q: "J'ai déjà du travail avec le bouche-à-oreille, à quoi ça sert ?",
@@ -451,7 +451,8 @@ export default function SiteInternetArtisan() {
               {[
                 "Jusqu'à 3 pages (accueil, services, contact/devis)",
                 "SEO local : votre ville + vos services",
-                "Fiche Google Business Profile configurée",
+                "Fiches Google Business, Bing Places et Apple Plans configurées",
+                "Site optimisé pour être compris par les IA (ChatGPT, réponses IA de Google)",
                 "Zone d'intervention détaillée",
                 "Livré en 7 jours ouvrés",
                 "1 modification gratuite incluse",

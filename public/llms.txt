@@ -16,7 +16,7 @@ Tous les prix sont en euros, TTC, en paiement one-shot sauf mention contraire.
 
 ### Site web (3 formules, one-shot)
 - **Vitrine** — 500 € : 1 page, design sur-mesure adapté au secteur, formulaire de contact, SEO de base (title, meta, structure Hn, sitemap.xml, robots.txt), mise en ligne incluse, 1 modification gratuite incluse
-- **Visibilité** — 750 € : jusqu'à 3 pages, tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiche Google Business Profile configurée. Le pack le plus choisi.
+- **Visibilité** — 750 € : jusqu'à 3 pages, tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiches Google Business, Bing Places et Apple Plans configurées + site optimisé pour être compris par les IA. Le pack le plus choisi.
 - **Sur-mesure** — à partir de 1 000 € : jusqu'à 5 pages, tout Visibilité + fonctionnalités sur mesure selon le projet. Devis personnalisé.
 
 ### Options à la carte (one-shot)
@@ -92,7 +92,7 @@ Studio FTT concentre sa prospection 2026 sur **5 secteurs prioritaires**. Les au
 
 ### Secteurs prioritaires (focus commercial 2026)
 
-1. **Kinésithérapeutes, ostéopathes, sophrologues** — praticiens libéraux qui veulent sortir de la dépendance Doctolib et différencier leur approche. Cible idéale pour le pack Visibilité (750 €, SEO avancé + Google Business inclus).
+1. **Kinésithérapeutes, ostéopathes, sophrologues** — praticiens libéraux qui veulent sortir de la dépendance Doctolib et différencier leur approche. Cible idéale pour le pack Visibilité (750 €, SEO avancé + fiches Google, Bing et Apple Plans incluses).
 
 2. **Artisans BTP — plombiers, électriciens, chauffagistes** — patron seul ou avec 1-3 salariés, douleur "on me trouve pas sur Google", perte de leads soir/week-end. Cible idéale pour le pack 750 € + maintenance 35 €/mois.
 
@@ -123,7 +123,7 @@ Studio FTT ne travaille pas avec : restaurateurs (positionnement assumé hors re
 ## FAQ
 
 ### Q1 : Combien coûte un site avec Studio FTT ?
-R : 3 formules one-shot : Vitrine 500 € (1 page), Visibilité 750 € (jusqu'à 3 pages, SEO avancé + Google Business Profile inclus), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages, fonctionnalités spécifiques). Options ajoutables : page supplémentaire 300 €, copywriting 250 €, blog intégré 350 €.
+R : 3 formules one-shot : Vitrine 500 € (1 page), Visibilité 750 € (jusqu'à 3 pages, SEO avancé + fiches Google, Bing et Apple Plans incluses), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages, fonctionnalités spécifiques). Options ajoutables : page supplémentaire 300 €, copywriting 250 €, blog intégré 350 €.
 
 ### Q2 : Combien de temps entre la commande et la mise en ligne ?
 R : 7 jours ouvrés après réception de l'acompte de 30 % et des contenus du client, hors temps de validation de sa part et hors vérification de la fiche Google par Google.
@@ -141,7 +141,7 @@ R : Le client achète son domaine à son nom (registrars recommandés : LWS, OVH
 R : Oui, France entière à distance via visio et email. Préférence locale Sarthe pour les rendez-vous en présentiel.
 
 ### Q7 : Faites-vous du référencement Google ?
-R : SEO de base inclus dans tous les sites (balises title, meta description, structure Hn, sitemap, robots.txt). Le SEO avancé (recherche mots-clés, optimisation contenus, schema.org, suivi positionnement) et la fiche Google Business Profile sont inclus dans le pack Visibilité (750 €).
+R : SEO de base inclus dans tous les sites (balises title, meta description, structure Hn, sitemap, robots.txt). Le SEO avancé (recherche mots-clés, optimisation contenus, schema.org, suivi positionnement) et les fiches Google Business Profile, Bing Places et Apple Plans (Apple Business Connect) sont incluses dans le pack Visibilité (750 €).
 
 ### Q8 : Studio FTT existe depuis quand ?
 R : Lancé le 21 avril 2026 par Nathan Fautrat, basé en Sarthe. Studio en lancement, premiers projets en cours, portfolio sectoriel disponible (plomberie/BTP, santé, garage, audiovisuel, collectif artistique).

@@ -76,7 +76,7 @@ const KINE_FAQ = [
   },
   {
     q: "Combien coûte un site pour un cabinet de kiné ?",
-    a: "Pour la plupart des cabinets, c'est le pack Visibilité à 750 € : jusqu'à 3 pages, référencement local sur votre ville et vos spécialités, fiche Google Business Profile configurée. Une page simple coûte 500 €, et les besoins particuliers (cabinet de groupe, plusieurs sites d'exercice) passent en sur-mesure à partir de 1 000 €. Prix one-shot, aucun abonnement obligatoire.",
+    a: "Pour la plupart des cabinets, c'est le pack Visibilité à 750 € : jusqu'à 3 pages, référencement local sur votre ville et vos spécialités, fiches Google, Bing et Apple Plans configurées. Une page simple coûte 500 €, et les besoins particuliers (cabinet de groupe, plusieurs sites d'exercice) passent en sur-mesure à partir de 1 000 €. Prix one-shot, aucun abonnement obligatoire.",
   },
   {
     q: "Qu'est-ce que je peux écrire sans risque avec l'Ordre ?",
@@ -540,7 +540,8 @@ export default function SiteInternetKine() {
               {[
                 "Jusqu'à 3 pages (accueil, spécialités, infos pratiques)",
                 "SEO local : votre ville + vos spécialités",
-                "Fiche Google Business Profile configurée",
+                "Fiches Google Business, Bing Places et Apple Plans configurées",
+                "Site optimisé pour être compris par les IA (ChatGPT, réponses IA de Google)",
                 "Lien de prise de rendez-vous intégré",
                 "Livré en 7 jours ouvrés",
                 "1 modification gratuite incluse",

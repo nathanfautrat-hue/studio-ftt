@@ -58,12 +58,12 @@ export default function SiteInternetArtisanLayout({
             name: "Création de site internet pour artisan du bâtiment",
             price: "750",
             description:
-              "Site sur-mesure pour artisan (plombier, électricien, chauffagiste, maçon) : jusqu'à 3 pages, SEO local sur votre ville et vos services, fiche Google Business Profile configurée. Livré en 7 jours ouvrés.",
+              "Site sur-mesure pour artisan (plombier, électricien, chauffagiste, maçon) : jusqu'à 3 pages, SEO local sur votre ville et vos services, fiches Google, Bing et Apple Plans configurées. Livré en 7 jours ouvrés.",
             features: [
               "Jusqu'à 3 pages",
               "Design adapté à votre métier",
               "SEO local (ville + services)",
-              "Fiche Google Business Profile configurée",
+              "Fiches Google Business, Bing Places et Apple Plans configurées",
               "Zone d'intervention détaillée",
               "1 modification gratuite",
             ],

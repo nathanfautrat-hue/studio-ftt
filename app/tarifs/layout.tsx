@@ -68,12 +68,12 @@ export default function TarifsLayout({
       name: "Site Visibilité Studio FTT",
       price: "750",
       description:
-        "Tout ce qu'inclut Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiche Google Business Profile configurée. Le pack le plus choisi par les artisans et indépendants.",
+        "Tout ce qu'inclut Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiches Google Business, Bing Places et Apple Plans configurées. Le pack le plus choisi par les artisans et indépendants.",
       features: [
         "Jusqu'à 3 pages",
         "Tout ce qu'inclut Vitrine",
         "SEO avancé",
-        "Fiche Google Business Profile configurée",
+        "Fiches Google Business, Bing Places et Apple Plans configurées",
         "1 modification gratuite",
       ],
       url: URL,

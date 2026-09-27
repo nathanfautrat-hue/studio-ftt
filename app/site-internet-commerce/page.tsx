@@ -54,7 +54,7 @@ const CONTENU_SITE = [
 const COMMERCE_FAQ = [
   {
     q: "Combien coûte un site pour un commerce ou un garage ?",
-    a: "Le plus souvent, 750 € : c'est le pack Visibilité, avec jusqu'à 3 pages, le référencement local sur votre ville et vos prestations, et votre fiche Google Business Profile configurée. Une page simple coûte 500 €. Prix one-shot, aucun abonnement obligatoire.",
+    a: "Le plus souvent, 750 € : c'est le pack Visibilité, avec jusqu'à 3 pages, le référencement local sur votre ville et vos prestations, et vos fiches Google, Bing et Apple Plans configurées. Une page simple coûte 500 €. Prix one-shot, aucun abonnement obligatoire.",
   },
   {
     q: "J'ai déjà une page Facebook ou Instagram, ça ne suffit pas ?",
@@ -395,7 +395,8 @@ export default function SiteInternetCommerce() {
               {[
                 "Jusqu'à 3 pages (accueil, prestations, contact)",
                 "SEO local : votre ville + vos prestations",
-                "Fiche Google Business Profile configurée et reliée",
+                "Fiches Google, Bing et Apple Plans configurées et reliées au site",
+                "Site optimisé pour être compris par les IA (ChatGPT, réponses IA de Google)",
                 "Horaires, accès et infos pratiques structurés",
                 "Livré en 7 jours ouvrés",
                 "1 modification gratuite incluse",

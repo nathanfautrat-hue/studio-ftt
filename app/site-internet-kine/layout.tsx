@@ -58,12 +58,12 @@ export default function SiteInternetKineLayout({
             name: "Création de site internet pour kinésithérapeute, ostéopathe et sophrologue",
             price: "750",
             description:
-              "Site sur-mesure pour cabinet de kinésithérapie : jusqu'à 3 pages, SEO local, fiche Google Business Profile configurée, conforme aux règles de communication de la profession. Livré en 7 jours ouvrés.",
+              "Site sur-mesure pour cabinet de kinésithérapie : jusqu'à 3 pages, SEO local, fiches Google, Bing et Apple Plans configurées, conforme aux règles de communication de la profession. Livré en 7 jours ouvrés.",
             features: [
               "Jusqu'à 3 pages",
               "Design adapté au secteur santé",
               "SEO local (ville + spécialités)",
-              "Fiche Google Business Profile configurée",
+              "Fiches Google Business, Bing Places et Apple Plans configurées",
               "Lien de prise de rendez-vous intégré",
               "1 modification gratuite",
             ],

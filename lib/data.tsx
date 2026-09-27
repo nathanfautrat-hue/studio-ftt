@@ -94,7 +94,7 @@ export type FaqItem = { q: string; a: string };
 export const FAQ: FaqItem[] = [
   {
     q: "Combien coûte un site ?",
-    a: "3 formules : Vitrine à 500 € (1 page), Visibilité à 750 € (jusqu'à 3 pages, SEO avancé et Google Business Profile), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages). Design, développement, mise en ligne, SEO de base et 1 modification gratuite inclus. Pages supplémentaires : 300 € l'unité.",
+    a: "3 formules : Vitrine à 500 € (1 page), Visibilité à 750 € (jusqu'à 3 pages, SEO avancé, fiches Google, Bing et Apple Plans), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages). Design, développement, mise en ligne, SEO de base et 1 modification gratuite inclus. Pages supplémentaires : 300 € l'unité.",
   },
   {
     q: "Combien de temps pour livrer ?",
@@ -203,7 +203,8 @@ export const PLANS: Plan[] = [
       "Jusqu'à 3 pages",
       "Tout ce qu'inclut Vitrine",
       "SEO avancé",
-      "Fiche Google Business Profile configurée",
+      "Fiches Google Business, Bing Places et Apple Plans configurées",
+      "Site optimisé pour être compris par les IA (ChatGPT, réponses IA de Google)",
       "1 modification gratuite",
     ],
   },

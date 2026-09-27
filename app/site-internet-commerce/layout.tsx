@@ -58,12 +58,12 @@ export default function SiteInternetCommerceLayout({
             name: "Création de site internet pour commerce et service de proximité",
             price: "750",
             description:
-              "Site sur-mesure pour commerce ou service local (garage, institut, auto-école, boutique) : jusqu'à 3 pages, SEO local, fiche Google Business Profile configurée et reliée au site. Livré en 7 jours ouvrés.",
+              "Site sur-mesure pour commerce ou service local (garage, institut, auto-école, boutique) : jusqu'à 3 pages, SEO local, fiches Google, Bing et Apple Plans configurées et reliées au site. Livré en 7 jours ouvrés.",
             features: [
               "Jusqu'à 3 pages",
               "Design adapté à votre activité",
               "SEO local (ville + prestations)",
-              "Fiche Google Business Profile configurée",
+              "Fiches Google Business, Bing Places et Apple Plans configurées",
               "Horaires et infos pratiques structurés",
               "1 modification gratuite",
             ],
