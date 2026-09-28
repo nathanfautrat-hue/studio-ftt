@@ -4,7 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import JsonLd from "@/components/JsonLd";
-import BookingPopup from "@/components/BookingPopup";
+import BookingScroll from "@/components/BookingScroll";
 import {
   organizationSchema,
   professionalServiceSchema,
@@ -189,7 +189,7 @@ export default function RootLayout({
             });
           `}
         </Script>
-        <BookingPopup />
+        <BookingScroll />
       </body>
     </html>
   );
