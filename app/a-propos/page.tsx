@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/og-studioftt-v3.jpg"],
+    images: ["/og-studioftt-v4.jpg"],
     firstName: "Nathan",
     lastName: "Fautrat",
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/og-studioftt-v3.jpg"],
+    images: ["/og-studioftt-v4.jpg"],
   },
 };
 
