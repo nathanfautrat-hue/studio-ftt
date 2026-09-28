@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import BackLink from "@/components/BackLink";
 
 const NAVY = "#0F2C47";
 const NAVY_DARK = "#08192B";
@@ -239,9 +238,8 @@ export default function MarceauPage() {
       >
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-3">
-            <BackLink className="text-black/60 hover:text-black hidden md:inline-flex" />
             <div
-              className="flex items-center gap-2 text-lg tracking-tight"
+              className="flex items-center gap-2 text-2xl md:text-3xl tracking-tight"
               style={{ fontFamily: "var(--font-playfair), serif" }}
             >
               <span style={{ color: NAVY }}>Atelier</span>

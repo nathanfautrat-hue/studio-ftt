@@ -9,7 +9,8 @@
   function isDemo() {
     return /^\/(demo\/|projets\/marceau)/.test(location.pathname);
   }
-  if (!isDemo()) return;
+  // ?capture=1 : pas de bandeau (captures d'écran pour le portfolio)
+  if (!isDemo() || /[?&]capture=1/.test(location.search)) return;
 
   var BOOKING = "https://cal.com/studioftt-x1nxtl/projet";
   var BACK = "https://studioftt.fr/#projets";
