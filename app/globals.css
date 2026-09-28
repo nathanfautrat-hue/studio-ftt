@@ -318,3 +318,8 @@ html {
 @media (min-width: 1024px) {
   .hero-planet { opacity: 1; }
 }
+
+/* Ligne de titre insécable dès la tablette (sur petit mobile elle peut passer à la ligne) */
+@media (min-width: 340px) {
+  .nowrap-sm { white-space: nowrap; }
+}

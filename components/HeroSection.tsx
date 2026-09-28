@@ -121,7 +121,7 @@ export default function HeroSection() {
       />
 
       {/* Badge + titre + texte, colonne de gauche */}
-      <div className="relative z-10 my-auto" style={{ maxWidth: 860 }}>
+      <div className="relative z-10 my-auto">
         <Reveal>
           <div
             className="font-mono"
@@ -157,14 +157,14 @@ export default function HeroSection() {
           <h1
             className="font-display"
             style={{
-              fontSize: "clamp(56px, 8.4vw, 136px)",
+              fontSize: "clamp(36px, 7.2vw, 124px)",
               margin: 0,
               lineHeight: 0.9,
               letterSpacing: "-0.01em",
             }}
           >
-            <span style={{ display: "block" }}>JE CRÉE DES SITES</span>
-            <span style={{ display: "block" }}>
+            <span className="nowrap-sm" style={{ display: "block" }}>JE CRÉE DES SITES</span>
+            <span className="nowrap-sm" style={{ display: "block" }}>
               QUI{" "}
               <em
                 className="font-serif"
@@ -186,7 +186,7 @@ export default function HeroSection() {
             }}
           >
             Création de sites internet pour artisans, indépendants et commerces.
-            Pensés pour être trouvés sur Google et donner envie de vous appeler.
+            Pensés pour être trouvés sur internet et donner envie de vous appeler.
             Basé en Sarthe, je travaille partout en France.
           </p>
         </Reveal>
