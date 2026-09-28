@@ -589,7 +589,6 @@ export default function SiteInternetArtisan() {
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
               entre deux chantiers
             </em>
-            ?
           </h2>
         </Reveal>
         <Reveal delay={1}>

@@ -187,7 +187,7 @@ export default function ScavbackPage() {
       <section className="container py-20 md:py-28 border-t border-white/5 text-center">
         <Reveal>
           <h2 className="font-display text-4xl md:text-6xl leading-[1.05] mb-6">
-            Un projet du même genre&nbsp;?
+            Un projet du même genre
           </h2>
           <p className="text-white/60 text-lg mb-10">
             30 minutes en visio pour en parler, sans engagement.

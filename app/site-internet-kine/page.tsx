@@ -678,7 +678,6 @@ export default function SiteInternetKine() {
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
               entre deux patients
             </em>
-            ?
           </h2>
         </Reveal>
         <Reveal delay={1}>

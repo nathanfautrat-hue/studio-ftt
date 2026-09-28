@@ -550,7 +550,6 @@ export default function SiteInternetConsultant() {
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
               entre deux missions
             </em>
-            ?
           </h2>
         </Reveal>
         <Reveal delay={1}>

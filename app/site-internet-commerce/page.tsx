@@ -534,7 +534,6 @@ export default function SiteInternetCommerce() {
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
               entre deux clients
             </em>
-            ?
           </h2>
         </Reveal>
         <Reveal delay={1}>
