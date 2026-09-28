@@ -25,7 +25,7 @@ function Card({ p, dup }: { p: StackProject; dup?: boolean }) {
             <span style={{ fontSize: 17, fontWeight: 500, color: "var(--ftt-cream)" }}>{p.name}</span>
             {p.isDemo && (
               <span
-                className="font-mono"
+                className="demo-badge font-mono"
                 style={{
                   fontSize: 9,
                   letterSpacing: "0.2em",

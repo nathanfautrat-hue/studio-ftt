@@ -438,3 +438,8 @@ a, button { touch-action: manipulation; }
 @media (max-width: 1023px) {
   .hero-card { margin: 0; border: 0; border-radius: 0; }
 }
+
+/* Badge « Démo » masqué sur mobile dans le défilement des projets */
+@media (max-width: 767px) {
+  .marquee-row .demo-badge { display: none; }
+}
