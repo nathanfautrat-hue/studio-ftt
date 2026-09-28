@@ -82,3 +82,13 @@ export function CabinetAtlasPreview() {
     />
   );
 }
+
+export function ElectricienPreview() {
+  return (
+    <StaticPreview
+      src="/preview-electricien.webp"
+      alt="Aperçu de la démo Lumen Électricité, électricien artisan"
+      bg="#0b1020"
+    />
+  );
+}

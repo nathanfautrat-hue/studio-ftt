@@ -12,6 +12,7 @@ import {
   SigmaLiftPreview,
   MarceauPreview,
   CabinetAtlasPreview,
+  ElectricienPreview,
 } from "@/components/ProjectPreviews";
 
 // ---------------------------------------------------------------------------
@@ -38,6 +39,17 @@ export const PROJECTS: StackProject[] = [
       "Site vitrine pour une agence de production audiovisuelle en Bretagne : SEO local et Google Business inclus.",
     href: "/projets/sprayfilm",
     preview: <SprayfilmPreview />,
+  },
+  {
+    id: "electricien",
+    name: "Lumen Électricité",
+    kind: "Électricien artisan",
+    tag: "Site vitrine · Dépannage",
+    blurb:
+      "Démo pour un électricien artisan : la maison s'allume au fil du scroll, dépannage, tableau, zone d'intervention.",
+    href: "/demo/electricien/index.html",
+    preview: <ElectricienPreview />,
+    isDemo: true,
   },
   {
     id: "garage-klax",
