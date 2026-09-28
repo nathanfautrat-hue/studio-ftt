@@ -266,16 +266,6 @@ export default function MarceauPage() {
         </div>
       </div>
 
-      {/* concept démo badge */}
-      <div className="container pt-4">
-        <span
-          className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase border px-3 py-1 rounded-full"
-          style={{ borderColor: "rgba(26,29,34,0.15)", color: "rgba(26,29,34,0.6)" }}
-        >
-          Concept démo · Studio FTT
-        </span>
-      </div>
-
       {/* HERO */}
       <section className="container pt-10 md:pt-16 pb-24 md:pb-32">
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-10 md:gap-16 items-center">

@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import JsonLd from "@/components/JsonLd";
@@ -50,6 +51,7 @@ export default function MarceauLayout({
 }) {
   return (
     <>
+      <Script src="/demo/demo-banner.js" strategy="afterInteractive" />
       <JsonLd
         data={[
           breadcrumbSchema([

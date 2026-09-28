@@ -10,7 +10,8 @@ import type { StackProject } from "@/components/ProjectStack";
  */
 
 function Card({ p, dup }: { p: StackProject; dup?: boolean }) {
-  const isStatic = p.href.startsWith("/demo/");
+  // Démos : rechargement complet (le bandeau démo s'installe proprement à chaque visite)
+  const isStatic = p.href.startsWith("/demo/") || !!p.isDemo;
   const inner = (
     <>
       <div className="relative" style={{ aspectRatio: "16 / 10" }}>
