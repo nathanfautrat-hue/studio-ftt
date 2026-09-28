@@ -51,10 +51,10 @@ export default function AproposSection() {
                 maxWidth: 720,
               }}
             >
-              Studio FTT, c&apos;est une personne, pas une agence à étages. Vous
-              m&apos;appelez, c&apos;est moi qui décroche, qui conçois votre site
-              et qui le mets en ligne. Nathan Fautrat, designer et développeur web
-              indépendant en Sarthe, disponible dans toute la France.
+              Studio FTT, c&apos;est moi, Nathan Fautrat. Quand vous appelez,
+              c&apos;est moi qui décroche, et c&apos;est encore moi qui fais votre
+              site du début à la fin. Je suis designer et développeur web en
+              Sarthe, et je travaille partout en France.
             </p>
             <h3
               className="font-mono"

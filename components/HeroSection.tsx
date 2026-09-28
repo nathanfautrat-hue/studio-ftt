@@ -185,8 +185,8 @@ export default function HeroSection() {
               margin: "28px 0 0",
             }}
           >
-            Sites pour artisans, indépendants et commerces, pensés pour être
-            trouvés sur internet et donner envie de vous appeler. Basé en Sarthe.
+            Pour les artisans, indépendants et commerces qui veulent être trouvés
+            sur internet, et surtout appelés. Basé en Sarthe.
           </p>
         </Reveal>
       </div>

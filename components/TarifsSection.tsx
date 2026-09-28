@@ -10,11 +10,11 @@ import { gtagEvent } from "@/lib/gtag";
  * Le détail chiffré reste sur /tarifs (SEO + transparence).
  */
 const INCLUS = [
-  "Design adapté à votre métier",
-  "Site rapide, pensé pour le mobile",
+  "Un design fait pour votre métier",
+  "Rapide, et lisible sur téléphone",
   "Formulaire de contact",
   "Référencement Google de base",
-  "Mise en ligne et hébergement la 1re année",
+  "Mise en ligne, hébergement offert la 1re année",
   "1 modification offerte à la livraison",
 ];
 
@@ -49,9 +49,10 @@ export default function TarifsSection() {
                 maxWidth: 480,
               }}
             >
-              Chaque activité est différente. On s&apos;appelle 30 minutes, vous
-              m&apos;expliquez ce dont vous avez besoin, et je vous envoie un devis
-              clair. Paiement unique, pas d&apos;abonnement obligatoire.
+              Un plombier n&apos;a pas besoin du même site qu&apos;un kiné. On
+              s&apos;appelle 30 minutes, vous m&apos;expliquez votre activité, et je
+              vous envoie un devis clair. Vous payez une fois, sans abonnement
+              obligatoire.
             </p>
           </div>
         </Reveal>
@@ -68,7 +69,7 @@ export default function TarifsSection() {
               Votre site internet
             </div>
             <p style={{ fontSize: 14, color: "var(--ftt-text-mid)", margin: "6px 0 22px" }}>
-              Livré en 7 jours ouvrés dès que j&apos;ai vos contenus.
+              Livré en 7 jours ouvrés, une fois l&apos;acompte et vos contenus reçus.
             </p>
 
             <ul className="grid" style={{ listStyle: "none", margin: 0, padding: 0, gap: 12 }}>
