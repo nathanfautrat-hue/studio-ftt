@@ -24,7 +24,7 @@ const badge: React.CSSProperties = {
 const VISUELS: { src: string; alt: string; overlay: React.ReactNode }[] = [
   {
     src: "/approche-1.webp",
-    alt: "Téléphone affichant un appel en cours (photo Pexels)",
+    alt: "Smartphone et tasse de café sur un bureau sombre (photo Pexels)",
     overlay: (
       <span style={badge}>
         <img src="/logo_ftt.png" alt="" width={22} height={22} style={{ width: 22, height: 22, objectFit: "contain" }} />
@@ -37,7 +37,7 @@ const VISUELS: { src: string; alt: string; overlay: React.ReactNode }[] = [
   },
   {
     src: "/approche-2.webp",
-    alt: "Designer travaillant sur une maquette avec une tablette graphique (photo Pexels)",
+    alt: "Croquis de maquette de site sur papier (photo Pexels)",
     overlay: (
       <span style={{ ...badge, color: "var(--ftt-green)", borderColor: "rgba(59,245,156,0.35)" }}>
         ✓ Maquette validée
@@ -46,7 +46,7 @@ const VISUELS: { src: string; alt: string; overlay: React.ReactNode }[] = [
   },
   {
     src: "/approche-3.webp",
-    alt: "Ordinateur portable ouvert dans la pénombre (photo Pexels)",
+    alt: "Ordinateur portable vu de dessus sur fond noir (photo Pexels)",
     overlay: (
       <span style={badge}>
         <span style={{ width: 8, height: 8, borderRadius: 999, background: "var(--ftt-green)" }} />
@@ -100,12 +100,12 @@ export default function ApprocheSection() {
                     height={558}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover"
-                    style={{ filter: "grayscale(0.35) brightness(0.7) contrast(1.05)" }}
+                    style={{ filter: "brightness(0.85)" }}
                   />
                   <div
                     aria-hidden
                     className="absolute inset-0"
-                    style={{ background: "linear-gradient(180deg, rgba(15,15,15,0) 35%, #0f0f0f 100%)" }}
+                    style={{ background: "linear-gradient(180deg, rgba(15,15,15,0) 55%, #0f0f0f 100%)" }}
                   />
                   <div className="absolute" style={{ left: 20, bottom: 18 }}>
                     {v.overlay}
