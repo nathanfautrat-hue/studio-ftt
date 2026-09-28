@@ -33,7 +33,7 @@ const TARIFS_FAQ = [
   },
   {
     q: "Wix coûte 17 €/mois, pourquoi payer 500 € ?",
-    a: "Sur 3 ans, un abonnement Wix revient à environ 600 €, et c'est vous qui faites tout : le design, les textes, le référencement. Si vous arrêtez de payer, vous perdez votre nom de domaine et votre site repasse sur une adresse Wix, avec leur publicité. Chez moi, vous payez une fois, et c'est moi qui construis le site pour votre métier — pas un template à remplir le dimanche soir.",
+    a: "Sur 3 ans, un abonnement Wix revient à environ 600 €, et c'est vous qui faites tout : le design, les textes, le référencement. Si vous arrêtez de payer, vous perdez votre nom de domaine et votre site repasse sur une adresse Wix, avec leur publicité. Chez moi, vous payez une fois, et c'est moi qui construis le site pour votre métier. Pas un template à remplir le dimanche soir.",
   },
   {
     q: "Pourquoi pas un site fait par une IA comme Base44 ?",
@@ -606,7 +606,7 @@ export default function Tarifs() {
             }}
           >
             Gestion de campagnes Google Ads et SEO local.
-            Tarif mensuel sans engagement —{" "}
+            Tarif mensuel sans engagement,{" "}
             <span style={{ color: "var(--ftt-cream)", fontWeight: 500 }}>
               budget publicitaire en plus, payé directement à Google
             </span>{" "}
@@ -894,7 +894,7 @@ export default function Tarifs() {
             <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
-            <a href="/#contact" className="btn btn--ghost">
+            <a href={`mailto:${siteConfig.email}`} className="btn btn--ghost">
               M&apos;écrire <span className="btn__arrow">→</span>
             </a>
             <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">

@@ -27,7 +27,7 @@ export function ScavbackPreview() {
   return (
     <StaticPreview
       src="/preview-scavback.webp"
-      alt="Aperçu du site SCAVBACK — collectif créatif"
+      alt="Aperçu du site SCAVBACK, collectif créatif"
       bg="#0a0a0a"
     />
   );
@@ -37,7 +37,7 @@ export function SprayfilmPreview() {
   return (
     <StaticPreview
       src="/preview-sprayfilm.webp"
-      alt="Aperçu du site Sprayfilm — production audiovisuelle"
+      alt="Aperçu du site Sprayfilm, production audiovisuelle"
       bg="#171717"
     />
   );
@@ -47,7 +47,7 @@ export function GarageKlaxPreview() {
   return (
     <StaticPreview
       src="/preview-klax.webp"
-      alt="Aperçu de la démo Garage Klax — garage indépendant"
+      alt="Aperçu de la démo Garage Klax, garage indépendant"
       bg="#F7F5F0"
     />
   );
@@ -57,7 +57,7 @@ export function SigmaLiftPreview() {
   return (
     <StaticPreview
       src="/preview-sigma.webp"
-      alt="Aperçu de la démo Sigma Lift — coaching sportif en ligne"
+      alt="Aperçu de la démo Sigma Lift, coaching sportif en ligne"
       bg="#0A0A0A"
     />
   );
@@ -67,7 +67,7 @@ export function MarceauPreview() {
   return (
     <StaticPreview
       src="/preview-marceau.webp"
-      alt="Aperçu de la démo Atelier Marceau — plombier artisan"
+      alt="Aperçu de la démo Atelier Marceau, plombier artisan"
       bg="#F7F4EF"
     />
   );
@@ -77,7 +77,7 @@ export function CabinetAtlasPreview() {
   return (
     <StaticPreview
       src="/preview-atlas.webp"
-      alt="Aperçu de la démo Cabinet Atlas — cabinet kiné & ostéo"
+      alt="Aperçu de la démo Cabinet Atlas, cabinet kiné & ostéo"
       bg="#F5EFE6"
     />
   );

@@ -5,7 +5,7 @@ import { breadcrumbSchema, creativeWorkSchema } from "@/lib/schema";
 
 const TITLE = "Scavback — Plateforme web pour un collectif artistique";
 const DESCRIPTION =
-  "Cas client : plateforme en ligne pour Scavback, collectif artistique. Galerie d'œuvres, portfolio des artistes, identité visuelle forte et navigation immersive — design propre, code léger, hébergement Cloudflare.";
+  "Cas client : plateforme en ligne pour Scavback, collectif artistique. Galerie d'œuvres, portfolio des artistes, identité visuelle forte et navigation immersive. Design propre, code léger, hébergement Cloudflare.";
 
 const URL = `${siteConfig.url}/projets/scavback`;
 

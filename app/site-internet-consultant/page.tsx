@@ -70,7 +70,7 @@ const CONSULTANT_FAQ = [
   },
   {
     q: "Vous écrivez les textes ?",
-    a: "Je peux vous aider à rédiger à partir de votre matière — c'est souvent suffisant. Si vous voulez une rédaction complète et travaillée de vos pages, l'option copywriting existe à 250 €.",
+    a: "Je peux vous aider à rédiger à partir de votre matière, et c'est souvent suffisant. Si vous voulez une rédaction complète et travaillée de vos pages, l'option copywriting existe à 250 €.",
   },
 ];
 
@@ -129,7 +129,7 @@ export default function SiteInternetConsultant() {
               margin: "0 0 36px",
             }}
           >
-            Votre expertise vaut cher. Votre site — quand il existe — dit
+            Votre expertise vaut cher. Votre site, quand il existe, dit
             l&apos;inverse. Or le prospect qui vous a repéré{" "}
             <span style={{ color: "var(--ftt-cream)", fontWeight: 500 }}>
               vérifie toujours avant d&apos;écrire
@@ -328,7 +328,7 @@ export default function SiteInternetConsultant() {
             <Reveal delay={2}>
               <p style={{ fontSize: 15, lineHeight: 1.7, color: "var(--ftt-text-mid)", margin: "0 0 16px" }}>
                 Une démo B2B que j&apos;ai construite : l&apos;exercice est le
-                même que pour un consultant — rendre une expertise crédible en
+                même que pour un consultant : rendre une expertise crédible en
                 quelques secondes, avec un positionnement net et un design qui
                 tient le niveau du tarif. Ce n&apos;est pas un client réel, les
                 textes sont des exemples.
@@ -568,7 +568,7 @@ export default function SiteInternetConsultant() {
             <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
-            <a href="/#contact" className="btn btn--ghost">
+            <a href={`mailto:${siteConfig.email}`} className="btn btn--ghost">
               M&apos;écrire <span className="btn__arrow">→</span>
             </a>
             <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">

@@ -43,7 +43,7 @@ const CONTENU_SITE = [
   },
   {
     title: "Votre prise de rendez-vous, intégrée",
-    desc: "Vous gardez Doctolib ou votre secrétariat : le site renvoie dessus. Il ne remplace pas votre agenda, il fait le travail d'avant — convaincre.",
+    desc: "Vous gardez Doctolib ou votre secrétariat : le site renvoie dessus. Il ne remplace pas votre agenda. Son travail, c'est de convaincre avant la prise de rendez-vous.",
   },
   {
     title: "Une fiche Google reliée et configurée",
@@ -230,7 +230,7 @@ export default function SiteInternetKine() {
             }}
           >
             Je ne vous dirai pas de quitter Doctolib : pour la prise de
-            rendez-vous, ça marche. Le site fait autre chose — il vous rend
+            rendez-vous, ça marche. Le site fait autre chose : il vous rend
             visible sur Google, il raconte votre façon de travailler, et il
             renvoie vers votre agenda. Chacun son rôle.
           </p>
@@ -457,7 +457,7 @@ export default function SiteInternetKine() {
                 Une démo que j&apos;ai construite pour montrer ce qu&apos;un site
                 de cabinet peut donner : présentation des spécialités, équipe,
                 infos pratiques, prise de rendez-vous reliée. Ce n&apos;est pas un
-                client réel et les textes sont des exemples — c&apos;est justement
+                client réel et les textes sont des exemples. C&apos;est justement
                 le but : voir le rendu avant de décider.
               </p>
             </Reveal>
@@ -697,7 +697,7 @@ export default function SiteInternetKine() {
             <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
-            <a href="/#contact" className="btn btn--ghost">
+            <a href={`mailto:${siteConfig.email}`} className="btn btn--ghost">
               M&apos;écrire <span className="btn__arrow">→</span>
             </a>
             <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">

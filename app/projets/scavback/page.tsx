@@ -30,7 +30,7 @@ export default function ScavbackPage() {
             Scavback
           </h1>
           <p className="mt-6 text-white/60 text-lg md:text-xl max-w-2xl">
-            Plateforme en ligne pour un collectif artistique — galerie, portfolio
+            Plateforme en ligne pour un collectif artistique : galerie, portfolio
             et univers visuel fort.
           </p>
           <div className="mt-10">
@@ -77,7 +77,7 @@ export default function ScavbackPage() {
             </h2>
             <p className="text-white/60 text-lg leading-relaxed">
               Scavback rassemble des artistes indépendants autour d&apos;un univers
-              visuel commun — son, image, vision. L&apos;enjeu : créer une
+              visuel commun, entre son et image. L&apos;enjeu : créer une
               plateforme qui reflète leur identité tout en restant fonctionnelle
               pour présenter les œuvres, les artistes et les événements à venir.
             </p>
@@ -174,7 +174,7 @@ export default function ScavbackPage() {
               Le site est une application React compilée avec Vite, déployée sur
               Cloudflare Pages : chaque mise à jour du code part en ligne
               automatiquement, et les pages sont servies depuis un réseau mondial
-              — le site charge vite, en France comme ailleurs.
+              : le site charge vite, en France comme ailleurs.
             </p>
             <p className="text-white/60 text-lg leading-relaxed mt-6">
               Pour un budget de 500 €, le collectif repart avec un vrai site

@@ -7,7 +7,7 @@ import { breadcrumbSchema, personSchema, aboutPageSchema } from "@/lib/schema";
 
 const TITLE = "À propos — Nathan Fautrat, fondateur de Studio FTT";
 const DESCRIPTION =
-  "Studio FTT, c'est Nathan Fautrat, designer et développeur web indépendant en Sarthe. Des sites sur-mesure pour artisans et indépendants — pas un Wix générique.";
+  "Studio FTT, c'est Nathan Fautrat, designer et développeur web indépendant en Sarthe. Des sites sur-mesure pour artisans et indépendants, pas un Wix générique.";
 const URL_A_PROPOS = `${siteConfig.url}/a-propos`;
 
 export const metadata: Metadata = {
@@ -94,7 +94,7 @@ export default function APropos() {
       {/* POURQUOI STUDIO FTT */}
       <section className="container pt-20 pb-20 max-w-3xl">
         <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-6 font-mono">
-          01 — Pourquoi Studio FTT existe
+          Pourquoi Studio FTT existe
         </div>
         <div className="space-y-6 text-lg leading-relaxed text-white/75">
           <p>
@@ -123,15 +123,14 @@ export default function APropos() {
       >
         <div className="container max-w-3xl">
           <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-6 font-mono">
-            02 — Comment je bosse
+            Comment je bosse
           </div>
           <div className="space-y-6 text-lg leading-relaxed text-white/75">
             <p>
-              Pas d&apos;agence à étages. Vous m&apos;appelez, c&apos;est moi
-              qui décroche. Une modif à faire, je la fais le jour même. Vous
-              parlez à la personne qui dessine le site, qui le code et qui le
-              met en ligne, ça évite les téléphones arabes et les délais qui
-              s&apos;allongent.
+              Vous m&apos;appelez, c&apos;est moi qui décroche. Une modif à
+              faire ? Vous me l&apos;envoyez directement, sans passer par trois
+              personnes. Celui qui dessine votre site est aussi celui qui le code
+              et le met en ligne, donc rien ne se perd en route.
             </p>
             <p>
               Je livre en{" "}
@@ -147,7 +146,7 @@ export default function APropos() {
       {/* POUR QUI */}
       <section className="container py-20 max-w-3xl">
         <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-6 font-mono">
-          03 — Pour qui c&apos;est
+          Pour qui c&apos;est
         </div>
         <p className="text-lg leading-relaxed text-white/75 mb-8">
           Pour les artisans, les indépendants, les petites équipes qui ont
@@ -186,7 +185,7 @@ export default function APropos() {
       >
         <div className="container max-w-4xl">
           <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-6 font-mono">
-            04 — Mes engagements
+            Mes engagements
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
@@ -200,7 +199,7 @@ export default function APropos() {
               },
               {
                 t: "Hébergement offert la 1ère année",
-                d: "Sur Cloudflare Pages. Ensuite inclus dans la maintenance à 35€/mois si vous la souscrivez.",
+                d: "Sur Cloudflare Pages. Ensuite, 10 €/mois, ou inclus si vous prenez la maintenance à 35 €/mois.",
               },
               {
                 t: "1 modification gratuite incluse",
@@ -208,11 +207,11 @@ export default function APropos() {
               },
               {
                 t: "Vous m'avez en direct",
-                d: "Pas d'intermédiaire, pas de chef de projet, pas de hotline. Mon numéro et mon mail, c'est tout.",
+                d: "Vous avez mon numéro et mon mail, et c'est moi qui réponds.",
               },
               {
                 t: "Conditions claires",
-                d: "Acompte 30% à la signature, solde à la livraison. CGV en ligne consultables avant signature.",
+                d: "Acompte de 30 % à la signature, solde de 70 % avant la mise en ligne. Les CGV sont en ligne, vous les lisez avant de signer.",
               },
             ].map((e) => (
               <div
@@ -238,7 +237,7 @@ export default function APropos() {
       {/* BASÉ EN SARTHE */}
       <section className="container py-20 max-w-3xl">
         <div className="text-xs tracking-[0.3em] uppercase text-[#E8352A] mb-6 font-mono">
-          05 — Basé en Sarthe
+          Basé en Sarthe
         </div>
         <div className="space-y-6 text-lg leading-relaxed text-white/75">
           <p>
@@ -264,8 +263,7 @@ export default function APropos() {
           </h2>
           <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-xl mx-auto">
             Un premier appel sans engagement. À la fin, vous repartez avec une
-            réponse claire et un devis si ça vous parle. Pas un argumentaire
-            commercial.
+            réponse claire, et un devis si ça vous parle.
           </p>
           <a
             href={siteConfig.booking}

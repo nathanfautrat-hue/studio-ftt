@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Mentions légales",
   description:
-    "Mentions légales du site Studio FTT — éditeur, hébergeur, propriété intellectuelle, contact. Conformité LCEN.",
+    "Mentions légales du site Studio FTT : éditeur, hébergeur, propriété intellectuelle, contact. Conformité LCEN.",
   alternates: {
     canonical: "/mentions-legales",
     types: {

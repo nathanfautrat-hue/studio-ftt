@@ -58,7 +58,7 @@ const COMMERCE_FAQ = [
   },
   {
     q: "J'ai déjà une page Facebook ou Instagram, ça ne suffit pas ?",
-    a: "Les réseaux touchent les gens qui vous suivent déjà. Google capte ceux qui cherchent un garage, un institut ou une auto-école maintenant, dans votre ville — sans vous connaître. Les deux se complètent, mais la recherche locale passe par un site et une fiche Google soignés.",
+    a: "Les réseaux touchent les gens qui vous suivent déjà. Google capte ceux qui cherchent un garage, un institut ou une auto-école maintenant, dans votre ville, sans vous connaître. Les deux se complètent, mais la recherche locale passe par un site et une fiche Google soignés.",
   },
   {
     q: "J'ai déjà une fiche Google, pourquoi un site en plus ?",
@@ -134,8 +134,8 @@ export default function SiteInternetCommerce() {
             client, lui,{" "}
             <span style={{ color: "var(--ftt-cream)", fontWeight: 500 }}>
               vous cherche d&apos;abord sur Google
-            </span>{" "}
-            — et il compare ce qu&apos;il y trouve.
+            </span>,
+            et il compare ce qu&apos;il y trouve.
           </p>
         </Reveal>
         <Reveal delay={3}>
@@ -313,7 +313,7 @@ export default function SiteInternetCommerce() {
                 Une démo que j&apos;ai construite autour d&apos;un garage
                 indépendant : prestations claires, demande de rendez-vous,
                 ambiance atelier qui inspire confiance. Ce n&apos;est pas un
-                client réel et les textes sont des exemples — c&apos;est
+                client réel et les textes sont des exemples. C&apos;est
                 justement le but : voir le rendu avant de décider.
               </p>
             </Reveal>
@@ -553,7 +553,7 @@ export default function SiteInternetCommerce() {
             <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
-            <a href="/#contact" className="btn btn--ghost">
+            <a href={`mailto:${siteConfig.email}`} className="btn btn--ghost">
               M&apos;écrire <span className="btn__arrow">→</span>
             </a>
             <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">

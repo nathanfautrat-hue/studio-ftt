@@ -365,7 +365,7 @@ export default function SiteInternetArtisan() {
                 Une démo que j&apos;ai construite autour d&apos;un plombier
                 artisan : urgences mises en avant, services clairs, zone
                 d&apos;intervention, demande de devis. Ce n&apos;est pas un
-                client réel et les textes sont des exemples — c&apos;est
+                client réel et les textes sont des exemples. C&apos;est
                 justement le but : voir le rendu avant de décider.
               </p>
             </Reveal>
@@ -607,7 +607,7 @@ export default function SiteInternetArtisan() {
             <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
-            <a href="/#contact" className="btn btn--ghost">
+            <a href={`mailto:${siteConfig.email}`} className="btn btn--ghost">
               M&apos;écrire <span className="btn__arrow">→</span>
             </a>
             <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">

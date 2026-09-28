@@ -31,7 +31,7 @@ export default function SprayfilmPage() {
           </h1>
           <p className="mt-6 text-white/60 text-lg md:text-xl max-w-2xl">
             Site vitrine pour une agence de production audiovisuelle et
-            exécutive basée en Bretagne — SEO local et Google Business inclus.
+            exécutive basée en Bretagne, avec SEO local et fiche Google Business.
           </p>
           <div className="mt-10">
             <a
@@ -74,7 +74,7 @@ export default function SprayfilmPage() {
           <div className="max-w-3xl">
             <h2 className="font-display text-4xl md:text-5xl leading-[1.1] mb-8">
               Une agence de production qui avait besoin d&apos;exister en ligne
-              — et d&apos;être trouvée sur Google.
+              , et d&apos;être trouvée sur Google.
             </h2>
             <p className="text-white/60 text-lg leading-relaxed">
               Sprayfilm est une agence de production audiovisuelle et exécutive
@@ -106,8 +106,8 @@ export default function SprayfilmPage() {
               du texte.
             </p>
             <p className="text-white/60 text-lg leading-relaxed mt-6">
-              Chaque métier de l&apos;agence — publicité, émission, social
-              content, clip, corporate — a sa propre entrée, avec un texte qui
+              Chaque métier de l&apos;agence (publicité, émission, social
+              content, clip, corporate) a sa propre entrée, avec un texte qui
               parle aux marques et aux annonceurs, pas seulement aux gens de
               l&apos;image.
             </p>
@@ -130,7 +130,7 @@ export default function SprayfilmPage() {
                 },
                 {
                   t: "SEO local",
-                  d: "Optimisation pour les recherches de production audiovisuelle en Bretagne — Rennes, Brest, Nantes, Angers, Lorient.",
+                  d: "Optimisation pour les recherches de production audiovisuelle en Bretagne : Rennes, Brest, Nantes, Angers, Lorient.",
                 },
                 {
                   t: "Google Business",
@@ -169,7 +169,7 @@ export default function SprayfilmPage() {
             <p className="text-white/60 text-lg leading-relaxed">
               Le marché de Sprayfilm est régional : les marques et boîtes de
               production qui cherchent un partenaire en Bretagne passent par
-              Google. Le site a donc été structuré pour ces recherches — pages
+              Google. Le site a donc été structuré pour ces recherches : pages
               et textes optimisés sur les métiers et les villes d&apos;intervention,
               fiche Google Business reliée au domaine.
             </p>
