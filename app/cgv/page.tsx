@@ -102,17 +102,8 @@ export default function CGV() {
               micro-entreprise et bénéficie de la franchise en base de TVA.
             </p>
             <p className="mt-3">
-              La grille tarifaire en vigueur est consultable sur{" "}
-              <a
-                href="https://studioftt.fr/tarifs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white underline hover:text-[#E8352A]"
-              >
-                studioftt.fr/tarifs
-              </a>
-              . Les prix indiqués sont des tarifs «&nbsp;à partir de&nbsp;»&nbsp;;
-              le prix final est déterminé sur devis selon la complexité du projet.
+              Les prix sont fixés sur devis, selon la complexité du projet. Le devis
+              signé fait foi.
             </p>
           </div>
 

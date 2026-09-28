@@ -5,7 +5,7 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 const TITLE = "Site internet garage & commerce local";
 const DESCRIPTION =
-  "Les chaînes ont des sites clinquants, vous avez le métier. Site + fiche Google reliés pour garage ou commerce : 750 € tout compris, livré en 7 jours ouvrés.";
+  "Les chaînes ont des sites clinquants, vous avez le métier. Site + fiche Google reliés pour garage ou commerce, sur devis, livré en 7 jours ouvrés.";
 
 const URL = `${siteConfig.url}/site-internet-commerce`;
 
@@ -56,7 +56,6 @@ export default function SiteInternetCommerceLayout({
           ]),
           serviceSchema({
             name: "Création de site internet pour commerce et service de proximité",
-            price: "750",
             description:
               "Site sur-mesure pour commerce ou service local (garage, institut, auto-école, boutique) : jusqu'à 3 pages, SEO local, fiches Google, Bing et Apple Plans configurées et reliées au site. Livré en 7 jours ouvrés.",
             features: [

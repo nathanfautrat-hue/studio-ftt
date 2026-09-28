@@ -94,7 +94,7 @@ export type FaqItem = { q: string; a: string };
 export const FAQ: FaqItem[] = [
   {
     q: "Combien coûte un site ?",
-    a: "Ça dépend de ce dont vous avez besoin. On en parle 30 minutes, puis je vous envoie un devis clair. Vous payez une fois. Le détail des formules est sur la page Tarifs.",
+    a: "Ça dépend de ce dont vous avez besoin. On en parle 30 minutes, puis je vous envoie un devis clair. Vous payez une fois, sans abonnement obligatoire.",
   },
   {
     q: "Combien de temps pour livrer ?",
@@ -102,11 +102,11 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Y a-t-il un abonnement ?",
-    a: "Non, rien d'obligatoire. L'hébergement est offert la première année, puis 10 €/mois. Vous payez aussi votre nom de domaine, une dizaine d'euros par an, et il est à votre nom.",
+    a: "Non, rien d'obligatoire. L'hébergement est offert la première année, ensuite c'est un petit forfait mensuel, indiqué dans le devis. Vous payez aussi votre nom de domaine, une dizaine d'euros par an, et il est à votre nom.",
   },
   {
     q: "Et après la mise en ligne ?",
-    a: "Je reste joignable. Une modification est offerte à la livraison. Ensuite, c'est 50 €/h, ou 3 modifications par mois avec la maintenance à 35 €/mois.",
+    a: "Je reste joignable. Une modification est offerte à la livraison. Ensuite, soit je facture à l'heure, soit vous prenez la maintenance mensuelle, qui couvre 3 modifications par mois.",
   },
   {
     q: "Vous travaillez partout en France ?",
@@ -129,7 +129,7 @@ export const APPROCHE: ApprocheStep[] = [
   {
     num: "01",
     title: "Je vous appelle",
-    desc: "30 minutes pour comprendre votre métier et vos clients. Je vous dis franchement si je peux vous aider, sans jargon et sans vous pousser à signer.",
+    desc: "30 minutes pour comprendre votre métier et vos clients. Je vous dis franchement si je peux vous aider.",
     action: "Appel de découverte · 30 min",
   },
   {
@@ -146,64 +146,3 @@ export const APPROCHE: ApprocheStep[] = [
   },
 ];
 
-// ---------------------------------------------------------------------------
-// Tarifs (packs sites web) — source unique partagée par /tarifs et la home
-// ---------------------------------------------------------------------------
-
-export type Plan = {
-  id: string;
-  name: string;
-  price: string;
-  sub: string;
-  featured: boolean;
-  desc: string;
-  features: string[];
-};
-
-export const PLANS: Plan[] = [
-  {
-    id: "vitrine",
-    name: "Vitrine",
-    price: "500 €",
-    sub: "one-shot, tout compris",
-    featured: false,
-    desc: "Pour démarrer avec un site propre et référencé.",
-    features: [
-      "1 page",
-      "Design adapté à votre secteur",
-      "Formulaire de contact",
-      "SEO de base",
-      "1 modification gratuite",
-    ],
-  },
-  {
-    id: "visibilite",
-    name: "Visibilité",
-    price: "750 €",
-    sub: "one-shot, tout compris",
-    featured: true,
-    desc: "Le choix de la plupart des artisans et indépendants.",
-    features: [
-      "Jusqu'à 3 pages",
-      "Tout ce qu'inclut Vitrine",
-      "SEO avancé",
-      "Fiches Google Business, Bing Places et Apple Plans configurées",
-      "Site optimisé pour être compris par les IA (ChatGPT, réponses IA de Google)",
-      "1 modification gratuite",
-    ],
-  },
-  {
-    id: "sur-mesure",
-    name: "Sur-mesure",
-    price: "à partir de 1 000 €",
-    sub: "devis personnalisé",
-    featured: false,
-    desc: "Pour les projets plus complets ou avec des besoins spécifiques.",
-    features: [
-      "Jusqu'à 5 pages",
-      "Tout ce qu'inclut Visibilité",
-      "Fonctionnalités sur mesure (e-commerce, réservation, espace client…)",
-      "1 modification gratuite",
-    ],
-  },
-];

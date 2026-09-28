@@ -5,7 +5,7 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 const TITLE = "Site internet consultant : au niveau de votre TJM";
 const DESCRIPTION =
-  "Crédible en réunion, invisible en ligne ? Un site de consultant au niveau de votre TJM, sur-mesure dès 1 000 €, livré en 7 jours ouvrés.";
+  "Crédible en réunion, invisible en ligne ? Un site de consultant au niveau de votre TJM, sur-mesure et sur devis, livré en 7 jours ouvrés.";
 
 const URL = `${siteConfig.url}/site-internet-consultant`;
 
@@ -56,9 +56,8 @@ export default function SiteInternetConsultantLayout({
           ]),
           serviceSchema({
             name: "Création de site internet pour consultant, formateur et coach",
-            price: "1000",
             description:
-              "Site sur-mesure pour consultant, formateur ou coach : positionnement clair, pages offre, parcours et références, prise de rendez-vous intégrée. À partir de 1 000 €, livré en 7 jours ouvrés.",
+              "Site sur-mesure pour consultant, formateur ou coach : positionnement clair, pages offre, parcours et références, prise de rendez-vous intégrée. Sur devis, livré en 7 jours ouvrés.",
             features: [
               "Jusqu'à 5 pages",
               "Positionnement et pages offre",

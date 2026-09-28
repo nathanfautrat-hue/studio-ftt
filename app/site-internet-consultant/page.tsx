@@ -54,7 +54,7 @@ const CONTENU_SITE = [
 const CONSULTANT_FAQ = [
   {
     q: "Combien coûte un site de consultant ou de coach ?",
-    a: "Le plus souvent en sur-mesure à partir de 1 000 € : positionnement, pages offre, parcours, intégration de votre lien de réservation. Si vous démarrez, une page Visibilité à 750 € peut suffire dans un premier temps. Prix one-shot, aucun abonnement obligatoire.",
+    a: "Ça dépend de votre offre : positionnement, pages, parcours, intégration de votre lien de réservation. On en parle 30 minutes et je vous envoie un devis clair. Vous payez une fois, sans abonnement obligatoire.",
   },
   {
     q: "J'ai déjà LinkedIn, pourquoi un site ?",
@@ -70,7 +70,7 @@ const CONSULTANT_FAQ = [
   },
   {
     q: "Vous écrivez les textes ?",
-    a: "Je peux vous aider à rédiger à partir de votre matière, et c'est souvent suffisant. Si vous voulez une rédaction complète et travaillée de vos pages, l'option copywriting existe à 250 €.",
+    a: "Je peux vous aider à rédiger à partir de votre matière, et c'est souvent suffisant. Si vous voulez une rédaction complète et travaillée de vos pages, je vous chiffre l'option copywriting dans le devis.",
   },
 ];
 
@@ -141,9 +141,6 @@ export default function SiteInternetConsultant() {
           <div className="flex flex-wrap" style={{ gap: 12 }}>
             <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel · 30 min <span className="btn__arrow">→</span>
-            </a>
-            <a href="/tarifs" className="btn btn--ghost">
-              Voir les tarifs <span className="btn__arrow">→</span>
             </a>
           </div>
         </Reveal>
@@ -397,9 +394,9 @@ export default function SiteInternetConsultant() {
               className="font-display"
               style={{ fontSize: "clamp(34px, 5vw, 72px)", lineHeight: 0.95, margin: 0 }}
             >
-              DÈS 1 000 €{" "}
+              CE QUI EST{" "}
               <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-text-mid)" }}>
-                sur devis.
+                inclus
               </em>
             </h2>
           </Reveal>
@@ -420,12 +417,8 @@ export default function SiteInternetConsultant() {
                 </div>
               ))}
               <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 8, lineHeight: 1.6 }}>
-                C&apos;est le pack Sur-mesure, sur devis personnalisé. Pour
-                démarrer plus léger, le pack Visibilité à 750 € existe aussi.{" "}
-                <a href="/tarifs" style={{ color: "var(--ftt-cream)", textDecoration: "underline" }}>
-                  Tous les tarifs en détail
-                </a>
-                .
+                Le prix est fixé sur devis, après un appel de 30 minutes. Vous
+                payez une fois, sans abonnement obligatoire.
               </p>
             </div>
           </Reveal>

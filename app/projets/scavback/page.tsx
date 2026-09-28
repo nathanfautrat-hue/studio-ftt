@@ -53,7 +53,6 @@ export default function ScavbackPage() {
             { k: "Catégorie", v: "Collectif artistique" },
             { k: "Type", v: "Site client" },
             { k: "Année", v: "2026" },
-            { k: "Budget", v: "500 €" },
           ].map((m) => (
             <div key={m.k} className="border-t border-white/10 pt-6">
               <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 mb-3">
@@ -177,9 +176,8 @@ export default function ScavbackPage() {
               : le site charge vite, en France comme ailleurs.
             </p>
             <p className="text-white/60 text-lg leading-relaxed mt-6">
-              Pour un budget de 500 €, le collectif repart avec un vrai site
-              sur-mesure : pas d&apos;abonnement à une plateforme, pas de
-              template loué, un univers à eux.
+              Le collectif repart avec un vrai site sur-mesure, sans abonnement
+              à une plateforme ni template loué : un univers à eux.
             </p>
           </div>
         </div>
@@ -203,8 +201,8 @@ export default function ScavbackPage() {
             >
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
-            <a href="/tarifs" className="btn btn--ghost">
-              Voir les tarifs <span className="btn__arrow">→</span>
+            <a href="/#contact" className="btn btn--ghost">
+              Réserver un appel <span className="btn__arrow">→</span>
             </a>
           </div>
         </Reveal>

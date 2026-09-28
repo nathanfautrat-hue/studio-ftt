@@ -7,7 +7,7 @@ import { gtagEvent } from "@/lib/gtag";
 /**
  * Accueil : pas de grille de prix, un devis après un appel de 30 min.
  * À gauche le message, à droite une carte « ce qui est inclus ».
- * Le détail chiffré reste sur /tarifs (SEO + transparence).
+ * Aucun prix affiché : devis après un appel de 30 min.
  */
 const INCLUS = [
   "Un design fait pour votre métier",
@@ -97,18 +97,6 @@ export default function TarifsSection() {
                 className="btn btn--solid justify-center"
               >
                 Réserver un appel <span aria-hidden>→</span>
-              </a>
-              <a
-                href="/tarifs"
-                style={{
-                  color: "var(--ftt-text-mid)",
-                  fontSize: 14,
-                  textDecoration: "underline",
-                  textUnderlineOffset: 4,
-                  textDecorationColor: "var(--ftt-line-strong)",
-                }}
-              >
-                Voir le détail des formules
               </a>
             </div>
           </div>

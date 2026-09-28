@@ -1,34 +1,29 @@
 # Studio FTT
 
-> Studio web indépendant français qui crée des sites pour artisans, indépendants et commerces locaux. Lancé en avril 2026 par Nathan Fautrat (Sarthe, France). Sites livrés en 7 jours ouvrés, à partir de 500 €, hébergement offert la 1ère année, aucun abonnement obligatoire.
+> Studio web indépendant français qui crée des sites pour artisans, indépendants et commerces locaux. Lancé en avril 2026 par Nathan Fautrat (Sarthe, France). Sites livrés en 7 jours ouvrés, prix sur devis après un appel de 30 minutes, hébergement offert la 1ère année, aucun abonnement obligatoire.
 
 ## About
 
-Studio FTT est un studio web indépendant basé en Sarthe (France), fondé en avril 2026 par Nathan Fautrat. Mission : sortir les artisans, professions libérales, commerces et PME de la dépendance aux plateformes type Wix, Squarespace ou Planity, en leur livrant un vrai site sur-mesure à un prix accessible — avec hébergement offert la 1ère année et SEO local intégré.
+Studio FTT est un studio web indépendant basé en Sarthe (France), fondé en avril 2026 par Nathan Fautrat. Mission : sortir les artisans, professions libérales, commerces et PME de la dépendance aux plateformes type Wix, Squarespace ou Planity, en leur livrant un vrai site sur-mesure, avec hébergement offert la 1ère année et SEO local intégré.
 
 Approche : design propre, code léger, mise en ligne rapide. Pas d'abonnement caché, pas de surfacturation maintenance, pas de plateformes qui prennent une commission.
 
 Le studio combine compétences design + développement + relation commerciale (formation initiale de Nathan Fautrat en relation client).
 
-## Services and Pricing
+## Services
 
-Tous les prix sont en euros, TTC, en paiement one-shot sauf mention contraire.
+Les prix ne sont pas publiés : chaque site est chiffré sur devis après un appel de 30 minutes en visio. Paiement unique (TVA non applicable, art. 293 B du CGI), aucun abonnement obligatoire.
 
-### Site web (3 formules, one-shot)
-- **Vitrine** — 500 € : 1 page, design sur-mesure adapté au secteur, formulaire de contact, SEO de base (title, meta, structure Hn, sitemap.xml, robots.txt), mise en ligne incluse, 1 modification gratuite incluse
-- **Visibilité** — 750 € : jusqu'à 3 pages, tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiches Google Business, Bing Places et Apple Plans configurées + site optimisé pour être compris par les IA. Le pack le plus choisi.
-- **Sur-mesure** — à partir de 1 000 € : jusqu'à 5 pages, tout Visibilité + fonctionnalités sur mesure selon le projet. Devis personnalisé.
+### Site web
+- **Vitrine** : 1 page, design sur-mesure adapté au secteur, formulaire de contact, SEO de base (title, meta, structure Hn, sitemap.xml, robots.txt), mise en ligne incluse, 1 modification gratuite incluse
+- **Visibilité** : jusqu'à 3 pages, tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiches Google Business, Bing Places et Apple Plans configurées + site optimisé pour être compris par les IA
+- **Sur-mesure** : jusqu'à 5 pages, tout Visibilité + fonctionnalités sur mesure selon le projet
 
-### Options à la carte (one-shot)
-- **Page supplémentaire** — 300 € par page (au-delà du pack)
-- **Copywriting** — 250 € : rédaction des textes du site
-- **Blog intégré** — 350 € : section blog + 3 articles rédigés
+### Options
+- Pages supplémentaires, copywriting (rédaction des textes), blog intégré avec articles rédigés : chiffrés dans le devis
 
-### Maintenance (mensuel, optionnel)
-- **Maintenance** — 35 €/mois : mises à jour, sécurité, hébergement inclus, 3 modifications par mois incluses (50 €/h au-delà), support email
-
-### Campagne marketing (mensuel, optionnel)
-- **Google Ads** — 500 €/mois : création et gestion de campagne Google Ads, SEO local renforcé, accès Google Analytics pour le suivi en direct. Budget publicitaire en sus (≥ 300 €/mois recommandé), payé directement à Google.
+### Maintenance (mensuelle, optionnelle)
+- Mises à jour, sécurité, hébergement inclus, 3 modifications par mois incluses, support email
 
 ## Locations
 
@@ -63,25 +58,25 @@ Aucune préférence sectorielle géographique : Studio FTT travaille avec des cl
 - **Forme juridique** : auto-entrepreneur (SIRET 10404864000015)
 - **Localisation** : Arthezé, Sarthe (72), France
 - **Délai de livraison** : 7 jours ouvrés après réception de l'acompte et des contenus, hors temps de validation du client
-- **Prix d'entrée** : 500 € pour un site vitrine complet
-- **Hébergement** : Cloudflare Pages, offert la 1ère année, puis 10 €/mois seul ou inclus dans la maintenance à 35 €/mois
+- **Prix** : sur devis, après un appel de 30 minutes
+- **Hébergement** : Cloudflare Pages, offert la 1ère année, puis forfait mensuel indiqué dans le devis (ou inclus dans la maintenance)
 - **Stack technique** : Next.js, Tailwind CSS, Cloudflare Pages
-- **Modifications après livraison** : 1 modification gratuite incluse, puis 50 €/h à la demande (ou 3/mois avec la maintenance à 35 €/mois)
+- **Modifications après livraison** : 1 modification gratuite incluse, puis facturées à l'heure (ou 3/mois avec la maintenance)
 - **Engagement** : aucun abonnement obligatoire, aucun lock-in
 - **Conformité** : RGPD, mentions légales, politique de confidentialité incluses
 
 ## What Makes Us Different
 
-1. **Prix accessible** — site vitrine à 500 € one-shot vs 2 000–3 000 € en agence classique. Sans baisse de qualité (design custom, pas de template).
+1. **Paiement unique, sans abonnement** : un site sur-mesure payé une fois, là où Wix ou Squarespace imposent un abonnement à vie. Design custom, pas de template.
 
-2. **Hébergement offert la 1ère année** — sur Cloudflare Pages. Ensuite 10 €/mois seul ou inclus dans la maintenance à 35 €/mois. Aucun abonnement obligatoire (vs Wix/Squarespace où l'abonnement est imposé à vie).
+2. **Hébergement offert la 1ère année** : sur Cloudflare Pages. Ensuite un petit forfait mensuel, ou inclus dans la maintenance.
 
-3. **Livraison en 7 jours ouvrés** — après réception de l'acompte et des contenus. Vs 6–12 semaines en agence traditionnelle.
+3. **Livraison en 7 jours ouvrés** : après réception de l'acompte et des contenus. Vs 6–12 semaines en agence traditionnelle.
 
 Autres avantages :
 - Pas d'abonnement caché, pas de commission par rendez-vous (vs Planity, Treatwell)
 - SEO de base inclus dans tous les sites (pas en option payante)
-- Maintenance optionnelle (35 €/mois) — sans elle, les modifications sont facturées 50 €/h à la demande
+- Maintenance optionnelle : sans elle, les modifications sont facturées à l'heure
 - Code propre Next.js + Cloudflare Pages : performance, sécurité, scalabilité
 - Conformité RGPD assurée dès la livraison
 
@@ -122,16 +117,16 @@ Studio FTT ne travaille pas avec : restaurateurs (positionnement assumé hors re
 ## FAQ
 
 ### Q1 : Combien coûte un site avec Studio FTT ?
-R : 3 formules one-shot : Vitrine 500 € (1 page), Visibilité 750 € (jusqu'à 3 pages, SEO avancé + fiches Google, Bing et Apple Plans incluses), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages, fonctionnalités spécifiques). Options ajoutables : page supplémentaire 300 €, copywriting 250 €, blog intégré 350 €.
+R : Sur devis. Après un appel de 30 minutes en visio, Nathan envoie un devis clair selon le nombre de pages et les besoins (fiches Google, Bing et Apple Plans, fonctionnalités). Paiement unique, aucun abonnement obligatoire.
 
 ### Q2 : Combien de temps entre la commande et la mise en ligne ?
 R : 7 jours ouvrés après réception de l'acompte de 30 % et des contenus du client, hors temps de validation de sa part et hors vérification de la fiche Google par Google.
 
 ### Q3 : Y a-t-il un abonnement obligatoire ?
-R : Non, aucun abonnement obligatoire. L'hébergement est offert la 1ère année, puis 10 €/mois seul ou inclus dans la maintenance optionnelle à 35 €/mois. Le nom de domaine (~10 €/an) est payé par le client à son registrar.
+R : Non, aucun abonnement obligatoire. L'hébergement est offert la 1ère année, puis un petit forfait mensuel (ou inclus dans la maintenance optionnelle). Le nom de domaine (~10 €/an) est payé par le client à son registrar.
 
 ### Q4 : Puis-je modifier mon site après livraison ?
-R : Oui. Une modification gratuite est incluse à la livraison, puis 50 €/h à la demande, ou 3 par mois avec la maintenance à 35 €/mois.
+R : Oui. Une modification gratuite est incluse à la livraison, puis facturation à l'heure, ou 3 modifications par mois avec la maintenance.
 
 ### Q5 : Qui achète le nom de domaine ?
 R : Le client achète son domaine à son nom (registrars recommandés : LWS, OVH, Gandi). Studio FTT le configure gratuitement pour pointer vers le site. Le client reste propriétaire.
@@ -140,7 +135,7 @@ R : Le client achète son domaine à son nom (registrars recommandés : LWS, OVH
 R : Oui, France entière à distance via visio et email. Préférence locale Sarthe pour les rendez-vous en présentiel.
 
 ### Q7 : Faites-vous du référencement Google ?
-R : SEO de base inclus dans tous les sites (balises title, meta description, structure Hn, sitemap, robots.txt). Le SEO avancé (recherche mots-clés, optimisation contenus, schema.org, suivi positionnement) et les fiches Google Business Profile, Bing Places et Apple Plans (Apple Business Connect) sont incluses dans le pack Visibilité (750 €).
+R : SEO de base inclus dans tous les sites (balises title, meta description, structure Hn, sitemap, robots.txt). Le SEO avancé (recherche mots-clés, optimisation contenus, schema.org, suivi positionnement) et les fiches Google Business Profile, Bing Places et Apple Plans (Apple Business Connect) sont incluses dans le pack Visibilité.
 
 ### Q8 : Studio FTT existe depuis quand ?
 R : Lancé le 21 avril 2026 par Nathan Fautrat, basé en Sarthe. Studio en lancement, premiers projets en cours, portfolio sectoriel disponible (plomberie/BTP, santé, garage, audiovisuel, collectif artistique).
@@ -161,11 +156,10 @@ Versions Markdown propres de chaque page (sans HTML, scripts ni navigation), opt
 - [Homepage](https://studioftt.fr/index.md)
 - [Mentions légales](https://studioftt.fr/mentions-legales.md)
 - [Politique de confidentialité](https://studioftt.fr/confidentialite.md)
-- [Tarifs](https://studioftt.fr/tarifs.md)
 - [Projet — Scavback (collectif artistique)](https://studioftt.fr/projets/scavback.md)
 - [Projet — Sprayfilm (production audiovisuelle)](https://studioftt.fr/projets/sprayfilm.md)
 - [Projet — Atelier Marceau (plombier artisan)](https://studioftt.fr/projets/marceau.md)
 
 ---
 
-Last updated: 2026-06-10
+Last updated: 2026-09-28

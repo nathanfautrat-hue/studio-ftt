@@ -199,7 +199,7 @@ export default function APropos() {
               },
               {
                 t: "Hébergement offert la 1ère année",
-                d: "Sur Cloudflare Pages. Ensuite, 10 €/mois, ou inclus si vous prenez la maintenance à 35 €/mois.",
+                d: "Sur Cloudflare Pages. Ensuite, un petit forfait mensuel, indiqué dans le devis.",
               },
               {
                 t: "1 modification gratuite incluse",

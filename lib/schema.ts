@@ -151,28 +151,22 @@ export function professionalServiceSchema() {
           "@type": "Offer",
           name: "Site Vitrine",
           description: "Site sur-mesure 1 page, design adapté, SEO de base, mise en ligne, 1 modification incluse.",
-          price: 500,
-          priceCurrency: "EUR",
           availability: "https://schema.org/InStock",
-          url: `${URL}/tarifs`,
+          url: `${URL}/#tarifs`,
         },
         {
           "@type": "Offer",
           name: "Site Visibilité",
           description: "Tout Vitrine + SEO avancé (mots-clés ciblés, schema.org) + fiches Google Business, Bing Places et Apple Plans.",
-          price: 750,
-          priceCurrency: "EUR",
           availability: "https://schema.org/InStock",
-          url: `${URL}/tarifs`,
+          url: `${URL}/#tarifs`,
         },
         {
           "@type": "Offer",
           name: "Site Sur-mesure",
-          description: "Multi-pages, fonctionnalités avancées, devis personnalisé.",
-          price: 1000,
-          priceCurrency: "EUR",
+          description: "Multi-pages, fonctionnalités avancées, sur devis.",
           availability: "https://schema.org/InStock",
-          url: `${URL}/tarifs`,
+          url: `${URL}/#tarifs`,
         },
       ],
     },
@@ -282,7 +276,7 @@ export function breadcrumbSchema(items: Array<{ name: string; url: string }>) {
 }
 
 /**
- * FAQPage — pour la section FAQ de la homepage et /tarifs.
+ * FAQPage — pour la section FAQ de la homepage et des pages métiers.
  * Améliore l'apparition en rich snippets et AI Overviews.
  */
 export function faqPageSchema(faqs: Array<{ q: string; a: string }>) {
@@ -305,7 +299,7 @@ export function faqPageSchema(faqs: Array<{ q: string; a: string }>) {
  */
 export function serviceSchema(plan: {
   name: string;
-  price: string;
+  price?: string;
   description: string;
   features: string[];
   url: string;
@@ -321,8 +315,6 @@ export function serviceSchema(plan: {
     url: plan.url,
     offers: {
       "@type": "Offer",
-      price: plan.price,
-      priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       url: plan.url,
     },

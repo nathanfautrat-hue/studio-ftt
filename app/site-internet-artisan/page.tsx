@@ -54,7 +54,7 @@ const CONTENU_SITE = [
 const ARTISAN_FAQ = [
   {
     q: "Combien coûte un site internet pour un artisan ?",
-    a: "Le plus souvent, 750 € : c'est le pack Visibilité, avec jusqu'à 3 pages, le référencement local sur votre ville et vos services, et vos fiches Google, Bing et Apple Plans configurées. Une page simple coûte 500 €, et les besoins particuliers passent en sur-mesure à partir de 1 000 €. Prix one-shot, aucun abonnement obligatoire.",
+    a: "Ça dépend de ce qu'il vous faut : nombre de pages, zone d'intervention, fiches Google, Bing et Apple Plans. On en parle 30 minutes et je vous envoie un devis clair. Vous payez une fois, sans abonnement obligatoire.",
   },
   {
     q: "J'ai déjà du travail avec le bouche-à-oreille, à quoi ça sert ?",
@@ -70,7 +70,7 @@ const ARTISAN_FAQ = [
   },
   {
     q: "Il faut payer tous les mois ?",
-    a: "Non, aucun abonnement obligatoire : le site se paie une fois. L'hébergement est offert la première année, puis 10 €/mois ou inclus dans la maintenance optionnelle à 35 €/mois (3 modifications par mois comprises). Votre nom de domaine, une dizaine d'euros par an, reste à votre nom.",
+    a: "Non, aucun abonnement obligatoire : le site se paie une fois. L'hébergement est offert la première année, ensuite c'est un petit forfait mensuel, indiqué dans le devis. Votre nom de domaine, une dizaine d'euros par an, reste à votre nom.",
   },
 ];
 
@@ -142,9 +142,6 @@ export default function SiteInternetArtisan() {
           <div className="flex flex-wrap" style={{ gap: 12 }}>
             <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel · 30 min <span className="btn__arrow">→</span>
-            </a>
-            <a href="/tarifs" className="btn btn--ghost">
-              Voir les tarifs <span className="btn__arrow">→</span>
             </a>
           </div>
         </Reveal>
@@ -435,9 +432,9 @@ export default function SiteInternetArtisan() {
               className="font-display"
               style={{ fontSize: "clamp(34px, 5vw, 72px)", lineHeight: 0.95, margin: 0 }}
             >
-              750 €{" "}
+              CE QUI EST{" "}
               <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-text-mid)" }}>
-                tout compris.
+                inclus
               </em>
             </h2>
           </Reveal>
@@ -459,12 +456,8 @@ export default function SiteInternetArtisan() {
                 </div>
               ))}
               <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 8, lineHeight: 1.6 }}>
-                C&apos;est le pack Visibilité. Une page simple coûte 500 €, et la
-                maintenance à 35 €/mois reste optionnelle.{" "}
-                <a href="/tarifs" style={{ color: "var(--ftt-cream)", textDecoration: "underline" }}>
-                  Tous les tarifs en détail
-                </a>
-                .
+                Le prix est fixé sur devis, après un appel de 30 minutes. Vous
+                payez une fois, sans abonnement obligatoire.
               </p>
             </div>
           </Reveal>

@@ -54,9 +54,9 @@ export default function NotFound() {
           <a href="/" className="btn btn--solid">
             Retour à l&apos;accueil <span className="btn__arrow">→</span>
           </a>
-          <a href="/tarifs" className="btn btn--ghost">
-            Voir les tarifs <span className="btn__arrow">→</span>
-          </a>
+          <a href="/#contact" className="btn btn--ghost">
+              Réserver un appel <span className="btn__arrow">→</span>
+            </a>
         </div>
       </section>
       <Footer />

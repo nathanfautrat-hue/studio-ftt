@@ -76,7 +76,7 @@ const KINE_FAQ = [
   },
   {
     q: "Combien coûte un site pour un cabinet de kiné ?",
-    a: "Pour la plupart des cabinets, c'est le pack Visibilité à 750 € : jusqu'à 3 pages, référencement local sur votre ville et vos spécialités, fiches Google, Bing et Apple Plans configurées. Une page simple coûte 500 €, et les besoins particuliers (cabinet de groupe, plusieurs sites d'exercice) passent en sur-mesure à partir de 1 000 €. Prix one-shot, aucun abonnement obligatoire.",
+    a: "Ça dépend de votre cabinet : nombre de pages, spécialités, praticiens, fiches Google, Bing et Apple Plans. On en parle 30 minutes et je vous envoie un devis clair. Vous payez une fois, sans abonnement obligatoire.",
   },
   {
     q: "Qu'est-ce que je peux écrire sans risque avec l'Ordre ?",
@@ -154,9 +154,6 @@ export default function SiteInternetKine() {
           <div className="flex flex-wrap" style={{ gap: 12 }}>
             <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel · 30 min <span className="btn__arrow">→</span>
-            </a>
-            <a href="/tarifs" className="btn btn--ghost">
-              Voir les tarifs <span className="btn__arrow">→</span>
             </a>
           </div>
         </Reveal>
@@ -524,9 +521,9 @@ export default function SiteInternetKine() {
               className="font-display"
               style={{ fontSize: "clamp(34px, 5vw, 72px)", lineHeight: 0.95, margin: 0 }}
             >
-              750 €{" "}
+              CE QUI EST{" "}
               <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-text-mid)" }}>
-                tout compris.
+                inclus
               </em>
             </h2>
           </Reveal>
@@ -548,13 +545,8 @@ export default function SiteInternetKine() {
                 </div>
               ))}
               <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 8, lineHeight: 1.6 }}>
-                C&apos;est le pack Visibilité, celui que prennent la plupart des
-                praticiens. Une page simple coûte 500 €, les cabinets de groupe
-                passent en sur-mesure.{" "}
-                <a href="/tarifs" style={{ color: "var(--ftt-cream)", textDecoration: "underline" }}>
-                  Tous les tarifs en détail
-                </a>
-                .
+                Le prix est fixé sur devis, après un appel de 30 minutes. Vous
+                payez une fois, sans abonnement obligatoire.
               </p>
             </div>
           </Reveal>

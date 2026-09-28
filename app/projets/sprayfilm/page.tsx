@@ -53,7 +53,6 @@ export default function SprayfilmPage() {
             { k: "Catégorie", v: "Production audiovisuelle" },
             { k: "Type", v: "Site client" },
             { k: "Année", v: "2026" },
-            { k: "Budget", v: "1 000 €" },
           ].map((m) => (
             <div key={m.k} className="border-t border-white/10 pt-6">
               <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 mb-3">
@@ -199,8 +198,8 @@ export default function SprayfilmPage() {
             >
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
-            <a href="/tarifs" className="btn btn--ghost">
-              Voir les tarifs <span className="btn__arrow">→</span>
+            <a href="/#contact" className="btn btn--ghost">
+              Réserver un appel <span className="btn__arrow">→</span>
             </a>
           </div>
         </Reveal>

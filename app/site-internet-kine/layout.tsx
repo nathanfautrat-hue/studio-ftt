@@ -5,7 +5,7 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 const TITLE = "Site internet kinésithérapeute : être choisi";
 const DESCRIPTION =
-  "Sur Doctolib, vous êtes une ligne parmi cinquante. Un site de kiné qui vous rend visible et respecte votre déontologie. 750 € tout compris, 7 jours ouvrés.";
+  "Sur Doctolib, vous êtes une ligne parmi cinquante. Un site de kiné qui vous rend visible et respecte votre déontologie. Sur devis, livré en 7 jours ouvrés.";
 
 const URL = `${siteConfig.url}/site-internet-kine`;
 
@@ -56,7 +56,6 @@ export default function SiteInternetKineLayout({
           ]),
           serviceSchema({
             name: "Création de site internet pour kinésithérapeute, ostéopathe et sophrologue",
-            price: "750",
             description:
               "Site sur-mesure pour cabinet de kinésithérapie : jusqu'à 3 pages, SEO local, fiches Google, Bing et Apple Plans configurées, conforme aux règles de communication de la profession. Livré en 7 jours ouvrés.",
             features: [

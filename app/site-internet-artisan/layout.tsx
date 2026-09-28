@@ -5,7 +5,7 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 const TITLE = "Site internet artisan : être trouvé le premier";
 const DESCRIPTION =
-  "Quand un client tape « plombier + votre ville » à 22h, il appelle celui qu'il trouve. Site + fiche Google reliés, 750 € tout compris, livré en 7 jours ouvrés.";
+  "Quand un client tape « plombier + votre ville » à 22h, il appelle celui qu'il trouve. Site + fiche Google reliés, sur devis, livré en 7 jours ouvrés.";
 
 const URL = `${siteConfig.url}/site-internet-artisan`;
 
@@ -56,7 +56,6 @@ export default function SiteInternetArtisanLayout({
           ]),
           serviceSchema({
             name: "Création de site internet pour artisan du bâtiment",
-            price: "750",
             description:
               "Site sur-mesure pour artisan (plombier, électricien, chauffagiste, maçon) : jusqu'à 3 pages, SEO local sur votre ville et vos services, fiches Google, Bing et Apple Plans configurées. Livré en 7 jours ouvrés.",
             features: [

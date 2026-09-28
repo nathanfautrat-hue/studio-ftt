@@ -54,7 +54,7 @@ const CONTENU_SITE = [
 const COMMERCE_FAQ = [
   {
     q: "Combien coûte un site pour un commerce ou un garage ?",
-    a: "Le plus souvent, 750 € : c'est le pack Visibilité, avec jusqu'à 3 pages, le référencement local sur votre ville et vos prestations, et vos fiches Google, Bing et Apple Plans configurées. Une page simple coûte 500 €. Prix one-shot, aucun abonnement obligatoire.",
+    a: "Ça dépend de ce qu'il vous faut : nombre de pages, prestations, fiches Google, Bing et Apple Plans. On en parle 30 minutes et je vous envoie un devis clair. Vous payez une fois, sans abonnement obligatoire.",
   },
   {
     q: "J'ai déjà une page Facebook ou Instagram, ça ne suffit pas ?",
@@ -70,7 +70,7 @@ const COMMERCE_FAQ = [
   },
   {
     q: "Et si je veux changer quelque chose après ?",
-    a: "Une modification gratuite est incluse à la livraison. Ensuite, c'est 50 €/h à la demande, ou la maintenance optionnelle à 35 €/mois qui couvre 3 modifications par mois, l'hébergement et les mises à jour techniques.",
+    a: "Une modification gratuite est incluse à la livraison. Ensuite, soit je facture à l'heure, soit vous prenez la maintenance mensuelle, qui couvre 3 modifications par mois, l'hébergement et les mises à jour techniques. Tout est détaillé dans le devis.",
   },
 ];
 
@@ -142,9 +142,6 @@ export default function SiteInternetCommerce() {
           <div className="flex flex-wrap" style={{ gap: 12 }}>
             <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel · 30 min <span className="btn__arrow">→</span>
-            </a>
-            <a href="/tarifs" className="btn btn--ghost">
-              Voir les tarifs <span className="btn__arrow">→</span>
             </a>
           </div>
         </Reveal>
@@ -380,9 +377,9 @@ export default function SiteInternetCommerce() {
               className="font-display"
               style={{ fontSize: "clamp(34px, 5vw, 72px)", lineHeight: 0.95, margin: 0 }}
             >
-              750 €{" "}
+              CE QUI EST{" "}
               <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-text-mid)" }}>
-                tout compris.
+                inclus
               </em>
             </h2>
           </Reveal>
@@ -404,13 +401,8 @@ export default function SiteInternetCommerce() {
                 </div>
               ))}
               <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 8, lineHeight: 1.6 }}>
-                C&apos;est le pack Visibilité, celui que prennent la plupart des
-                commerces et services de proximité. Une page simple coûte
-                500 €.{" "}
-                <a href="/tarifs" style={{ color: "var(--ftt-cream)", textDecoration: "underline" }}>
-                  Tous les tarifs en détail
-                </a>
-                .
+                Le prix est fixé sur devis, après un appel de 30 minutes. Vous
+                payez une fois, sans abonnement obligatoire.
               </p>
             </div>
           </Reveal>
