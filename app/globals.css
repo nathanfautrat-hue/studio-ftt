@@ -411,3 +411,30 @@ a, button { touch-action: manipulation; }
   .hero-content p { margin-left: 0; }
 }
 
+
+/* Projets : deux lignes qui défilent (accueil) */
+.marquee-row {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+.marquee-track--reverse { animation-direction: reverse; }
+.marquee-row:hover .marquee-track { animation-play-state: paused; }
+.marquee-item { width: clamp(280px, 36vw, 560px); flex-shrink: 0; }
+.project-card { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.project-card:hover { transform: translateY(-4px); }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none !important; }
+  .marquee-row { overflow-x: auto; }
+}
+
+/* Mobile : accueil sans cadre (la carte arrondie ne s'affiche qu'à partir de l'ordinateur) */
+@media (max-width: 1023px) {
+  .hero-card { margin: 0; border: 0; border-radius: 0; }
+}

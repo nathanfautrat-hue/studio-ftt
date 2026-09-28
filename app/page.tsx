@@ -5,7 +5,7 @@ import PourQuiSection from "@/components/PourQuiSection";
 import ApprocheSection from "@/components/ApprocheSection";
 import TarifsSection from "@/components/TarifsSection";
 import AproposSection from "@/components/AproposSection";
-import ProjectStack from "@/components/ProjectStack";
+import ProjectMarquee from "@/components/ProjectMarquee";
 import FaqSection from "@/components/FaqSection";
 import ContactSection from "@/components/ContactSection";
 import Reveal from "@/components/Reveal";
@@ -21,16 +21,14 @@ export default function Home() {
       <ApprocheSection />
       <TarifsSection />
 
-      {/* PROJETS */}
-      <section
-        id="projets"
-        className="mx-auto section-x section-y-sm"
-        style={{ maxWidth: 1320 }}
-      >
-        <Reveal>
-          <SectionHeader num="03" label="Sélection de projets" title="LES PROJETS" />
-        </Reveal>
-        <ProjectStack projects={PROJECTS} />
+      {/* PROJETS : deux lignes qui défilent */}
+      <section id="projets" className="section-y-sm" style={{ overflow: "hidden" }}>
+        <div className="mx-auto section-x" style={{ maxWidth: 1320 }}>
+          <Reveal>
+            <SectionHeader num="03" label="Sélection de projets" title="LES PROJETS" />
+          </Reveal>
+        </div>
+        <ProjectMarquee projects={PROJECTS} />
       </section>
 
       <AproposSection />
