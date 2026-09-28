@@ -135,7 +135,7 @@ export const APPROCHE: ApprocheStep[] = [
   {
     num: "02",
     title: "Je construis",
-    desc: "Design, textes, développement, référencement : je m'occupe de tout. Vous validez la maquette avant que je code la moindre ligne, donc vous voyez exactement votre site avant qu'il parte en ligne.",
+    desc: "Design, textes, développement, référencement : je m'occupe de tout.",
     action: "Design → Dev → Validation",
   },
   {
