@@ -434,10 +434,8 @@ a, button { touch-action: manipulation; }
   .marquee-row { overflow-x: auto; }
 }
 
-/* Mobile : accueil sans cadre (la carte arrondie ne s'affiche qu'à partir de l'ordinateur) */
-@media (max-width: 1023px) {
-  .hero-card { margin: 0; border: 0; border-radius: 0; }
-}
+/* Accueil sans cadre, sur mobile comme sur ordinateur */
+.hero-card { margin: 0 !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; }
 
 /* Badge « Démo » masqué sur mobile dans le défilement des projets */
 @media (max-width: 767px) {
