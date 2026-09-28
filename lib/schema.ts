@@ -12,7 +12,7 @@ import { siteConfig } from "./site-config";
 const URL = siteConfig.url;
 const NAME = siteConfig.name;
 const LOGO = `${URL}/logo_ftt.png`;
-const OG_IMAGE = `${URL}/og-image.png`;
+const OG_IMAGE = `${URL}/og-studioftt-v2.png`;
 
 /**
  * Organization — entité Studio FTT.

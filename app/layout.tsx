@@ -82,10 +82,10 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-studioftt-v2.png",
         width: 1200,
         height: 630,
-        alt: "Studio FTT — Agence web sur-mesure en Sarthe",
+        alt: "Studio FTT, agence web sur-mesure en Sarthe",
         type: "image/png",
       },
     ],
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE_DEFAULT,
     description: DESCRIPTION,
-    images: ["/og-image.png"],
+    images: ["/og-studioftt-v2.png"],
     creator: "@studio.ftt",
     site: "@studio.ftt",
   },
