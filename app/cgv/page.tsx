@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Conditions générales de vente",
   description:
-    "CGV Studio FTT : création de sites web, hébergement, maintenance et campagnes pour artisans et PME en Sarthe. Modalités, paiement, livraison, garanties.",
+    "CGV Studio FTT : création de sites web, hébergement et maintenance pour artisans et PME en Sarthe. Modalités, paiement, livraison, garanties.",
   alternates: {
     canonical: "/cgv",
   },
@@ -61,7 +61,6 @@ export default function CGV() {
               <li>Options associées (SEO, Google Business, Analytics, rédaction)</li>
               <li>Hébergement web</li>
               <li>Maintenance mensuelle</li>
-              <li>Campagne de référencement &amp; publicité (Google Ads)</li>
             </ul>
           </div>
 
@@ -130,7 +129,7 @@ export default function CGV() {
               </li>
             </ul>
             <p className="mt-3">
-              Pour les prestations récurrentes (maintenance, campagnes)&nbsp;:
+              Pour les prestations récurrentes (maintenance, hébergement)&nbsp;:
               paiement mensuel, prélevé à terme à échoir, sans engagement de
               durée.
             </p>
@@ -231,13 +230,11 @@ export default function CGV() {
 
           <div>
             <h2 className="font-display text-2xl text-white mb-3">
-              Article 8 — Maintenance &amp; campagnes (abonnements mensuels)
+              Article 8 — Maintenance &amp; hébergement (abonnements mensuels)
             </h2>
             <p>
               Les prestations récurrentes (maintenance 35&nbsp;€/mois,
-              campagne Google Ads 500&nbsp;€/mois — hors budget publicitaire
-              payé directement par le Client à la plateforme Google) sont sans
-              engagement de durée et résiliables à tout moment par email, avec
+              hébergement seul 10&nbsp;€/mois) sont sans engagement de durée et résiliables à tout moment par email, avec
               un préavis d&apos;<strong className="text-white">un mois</strong> avant la prochaine échéance.
             </p>
             <p className="mt-3">
