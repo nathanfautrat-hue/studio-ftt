@@ -370,3 +370,9 @@ a, button { touch-action: manipulation; }
   }
   .reveal-up { opacity: 1 !important; transform: none !important; }
 }
+
+/* Hero : plein écran sur ordinateur, hauteur du contenu sur mobile (pas de grand vide) */
+.hero-full { padding-top: 72px; padding-bottom: 64px; }
+@media (min-width: 1024px) {
+  .hero-full { min-height: calc(100svh - 80px); padding-top: 32px; padding-bottom: 32px; }
+}

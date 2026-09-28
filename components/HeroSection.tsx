@@ -83,8 +83,7 @@ const STARS: [number, number, number, number][] = [
 export default function HeroSection() {
   return (
     <section
-      className="hero-pad relative overflow-hidden flex flex-col gap-10"
-      style={{ minHeight: "calc(100svh - 80px)" }}
+      className="hero-pad hero-full relative overflow-hidden flex flex-col gap-10"
     >
       {/* Ciel étoilé */}
       <svg aria-hidden className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
