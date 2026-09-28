@@ -15,34 +15,6 @@ function Card({ p, dup }: { p: StackProject; dup?: boolean }) {
     <>
       <div className="relative" style={{ aspectRatio: "16 / 10" }}>
         {p.preview}
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(10,10,10,0) 55%, rgba(10,10,10,0.92) 100%)" }}
-        />
-        <div className="absolute" style={{ left: 18, right: 18, bottom: 14 }}>
-          <div className="flex items-center" style={{ gap: 10 }}>
-            <span style={{ fontSize: 17, fontWeight: 500, color: "var(--ftt-cream)" }}>{p.name}</span>
-            {p.isDemo && (
-              <span
-                className="demo-badge font-mono"
-                style={{
-                  fontSize: 9,
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "var(--ftt-red)",
-                  border: "1px solid var(--ftt-red)",
-                  padding: "3px 7px 2px",
-                  borderRadius: 999,
-                  lineHeight: 1,
-                }}
-              >
-                Démo
-              </span>
-            )}
-          </div>
-          <div style={{ fontSize: 13, color: "var(--ftt-text-mid)", marginTop: 2 }}>{p.kind}</div>
-        </div>
       </div>
     </>
   );
