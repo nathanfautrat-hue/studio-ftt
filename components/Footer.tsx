@@ -28,7 +28,7 @@ export default function Footer() {
             }}
           >
             Studio indépendant basé en Sarthe. Je crée des sites pour artisans
-            et PME — propres, rapides, qui amènent des clients.
+            et PME : propres, rapides, qui amènent des clients.
           </p>
         </div>
 
@@ -180,7 +180,7 @@ export default function Footer() {
             color: "var(--ftt-text-dim)",
           }}
         >
-          Made with care — Sarthe, FR
+          Made with care, Sarthe, FR
         </span>
       </div>
     </footer>

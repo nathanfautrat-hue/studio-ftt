@@ -25,7 +25,7 @@ export const PROJECTS: StackProject[] = [
     kind: "Collectif artistique",
     tag: "Plateforme · Galerie",
     blurb:
-      "Plateforme en ligne pour un collectif artistique — galerie, portfolio et univers visuel fort.",
+      "Plateforme en ligne pour un collectif artistique : galerie, portfolio et univers visuel fort.",
     href: "/projets/scavback",
     preview: <ScavbackPreview />,
   },
@@ -35,7 +35,7 @@ export const PROJECTS: StackProject[] = [
     kind: "Production audiovisuelle",
     tag: "Site vitrine · SEO",
     blurb:
-      "Site vitrine pour une agence de production audiovisuelle en Bretagne — SEO local et Google Business inclus.",
+      "Site vitrine pour une agence de production audiovisuelle en Bretagne : SEO local et Google Business inclus.",
     href: "/projets/sprayfilm",
     preview: <SprayfilmPreview />,
   },
@@ -45,7 +45,7 @@ export const PROJECTS: StackProject[] = [
     kind: "Garage indépendant",
     tag: "Site vitrine · Forfaits affichés",
     blurb:
-      "Démo pour un garage indépendant en Sarthe — design industriel brut, forfaits affichés, devis en ligne.",
+      "Démo pour un garage indépendant en Sarthe : design industriel brut, forfaits affichés, devis en ligne.",
     href: "/demo/garage-klax/index.html",
     preview: <GarageKlaxPreview />,
     isDemo: true,
@@ -56,7 +56,7 @@ export const PROJECTS: StackProject[] = [
     kind: "Coaching sportif en ligne",
     tag: "Landing · Programmes & dashboard",
     blurb:
-      "Démo pour un coach sportif en ligne — design performance noir/lime, programmes, dashboard de suivi data.",
+      "Démo pour un coach sportif en ligne : design performance noir/lime, programmes, dashboard de suivi data.",
     href: "/demo/sigma-lift/index.html",
     preview: <SigmaLiftPreview />,
     isDemo: true,
@@ -67,7 +67,7 @@ export const PROJECTS: StackProject[] = [
     kind: "Plombier artisan",
     tag: "Site vitrine · Devis",
     blurb:
-      "Site vitrine pour un plombier artisan au Mans — services, zone d'intervention, urgence 24/7.",
+      "Site vitrine pour un plombier artisan au Mans : services, zone d'intervention, urgence 24/7.",
     href: "/projets/marceau",
     preview: <MarceauPreview />,
     isDemo: true,
@@ -78,7 +78,7 @@ export const PROJECTS: StackProject[] = [
     kind: "Kinésithérapie · Ostéopathie",
     tag: "Site cabinet · Doctolib · RDV",
     blurb:
-      "Démo pour un cabinet pluri kiné/ostéo — design contemporain lumineux (sable, bleu nuit, ocre), photo praticien, équipe, parcours patient.",
+      "Démo pour un cabinet pluri kiné/ostéo : design contemporain lumineux (sable, bleu nuit, ocre), photo praticien, équipe, parcours patient.",
     href: "/demo/cabinet-atlas/index.html",
     preview: <CabinetAtlasPreview />,
     isDemo: true,

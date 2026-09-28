@@ -28,12 +28,6 @@ export default function ContactSection() {
       />
 
       <div className="relative mx-auto" style={{ maxWidth: 1320 }}>
-        <Reveal>
-          <div className="eyebrow" style={{ marginBottom: 24 }}>
-            <span className="dot" />
-            (04) — Contact
-          </div>
-        </Reveal>
 
         <Reveal delay={1}>
           <h2
@@ -49,7 +43,7 @@ export default function ContactSection() {
               className="font-serif"
               style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}
             >
-              — le vôtre
+              le vôtre
             </em>
           </h2>
         </Reveal>

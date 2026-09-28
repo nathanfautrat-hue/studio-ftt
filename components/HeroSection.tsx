@@ -185,9 +185,8 @@ export default function HeroSection() {
               margin: "28px 0 0",
             }}
           >
-            Création de sites internet pour artisans, indépendants et commerces.
-            Pensés pour être trouvés sur internet et donner envie de vous appeler.
-            Basé en Sarthe, je travaille partout en France.
+            Sites pour artisans, indépendants et commerces, pensés pour être
+            trouvés sur internet et donner envie de vous appeler. Basé en Sarthe.
           </p>
         </Reveal>
       </div>

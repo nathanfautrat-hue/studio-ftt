@@ -40,30 +40,12 @@ export default function PourQuiSection() {
       className="mx-auto section-x section-y"
       style={{ maxWidth: 1320 }}
     >
-      <Reveal>
-        <div
-          className="font-mono"
-          style={{
-            fontSize: 11,
-            letterSpacing: "0.22em",
-            textTransform: "uppercase",
-            color: "var(--ftt-text-dim)",
-            marginBottom: 24,
-            display: "flex",
-            gap: 14,
-            alignItems: "center",
-          }}
-        >
-          <span style={{ width: 36, height: 2, background: "var(--ftt-red)" }} />
-          Pour qui ?
-        </div>
-      </Reveal>
 
       <div className="grid gap-8">
         <Reveal>
           <h2
             className="font-display one-line"
-            style={{ fontSize: "clamp(32px, 3.7vw, 56px)", lineHeight: 0.98, margin: 0 }}
+            style={{ fontSize: "clamp(32px, 3.7vw, 56px)", lineHeight: 1.05, margin: 0, paddingBottom: "0.06em" }}
           >
             POUR LES PROS{" "}
             <em

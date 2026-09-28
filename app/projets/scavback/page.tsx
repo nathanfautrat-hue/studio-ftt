@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export default function ScavbackPage() {
   return (
-    <main className="bg-black text-white">
+    <main id="contenu" className="bg-black text-white">
       {/* top bar */}
       <div className="fixed top-0 inset-x-0 z-50 bg-black/70 backdrop-blur-md border-b border-white/5">
         <div className="container flex items-center justify-between py-4">

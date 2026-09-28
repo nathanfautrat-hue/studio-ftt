@@ -14,7 +14,7 @@ import { PROJECTS } from "@/lib/data";
 
 export default function Home() {
   return (
-    <main className="ftt-grain" style={{ background: "var(--ftt-black)", color: "var(--ftt-cream)" }}>
+    <main id="contenu" className="ftt-grain" style={{ background: "var(--ftt-black)", color: "var(--ftt-cream)" }}>
       <Navbar />
       <HeroSection />
       <PourQuiSection />

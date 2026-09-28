@@ -70,6 +70,7 @@ export default function Tarifs() {
 
   return (
     <main
+      id="contenu"
       className="ftt-grain"
       style={{ background: "var(--ftt-black)", color: "var(--ftt-cream)" }}
     >

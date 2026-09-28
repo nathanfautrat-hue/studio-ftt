@@ -28,22 +28,6 @@ export default function TarifsSection() {
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <Reveal>
           <div>
-            <div className="flex items-baseline" style={{ gap: 14, marginBottom: 32 }}>
-              <span className="font-mono" style={{ color: "var(--ftt-red)", fontSize: 13 }}>
-                (02)
-              </span>
-              <span
-                className="font-mono"
-                style={{
-                  fontSize: 11,
-                  letterSpacing: "0.22em",
-                  textTransform: "uppercase",
-                  color: "var(--ftt-text-dim)",
-                }}
-              >
-                Tarifs
-              </span>
-            </div>
             <h2
               className="font-display one-line"
               style={{ fontSize: "clamp(32px, 3.4vw, 50px)", lineHeight: 0.95, margin: "0 0 24px" }}

@@ -210,7 +210,7 @@ export default function MarceauPage() {
   const [sent, setSent] = useState(false);
 
   return (
-    <main style={{ backgroundColor: CREAM, color: INK }} className="min-h-screen">
+    <main id="contenu" style={{ backgroundColor: CREAM, color: INK }} className="min-h-screen">
       {/* urgency top strip */}
       <div
         style={{ backgroundColor: ORANGE, color: "#fff" }}

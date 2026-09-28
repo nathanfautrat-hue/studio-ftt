@@ -57,7 +57,7 @@ html {
   cursor: pointer;
   border: 1px solid transparent;
   background: transparent;
-  transition: all 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: background-color 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), color 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
   text-decoration: none;
   position: relative;
   overflow: hidden;
@@ -322,4 +322,51 @@ html {
 /* Ligne de titre insécable dès la tablette (sur petit mobile elle peut passer à la ligne) */
 @media (min-width: 340px) {
   .nowrap-sm { white-space: nowrap; }
+}
+
+/* ============================================
+   ACCESSIBILITÉ / CONFORT (audit Web Interface Guidelines)
+   ============================================ */
+:root { color-scheme: dark; }
+
+/* Focus clavier visible, sans anneau au clic souris */
+:focus-visible {
+  outline: 2px solid var(--ftt-red);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Lien d'évitement, visible seulement au clavier */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--ftt-red);
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+
+/* Les ancres (#contact, #tarifs…) ne passent pas sous le menu fixe */
+section[id], main[id] { scroll-margin-top: 88px; }
+
+/* Titres sans mot orphelin en fin de ligne */
+h1, h2, h3 { text-wrap: balance; }
+
+/* Pas de délai de double-tap sur mobile */
+a, button { touch-action: manipulation; }
+
+/* Mouvements réduits si l'utilisateur l'a demandé au système */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-up { opacity: 1 !important; transform: none !important; }
 }

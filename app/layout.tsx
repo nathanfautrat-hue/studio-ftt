@@ -167,6 +167,7 @@ export default function RootLayout({
         <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
       </head>
       <body>
+        <a href="#contenu" className="skip-link">Aller au contenu</a>
         {children}
         {/* Cloudflare Web Analytics */}
         <Script

@@ -5,55 +5,13 @@ import SectionHeader from "@/components/SectionHeader";
 import { APPROCHE, type ApprocheStep } from "@/lib/data";
 
 /* ---------------------------------------------------------------------------
- * Visuels des cartes : photos Pexels libres de droits + petit badge par-dessus.
- * Logo : toujours le vrai logo Studio FTT (/logo_ftt.png).
+ * Visuels des cartes : photos Pexels libres de droits, montées en mockup
+ * (écran d'appel avec le vrai logo /logo_ftt.png, démo Marceau sur le portable).
  * ------------------------------------------------------------------------- */
-
-const badge: React.CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  gap: 10,
-  padding: "9px 14px",
-  borderRadius: 999,
-  background: "rgba(10,10,10,0.82)",
-  border: "1px solid rgba(255,255,255,0.1)",
-  fontSize: 12,
-  fontWeight: 500,
-};
-
-const VISUELS: { src: string; alt: string; overlay: React.ReactNode }[] = [
-  {
-    src: "/approche-1.webp",
-    alt: "Smartphone et tasse de café sur un bureau sombre (photo Pexels)",
-    overlay: (
-      <span style={badge}>
-        <img src="/logo_ftt.png" alt="" width={22} height={22} style={{ width: 22, height: 22, objectFit: "contain" }} />
-        Appel découverte
-        <span className="font-mono" style={{ fontSize: 10, color: "var(--ftt-green)", letterSpacing: "0.1em" }}>
-          · 30 MIN
-        </span>
-      </span>
-    ),
-  },
-  {
-    src: "/approche-2.webp",
-    alt: "Croquis de maquette de site sur papier (photo Pexels)",
-    overlay: (
-      <span style={{ ...badge, color: "var(--ftt-green)", borderColor: "rgba(59,245,156,0.35)" }}>
-        ✓ Maquette validée
-      </span>
-    ),
-  },
-  {
-    src: "/approche-3.webp",
-    alt: "Ordinateur portable vu de dessus sur fond noir (photo Pexels)",
-    overlay: (
-      <span style={badge}>
-        <span style={{ width: 8, height: 8, borderRadius: 999, background: "var(--ftt-green)" }} />
-        Votre site est en ligne
-      </span>
-    ),
-  },
+const VISUELS: { src: string; alt: string }[] = [
+  { src: "/approche-1.webp", alt: "Téléphone affichant un appel avec Studio FTT, à côté d'un café" },
+  { src: "/approche-2.webp", alt: "Croquis de maquette de site sur papier" },
+  { src: "/approche-3.webp", alt: "Ordinateur portable affichant un site réalisé par Studio FTT" },
 ];
 
 export default function ApprocheSection() {
@@ -107,16 +65,13 @@ export default function ApprocheSection() {
                     className="absolute inset-0"
                     style={{ background: "linear-gradient(180deg, rgba(15,15,15,0) 55%, #0f0f0f 100%)" }}
                   />
-                  <div className="absolute" style={{ left: 20, bottom: 18 }}>
-                    {v.overlay}
-                  </div>
                 </div>
 
                 {/* Texte */}
                 <div style={{ padding: "8px clamp(22px, 2.5vw, 30px) clamp(26px, 3vw, 34px)" }}>
                   <h3 style={{ fontSize: 19, fontWeight: 500, margin: "0 0 12px", lineHeight: 1.3 }}>
                     <span style={{ color: "var(--ftt-red)" }}>{step.num}</span>
-                    <span style={{ color: "var(--ftt-text-dim)" }}> — </span>
+                    {" "}
                     {step.title}
                   </h3>
                   <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--ftt-text-mid)", margin: 0 }}>

@@ -90,7 +90,7 @@ export default function FaqSection() {
                 Réserver un appel <span aria-hidden>→</span>
               </a>
               <a
-                href="#contact"
+                href={`mailto:${siteConfig.email}`}
                 className="lift inline-flex items-center"
                 style={{
                   gap: 8,

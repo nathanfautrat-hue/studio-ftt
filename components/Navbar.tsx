@@ -30,7 +30,7 @@ export default function Navbar() {
           borderBottom: "1px solid var(--ftt-line)",
         }}
       >
-        <Link href="/" aria-label="Studio FTT — accueil" className="lift shrink-0">
+        <Link href="/" aria-label="Studio FTT, accueil" className="lift shrink-0">
           <LogoMark size={30} />
         </Link>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
               fontSize: 13,
               fontWeight: 500,
               textDecoration: "none",
-              transition: "all 0.35s cubic-bezier(0.2,0.7,0.2,1)",
+              transition: "background-color 0.35s cubic-bezier(0.2,0.7,0.2,1), transform 0.35s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.35s cubic-bezier(0.2,0.7,0.2,1)",
               whiteSpace: "nowrap",
             }}
             onMouseEnter={(e) => {

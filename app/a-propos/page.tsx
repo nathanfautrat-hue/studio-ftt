@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function APropos() {
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main id="contenu" className="bg-black text-white min-h-screen">
       <JsonLd
         data={[
           aboutPageSchema(),
