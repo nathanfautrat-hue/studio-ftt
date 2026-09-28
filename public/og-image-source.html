@@ -191,6 +191,17 @@
         color: var(--red);
         font-size: 0.88em;
       }
+      /* Saturne tramée en fond, comme sur l'accueil */
+      .og .saturne {
+        position: absolute; right: -380px; top: 320px; width: 1150px; max-width: none;
+        transform: translateY(-50%) rotate(-22deg); z-index: 0; pointer-events: none;
+      }
+      .og .veil {
+        position: absolute; inset: 0; z-index: 0;
+        background: linear-gradient(90deg, #0a0a0a 0%, rgba(10,10,10,0.88) 38%, rgba(10,10,10,0) 70%);
+      }
+      .og .inner { position: relative; z-index: 1; }
+      .og .tagline .red { color: var(--red); }
       .og .tagline {
         font-size: 22px;
         line-height: 1.4;
@@ -241,6 +252,8 @@
 
     <div class="og" id="og">
       <div class="topbar"></div>
+      <img class="saturne" src="/hero-saturne.webp" alt="" />
+      <div class="veil"></div>
       <div class="inner">
         <div class="head">
           <div class="brand">
@@ -250,23 +263,15 @@
               <span class="sub">Sarthe · 72</span>
             </div>
           </div>
-          <div class="badge">
-            <span class="dot"></span>
-            Projets ouverts
-          </div>
         </div>
 
         <div class="hero">
-          <div class="eyebrow">
-            <span class="bar"></span>
-            Agence web indépendante
-          </div>
           <h1>
-            DES SITES QUI<br />
-            <em>convertissent</em>
+            JE CRÉE DES SITES<br />
+            QUI <em>convertissent</em>
           </h1>
           <p class="tagline">
-            Sites sur-mesure pour artisans, indépendants et PME, livrés en 7 jours ouvrés. Sarthe et France entière.
+            Je crée et gère votre site web pour que <span class="red">vous</span> ayez une <span class="red">meilleure</span> visibilité.
           </p>
         </div>
 

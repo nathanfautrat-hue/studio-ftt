@@ -83,7 +83,7 @@ const STARS: [number, number, number, number][] = [
 export default function HeroSection() {
   return (
     <section
-      className="hero-pad hero-full relative overflow-hidden flex flex-col gap-10"
+      className="hero-pad hero-card relative overflow-hidden flex flex-col gap-10"
     >
       {/* Ciel étoilé */}
       <svg aria-hidden className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
@@ -100,58 +100,12 @@ export default function HeroSection() {
         height={690}
         fetchPriority="high"
         className="hero-planet absolute pointer-events-none select-none"
-        style={{
-          right: "-30%",
-          top: "46%",
-          width: "max(1000px, 100vw)",
-          maxWidth: "none",
-          height: "auto",
-          transform: "translateY(-50%) rotate(-22deg)",
-        }}
       />
-      {/* Voile à gauche pour garder le titre lisible */}
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(90deg, var(--ftt-black) 0%, rgba(10,10,10,0.9) 35%, rgba(10,10,10,0) 62%)",
-        }}
-      />
+      {/* Voile pour garder le titre lisible (centré sur mobile, à gauche sur ordinateur) */}
+      <div aria-hidden className="hero-veil absolute inset-0" />
 
       {/* Badge + titre + texte, colonne de gauche */}
-      <div className="relative z-10 my-auto">
-        <Reveal>
-          <div
-            className="font-mono"
-            style={{
-              marginBottom: 28,
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "6px 14px",
-              borderRadius: 999,
-              border: "1px solid rgba(59,245,156,0.28)",
-              background: "rgba(10,10,10,0.6)",
-              fontSize: 11,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "var(--ftt-green)",
-            }}
-          >
-            <span
-              className="animate-pulse"
-              style={{
-                width: 7,
-                height: 7,
-                borderRadius: "50%",
-                background: "var(--ftt-green)",
-                flexShrink: 0,
-              }}
-            />
-            Disponible · Projets ouverts
-          </div>
-        </Reveal>
+      <div className="hero-content relative z-10 my-auto">
         <Reveal delay={1}>
           <h1
             className="font-display"
@@ -184,8 +138,9 @@ export default function HeroSection() {
               margin: "28px 0 0",
             }}
           >
-            Pour les artisans, indépendants et commerces qui veulent être trouvés
-            sur internet, et surtout appelés. Basé en Sarthe.
+            Je crée et gère votre site web pour que{" "}
+            <span style={{ color: "var(--ftt-red)" }}>vous</span> ayez une{" "}
+            <span style={{ color: "var(--ftt-red)" }}>meilleure</span> visibilité.
           </p>
         </Reveal>
       </div>

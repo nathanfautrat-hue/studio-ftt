@@ -313,11 +313,6 @@ html {
   background: transparent;
 }
 
-/* Saturne du hero : atténuée sur mobile, là où elle passe derrière le texte */
-.hero-planet { opacity: 0.4; }
-@media (min-width: 1024px) {
-  .hero-planet { opacity: 1; }
-}
 
 /* Ligne de titre insécable dès la tablette (sur petit mobile elle peut passer à la ligne) */
 @media (min-width: 340px) {
@@ -371,8 +366,48 @@ a, button { touch-action: manipulation; }
   .reveal-up { opacity: 1 !important; transform: none !important; }
 }
 
-/* Hero : plein écran sur ordinateur, hauteur du contenu sur mobile (pas de grand vide) */
-.hero-full { padding-top: 72px; padding-bottom: 64px; }
-@media (min-width: 1024px) {
-  .hero-full { min-height: calc(100svh - 80px); padding-top: 32px; padding-bottom: 32px; }
+/* Hero en carte arrondie (inspiration Infinify) : texte centré sur mobile, à gauche sur ordinateur */
+.hero-card {
+  margin: 8px 12px 0;
+  border-radius: 28px;
+  background: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  min-height: 78svh;
+  justify-content: center;
+  padding: 88px 20px 56px;
 }
+.hero-planet {
+  left: 50%;
+  top: 62%;
+  width: 1050px;
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(-16deg);
+  opacity: 0.6;
+}
+.hero-veil {
+  background: radial-gradient(ellipse 90% 60% at 50% 45%, rgba(5, 5, 5, 0.75) 0%, rgba(5, 5, 5, 0.15) 70%, rgba(5, 5, 5, 0) 100%);
+}
+.hero-content { text-align: center; }
+.hero-content p { margin-left: auto; margin-right: auto; }
+@media (min-width: 1024px) {
+  .hero-card {
+    margin: 8px 16px 0;
+    min-height: calc(100svh - 96px);
+    padding: 32px clamp(28px, 4vw, 56px);
+  }
+  .hero-planet {
+    left: auto;
+    right: -30%;
+    top: 46%;
+    width: max(1000px, 100vw);
+    transform: translateY(-50%) rotate(-22deg);
+    opacity: 1;
+  }
+  .hero-veil {
+    background: linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.9) 35%, rgba(5, 5, 5, 0) 62%);
+  }
+  .hero-content { text-align: left; }
+  .hero-content p { margin-left: 0; }
+}
+
