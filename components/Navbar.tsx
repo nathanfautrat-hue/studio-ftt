@@ -112,8 +112,8 @@ export default function Navbar() {
               e.currentTarget.style.boxShadow = "none";
             }}
           >
-            <span className="hidden sm:inline">Démarrer un projet</span>
-            <span className="sm:hidden">Démarrer</span>
+            <span className="hidden sm:inline">Réserver un appel</span>
+            <span className="sm:hidden">Réserver</span>
             <span aria-hidden>→</span>
           </a>
 

@@ -5,13 +5,13 @@ import SectionHeader from "@/components/SectionHeader";
 import { APPROCHE, type ApprocheStep } from "@/lib/data";
 
 /* ---------------------------------------------------------------------------
- * Visuels des cartes : photos Pexels libres de droits, montées en mockup
+ * Visuels des cartes : photos Pexels libres de droits (mains + appareils), montées en mockup
  * (écran d'appel avec le vrai logo /logo_ftt.png, démo Marceau sur le portable).
  * ------------------------------------------------------------------------- */
 const VISUELS: { src: string; alt: string }[] = [
-  { src: "/approche-1.webp", alt: "Téléphone affichant un appel avec Studio FTT, à côté d'un café" },
-  { src: "/approche-2.webp", alt: "Croquis de maquette de site sur papier" },
-  { src: "/approche-3.webp", alt: "Ordinateur portable affichant un site réalisé par Studio FTT" },
+  { src: "/approche-1.webp", alt: "Main tenant un téléphone en appel avec Studio FTT" },
+  { src: "/approche-2.webp", alt: "Main dessinant une maquette au stylet sur une tablette" },
+  { src: "/approche-3.webp", alt: "Mains sur un ordinateur affichant un site réalisé par Studio FTT" },
 ];
 
 export default function ApprocheSection() {
@@ -50,12 +50,12 @@ export default function ApprocheSection() {
                 style={{ borderRadius: 22, background: "#0f0f0f" }}
               >
                 {/* Zone visuelle : photo + badge */}
-                <div className="relative" style={{ height: 250 }}>
+                <div className="relative" style={{ aspectRatio: "1100 / 682" }}>
                   <img
                     src={v.src}
                     alt={v.alt}
-                    width={900}
-                    height={558}
+                    width={1100}
+                    height={682}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ filter: "brightness(0.85)" }}

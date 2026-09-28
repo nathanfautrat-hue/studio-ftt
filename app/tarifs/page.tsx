@@ -279,7 +279,7 @@ export default function Tarifs() {
                   className={plan.featured ? "btn btn--solid" : "btn btn--ghost"}
                   style={{ justifyContent: "center" }}
                 >
-                  Démarrer <span className="btn__arrow">→</span>
+                  Réserver un appel <span className="btn__arrow">→</span>
                 </a>
               </div>
             </Reveal>
