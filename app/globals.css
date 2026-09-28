@@ -264,12 +264,12 @@ html {
   padding-right: clamp(20px, 4vw, 36px);
 }
 .section-y {
-  padding-top: clamp(64px, 10vw, 120px);
-  padding-bottom: clamp(64px, 10vw, 120px);
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
 }
 .section-y-sm {
-  padding-top: clamp(40px, 6vw, 64px);
-  padding-bottom: clamp(64px, 10vw, 120px);
+  padding-top: clamp(40px, 5vw, 56px);
+  padding-bottom: clamp(48px, 6vw, 80px);
 }
 
 /* Hero specific */
@@ -299,4 +299,22 @@ html {
 .input-modern:focus {
   border-color: var(--ftt-line-strong);
   background: rgba(0, 0, 0, 0.45);
+}
+
+/* Gros titres sur une seule ligne à partir du desktop */
+@media (min-width: 1024px) {
+  .one-line { white-space: nowrap; }
+}
+
+/* Cal.com : iframe en schéma sombre, sinon le navigateur peint un fond blanc autour */
+.cal-embed-wrap,
+.cal-embed-wrap iframe {
+  color-scheme: dark;
+  background: transparent;
+}
+
+/* Saturne du hero : atténuée sur mobile, là où elle passe derrière le texte */
+.hero-planet { opacity: 0.4; }
+@media (min-width: 1024px) {
+  .hero-planet { opacity: 1; }
 }

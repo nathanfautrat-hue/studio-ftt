@@ -59,11 +59,11 @@ export default function PourQuiSection() {
         </div>
       </Reveal>
 
-      <div className="grid lg:grid-cols-[1.6fr_1fr] gap-8 lg:gap-16 items-end">
+      <div className="grid gap-8">
         <Reveal>
           <h2
-            className="font-display"
-            style={{ fontSize: "clamp(34px, 6vw, 76px)", lineHeight: 0.98, margin: 0 }}
+            className="font-display one-line"
+            style={{ fontSize: "clamp(32px, 3.7vw, 56px)", lineHeight: 0.98, margin: 0 }}
           >
             POUR LES PROS{" "}
             <em
@@ -72,7 +72,6 @@ export default function PourQuiSection() {
             >
               qui veulent un site à leur hauteur
             </em>
-            .
           </h2>
         </Reveal>
         <Reveal delay={1}>
@@ -90,7 +89,7 @@ export default function PourQuiSection() {
         </Reveal>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-14 md:mt-20">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-10">
         {PROFILES.map((p, i) => (
           <Reveal key={p.num} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
             <div

@@ -9,6 +9,8 @@ type SectionHeaderProps = {
   title: string;
   /** Contenu JSX optionnel pour enrichir le titre (italique, couleur) */
   titleChildren?: React.ReactNode;
+  /** Titre plus petit, pour une colonne étroite */
+  compact?: boolean;
 };
 
 export default function SectionHeader({
@@ -16,6 +18,7 @@ export default function SectionHeader({
   label,
   title,
   titleChildren,
+  compact = false,
 }: SectionHeaderProps) {
   return (
     <>
@@ -37,10 +40,10 @@ export default function SectionHeader({
       </div>
 
       <h2
-        className="font-display"
+        className="font-display one-line"
         style={{
-          fontSize: "clamp(48px, 9vw, 140px)",
-          margin: "0 0 clamp(40px, 5vw, 64px)",
+          fontSize: compact ? "clamp(32px, 3.4vw, 50px)" : "clamp(36px, 5vw, 72px)",
+          margin: "0 0 clamp(28px, 4vw, 48px)",
           lineHeight: 0.95,
         }}
       >

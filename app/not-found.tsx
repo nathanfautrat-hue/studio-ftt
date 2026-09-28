@@ -28,7 +28,7 @@ export default function NotFound() {
         </p>
         <h1
           className="font-display"
-          style={{ fontSize: "clamp(48px, 9vw, 130px)", lineHeight: 0.95, margin: "0 0 24px" }}
+          style={{ fontSize: "clamp(40px, 6vw, 88px)", lineHeight: 0.95, margin: "0 0 24px" }}
         >
           CETTE PAGE{" "}
           <em
@@ -37,7 +37,6 @@ export default function NotFound() {
           >
             n&apos;existe pas
           </em>
-          .
         </h1>
         <p
           style={{

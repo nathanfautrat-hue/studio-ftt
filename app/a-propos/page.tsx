@@ -250,7 +250,7 @@ export default function APropos() {
         </div>
       </section>
 
-      {/* CTA CALENDLY */}
+      {/* CTA RÉSERVATION */}
       <section
         className="py-24"
         style={{
@@ -260,7 +260,7 @@ export default function APropos() {
       >
         <div className="container max-w-3xl text-center">
           <h2 className="font-display text-4xl md:text-6xl leading-tight mb-6">
-            On en parle <span className="text-[#E8352A]">15 minutes</span>&nbsp;?
+            On en parle <span className="text-[#E8352A]">30 minutes</span>&nbsp;?
           </h2>
           <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-xl mx-auto">
             Un premier appel sans engagement. À la fin, vous repartez avec une
@@ -268,7 +268,7 @@ export default function APropos() {
             commercial.
           </p>
           <a
-            href={siteConfig.calendly}
+            href={siteConfig.booking}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-medium transition-all"

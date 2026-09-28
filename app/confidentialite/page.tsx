@@ -127,6 +127,13 @@ export default function Confidentialite() {
               politique de confidentialité. Le site ne transmet aucune donnée à
               WhatsApp&nbsp;: c&apos;est vous qui ouvrez la conversation.
             </p>
+            <p className="mt-3">
+              Le calendrier de réservation est fourni par Cal.com (Cal.com,
+              Inc., États-Unis). Il se charge quand vous approchez de la section
+              contact ou quand vous cliquez sur un bouton de réservation. Les
+              informations que vous y saisissez (nom, e-mail, créneau) sont
+              traitées par Cal.com selon sa propre politique de confidentialité.
+            </p>
           </div>
 
           <div>

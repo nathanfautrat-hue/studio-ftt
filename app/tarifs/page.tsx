@@ -102,7 +102,7 @@ export default function Tarifs() {
           <h1
             className="font-display"
             style={{
-              fontSize: "clamp(52px, 11vw, 160px)",
+              fontSize: "clamp(44px, 7vw, 104px)",
               lineHeight: 0.92,
               margin: "0 0 clamp(16px, 2vw, 24px)",
             }}
@@ -114,7 +114,6 @@ export default function Tarifs() {
             >
               ça coûte
             </em>
-            .
           </h1>
         </Reveal>
         <Reveal delay={2}>
@@ -273,7 +272,7 @@ export default function Tarifs() {
 
                 {/* CTA */}
                 <a
-                  href={siteConfig.calendly}
+                  href={siteConfig.booking}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={plan.featured ? "btn btn--solid" : "btn btn--ghost"}
@@ -370,7 +369,7 @@ export default function Tarifs() {
         <Reveal delay={1}>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 0.95, margin: "0 0 16px" }}
+            style={{ fontSize: "clamp(34px, 5vw, 64px)", lineHeight: 0.95, margin: "0 0 16px" }}
           >
             WIX, FREELANCE, AGENCE…{" "}
             <em
@@ -379,7 +378,6 @@ export default function Tarifs() {
             >
               ou moi
             </em>
-            .
           </h2>
         </Reveal>
 
@@ -583,7 +581,7 @@ export default function Tarifs() {
         <Reveal delay={1}>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 0.95, margin: "0 0 16px" }}
+            style={{ fontSize: "clamp(34px, 5vw, 64px)", lineHeight: 0.95, margin: "0 0 16px" }}
           >
             ALLER{" "}
             <em
@@ -730,7 +728,7 @@ export default function Tarifs() {
                 </ul>
 
                 <a
-                  href={siteConfig.calendly}
+                  href={siteConfig.booking}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={c.featured ? "btn btn--solid" : "btn btn--ghost"}
@@ -786,7 +784,7 @@ export default function Tarifs() {
         <Reveal delay={1}>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 0.95, margin: "0 0 40px" }}
+            style={{ fontSize: "clamp(34px, 5vw, 64px)", lineHeight: 0.95, margin: "0 0 40px" }}
           >
             AVANT DE{" "}
             <em
@@ -795,7 +793,6 @@ export default function Tarifs() {
             >
               sortir la carte
             </em>
-            .
           </h2>
         </Reveal>
 
@@ -880,7 +877,7 @@ export default function Tarifs() {
         <Reveal>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(40px, 8vw, 120px)", lineHeight: 0.95, margin: "0 0 24px" }}
+            style={{ fontSize: "clamp(36px, 5.5vw, 80px)", lineHeight: 0.95, margin: "0 0 24px" }}
           >
             UN DOUTE ?{" "}
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
@@ -890,10 +887,10 @@ export default function Tarifs() {
         </Reveal>
         <Reveal delay={1}>
           <p style={{ fontSize: 16, color: "var(--ftt-text-mid)", marginBottom: 36 }}>
-            15 minutes, sans engagement. Je réponds à toutes vos questions.
+            30 minutes, sans engagement. Je réponds à toutes vos questions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={siteConfig.calendly} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
+            <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
             <a href="/#contact" className="btn btn--ghost">

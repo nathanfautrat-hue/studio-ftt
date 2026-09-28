@@ -84,7 +84,7 @@ const KINE_FAQ = [
   },
   {
     q: "Je n'ai pas le temps de m'en occuper.",
-    a: "C'est prévu. Un appel de 15 minutes pour comprendre votre cabinet, vous m'envoyez vos contenus (photos, parcours, spécialités), et je m'occupe du reste : textes, design, mise en ligne, fiche Google. Livré en 7 jours ouvrés après réception de l'acompte et de vos contenus, hors temps de validation de votre côté.",
+    a: "C'est prévu. Un appel de 30 minutes pour comprendre votre cabinet, vous m'envoyez vos contenus (photos, parcours, spécialités), et je m'occupe du reste : textes, design, mise en ligne, fiche Google. Livré en 7 jours ouvrés après réception de l'acompte et de vos contenus, hors temps de validation de votre côté.",
   },
 ];
 
@@ -118,7 +118,7 @@ export default function SiteInternetKine() {
           <h1
             className="font-display"
             style={{
-              fontSize: "clamp(44px, 9vw, 130px)",
+              fontSize: "clamp(40px, 6.5vw, 96px)",
               lineHeight: 0.95,
               margin: "0 0 clamp(20px, 2.5vw, 32px)",
             }}
@@ -130,7 +130,6 @@ export default function SiteInternetKine() {
             >
               pas juste réservé
             </em>
-            .
           </h1>
         </Reveal>
         <Reveal delay={2}>
@@ -152,8 +151,8 @@ export default function SiteInternetKine() {
         </Reveal>
         <Reveal delay={3}>
           <div className="flex flex-wrap" style={{ gap: 12 }}>
-            <a href={siteConfig.calendly} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
-              Réserver un appel · 15 min <span className="btn__arrow">→</span>
+            <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
+              Réserver un appel · 30 min <span className="btn__arrow">→</span>
             </a>
             <a href="/tarifs" className="btn btn--ghost">
               Voir les tarifs <span className="btn__arrow">→</span>
@@ -186,13 +185,12 @@ export default function SiteInternetKine() {
         <Reveal delay={1}>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(36px, 6.5vw, 90px)", lineHeight: 0.95, margin: "0 0 40px" }}
+            style={{ fontSize: "clamp(32px, 4.5vw, 60px)", lineHeight: 0.95, margin: "0 0 40px" }}
           >
             DOCTOLIB N&apos;EST PAS{" "}
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
               votre site
             </em>
-            .
           </h2>
         </Reveal>
 
@@ -262,13 +260,12 @@ export default function SiteInternetKine() {
         <Reveal delay={1}>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(36px, 6.5vw, 90px)", lineHeight: 0.95, margin: "0 0 24px" }}
+            style={{ fontSize: "clamp(32px, 4.5vw, 60px)", lineHeight: 0.95, margin: "0 0 24px" }}
           >
             VOTRE ORDRE NE{" "}
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
               l&apos;interdit pas
             </em>
-            .
           </h2>
         </Reveal>
         <Reveal delay={2}>
@@ -378,13 +375,12 @@ export default function SiteInternetKine() {
         <Reveal delay={1}>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(36px, 6.5vw, 90px)", lineHeight: 0.95, margin: "0 0 40px" }}
+            style={{ fontSize: "clamp(32px, 4.5vw, 60px)", lineHeight: 0.95, margin: "0 0 40px" }}
           >
             CE QU&apos;ON MET{" "}
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
               dedans
             </em>
-            .
           </h2>
         </Reveal>
 
@@ -447,13 +443,12 @@ export default function SiteInternetKine() {
             <Reveal delay={1}>
               <h2
                 className="font-display"
-                style={{ fontSize: "clamp(36px, 5vw, 72px)", lineHeight: 0.95, margin: "0 0 20px" }}
+                style={{ fontSize: "clamp(30px, 4vw, 52px)", lineHeight: 0.95, margin: "0 0 20px" }}
               >
                 CABINET{" "}
                 <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
                   Atlas
                 </em>
-                .
               </h2>
             </Reveal>
             <Reveal delay={2}>
@@ -467,15 +462,15 @@ export default function SiteInternetKine() {
             </Reveal>
             <Reveal delay={3}>
               <p style={{ fontSize: 15, lineHeight: 1.7, color: "var(--ftt-text-mid)", margin: "0 0 28px" }}>
-                Pour votre cabinet, on commence par un appel de 15 minutes :
+                Pour votre cabinet, on commence par un appel de 30 minutes :
                 vous me parlez de votre activité, je vous dis franchement ce que
                 je ferais. Sans engagement : si ça ne vous parle pas, on en
                 reste là.
               </p>
             </Reveal>
             <Reveal delay={3}>
-              <a href={siteConfig.calendly} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
-                Réserver un appel · 15 min <span className="btn__arrow">→</span>
+              <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
+                Réserver un appel · 30 min <span className="btn__arrow">→</span>
               </a>
             </Reveal>
           </div>
@@ -526,7 +521,7 @@ export default function SiteInternetKine() {
           <Reveal delay={1}>
             <h2
               className="font-display"
-              style={{ fontSize: "clamp(40px, 7vw, 110px)", lineHeight: 0.95, margin: 0 }}
+              style={{ fontSize: "clamp(34px, 5vw, 72px)", lineHeight: 0.95, margin: 0 }}
             >
               750 €{" "}
               <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-text-mid)" }}>
@@ -592,13 +587,12 @@ export default function SiteInternetKine() {
         <Reveal delay={1}>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(36px, 6.5vw, 90px)", lineHeight: 0.95, margin: "0 0 40px" }}
+            style={{ fontSize: "clamp(32px, 4.5vw, 60px)", lineHeight: 0.95, margin: "0 0 40px" }}
           >
             CE QU&apos;ON ME{" "}
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
               demande
             </em>
-            .
           </h2>
         </Reveal>
 
@@ -685,7 +679,7 @@ export default function SiteInternetKine() {
         <Reveal>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(40px, 8vw, 120px)", lineHeight: 0.95, margin: "0 0 24px" }}
+            style={{ fontSize: "clamp(36px, 5.5vw, 80px)", lineHeight: 0.95, margin: "0 0 24px" }}
           >
             ON EN PARLE{" "}
             <em className="font-serif" style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}>
@@ -696,10 +690,10 @@ export default function SiteInternetKine() {
         </Reveal>
         <Reveal delay={1}>
           <p style={{ fontSize: 16, color: "var(--ftt-text-mid)", marginBottom: 36 }}>
-            15 minutes au téléphone, sans engagement. Je réponds à toutes vos questions.
+            30 minutes en visio, sans engagement. Je réponds à toutes vos questions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={siteConfig.calendly} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
+            <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
               Réserver un appel <span className="btn__arrow">→</span>
             </a>
             <a href="/#contact" className="btn btn--ghost">

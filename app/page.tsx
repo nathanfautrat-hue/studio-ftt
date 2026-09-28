@@ -28,7 +28,7 @@ export default function Home() {
         style={{ maxWidth: 1320 }}
       >
         <Reveal>
-          <SectionHeader num="03" label="Sélection de projets" title="LES PROJETS." />
+          <SectionHeader num="03" label="Sélection de projets" title="LES PROJETS" />
         </Reveal>
         <ProjectStack projects={PROJECTS} />
       </section>

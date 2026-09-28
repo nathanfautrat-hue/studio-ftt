@@ -8,7 +8,7 @@ export default function ApprocheSection() {
   return (
     <section
       id="approche"
-      className="mx-auto section-x section-y"
+      className="mx-auto section-x section-y-sm"
       style={{ maxWidth: 1320 }}
     >
       <Reveal>
@@ -25,29 +25,28 @@ export default function ApprocheSection() {
               >
                 à la mise en ligne
               </em>
-              .
             </>
           }
         />
       </Reveal>
 
-      <div className="mt-12 md:mt-20 lg:mt-24">
+      <div className="grid md:grid-cols-3 gap-4">
         {APPROCHE.map((step: ApprocheStep, i: number) => (
           <Reveal key={step.num} delay={((i + 1) as 1 | 2 | 3)}>
             <div
-              className="grid gap-x-8 gap-y-3 md:grid-cols-[80px_1fr_1.4fr] items-start"
+              className="flex flex-col h-full"
               style={{
-                padding: "clamp(28px, 4vw, 40px) 0",
-                borderTop: "1px solid var(--ftt-line)",
-                borderBottom:
-                  i === APPROCHE.length - 1 ? "1px solid var(--ftt-line)" : "none",
+                gap: 14,
+                padding: "clamp(22px, 2.5vw, 28px)",
+                borderRadius: 18,
+                background: "rgba(255,255,255,0.03)",
               }}
             >
               <div
                 className="font-serif"
                 style={{
                   fontStyle: "italic",
-                  fontSize: "clamp(40px, 5vw, 64px)",
+                  fontSize: "clamp(28px, 2.6vw, 36px)",
                   lineHeight: 1,
                   color: "var(--ftt-red)",
                 }}
@@ -58,7 +57,7 @@ export default function ApprocheSection() {
                 <h3
                   className="font-display"
                   style={{
-                    fontSize: "clamp(24px, 3vw, 34px)",
+                    fontSize: "clamp(22px, 2vw, 28px)",
                     margin: 0,
                     lineHeight: 1.05,
                   }}
@@ -80,8 +79,8 @@ export default function ApprocheSection() {
               </div>
               <p
                 style={{
-                  fontSize: 15,
-                  lineHeight: 1.6,
+                  fontSize: 14,
+                  lineHeight: 1.55,
                   color: "var(--ftt-text-mid)",
                   margin: 0,
                 }}

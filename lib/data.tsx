@@ -94,39 +94,23 @@ export type FaqItem = { q: string; a: string };
 export const FAQ: FaqItem[] = [
   {
     q: "Combien coûte un site ?",
-    a: "3 formules : Vitrine à 500 € (1 page), Visibilité à 750 € (jusqu'à 3 pages, SEO avancé, fiches Google, Bing et Apple Plans), Sur-mesure à partir de 1 000 € (jusqu'à 5 pages). Design, développement, mise en ligne, SEO de base et 1 modification gratuite inclus. Pages supplémentaires : 300 € l'unité.",
+    a: "Ça dépend de ce dont vous avez besoin. On en parle 30 minutes et je vous envoie un devis clair, en paiement unique. Le détail des formules est sur la page Tarifs.",
   },
   {
     q: "Combien de temps pour livrer ?",
-    a: "En 7 jours ouvrés après réception de l'acompte et de vos contenus, hors temps de validation de votre côté.",
+    a: "7 jours ouvrés après réception de l'acompte et de vos contenus.",
   },
   {
-    q: "Est-ce que je peux modifier mon site moi-même ?",
-    a: "Non, c'est moi qui gère les modifications. Une modification gratuite est incluse à la livraison. Ensuite, c'est 50 €/h à la demande, ou 3 modifications par mois avec la maintenance à 35 €/mois.",
+    q: "Y a-t-il un abonnement ?",
+    a: "Non, rien d'obligatoire. L'hébergement est offert la première année, puis 10 €/mois. Vous payez aussi votre nom de domaine, une dizaine d'euros par an, et il est à votre nom.",
   },
   {
-    q: "Y a-t-il un abonnement ou des frais cachés ?",
-    a: "Non, aucun abonnement obligatoire. L'hébergement est offert la première année, puis 10 €/mois (ou inclus dans la maintenance à 35 €/mois si vous la prenez). Le seul coût récurrent, c'est votre nom de domaine : vous l'achetez à votre nom (une dizaine d'euros par an), il vous appartient, et je le configure gratuitement.",
-  },
-  {
-    q: "Et après la mise en ligne, vous disparaissez ?",
-    a: "Non, je reste joignable après la mise en ligne. Une modification gratuite est incluse à la livraison, et la maintenance à 35 €/mois en couvre 3 par mois si vous voulez être tranquille.",
-  },
-  {
-    q: "Je n'ai pas de textes ni de photos — vous gérez ?",
-    a: "Je peux vous aider à rédiger et j'utilise des visuels adaptés à votre secteur en attendant les vôtres. L'essentiel, c'est de démarrer.",
-  },
-  {
-    q: "Quelle différence avec Wix ou Squarespace ?",
-    a: "Le site est conçu sur-mesure pour votre activité, pas depuis un template générique. Il charge plus vite, il est mieux référencé, et vous n'avez pas d'abonnement mensuel lié à une plateforme.",
+    q: "Et après la mise en ligne ?",
+    a: "Je reste joignable. Une modification est offerte à la livraison. Ensuite, c'est 50 €/h, ou 3 modifications par mois avec la maintenance à 35 €/mois.",
   },
   {
     q: "Vous travaillez partout en France ?",
-    a: "Oui. Je suis basé en Sarthe mais je travaille à distance dans toute la France, en visio et par email. Le rendez-vous en présentiel reste possible en Sarthe et alentours.",
-  },
-  {
-    q: "Vous travaillez avec qui ?",
-    a: "Artisans, TPE, PME — principalement en Sarthe et Mayenne, mais je travaille aussi à distance partout en France.",
+    a: "Oui, à distance, en visio et par e-mail. Je suis basé en Sarthe, donc on peut aussi se voir si vous êtes dans le coin.",
   },
 ];
 
@@ -145,8 +129,8 @@ export const APPROCHE: ApprocheStep[] = [
   {
     num: "01",
     title: "Je vous appelle",
-    desc: "15 minutes pour comprendre votre métier et vos clients. Je vous dis franchement si je peux vous aider, sans jargon et sans vous pousser à signer.",
-    action: "Appel de découverte · 15 min",
+    desc: "30 minutes pour comprendre votre métier et vos clients. Je vous dis franchement si je peux vous aider, sans jargon et sans vous pousser à signer.",
+    action: "Appel de découverte · 30 min",
   },
   {
     num: "02",

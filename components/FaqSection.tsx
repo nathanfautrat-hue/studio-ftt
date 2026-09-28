@@ -14,194 +14,174 @@ export default function FaqSection() {
   return (
     <section
       id="faq"
-      className="mx-auto section-x section-y"
-      style={{ maxWidth: 1320, borderTop: "1px solid var(--ftt-line)" }}
+      className="mx-auto section-x section-y-sm"
+      style={{ maxWidth: 1320 }}
     >
       <JsonLd data={faqPageSchema(FAQ)} />
 
+      <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
+        <div className="lg:sticky" style={{ top: 110 }}>
       <Reveal>
-        <SectionHeader
-          num="05"
-          label="FAQ"
-          title=""
-          titleChildren={
-            <>
-              LES QUESTIONS{" "}
-              <em
-                className="font-serif"
-                style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}
-              >
-                qu&apos;on me pose
-              </em>
-              .
-            </>
-          }
-        />
-      </Reveal>
-
-      <div style={{ maxWidth: 860 }}>
-        {FAQ.map((item: FaqItem, i: number) => {
-          const isOpen = open === i;
-          return (
-            <Reveal key={i} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
-              <div style={{ borderBottom: "1px solid var(--ftt-line)" }}>
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full text-left flex justify-between items-center"
-                  aria-expanded={isOpen}
-                  style={{
-                    padding: "22px 0",
-                    gap: 20,
-                    background: "none",
-                    border: 0,
-                    cursor: "pointer",
-                    color: "var(--ftt-cream)",
-                  }}
+          <SectionHeader
+            num="05"
+            label="FAQ"
+            compact
+            title=""
+            titleChildren={
+              <>
+                LES QUESTIONS{" "}
+                <em
+                  className="font-serif"
+                  style={{ fontStyle: "italic", fontWeight: 500, color: "var(--ftt-red)" }}
                 >
-                  <span
-                    style={{
-                      fontSize: "clamp(16px, 2vw, 19px)",
-                      fontWeight: 500,
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {item.q}
-                  </span>
-                  <span
-                    aria-hidden
-                    style={{
-                      color: "var(--ftt-red)",
-                      fontSize: 28,
-                      lineHeight: 1,
-                      flexShrink: 0,
-                      transform: isOpen ? "rotate(45deg)" : "none",
-                      transition: "transform 0.25s ease",
-                      display: "block",
-                    }}
-                  >
-                    +
-                  </span>
-                </button>
-                {/* Réponse toujours dans le DOM (SEO + conformité FAQPage), repli en CSS */}
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateRows: isOpen ? "1fr" : "0fr",
-                    transition: "grid-template-rows 0.25s ease",
-                  }}
-                >
-                  <p
-                    style={{
-                      overflow: "hidden",
-                      minHeight: 0,
-                      fontSize: 15,
-                      lineHeight: 1.7,
-                      color: "var(--ftt-text-mid)",
-                      paddingBottom: isOpen ? 24 : 0,
-                      transition: "padding-bottom 0.25s ease",
-                      margin: 0,
-                    }}
-                  >
-                    {item.a}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          );
-        })}
-      </div>
-
+                  qu&apos;on me pose
+                </em>
+              </>
+            }
+          />
+        </Reveal>
       <Reveal>
-        <div
-          style={{
-            maxWidth: 860,
-            marginTop: 48,
-            paddingTop: 32,
-            borderTop: "1px solid var(--ftt-line)",
-          }}
-        >
-          <p
+          <div
             style={{
-              fontSize: 16,
-              lineHeight: 1.6,
-              color: "var(--ftt-text-mid)",
-              margin: "0 0 22px",
+              marginTop: 8,
             }}
           >
-            Vous ne trouvez pas votre réponse ? Écrivez-moi à{" "}
-            <a
-              href="mailto:contact@studioftt.fr"
-              style={{ color: "var(--ftt-cream)", textDecoration: "underline" }}
-            >
-              contact@studioftt.fr
-            </a>{" "}
-            ou sur{" "}
-            <a
-              href={siteConfig.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "var(--ftt-cream)", textDecoration: "underline", whiteSpace: "nowrap" }}
-            >
-              WhatsApp
-            </a>
-            .
-          </p>
-          <div className="flex flex-wrap" style={{ gap: 12 }}>
-            <a
-              href={siteConfig.calendly}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="lift inline-flex items-center"
+            <p
               style={{
-                gap: 8,
-                padding: "13px 24px",
-                borderRadius: 999,
-                background: "var(--ftt-red)",
-                color: "#fff",
-                textDecoration: "none",
-                fontSize: 13,
-                fontWeight: 500,
+                fontSize: 16,
+                lineHeight: 1.6,
+                color: "var(--ftt-text-mid)",
+                margin: "0 0 22px",
               }}
             >
-              Réserver un appel <span aria-hidden>→</span>
-            </a>
-            <a
-              href="#contact"
-              className="lift inline-flex items-center"
-              style={{
-                gap: 8,
-                padding: "13px 24px",
-                borderRadius: 999,
-                border: "1px solid var(--ftt-line-strong)",
-                color: "var(--ftt-cream)",
-                textDecoration: "none",
-                fontSize: 13,
-                fontWeight: 500,
-              }}
-            >
-              M&apos;écrire <span aria-hidden>→</span>
-            </a>
-            <a
-              href={siteConfig.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="lift inline-flex items-center"
-              style={{
-                gap: 8,
-                padding: "13px 24px",
-                borderRadius: 999,
-                border: "1px solid var(--ftt-line-strong)",
-                color: "var(--ftt-cream)",
-                textDecoration: "none",
-                fontSize: 13,
-                fontWeight: 500,
-              }}
-            >
-              WhatsApp <span aria-hidden>→</span>
-            </a>
+              Vous ne trouvez pas votre réponse ? Écrivez-moi à{" "}
+              <a
+                href="mailto:contact@studioftt.fr"
+                style={{ color: "var(--ftt-cream)", textDecoration: "underline" }}
+              >
+                contact@studioftt.fr
+              </a>{" "}
+              ou sur{" "}
+              <a
+                href={siteConfig.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--ftt-cream)", textDecoration: "underline", whiteSpace: "nowrap" }}
+              >
+                WhatsApp
+              </a>
+              .
+            </p>
+            <div className="flex flex-wrap" style={{ gap: 12 }}>
+              <a
+                href={siteConfig.booking}
+                className="lift inline-flex items-center"
+                style={{
+                  gap: 8,
+                  padding: "13px 24px",
+                  borderRadius: 999,
+                  background: "var(--ftt-red)",
+                  color: "#fff",
+                  textDecoration: "none",
+                  fontSize: 13,
+                  fontWeight: 500,
+                }}
+              >
+                Réserver un appel <span aria-hidden>→</span>
+              </a>
+              <a
+                href="#contact"
+                className="lift inline-flex items-center"
+                style={{
+                  gap: 8,
+                  padding: "13px 24px",
+                  borderRadius: 999,
+                  border: "1px solid var(--ftt-line-strong)",
+                  color: "var(--ftt-cream)",
+                  textDecoration: "none",
+                  fontSize: 13,
+                  fontWeight: 500,
+                }}
+              >
+                M&apos;écrire <span aria-hidden>→</span>
+              </a>
+            </div>
           </div>
+        </Reveal>
         </div>
-      </Reveal>
+      <div>
+          {FAQ.map((item: FaqItem, i: number) => {
+            const isOpen = open === i;
+            return (
+              <Reveal key={i} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
+                <div style={{ borderBottom: "1px solid var(--ftt-line)" }}>
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="w-full text-left flex justify-between items-center"
+                    aria-expanded={isOpen}
+                    style={{
+                      padding: "22px 0",
+                      gap: 20,
+                      background: "none",
+                      border: 0,
+                      cursor: "pointer",
+                      color: "var(--ftt-cream)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "clamp(16px, 2vw, 19px)",
+                        fontWeight: 500,
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {item.q}
+                    </span>
+                    <span
+                      aria-hidden
+                      style={{
+                        color: "var(--ftt-red)",
+                        fontSize: 28,
+                        lineHeight: 1,
+                        flexShrink: 0,
+                        transform: isOpen ? "rotate(45deg)" : "none",
+                        transition: "transform 0.25s ease",
+                        display: "block",
+                      }}
+                    >
+                      +
+                    </span>
+                  </button>
+                  {/* Réponse toujours dans le DOM (SEO + conformité FAQPage), repli en CSS */}
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateRows: isOpen ? "1fr" : "0fr",
+                      transition: "grid-template-rows 0.25s ease",
+                    }}
+                  >
+                    <p
+                      style={{
+                        overflow: "hidden",
+                        minHeight: 0,
+                        fontSize: 15,
+                        lineHeight: 1.7,
+                        color: "var(--ftt-text-mid)",
+                        paddingBottom: isOpen ? 24 : 0,
+                        transition: "padding-bottom 0.25s ease",
+                        margin: 0,
+                      }}
+                    >
+                      {item.a}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+  
+      </div>
     </section>
   );
 }

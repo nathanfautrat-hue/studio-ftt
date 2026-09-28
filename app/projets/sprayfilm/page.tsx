@@ -188,11 +188,11 @@ export default function SprayfilmPage() {
             Un projet du même genre&nbsp;?
           </h2>
           <p className="text-white/60 text-lg mb-10">
-            15 minutes au téléphone pour en parler, sans engagement.
+            30 minutes en visio pour en parler, sans engagement.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={siteConfig.calendly}
+              href={siteConfig.booking}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn--solid"

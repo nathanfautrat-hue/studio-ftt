@@ -75,20 +75,17 @@ export default function Navbar() {
             onClick={() => gtagEvent("clic_cta", { event_label: "navbar_whatsapp" })}
             className="lift inline-flex items-center justify-center shrink-0"
             style={{
-              width: 40,
-              height: 40,
-              borderRadius: 999,
-              border: "1px solid var(--ftt-line)",
-              background: "rgba(255,255,255,0.04)",
+              width: 36,
+              height: 36,
               color: "var(--ftt-cream)",
             }}
           >
-            <WhatsAppIcon size={18} />
+            <WhatsAppIcon size={24} />
           </a>
 
           {/* CTA */}
           <a
-            href="/#contact"
+            href={siteConfig.booking}
             onClick={() => gtagEvent("clic_cta", { event_label: "navbar_demarrer" })}
             className="inline-flex items-center shrink-0"
             style={{

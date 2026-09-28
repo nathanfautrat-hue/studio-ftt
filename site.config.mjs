@@ -21,7 +21,9 @@ export const siteConfig = {
   instagramHandle: "@studio.ftt",
   linkedin: "https://www.linkedin.com/in/studio-ftt-ba790a404/",
   linkedinHandle: "Studio FTT",
-  calendly: "https://calendly.com/contactstudioftt/15min",
+  // Prise de rendez-vous (Cal.com, intégré au site en thème sombre)
+  booking: "https://cal.com/studioftt-x1nxtl/projet",
+  bookingCalLink: "studioftt-x1nxtl/projet",
   whatsapp:
     "https://wa.me/33607033804?text=" +
     encodeURIComponent("Bonjour, je viens de studioftt.fr, j'aimerais savoir ce que vous pourriez faire pour mon activité."),
