@@ -4,7 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import PourQuiSection from "@/components/PourQuiSection";
 import ApprocheSection from "@/components/ApprocheSection";
 import TarifsSection from "@/components/TarifsSection";
-import AproposSection from "@/components/AproposSection";
 import ProjectMarquee from "@/components/ProjectMarquee";
 import FaqSection from "@/components/FaqSection";
 import ContactSection from "@/components/ContactSection";
@@ -17,8 +16,6 @@ export default function Home() {
     <main id="contenu" className="ftt-grain" style={{ background: "var(--ftt-black)", color: "var(--ftt-cream)" }}>
       <Navbar />
       <HeroSection />
-      <ApprocheSection />
-      <TarifsSection />
 
       {/* PROJETS : deux lignes qui défilent */}
       <section id="projets" className="section-y-sm" style={{ overflow: "hidden" }}>
@@ -30,7 +27,8 @@ export default function Home() {
         <ProjectMarquee projects={PROJECTS} />
       </section>
 
-      <AproposSection />
+      <ApprocheSection />
+      <TarifsSection />
       <PourQuiSection />
       <FaqSection />
       <ContactSection />

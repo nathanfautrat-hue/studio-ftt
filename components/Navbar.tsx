@@ -8,11 +8,11 @@ import { gtagEvent } from "@/lib/gtag";
 import { siteConfig } from "@/lib/site-config";
 
 const NAV_LINKS = [
+  { label: "Projets", href: "/#projets" },
   { label: "Approche", href: "/#approche" },
   { label: "Tarifs", href: "/#tarifs" },
-  { label: "Projets", href: "/#projets" },
-  { label: "À propos", href: "/#apropos" },
   { label: "FAQ", href: "/#faq" },
+  { label: "À propos", href: "/a-propos" },
 ];
 
 export default function Navbar() {
