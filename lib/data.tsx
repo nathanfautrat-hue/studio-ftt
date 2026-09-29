@@ -13,6 +13,7 @@ import {
   MarceauPreview,
   CabinetAtlasPreview,
   ElectricienPreview,
+  ConsultantPreview,
 } from "@/components/ProjectPreviews";
 
 // ---------------------------------------------------------------------------
@@ -93,6 +94,17 @@ export const PROJECTS: StackProject[] = [
       "Démo pour un cabinet pluri kiné/ostéo : design contemporain lumineux (sable, bleu nuit, ocre), photo praticien, équipe, parcours patient.",
     href: "/demo/cabinet-atlas/index.html",
     preview: <CabinetAtlasPreview />,
+    isDemo: true,
+  },
+  {
+    id: "consultant",
+    name: "Tangente Conseil",
+    kind: "Consultant indépendant",
+    tag: "Site vitrine · Accompagnement",
+    blurb:
+      "Démo pour un consultant qui accompagne les dirigeants de PME : dégradé vivant qui suit la souris, offres claires, prise de contact.",
+    href: "/demo/consultant/index.html",
+    preview: <ConsultantPreview />,
     isDemo: true,
   },
 ];

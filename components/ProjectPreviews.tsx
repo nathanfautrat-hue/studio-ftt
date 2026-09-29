@@ -92,3 +92,13 @@ export function ElectricienPreview() {
     />
   );
 }
+
+export function ConsultantPreview() {
+  return (
+    <StaticPreview
+      src="/preview-consultant.webp"
+      alt="Aperçu de la démo Tangente Conseil, consultant indépendant"
+      bg="#f2ece2"
+    />
+  );
+}
