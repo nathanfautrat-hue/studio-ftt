@@ -68,7 +68,7 @@ export function MarceauPreview() {
     <StaticPreview
       src="/preview-marceau.webp"
       alt="Aperçu de la démo Atelier Marceau, plombier artisan"
-      bg="#F7F4EF"
+      bg="#1a2733"
     />
   );
 }

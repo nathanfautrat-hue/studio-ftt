@@ -158,7 +158,7 @@ Versions Markdown propres de chaque page (sans HTML, scripts ni navigation), opt
 - [Politique de confidentialité](https://studioftt.fr/confidentialite.md)
 - [Projet — Scavback (collectif artistique)](https://studioftt.fr/projets/scavback.md)
 - [Projet — Sprayfilm (production audiovisuelle)](https://studioftt.fr/projets/sprayfilm.md)
-- [Projet — Atelier Marceau (plombier artisan)](https://studioftt.fr/projets/marceau.md)
+- [Démo — Atelier Marceau (plombier artisan)](https://studioftt.fr/demo/marceau/)
 
 ---
 

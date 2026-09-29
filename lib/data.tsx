@@ -77,11 +77,11 @@ export const PROJECTS: StackProject[] = [
   {
     id: "marceau",
     name: "Atelier Marceau",
-    kind: "Plombier artisan",
-    tag: "Site vitrine · Devis",
+    kind: "Plombier chauffagiste",
+    tag: "Site vitrine · Dépannage 7j/7",
     blurb:
-      "Site vitrine pour un plombier artisan au Mans : services, zone d'intervention, urgence 24/7.",
-    href: "/projets/marceau",
+      "Démo pour un plombier : dépannage en rouge et bleu atelier, services en tuiles, tarifs affichés, chantiers récents, barre d'appel sur mobile.",
+    href: "/demo/marceau/index.html",
     preview: <MarceauPreview />,
     isDemo: true,
   },

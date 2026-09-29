@@ -379,7 +379,7 @@ export default function SiteInternetArtisan() {
                 <a href={siteConfig.booking} target="_blank" rel="noopener noreferrer" className="btn btn--solid">
                   Réserver un appel · 30 min <span className="btn__arrow">→</span>
                 </a>
-                <a href="/projets/marceau" className="btn btn--ghost">
+                <a href="/demo/marceau/index.html" className="btn btn--ghost">
                   Voir le projet <span className="btn__arrow">→</span>
                 </a>
               </div>
@@ -387,7 +387,7 @@ export default function SiteInternetArtisan() {
           </div>
           <Reveal delay={2}>
             <a
-              href="/projets/marceau"
+              href="/demo/marceau/index.html"
               aria-label="Voir le projet Atelier Marceau"
               style={{
                 display: "block",

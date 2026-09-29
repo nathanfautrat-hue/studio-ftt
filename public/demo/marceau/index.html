@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Atelier Marceau · Plombier chauffagiste au Mans, dépannage 7j/7 (démo)</title>
+<meta name="description" content="Démo Studio FTT : site d'un plombier chauffagiste. Dépannage 7 jours sur 7, chauffe-eau, chaudière, salle de bains, prix annoncés avant intervention." />
+<meta name="theme-color" content="#121c26" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="preload" as="image" href="img/hero.webp" />
+<style>
+:root{
+  --navy:#121c26; --navy-2:#1a2733; --navy-3:#243544; --steel:#9fb3c4;
+  --red:#d23024; --red-deep:#b0261b; --water:#35a7e8;
+  --paper:#f2f4f5; --ink:#121c26; --ink-2:#4a5866; --line:rgba(18,28,38,.12);
+  --font:"Instrument Sans",ui-sans-serif,system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+[id]{scroll-margin-top:24px}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--red);color:#fff}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--water);outline-offset:3px;border-radius:6px}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-weight:700;font-stretch:88%;letter-spacing:-.025em;line-height:1;text-wrap:balance}
+h2{font-size:clamp(38px,4.6vw,62px)}
+.sec{padding:120px 0}
+@media (max-width:760px){.sec{padding:80px 0}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--red);color:#fff;padding:10px 14px;border-radius:6px;z-index:100}
+.skip:focus{left:8px}
+
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 24px;border-radius:6px;font:600 16px/1 var(--font);text-decoration:none;border:0;cursor:pointer;white-space:nowrap;
+  transition:transform .3s var(--ease),background-color .2s,color .2s}
+.btn i{font-size:20px}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(.98)}
+.btn--red{background:var(--red);color:#fff}
+.btn--red:hover{background:var(--red-deep)}
+.btn--ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.btn--ghost:hover{background:rgba(255,255,255,.1)}
+.btn--navy{background:var(--navy);color:#fff}
+.btn--navy:hover{background:var(--navy-3)}
+
+/* Canalisation qui se remplit au fil du défilement (écrans larges) */
+.pipe{display:none}
+@supports (animation-timeline:scroll()){
+  @media (min-width:1360px) and (prefers-reduced-motion:no-preference){
+    .pipe{display:block;position:fixed;left:26px;top:18vh;bottom:18vh;width:14px;z-index:30;pointer-events:none}
+    .pipe::before{content:"";position:absolute;inset:0;border-radius:7px;background:#c9d3db;box-shadow:inset 0 0 0 3px #aebbc6}
+    .pipe .water{position:absolute;left:3px;right:3px;top:3px;bottom:3px;border-radius:5px;background:linear-gradient(180deg,#6cc4f2,var(--water));transform-origin:top;transform:scaleY(0);animation:fill linear both;animation-timeline:scroll(root)}
+    .pipe .joint{position:absolute;left:-4px;right:-4px;height:10px;border-radius:3px;background:var(--red)}
+    .pipe .j1{top:-4px}.pipe .j2{top:33%}.pipe .j3{top:66%}.pipe .j4{bottom:-4px}
+    @keyframes fill{to{transform:scaleY(1)}}
+  }
+}
+
+/* ============ HERO ============ */
+.topbar{background:var(--navy);color:#dbe4ec;font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+.topbar span{display:flex;align-items:center;gap:8px}
+.topbar i{color:var(--red);font-size:16px}
+.topbar a{font-weight:600;text-decoration:none;color:#fff}
+@media (max-width:700px){.topbar .hide-sm{display:none}}
+.hero{position:relative;background:var(--navy-2);color:#fff;overflow:hidden;isolation:isolate}
+.hero-photo{position:absolute;inset:0 0 0 38%;z-index:-2;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--navy-2) 36%,rgba(26,39,51,.2) 60%,rgba(26,39,51,0) 100%),linear-gradient(0deg,rgba(18,28,38,.7),transparent 30%)}
+.nav{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;height:82px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo .mk{width:42px;height:42px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:22px}
+.logo b{display:block;font-weight:700;font-size:20px;letter-spacing:-.01em;line-height:1}
+.logo small{display:block;font-size:12px;color:var(--steel);margin-top:3px}
+.nav-links{display:none;gap:28px;font-weight:500;font-size:15px}
+.nav-links a{text-decoration:none;color:#dbe4ec;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav .btn{min-height:46px;padding:0 18px;font-size:15px}
+@media (min-width:980px){.nav-links{display:flex}}
+@media (max-width:520px){.nav .btn .lbl{display:none}.nav .btn{padding:0 14px}}
+.hero-body{padding-top:70px;padding-bottom:40px;min-height:min(78vh,760px);display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(48px,6.4vw,92px);max-width:10ch}
+.hero-sub{margin-top:24px;max-width:38ch;font-size:clamp(17px,1.4vw,19px);color:#dbe4ec}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-foot{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:34px}
+.hero-foot span{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:6px;background:rgba(18,28,38,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);font-size:14px}
+.hero-foot i{color:var(--red);font-size:20px}
+@media (max-width:900px){
+  .hero-photo{inset:0;clip-path:none}
+  .hero::after{background:linear-gradient(180deg,rgba(26,39,51,.35) 0%,rgba(26,39,51,.55) 35%,var(--navy-2) 72%)}
+  .hero-body{padding-top:34vh;min-height:0}
+}
+.rise{opacity:0;transform:translateY(22px);animation:rise 1s var(--ease) forwards}
+.rise.d1{animation-delay:.1s}.rise.d2{animation-delay:.2s}.rise.d3{animation-delay:.3s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ============ SERVICES (07) ============ */
+.services{background:var(--navy);color:#fff}
+.srv-grid{display:grid;gap:14px}
+.srv-lead{position:relative;background:var(--red);border-radius:10px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;overflow:hidden;isolation:isolate;min-height:360px}
+.srv-lead img{position:absolute;right:-18%;bottom:-8%;width:78%;z-index:-1;opacity:.28;mix-blend-mode:luminosity;transform:rotate(-8deg)}
+.srv-lead h2{font-size:clamp(34px,3.4vw,48px)}
+.srv-lead p{margin-top:14px;max-width:32ch;color:#fff}
+.tiles{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.tile{background:var(--navy-2);border-radius:10px;padding:24px;display:grid;gap:10px;align-content:start;transition:background-color .25s,transform .3s var(--ease)}
+.tile:hover{background:var(--navy-3);transform:translateY(-3px)}
+.tile i{font-size:30px;color:var(--red)}
+.tile h3{font-size:22px;font-stretch:92%}
+.tile p{font-size:14px;color:#b9c7d3}
+@media (min-width:980px){.srv-grid{grid-template-columns:1fr 2fr}.tiles{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.tiles{grid-template-columns:1fr}}
+
+/* ============ TARIFS ============ */
+.prices{display:grid;gap:48px;align-items:center}
+.prices-photo{border-radius:10px;overflow:hidden;aspect-ratio:4/5;max-height:620px}
+.prices-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.prices h2{max-width:14ch}
+.prices .lead{margin-top:18px;color:var(--ink-2);max-width:46ch;font-size:18px}
+.price-list{margin-top:34px;display:grid}
+.pl{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pl:first-child{border-top:1px solid var(--line)}
+.pl span{font-weight:500}
+.pl span small{display:block;font-weight:400;color:var(--ink-2);font-size:14px}
+.pl b{font-size:30px;font-weight:700;font-stretch:88%;letter-spacing:-.02em;color:var(--red-deep);white-space:nowrap;font-variant-numeric:tabular-nums}
+@media (min-width:960px){.prices{grid-template-columns:1fr 1.15fr;gap:90px}}
+
+/* ============ RÉALISATIONS (cartes photo) ============ */
+.works{background:var(--navy);color:#fff}
+.works-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.works-head p{color:#b9c7d3;max-width:40ch}
+.cards{margin-top:48px;display:grid;gap:14px}
+.card{background:var(--navy-2);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.card .ph{aspect-ratio:4/3;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.card:hover .ph img{transform:scale(1.04)}
+.card .body{padding:24px;display:grid;gap:8px}
+.card h3{font-size:24px;font-stretch:92%}
+.card p{color:#b9c7d3;font-size:15px}
+.card .tag{justify-self:start;margin-top:8px;padding:8px 12px;border-radius:5px;background:var(--red);font-size:13px;font-weight:600}
+@media (min-width:900px){.cards{grid-template-columns:repeat(3,1fr)}.card:nth-child(2){margin-top:40px}}
+
+/* ============ ARTISAN ============ */
+.artisan{display:grid;gap:48px;align-items:center}
+.art-photos{position:relative;max-width:560px}
+.art-photos .a1{border-radius:10px;overflow:hidden;aspect-ratio:4/5}
+.art-photos .a1 img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.art-photos .a2{position:absolute;right:-36px;bottom:-36px;width:44%;border-radius:10px;overflow:hidden;aspect-ratio:1;box-shadow:0 0 0 8px var(--paper)}
+.art-photos .a2 img{width:100%;height:100%;object-fit:cover;object-position:50% 75%}
+.artisan blockquote{font-size:clamp(26px,2.8vw,38px);font-weight:600;font-stretch:90%;letter-spacing:-.02em;line-height:1.25}
+.artisan .who{margin-top:22px;font-weight:600}
+.artisan .who small{display:block;font-weight:400;color:var(--ink-2)}
+.labels{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+.labels span{display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:6px;background:#fff;box-shadow:0 1px 0 var(--line);font-size:14px;font-weight:500}
+.labels i{color:var(--red);font-size:18px}
+.zone{margin-top:36px}
+.zone h3{font-size:22px;font-stretch:92%}
+.zone ul{list-style:none;padding:0;margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.zone li{padding:8px 13px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(18,28,38,.2);font-size:14px}
+@media (min-width:960px){.artisan{grid-template-columns:1fr 1.1fr;gap:110px}}
+@media (max-width:600px){.art-photos .a2{right:-8px;bottom:-24px}}
+
+/* ============ AVIS ============ */
+.avis-grid{display:grid;gap:14px;margin-top:48px}
+.avis-main{background:var(--red);color:#fff;border-radius:10px;padding:40px;display:grid;gap:24px;align-content:space-between}
+.avis-main p{font-size:clamp(24px,2.4vw,32px);font-weight:600;font-stretch:92%;line-height:1.3;letter-spacing:-.015em}
+.avis-small{background:#fff;border-radius:10px;padding:28px;display:grid;gap:14px;align-content:space-between;box-shadow:0 1px 0 var(--line)}
+.stars{display:flex;gap:2px;font-size:17px}
+.avis-small .stars{color:var(--red)}
+.avis-main footer,.avis-small footer{font-weight:600;font-size:15px}
+.avis-main footer span{display:block;font-weight:400;color:#fff}
+.avis-small footer span{display:block;font-weight:400;color:var(--ink-2);font-size:14px}
+.avis-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.avis-head .score{font-size:18px;color:var(--ink-2)}
+.avis-head .score b{font-size:44px;font-weight:700;font-stretch:88%;color:var(--ink);margin-right:6px}
+@media (min-width:900px){.avis-grid{grid-template-columns:1.4fr 1fr 1fr}}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--navy);color:#fff}
+.ct-grid{display:grid;gap:48px}
+.ct-phone{display:inline-flex;align-items:center;gap:14px;margin-top:28px;font-size:clamp(34px,4vw,52px);font-weight:700;font-stretch:88%;letter-spacing:-.02em;text-decoration:none;color:#fff}
+.ct-phone i{width:60px;height:60px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:28px}
+.ct-list{margin-top:30px;display:grid;gap:12px;color:#dbe4ec}
+.ct-list span{display:flex;gap:12px;align-items:center}
+.ct-list i{color:var(--red);font-size:22px}
+form{background:#fff;color:var(--ink);border-radius:10px;padding:30px;display:grid;gap:16px}
+form h3{font-size:30px}
+label{display:grid;gap:6px;font-weight:600;font-size:14px}
+input,select,textarea{font:500 16px/1.4 var(--font);color:var(--ink);background:var(--paper);border:1px solid rgba(18,28,38,.18);border-radius:6px;padding:13px 14px;width:100%;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--water);box-shadow:0 0 0 3px rgba(53,167,232,.25)}
+input::placeholder,textarea::placeholder{color:#5f6c78}
+textarea{min-height:100px;resize:vertical}
+.row2{display:grid;gap:16px}
+@media (min-width:600px){.row2{grid-template-columns:1fr 1fr}}
+.form-ok{display:none;font-weight:600;color:var(--red-deep)}
+form.sent .form-ok{display:block}
+.form-note{font-size:13px;color:var(--ink-2)}
+@media (min-width:960px){.ct-grid{grid-template-columns:1fr 1.05fr;gap:90px;align-items:start}}
+footer.site{background:var(--navy);color:#9fb3c4;font-size:14px;padding:26px 0 36px;border-top:1px solid rgba(255,255,255,.1)}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* Barre d'appel mobile */
+.callbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
+.callbar a{display:flex;justify-content:center;align-items:center;gap:10px;min-height:56px;border-radius:8px;background:var(--red);color:#fff;font-weight:600;text-decoration:none;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+@media (max-width:760px){.callbar{display:block}footer.site{padding-bottom:96px}}
+
+@media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}html{scroll-behavior:auto}.btn,.tile,.card .ph img{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="pipe" aria-hidden="true"><span class="water"></span><span class="joint j1"></span><span class="joint j2"></span><span class="joint j3"></span><span class="joint j4"></span></div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><i class="ph-fill ph-siren" aria-hidden="true"></i>Urgence 7j/7 : <a href="tel:+33243000003">02 43 00 00 03</a></span>
+    <span class="hide-sm"><i class="ph ph-map-pin" aria-hidden="true"></i>Le Mans et 30 km autour</span>
+    <span class="hide-sm"><i class="ph ph-seal-check" aria-hidden="true"></i>Devis gratuit, prix annoncé avant</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-photo"><img src="img/hero.webp" alt="Plombier réparant une pompe à eau" width="1600" height="2844" fetchpriority="high" /></div>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="mk"><i class="ph-fill ph-drop" aria-hidden="true"></i></span><span><b translate="no">Atelier Marceau</b><small>Plomberie · Chauffage</small></span></a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avis">Avis</a>
+    </nav>
+    <a class="btn btn--red" href="tel:+33243000003"><i class="ph-fill ph-phone" aria-hidden="true"></i><span class="lbl">Appeler</span></a>
+  </div>
+  <div class="wrap hero-body" id="contenu">
+    <h1 class="rise">Fuite d'eau, on arrive dans l'heure</h1>
+    <p class="hero-sub rise d1">Plombier chauffagiste au Mans. Dépannage 7 jours sur 7, installation et rénovation, prix annoncé avant de commencer.</p>
+    <div class="hero-ctas rise d2">
+      <a class="btn btn--red" href="tel:+33243000003"><i class="ph-fill ph-phone" aria-hidden="true"></i>Appeler maintenant</a>
+      <a class="btn btn--ghost" href="#contact">Demander un devis</a>
+    </div>
+  </div>
+  <div class="wrap hero-foot rise d3">
+    <span><i class="ph ph-timer" aria-hidden="true"></i>52 min d'arrivée en moyenne</span>
+    <span><i class="ph-fill ph-star" aria-hidden="true"></i>4,9/5 sur 163 avis Google</span>
+    <span><i class="ph ph-shield-check" aria-hidden="true"></i>Garantie décennale</span>
+  </div>
+</header>
+
+<main>
+  <section class="sec services" id="services">
+    <div class="wrap srv-grid">
+      <div class="srv-lead">
+        <img src="img/raccord.webp" alt="" width="1100" height="733" loading="lazy" />
+        <div>
+          <h2>Dépannage et installation</h2>
+          <p>Une urgence au milieu de la nuit ou une salle de bains à refaire : c'est le même artisan qui vient.</p>
+        </div>
+        <a class="btn btn--navy" href="tel:+33243000003" style="align-self:flex-start"><i class="ph-fill ph-phone" aria-hidden="true"></i>02 43 00 00 03</a>
+      </div>
+      <div class="tiles">
+        <article class="tile"><i class="ph ph-drop-half-bottom" aria-hidden="true"></i><h3>Fuite d'eau</h3><p>Recherche de fuite, réparation, coupure d'urgence.</p></article>
+        <article class="tile"><i class="ph ph-pipe" aria-hidden="true"></i><h3>Canalisation bouchée</h3><p>Débouchage évier, douche, WC, colonne.</p></article>
+        <article class="tile"><i class="ph ph-thermometer-hot" aria-hidden="true"></i><h3>Chauffe-eau</h3><p>Plus d'eau chaude ? Réparation ou remplacement dans la journée.</p></article>
+        <article class="tile"><i class="ph ph-fire" aria-hidden="true"></i><h3>Chaudière et chauffage</h3><p>Entretien annuel, panne, radiateurs, pompe à chaleur.</p></article>
+        <article class="tile"><i class="ph ph-bathtub" aria-hidden="true"></i><h3>Salle de bains</h3><p>Rénovation complète, douche à l'italienne, accessibilité.</p></article>
+        <article class="tile"><i class="ph ph-toilet" aria-hidden="true"></i><h3>WC et robinetterie</h3><p>Chasse d'eau, mitigeur, WC suspendu.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="tarifs">
+    <div class="wrap prices">
+      <div class="prices-photo"><img src="img/mains.webp" alt="Mains du plombier serrant un raccord" width="900" height="800" loading="lazy" /></div>
+      <div>
+        <h2>Les tarifs, avant de venir</h2>
+        <p class="lead">Au téléphone, on vous donne une fourchette. Sur place, le prix exact avant de sortir un seul outil.</p>
+        <div class="price-list">
+          <div class="pl"><span>Déplacement<small>Le Mans et 30 km autour</small></span><b>39 €</b></div>
+          <div class="pl"><span>Main-d'œuvre<small>par heure, en journée</small></span><b>55 €</b></div>
+          <div class="pl"><span>Débouchage<small>évier, douche ou WC</small></span><b>dès 89 €</b></div>
+          <div class="pl"><span>Remplacement de chauffe-eau<small>200 L, pose et évacuation de l'ancien</small></span><b>dès 890 €</b></div>
+          <div class="pl"><span>Soir, week-end, jours fériés<small>majoration annoncée à l'appel</small></span><b>+ 50 %</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec works" id="realisations">
+    <div class="wrap">
+      <div class="works-head">
+        <h2>Derniers chantiers</h2>
+        <p>Des salles de bains aux chaudières, quelques interventions récentes autour du Mans.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="ph"><img src="img/r-sdb.webp" alt="Salle de bains rénovée avec miroir lumineux" width="900" height="1350" loading="lazy" /></div><div class="body"><h3>Salle de bains complète</h3><p>Douche à l'italienne, meuble suspendu, faïence claire.</p><span class="tag">Allonnes · 6 jours</span></div></article>
+        <article class="card"><div class="ph"><img src="img/r-chaudiere.webp" alt="Réglage d'une chaudière murale" width="900" height="600" loading="lazy" /></div><div class="body"><h3>Chaudière à condensation</h3><p>Remplacement d'une chaudière de 22 ans, facture de gaz en baisse.</p><span class="tag">Coulaines · 1 jour</span></div></article>
+        <article class="card"><div class="ph"><img src="img/r-wc.webp" alt="WC suspendu dans une salle d'eau moderne" width="900" height="1350" loading="lazy" /></div><div class="body"><h3>WC suspendu</h3><p>Bâti-support, chasse double débit, finitions carrelées.</p><span class="tag">Le Mans centre · 1 jour</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="artisan">
+    <div class="wrap artisan">
+      <div class="art-photos">
+        <div class="a1"><img src="img/artisan.webp" alt="L'artisan plombier au travail dans son atelier" width="1000" height="1777" loading="lazy" /></div>
+        <div class="a2"><img src="img/tuyaux.webp" alt="" width="1400" height="1867" loading="lazy" /></div>
+      </div>
+      <div>
+        <blockquote>« Quand une pièce se répare, je la répare. Je ne vous vends pas du neuf pour rien. »</blockquote>
+        <p class="who">Julien Marceau<small>Artisan plombier chauffagiste depuis 2009</small></p>
+        <div class="labels">
+          <span><i class="ph ph-leaf" aria-hidden="true"></i>Artisan RGE</span>
+          <span><i class="ph ph-shield-check" aria-hidden="true"></i>Garantie décennale</span>
+          <span><i class="ph ph-certificate" aria-hidden="true"></i>Assurance RC pro</span>
+        </div>
+        <div class="zone">
+          <h3>On intervient à</h3>
+          <ul><li>Le Mans</li><li>Allonnes</li><li>Coulaines</li><li>Sargé-lès-le-Mans</li><li>Changé</li><li>Arnage</li><li>Mulsanne</li><li>Ruaudin</li><li>Yvré-l'Évêque</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="avis" style="padding-top:40px">
+    <div class="wrap">
+      <div class="avis-head">
+        <h2>Ce qu'en disent les voisins</h2>
+        <p class="score"><b>4,9/5</b>163 avis Google</p>
+      </div>
+      <div class="avis-grid">
+        <blockquote class="avis-main"><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><p>Fuite sous l'évier un dimanche à 21 h. Il est arrivé en 40 minutes, a réparé, et le prix était celui annoncé au téléphone.</p><footer>Caroline D.<span>Le Mans, quartier Jaurès</span></footer></blockquote>
+        <blockquote class="avis-small"><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><p>Salle de bains refaite en six jours, chantier laissé propre chaque soir.</p><footer>Patrick et Anne L.<span>Allonnes</span></footer></blockquote>
+        <blockquote class="avis-small"><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><p>Il a réparé mon chauffe-eau au lieu de le changer. 90 € au lieu de 900.</p><footer>Karim B.<span>Coulaines</span></footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact">
+    <div class="wrap ct-grid">
+      <div>
+        <h2>Une urgence, appelez directement</h2>
+        <a class="ct-phone" href="tel:+33243000003"><i class="ph-fill ph-phone" aria-hidden="true"></i>02 43 00 00 03</a>
+        <div class="ct-list">
+          <span><i class="ph ph-clock" aria-hidden="true"></i>Dépannage 7j/7, de 7 h à 23 h</span>
+          <span><i class="ph ph-map-pin" aria-hidden="true"></i>8 rue des Maillets, 72000 Le Mans</span>
+          <span><i class="ph ph-envelope-simple" aria-hidden="true"></i>contact@atelier-marceau.fr</span>
+        </div>
+      </div>
+      <form id="form" novalidate>
+        <h3>Demande de devis</h3>
+        <div class="row2">
+          <label>Nom<input name="nom" autocomplete="name" placeholder="Votre nom…" /></label>
+          <label>Téléphone<input type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" /></label>
+        </div>
+        <div class="row2">
+          <label>Commune<input name="ville" autocomplete="address-level2" placeholder="Ex. Allonnes…" /></label>
+          <label>Type de travaux<select name="travaux"><option>Dépannage</option><option>Chauffe-eau</option><option>Chaudière</option><option>Salle de bains</option><option>Autre</option></select></label>
+        </div>
+        <label>Votre besoin<textarea name="message" placeholder="Décrivez le problème ou le projet…"></textarea></label>
+        <button class="btn btn--red" type="submit" style="justify-self:start">Envoyer ma demande<i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+        <p class="form-ok" role="status" aria-live="polite">Démo : ce formulaire n'envoie rien. Sur le vrai site, la demande arrive directement par e-mail.</p>
+        <p class="form-note">Réponse sous 24 h. Vos informations servent uniquement à vous répondre.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap"><span>© <span translate="no">Atelier Marceau</span>, Le Mans</span><span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></span></div>
+</footer>
+<div class="callbar"><a href="tel:+33243000003"><i class="ph-fill ph-phone" aria-hidden="true"></i>Urgence : 02 43 00 00 03</a></div>
+
+<script>
+document.getElementById("form").addEventListener("submit", function (e) { e.preventDefault(); this.classList.add("sent"); });
+</script>
+<script src="/demo/demo-banner.js" defer></script>
+</body>
+</html>
