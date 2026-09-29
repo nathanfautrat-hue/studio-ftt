@@ -19,7 +19,6 @@ export default function Home() {
       <HeroSection />
       <PourQuiSection />
       <ApprocheSection />
-      <TarifsSection />
 
       {/* PROJETS : deux lignes qui défilent */}
       <section id="projets" className="section-y-sm" style={{ overflow: "hidden" }}>
@@ -32,6 +31,7 @@ export default function Home() {
       </section>
 
       <AproposSection />
+      <TarifsSection />
       <FaqSection />
       <ContactSection />
       <Footer />
