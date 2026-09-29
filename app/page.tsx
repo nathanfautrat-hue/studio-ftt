@@ -17,8 +17,8 @@ export default function Home() {
     <main id="contenu" className="ftt-grain" style={{ background: "var(--ftt-black)", color: "var(--ftt-cream)" }}>
       <Navbar />
       <HeroSection />
-      <PourQuiSection />
       <ApprocheSection />
+      <TarifsSection />
 
       {/* PROJETS : deux lignes qui défilent */}
       <section id="projets" className="section-y-sm" style={{ overflow: "hidden" }}>
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       <AproposSection />
-      <TarifsSection />
+      <PourQuiSection />
       <FaqSection />
       <ContactSection />
       <Footer />
