@@ -67,9 +67,9 @@ export const PROJECTS: StackProject[] = [
     id: "sigma-lift",
     name: "Sigma Lift",
     kind: "Coaching sportif en ligne",
-    tag: "Landing · Programmes & dashboard",
+    tag: "Landing · Programmes · Offres",
     blurb:
-      "Démo pour un coach sportif en ligne : design performance noir/lime, programmes, dashboard de suivi data.",
+      "Démo pour un coach sportif en ligne : noir et citron, typographie géante sur photo, programmes à faire défiler, résultats d'élèves, formules.",
     href: "/demo/sigma-lift/index.html",
     preview: <SigmaLiftPreview />,
     isDemo: true,
