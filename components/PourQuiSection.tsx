@@ -1,10 +1,12 @@
 "use client";
 
 import Reveal from "@/components/Reveal";
+import { Hammer, HeartPulse, Store, Briefcase, type LucideIcon } from "lucide-react";
 
-const PROFILES: Array<{ num: string; title: string; desc: string; href?: string; linkLabel?: string }> = [
+const PROFILES: Array<{ num: string; title: string; desc: string; href?: string; linkLabel?: string; icon: LucideIcon }> = [
   {
     num: "001",
+    icon: Hammer,
     title: "Artisans & BTP",
     desc: "Vous bossez bien, mais on vous trouve pas sur Google.",
     href: "/site-internet-artisan",
@@ -12,6 +14,7 @@ const PROFILES: Array<{ num: string; title: string; desc: string; href?: string;
   },
   {
     num: "002",
+    icon: HeartPulse,
     title: "Santé & bien-être",
     desc: "Noyé sur Doctolib, personne prend de rdv.",
     href: "/site-internet-kine",
@@ -19,6 +22,7 @@ const PROFILES: Array<{ num: string; title: string; desc: string; href?: string;
   },
   {
     num: "003",
+    icon: Store,
     title: "Commerces & services locaux",
     desc: "Le concurrent a un site clinquant, vous êtes invisible.",
     href: "/site-internet-commerce",
@@ -26,6 +30,7 @@ const PROFILES: Array<{ num: string; title: string; desc: string; href?: string;
   },
   {
     num: "004",
+    icon: Briefcase,
     title: "Consultants & coachs",
     desc: "Votre expertise vaut cher, votre site dit l'inverse.",
     href: "/site-internet-consultant",
@@ -71,71 +76,22 @@ export default function PourQuiSection() {
         </Reveal>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-10">
-        {PROFILES.map((p, i) => (
-          <Reveal key={p.num} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
-            <div
-              style={{
-                paddingTop: 24,
-                borderTop: "1px solid var(--ftt-line)",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div
-                className="font-mono"
-                style={{
-                  fontSize: 11,
-                  letterSpacing: "0.2em",
-                  color: "var(--ftt-text-dim)",
-                  marginBottom: 16,
-                }}
-              >
-                {p.num}
-              </div>
-              <h3
-                className="font-display"
-                style={{
-                  fontSize: "clamp(20px, 2.2vw, 26px)",
-                  margin: "0 0 12px",
-                  lineHeight: 1.1,
-                }}
-              >
-                {p.title}
-              </h3>
-              <p
-                style={{
-                  fontSize: 14,
-                  lineHeight: 1.55,
-                  color: "var(--ftt-text-mid)",
-                  margin: 0,
-                }}
-              >
-                {p.desc}
-              </p>
-              {p.href && (
-                <a
-                  href={p.href}
-                  className="font-mono lift"
-                  style={{
-                    display: "inline-block",
-                    marginTop: "auto",
-                    paddingTop: 14,
-                    alignSelf: "flex-start",
-                    fontSize: 11,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    color: "var(--ftt-red)",
-                    textDecoration: "none",
-                  }}
-                >
-                  {p.linkLabel} →
-                </a>
-              )}
-            </div>
-          </Reveal>
-        ))}
+      {/* Mobile : 4 cartes carrées en 2 × 2, toute la carte est cliquable. Ordinateur : 4 colonnes. */}
+      <div className="pq-grid mt-10">
+        {PROFILES.map((p, i) => {
+          const Icon = p.icon;
+          return (
+            <Reveal key={p.num} delay={(Math.min(i + 1, 3) as 1 | 2 | 3)}>
+              <a href={p.href} className="pq-card" aria-label={`${p.title} : ${p.linkLabel}`}>
+                <span className="pq-num font-mono">{p.num}</span>
+                <Icon className="pq-icon" aria-hidden="true" strokeWidth={1.75} />
+                <h3 className="font-display pq-title">{p.title}</h3>
+                <p className="pq-desc">{p.desc}</p>
+                <span className="pq-link font-mono">{p.linkLabel} →</span>
+              </a>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );
