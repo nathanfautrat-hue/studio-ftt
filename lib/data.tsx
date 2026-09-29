@@ -99,10 +99,10 @@ export const PROJECTS: StackProject[] = [
   {
     id: "consultant",
     name: "Tangente Conseil",
-    kind: "Consultant indépendant",
-    tag: "Site vitrine · Accompagnement",
+    kind: "Consultant pour TPE",
+    tag: "Site vitrine · Audit · Contact",
     blurb:
-      "Démo pour un consultant qui accompagne les dirigeants de PME : dégradé vivant qui suit la souris, offres claires, prise de contact.",
+      "Démo pour un consultant qui réduit les charges sociales des TPE : badges chiffrés sur photo, compteur des sommes récupérées, paiement au résultat.",
     href: "/demo/consultant/index.html",
     preview: <ConsultantPreview />,
     isDemo: true,

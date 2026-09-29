@@ -97,8 +97,8 @@ export function ConsultantPreview() {
   return (
     <StaticPreview
       src="/preview-consultant.webp"
-      alt="Aperçu de la démo Tangente Conseil, consultant indépendant"
-      bg="#f2ece2"
+      alt="Aperçu de la démo Tangente Conseil, consultant pour TPE"
+      bg="#0f2a30"
     />
   );
 }
