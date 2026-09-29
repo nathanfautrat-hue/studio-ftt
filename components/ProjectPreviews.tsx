@@ -48,7 +48,7 @@ export function GarageKlaxPreview() {
     <StaticPreview
       src="/preview-klax.webp"
       alt="Aperçu de la démo Garage Klax, garage indépendant"
-      bg="#F7F5F0"
+      bg="#eeede9"
     />
   );
 }

@@ -56,9 +56,9 @@ export const PROJECTS: StackProject[] = [
     id: "garage-klax",
     name: "Garage Klax",
     kind: "Garage indépendant",
-    tag: "Site vitrine · Forfaits affichés",
+    tag: "Site vitrine · Prix affichés",
     blurb:
-      "Démo pour un garage indépendant en Sarthe : design industriel brut, forfaits affichés, devis en ligne.",
+      "Démo pour un garage indépendant : jaune atelier, voiture détourée qui arrive en roulant, prix affichés, galerie de l'atelier, avis clients.",
     href: "/demo/garage-klax/index.html",
     preview: <GarageKlaxPreview />,
     isDemo: true,

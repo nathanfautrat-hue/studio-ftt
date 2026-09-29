@@ -1,484 +1,391 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Garage Klax — Mécanique, entretien, carrosserie · Sarthe</title>
-<meta name="description" content="Garage indépendant en Sarthe. Mécanique générale, entretien, carrosserie, contrôle technique. Forfaits affichés, devis gratuit, +500 véhicules réparés en 30 ans." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex,nofollow" />
+<title>Garage Klax · Garage indépendant toutes marques à Sablé-sur-Sarthe (démo)</title>
+<meta name="description" content="Démo Studio FTT : site d'un garage indépendant toutes marques. Entretien, freinage, pneus, diagnostic, prix affichés et devis avant intervention." />
+<meta name="theme-color" content="#161616" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="preload" as="image" href="img/voiture.webp" />
 <style>
 :root{
-  --bg:#F7F5F0;
-  --bg-card:#FFFFFF;
-  --bg-dark:#161616;
-  --bg-darker:#0E0E0E;
-  --ink:#1A1A1A;
-  --ink-soft:#3A3A3A;
-  --ink-mute:#6F6F6F;
-  --line:rgba(26,26,26,0.1);
-  --yellow:#F4C430;
-  --yellow-dark:#D9A800;
+  --bg:#eeede9; --bg-2:#e3e1db; --ink:#141414; --ink-2:#4a4a47; --dark:#161616; --dark-2:#222220;
+  --yellow:#ffc21a; --orange:#f07f1a; --line:rgba(20,20,20,.12);
+  --display:"Barlow Condensed",ui-sans-serif,system-ui,sans-serif;
+  --body:"Barlow",ui-sans-serif,system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;}
-img{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-button{font-family:inherit;border:0;background:none;cursor:pointer;color:inherit;}
-::selection{background:var(--yellow);color:var(--ink);}
-::-webkit-scrollbar{width:10px;height:10px;}
-::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:var(--ink);border:2px solid var(--bg);}
-.container{max-width:1240px;margin:0 auto;padding:0 24px;}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+[id]{scroll-margin-top:24px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--yellow);color:var(--ink)}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+img{display:block;max-width:100%}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-.005em;line-height:.92;text-wrap:balance}
+h2{font-size:clamp(42px,5.4vw,76px)}
+.hl{background:var(--yellow);color:var(--ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.sec{padding:120px 0}
+@media (max-width:760px){.sec{padding:80px 0}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--yellow);padding:10px 14px;border-radius:6px;z-index:100}
+.skip:focus{left:8px}
+.stripes{display:flex;gap:6px}
+.stripes i{width:26px;height:10px;background:var(--orange);transform:skewX(-30deg)}
+.stripes i:nth-child(2){opacity:.75}.stripes i:nth-child(3){opacity:.5}.stripes i:nth-child(4){opacity:.3}
 
-.display{font-family:"Barlow Condensed",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.005em;line-height:.95;}
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 24px;border-radius:8px;font:700 17px/1 var(--display);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;border:0;cursor:pointer;white-space:nowrap;
+  transition:transform .3s var(--ease),background-color .2s,color .2s}
+.btn i{font-size:20px;transition:transform .3s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover i{transform:translateX(3px)}
+.btn:active{transform:scale(.98)}
+.btn--ink{background:var(--ink);color:#fff}
+.btn--ink:hover{background:#2c2c2a}
+.btn--yellow{background:var(--yellow);color:var(--ink)}
+.btn--yellow:hover{background:#ffd04d}
+.btn--line{box-shadow:inset 0 0 0 2px var(--ink);color:var(--ink)}
+.btn--line:hover{background:var(--ink);color:#fff}
 
-/* ========== Studio FTT bar ========== */
-.ftt-bar{background:var(--bg-darker);color:#9C9C9C;padding:10px 0;font-size:11px;letter-spacing:.22em;text-transform:uppercase;}
-.ftt-bar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
-.ftt-bar a{color:var(--yellow);font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:opacity .2s;}
-.ftt-bar a:hover{opacity:.7;}
-.ftt-bar .arrow{display:inline-block;transform:rotate(180deg);}
+/* ============ NAV ============ */
+.nav{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;height:84px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 26px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.logo span{display:grid;place-items:center;width:38px;height:38px;background:var(--yellow);border-radius:8px;font-size:22px}
+.nav-links{display:none;gap:30px;font-weight:600;font-size:15px}
+.nav-links a{text-decoration:none;color:var(--ink-2);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav .btn{min-height:46px;padding:0 18px;font-size:15px}
+@media (min-width:960px){.nav-links{display:flex}}
+@media (max-width:480px){.nav .btn .lbl{display:none}.nav .btn{padding:0 14px}}
 
-/* ========== demo banner ========== */
-.demo-banner{background:var(--yellow);color:var(--ink);padding:8px 0;text-align:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;}
+/* ============ HERO ============ */
+.hero{position:relative;overflow:hidden}
+.hero-grid{display:grid;gap:10px;align-items:center;padding-top:30px;padding-bottom:70px}
+.hero h1{font-size:clamp(58px,7.6vw,116px)}
+.hero-sub{margin-top:26px;max-width:44ch;font-size:clamp(17px,1.4vw,19px);color:var(--ink-2)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-stats{margin-top:44px;display:flex;flex-wrap:wrap;gap:0}
+.hero-stats div{padding:0 26px;box-shadow:-1px 0 0 var(--line)}
+.hero-stats div:first-child{padding-left:0;box-shadow:none}
+.hero-stats b{display:block;font:800 40px/1 var(--display)}
+.hero-stats span{font-size:14px;color:var(--ink-2)}
+.stage{position:relative;height:clamp(300px,40vw,540px)}
+.slab{position:absolute;inset:0 -30vw 0 12%;background:var(--yellow);clip-path:polygon(22% 0,100% 0,100% 100%,0 100%);border-radius:0}
+.ghost{position:absolute;right:-2%;top:2%;font:800 clamp(220px,30vw,440px)/.8 var(--display);color:rgba(20,20,20,.09);letter-spacing:-.04em;user-select:none}
+.car{position:absolute;left:-2%;bottom:4%;width:106%;height:auto;max-width:none;filter:drop-shadow(0 30px 30px rgba(20,20,20,.25))}
+.stage .stripes{position:absolute;right:4%;bottom:5%}
+.chip{position:absolute;left:14%;top:6%;background:var(--dark);color:#fff;border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:12px;font-size:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.chip i{font-size:26px;color:var(--yellow)}
+.chip b{display:block;font:700 20px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+@media (min-width:960px){.hero-grid{grid-template-columns:1fr 1.1fr;gap:20px}}
+@media (max-width:959px){.stage{margin:0 -20px}.slab{inset:10% 0 0 0;clip-path:polygon(12% 0,100% 0,100% 100%,0 100%)}.car{left:2%;width:96%;bottom:2%}.chip{left:auto;right:16px;top:0}}
+@media (prefers-reduced-motion:no-preference){
+  .car{animation:drive 1.5s var(--ease) .2s both}
+  @keyframes drive{from{transform:translateX(60%)}70%{transform:translateX(-1.5%)}to{transform:none}}
+  .rise{opacity:0;transform:translateY(22px);animation:rise 1s var(--ease) forwards}
+  .rise.d1{animation-delay:.1s}.rise.d2{animation-delay:.2s}.rise.d3{animation-delay:.3s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
 
-/* ========== NAV ========== */
-.nav{position:sticky;top:0;z-index:50;background:rgba(247,245,240,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:24px;}
-.brand{display:flex;align-items:center;gap:12px;}
-.brand-mark{width:40px;height:40px;background:var(--ink);color:var(--yellow);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:"Barlow Condensed";font-weight:800;font-size:24px;letter-spacing:-.02em;}
-.brand-text{display:flex;flex-direction:column;line-height:1;}
-.brand-name{font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:.01em;}
-.brand-tag{font-size:10px;color:var(--ink-mute);letter-spacing:.2em;text-transform:uppercase;margin-top:3px;font-weight:500;}
-.nav-links{display:none;gap:32px;font-size:14px;font-weight:500;color:var(--ink-soft);}
-.nav-links a{transition:color .2s;}
-.nav-links a:hover{color:var(--ink);}
-.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:10px 18px;font-weight:600;font-size:13px;letter-spacing:.02em;transition:background .2s;}
-.nav-cta:hover{background:#000;}
-@media (min-width:900px){.nav-links{display:flex;}}
+/* ============ MARQUES ============ */
+.brands{border-block:1px solid var(--line);padding:26px 0}
+.brands .wrap{display:flex;align-items:center;gap:28px 44px;flex-wrap:wrap;justify-content:space-between}
+.brands p{font:700 18px/1.1 var(--display);text-transform:uppercase;letter-spacing:.04em;max-width:12ch}
+.brands ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:22px 38px;align-items:center}
+.brands img{height:28px;width:auto;opacity:.72;transition:opacity .2s}
+.brands img:hover{opacity:1}
 
-/* ========== HERO ========== */
-.hero{padding:64px 0 88px;background:var(--bg);}
-.hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;}
-@media (min-width:900px){.hero-grid{grid-template-columns:1.1fr 1fr;gap:64px;}}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;margin-bottom:24px;}
-.hero-eyebrow::before{content:"";display:inline-block;width:32px;height:2px;background:var(--yellow);}
-.hero-title{font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;font-size:clamp(44px,6vw,80px);line-height:.95;letter-spacing:-.01em;margin-bottom:24px;}
-.hero-title .accent{position:relative;display:inline-block;}
-.hero-title .accent::after{content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:14px;background:var(--yellow);z-index:-1;}
-.hero-sub{font-size:18px;color:var(--ink-soft);max-width:520px;margin-bottom:36px;line-height:1.6;}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px;}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;font-weight:600;font-size:15px;letter-spacing:.01em;transition:transform .15s,background .15s,color .15s;cursor:pointer;border:2px solid transparent;}
-.btn-primary{background:var(--ink);color:var(--bg);border-color:var(--ink);}
-.btn-primary:hover{background:transparent;color:var(--ink);}
-.btn-secondary{background:transparent;color:var(--ink);border-color:var(--ink);}
-.btn-secondary:hover{background:var(--yellow);border-color:var(--yellow);}
-.hero-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center;font-size:13px;color:var(--ink-mute);font-weight:500;}
-.hero-trust strong{color:var(--ink);font-weight:700;}
-.hero-trust .sep{width:4px;height:4px;border-radius:50%;background:var(--ink-mute);}
-.hero-img-wrap{position:relative;}
-.hero-img{aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#222;}
-.hero-img img{width:100%;height:100%;object-fit:cover;}
-.hero-floating{position:absolute;left:-16px;bottom:-16px;background:var(--yellow);color:var(--ink);padding:18px 22px;display:flex;flex-direction:column;gap:2px;box-shadow:0 12px 30px rgba(0,0,0,.18);}
-.hero-floating .num{font-family:"Barlow Condensed";font-weight:800;font-size:36px;line-height:1;}
-.hero-floating .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;}
-.hero-stamp{position:absolute;top:18px;right:-14px;background:var(--ink);color:var(--yellow);padding:10px 14px;font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.1em;transform:rotate(4deg);box-shadow:0 6px 20px rgba(0,0,0,.2);}
+/* ============ SERVICES (sombre) ============ */
+.services{background:var(--dark);color:#fff}
+.srv-grid{display:grid;gap:56px}
+.srv-head h2 .hl{color:var(--ink)}
+.srv-head p{margin-top:22px;color:rgba(255,255,255,.72);max-width:42ch;font-size:18px}
+.srv-head .btn{margin-top:30px}
+.srv-photo{margin-top:40px;border-radius:12px;overflow:hidden;aspect-ratio:4/3;max-width:460px;position:relative}
+.srv-photo img{width:100%;height:100%;object-fit:cover}
+.srv-photo figcaption{position:absolute;left:0;bottom:0;background:var(--yellow);color:var(--ink);padding:14px 18px;font:700 18px/1.1 var(--display);text-transform:uppercase;border-top-right-radius:10px}
+.srv-list{list-style:none;padding:0;display:grid;gap:10px}
+.srv{display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:center;padding:18px;border-radius:12px;background:var(--dark-2);transition:background-color .25s}
+.srv:hover{background:#2b2b28}
+.srv .ic{width:56px;height:56px;border-radius:10px;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font-size:28px}
+.srv h3{font-size:26px;line-height:1}
+.srv p{font-size:14px;color:rgba(255,255,255,.66);margin-top:4px}
+.srv .price{text-align:right;font:800 30px/1 var(--display);color:var(--yellow);white-space:nowrap}
+.srv .price small{display:block;font:500 12px/1.2 var(--body);color:rgba(255,255,255,.6);text-transform:none}
+@media (min-width:960px){.srv-grid{grid-template-columns:1fr 1.2fr;gap:80px}}
+@media (max-width:520px){.srv{grid-template-columns:48px 1fr;}.srv .ic{width:48px;height:48px;font-size:24px}.srv .price{grid-column:2;text-align:left}}
 
-/* ========== Stats dark band ========== */
-.stats{background:var(--bg-dark);color:#F0F0F0;padding:64px 0;}
-.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px;}
-@media (min-width:800px){.stats-grid{grid-template-columns:repeat(4,1fr);}}
-.stat{display:flex;flex-direction:column;gap:8px;border-left:2px solid var(--yellow);padding-left:18px;}
-.stat-num{font-family:"Barlow Condensed";font-weight:800;font-size:clamp(40px,5vw,56px);line-height:1;color:var(--yellow);letter-spacing:-.01em;}
-.stat-label{font-size:13px;color:#C8C8C8;letter-spacing:.05em;font-weight:500;line-height:1.4;}
+/* ============ GALERIE (coverflow) ============ */
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.gal-head p{color:var(--ink-2);max-width:40ch}
+.flow{position:relative;height:clamp(260px,38vw,520px);margin-top:48px}
+.slide{position:absolute;left:50%;top:50%;width:min(62vw,760px);aspect-ratio:16/10;border-radius:16px;overflow:hidden;background:var(--bg-2);
+  transform:translate(-50%,-50%) translateX(calc(var(--o) * 58%)) scale(calc(1 - var(--d) * .26));opacity:calc(1 - var(--d) * .35);z-index:calc(10 - var(--d));
+  transition:transform .7s var(--ease),opacity .5s;box-shadow:0 30px 60px -30px rgba(20,20,20,.5);cursor:pointer}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide[data-d="0"]{cursor:default}
+.slide[data-hide]{opacity:0;pointer-events:none}
+.flow-ctl{margin-top:34px;display:flex;justify-content:center;align-items:center;gap:18px}
+.flow-ctl button{width:52px;height:52px;border-radius:8px;border:0;background:var(--ink);color:#fff;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:background-color .2s,transform .25s var(--ease)}
+.flow-ctl button:hover{background:var(--orange)}
+.flow-ctl button:active{transform:scale(.96)}
+.flow-cap{min-width:220px;text-align:center;font:700 20px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+@media (max-width:700px){.slide{width:80vw}}
+@media (prefers-reduced-motion:reduce){.slide{transition:none}}
 
-/* ========== Section base ========== */
-.section{padding:96px 0;}
-.section-light{background:var(--bg);}
-.section-white{background:var(--bg-card);}
-.section-h{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:56px;}
-.section-h .eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--yellow-dark);font-weight:700;margin-bottom:14px;}
-.section-h h2{font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;font-size:clamp(36px,5vw,56px);line-height:1;letter-spacing:-.01em;max-width:780px;}
-.section-h .lead{margin-top:18px;font-size:17px;color:var(--ink-soft);max-width:600px;line-height:1.6;}
+/* ============ POURQUOI ============ */
+.why{background:var(--bg-2)}
+.why-grid{display:grid;gap:56px;align-items:center}
+.why-photo{position:relative;max-width:560px}
+.why-photo .ph{border-radius:12px;overflow:hidden;aspect-ratio:4/5}
+.why-photo .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.why-block{position:absolute;right:-24px;bottom:-28px;background:var(--yellow);border-radius:12px;padding:24px;max-width:280px;box-shadow:0 30px 50px -30px rgba(20,20,20,.5)}
+.why-block i{font-size:34px}
+.why-block b{display:block;margin-top:10px;font:800 28px/1 var(--display);text-transform:uppercase}
+.why-block span{display:block;margin-top:8px;font-size:15px}
+.why-list{margin-top:36px;list-style:none;padding:0;display:grid;gap:22px}
+.why-list li{display:grid;grid-template-columns:48px 1fr;gap:16px}
+.why-list i{width:48px;height:48px;border-radius:10px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;font-size:24px}
+.why-list b{display:block;font:700 22px/1.1 var(--display);text-transform:uppercase}
+.why-list span{color:var(--ink-2);font-size:15px}
+@media (min-width:960px){.why-grid{grid-template-columns:1fr 1fr;gap:100px}}
+@media (max-width:600px){.why-block{right:-8px;bottom:-24px;max-width:240px;padding:18px}}
 
-/* ========== SERVICES ========== */
-.services-grid{display:grid;grid-template-columns:1fr;gap:18px;}
-@media (min-width:700px){.services-grid{grid-template-columns:repeat(2,1fr);}}
-@media (min-width:1000px){.services-grid{grid-template-columns:repeat(3,1fr);}}
-.service{background:var(--bg-card);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;}
-.service:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(0,0,0,.18);}
-.service-img{aspect-ratio:16/10;overflow:hidden;background:#222;}
-.service-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-.service:hover .service-img img{transform:scale(1.05);}
-.service-body{padding:24px 24px 28px;}
-.service-tag{display:inline-block;background:var(--yellow);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;margin-bottom:14px;}
-.service-title{font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;font-size:24px;letter-spacing:.01em;margin-bottom:8px;}
-.service-desc{font-size:15px;color:var(--ink-soft);line-height:1.6;}
+/* ============ AVIS ============ */
+.reviews-band{background:var(--yellow)}
+.rev-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.rev-head .score{font:800 64px/1 var(--display)}
+.rev-head .score small{display:block;font:500 15px/1.3 var(--body)}
+.revs{margin-top:44px;display:grid;gap:14px}
+.rev{background:#fff;border-radius:12px;padding:28px;display:grid;gap:16px;align-content:space-between}
+.rev .stars{color:var(--orange);display:flex;gap:2px;font-size:18px}
+.rev p{font-size:17px;line-height:1.5}
+.rev footer{font-weight:600;font-size:15px}
+.rev footer span{display:block;font-weight:400;color:var(--ink-2);font-size:14px}
+@media (min-width:900px){.revs{grid-template-columns:repeat(3,1fr)}.rev:nth-child(2){transform:translateY(24px)}}
 
-/* ========== TARIFS ========== */
-.tarifs-wrap{max-width:880px;margin:0 auto;background:var(--bg-card);border:1px solid var(--line);}
-.tarif-row{display:grid;grid-template-columns:1fr auto;gap:24px;padding:20px 28px;border-bottom:1px solid var(--line);align-items:center;transition:background .15s;}
-.tarif-row:last-child{border-bottom:0;}
-.tarif-row:hover{background:#FBF8EE;}
-.tarif-name{font-weight:500;font-size:16px;color:var(--ink);}
-.tarif-name small{display:block;font-size:13px;color:var(--ink-mute);font-weight:400;margin-top:2px;}
-.tarif-price{font-family:"Barlow Condensed";font-weight:800;color:var(--ink);font-size:22px;letter-spacing:.01em;white-space:nowrap;}
-.tarif-price .y{background:var(--yellow);padding:2px 8px;}
-.tarif-note{text-align:center;margin-top:24px;color:var(--ink-mute);font-size:14px;font-style:italic;}
-
-/* ========== AVIS ========== */
-.avis-grid{display:grid;grid-template-columns:1fr;gap:20px;}
-@media (min-width:900px){.avis-grid{grid-template-columns:repeat(3,1fr);}}
-.avis{background:var(--bg-card);padding:32px 28px;border:1px solid var(--line);position:relative;}
-.avis-stars{color:var(--yellow);font-size:14px;letter-spacing:3px;margin-bottom:16px;}
-.avis-text{font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:24px;font-weight:500;}
-.avis-author{display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:18px;}
-.avis-avatar{width:42px;height:42px;border-radius:50%;background:var(--yellow);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:"Barlow Condensed";font-weight:800;font-size:18px;}
-.avis-name{font-weight:700;font-size:14px;}
-.avis-role{font-size:12px;color:var(--ink-mute);letter-spacing:.05em;}
-.google-rating{margin-top:48px;display:flex;justify-content:center;}
-.google-rating .pill{display:inline-flex;align-items:center;gap:14px;background:var(--bg-card);border:1px solid var(--line);padding:14px 22px;}
-.google-rating .star{color:var(--yellow);font-size:18px;}
-.google-rating .score{font-family:"Barlow Condensed";font-weight:800;font-size:22px;}
-.google-rating .meta{font-size:13px;color:var(--ink-mute);}
-
-/* ========== GALERIE ATELIER ========== */
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;}
-@media (min-width:900px){.gallery{grid-template-columns:repeat(4,1fr);}}
-.gallery-cell{aspect-ratio:1/1;overflow:hidden;background:#222;position:relative;}
-.gallery-cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .3s;}
-.gallery-cell:hover img{transform:scale(1.06);}
-.gallery-cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.35) 100%);pointer-events:none;}
-
-/* ========== CONTACT ========== */
-.contact-grid{display:grid;grid-template-columns:1fr;gap:32px;}
-@media (min-width:900px){.contact-grid{grid-template-columns:1.1fr 1fr;gap:48px;}}
-.contact-info{background:var(--bg-card);border:1px solid var(--line);padding:36px 32px;}
-.contact-h{font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;font-size:30px;line-height:1;margin-bottom:8px;}
-.contact-sub{color:var(--ink-soft);font-size:15px;margin-bottom:28px;line-height:1.6;}
-.contact-row{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);}
-.contact-row:last-of-type{border-bottom:0;padding-bottom:0;}
-.contact-row .ico{width:40px;height:40px;background:var(--yellow);color:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.contact-row .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--ink-mute);margin-bottom:4px;font-weight:600;}
-.contact-row .val{font-size:16px;font-weight:500;color:var(--ink);line-height:1.5;}
-.contact-row .val a{color:var(--ink);}
-.contact-row .val a:hover{color:var(--yellow-dark);}
-.contact-call{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--ink);color:var(--bg);padding:18px;font-weight:700;font-size:15px;letter-spacing:.02em;margin-top:24px;transition:background .2s;}
-.contact-call:hover{background:#000;}
-.map-wrap{aspect-ratio:4/3;overflow:hidden;background:#E5E5E5;border:1px solid var(--line);}
-.map-wrap iframe{width:100%;height:100%;filter:grayscale(.6) contrast(1.05);border:0;}
-@media (min-width:900px){.map-wrap{aspect-ratio:auto;height:100%;min-height:520px;}}
-
-/* ========== FOOTER ========== */
-.footer{background:var(--bg-darker);color:#9C9C9C;padding:64px 0 32px;}
-.footer-content{display:grid;grid-template-columns:1fr;gap:36px;}
-@media (min-width:800px){.footer-content{grid-template-columns:2fr 1fr 1fr;}}
-.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
-.footer .brand-mark{background:var(--yellow);color:var(--ink);}
-.footer .brand-name{color:#F0F0F0;}
-.footer .brand-tag{color:#777;}
-.footer-text{font-size:14px;line-height:1.7;color:#9C9C9C;}
-.footer-h{font-weight:700;color:var(--yellow);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;}
-.footer-l{font-size:14px;line-height:2;color:#9C9C9C;}
-.footer-l a:hover{color:var(--yellow);}
-.footer-bottom{border-top:1px solid #2A2A2A;margin-top:40px;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;letter-spacing:.05em;color:#666;}
-.footer-bottom a{color:var(--yellow);}
-
-/* ========== Mobile sticky ========== */
-.sticky-call{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--yellow);padding:14px;text-align:center;font-weight:700;font-size:15px;letter-spacing:.05em;z-index:100;display:flex;align-items:center;justify-content:center;gap:8px;border-top:3px solid var(--yellow);}
-@media (min-width:900px){.sticky-call{display:none;}}
-@media (max-width:899px){body{padding-bottom:64px;}}
+/* ============ CONTACT ============ */
+.contact{background:var(--dark);color:#fff}
+.ct-grid{display:grid;gap:48px}
+.ct-info{margin-top:32px;display:grid;gap:24px}
+.ct-row{display:grid;grid-template-columns:28px 1fr;gap:14px}
+.ct-row i{font-size:26px;color:var(--yellow)}
+.ct-row b{display:block;font:700 20px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.ct-row span,.ct-row a{color:rgba(255,255,255,.8)}
+.hours{display:grid;grid-template-columns:auto auto;gap:4px 24px;font-size:15px;color:rgba(255,255,255,.8);margin-top:6px}
+form{background:var(--dark-2);border-radius:14px;padding:30px;display:grid;gap:16px}
+form h3{font-size:32px}
+label{display:grid;gap:6px;font-weight:600;font-size:14px}
+input,select,textarea{font:500 16px/1.4 var(--body);color:#fff;background:#111110;border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:13px 14px;width:100%;transition:border-color .2s,box-shadow .2s}
+select{color-scheme:dark}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,194,26,.25)}
+input::placeholder,textarea::placeholder{color:#a3a39c}
+textarea{min-height:100px;resize:vertical}
+.row2{display:grid;gap:16px}
+@media (min-width:600px){.row2{grid-template-columns:1fr 1fr}}
+.form-ok{display:none;font-weight:600;color:var(--yellow)}
+form.sent .form-ok{display:block}
+.form-note{font-size:13px;color:rgba(255,255,255,.62)}
+@media (min-width:960px){.ct-grid{grid-template-columns:1fr 1.1fr;gap:90px}}
+footer.site{background:var(--dark);color:rgba(255,255,255,.6);font-size:14px;padding:26px 0 36px;border-top:1px solid rgba(255,255,255,.1)}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.btn i{transition:none}}
 </style>
-  <script src="/demo/demo-banner.js" defer></script>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 
-
-<!-- demo banner -->
-
-<!-- NAV -->
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="#" class="brand">
-      <span class="brand-mark">K</span>
-      <span class="brand-text">
-        <span class="brand-name">Garage Klax</span>
-        <span class="brand-tag">Mécanique · Sarthe</span>
-      </span>
-    </a>
-    <nav class="nav-links">
-      <a href="#services">Nos services</a>
+<header class="hero">
+  <div class="wrap nav">
+    <a class="logo" href="#"><span><i class="ph-fill ph-wrench" aria-hidden="true"></i></span><span translate="no" style="all:unset">Klax</span></a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="#services">Services et prix</a>
+      <a href="#atelier">L'atelier</a>
       <a href="#avis">Avis</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="nav-cta">Devis gratuit →</a>
+    <a class="btn btn--ink" href="tel:+33243000002"><i class="ph-fill ph-phone" aria-hidden="true"></i><span class="lbl">02 43 00 00 02</span></a>
+  </div>
+
+  <div class="wrap hero-grid" id="contenu">
+    <div>
+      <h1 class="rise">Réparé vite, <span class="hl">facturé juste</span></h1>
+      <p class="hero-sub rise d1">Garage indépendant toutes marques à Sablé-sur-Sarthe. Un devis clair avant chaque intervention, même pour les voitures que les autres ne veulent plus toucher.</p>
+      <div class="hero-ctas rise d2">
+        <a class="btn btn--ink" href="#contact">Demander un devis<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn--line" href="#services">Voir les prix</a>
+      </div>
+      <div class="hero-stats rise d3">
+        <div><b>32 ans</b><span>d'atelier</span></div>
+        <div><b>4,8/5</b><span>214 avis Google</span></div>
+        <div><b>72 h</b><span>délai moyen</span></div>
+      </div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="slab"></div>
+      <div class="ghost">72</div>
+      <img class="car" src="img/voiture.webp" alt="" width="1200" height="704" fetchpriority="high" />
+      <div class="chip"><i class="ph-fill ph-seal-check"></i><div><b>Devis gratuit</b>avant toute réparation</div></div>
+      <div class="stripes"><i></i><i></i><i></i><i></i></div>
+    </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="hero-eyebrow">Garage indépendant · Sarthe depuis 1994</div>
-      <h1 class="hero-title">Une mécanique <span class="accent">honnête</span>,<br />sans mauvaise surprise.</h1>
-      <p class="hero-sub">Entretien, mécanique générale, carrosserie, contrôle technique. Forfaits affichés à l'accueil — vous savez ce que vous payez avant qu'on touche à la voiture.</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Demander un devis →</a>
-        <a href="tel:+33000000000" class="btn btn-secondary">📞 02 43 00 00 00</a>
-      </div>
-      <div class="hero-trust">
-        <span><strong>★ 4,8/5</strong> — 127 avis Google</span>
-        <span class="sep"></span>
-        <span><strong>Devis gratuit</strong> sous 24 h</span>
-        <span class="sep"></span>
-        <span><strong>CB · Chèques vacances auto</strong></span>
-      </div>
-    </div>
-    <div class="hero-img-wrap">
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900&q=85" alt="Mécanicien au travail dans l'atelier Garage Klax" loading="eager" />
-      </div>
-      <div class="hero-stamp">Indé · 1994</div>
-      <div class="hero-floating">
-        <span class="num">+500</span>
-        <span class="lbl">Véhicules / an</span>
-      </div>
-    </div>
+<section class="brands" aria-label="Marques entretenues">
+  <div class="wrap">
+    <p>Toutes marques, toutes années</p>
+    <ul>
+      <li><img src="https://cdn.simpleicons.org/renault/141414" alt="Renault" width="28" height="28" loading="lazy" /></li>
+      <li><img src="https://cdn.simpleicons.org/peugeot/141414" alt="Peugeot" width="28" height="28" loading="lazy" /></li>
+      <li><img src="https://cdn.simpleicons.org/citroen/141414" alt="Citroën" width="28" height="28" loading="lazy" /></li>
+      <li><img src="https://cdn.simpleicons.org/dacia/141414" alt="Dacia" width="28" height="28" loading="lazy" /></li>
+      <li><img src="https://cdn.simpleicons.org/volkswagen/141414" alt="Volkswagen" width="28" height="28" loading="lazy" /></li>
+      <li><img src="https://cdn.simpleicons.org/toyota/141414" alt="Toyota" width="28" height="28" loading="lazy" /></li>
+      <li><img src="https://cdn.simpleicons.org/ford/141414" alt="Ford" width="28" height="28" loading="lazy" /></li>
+      <li><img src="https://cdn.simpleicons.org/bmw/141414" alt="BMW" width="28" height="28" loading="lazy" /></li>
+    </ul>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat">
-      <span class="stat-num">30 ans</span>
-      <span class="stat-label">D'expérience<br />dans le métier</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">+500</span>
-      <span class="stat-label">Véhicules<br />réparés par an</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">48 h</span>
-      <span class="stat-label">Délai moyen<br />sur entretien</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">100 %</span>
-      <span class="stat-label">Indépendant —<br />zéro franchise</span>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section section-light">
-  <div class="container">
-    <div class="section-h">
-      <span class="eyebrow">Nos prestations</span>
-      <h2>De l'entretien courant à la grosse réparation.</h2>
-      <p class="lead">Trois mécanos, deux ponts, un atelier carrosserie ventilé. Toutes marques, toutes générations.</p>
-    </div>
-    <div class="services-grid">
-      <article class="service">
-        <div class="service-img"><img src="https://images.pexels.com/photos/13065691/pexels-photo-13065691.jpeg?w=700&auto=compress" alt="Vidange moteur et filtres" loading="lazy" /></div>
-        <div class="service-body">
-          <span class="service-tag">Entretien régulier</span>
-          <h3 class="service-title">Vidange &amp; filtres</h3>
-          <p class="service-desc">Vidange moteur, filtres à huile, à air, à habitacle. Distribution, bougies, plaquettes — tout l'entretien périodique.</p>
-        </div>
-      </article>
-      <article class="service">
-        <div class="service-img"><img src="https://images.pexels.com/photos/6870307/pexels-photo-6870307.jpeg?w=700&auto=compress" alt="Mécanique freins suspension" loading="lazy" /></div>
-        <div class="service-body">
-          <span class="service-tag">Toutes marques</span>
-          <h3 class="service-title">Mécanique générale</h3>
-          <p class="service-desc">Freins, embrayage, suspension, direction, courroie. Pièces d'origine ou équivalent qualité, garantie 12 mois.</p>
-        </div>
-      </article>
-      <article class="service">
-        <div class="service-img"><img src="https://images.pexels.com/photos/13065689/pexels-photo-13065689.jpeg?w=700&auto=compress" alt="Diagnostic électronique OBD multi-marques" loading="lazy" /></div>
-        <div class="service-body">
-          <span class="service-tag">Diagnostic OBD</span>
-          <h3 class="service-title">Électronique auto</h3>
-          <p class="service-desc">Lecture OBD multi-marques, capteurs, batterie, alternateur. On localise la panne avant de remplacer.</p>
-        </div>
-      </article>
-      <article class="service">
-        <div class="service-img"><img src="https://images.pexels.com/photos/4489731/pexels-photo-4489731.jpeg?w=700&auto=compress" alt="Carrosserie soudure et réparation" loading="lazy" /></div>
-        <div class="service-body">
-          <span class="service-tag">Soudure · Peinture</span>
-          <h3 class="service-title">Carrosserie</h3>
-          <p class="service-desc">Débosselage, peinture, réparation chocs. Prise en charge assurance possible — on s'occupe du dossier.</p>
-        </div>
-      </article>
-      <article class="service">
-        <div class="service-img"><img src="https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?w=700&auto=compress" alt="Contrôle technique pré-CT" loading="lazy" /></div>
-        <div class="service-body">
-          <span class="service-tag">Pré-contrôle</span>
-          <h3 class="service-title">Contrôle technique</h3>
-          <p class="service-desc">Préparation et remise en conformité. On corrige juste ce qui bloque — pas de pièces remplacées sans raison.</p>
-        </div>
-      </article>
-      <article class="service">
-        <div class="service-img"><img src="https://images.pexels.com/photos/4489734/pexels-photo-4489734.jpeg?w=700&auto=compress" alt="Pneus jante et géométrie" loading="lazy" /></div>
-        <div class="service-body">
-          <span class="service-tag">Géométrie 3D</span>
-          <h3 class="service-title">Pneumatiques</h3>
-          <p class="service-desc">Montage, équilibrage, géométrie 3D. Toutes marques, toutes dimensions, stockage hivernal possible.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-<!-- GALERIE ATELIER -->
-<section class="gallery">
-  <div class="gallery-cell"><img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=700&q=80" alt="Mécanicien à l'atelier" loading="lazy" /></div>
-  <div class="gallery-cell"><img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=700&q=80" alt="Moteur et courroies" loading="lazy" /></div>
-  <div class="gallery-cell"><img src="https://images.pexels.com/photos/6870310/pexels-photo-6870310.jpeg?w=700&auto=compress" alt="Polissage carrosserie" loading="lazy" /></div>
-  <div class="gallery-cell"><img src="https://images.pexels.com/photos/6870324/pexels-photo-6870324.jpeg?w=700&auto=compress" alt="Mécanicien inspectant véhicule" loading="lazy" /></div>
-</section>
-
-<!-- AVIS -->
-<section id="avis" class="section section-light">
-  <div class="container">
-    <div class="section-h">
-      <span class="eyebrow">Témoignages</span>
-      <h2>Ils en parlent mieux que nous.</h2>
-    </div>
-    <div class="avis-grid">
-      <article class="avis">
-        <div class="avis-stars">★★★★★</div>
-        <p class="avis-text">"30 ans que j'y vais. Honnête, rapide, il te dit ce qui est vraiment nécessaire."</p>
-        <div class="avis-author">
-          <div class="avis-avatar">M</div>
-          <div>
-            <div class="avis-name">Michel D.</div>
-            <div class="avis-role">Client fidèle · Sablé-sur-Sarthe</div>
-          </div>
-        </div>
-      </article>
-      <article class="avis">
-        <div class="avis-stars">★★★★★</div>
-        <p class="avis-text">"Diagnostic en 1 h, réparation le lendemain. Prix juste, pas de blabla."</p>
-        <div class="avis-author">
-          <div class="avis-avatar">S</div>
-          <div>
-            <div class="avis-name">Sarah K.</div>
-            <div class="avis-role">Particulier · Le Mans</div>
-          </div>
-        </div>
-      </article>
-      <article class="avis">
-        <div class="avis-stars">★★★★★</div>
-        <p class="avis-text">"Le seul garage où je fais confiance les yeux fermés. Devis respecté, voiture nickel."</p>
-        <div class="avis-author">
-          <div class="avis-avatar">F</div>
-          <div>
-            <div class="avis-name">Franck L.</div>
-            <div class="avis-role">Particulier · Solesmes</div>
-          </div>
-        </div>
-      </article>
-    </div>
-    <div class="google-rating">
-      <span class="pill">
-        <span class="star">★</span>
-        <span class="score">4,8/5</span>
-        <span class="meta">— 127 avis Google vérifiés</span>
-      </span>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section section-white">
-  <div class="container">
-    <div class="section-h">
-      <span class="eyebrow">Prendre rendez-vous</span>
-      <h2>On est à 5 min de chez vous.</h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3 class="contact-h">Garage Klax — Sablé</h3>
-        <p class="contact-sub">Accueil sans rendez-vous pour l'entretien courant. Pour les grosses interventions, prenez rendez-vous par téléphone ou via le formulaire.</p>
-        <div class="contact-row">
-          <div class="ico">📍</div>
-          <div>
-            <div class="lbl">Adresse</div>
-            <div class="val">Zone artisanale Saint-Aubin<br />72300 Sablé-sur-Sarthe</div>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="ico">📞</div>
-          <div>
-            <div class="lbl">Téléphone</div>
-            <div class="val"><a href="tel:+33000000000">02 43 00 00 00</a></div>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="ico">🕐</div>
-          <div>
-            <div class="lbl">Horaires</div>
-            <div class="val">Lun – Ven · 8 h – 12 h / 14 h – 18 h 30<br />Sam · 8 h – 12 h</div>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="ico">✓</div>
-          <div>
-            <div class="lbl">Bon à savoir</div>
-            <div class="val">CB · Chèques vacances auto · Devis gratuit · Facture détaillée systématique</div>
-          </div>
-        </div>
-        <a href="tel:+33000000000" class="contact-call">📞 Appeler maintenant</a>
+<main>
+  <section class="sec services" id="services">
+    <div class="wrap srv-grid">
+      <div class="srv-head">
+        <h2>Les prix <span class="hl">affichés</span>, pas cachés</h2>
+        <p>Le prix que vous voyez ici est celui de votre facture, pièces et main-d'œuvre comprises. Si on découvre autre chose, on vous appelle avant de toucher à quoi que ce soit.</p>
+        <a class="btn btn--yellow" href="#contact">Demander un devis<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <figure class="srv-photo"><img src="img/garagiste.webp" alt="Le garagiste, bras croisés, dans l'atelier" width="1000" height="1778" loading="lazy" style="object-position:50% 25%" /><figcaption>Sébastien, 32 ans de métier</figcaption></figure>
       </div>
-      <div class="map-wrap">
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.34%2C47.82%2C-0.30%2C47.85&amp;layer=mapnik&amp;marker=47.836%2C-0.327" loading="lazy" title="Plan du garage"></iframe>
+      <ul class="srv-list">
+        <li class="srv"><span class="ic"><i class="ph ph-drop" aria-hidden="true"></i></span><div><h3>Vidange et entretien</h3><p>Huile, filtres, contrôle 30 points, carnet tamponné</p></div><span class="price">89 €<small>dès</small></span></li>
+        <li class="srv"><span class="ic"><i class="ph ph-disc" aria-hidden="true"></i></span><div><h3>Freinage</h3><p>Plaquettes avant, disques si besoin, contrôle du liquide</p></div><span class="price">119 €<small>dès</small></span></li>
+        <li class="srv"><span class="ic"><i class="ph ph-tire" aria-hidden="true"></i></span><div><h3>Pneus</h3><p>Montage, équilibrage, parallélisme, stockage l'hiver</p></div><span class="price">25 €<small>par pneu</small></span></li>
+        <li class="srv"><span class="ic"><i class="ph ph-cpu" aria-hidden="true"></i></span><div><h3>Diagnostic</h3><p>Voyant allumé, valise toutes marques, explication claire</p></div><span class="price">49 €<small>déduit si réparation</small></span></li>
+        <li class="srv"><span class="ic"><i class="ph ph-snowflake" aria-hidden="true"></i></span><div><h3>Climatisation</h3><p>Recharge, recherche de fuite, désinfection</p></div><span class="price">79 €<small>dès</small></span></li>
+        <li class="srv"><span class="ic"><i class="ph ph-car-profile" aria-hidden="true"></i></span><div><h3>Préparation contrôle technique</h3><p>On vérifie tout avant le passage, et on repasse la contre-visite</p></div><span class="price">59 €<small>dès</small></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="atelier">
+    <div class="wrap gal-head">
+      <h2>L'atelier</h2>
+      <p>Deux ponts, un banc de géométrie et une valise de diagnostic à jour. Les anciennes et les récentes passent par les mêmes mains.</p>
+    </div>
+    <div class="flow" id="flow" aria-roledescription="carrousel" aria-label="Photos de l'atelier">
+      <figure class="slide" data-cap="Voitures anciennes"><img src="img/g-classiques.webp" alt="Voitures anciennes en restauration dans l'atelier" width="1100" height="618" loading="lazy" /></figure>
+      <figure class="slide" data-cap="Pont élévateur"><img src="img/g-pont.webp" alt="Voiture rouge sur un pont élévateur" width="1100" height="618" loading="lazy" /></figure>
+      <figure class="slide" data-cap="Mécanique générale"><img src="img/g-atelier.webp" alt="Mécaniciens au travail dans l'atelier" width="1100" height="734" loading="lazy" /></figure>
+      <figure class="slide" data-cap="L'atelier au complet"><img src="img/atelier.webp" alt="Vue d'ensemble de l'atelier" width="1600" height="1067" loading="lazy" /></figure>
+      <figure class="slide" data-cap="Entretien courant"><img src="img/g-nb.webp" alt="Voitures en entretien dans le garage" width="1100" height="734" loading="lazy" /></figure>
+    </div>
+    <div class="flow-ctl">
+      <button type="button" id="fprev" aria-label="Photo précédente"><i class="ph ph-arrow-left" aria-hidden="true"></i></button>
+      <span class="flow-cap" id="fcap" aria-live="polite">L'atelier au complet</span>
+      <button type="button" id="fnext" aria-label="Photo suivante"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+    </div>
+  </section>
+
+  <section class="sec why">
+    <div class="wrap why-grid">
+      <div class="why-photo">
+        <div class="ph"><img src="img/pont.webp" alt="Mécanicien sous une voiture sur le pont" width="900" height="1350" loading="lazy" /></div>
+        <div class="why-block"><i class="ph-fill ph-handshake" aria-hidden="true"></i><b>Zéro surprise</b><span>Vous signez le devis avant. La facture ne le dépasse jamais sans votre accord.</span></div>
+      </div>
+      <div>
+        <h2>Ce qui change <span class="hl">chez nous</span></h2>
+        <ul class="why-list">
+          <li><i class="ph ph-chat-circle-text" aria-hidden="true"></i><div><b>On vous explique</b><span>Photos de la pièce usée envoyées par SMS, avant de la changer.</span></div></li>
+          <li><i class="ph ph-recycle" aria-hidden="true"></i><div><b>Pièces d'occasion si possible</b><span>Quand c'est sûr, on vous propose l'option la moins chère.</span></div></li>
+          <li><i class="ph ph-car" aria-hidden="true"></i><div><b>Véhicule de prêt</b><span>Deux voitures disponibles pour les réparations longues.</span></div></li>
+          <li><i class="ph ph-shield-check" aria-hidden="true"></i><div><b>Garantie constructeur préservée</b><span>Entretien selon le carnet, même sur une voiture neuve.</span></div></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container footer-content">
-    <div>
-      <div class="footer-brand">
-        <span class="brand-mark">K</span>
-        <span class="brand-text">
-          <span class="brand-name">Garage Klax</span>
-          <span class="brand-tag">Mécanique · Sarthe</span>
-        </span>
+  <section class="sec reviews-band" id="avis">
+    <div class="wrap">
+      <div class="rev-head">
+        <h2>Ils reviennent, et ils le disent</h2>
+        <div class="score">4,8/5<small>214 avis Google</small></div>
       </div>
-      <p class="footer-text">Garage indépendant en Sarthe — mécanique générale, entretien, carrosserie, contrôle technique. Trois générations de mécanos, zéro franchise.</p>
-    </div>
-    <div>
-      <div class="footer-h">Contact</div>
-      <div class="footer-l">
-        02 43 00 00 00<br />
-        contact@garageklax.fr<br />
-        Sablé-sur-Sarthe (72)
+      <div class="revs">
+        <blockquote class="rev"><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><p>Devis respecté à l'euro près. Ils m'ont même envoyé la photo de mes plaquettes avant de les changer.</p><footer>Mathieu G.<span>Clio 4</span></footer></blockquote>
+        <blockquote class="rev"><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><p>La concession voulait changer tout le moteur. Ici, un capteur à 140 € et c'était reparti.</p><footer>Isabelle R.<span>Peugeot 3008</span></footer></blockquote>
+        <blockquote class="rev"><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><p>Seul garage du coin qui accepte encore ma 205 de 1991. Travail propre, prix honnête.</p><footer>Bernard L.<span>Peugeot 205</span></footer></blockquote>
       </div>
     </div>
-    <div>
-      <div class="footer-h">Studio FTT</div>
-      <div class="footer-l">
-        <a href="/">← Retour portfolio</a><br />
-        <a href="mailto:contact@studioftt.fr">Devis pour votre garage</a>
+  </section>
+
+  <section class="sec contact" id="contact">
+    <div class="wrap ct-grid">
+      <div>
+        <h2>Passez nous voir, ou <span class="hl">appelez</span></h2>
+        <div class="ct-info">
+          <div class="ct-row"><i class="ph ph-map-pin" aria-hidden="true"></i><div><b>Adresse</b><span>14 route du Mans, 72300 Sablé-sur-Sarthe</span></div></div>
+          <div class="ct-row"><i class="ph ph-phone" aria-hidden="true"></i><div><b>Téléphone</b><a href="tel:+33243000002">02 43 00 00 02</a></div></div>
+          <div class="ct-row"><i class="ph ph-clock" aria-hidden="true"></i><div><b>Horaires</b><div class="hours"><span>Lundi au vendredi</span><span>8 h - 12 h, 14 h - 18 h 30</span><span>Samedi</span><span>8 h - 12 h</span></div></div></div>
+        </div>
       </div>
+      <form id="form" novalidate>
+        <h3>Demande de devis</h3>
+        <div class="row2">
+          <label>Nom<input name="nom" autocomplete="name" placeholder="Votre nom…" /></label>
+          <label>Téléphone<input type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" /></label>
+        </div>
+        <div class="row2">
+          <label>Véhicule<input name="vehicule" placeholder="Ex. Clio 4, 2017…" /></label>
+          <label>Besoin<select name="besoin"><option>Entretien</option><option>Freinage</option><option>Pneus</option><option>Diagnostic</option><option>Autre</option></select></label>
+        </div>
+        <label>Précisions<textarea name="message" placeholder="Bruit, voyant allumé, kilométrage…"></textarea></label>
+        <button class="btn btn--yellow" type="submit" style="justify-self:start">Envoyer ma demande<i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+        <p class="form-ok" role="status" aria-live="polite">Démo : ce formulaire n'envoie rien. Sur le vrai site, la demande arrive directement au garage.</p>
+        <p class="form-note">Réponse sous 24 h ouvrées. Vos informations servent uniquement à vous répondre.</p>
+      </form>
     </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© 2026 Garage Klax — concept démo</span>
-    <span>Site réalisé par <a href="/">Studio FTT</a></span>
-  </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap"><span>© Garage <span translate="no">Klax</span>, Sablé-sur-Sarthe</span><div class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></span></div>
 </footer>
 
-<a href="tel:+33000000000" class="sticky-call">📞 Appeler le garage</a>
+<script>
+document.getElementById("form").addEventListener("submit", function (e) { e.preventDefault(); this.classList.add("sent"); });
 
+// Galerie : image centrale en grand, voisines plus petites (coverflow)
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll("#flow .slide"));
+  var cap = document.getElementById("fcap"), n = slides.length, cur = 3;
+  function render() {
+    slides.forEach(function (s, i) {
+      var o = i - cur;
+      if (o > n / 2) o -= n;
+      if (o < -n / 2) o += n;
+      var d = Math.abs(o);
+      s.style.setProperty("--o", o);
+      s.style.setProperty("--d", d);
+      s.dataset.d = d;
+      if (d > 2) s.setAttribute("data-hide", ""); else s.removeAttribute("data-hide");
+      s.setAttribute("aria-hidden", d === 0 ? "false" : "true");
+    });
+    cap.textContent = slides[cur].dataset.cap;
+  }
+  function go(k) { cur = (cur + k + n) % n; render(); }
+  document.getElementById("fprev").addEventListener("click", function () { go(-1); });
+  document.getElementById("fnext").addEventListener("click", function () { go(1); });
+  slides.forEach(function (s, i) { s.addEventListener("click", function () { var o = +s.style.getPropertyValue("--o"); if (o) go(o); }); });
+  render();
+})();
+</script>
+<script src="/demo/demo-banner.js" defer></script>
 </body>
 </html>
