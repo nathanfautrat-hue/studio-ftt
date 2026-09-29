@@ -148,16 +148,18 @@ form.sent .ok{display:block}
 footer{background:var(--char);color:#aeb3b9;font-size:14px;padding:26px 0}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 @media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}html{scroll-behavior:auto}.btn,.m img{transition:none}}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;padding:10px 14px;background:#fff;color:#111;border-radius:6px}.skip:focus{left:8px}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 <header class="hero">
   <div class="wrap nav">
     <a class="logo" href="#"><img src="img/logo.png" alt="Logo Viodé" width="193" height="193" /><span><b>Viodé</b><small>Corbigny · depuis 1968</small></span></a>
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="#metiers">Nos métiers</a><a href="#confort">Chauffage et clim</a><a href="#showroom">Showroom</a><a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn--lime" href="tel:+33386201214"><i class="ph-fill ph-phone" aria-hidden="true"></i><span class="lbl">03 86 20 12 14</span></a>
+    <a class="btn btn--lime" href="tel:+33386201214" aria-label="Appeler Viodé au 03 86 20 12 14"><i class="ph-fill ph-phone" aria-hidden="true"></i><span class="lbl">03 86 20 12 14</span></a>
   </div>
   <div class="wrap hero-grid">
     <div>
@@ -186,7 +188,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </div>
 </section>
 
-<main>
+<main id="contenu">
   <section class="sec" id="metiers">
     <div class="wrap">
       <div class="metiers-head">

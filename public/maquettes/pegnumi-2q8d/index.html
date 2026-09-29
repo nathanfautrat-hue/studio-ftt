@@ -142,13 +142,15 @@ h2 em,h1 em{font-style:normal;color:var(--red)}
 footer.site{padding:26px 0;font-size:14px;color:var(--ink-2)}
 footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.btn i,.post .ph img{transition:none}}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;padding:10px 14px;background:#fff;color:#111;border-radius:6px}.skip:focus{left:8px}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 <div class="wrap nav">
   <a class="wordmark" href="#">Pegnumi<span>Coaching</span></a>
   <nav class="nav-links" aria-label="Navigation principale"><a href="#situations">Quand m'appeler</a><a href="#methode">Méthode</a><a href="#temoignages">Témoignages</a><a href="#articles">Articles</a></nav>
-  <a class="btn btn--red" href="#contact"><span class="lbl">Premier échange</span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+  <a class="btn btn--red" href="#contact" aria-label="Premier échange"><span class="lbl">Premier échange</span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
 </div>
 
 <header class="wrap hero">
@@ -174,7 +176,7 @@ footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:
   </div>
 </section>
 
-<main>
+<main id="contenu">
   <section class="sec" id="situations">
     <div class="wrap sit">
       <div>

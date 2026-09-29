@@ -129,9 +129,11 @@ form.sent .ok{display:block}
 footer{background:var(--black);color:#8d8d8d;font-size:14px;padding:26px 0;border-top:1px solid rgba(255,255,255,.08)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.duo img,.masonry img{transition:none}}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;padding:10px 14px;background:#fff;color:#111;border-radius:6px}.skip:focus{left:8px}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 
 
 <header class="hero">
@@ -139,7 +141,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <a class="logo" href="#"><img src="img/logo.webp" alt="Trélohan Yann, plombier chauffagiste" width="812" height="266" /></a>
     <div class="nav-links"><a href="#univers">Salle de bains</a><a href="#chauffage">Chauffage</a><a href="#realisations">Réalisations</a><a href="#contact">Contact</a></div>
-    <a class="btn btn--blue" href="tel:+33678521987"><i class="ph-fill ph-phone" aria-hidden="true"></i><span class="lbl">06 78 52 19 87</span></a>
+    <a class="btn btn--blue" href="tel:+33678521987" aria-label="Appeler Yann au 06 78 52 19 87"><i class="ph-fill ph-phone" aria-hidden="true"></i><span class="lbl">06 78 52 19 87</span></a>
   </div>
 </nav>
   <img src="img/sdb-noir.webp" alt="Salle de bains en marbre noir et bois, douche à l'italienne" width="1800" height="1350" fetchpriority="high" />
@@ -155,7 +157,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </div>
 </header>
 
-<main>
+<main id="contenu">
   <section class="sec" id="univers">
     <div class="wrap">
       <div class="intro">
