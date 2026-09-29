@@ -89,9 +89,9 @@ export const PROJECTS: StackProject[] = [
     id: "cabinet-atlas",
     name: "Cabinet Atlas",
     kind: "Kinésithérapie · Ostéopathie",
-    tag: "Site cabinet · Doctolib · RDV",
+    tag: "Site cabinet · Soins · Avis",
     blurb:
-      "Démo pour un cabinet pluri kiné/ostéo : design contemporain lumineux (sable, bleu nuit, ocre), photo praticien, équipe, parcours patient.",
+      "Démo pour un cabinet kiné et ostéo : ambiance lumière dorée, arc de photos qui tourne au scroll, soins, première séance, avis patients.",
     href: "/demo/cabinet-atlas/index.html",
     preview: <CabinetAtlasPreview />,
     isDemo: true,

@@ -78,7 +78,7 @@ export function CabinetAtlasPreview() {
     <StaticPreview
       src="/preview-atlas.webp"
       alt="Aperçu de la démo Cabinet Atlas, cabinet kiné & ostéo"
-      bg="#F5EFE6"
+      bg="#2a1309"
     />
   );
 }
