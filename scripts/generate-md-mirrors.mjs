@@ -129,7 +129,8 @@ function main() {
     process.exit(1);
   }
 
-  const files = findHtmlFiles(OUT_DIR);
+  // Maquettes privées pour prospects : jamais de miroir Markdown
+  const files = findHtmlFiles(OUT_DIR).filter((f) => !f.rel.split("\\").join("/").startsWith("maquettes/"));
   console.log(`📄 Found ${files.length} HTML files to mirror.\n`);
 
   const generated = [];

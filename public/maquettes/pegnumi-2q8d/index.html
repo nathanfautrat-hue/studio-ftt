@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow,noarchive" />
+<title>Pegnumi Coaching · Le copilote de vos décisions stratégiques (maquette)</title>
+<meta name="theme-color" content="#f4f0ea" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="preload" as="image" href="img/portrait-rouge.webp" />
+<style>
+:root{
+  --cream:#f4f0ea; --cream-2:#ebe5dc; --red:#b8222a; --red-deep:#8f161d; --ink:#1d1b1a; --ink-2:#55504b; --line:rgba(29,27,26,.14);
+  --serif:"Newsreader",Georgia,serif; --sans:"Source Sans 3",ui-sans-serif,system-ui,sans-serif; --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;touch-action:manipulation}
+[id]{scroll-margin-top:24px}
+body{background:var(--cream);color:var(--ink);font:400 18px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--red);color:#fff}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(36px,4.4vw,60px)}
+h2 em,h1 em{font-style:normal;color:var(--red)}
+.sec{padding:120px 0}
+@media (max-width:760px){.sec{padding:80px 0}}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 26px;font:600 16px/1 var(--sans);text-decoration:none;border:0;cursor:pointer;white-space:nowrap;transition:background-color .2s,transform .3s var(--ease)}
+.btn i{font-size:18px;transition:transform .3s var(--ease)}
+.btn:hover i{transform:translateX(3px)}
+.btn--red{background:var(--red);color:#fff}
+.btn--red:hover{background:var(--red-deep)}
+.btn--ink{background:var(--ink);color:#fff}
+
+/* NAV + HERO */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:88px;border-bottom:1px solid var(--line)}
+.wordmark{text-decoration:none;font:600 13px/1.05 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.wordmark span{display:block;color:var(--red)}
+.nav-links{display:none;gap:30px;font-size:15px}
+.nav-links a{text-decoration:none;color:var(--ink-2)}
+.nav-links a:hover{color:var(--ink)}
+@media (min-width:980px){.nav-links{display:flex}}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:520px){.nav .btn .lbl{display:none}.nav .btn{padding:0 14px}}
+.hero{display:grid;gap:48px;align-items:center;padding-top:60px;padding-bottom:90px}
+.hero h1{font-size:clamp(46px,6vw,88px);font-weight:400}
+.hero-sub{margin-top:26px;max-width:42ch;font-size:clamp(18px,1.5vw,20px);color:var(--ink-2)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:34px}
+.hero-ctas a.tel{font-weight:600;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.zones{margin-top:34px;font-size:15px;color:var(--ink-2)}
+.portrait{position:relative;max-width:500px;justify-self:end;width:100%}
+.portrait .ph{aspect-ratio:4/5;overflow:hidden}
+.portrait .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.portrait .cred{position:absolute;left:-40px;bottom:36px;background:#fff;padding:18px 20px;max-width:260px;box-shadow:0 30px 50px -30px rgba(29,27,26,.45)}
+.portrait .cred b{display:block;font:500 22px/1.1 var(--serif)}
+.portrait .cred span{display:block;margin-top:6px;font-size:14px;color:var(--ink-2)}
+@media (min-width:980px){.hero{grid-template-columns:1.15fr 1fr}}
+@media (max-width:979px){.portrait{justify-self:start}.portrait .cred{left:12px}}
+
+/* LOGOS PARCOURS */
+.path{border-block:1px solid var(--line)}
+.path .wrap{display:flex;flex-wrap:wrap;gap:18px 48px;align-items:center;justify-content:space-between;padding-top:26px;padding-bottom:26px}
+.path p{font-size:15px;color:var(--ink-2);max-width:26ch}
+.path ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:14px 40px;font:500 24px/1 var(--serif);color:#7b7570}
+
+/* SITUATIONS + CADRAN */
+.sit{display:grid;gap:56px;align-items:start}
+.sit-list{list-style:none;padding:0;margin-top:44px}
+.sit-list li{padding:28px 0;border-top:1px solid var(--line);display:grid;gap:8px}
+.sit-list li:last-child{border-bottom:1px solid var(--line)}
+.sit-list b{font:500 clamp(26px,2.6vw,34px)/1.15 var(--serif)}
+.sit-list span{color:var(--ink-2);max-width:54ch}
+.dial-wrap{position:sticky;top:40px;background:var(--cream-2);padding:34px;text-align:center}
+.dial{width:100%;max-width:380px;margin:0 auto;display:block}
+.dial .needle{transform-origin:200px 200px;transform:rotate(-20deg)}
+@supports (animation-timeline:view()){@media (prefers-reduced-motion:no-preference){
+  .dial .needle{animation:swing linear both;animation-timeline:--sit;animation-range:entry 20% exit 40%}
+  .sit{view-timeline-name:--sit}
+  @keyframes swing{from{transform:rotate(-78deg)}to{transform:rotate(62deg)}}
+}}
+.dial-legend{display:flex;justify-content:space-between;font-size:15px;color:var(--ink-2);max-width:380px;margin:6px auto 0}
+.dial-wrap p{margin-top:22px;font:500 22px/1.3 var(--serif)}
+@media (min-width:980px){.sit{grid-template-columns:1.2fr 1fr;gap:90px}}
+
+/* COMPARAISON */
+.cmp{background:var(--ink);color:var(--cream)}
+.cmp h2 em{color:#e3565d}
+.cmp-grid{margin-top:56px;display:grid;gap:14px}
+.col{padding:32px;border:1px solid rgba(244,240,234,.16)}
+.col h3{font-size:28px}
+.col p{margin-top:12px;color:#c9c2b9}
+.col.me{background:var(--red);border-color:var(--red)}
+.col.me p{color:#fbe3e3}
+.col small{display:block;margin-bottom:14px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a39b91}
+.col.me small{color:#ffd0d0}
+@media (min-width:900px){.cmp-grid{grid-template-columns:1fr 1fr 1.2fr}}
+
+/* MÉTHODE */
+.steps{margin-top:56px;display:grid;gap:0;counter-reset:s}
+.st{padding:30px 0;border-top:1px solid var(--line);display:grid;gap:10px}
+.st .d{font-size:14px;color:var(--red);font-weight:600}
+.st h3{font-size:28px}
+.st p{color:var(--ink-2)}
+.st .liv{font-size:15px;color:var(--ink)}
+@media (min-width:900px){.steps{grid-template-columns:repeat(4,1fr);gap:28px}.st{border-top:2px solid var(--ink)}}
+.mission{margin-top:40px;font:500 22px/1.4 var(--serif);color:var(--ink-2);max-width:60ch}
+
+/* TÉMOIGNAGES */
+.tem{background:var(--cream-2)}
+.quotes{margin-top:48px;display:grid;gap:14px}
+.q{background:var(--cream);padding:34px;display:grid;gap:18px;align-content:space-between}
+.q .ctx{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--red);font-weight:600}
+.q p{font:400 22px/1.4 var(--serif)}
+.q footer{font-size:15px;color:var(--ink-2)}
+.q footer b{color:var(--ink);font-weight:600}
+@media (min-width:900px){.quotes{grid-template-columns:1.3fr 1fr}.q:first-child{grid-row:span 2}.q:first-child p{font-size:28px}}
+
+/* ARTICLES */
+.posts{margin-top:48px;display:grid;gap:22px}
+.post{text-decoration:none;display:grid;gap:14px}
+.post .ph{aspect-ratio:16/9;overflow:hidden;background:var(--cream-2)}
+.post .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.post:hover .ph img{transform:scale(1.03)}
+.post h3{font-size:24px}
+.post span{font-size:15px;color:var(--ink-2)}
+@media (min-width:900px){.posts{grid-template-columns:repeat(3,1fr)}}
+
+/* CONTACT */
+.contact{background:var(--red);color:#fff}
+.contact h2 em{color:#fff;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.ct{display:grid;gap:40px;align-items:end}
+.ct p{margin-top:20px;max-width:46ch;color:#fde6e6;font-size:19px}
+.ct-links{display:grid;gap:12px;font-size:19px}
+.ct-links a{text-decoration:none;display:flex;gap:12px;align-items:center}
+.ct .btn{background:#fff;color:var(--red);margin-top:30px}
+@media (min-width:900px){.ct{grid-template-columns:1.3fr 1fr}}
+footer.site{padding:26px 0;font-size:14px;color:var(--ink-2)}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.btn i,.post .ph img{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap nav">
+  <a class="wordmark" href="#">Pegnumi<span>Coaching</span></a>
+  <nav class="nav-links" aria-label="Navigation principale"><a href="#situations">Quand m'appeler</a><a href="#methode">Méthode</a><a href="#temoignages">Témoignages</a><a href="#articles">Articles</a></nav>
+  <a class="btn btn--red" href="#contact"><span class="lbl">Premier échange</span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+</div>
+
+<header class="wrap hero">
+  <div>
+    <h1>Le copilote de vos <em>décisions stratégiques</em></h1>
+    <p class="hero-sub">J'accompagne les dirigeants dans les décisions qui engagent vraiment : transformation, gouvernance, croissance, recomposition d'un CODIR.</p>
+    <div class="hero-ctas">
+      <a class="btn btn--red" href="#contact">Un premier échange, sans engagement<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      <a class="tel" href="tel:+33762868925">07 62 86 89 25</a>
+    </div>
+    <p class="zones">J'interviens à Annecy, Genève, Lyon et Paris</p>
+  </div>
+  <div class="portrait">
+    <div class="ph"><img src="img/portrait-rouge.webp" alt="Portrait de Stéphane Blivet" width="768" height="1152" fetchpriority="high" /></div>
+    <div class="cred"><b>Stéphane Blivet</b><span>25 ans de postes opérationnels dans des groupes internationaux</span></div>
+  </div>
+</header>
+
+<section class="path" aria-label="Parcours">
+  <div class="wrap">
+    <p>Avant d'accompagner les dirigeants, j'ai été l'un d'eux</p>
+    <ul><li>IBM</li><li>Alcatel-Lucent</li><li>Atos</li><li>Polytech Nice</li></ul>
+  </div>
+</section>
+
+<main>
+  <section class="sec" id="situations">
+    <div class="wrap sit">
+      <div>
+        <h2>Vous reconnaissez l'une de <em>ces situations</em></h2>
+        <ul class="sit-list">
+          <li><b>Un CODIR bloqué</b><span>Les échanges tournent en boucle, chacun garde sa vision, rien ne se tranche.</span></li>
+          <li><b>Une décision qui s'enlise</b><span>Vous tournez autour depuis des semaines. Une décision qui n'avance pas coûte plus cher qu'un mauvais choix assumé.</span></li>
+          <li><b>Une organisation qui décroche</b><span>La transformation est annoncée, les équipes ne suivent pas. Les projets se succèdent, la pièce se rejoue à l'identique.</span></li>
+        </ul>
+      </div>
+      <div class="dial-wrap" aria-hidden="true">
+        <svg class="dial" viewBox="0 0 400 230">
+          <path d="M40 200 A160 160 0 0 1 360 200" fill="none" stroke="#d6cec3" stroke-width="2"/>
+          <path d="M40 200 A160 160 0 0 1 360 200" fill="none" stroke="#1d1b1a" stroke-width="10" stroke-dasharray="1.5 14.2"/>
+          <path d="M292 87 A160 160 0 0 1 360 200" fill="none" stroke="#b8222a" stroke-width="10" stroke-dasharray="1.5 14.2"/>
+          <g class="needle"><line x1="200" y1="200" x2="200" y2="62" stroke="#b8222a" stroke-width="4" stroke-linecap="round"/><polygon points="200,48 192,70 208,70" fill="#b8222a"/></g>
+          <circle cx="200" cy="200" r="11" fill="#1d1b1a"/>
+        </svg>
+        <div class="dial-legend"><span>Hésitation</span><span>Décision</span></div>
+        <p>« Le secret de l'action, c'est de s'y mettre. »</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec cmp">
+    <div class="wrap">
+      <h2>Ni consultant, ni coach classique, <em>un copilote</em></h2>
+      <div class="cmp-grid">
+        <div class="col"><h3>Le consultant</h3><p>Il vous apporte des réponses, souvent toutes faites, pensées ailleurs que dans votre entreprise.</p></div>
+        <div class="col"><h3>Le coach classique</h3><p>Il vous renvoie vos questions. Utile pour réfléchir, moins pour trancher.</p></div>
+        <div class="col me"><h3>Le copilote</h3><p>Il s'assoit à côté de vous, dans le cockpit. Vous gardez les commandes. Je crée les conditions pour que les bonnes décisions soient prises, assumées et mises en œuvre, avec des résultats mesurables.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="methode">
+    <div class="wrap">
+      <h2>Une méthode <em>en quatre temps</em></h2>
+      <div class="steps">
+        <div class="st"><h3>Cadrage et diagnostic</h3><span class="d">2 à 4 semaines</span><p>Entretiens individuels, indicateurs, cartographie des options.</p><span class="liv">Livrable : synthèse des enjeux</span></div>
+        <div class="st"><h3>Clarification</h3><span class="d">4 à 8 semaines</span><p>Ateliers CODIR, impacts financiers, humains et opérationnels.</p><span class="liv">Livrable : scénarios comparés</span></div>
+        <div class="st"><h3>Décision et alignement</h3><span class="d">Le moment clé</span><p>La décision est prise, assumée, portée par l'équipe de direction.</p><span class="liv">Livrable : feuille de route partagée</span></div>
+        <div class="st"><h3>Mise en œuvre</h3><span class="d">Dans la durée</span><p>Accompagnement de l'exécution, ajustements, transfert de compétences.</p><span class="liv">Livrable : résultats mesurés</span></div>
+      </div>
+      <p class="mission">Missions de 3 à 12 mois, en individuel (dirigeant, membre de CODIR) ou en collectif (équipe de direction, organisation).</p>
+    </div>
+  </section>
+
+  <section class="sec tem" id="temoignages">
+    <div class="wrap">
+      <h2>Ce qu'en disent <em>les dirigeants</em></h2>
+      <div class="quotes">
+        <blockquote class="q"><p>« Stéphane a conçu et animé un séminaire qui nous a permis de mieux comprendre les contraintes de chacun, de dépasser certaines logiques de silo et de définir des actions immédiatement activables. »</p><footer><b>Antoine</b>, directeur général, PME de distribution · séminaire CODIR après un rachat</footer></blockquote>
+        <blockquote class="q"><p>« Stéphane a su créer un cadre à la fois exigeant et apaisé pour remettre tout le monde en mouvement. »</p><footer><b>Pierre</b>, directeur de programme, secteur santé · 12 mois</footer></blockquote>
+        <blockquote class="q"><p>« Sa valeur ajoutée a été de transformer une situation potentiellement abstraite en chantiers réellement appropriés par les équipes. »</p><footer><b>Sophie</b>, directrice générale, agence publique · 6 mois</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="articles">
+    <div class="wrap">
+      <h2>Réflexions <em>de terrain</em></h2>
+      <div class="posts">
+        <a class="post" href="#"><div class="ph"><img src="img/visuel-action.webp" alt="Visuel : sortez de l'analyse-paralysie" width="1200" height="627" loading="lazy" /></div><h3>Analyse-paralysie du dirigeant : le secret, c'est de s'y mettre</h3><span>Les dirigeants les plus lucides sont souvent les plus lents à décider.</span></a>
+        <a class="post" href="#"><div class="ph"><img src="img/visuel-codir.webp" alt="Visuel : transformer son CODIR" width="768" height="436" loading="lazy" /></div><h3>Quand un CODIR tourne en rond sur une décision</h3><span>Une paralysie qui n'a rien à voir avec le manque d'information.</span></a>
+        <a class="post" href="#"><div class="ph"><img src="img/visuel-volume.webp" alt="Visuel : baisser le volume" width="1800" height="945" loading="lazy" /></div><h3>Baisser le volume</h3><span>Pour réapprendre à entendre les autres, et soi-même.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact">
+    <div class="wrap ct">
+      <div>
+        <h2>45 minutes pour <em>exposer votre situation</em></h2>
+        <p>Un premier échange, sans engagement. Si mon approche ne répond pas à votre besoin, je vous le dis, et je vous oriente si je le peux.</p>
+        <a class="btn" href="mailto:stephane.blivet@pegnumi-coaching.com">Réserver un créneau<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="ct-links">
+        <a href="tel:+33762868925"><i class="ph ph-phone" aria-hidden="true"></i>07 62 86 89 25</a>
+        <a href="mailto:stephane.blivet@pegnumi-coaching.com"><i class="ph ph-envelope-simple" aria-hidden="true"></i>stephane.blivet@pegnumi-coaching.com</a>
+        <span style="display:flex;gap:12px;align-items:center"><i class="ph ph-map-pin" aria-hidden="true"></i>Annecy, Haute-Savoie, Genève, Lyon, Paris</span>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site"><div class="wrap"><span>© Pegnumi Coaching, Stéphane Blivet</span><span>Mentions légales · Confidentialité</span></div></footer>
+<script src="/demo/demo-banner.js" data-label="Maquette réalisée par Studio FTT pour Pegnumi Coaching" defer></script>
+</body>
+</html>

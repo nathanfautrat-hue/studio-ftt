@@ -27,6 +27,7 @@ const EXCLUDE = new Set([
 const EXCLUDE_PATTERNS = [
   /^google[a-f0-9]+\.html$/, // fichiers de vérification Google Search Console
   /^demo\//, // sites démo : servis pour les fiches projet, mais pas dans le sitemap principal
+  /^maquettes\//, // maquettes privées pour prospects : jamais listées
 ];
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -102,6 +103,7 @@ function generateRobots() {
 
 # Crawlers traditionnels (Google, Bing, DuckDuckGo, etc.)
 User-agent: *
+Disallow: /maquettes/
 Allow: /
 
 # Crawlers IA — autorisations explicites

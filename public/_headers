@@ -37,3 +37,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Cache-Control: public, max-age=0, must-revalidate
+
+# Maquettes privées pour prospects : jamais indexées
+/maquettes/*
+  X-Robots-Tag: noindex, nofollow, noarchive

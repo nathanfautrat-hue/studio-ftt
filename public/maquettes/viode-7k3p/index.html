@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow,noarchive" />
+<title>Viodé · Plomberie, chauffage, climatisation à Corbigny (maquette)</title>
+<meta name="theme-color" content="#1f2124" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="preload" as="image" href="img/hero.webp" />
+<style>
+:root{
+  --char:#1f2124; --char-2:#2a2d31; --char-3:#34383d; --stone:#eceae5; --paper:#f7f6f3;
+  --lime:#9ccd3c; --lime-deep:#4e6d14; --violet:#6b3fa0;
+  --ink:#1b1d20; --ink-2:#4d5157; --line:rgba(27,29,32,.12);
+  --font:"Outfit",ui-sans-serif,system-ui,sans-serif; --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;touch-action:manipulation}
+[id]{scroll-margin-top:24px}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--lime);color:var(--char)}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+img{display:block;max-width:100%}
+.wrap{max-width:1260px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.02;text-wrap:balance}
+h2{font-size:clamp(36px,4.4vw,60px)}
+.sec{padding:120px 0}
+@media (max-width:760px){.sec{padding:80px 0}}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 24px;border-radius:8px;font:600 16px/1 var(--font);text-decoration:none;border:0;cursor:pointer;white-space:nowrap;transition:transform .3s var(--ease),background-color .2s}
+.btn i{font-size:20px}
+.btn:hover{transform:translateY(-2px)}
+.btn--lime{background:var(--lime);color:var(--char)}
+.btn--lime:hover{background:#b0dc5c}
+.btn--line{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.btn--line:hover{background:rgba(255,255,255,.08)}
+.btn--char{background:var(--char);color:#fff}
+
+/* HERO */
+.hero{background:var(--char);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:88px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo img{width:48px;height:48px;border-radius:10px;background:#dadada}
+.logo b{font-size:22px;font-weight:700;letter-spacing:-.01em;display:block;line-height:1}
+.logo small{font-size:12px;color:#aeb3b9}
+.nav-links{display:none;gap:26px;font-size:15px;font-weight:500}
+.nav-links a{text-decoration:none;color:#c9cdd2;transition:color .2s}
+.nav-links a:hover{color:#fff}
+@media (min-width:1000px){.nav-links{display:flex}}
+.nav .btn{min-height:46px;padding:0 18px;font-size:15px}
+@media (max-width:520px){.nav .btn .lbl{display:none}.nav .btn{padding:0 14px}}
+.hero-grid{display:grid;gap:40px;align-items:center;padding-top:30px;padding-bottom:90px}
+.hero h1{font-size:clamp(46px,5.8vw,84px)}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero-sub{margin-top:24px;max-width:44ch;font-size:clamp(17px,1.4vw,19px);color:#c9cdd2}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.visual{position:relative;min-height:440px}
+.ghost{position:absolute;right:-2%;top:-4%;font:800 clamp(150px,19vw,290px)/.8 var(--font);color:rgba(255,255,255,.05);letter-spacing:-.05em;user-select:none}
+.visual .ph{position:absolute;inset:8% 0 0 8%;border-radius:18px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.visual .ph img{width:100%;height:100%;object-fit:cover}
+.visual .since{position:absolute;left:0;bottom:-26px;background:var(--lime);color:var(--char);border-radius:14px;padding:18px 22px}
+.visual .since b{display:block;font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.visual .since span{font-size:14px;font-weight:600}
+.visual .show{position:absolute;right:16px;top:4%;background:#fff;color:var(--ink);border-radius:12px;padding:12px 16px;display:flex;gap:10px;align-items:center;font-size:14px;font-weight:600;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.visual .show i{color:var(--violet);font-size:22px}
+@media (min-width:1000px){.hero-grid{grid-template-columns:1fr 1.05fr}.visual{min-height:560px}}
+.rise{opacity:0;transform:translateY(22px);animation:rise 1s var(--ease) forwards}
+.rise.d1{animation-delay:.1s}.rise.d2{animation-delay:.2s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* BANDEAU */
+.strip{background:var(--char-2);color:#dfe2e6}
+.strip .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding-top:26px;padding-bottom:26px}
+.strip div{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500}
+.strip i{font-size:26px;color:var(--lime)}
+@media (min-width:900px){.strip .wrap{grid-template-columns:repeat(4,1fr)}}
+
+/* MÉTIERS */
+.metiers-head{display:grid;gap:16px;max-width:680px}
+.metiers-head p{color:var(--ink-2);font-size:18px}
+.metiers{margin-top:48px;display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.m{position:relative;border-radius:16px;overflow:hidden;isolation:isolate;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;color:#fff;text-decoration:none;background:var(--char-2)}
+.m img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s var(--ease)}
+.m::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(31,33,36,.92),rgba(31,33,36,.05) 60%)}
+.m:hover img{transform:scale(1.05)}
+.m h3{font-size:22px}
+.m p{font-size:14px;color:#d5d8dc;margin-top:4px}
+@media (min-width:900px){.metiers{grid-template-columns:repeat(4,1fr);grid-auto-rows:250px}.m.big{grid-column:span 2;grid-row:span 2}.m.big h3{font-size:32px}.m.wide{grid-column:span 2}}
+@media (max-width:899px){.m.big{grid-column:1 / -1;min-height:300px}}
+
+/* CONFORT */
+.confort{background:var(--char);color:#fff}
+.cf-grid{display:grid;gap:48px;align-items:center}
+.cf-photos{position:relative;max-width:560px}
+.cf-photos .a{border-radius:18px;overflow:hidden;aspect-ratio:4/5}
+.cf-photos .a img{width:100%;height:100%;object-fit:cover}
+.cf-photos .b{position:absolute;right:-30px;bottom:-30px;width:46%;aspect-ratio:1;border-radius:14px;overflow:hidden;box-shadow:0 0 0 8px var(--char)}
+.cf-photos .b img{width:100%;height:100%;object-fit:cover}
+.confort p.lead{margin-top:18px;color:#c9cdd2;font-size:18px;max-width:46ch}
+.eq{margin-top:30px;display:grid;gap:10px}
+.eq div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:12px;background:var(--char-2)}
+.eq i{font-size:24px;color:var(--lime);margin-top:2px}
+.eq b{display:block;font-weight:600}
+.eq span{font-size:14px;color:#aeb3b9}
+@media (min-width:960px){.cf-grid{grid-template-columns:1fr 1.05fr;gap:100px}}
+@media (max-width:600px){.cf-photos .b{right:-8px;bottom:-20px}}
+
+/* SHOWROOM */
+.show-sec{background:var(--lime)}
+.sh-grid{display:grid;gap:40px;align-items:center}
+.sh-grid .ph{border-radius:18px;overflow:hidden;aspect-ratio:3/2;box-shadow:0 30px 60px -40px rgba(31,33,36,.7)}
+.sh-grid .ph img{width:100%;height:100%;object-fit:cover}
+.show-sec p.lead{margin-top:18px;font-size:18px;max-width:44ch;color:#24340a}
+.brands{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.brands span{padding:9px 14px;border-radius:999px;background:rgba(31,33,36,.1);font-weight:600;font-size:14px}
+.perks{margin-top:24px;display:grid;gap:8px;font-weight:500}
+.perks div{display:flex;gap:10px;align-items:center}
+.perks i{font-size:20px}
+@media (min-width:960px){.sh-grid{grid-template-columns:1fr 1fr;gap:80px}}
+
+/* CONTACT */
+.ct-grid{display:grid;gap:48px}
+.ct-phone{display:inline-flex;align-items:center;gap:14px;margin-top:24px;font-size:clamp(32px,3.6vw,46px);font-weight:700;letter-spacing:-.02em;text-decoration:none}
+.ct-phone i{width:56px;height:56px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-size:26px;color:var(--char)}
+.info{margin-top:28px;display:grid;gap:18px}
+.info > div{display:grid;grid-template-columns:26px 1fr;gap:12px}
+.info i{font-size:22px;color:var(--lime-deep)}
+.info b{display:block}
+.info span{color:var(--ink-2)}
+.hours{display:grid;grid-template-columns:auto auto;gap:2px 20px;font-size:15px;color:var(--ink-2)}
+form{background:#fff;border-radius:18px;padding:30px;display:grid;gap:16px;box-shadow:0 1px 0 var(--line),0 30px 60px -45px rgba(31,33,36,.5)}
+form h3{font-size:28px}
+label{display:grid;gap:6px;font-weight:600;font-size:14px}
+input,select,textarea{font:500 16px/1.4 var(--font);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:13px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--lime-deep);box-shadow:0 0 0 3px rgba(156,205,60,.3)}
+::placeholder{color:#6a6f76}
+textarea{min-height:100px;resize:vertical}
+.row2{display:grid;gap:16px}
+@media (min-width:600px){.row2{grid-template-columns:1fr 1fr}}
+.ok{display:none;font-weight:600;color:var(--lime-deep)}
+form.sent .ok{display:block}
+@media (min-width:960px){.ct-grid{grid-template-columns:1fr 1.05fr;gap:90px;align-items:start}}
+footer{background:var(--char);color:#aeb3b9;font-size:14px;padding:26px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}html{scroll-behavior:auto}.btn,.m img{transition:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap nav">
+    <a class="logo" href="#"><img src="img/logo.png" alt="Logo Viodé" width="193" height="193" /><span><b>Viodé</b><small>Corbigny · depuis 1968</small></span></a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="#metiers">Nos métiers</a><a href="#confort">Chauffage et clim</a><a href="#showroom">Showroom</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--lime" href="tel:+33386201214"><i class="ph-fill ph-phone" aria-hidden="true"></i><span class="lbl">03 86 20 12 14</span></a>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="rise">Votre maison entre de bonnes mains <em>depuis 1968</em></h1>
+      <p class="hero-sub rise d1">Plomberie, chauffage, climatisation, toiture, maçonnerie : une seule équipe d'artisans à Corbigny, et un showroom de 100 m² pour choisir vos équipements.</p>
+      <div class="hero-ctas rise d2">
+        <a class="btn btn--lime" href="#contact">Demander un devis gratuit<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn--line" href="tel:+33386201214"><i class="ph-fill ph-phone" aria-hidden="true"></i>03 86 20 12 14</a>
+      </div>
+    </div>
+    <div class="visual rise d1">
+      <div class="ghost" aria-hidden="true">1968</div>
+      <div class="ph"><img src="img/hero.webp" alt="Artisan Viodé installant un radiateur" width="1800" height="1200" fetchpriority="high" /></div>
+      <div class="show"><i class="ph-fill ph-storefront" aria-hidden="true"></i>Showroom de 100 m²</div>
+      <div class="since"><b>58 ans</b><span>de métier à Corbigny</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="strip" aria-label="Nos engagements">
+  <div class="wrap">
+    <div><i class="ph ph-shield-check" aria-hidden="true"></i>Garantie décennale</div>
+    <div><i class="ph ph-file-text" aria-hidden="true"></i>Devis gratuit</div>
+    <div><i class="ph ph-users-three" aria-hidden="true"></i>Plusieurs chantiers en parallèle</div>
+    <div><i class="ph ph-truck" aria-hidden="true"></i>Livraison et pose offertes en électroménager</div>
+  </div>
+</section>
+
+<main>
+  <section class="sec" id="metiers">
+    <div class="wrap">
+      <div class="metiers-head">
+        <h2>Sept métiers, une seule équipe</h2>
+        <p>Du dépannage de plomberie à l'agrandissement de votre maison, vous avez un seul interlocuteur du devis à la fin du chantier.</p>
+      </div>
+      <div class="metiers">
+        <a class="m big" href="#confort"><img src="img/clim.webp" alt="Pose d'une climatisation murale" width="1800" height="1200" loading="lazy" /><h3>Climatisation</h3><p>Monosplit, multisplit, réversible, pompe à chaleur air-air.</p></a>
+        <a class="m" href="#contact"><img src="img/plomberie.webp" alt="Réparation d'une canalisation" width="1800" height="1200" loading="lazy" /><h3>Plomberie</h3><p>Installation, dépannage, entretien.</p></a>
+        <a class="m" href="#confort"><img src="img/chauffage.webp" alt="Poêle à bois allumé" width="1800" height="1200" loading="lazy" /><h3>Chauffage</h3><p>Chaudières, poêles, chauffe-eau.</p></a>
+        <a class="m" href="#contact"><img src="img/toiture.webp" alt="Couvreurs sur une toiture" width="1800" height="1193" loading="lazy" /><h3>Toiture</h3><p>Charpente, couverture, zinguerie.</p></a>
+        <a class="m" href="#contact"><img src="img/maconnerie.webp" alt="Truelle et parpaings" width="1800" height="1200" loading="lazy" /><h3>Maçonnerie</h3><p>Gros œuvre, extensions, terrasses.</p></a>
+        <a class="m wide" href="#contact"><img src="img/renovation.webp" alt="Rénovation intérieure en cours" width="1800" height="1200" loading="lazy" /><h3>Rénovation intérieure</h3><p>Plâtrerie, cloisons, faux plafonds, peinture.</p></a>
+        <a class="m wide" href="#showroom"><img src="img/four.webp" alt="Four encastrable ouvert" width="1800" height="1200" loading="lazy" /><h3>Électroménager</h3><p>Vente, livraison, installation et SAV toutes marques.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec confort" id="confort">
+    <div class="wrap cf-grid">
+      <div class="cf-photos">
+        <div class="a"><img src="img/clim2.webp" alt="Climatisation installée dans un salon" width="1800" height="1200" loading="lazy" /></div>
+        <div class="b"><img src="img/thermostat.webp" alt="Réglage d'un thermostat" width="1800" height="1013" loading="lazy" /></div>
+      </div>
+      <div>
+        <h2>Chaud l'hiver, frais l'été, sans exploser la facture</h2>
+        <p class="lead">On regarde votre maison, votre isolation et votre budget, puis on vous conseille l'équipement qui vous coûtera le moins sur la durée.</p>
+        <div class="eq">
+          <div><i class="ph ph-snowflake" aria-hidden="true"></i><div><b>Climatisation réversible</b><span>Un seul appareil pour chauffer et rafraîchir.</span></div></div>
+          <div><i class="ph ph-fire" aria-hidden="true"></i><div><b>Chaudières fioul et gaz</b><span>Installation, réglages, entretien et dépannage.</span></div></div>
+          <div><i class="ph ph-tree" aria-hidden="true"></i><div><b>Poêle à bois</b><span>Le combustible le moins cher du marché.</span></div></div>
+          <div><i class="ph ph-thermometer-hot" aria-hidden="true"></i><div><b>Chauffage au sol, mural, chauffe-eau</b><span>Pour le neuf comme pour la rénovation.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec show-sec" id="showroom">
+    <div class="wrap sh-grid">
+      <div>
+        <h2>Venez choisir au showroom</h2>
+        <p class="lead">100 m² d'équipements à voir et à toucher à Corbigny. On vous conseille, on commande, on livre et on installe.</p>
+        <div class="brands"><span>Samsung</span><span>LG</span><span>Beko</span><span>Whirlpool</span><span>Liebherr</span></div>
+        <div class="perks">
+          <div><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Livraison et installation gratuites</div>
+          <div><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Service après-vente toutes marques</div>
+        </div>
+      </div>
+      <div class="ph"><img src="img/electromenager.webp" alt="Gamme d'appareils électroménagers" width="1800" height="1200" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap ct-grid">
+      <div>
+        <h2>Un projet, une panne, parlons-en</h2>
+        <a class="ct-phone" href="tel:+33386201214"><i class="ph-fill ph-phone" aria-hidden="true"></i>03 86 20 12 14</a>
+        <div class="info">
+          <div><i class="ph ph-map-pin" aria-hidden="true"></i><div><b>Showroom et bureaux</b><span>Route de Clamecy, 58800 Corbigny</span></div></div>
+          <div><i class="ph ph-envelope-simple" aria-hidden="true"></i><div><b>E-mail</b><a href="mailto:viode@viode.fr">viode@viode.fr</a></div></div>
+          <div><i class="ph ph-clock" aria-hidden="true"></i><div><b>Horaires</b><div class="hours"><span>Lundi</span><span>8 h - 12 h, 13 h 30 - 17 h 30</span><span>Mardi au jeudi</span><span>8 h 30 - 12 h, 13 h 30 - 17 h 30</span><span>Vendredi</span><span>8 h 30 - 12 h, 13 h 30 - 17 h</span></div></div></div>
+        </div>
+      </div>
+      <form id="form" novalidate>
+        <h3>Demande de devis gratuit</h3>
+        <div class="row2"><label>Nom<input name="nom" autocomplete="name" placeholder="Votre nom…" /></label><label>Téléphone<input type="tel" name="tel" autocomplete="tel" placeholder="06 12 34 56 78" /></label></div>
+        <label>Type de travaux<select name="t"><option>Plomberie</option><option>Chauffage</option><option>Climatisation</option><option>Toiture</option><option>Maçonnerie</option><option>Rénovation intérieure</option><option>Électroménager</option></select></label>
+        <label>Votre projet<textarea name="m" placeholder="Quelques mots sur vos travaux…"></textarea></label>
+        <button class="btn btn--char" type="submit" style="justify-self:start">Envoyer ma demande<i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+        <p class="ok" role="status" aria-live="polite">Maquette : ce formulaire n'envoie rien pour l'instant.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© Viodé Entreprise SA, Corbigny</span><span>Mentions légales · Confidentialité</span></div></footer>
+<script>document.getElementById("form").addEventListener("submit",function(e){e.preventDefault();this.classList.add("sent")});</script>
+<script src="/demo/demo-banner.js" data-label="Maquette réalisée par Studio FTT pour Viodé" defer></script>
+</body>
+</html>

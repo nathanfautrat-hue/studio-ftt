@@ -7,12 +7,16 @@
   if (document.getElementById("ftt-demo-bar")) return;
   // Pages de démo : /demo/... (HTML statique) et les fiches démo du site Next.
   function isDemo() {
-    return /^\/(demo\/|projets\/marceau)/.test(location.pathname);
+    return /^\/(demo\/|maquettes\/|projets\/marceau)/.test(location.pathname);
   }
   // ?capture=1 : pas de bandeau (captures d'écran pour le portfolio)
   if (!isDemo() || /[?&]capture=1/.test(location.search)) return;
 
   var BOOKING = "https://cal.com/studioftt-x1nxtl/projet";
+  // Maquette privée : libellé propre au prospect (data-label sur la balise script)
+  var me = document.currentScript || document.querySelector('script[src*="demo-banner"]');
+  var LABEL = (me && me.getAttribute("data-label")) || "";
+  var IS_MAQ = /^\/maquettes\//.test(location.pathname);
   var BACK = "https://studioftt.fr/#projets";
 
   var css =
@@ -53,11 +57,14 @@
     '<div class="fdb-in">' +
     '<a class="fdb-brand" href="' + BACK + '" aria-label="Studio FTT, retour au site">' +
     '<img class="fdb-logo" src="/logo_ftt.png" alt="" width="22" height="22">' +
-    '<span class="fdb-txt"><b>Démo réalisée par Studio FTT</b>' +
-    '<span class="fdb-note"> · textes et photos d’exemple</span></span></a>' +
+    (IS_MAQ
+      ? '<span class="fdb-txt"><b>' + (LABEL || "Maquette proposée par Studio FTT") + '</b>' +
+        '<span class="fdb-note"> · aperçu privé, non publié</span></span></a>'
+      : '<span class="fdb-txt"><b>Démo réalisée par Studio FTT</b>' +
+        '<span class="fdb-note"> · textes et photos d’exemple</span></span></a>') +
     '<div class="fdb-actions">' +
     '<a class="fdb-link fdb-link-back" href="' + BACK + '">Retour</a>' +
-    '<a class="fdb-cta" href="' + BOOKING + '" target="_blank" rel="noopener">Je veux le mien ' + arrow + "</a>" +
+    '<a class="fdb-cta" href="' + BOOKING + '" target="_blank" rel="noopener">' + (IS_MAQ ? "En parler" : "Je veux le mien") + ' ' + arrow + "</a>" +
     "</div></div>";
 
   var style = document.createElement("style");
