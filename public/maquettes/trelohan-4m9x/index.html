@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
-<link rel="preload" as="image" href="img/sdb-noir.webp" />
+<link rel="preload" as="image" href="img/hero.webp" />
 <style>
 :root{
   --black:#0c0d0e; --black-2:#16181a; --blue:#0f74a8; --blue-deep:#0b5c86; --sand:#f2efe9; --sand-2:#e7e2d9;
@@ -50,7 +50,7 @@ h2{font-size:clamp(36px,4.6vw,64px)}
 .nav .btn{min-height:46px;padding:0 20px;font-size:15px}
 @media (max-width:520px){.nav .btn .lbl{display:none}.nav .btn{padding:0 14px}.logo img{height:36px}}
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;isolation:isolate;overflow:hidden;background:var(--black)}
-.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;z-index:-2;transform:scale(1.04);animation:settle 2.4s var(--ease) forwards}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;z-index:-2;transform:scale(1.04);animation:settle 2.4s var(--ease) forwards}
 @keyframes settle{to{transform:none}}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(12,13,14,.88) 0%,rgba(12,13,14,.35) 45%,rgba(12,13,14,.2) 100%)}
 .hero > .wrap{width:100%;padding-bottom:64px;display:grid;gap:28px}
@@ -85,6 +85,13 @@ h2{font-size:clamp(36px,4.6vw,64px)}
 .masonry figcaption{position:absolute;left:12px;bottom:12px;background:rgba(12,13,14,.75);padding:6px 12px;border-radius:999px;font-size:13px}
 @media (min-width:700px){.masonry{columns:2}}
 @media (min-width:1050px){.masonry{columns:3}}
+
+.grid6{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid6 figure{margin:0;position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;background:var(--black-2)}
+.grid6 img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.grid6 figure:hover img{transform:scale(1.03)}
+.grid6 figcaption{position:absolute;left:12px;bottom:12px;background:rgba(12,13,14,.75);padding:6px 12px;border-radius:999px;font-size:13px}
+@media (min-width:900px){.grid6{grid-template-columns:repeat(3,1fr);gap:14px}}
 
 /* CHAUFFAGE */
 .heat{display:grid;gap:48px;align-items:center}
@@ -144,7 +151,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <a class="btn btn--blue" href="tel:+33678521987" aria-label="Appeler Yann au 06 78 52 19 87"><i class="ph-fill ph-phone" aria-hidden="true"></i><span class="lbl">06 78 52 19 87</span></a>
   </div>
 </nav>
-  <img src="img/sdb-noir.webp" alt="Salle de bains en marbre noir et bois, douche à l'italienne" width="1800" height="1350" fetchpriority="high" />
+  <img src="img/hero.webp" alt="Salle de bains moderne avec douche vitrée et miroir lumineux" width="2000" height="1602" fetchpriority="high" />
   <div class="wrap">
     <h1>Votre salle de bains, <b>pensée et posée</b> par un seul artisan</h1>
     <div class="hero-row">
@@ -175,13 +182,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="wrap">
       <h2>Quelques salles de bains</h2>
       <p class="lead">Des projets réalisés autour de Questembert, du plus sobre au plus audacieux.</p>
-      <div class="masonry">
-        <figure><img src="img/real-1.webp" alt="Meuble de salle de bains en bois et miroir lumineux" width="1086" height="1442" loading="lazy" /><figcaption>Meuble suspendu et miroir LED</figcaption></figure>
-        <figure><img src="img/sdb-vert.webp" alt="Meuble de salle de bains vert sapin" width="775" height="918" loading="lazy" /><figcaption>Meuble vert sapin</figcaption></figure>
-        <figure><img src="img/real-3.webp" alt="Douche à l'italienne et parquet" width="767" height="1019" loading="lazy" /><figcaption>Douche à l'italienne</figcaption></figure>
-        <figure><img src="img/sdb-pierre.webp" alt="Salle de bains minérale avec double vasque" width="495" height="350" loading="lazy" /><figcaption>Double vasque, esprit minéral</figcaption></figure>
-        <figure><img src="img/sdb-noir.webp" alt="Salle de bains marbre noir et bois" width="1800" height="1350" loading="lazy" /><figcaption>Marbre noir et chêne</figcaption></figure>
-        <figure><img src="img/real-4.webp" alt="Lave-mains et sèche-serviettes" width="767" height="1019" loading="lazy" /><figcaption>Petite salle d'eau</figcaption></figure>
+      <div class="grid6">
+        <figure><img src="img/real-1.webp" alt="Meuble de salle de bains en bois et miroir lumineux" width="1086" height="1442" loading="lazy" style="object-position:50% 45%" /><figcaption>Meuble suspendu et miroir LED</figcaption></figure>
+        <figure><img src="img/real-2.webp" alt="Salle de bains avec douche vitrée et miroir LED" width="1086" height="1442" loading="lazy" style="object-position:50% 45%" /><figcaption>Douche vitrée</figcaption></figure>
+        <figure><img src="img/sdb-noir.webp" alt="Salle de bains marbre noir et chêne" width="1800" height="1350" loading="lazy" style="object-position:70% 55%" /><figcaption>Marbre noir et chêne</figcaption></figure>
+        <figure><img src="img/real-3.webp" alt="Douche à l'italienne et parquet" width="767" height="1019" loading="lazy" style="object-position:50% 50%" /><figcaption>Douche à l'italienne</figcaption></figure>
+        <figure><img src="img/sdb-vert.webp" alt="Meuble de salle de bains vert sapin" width="775" height="918" loading="lazy" style="object-position:50% 60%" /><figcaption>Meuble vert sapin</figcaption></figure>
+        <figure><img src="img/real-4.webp" alt="Lave-mains et sèche-serviettes" width="767" height="1019" loading="lazy" style="object-position:50% 50%" /><figcaption>Petite salle d'eau</figcaption></figure>
       </div>
     </div>
   </section>
