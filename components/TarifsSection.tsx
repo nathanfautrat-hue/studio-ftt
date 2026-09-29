@@ -14,7 +14,7 @@ const INCLUS = [
   "Rapide, et lisible sur téléphone",
   "Formulaire de contact",
   "Référencement Google de base",
-  "Mise en ligne, hébergement offert la 1re année",
+  "Mise en ligne et hébergement inclus, sans abonnement",
   "1 modification offerte à la livraison",
 ];
 

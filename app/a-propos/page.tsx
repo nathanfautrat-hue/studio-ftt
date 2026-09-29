@@ -198,8 +198,8 @@ export default function APropos() {
                 d: "À compter du moment où j'ai vos contenus en main et l'acompte versé.",
               },
               {
-                t: "Hébergement offert la 1ère année",
-                d: "Sur Cloudflare Pages. Ensuite, un petit forfait mensuel, indiqué dans le devis.",
+                t: "Hébergement inclus, sans abonnement",
+                d: "Sur Cloudflare Pages, sans limite de durée. Seul votre nom de domaine reste à votre charge.",
               },
               {
                 t: "1 modification gratuite incluse",

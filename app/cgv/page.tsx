@@ -129,7 +129,7 @@ export default function CGV() {
               </li>
             </ul>
             <p className="mt-3">
-              Pour les prestations récurrentes (maintenance, hébergement)&nbsp;:
+              Pour la maintenance (prestation récurrente optionnelle)&nbsp;:
               paiement mensuel, prélevé à terme à échoir, sans engagement de
               durée.
             </p>
@@ -204,44 +204,58 @@ export default function CGV() {
 
           <div>
             <h2 className="font-display text-2xl text-white mb-3">
-              Article 7 — Hébergement
+              Article 7 — Hébergement &amp; nom de domaine
             </h2>
             <p>
-              L&apos;hébergement du site est offert pendant la première année
-              suivant la livraison, via le service Cloudflare Pages.
+              L&apos;hébergement du site est{" "}
+              <strong className="text-white">inclus dans le prix, sans limite de durée et sans abonnement</strong>,
+              via le service Cloudflare Pages. Il couvre la mise en ligne du
+              site tel que livré. Les modifications ultérieures ne sont pas
+              comprises dans l&apos;hébergement (voir Article 6 et Article 8).
             </p>
             <p className="mt-3">
-              Au-delà de cette première année, deux options&nbsp;:
-              <br />— Avec le contrat de maintenance (35&nbsp;€/mois)&nbsp;:
-              l&apos;hébergement est inclus, sans supplément.
-              <br />— Sans maintenance&nbsp;: un forfait hébergement seul est
-              disponible à <strong className="text-white">10&nbsp;€/mois</strong>.
+              <strong className="text-white">Nom de domaine&nbsp;:</strong>{" "}
+              il est acheté et renouvelé par le Client, à son nom et à ses
+              frais, auprès du registrar de son choix (environ 10 à 15&nbsp;€
+              par an selon l&apos;extension). C&apos;est le seul coût annuel
+              lié au site. Studio FTT accompagne le Client pour l&apos;achat et
+              le branchement.
             </p>
             <p className="mt-3">
               <strong className="text-white">Clause d&apos;adaptation&nbsp;:</strong>{" "}
-              en cas d&apos;évolution significative des coûts d&apos;hébergement
-              (changement de pricing Cloudflare, dépassement des limites
-              gratuites en raison du trafic ou des fonctionnalités du site),
-              Studio FTT se réserve le droit de migrer le site vers un
-              hébergeur équivalent ou de proposer une solution payante adaptée,
-              avec un préavis d&apos;au moins 30 jours.
+              si le site dépasse les limites gratuites de l&apos;hébergeur en
+              raison de son trafic ou de fonctionnalités ajoutées à la demande
+              du Client, ou en cas de changement de tarification de
+              Cloudflare, Studio FTT peut migrer le site vers un hébergeur
+              équivalent ou proposer une solution adaptée, avec un préavis
+              d&apos;au moins 30 jours. Le Client reste libre de refuser et de
+              récupérer son site selon les modalités de l&apos;alinéa suivant.
+            </p>
+            <p className="mt-3">
+              <strong className="text-white">Continuité en cas d&apos;arrêt d&apos;activité&nbsp;:</strong>{" "}
+              si Studio FTT cesse son activité, le Client en est informé au
+              moins 60 jours à l&apos;avance. Studio FTT lui transfère
+              gratuitement les fichiers de son site, avec une licence
+              d&apos;usage perpétuelle, et l&apos;accompagne pour le mettre en
+              ligne chez l&apos;hébergeur de son choix, afin que le site ne
+              soit pas interrompu.
             </p>
           </div>
 
           <div>
             <h2 className="font-display text-2xl text-white mb-3">
-              Article 8 — Maintenance &amp; hébergement (abonnements mensuels)
+              Article 8 — Maintenance (abonnement optionnel)
             </h2>
             <p>
-              Les prestations récurrentes (maintenance 35&nbsp;€/mois,
-              hébergement seul 10&nbsp;€/mois) sont sans engagement de durée et résiliables à tout moment par email, avec
-              un préavis d&apos;<strong className="text-white">un mois</strong> avant la prochaine échéance.
+              La maintenance (35&nbsp;€/mois&nbsp;: mises à jour techniques,
+              3 modifications par mois, support par email) est facultative.
+              Elle est sans engagement de durée et résiliable à tout moment par
+              email, avec un préavis d&apos;<strong className="text-white">un mois</strong> avant la prochaine échéance.
             </p>
             <p className="mt-3">
-              En cas de résiliation de la maintenance après la première année,
-              l&apos;hébergement n&apos;est plus inclus&nbsp;: le Client peut
-              soit migrer son site vers son propre hébergeur, soit souscrire le
-              forfait hébergement seul à <strong className="text-white">10&nbsp;€/mois</strong>.
+              La résiliation de la maintenance n&apos;a aucun effet sur
+              l&apos;hébergement, qui reste inclus. Les modifications
+              demandées hors maintenance sont facturées selon l&apos;Article 6.
             </p>
           </div>
 
@@ -276,7 +290,9 @@ export default function CGV() {
               Prestataire), le Client conserve son nom de domaine et tous ses
               contenus, mais ne peut prétendre à la cession du code source
               ni des designs Studio FTT. Il devra reconstruire son site
-              ailleurs s&apos;il souhaite quitter l&apos;écosystème Studio FTT.
+              ailleurs s&apos;il souhaite quitter l&apos;écosystème Studio FTT,
+              sauf en cas d&apos;arrêt d&apos;activité du Prestataire, où
+              l&apos;Article 7 s&apos;applique.
             </p>
           </div>
 

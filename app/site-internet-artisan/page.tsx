@@ -70,7 +70,7 @@ const ARTISAN_FAQ = [
   },
   {
     q: "Il faut payer tous les mois ?",
-    a: "Non, aucun abonnement obligatoire : le site se paie une fois. L'hébergement est offert la première année, ensuite c'est un petit forfait mensuel, indiqué dans le devis. Votre nom de domaine, une dizaine d'euros par an, reste à votre nom.",
+    a: "Non, aucun abonnement : le site se paie une fois et l'hébergement est inclus, sans limite de durée. Le seul frais annuel, c'est votre nom de domaine, une dizaine d'euros par an, payé directement et à votre nom.",
   },
 ];
 

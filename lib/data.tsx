@@ -126,7 +126,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Y a-t-il un abonnement ?",
-    a: "Non, rien d'obligatoire. L'hébergement est offert la première année, ensuite c'est un petit forfait mensuel, indiqué dans le devis. Vous payez aussi votre nom de domaine, une dizaine d'euros par an, et il est à votre nom.",
+    a: "Non. L'hébergement est inclus, sans limite de durée. Le seul frais annuel, c'est votre nom de domaine, une dizaine d'euros par an, que vous payez directement et qui est à votre nom. La maintenance mensuelle existe, mais elle est facultative.",
   },
   {
     q: "Et après la mise en ligne ?",

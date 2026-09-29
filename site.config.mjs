@@ -13,7 +13,7 @@ export const siteConfig = {
   // Nom et description
   name: "Studio FTT",
   description:
-    "Studio web indépendant pour artisans, indépendants et commerces locaux. Sites livrés en 7 jours ouvrés, sur devis, hébergement Cloudflare offert.",
+    "Studio web indépendant pour artisans, indépendants et commerces locaux. Sites livrés en 7 jours ouvrés, sur devis, hébergement inclus sans abonnement.",
 
   // Coordonnées
   email: "contact@studioftt.fr",

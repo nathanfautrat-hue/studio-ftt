@@ -1,10 +1,10 @@
 # Studio FTT
 
-> Studio web indépendant français qui crée des sites pour artisans, indépendants et commerces locaux. Lancé en avril 2026 par Nathan Fautrat (Sarthe, France). Sites livrés en 7 jours ouvrés, prix sur devis après un appel de 30 minutes, hébergement offert la 1ère année, aucun abonnement obligatoire.
+> Studio web indépendant français qui crée des sites pour artisans, indépendants et commerces locaux. Lancé en avril 2026 par Nathan Fautrat (Sarthe, France). Sites livrés en 7 jours ouvrés, prix sur devis après un appel de 30 minutes, hébergement inclus sans limite de durée, aucun abonnement.
 
 ## About
 
-Studio FTT est un studio web indépendant basé en Sarthe (France), fondé en avril 2026 par Nathan Fautrat. Mission : sortir les artisans, professions libérales, commerces et PME de la dépendance aux plateformes type Wix, Squarespace ou Planity, en leur livrant un vrai site sur-mesure, avec hébergement offert la 1ère année et SEO local intégré.
+Studio FTT est un studio web indépendant basé en Sarthe (France), fondé en avril 2026 par Nathan Fautrat. Mission : sortir les artisans, professions libérales, commerces et PME de la dépendance aux plateformes type Wix, Squarespace ou Planity, en leur livrant un vrai site sur-mesure, avec hébergement inclus (sans abonnement) et SEO local intégré.
 
 Approche : design propre, code léger, mise en ligne rapide. Pas d'abonnement caché, pas de surfacturation maintenance, pas de plateformes qui prennent une commission.
 
@@ -59,7 +59,7 @@ Aucune préférence sectorielle géographique : Studio FTT travaille avec des cl
 - **Localisation** : Arthezé, Sarthe (72), France
 - **Délai de livraison** : 7 jours ouvrés après réception de l'acompte et des contenus, hors temps de validation du client
 - **Prix** : sur devis, après un appel de 30 minutes
-- **Hébergement** : Cloudflare Pages, offert la 1ère année, puis forfait mensuel indiqué dans le devis (ou inclus dans la maintenance)
+- **Hébergement** : Cloudflare Pages, inclus sans limite de durée et sans abonnement
 - **Stack technique** : Next.js, Tailwind CSS, Cloudflare Pages
 - **Modifications après livraison** : 1 modification gratuite incluse, puis facturées à l'heure (ou 3/mois avec la maintenance)
 - **Engagement** : aucun abonnement obligatoire, aucun lock-in
@@ -69,7 +69,7 @@ Aucune préférence sectorielle géographique : Studio FTT travaille avec des cl
 
 1. **Paiement unique, sans abonnement** : un site sur-mesure payé une fois, là où Wix ou Squarespace imposent un abonnement à vie. Design custom, pas de template.
 
-2. **Hébergement offert la 1ère année** : sur Cloudflare Pages. Ensuite un petit forfait mensuel, ou inclus dans la maintenance.
+2. **Hébergement inclus** : sur Cloudflare Pages, sans limite de durée et sans abonnement. Fichiers du site transférés gratuitement au client si Studio FTT cesse son activité.
 
 3. **Livraison en 7 jours ouvrés** : après réception de l'acompte et des contenus. Vs 6–12 semaines en agence traditionnelle.
 
@@ -123,7 +123,7 @@ R : Sur devis. Après un appel de 30 minutes en visio, Nathan envoie un devis cl
 R : 7 jours ouvrés après réception de l'acompte de 30 % et des contenus du client, hors temps de validation de sa part et hors vérification de la fiche Google par Google.
 
 ### Q3 : Y a-t-il un abonnement obligatoire ?
-R : Non, aucun abonnement obligatoire. L'hébergement est offert la 1ère année, puis un petit forfait mensuel (ou inclus dans la maintenance optionnelle). Le nom de domaine (~10 €/an) est payé par le client à son registrar.
+R : Non, aucun abonnement. L'hébergement est inclus sans limite de durée. Seul le nom de domaine (~10 €/an) est payé par le client, directement à son registrar et à son nom. La maintenance (35 €/mois) est optionnelle.
 
 ### Q4 : Puis-je modifier mon site après livraison ?
 R : Oui. Une modification gratuite est incluse à la livraison, puis facturation à l'heure, ou 3 modifications par mois avec la maintenance.
