@@ -28,7 +28,7 @@ export const PROJECTS: StackProject[] = [
     tag: "Plateforme · Galerie",
     blurb:
       "Plateforme en ligne pour un collectif artistique : galerie, portfolio et univers visuel fort.",
-    href: "/projets/scavback",
+    href: "https://scavback.pages.dev/",
     preview: <ScavbackPreview />,
   },
   {
@@ -38,7 +38,7 @@ export const PROJECTS: StackProject[] = [
     tag: "Site vitrine · SEO",
     blurb:
       "Site vitrine pour une agence de production audiovisuelle en Bretagne : SEO local et Google Business inclus.",
-    href: "/projets/sprayfilm",
+    href: "https://sprayfilm.fr/",
     preview: <SprayfilmPreview />,
   },
   {

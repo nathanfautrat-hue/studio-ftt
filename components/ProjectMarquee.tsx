@@ -12,6 +12,8 @@ import type { StackProject } from "@/components/ProjectStack";
 function Card({ p, dup }: { p: StackProject; dup?: boolean }) {
   // Démos : rechargement complet (le bandeau démo s'installe proprement à chaque visite)
   const isStatic = p.href.startsWith("/demo/") || !!p.isDemo;
+  // Vrais sites clients : ouverture directe dans un nouvel onglet
+  const isExternal = /^https?:\/\//.test(p.href);
   const inner = (
     <>
       <div className="relative" style={{ aspectRatio: "16 / 10" }}>
@@ -21,6 +23,20 @@ function Card({ p, dup }: { p: StackProject; dup?: boolean }) {
   );
   const cls = "project-card block overflow-hidden";
   const style = { borderRadius: 20, background: "#0f0f0f", textDecoration: "none" } as const;
+  if (isExternal)
+    return (
+      <a
+        href={p.href}
+        target="_blank"
+        rel="noopener"
+        className={cls}
+        style={style}
+        aria-label={`${p.name}, ${p.kind} (site en ligne, nouvel onglet)`}
+        tabIndex={dup ? -1 : undefined}
+      >
+        {inner}
+      </a>
+    );
   return isStatic ? (
     <a href={p.href} className={cls} style={style} aria-label={`${p.name}, ${p.kind}`} tabIndex={dup ? -1 : undefined}>
       {inner}
