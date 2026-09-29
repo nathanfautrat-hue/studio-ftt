@@ -45,9 +45,9 @@ export const PROJECTS: StackProject[] = [
     id: "electricien",
     name: "Lumen Électricité",
     kind: "Électricien artisan",
-    tag: "Site vitrine · Dépannage",
+    tag: "Site vitrine · Dépannage 2 h",
     blurb:
-      "Démo pour un électricien artisan : la maison s'allume au fil du scroll, dépannage, tableau, zone d'intervention.",
+      "Démo pour un électricien : bleu vif, cercle jaune qui s'allume comme une ampoule, rappel en 60 secondes, services en blocs, avis clients.",
     href: "/demo/electricien/index.html",
     preview: <ElectricienPreview />,
     isDemo: true,

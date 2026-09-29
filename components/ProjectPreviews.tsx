@@ -88,7 +88,7 @@ export function ElectricienPreview() {
     <StaticPreview
       src="/preview-electricien.webp"
       alt="Aperçu de la démo Lumen Électricité, électricien artisan"
-      bg="#0b1020"
+      bg="#094cbc"
     />
   );
 }

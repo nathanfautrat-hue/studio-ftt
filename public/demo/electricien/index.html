@@ -4,379 +4,369 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex,nofollow" />
-<title>Lumen Électricité · Électricien, dépannage et mise aux normes (démo)</title>
-<meta name="description" content="Démo Studio FTT : site d'électricien artisan. Dépannage, tableau électrique, installation et rénovation." />
-<meta name="theme-color" content="#0b1020" />
+<title>Lumen Électricité · Électricien à La Flèche, dépannage en 2 h (démo)</title>
+<meta name="description" content="Démo Studio FTT : site d'un électricien artisan. Dépannage en 2 h, mise aux normes, tableau électrique, borne de recharge, domotique." />
+<meta name="theme-color" content="#0b57d0" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="img/maison-nuit.webp" />
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="preload" as="image" href="img/hero.webp" />
 <style>
 :root{
-  --night:#0b1020; --ink:#0e1530; --panel:#131b36; --line:rgba(243,237,227,.1);
-  --amber:#ffb35c; --amber-deep:#f0913a; --cream:#f3ede3; --muted:#a3abc0;
-  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
-  --body:"Manrope",ui-sans-serif,system-ui,sans-serif;
+  --blue:#094cbc; --blue-deep:#0a2a66; --blue-2:#1766e3; --sky:#e8f0fd;
+  --yellow:#ffd23f; --yellow-deep:#f2b705;
+  --paper:#f5f8fc; --ink:#0d1b33; --ink-2:#4b5a73; --line:rgba(13,27,51,.1);
+  --font:"Urbanist",ui-sans-serif,system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0}
-html{color-scheme:dark;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--night);color:var(--cream);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
-::selection{background:var(--amber);color:var(--night)}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+[id]{scroll-margin-top:24px}
+body{background:#fff;color:var(--ink);font:500 17px/1.6 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--yellow);color:var(--ink)}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--yellow-deep);outline-offset:3px;border-radius:8px}
 img{display:block;max-width:100%}
 .wrap{max-width:1240px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:var(--display);letter-spacing:-.025em;line-height:1.02;text-wrap:balance}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:999px;font:700 15px/1 var(--body);text-decoration:none;
-  transition:transform .25s cubic-bezier(.2,.7,.2,1),background-color .25s ease,color .25s ease,box-shadow .25s ease}
-.btn svg{width:18px;height:18px;flex-shrink:0}
-.btn--amber{background:var(--amber);color:var(--night);box-shadow:0 10px 24px -14px rgba(0,0,0,.6)}
-.btn--amber:hover{background:#ffc47e;transform:translateY(-2px)}
-.btn--ghost{color:var(--cream);box-shadow:inset 0 0 0 1px rgba(243,237,227,.28)}
-.btn--ghost:hover{background:rgba(243,237,227,.08);transform:translateY(-2px)}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.02;text-wrap:balance}
+h2{font-size:clamp(36px,4.4vw,58px)}
+.sec{padding:120px 0}
+@media (max-width:760px){.sec{padding:80px 0}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--yellow);padding:10px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:40;background:rgba(11,16,32,.86);border-bottom:1px solid var(--line)}
-@supports (backdrop-filter:blur(1px)){@media (min-width:900px){.nav{background:rgba(11,16,32,.7);backdrop-filter:blur(14px)}}}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--amber);display:grid;place-items:center;color:var(--night)}
-.brand-mark svg{width:18px;height:18px}
-.brand b{font:800 18px/1 var(--display);letter-spacing:-.02em}
-.brand small{display:block;font:500 12px/1.2 var(--body);color:var(--muted);margin-top:3px}
-.nav-links{display:none;gap:26px;font-weight:600;font-size:15px}
-.nav-links a{text-decoration:none;color:var(--muted);transition:color .2s}
-.nav-links a:hover{color:var(--cream)}
-.nav .btn{padding:11px 16px;font-size:14px}
-@media (min-width:900px){.nav-links{display:flex}}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;font:700 16px/1 var(--font);text-decoration:none;border:0;cursor:pointer;white-space:nowrap;
+  transition:transform .3s var(--ease),background-color .2s,color .2s}
+.btn i{font-size:20px}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(.98)}
+.btn--yellow{background:var(--yellow);color:var(--ink)}
+.btn--yellow:hover{background:#ffdf6e}
+.btn--white{background:#fff;color:var(--blue-deep)}
+.btn--white:hover{background:var(--sky)}
+.btn--blue{background:var(--blue);color:#fff}
+.btn--blue:hover{background:var(--blue-deep)}
 
-/* HERO : la maison qui s'allume */
-.scene{position:relative;height:230vh}
-.scene-sticky{position:sticky;top:68px;height:calc(100vh - 68px);min-height:560px;overflow:hidden}
-.house{position:absolute;inset:0 0 34% 0}
-@media (max-height:640px){.house{bottom:44%}}
-.house img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
-.house .light{opacity:0;transition:opacity .9s cubic-bezier(.16,1,.3,1);will-change:opacity}
-.house .light.on{opacity:1}
-.sky-glow{position:absolute;inset:0;background:radial-gradient(60% 45% at 60% 62%,rgba(255,179,92,.0),transparent 70%);transition:background .9s ease;pointer-events:none}
-.scene.lit-3 .sky-glow{background:radial-gradient(60% 45% at 60% 62%,rgba(255,179,92,.16),transparent 70%)}
-.veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,32,.15) 0%,rgba(11,16,32,0) 35%,rgba(11,16,32,.85) 58%,var(--night) 70%)}
-.hero-copy{position:absolute;left:0;right:0;bottom:0;padding:0 20px 44px}
-.hero-copy .wrap{padding:0}
-.hero h1{font-size:clamp(44px,11vw,96px);font-weight:800}
-.hero h1 span{display:block;color:var(--amber)}
-.hero p{max-width:34ch;color:#d7d2c9;font-size:clamp(16px,1.6vw,19px);margin:20px 0 28px}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
-.meter{display:flex;align-items:center;gap:12px;margin-top:26px;font:600 13px/1 var(--body);color:var(--muted)}
-.meter i{display:block;width:120px;height:3px;border-radius:3px;background:rgba(243,237,227,.14);overflow:hidden}
-.meter i b{display:block;height:100%;width:100%;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+/* ============ HERO (Ifroline) ============ */
+.hero{position:relative;background:radial-gradient(90% 90% at 80% 20%,var(--blue-2),var(--blue) 45%,#0a4ab5 100%);color:#fff;border-radius:0 0 48px 48px;overflow:hidden;isolation:isolate;padding-bottom:120px}
+.hero::before{content:"";position:absolute;inset:auto -10% -40% auto;width:60vw;height:60vw;border-radius:50%;background:rgba(255,255,255,.05);z-index:-1}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:86px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:22px;letter-spacing:-.02em}
+.logo i{width:40px;height:40px;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font-size:22px}
+.nav-links{display:none;gap:30px;font-weight:600;font-size:15px}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,.85);transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav .btn{min-height:46px;padding:0 20px;font-size:15px}
+@media (min-width:980px){.nav-links{display:flex}}
+@media (max-width:520px){.nav .btn .lbl{display:none}.nav .btn{padding:0 14px}}
+.hero-grid{display:grid;gap:40px;align-items:center;padding-top:30px}
+.hero h1{font-size:clamp(46px,5.8vw,82px)}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero-sub{margin-top:22px;max-width:42ch;font-size:clamp(17px,1.4vw,19px);color:rgba(255,255,255,.88)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:36px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.avatars{display:flex}
+.avatars span{width:40px;height:40px;border-radius:50%;margin-left:-10px;box-shadow:0 0 0 3px var(--blue);display:grid;place-items:center;font-weight:700;font-size:13px}
+.avatars span:first-child{margin-left:0}
+.avatars .a1{background:#ffe7a3;color:#6b4d00}.avatars .a2{background:#cfe0ff;color:#0a2a66}.avatars .a3{background:#ffd0c2;color:#7a2a12}
+.trust .stars{color:var(--yellow);display:flex;gap:2px}
+.trust small{display:block;font-size:14px;color:rgba(255,255,255,.8)}
+
+.bulb{position:relative;justify-self:center;width:min(520px,86vw);aspect-ratio:1}
+.ring{position:absolute;inset:0;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 18px rgba(255,210,63,.18),0 0 0 36px rgba(255,210,63,.08)}
+.bulb .ph{position:absolute;inset:26px;border-radius:50%;overflow:hidden;background:var(--blue-deep)}
+.bulb .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.badge{position:absolute;background:#fff;color:var(--ink);border-radius:16px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 24px 40px -20px rgba(10,42,102,.55);font-size:14px;font-weight:600}
+.badge i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:20px}
+.badge b{display:block;font-size:18px;font-weight:800;line-height:1.1}
+.badge--time{left:-6%;top:14%}
+.badge--time i{background:var(--yellow);color:var(--ink)}
+.badge--cert{right:-4%;bottom:12%}
+.badge--cert i{background:var(--sky);color:var(--blue)}
+@media (prefers-reduced-motion:no-preference){
+  .ring{animation:flicker 1.6s steps(1) .3s both}
+  @keyframes flicker{0%{opacity:.15}8%{opacity:1}12%{opacity:.2}20%{opacity:1}24%{opacity:.35}34%{opacity:1}100%{opacity:1}}
+  .rise{opacity:0;transform:translateY(22px);animation:rise 1s var(--ease) forwards}
+  .rise.d1{animation-delay:.1s}.rise.d2{animation-delay:.2s}.rise.d3{animation-delay:.3s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+@media (min-width:980px){.hero-grid{grid-template-columns:1.05fr 1fr}}
+@media (max-width:600px){.badge--time{left:-2%;top:4%}.badge--cert{right:-2%;bottom:2%}.badge{padding:10px 12px}.badge b{font-size:16px}}
+
+/* ============ RAPPEL 60 s (FixFlow) ============ */
+.callback{position:relative;z-index:3;margin-top:-64px}
+.cb{background:#fff;border-radius:22px;padding:22px;display:grid;gap:14px;align-items:center;box-shadow:0 30px 60px -30px rgba(10,42,102,.45)}
+.cb-t b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.cb-t span{font-size:14px;color:var(--ink-2)}
+.cb label{display:grid;gap:4px;font-size:13px;font-weight:700}
+.cb input{font:600 16px/1.4 var(--font);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 14px;width:100%}
+.cb input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,87,208,.18)}
+.cb input::placeholder{color:#5d6b82}
+.cb .btn{width:100%;justify-content:center}
+.cb-ok{display:none;grid-column:1/-1;font-weight:700;color:var(--blue)}
+.cb.sent .cb-ok{display:block}
+@media (min-width:900px){.cb{grid-template-columns:1.2fr 1fr 1fr auto;padding:22px 22px 22px 30px}.cb .btn{width:auto;align-self:end}}
+
+/* ============ SERVICES (bento) ============ */
+.srv-head{display:grid;gap:14px;max-width:640px}
+.srv-head p{color:var(--ink-2);font-size:18px}
+.bento{margin-top:48px;display:grid;gap:14px}
+.cell{position:relative;border-radius:22px;padding:28px;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:240px}
+.cell h3{font-size:25px}
+.cell p{margin-top:8px;font-size:15px;max-width:34ch}
+.cell > i{font-size:30px;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:auto}
+.c-photo{color:#fff;background:var(--blue-deep)}
+.c-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s var(--ease)}
+.c-photo:hover img{transform:scale(1.04)}
+.c-photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(10,42,102,.9),rgba(10,42,102,.1) 60%)}
+.c-photo p{color:rgba(255,255,255,.88)}
+.c-light{background:var(--sky)}
+.c-light > i{background:#fff;color:var(--blue)}
+.c-light p{color:var(--ink-2)}
+.c-blue{background:var(--blue);color:#fff}
+.c-blue > i{background:var(--yellow);color:var(--ink)}
+.c-blue p{color:rgba(255,255,255,.86)}
+.c-yellow{background:var(--yellow)}
+.c-yellow > i{background:var(--ink);color:var(--yellow)}
 @media (min-width:900px){
-  .house{left:38%;bottom:0}
-  .house img{object-position:40% 45%}
-  .veil{background:linear-gradient(90deg,var(--night) 0%,rgba(11,16,32,.85) 34%,rgba(11,16,32,0) 62%),linear-gradient(180deg,transparent 70%,rgba(11,16,32,.8) 100%)}
-  .hero-copy{top:0;display:flex;align-items:center;padding:0}
-  .hero-copy .wrap{width:100%;padding:0 20px}
+  .bento{grid-template-columns:repeat(4,1fr);grid-auto-rows:270px}
+  .b1{grid-column:span 2;grid-row:span 2}
+  .b6{grid-column:1 / -1}
 }
 
-/* SECTIONS */
-section{padding:clamp(72px,10vw,128px) 0}
-.intro{max-width:760px}
-.intro h2{font-size:clamp(34px,5vw,60px)}
-.intro p{color:var(--muted);margin-top:18px;max-width:58ch}
+/* ============ POURQUOI (section arrondie bleu clair) ============ */
+.why{background:var(--sky);border-radius:48px;margin:0 12px}
+.why-grid{display:grid;gap:48px;align-items:center}
+.why-photo{position:relative;max-width:540px}
+.why-photo .main{border-radius:28px;overflow:hidden;aspect-ratio:4/5}
+.why-photo .main img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.why-photo .small{position:absolute;right:-40px;bottom:40px;width:42%;aspect-ratio:1;border-radius:22px;overflow:hidden;box-shadow:0 0 0 8px var(--sky)}
+.why-photo .small img{width:100%;height:100%;object-fit:cover}
+.why p.lead{margin-top:18px;color:var(--ink-2);font-size:18px;max-width:46ch}
+.checks{margin-top:30px;list-style:none;padding:0;display:grid;gap:18px}
+.checks li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.checks i{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:20px}
+.checks b{display:block;font-size:19px;font-weight:700}
+.checks span{color:var(--ink-2);font-size:15px}
+@media (min-width:960px){.why-grid{grid-template-columns:1fr 1.05fr;gap:110px}.why{margin:0 24px}}
+@media (max-width:600px){.why-photo .small{right:-8px;bottom:-24px}.why{border-radius:32px}}
 
-/* Services : liste éditoriale, pas des cartes identiques */
-.services{display:grid;gap:18px;margin-top:56px}
-.svc{display:grid;gap:0;background:var(--panel);border-radius:16px;overflow:hidden}
-.svc figure{aspect-ratio:16/10;overflow:hidden}
-.svc figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
-.svc:hover figure img{transform:scale(1.04)}
-.svc div{padding:26px 26px 30px}
-.svc h3{font-size:28px;font-weight:700}
-.svc p{color:var(--muted);margin-top:10px}
-.svc .tag{display:inline-block;margin-top:16px;font:700 13px/1 var(--body);color:var(--amber)}
-@media (min-width:900px){
-  .services{grid-template-columns:1.25fr 1fr;grid-auto-rows:auto}
-  .svc--big{grid-row:span 2}
-  .svc--big{display:flex;flex-direction:column}
-  .svc--big figure{aspect-ratio:auto;flex:1;min-height:420px}
-}
+/* ============ CHIFFRES ============ */
+.numbers{padding:90px 0 0}
+.band{background:linear-gradient(120deg,var(--blue-deep),var(--blue));color:#fff;border-radius:28px;padding:44px 30px;display:grid;gap:28px;grid-template-columns:repeat(2,1fr)}
+.band div{text-align:center}
+.band b{display:block;font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.band b small{font-size:.55em;color:var(--yellow)}
+.band span{font-size:15px;color:rgba(255,255,255,.82)}
+@media (min-width:860px){.band{grid-template-columns:repeat(4,1fr);padding:54px 40px}.band div+div{box-shadow:-1px 0 0 rgba(255,255,255,.18)}}
 
-/* Bande « dépannage » */
-.urgence{background:linear-gradient(135deg,#1a2140,#0e1530);border-block:1px solid var(--line)}
-.urgence .wrap{display:grid;gap:28px;align-items:center}
-.urgence h2{font-size:clamp(32px,4.6vw,56px)}
-.urgence h2 em{font-style:normal;color:var(--amber);display:block}
-.urgence ul{list-style:none;padding:0;display:grid;gap:14px;color:#d7d2c9}
-.urgence li{display:flex;gap:12px;align-items:flex-start}
-.urgence li svg{width:20px;height:20px;color:var(--amber);flex-shrink:0;margin-top:3px}
-@media (min-width:900px){.urgence .wrap{grid-template-columns:1.2fr 1fr}}
+/* ============ AVIS ============ */
+.avis-head{text-align:center;max-width:640px;margin:0 auto}
+.avis-head p{margin-top:14px;color:var(--ink-2)}
+.revs{margin-top:48px;display:grid;gap:14px}
+.rev{background:#fff;border-radius:22px;padding:28px;box-shadow:0 1px 0 var(--line),0 24px 40px -34px rgba(10,42,102,.5);display:grid;gap:14px;align-content:space-between}
+.rev .stars{display:flex;gap:2px;color:var(--yellow-deep);font-size:18px}
+.rev p{font-size:17px;line-height:1.5}
+.rev footer{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px}
+.rev footer i{width:40px;height:40px;border-radius:50%;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:14px}
+.rev footer span{display:block;font-weight:500;color:var(--ink-2);font-size:14px}
+@media (min-width:900px){.revs{grid-template-columns:repeat(3,1fr)}}
 
-/* Déroulé */
-.steps{display:grid;gap:14px;margin-top:48px;counter-reset:s}
-.step{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:24px 0;border-top:1px solid var(--line)}
-.step span{font:800 15px/1 var(--display);color:var(--night);background:var(--amber);width:34px;height:34px;border-radius:50%;display:grid;place-items:center}
-.step h3{font-size:22px;font-weight:700}
-.step p{color:var(--muted);margin-top:6px}
-@media (min-width:900px){.steps{grid-template-columns:repeat(3,1fr);gap:36px}.step{grid-template-columns:1fr;border-top:2px solid rgba(255,179,92,.35)}}
-
-/* Zone */
-.zone .wrap{display:grid;gap:32px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding:0}
-.chips li{list-style:none;padding:10px 16px;border-radius:999px;background:var(--panel);font-weight:600;font-size:15px}
-.zone-card{background:var(--panel);border-radius:16px;padding:28px}
-.zone-card b{font:800 44px/1 var(--display);color:var(--amber)}
-.zone-card p{color:var(--muted);margin-top:8px}
-@media (min-width:900px){.zone .wrap{grid-template-columns:1.4fr 1fr;align-items:center}}
-
-/* Avis (emplacements à relier à la fiche Google) */
-.reviews{display:grid;gap:16px;margin-top:40px}
-.review{background:var(--panel);border-radius:16px;padding:26px}
-.review p{font-size:18px}
-.review cite{display:block;margin-top:16px;font-style:normal;font-weight:700;color:var(--muted);font-size:14px}
-@media (min-width:900px){.reviews{grid-template-columns:repeat(3,1fr)}}
-
-/* Contact */
-.contact .wrap{display:grid;gap:40px}
-.contact h2{font-size:clamp(36px,5.4vw,68px)}
-.contact h2 span{color:var(--amber)}
-.phone-big{display:inline-flex;align-items:center;gap:14px;margin-top:26px;font:800 clamp(26px,4vw,40px)/1 var(--display);text-decoration:none;color:var(--cream)}
-.phone-big svg{width:30px;height:30px;color:var(--amber)}
-.hours{color:var(--muted);margin-top:14px}
-form{background:var(--panel);border-radius:16px;padding:26px;display:grid;gap:14px}
-label{display:grid;gap:6px;font-weight:600;font-size:14px}
-input,textarea,select{font:inherit;font-size:16px;color:var(--cream);background:var(--ink);border:1px solid rgba(243,237,227,.16);border-radius:10px;padding:13px 14px}
-input::placeholder,textarea::placeholder{color:#7d869c}
-input:focus,textarea:focus,select:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
-.form-note{font-size:13px;color:var(--muted)}
-.sent{display:none;color:var(--amber);font-weight:700}
-@media (min-width:900px){.contact .wrap{grid-template-columns:1fr 1fr;align-items:start}}
-
-footer{border-top:1px solid var(--line);padding:32px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
-@media (min-width:900px){footer{padding-bottom:40px}}
-
-/* Barre d'appel mobile */
-.callbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:flex;justify-content:center;opacity:0;transform:translateY(120%);transition:opacity .4s ease,transform .5s cubic-bezier(.16,1,.3,1);pointer-events:none}
-.callbar.show{opacity:1;transform:none;pointer-events:auto}
-.callbar .btn{width:100%;justify-content:center}
-@media (min-width:900px){.callbar{display:none}}
-
-/* Apparitions */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .reveal{opacity:1;transform:none;transition:none}
-  .scene{height:auto}.scene-sticky{position:relative;top:0}
-  .house .light{opacity:1;transition:none}
-  .svc figure img{transition:none}
-}
+/* ============ CONTACT ============ */
+.contact{background:var(--blue-deep);color:#fff;border-radius:48px 48px 0 0}
+.ct-grid{display:grid;gap:48px}
+.ct-phone{display:inline-flex;align-items:center;gap:14px;margin-top:26px;font-size:clamp(32px,3.8vw,48px);font-weight:800;letter-spacing:-.02em;text-decoration:none}
+.ct-phone i{width:58px;height:58px;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font-size:26px}
+.zone{margin-top:30px}
+.zone b{display:block;font-size:18px}
+.zone ul{list-style:none;padding:0;margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.zone li{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);font-size:14px}
+.ct-meta{margin-top:26px;display:grid;gap:10px;color:rgba(255,255,255,.85)}
+.ct-meta span{display:flex;gap:10px;align-items:center}
+.ct-meta i{color:var(--yellow);font-size:20px}
+form.devis{background:#fff;color:var(--ink);border-radius:24px;padding:30px;display:grid;gap:16px}
+form.devis h3{font-size:30px}
+form.devis label{display:grid;gap:6px;font-weight:700;font-size:14px}
+form.devis input,form.devis select,form.devis textarea{font:600 16px/1.4 var(--font);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 14px;width:100%}
+form.devis input:focus,form.devis select:focus,form.devis textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,87,208,.18)}
+form.devis ::placeholder{color:#5d6b82}
+form.devis textarea{min-height:100px;resize:vertical}
+.row2{display:grid;gap:16px}
+@media (min-width:600px){.row2{grid-template-columns:1fr 1fr}}
+.form-ok{display:none;font-weight:700;color:var(--blue)}
+form.sent .form-ok{display:block}
+.form-note{font-size:13px;color:var(--ink-2)}
+@media (min-width:960px){.ct-grid{grid-template-columns:1fr 1.05fr;gap:90px;align-items:start}}
+footer.site{background:var(--blue-deep);color:rgba(255,255,255,.7);font-size:14px;padding:24px 0 36px;border-top:1px solid rgba(255,255,255,.12)}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.c-photo img{transition:none}}
 </style>
-<script src="/demo/demo-banner.js" defer></script>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5 9-10"/></symbol>
-</svg>
-
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Lumen Électricité, accueil">
-      <span class="brand-mark"><svg><use href="#i-bolt"/></svg></span>
-      <span><b>Lumen Électricité</b><small>Électricien · Votre ville</small></span>
-    </a>
+<header class="hero">
+  <div class="wrap nav">
+    <a class="logo" href="#"><i class="ph-fill ph-lightning" aria-hidden="true"></i><span translate="no">Lumen</span></a>
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="#services">Services</a>
-      <a href="#zone">Zone</a>
+      <a href="#pourquoi">Pourquoi nous</a>
+      <a href="#avis">Avis</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn--amber" href="#contact"><svg><use href="#i-phone"/></svg>Appeler</a>
+    <a class="btn btn--yellow" href="tel:+33243000004"><i class="ph-fill ph-phone" aria-hidden="true"></i><span class="lbl">02 43 00 00 04</span></a>
+  </div>
+  <div class="wrap hero-grid" id="contenu">
+    <div>
+      <h1 class="rise">Panne de courant, <em>on arrive en 2 h</em></h1>
+      <p class="hero-sub rise d1">Électricien à La Flèche et alentours. Dépannage, mise aux normes, tableau électrique et borne de recharge, devis gratuit.</p>
+      <div class="hero-ctas rise d2">
+        <a class="btn btn--yellow" href="tel:+33243000004"><i class="ph-fill ph-phone" aria-hidden="true"></i>Appeler maintenant</a>
+        <a class="btn btn--white" href="#contact">Demander un devis</a>
+      </div>
+      <div class="trust rise d3">
+        <div class="avatars" aria-hidden="true"><span class="a1">ML</span><span class="a2">JR</span><span class="a3">SB</span></div>
+        <div><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><small>4,9/5 sur 128 avis Google</small></div>
+      </div>
+    </div>
+    <div class="bulb">
+      <div class="ring" aria-hidden="true"></div>
+      <div class="ph"><img src="img/hero.webp" alt="Électricien câblant un tableau électrique" width="1200" height="2133" fetchpriority="high" /></div>
+      <div class="badge badge--time"><i class="ph-fill ph-timer" aria-hidden="true"></i><div><b>2 h</b>délai d'intervention</div></div>
+      <div class="badge badge--cert"><i class="ph-fill ph-seal-check" aria-hidden="true"></i><div><b>Qualifelec</b>artisan certifié</div></div>
+    </div>
   </div>
 </header>
 
-<main id="top">
-  <!-- HERO : les fenêtres s'allument au fil du scroll -->
-  <div class="scene" id="scene">
-    <div class="scene-sticky">
-      <div class="house" aria-hidden="true">
-        <img src="img/maison-nuit.webp" alt="" width="1200" height="1800" fetchpriority="high" />
-        <img class="light" data-step="1" src="img/lumiere-w2.webp" alt="" width="1200" height="1800" />
-        <img class="light" data-step="2" src="img/lumiere-w1.webp" alt="" width="1200" height="1800" />
-        <img class="light" data-step="3" src="img/lumiere-w3.webp" alt="" width="1200" height="1800" />
-        <img class="light" data-step="4" src="img/lumiere-w4.webp" alt="" width="1200" height="1800" />
-        <img class="light" data-step="5" src="img/lumiere-w5.webp" alt="" width="1200" height="1800" />
-        <div class="sky-glow"></div>
-      </div>
-      <div class="veil" aria-hidden="true"></div>
-      <div class="hero-copy hero">
-        <div class="wrap">
-          <div>
-            <h1>Plus de courant<span>On rallume ce soir</span></h1>
-            <p>Dépannage, tableau électrique, installation et rénovation, chez les particuliers comme chez les pros, autour de votre ville.</p>
-            <div class="hero-ctas">
-              <a class="btn btn--amber" href="#contact"><svg><use href="#i-phone"/></svg>Appeler maintenant</a>
-              <a class="btn btn--ghost" href="#contact">Demander un devis<svg><use href="#i-arrow"/></svg></a>
-            </div>
-            <div class="meter" aria-hidden="true"><i><b id="meter-bar"></b></i><span id="meter-txt">Tout est éteint</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="wrap callback" aria-label="Être rappelé">
+  <form class="cb" id="cb" novalidate>
+    <div class="cb-t"><b>Rappel en 60 secondes</b><span>Laissez votre numéro, on vous rappelle tout de suite.</span></div>
+    <label>Prénom<input name="prenom" autocomplete="given-name" placeholder="Votre prénom…" /></label>
+    <label>Téléphone<input type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" /></label>
+    <button class="btn btn--blue" type="submit">Être rappelé<i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+    <p class="cb-ok" role="status" aria-live="polite">Démo : rien n'est envoyé. Sur le vrai site, l'électricien reçoit votre numéro par SMS.</p>
+  </form>
+</section>
 
-  <section id="services">
+<main>
+  <section class="sec" id="services">
     <div class="wrap">
-      <div class="intro reveal">
-        <h2>Tout ce qui passe par vos fils</h2>
-        <p>Une panne, un vieux tableau qui fait peur, une pièce à refaire : vous appelez, j'explique ce que je vois et ce que ça coûte avant de commencer.</p>
+      <div class="srv-head">
+        <h2>Tout ce qui touche au courant</h2>
+        <p>Du disjoncteur qui saute à la maison entièrement recâblée.</p>
       </div>
-      <div class="services">
-        <article class="svc svc--big reveal">
-          <figure><img src="img/depannage.webp" alt="Électricien testant un tableau au multimètre (photo Pexels, exemple)" width="675" height="1200" loading="lazy" /></figure>
-          <div>
-            <h3>Dépannage</h3>
-            <p>Disjoncteur qui saute, prises mortes, panne générale : je cherche la cause, pas juste le symptôme.</p>
-            <span class="tag">Le soir et le week-end aussi</span>
-          </div>
-        </article>
-        <article class="svc reveal">
-          <figure><img src="img/tableau.webp" alt="Tableau électrique neuf et bien rangé (photo Pexels, exemple)" width="1200" height="747" loading="lazy" /></figure>
-          <div>
-            <h3>Tableau et mise aux normes</h3>
-            <p>Remplacement du tableau, différentiels, mise en conformité avant une vente ou une location.</p>
-          </div>
-        </article>
-        <article class="svc reveal">
-          <figure><img src="img/installation.webp" alt="Électricien installant un tableau à la perceuse (photo Pexels, exemple)" width="1200" height="900" loading="lazy" /></figure>
-          <div>
-            <h3>Installation et rénovation</h3>
-            <p>Maison neuve, extension, pièce refaite : prises, éclairage, câblage, du plan à la mise sous tension.</p>
-          </div>
-        </article>
+      <div class="bento">
+        <article class="cell c-photo b1"><img src="img/tableau-travail.webp" alt="Électricien travaillant sur un tableau électrique" width="1000" height="1778" loading="lazy" /><h3>Tableau électrique</h3><p>Remplacement, mise aux normes NF C 15-100, disjoncteurs différentiels.</p></article>
+        <article class="cell c-yellow b2"><i class="ph ph-lightning-slash" aria-hidden="true"></i><h3>Dépannage</h3><p>Plus de courant, prise qui chauffe, disjoncteur qui saute.</p></article>
+        <article class="cell c-light b3"><i class="ph ph-plugs-connected" aria-hidden="true"></i><h3>Prises et éclairage</h3><p>Ajout de prises, spots LED, éclairage extérieur.</p></article>
+        <article class="cell c-blue b4"><i class="ph ph-charging-station" aria-hidden="true"></i><h3>Borne de recharge</h3><p>Installation IRVE, éligible aux aides.</p></article>
+        <article class="cell c-light b5"><i class="ph ph-house-line" aria-hidden="true"></i><h3>Rénovation</h3><p>Recâblage complet d'une maison ancienne.</p></article>
+        <article class="cell c-photo b6"><img src="img/solaire.webp" alt="Panneaux solaires sur un toit" width="1000" height="667" loading="lazy" /><h3>Panneaux solaires et domotique</h3><p>Raccordement, volets et chauffage pilotés depuis le téléphone.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="urgence">
-    <div class="wrap">
-      <div class="reveal">
-        <h2>Une panne à 21 h <em>Appelez quand même</em></h2>
+  <section class="sec why" id="pourquoi">
+    <div class="wrap why-grid">
+      <div class="why-photo">
+        <div class="main"><img src="img/atelier.webp" alt="Électricien préparant son matériel" width="1000" height="1778" loading="lazy" /></div>
+        <div class="small"><img src="img/prise.webp" alt="Installation d'une prise électrique" width="900" height="1348" loading="lazy" /></div>
       </div>
-      <ul class="reveal">
-        <li><svg><use href="#i-check"/></svg>Je décroche moi-même, pas un standard.</li>
-        <li><svg><use href="#i-check"/></svg>Je vous dis au téléphone si ça peut attendre demain.</li>
-        <li><svg><use href="#i-check"/></svg>Le prix du déplacement est annoncé avant que je parte.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="intro reveal"><h2>Comment ça se passe</h2></div>
-      <div class="steps">
-        <div class="step reveal"><span>1</span><div><h3>Vous appelez</h3><p>Vous m'expliquez le problème, je vous pose deux ou trois questions.</p></div></div>
-        <div class="step reveal"><span>2</span><div><h3>Je passe voir</h3><p>Diagnostic sur place et devis clair avant de toucher à quoi que ce soit.</p></div></div>
-        <div class="step reveal"><span>3</span><div><h3>C'est réparé</h3><p>Je remets en route, je teste, je vous montre ce qui a été fait.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="zone" id="zone">
-    <div class="wrap">
-      <div class="reveal">
-        <h2 style="font-size:clamp(32px,4.6vw,56px)">J'interviens autour de chez vous</h2>
-        <ul class="chips" aria-label="Communes desservies (exemple)">
-          <li>Commune 1</li><li>Commune 2</li><li>Commune 3</li><li>Commune 4</li><li>Commune 5</li><li>Commune 6</li>
+      <div>
+        <h2>Un électricien qui répond, et qui explique</h2>
+        <p class="lead">Vous savez ce qui a lâché, pourquoi, et combien ça coûte avant que je commence.</p>
+        <ul class="checks">
+          <li><i class="ph ph-check" aria-hidden="true"></i><div><b>Devis gratuit et détaillé</b><span>Chaque ligne expliquée, sans jargon.</span></div></li>
+          <li><i class="ph ph-check" aria-hidden="true"></i><div><b>Attestation Consuel</b><span>Pour une installation neuve ou rénovée, je m'occupe du dossier.</span></div></li>
+          <li><i class="ph ph-check" aria-hidden="true"></i><div><b>Chantier propre</b><span>Bâches, aspirateur, gaines rebouchées avant de partir.</span></div></li>
+          <li><i class="ph ph-check" aria-hidden="true"></i><div><b>Garantie décennale</b><span>Vos travaux sont couverts dix ans.</span></div></li>
         </ul>
       </div>
-      <div class="zone-card reveal">
-        <b>30 km</b>
-        <p>autour de l'atelier. Votre commune n'est pas dans la liste ? Appelez, on trouve une solution.</p>
+    </div>
+  </section>
+
+  <section class="wrap numbers" aria-label="Quelques chiffres">
+    <div class="band">
+      <div><b data-count="1240">1240</b><span>interventions depuis 2014</span></div>
+      <div><b data-count="2">2<small> h</small></b><span>délai moyen en dépannage</span></div>
+      <div><b data-count="98">98<small> %</small></b><span>de clients qui nous recommandent</span></div>
+      <div><b data-count="7">7<small> j/7</small></b><span>pour les urgences</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="avis">
+    <div class="wrap">
+      <div class="avis-head">
+        <h2>Ils ont retrouvé la lumière</h2>
+        <p>4,9 sur 5, 128 avis Google.</p>
+      </div>
+      <div class="revs">
+        <blockquote class="rev"><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><p>Plus de courant un samedi soir avec deux enfants. Arrivé en une heure et demie, panne trouvée en dix minutes.</p><footer><i>AM</i><div>Aurélie M.<span>La Flèche</span></div></footer></blockquote>
+        <blockquote class="rev"><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><p>Tableau de 1978 remplacé en une journée. Il m'a montré chaque disjoncteur et à quoi il sert.</p><footer><i>JR</i><div>Jean-Pierre R.<span>Bazouges-sur-le-Loir</span></div></footer></blockquote>
+        <blockquote class="rev"><span class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><p>Borne de recharge posée et dossier d'aide rempli pour nous. Rien à gérer de notre côté.</p><footer><i>SB</i><div>Sophie et Marc B.<span>Clermont-Créans</span></div></footer></blockquote>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <div class="intro reveal">
-        <h2>Ce que disent les clients</h2>
-        <p>Emplacements prévus pour vos vrais avis Google.</p>
+  <section class="sec contact" id="contact">
+    <div class="wrap ct-grid">
+      <div>
+        <h2>Une panne, un projet, appelez</h2>
+        <a class="ct-phone" href="tel:+33243000004"><i class="ph-fill ph-phone" aria-hidden="true"></i>02 43 00 00 04</a>
+        <div class="ct-meta">
+          <span><i class="ph ph-clock" aria-hidden="true"></i>Du lundi au samedi 7 h 30 - 19 h, urgences 7j/7</span>
+          <span><i class="ph ph-envelope-simple" aria-hidden="true"></i>contact@lumen-electricite.fr</span>
+        </div>
+        <div class="zone"><b>On intervient à</b><ul><li>La Flèche</li><li>Bazouges-sur-le-Loir</li><li>Clermont-Créans</li><li>Crosmières</li><li>Villaines-sous-Malicorne</li><li>Mareil-sur-Loir</li><li>Le Lude</li><li>Sablé-sur-Sarthe</li></ul></div>
       </div>
-      <div class="reviews">
-        <figure class="review reveal"><p>Témoignage à recueillir.</p><cite>Client 1</cite></figure>
-        <figure class="review reveal"><p>Témoignage à recueillir.</p><cite>Client 2</cite></figure>
-        <figure class="review reveal"><p>Témoignage à recueillir.</p><cite>Client 3</cite></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <div class="reveal">
-        <h2>On en parle <span>ce soir</span></h2>
-        <a class="phone-big" href="#contact"><svg><use href="#i-phone"/></svg>Téléphone à renseigner</a>
-        <p class="hours">Du lundi au samedi, et en dépannage le soir.</p>
-      </div>
-      <form class="reveal" id="devis" novalidate>
-        <label>Votre nom<input name="nom" autocomplete="name" placeholder="Jean Dupont" /></label>
-        <label>Votre téléphone<input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" /></label>
-        <label>Ce qu'il faut faire<textarea name="besoin" rows="4" placeholder="Ex. le disjoncteur saute dès que j'allume le four…"></textarea></label>
-        <button class="btn btn--amber" type="submit" style="justify-content:center;border:0;cursor:pointer">Envoyer ma demande<svg><use href="#i-arrow"/></svg></button>
-        <p class="sent" id="sent" role="status" aria-live="polite">Démo : sur le vrai site, votre demande arriverait ici.</p>
-        <p class="form-note">Vos informations servent uniquement à vous rappeler.</p>
+      <form class="devis" id="devis" novalidate>
+        <h3>Demande de devis</h3>
+        <div class="row2">
+          <label>Nom<input name="nom" autocomplete="name" placeholder="Votre nom…" /></label>
+          <label>Téléphone<input type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" /></label>
+        </div>
+        <div class="row2">
+          <label>Commune<input name="ville" autocomplete="address-level2" placeholder="Ex. La Flèche…" /></label>
+          <label>Type de travaux<select name="travaux"><option>Dépannage</option><option>Tableau électrique</option><option>Borne de recharge</option><option>Rénovation</option><option>Autre</option></select></label>
+        </div>
+        <label>Votre besoin<textarea name="message" placeholder="Décrivez la panne ou le projet…"></textarea></label>
+        <button class="btn btn--blue" type="submit" style="justify-self:start">Envoyer ma demande<i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+        <p class="form-ok" role="status" aria-live="polite">Démo : ce formulaire n'envoie rien. Sur le vrai site, la demande arrive directement par e-mail.</p>
+        <p class="form-note">Réponse sous 24 h. Vos informations servent uniquement à vous répondre.</p>
       </form>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>Lumen Électricité · démo de site d'électricien</span>
-    <span>Mentions légales à renseigner</span>
-    <span>Site réalisé par Studio FTT</span>
-  </div>
+<footer class="site">
+  <div class="wrap"><span>© <span translate="no">Lumen Électricité</span>, La Flèche</span><span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></span></div>
 </footer>
 
-<div class="callbar"><a class="btn btn--amber" href="#contact"><svg><use href="#i-phone"/></svg>Appeler l'électricien</a></div>
-
 <script>
-(function(){
-  var scene=document.getElementById('scene');
-  var lights=[].slice.call(document.querySelectorAll('.house .light'));
-  var bar=document.getElementById('meter-bar'), txt=document.getElementById('meter-txt');
-  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var labels=['Tout est éteint','Le salon est rallumé','La chambre aussi','La cuisine suit','Presque tout','Toute la maison est rallumée'];
-  var last=-1, minOn=0;
-  function update(){
-    var r=scene.getBoundingClientRect();
-    var total=scene.offsetHeight-innerHeight;
-    var p=Math.min(1,Math.max(0,(-r.top)/(total*0.85)));
-    var n=reduce?lights.length:Math.max(minOn,Math.round(p*lights.length));
-    if(n===last) return; last=n;
-    lights.forEach(function(l,i){l.classList.toggle('on',i<n)});
-    scene.classList.toggle('lit-3',n>=3);
-    bar.style.transform='scaleX('+(n/lights.length)+')';
-    txt.textContent=labels[n];
-  }
-  var ticking=false;
-  addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(function(){update();ticking=false;});} },{passive:true});
-  addEventListener('resize',update,{passive:true});
-  // première fenêtre allumée dès l'arrivée, pour montrer l'effet
-  setTimeout(function(){ minOn=1; last=-1; update(); },700);
-  update();
-
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -10% 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-
-  var cb=document.querySelector('.callbar');
-  new IntersectionObserver(function(es){cb.classList.toggle('show',!es[0].isIntersecting)}).observe(scene);
-
-  document.getElementById('devis').addEventListener('submit',function(e){e.preventDefault();document.getElementById('sent').style.display='block';});
+["cb", "devis"].forEach(function (id) {
+  document.getElementById(id).addEventListener("submit", function (e) { e.preventDefault(); this.classList.add("sent"); });
+});
+// Chiffres qui montent quand la bande apparaît
+(function () {
+  var els = document.querySelectorAll("[data-count]");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  var fmt = new Intl.NumberFormat("fr-FR");
+  els.forEach(function (el) { el.firstChild.nodeValue = "0"; });
+  var io = new IntersectionObserver(function (es) {
+    if (!es[0].isIntersecting) return;
+    io.disconnect();
+    var t0 = performance.now();
+    (function tick(now) {
+      var p = Math.min(1, (now - t0) / 1600), e = 1 - Math.pow(1 - p, 4);
+      els.forEach(function (el) { el.firstChild.nodeValue = fmt.format(Math.round(+el.dataset.count * e)); });
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }, { threshold: .5 });
+  io.observe(document.querySelector(".band"));
 })();
 </script>
+<script src="/demo/demo-banner.js" defer></script>
 </body>
 </html>
