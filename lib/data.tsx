@@ -28,7 +28,7 @@ export const PROJECTS: StackProject[] = [
     tag: "Plateforme · Galerie",
     blurb:
       "Plateforme en ligne pour un collectif artistique : galerie, portfolio et univers visuel fort.",
-    href: "https://scavback.pages.dev/",
+    href: "https://scavback.fr/",
     preview: <ScavbackPreview />,
   },
   {
