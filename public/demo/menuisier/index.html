@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Atelier Varenne · Menuisier ébéniste en Sarthe (démo)</title>
+<meta name="description" content="Démo Studio FTT : site d'un menuisier ébéniste. Escaliers, cuisines, bibliothèques et meubles en bois massif, faits à la main dans la Sarthe." />
+<meta name="theme-color" content="#14100c" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<style>
+:root{
+  --bg:#14100c; --bg-2:#1d1712; --bg-3:#2a2119; --line:rgba(241,230,214,.12);
+  --cream:#f1e6d6; --muted:#b9a894; --amber:#d38e4c; --amber-2:#e9a866;
+  --display:"Epilogue",ui-sans-serif,system-ui,sans-serif; --body:"Manrope",ui-sans-serif,system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0}
+html{color-scheme:dark;scroll-behavior:smooth;-webkit-text-size-adjust:100%;touch-action:manipulation}
+[id]{scroll-margin-top:24px}
+body{background:var(--bg);color:var(--cream);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--amber);color:var(--bg)}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+img{display:block;max-width:100%}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:.98;text-wrap:balance}
+h2{font-size:clamp(38px,5vw,72px)}
+h2 em,h1 em{font-style:normal;color:var(--amber-2)}
+.sec{padding:120px 0}
+@media (max-width:760px){.sec{padding:80px 0}}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;padding:10px 14px;background:var(--cream);color:var(--bg);border-radius:4px}.skip:focus{left:8px}
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 26px;border-radius:2px;font:700 14px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;white-space:nowrap;transition:transform .3s var(--ease),background-color .2s,color .2s}
+.btn i{font-size:18px;transition:transform .3s var(--ease)}
+.btn:hover i{transform:translateX(4px)}
+.btn--amber{background:var(--amber);color:var(--bg)}
+.btn--amber:hover{background:var(--amber-2)}
+.btn--line{color:var(--cream);box-shadow:inset 0 0 0 1px rgba(241,230,214,.4)}
+.btn--line:hover{background:rgba(241,230,214,.08)}
+
+/* ============ HERO : couloir de réalisations (Image Stream Hero, 21st.dev) ============ */
+.hero{position:relative;height:100svh;min-height:620px;max-height:1000px;overflow:hidden;isolation:isolate;background:radial-gradient(60% 55% at 50% 52%,#2a1d12 0%,var(--bg) 70%)}
+.nav{position:absolute;top:0;left:0;right:0;z-index:5}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:86px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo .mk{width:40px;height:40px;border:1px solid var(--amber);display:grid;place-items:center;font:800 18px/1 var(--display);color:var(--amber)}
+.logo b{font:700 16px/1 var(--display);letter-spacing:.12em;text-transform:uppercase}
+.nav-links{display:none;gap:30px;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.nav-links a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--cream)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:12px}
+@media (min-width:980px){.nav-links{display:flex}}
+@media (max-width:520px){.nav .btn .lbl{display:none}.nav .btn{padding:0 14px}}
+
+.stream{position:absolute;inset:0;z-index:-2;container-type:size;perspective:30cqw;perspective-origin:50% 50%;pointer-events:none}
+.card{position:absolute;left:50%;top:50%;width:18cqw;height:25cqw;margin:-12.5cqw 0 0 -9cqw;border-radius:.4cqw;overflow:hidden;
+  box-shadow:0 2cqw 4cqw -1cqw rgba(0,0,0,.7);animation:fly 18s linear infinite;animation-delay:calc(var(--i) * -2s);opacity:0;will-change:transform,opacity}
+.card img{width:100%;height:100%;object-fit:cover}
+.rail-r,.rail-l{position:absolute;inset:0;transform-style:preserve-3d}
+.rail-r .card{--s:1}.rail-l .card{--s:-1}
+/* Trajectoire : naissance minuscule près de l'axe, puis croissance géométrique vers le bord (cf. valeurs du composant) */
+@keyframes fly{
+  0%{transform:translateX(calc(var(--s)*-11cqw)) translateZ(-420cqw) rotateY(calc(var(--s)*-6deg));opacity:0}
+  8%{opacity:.9}
+  45%{transform:translateX(calc(var(--s)*14cqw)) translateZ(-140cqw) rotateY(calc(var(--s)*-14deg))}
+  80%{transform:translateX(calc(var(--s)*34cqw)) translateZ(-30cqw) rotateY(calc(var(--s)*-24deg));opacity:1}
+  100%{transform:translateX(calc(var(--s)*44cqw)) translateZ(6cqw) rotateY(calc(var(--s)*-28deg));opacity:0}
+}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(34% 46% at 50% 52%,rgba(20,16,12,.96) 0%,rgba(20,16,12,.82) 45%,rgba(20,16,12,0) 100%),linear-gradient(180deg,rgba(20,16,12,.7),transparent 22%,transparent 80%,var(--bg))}
+.hero-c{position:relative;z-index:2;height:100%;display:grid;place-items:center;text-align:center;padding:90px 20px 40px}
+.hero h1{font-size:clamp(48px,8vw,120px);max-width:11ch;margin:0 auto}
+.hero-sub{margin:26px auto 0;max-width:40ch;color:var(--muted);font-size:clamp(17px,1.4vw,19px)}
+.hero-ctas{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.hero-meta{position:absolute;left:0;right:0;bottom:26px;z-index:2}
+.hero-meta .wrap{display:flex;justify-content:space-between;gap:16px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:760px){.hero-meta .wrap span:nth-child(2){display:none}}
+@media (prefers-reduced-motion:reduce){.card{animation:none;opacity:.35;transform:translateX(calc(var(--s)*(10cqw + var(--i)*4cqw))) translateZ(calc(var(--i)*-40cqw)) rotateY(calc(var(--s)*-18deg))}}
+
+/* ============ L'ATELIER : photo pleine largeur + carte qui chevauche ============ */
+.atelier{position:relative}
+.atelier .ph{height:clamp(420px,62vw,760px);overflow:hidden}
+.atelier .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.atelier .card-t{position:relative;margin:-160px 20px 0;background:var(--bg-2);padding:40px;max-width:680px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.atelier .card-t p{margin-top:20px;color:var(--muted)}
+.nums{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.nums b{display:block;font:800 clamp(34px,3.6vw,48px)/1 var(--display);color:var(--amber-2);letter-spacing:-.03em}
+.nums span{font-size:14px;color:var(--muted)}
+@media (max-width:600px){.nums{gap:10px}.nums b{font-size:26px;white-space:nowrap}.nums span{font-size:12px;line-height:1.35;display:block}}
+@media (max-width:760px){.stream{inset:70px 0 46% 0}.card{width:30cqw;height:42cqw;margin:-21cqw 0 0 -15cqw}.hero::after{background:linear-gradient(180deg,rgba(20,16,12,.55) 0%,transparent 14%,transparent 42%,rgba(20,16,12,.92) 56%,var(--bg) 70%)}.hero-c{place-items:end center;padding-bottom:84px}}
+@media (min-width:980px){.atelier .card-t{margin:-220px 0 0 max(20px,calc((100vw - 1240px)/2));padding:52px}}
+
+/* ============ SAVOIR-FAIRE : liste typographique, photo au survol ============ */
+.sf-head{display:grid;gap:16px;max-width:680px}
+.sf-head p{color:var(--muted);font-size:18px}
+.sf{margin-top:54px;position:relative}
+.sf ul{list-style:none;padding:0}
+.sf li{border-top:1px solid var(--line)}
+.sf li:last-child{border-bottom:1px solid var(--line)}
+.sf a{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:26px 0;text-decoration:none;transition:padding .4s var(--ease),color .2s}
+.sf .n{font:500 14px/1 var(--display);color:var(--muted);letter-spacing:.1em}
+.sf h3{font-size:clamp(30px,4.2vw,58px);font-weight:700;transition:color .25s}
+.sf .d{font-size:15px;color:var(--muted);max-width:28ch;text-align:right}
+.sf a:hover h3,.sf a:focus-visible h3{color:var(--amber-2)}
+.sf a:hover{padding-left:14px}
+.sf .thumb{display:none}
+.peek{position:absolute;top:0;right:8%;width:300px;aspect-ratio:4/5;pointer-events:none;opacity:0;transform:translateY(0) rotate(-3deg) scale(.96);transition:opacity .3s,transform .5s var(--ease);box-shadow:0 30px 60px -20px rgba(0,0,0,.8);z-index:3}
+.peek img{width:100%;height:100%;object-fit:cover}
+.peek.on{opacity:1;transform:translateY(var(--y,0)) rotate(-3deg) scale(1)}
+@media (max-width:860px){.sf a{grid-template-columns:auto 1fr 72px;gap:14px}.sf .d{display:none}.sf .thumb{display:block;width:72px;height:72px;object-fit:cover}.peek{display:none}}
+
+/* ============ RÉALISATIONS : grille asymétrique ============ */
+.real{background:var(--bg-2)}
+.real-grid{margin-top:54px;display:grid;gap:14px}
+.real-grid figure{margin:0;position:relative;overflow:hidden}
+.real-grid img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.real-grid figure:hover img{transform:scale(1.04)}
+.real-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 18px;background:linear-gradient(0deg,rgba(20,16,12,.9),transparent);font-size:15px}
+.real-grid figcaption b{display:block;font:700 20px/1.2 var(--display)}
+.real-grid figcaption span{color:var(--muted);font-size:14px}
+@media (min-width:900px){.real-grid{grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:340px 340px}.r1{grid-row:1 / 3}.r4{grid-column:2 / 4}}
+@media (max-width:899px){.real-grid figure{aspect-ratio:4/3}}
+
+/* ============ ÉTAPES : sur texture de bois ============ */
+.steps-sec{position:relative;isolation:isolate;overflow:hidden}
+.steps-sec > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.35}
+.steps-sec::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--bg) 20%,rgba(20,16,12,.75))}
+.steps{margin-top:54px;display:grid;gap:18px;max-width:900px}
+.step{display:grid;grid-template-columns:88px 1fr;gap:20px;align-items:start;padding:26px;background:rgba(29,23,18,.85)}
+.step b{font:800 64px/1 var(--display);color:var(--amber);letter-spacing:-.04em}
+.step h3{font-size:26px;font-weight:700}
+.step p{margin-top:6px;color:var(--muted)}
+@media (max-width:600px){.step{grid-template-columns:56px 1fr;padding:20px}.step b{font-size:44px}}
+
+/* ============ AVIS ============ */
+.avis-grid{display:grid;gap:40px;align-items:start}
+.big-q{font:700 clamp(28px,3.2vw,44px)/1.2 var(--display);letter-spacing:-.02em}
+.big-q footer{margin-top:22px;font:500 16px/1.4 var(--body);color:var(--muted)}
+.stars{color:var(--amber-2);display:flex;gap:3px;font-size:18px;margin-bottom:20px}
+.small-q{border-left:2px solid var(--amber);padding:6px 0 6px 22px;margin-bottom:26px}
+.small-q p{font-size:17px}
+.small-q footer{margin-top:8px;font-size:14px;color:var(--muted)}
+.score{margin-top:30px;font-size:15px;color:var(--muted)}
+.score b{font:800 40px/1 var(--display);color:var(--cream);margin-right:8px}
+@media (min-width:960px){.avis-grid{grid-template-columns:1.4fr 1fr;gap:90px}}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--bg-2)}
+.ct-grid{display:grid;gap:48px}
+.ct-list{margin-top:30px;display:grid;gap:14px}
+.ct-list a,.ct-list span{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--muted)}
+.ct-list i{color:var(--amber);font-size:22px}
+.ct-list a:first-child{font:800 clamp(28px,3vw,40px)/1 var(--display);color:var(--cream)}
+form{background:var(--bg-3);padding:32px;display:grid;gap:16px}
+form h3{font-size:28px;font-weight:700}
+label{display:grid;gap:6px;font-weight:600;font-size:14px}
+input,select,textarea{font:500 16px/1.4 var(--body);color:var(--cream);background:var(--bg);border:1px solid var(--line);border-radius:2px;padding:13px 14px;width:100%}
+select{color-scheme:dark}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(211,142,76,.2)}
+::placeholder{color:#978672}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;gap:16px}
+@media (min-width:600px){.row2{grid-template-columns:1fr 1fr}}
+.ok{display:none;font-weight:600;color:var(--amber-2)}
+form.sent .ok{display:block}
+.note{font-size:13px;color:var(--muted)}
+@media (min-width:960px){.ct-grid{grid-template-columns:1fr 1.05fr;gap:90px;align-items:start}}
+footer.site{font-size:14px;color:var(--muted);padding:26px 0;border-top:1px solid var(--line)}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.btn i,.sf a,.peek,.real-grid img{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="hero">
+  <div class="stream" aria-hidden="true">
+    <div class="rail-r">
+      <div class="card" style="--i:0"><img src="img/s01.webp" alt="" /></div>
+      <div class="card" style="--i:1"><img src="img/s03.webp" alt="" /></div>
+      <div class="card" style="--i:2"><img src="img/s10.webp" alt="" /></div>
+      <div class="card" style="--i:3"><img src="img/s05.webp" alt="" /></div>
+      <div class="card" style="--i:4"><img src="img/s12.webp" alt="" /></div>
+      <div class="card" style="--i:5"><img src="img/s07.webp" alt="" /></div>
+      <div class="card" style="--i:6"><img src="img/s09.webp" alt="" /></div>
+      <div class="card" style="--i:7"><img src="img/s11.webp" alt="" /></div>
+      <div class="card" style="--i:8"><img src="img/s02.webp" alt="" /></div>
+    </div>
+    <div class="rail-l">
+      <div class="card" style="--i:.5"><img src="img/s04.webp" alt="" /></div>
+      <div class="card" style="--i:1.5"><img src="img/s11.webp" alt="" /></div>
+      <div class="card" style="--i:2.5"><img src="img/s06.webp" alt="" /></div>
+      <div class="card" style="--i:3.5"><img src="img/s02.webp" alt="" /></div>
+      <div class="card" style="--i:4.5"><img src="img/s08.webp" alt="" /></div>
+      <div class="card" style="--i:5.5"><img src="img/s10.webp" alt="" /></div>
+      <div class="card" style="--i:6.5"><img src="img/s01.webp" alt="" /></div>
+      <div class="card" style="--i:7.5"><img src="img/s12.webp" alt="" /></div>
+      <div class="card" style="--i:8.5"><img src="img/s05.webp" alt="" /></div>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="wrap">
+      <a class="logo" href="#"><span class="mk">V</span><b translate="no">Atelier Varenne</b></a>
+      <div class="nav-links"><a href="#atelier">L'atelier</a><a href="#savoir-faire">Savoir-faire</a><a href="#realisations">Réalisations</a><a href="#contact">Contact</a></div>
+      <a class="btn btn--amber" href="#contact" aria-label="Demander un devis"><i class="ph ph-hammer" aria-hidden="true"></i><span class="lbl">Un projet</span></a>
+    </div>
+  </nav>
+  <div class="hero-c" id="contenu">
+    <div>
+      <h1>Du bois brut à la pièce <em>qui dure</em></h1>
+      <p class="hero-sub">Escaliers, cuisines, bibliothèques et meubles en bois massif, dessinés et fabriqués à la main dans notre atelier de la Sarthe.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--amber" href="#contact">Parler de votre projet<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn--line" href="#realisations">Voir les réalisations</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-meta"><div class="wrap"><span>Menuiserie · Ébénisterie</span><span>Chêne, noyer, frêne, châtaignier</span><span>Sarthe (72)</span></div></div>
+</header>
+
+<main>
+  <section class="atelier" id="atelier" aria-labelledby="at-t">
+    <div class="ph"><img src="img/hero.webp" alt="Le menuisier travaille une pièce de bois dans l'atelier, sous la lampe" width="2000" height="1333" loading="lazy" /></div>
+    <div class="card-t">
+      <h2 id="at-t">Un atelier, <em>deux mains</em>, zéro catalogue</h2>
+      <p>Ici, rien n'est choisi sur un catalogue. On vient chez vous prendre les mesures, on dessine la pièce avec vous, puis on la fabrique planche après planche. Le bois vient de scieries à moins de 80 km.</p>
+      <div class="nums">
+        <div><b>1998</b><span>année d'ouverture</span></div>
+        <div><b>80 km</b><span>maximum pour le bois</span></div>
+        <div><b>10 ans</b><span>de garantie sur nos meubles</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="savoir-faire">
+    <div class="wrap">
+      <div class="sf-head">
+        <h2>Ce qu'on fabrique <em>ici</em></h2>
+        <p>Tout part d'un plan dessiné pour votre maison, jamais d'un modèle standard.</p>
+      </div>
+      <div class="sf" id="sf">
+        <ul>
+          <li><a href="#contact" data-img="img/escalier.webp"><span class="n">01</span><h3>Escaliers</h3><span class="d">Droits, quart tournant, suspendus, avec rampe assortie.</span><img class="thumb" src="img/escalier.webp" alt="" loading="lazy" /></a></li>
+          <li><a href="#contact" data-img="img/bibliotheque.webp"><span class="n">02</span><h3>Bibliothèques</h3><span class="d">Du sol au plafond, autour d'une porte ou sous l'escalier.</span><img class="thumb" src="img/bibliotheque.webp" alt="" loading="lazy" /></a></li>
+          <li><a href="#contact" data-img="img/table.webp"><span class="n">03</span><h3>Tables et meubles</h3><span class="d">Plateaux massifs, buffets, bureaux, pièces uniques.</span><img class="thumb" src="img/table.webp" alt="" loading="lazy" /></a></li>
+          <li><a href="#contact" data-img="img/parquet.webp"><span class="n">04</span><h3>Parquets</h3><span class="d">Point de Hongrie, bâton rompu, pose et rénovation.</span><img class="thumb" src="img/parquet.webp" alt="" loading="lazy" /></a></li>
+          <li><a href="#contact" data-img="img/sculpture.webp"><span class="n">05</span><h3>Restauration</h3><span class="d">Meubles anciens, boiseries et moulures refaits à l'identique.</span><img class="thumb" src="img/sculpture.webp" alt="" loading="lazy" /></a></li>
+        </ul>
+        <div class="peek" id="peek" aria-hidden="true"><img src="img/escalier.webp" alt="" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec real" id="realisations">
+    <div class="wrap">
+      <h2>Quelques pièces <em>sorties de l'atelier</em></h2>
+      <div class="real-grid">
+        <figure class="r1"><img src="img/escalier.webp" alt="Escalier en chêne avec rampe en fer forgé" width="900" height="1350" loading="lazy" /><figcaption><b>Escalier quart tournant</b><span>Chêne massif, La Flèche</span></figcaption></figure>
+        <figure class="r2"><img src="img/parquet.webp" alt="Parquet en point de Hongrie baigné de soleil" width="900" height="1350" loading="lazy" style="object-position:50% 70%" /><figcaption><b>Parquet point de Hongrie</b><span>Chêne huilé, Le Mans</span></figcaption></figure>
+        <figure class="r3"><img src="img/sculpture.webp" alt="Détail d'une moulure sculptée à la main" width="900" height="1350" loading="lazy" /><figcaption><b>Moulure restaurée</b><span>Noyer, château sarthois</span></figcaption></figure>
+        <figure class="r4"><img src="img/bibliotheque.webp" alt="Grande bibliothèque en bois sur plusieurs niveaux" width="900" height="1200" loading="lazy" style="object-position:50% 40%" /><figcaption><b>Bibliothèque sur mesure</b><span>Frêne, Sablé-sur-Sarthe</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec steps-sec" aria-labelledby="st-t">
+    <img src="img/texture.webp" alt="" loading="lazy" />
+    <div class="wrap">
+      <h2 id="st-t">Comment on travaille <em>ensemble</em></h2>
+      <div class="steps">
+        <div class="step"><b>1</b><div><h3>On vient chez vous</h3><p>Mesures, contraintes du lieu, vos envies. Le devis détaillé suit sous une semaine.</p></div></div>
+        <div class="step"><b>2</b><div><h3>On dessine, vous validez</h3><p>Plan et choix de l'essence avec vous. On ne coupe rien avant votre accord.</p></div></div>
+        <div class="step"><b>3</b><div><h3>On fabrique et on pose</h3><p>À l'atelier puis chez vous, avec un chantier propre quand on repart.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="avis">
+    <div class="wrap avis-grid">
+      <blockquote class="big-q">
+        <div class="stars" aria-label="5 étoiles"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+        « On voulait une bibliothèque autour de la porte du salon. Deux ans après, les amis nous demandent toujours qui l'a faite. »
+        <footer>Hélène et Marc, Sablé-sur-Sarthe</footer>
+      </blockquote>
+      <div>
+        <blockquote class="small-q"><p>Escalier posé en trois jours, pas une trace de poussière dans la maison.</p><footer>Julien P., La Flèche</footer></blockquote>
+        <blockquote class="small-q"><p>Il a sauvé l'armoire de ma grand-mère que tout le monde disait fichue.</p><footer>Monique R., Le Mans</footer></blockquote>
+        <p class="score"><b>4,9/5</b>67 avis Google</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact">
+    <div class="wrap ct-grid">
+      <div>
+        <h2>Parlons de <em>votre pièce</em></h2>
+        <div class="ct-list">
+          <a href="tel:+33243000005">02 43 00 00 05</a>
+          <a href="mailto:contact@atelier-varenne.fr"><i class="ph ph-envelope-simple" aria-hidden="true"></i>contact@atelier-varenne.fr</a>
+          <span><i class="ph ph-map-pin" aria-hidden="true"></i>Atelier ouvert sur rendez-vous, Sarthe (72)</span>
+          <span><i class="ph ph-clock" aria-hidden="true"></i>Du lundi au vendredi, 8 h - 18 h</span>
+        </div>
+      </div>
+      <form id="form" novalidate>
+        <h3>Votre projet</h3>
+        <div class="row2"><label>Nom<input name="nom" autocomplete="name" placeholder="Votre nom…" /></label><label>Téléphone<input type="tel" name="tel" autocomplete="tel" placeholder="06 12 34 56 78" /></label></div>
+        <label>Ce que vous imaginez<select name="type"><option>Escalier</option><option>Bibliothèque ou rangement</option><option>Table ou meuble</option><option>Parquet</option><option>Restauration</option></select></label>
+        <label>Quelques mots<textarea name="message" placeholder="Dimensions, essence de bois, délai…"></textarea></label>
+        <button class="btn btn--amber" type="submit" style="justify-self:start">Envoyer<i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+        <p class="ok" role="status" aria-live="polite">Démo : ce formulaire n'envoie rien. Sur le vrai site, votre demande arrive directement par e-mail.</p>
+        <p class="note">Réponse sous 48 h. Vos informations servent uniquement à vous répondre.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap"><span>© <span translate="no">Atelier Varenne</span>, menuiserie ébénisterie</span><span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></span></div></footer>
+
+<script>
+document.getElementById("form").addEventListener("submit", function (e) { e.preventDefault(); this.classList.add("sent"); });
+// Savoir-faire : la photo du métier survolé suit la ligne
+(function () {
+  var sf = document.getElementById("sf"), peek = document.getElementById("peek"), img = peek.querySelector("img");
+  sf.querySelectorAll("a[data-img]").forEach(function (a) {
+    function show() {
+      img.src = a.dataset.img;
+      var y = a.getBoundingClientRect().top - sf.getBoundingClientRect().top - 120;
+      peek.style.setProperty("--y", Math.max(0, y) + "px");
+      peek.classList.add("on");
+    }
+    a.addEventListener("mouseenter", show);
+    a.addEventListener("focus", show);
+  });
+  sf.addEventListener("mouseleave", function () { peek.classList.remove("on"); });
+})();
+</script>
+<script src="/demo/demo-banner.js" defer></script>
+</body>
+</html>

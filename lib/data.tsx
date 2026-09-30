@@ -14,6 +14,7 @@ import {
   CabinetAtlasPreview,
   ElectricienPreview,
   ConsultantPreview,
+  MenuisierPreview,
 } from "@/components/ProjectPreviews";
 
 // ---------------------------------------------------------------------------
@@ -40,6 +41,17 @@ export const PROJECTS: StackProject[] = [
       "Site vitrine pour une agence de production audiovisuelle en Bretagne : SEO local et Google Business inclus.",
     href: "https://sprayfilm.fr/",
     preview: <SprayfilmPreview />,
+  },
+  {
+    id: "menuisier",
+    name: "Atelier Varenne",
+    kind: "Menuisier ébéniste",
+    tag: "Site vitrine · Réalisations",
+    blurb:
+      "Démo pour un menuisier ébéniste : ambiance d'atelier, couloir 3D de réalisations qui foncent vers vous, savoir-faire, pièces sorties de l'atelier.",
+    href: "/demo/menuisier/index.html",
+    preview: <MenuisierPreview />,
+    isDemo: true,
   },
   {
     id: "electricien",

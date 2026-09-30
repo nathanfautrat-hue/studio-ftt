@@ -102,3 +102,13 @@ export function ConsultantPreview() {
     />
   );
 }
+
+export function MenuisierPreview() {
+  return (
+    <StaticPreview
+      src="/preview-menuisier.webp"
+      alt="Aperçu de la démo Atelier Varenne, menuisier ébéniste"
+      bg="#14100c"
+    />
+  );
+}
