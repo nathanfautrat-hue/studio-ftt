@@ -6,11 +6,10 @@ import { APPROCHE, type ApprocheStep } from "@/lib/data";
 
 /* ---------------------------------------------------------------------------
  * Visuels des cartes : photos Pexels libres de droits (mains + appareils), montées en mockup.
- * Carte 1 refaite le 04/10/2026 : photo Pexels 13570135 (jibarofoto) assombrie, écran d'appel iOS posé
- * en perspective, + barre de boutons d'appel en code par-dessus (méthode « photo sombre + interface en surimpression »).
+ * Carte 1 refaite le 04/10/2026 : photo Pexels 13570135 (jibarofoto) assombrie, écran d'appel iOS posé en perspective.
  * ------------------------------------------------------------------------- */
-const VISUELS: { src: string; alt: string; appel?: boolean }[] = [
-  { src: "/approche-1.webp", alt: "Main tenant un téléphone en appel avec Studio FTT", appel: true },
+const VISUELS: { src: string; alt: string }[] = [
+  { src: "/approche-1.webp", alt: "Main tenant un téléphone en appel avec Studio FTT" },
   { src: "/approche-2.webp", alt: "Main dessinant une maquette au stylet sur une tablette" },
   { src: "/approche-3.webp", alt: "Mains sur un ordinateur affichant un site réalisé par Studio FTT" },
 ];
@@ -66,37 +65,6 @@ export default function ApprocheSection() {
                     className="absolute inset-0"
                     style={{ background: "linear-gradient(180deg, rgba(15,15,15,0) 55%, #0f0f0f 100%)" }}
                   />
-                  {v.appel && (
-                    <div
-                      aria-hidden
-                      className="absolute flex items-center"
-                      style={{
-                        right: "-6%",
-                        bottom: "14%",
-                        gap: 8,
-                        padding: 8,
-                        borderRadius: 999,
-                        background: "rgba(28,28,30,0.82)",
-                        border: "1px solid rgba(255,255,255,0.10)",
-                        boxShadow: "0 14px 34px rgba(0,0,0,0.55)",
-                      }}
-                    >
-                      {["video-camera", "microphone", "phone-disconnect", "speaker-high", "user-plus"].map((n) => (
-                        <span
-                          key={n}
-                          className="flex items-center justify-center"
-                          style={{
-                            width: 38,
-                            height: 38,
-                            borderRadius: 999,
-                            background: n === "phone-disconnect" ? "var(--ftt-red)" : "rgba(255,255,255,0.12)",
-                          }}
-                        >
-                          <img src={`/icons/appel-${n}.svg`} alt="" width={18} height={18} />
-                        </span>
-                      ))}
-                    </div>
-                  )}
                 </div>
 
                 {/* Texte */}
