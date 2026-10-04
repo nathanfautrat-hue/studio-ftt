@@ -5,7 +5,8 @@ import SectionHeader from "@/components/SectionHeader";
 import { APPROCHE, type ApprocheStep } from "@/lib/data";
 
 /* ---------------------------------------------------------------------------
- * Visuels des cartes : photos Pexels libres de droits (mains + appareils), montées en mockup
+ * Visuels des cartes : photos Pexels libres de droits (mains + appareils), montées en mockup.
+ * Carte 1 refaite le 04/10/2026 : photo Pexels 13570135 (jibarofoto), écran d'appel posé en perspective.
  * (écran d'appel avec le vrai logo /logo_ftt.png, démo Marceau sur le portable).
  * ------------------------------------------------------------------------- */
 const VISUELS: { src: string; alt: string }[] = [
