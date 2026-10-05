@@ -205,9 +205,6 @@ footer.site{background:var(--navy);color:#9fb3c4;font-size:14px;padding:26px 0 3
 footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
 /* Barre d'appel mobile */
-.callbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
-.callbar a{display:flex;justify-content:center;align-items:center;gap:10px;min-height:56px;border-radius:8px;background:var(--red);color:#fff;font-weight:600;text-decoration:none;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
-@media (max-width:760px){.callbar{display:block}footer.site{padding-bottom:96px}}
 
 @media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}html{scroll-behavior:auto}.btn,.tile,.card .ph img{transition:none}}
 </style>
@@ -373,7 +370,6 @@ footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:
 <footer class="site">
   <div class="wrap"><span>© <span translate="no">Atelier Marceau</span>, Le Mans</span><span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></span></div>
 </footer>
-<div class="callbar"><a href="tel:+33243000003"><i class="ph-fill ph-phone" aria-hidden="true"></i>Urgence : 02 43 00 00 03</a></div>
 
 <script>
 document.getElementById("form").addEventListener("submit", function (e) { e.preventDefault(); this.classList.add("sent"); });
