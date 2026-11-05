@@ -115,7 +115,7 @@
 .avis-bande .note a{display:block;margin-top:var(--e-1);color:var(--corail-texte);font-weight:var(--fw-titre);text-underline-offset:4px}
 .defile{margin-top:var(--e-fl-2);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
 .defile__piste{list-style:none;display:flex;gap:var(--e-4);width:max-content;padding:var(--e-1) 0 var(--e-3);animation:defile 60s linear infinite}
-.defile:hover .defile__piste,.defile:focus-within .defile__piste,.defile:active .defile__piste{animation-play-state:paused}
+
 @keyframes defile{to{transform:translate3d(-50%,0,0)}}
 .defile__piste li{flex:0 0 auto;width:min(78vw,370px);background:var(--blanc);color:var(--ink);border-radius:var(--r-case);padding:var(--e-5);display:flex;flex-direction:column;gap:var(--e-3);box-shadow:var(--ombre)}
 .defile__piste blockquote{font-size:var(--fs-texte);line-height:var(--lh-texte);font-weight:var(--fw-fort)}
@@ -400,8 +400,8 @@
 .bande-cmd__piste{display:flex;width:max-content;animation:defile-texte 30s linear infinite}
 .bande-cmd span{font:var(--fw-noir) var(--fs-3)/var(--lh-titre) var(--font);text-transform:uppercase;white-space:nowrap}
 .bande-cmd b{font:var(--fw-noir) var(--fs-3)/var(--lh-titre) var(--font);margin:0 .6em}
-@media (hover:hover){.bande-cmd:hover .bande-cmd__piste{animation-play-state:paused}.bande-cmd:hover{background:var(--jaune-clair)}}
-.bande-cmd:focus-visible{outline:3px solid var(--sapin);outline-offset:-3px}
+
+
 @media (prefers-reduced-motion:reduce){.bande-cmd__piste{animation:none}}
 /* « RIVE BOWL » géant au bas du pied de page */
 /* « RIVE BOWL » géant : la taille suit la largeur du pied de page, le mot tient toujours en entier (de 320 à 1920 px).
@@ -828,3 +828,61 @@ html.arrivee body::after{background:var(--corail)}
 .gsap .pied__tombe{opacity:1;transform:none;transition:none}
 .chargement--gsap .chargement__bol>*,.chargement--gsap .chargement__texte span{opacity:1}
 .chargement--gsap .chargement__pret{opacity:0}
+
+/* ===================== RETOURS DE NATHAN (06/11) ===================== */
+/* Bandeaux qui défilent : rien ne se passe au survol (le bandeau du bas n'est plus un lien) */
+.bande-cmd{cursor:default;user-select:none}
+/* Un titre qui doit tenir sur une seule ligne : la taille s'adapte (vivant.js, « ajuster ») */
+.une-ligne{white-space:nowrap;min-width:0;max-width:100%}
+/* Grands boutons d'appel */
+.btn--sapin-fort{--bg:var(--sapin);--bd:var(--sapin);--fg:var(--creme)}
+@media (hover:hover){.btn--sapin-fort:hover{--bg:var(--sapin-deep);--bd:var(--sapin-deep)}}
+.btn--grand{height:64px;padding:0 var(--e-8);font-size:var(--fs-4);letter-spacing:.08em}
+@media (max-width:380px){.btn--grand{height:60px;padding:0 var(--e-5);font-size:16px}}
+/* Notre histoire : appel « Devenir franchisé » en bloc corail */
+.appel-fr{background:var(--c);color:var(--sapin-deep);padding:var(--e-fl-4) 0}
+.appel-fr__grille{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--e-fl-2);align-items:center}
+.appel-fr .btn{margin-top:var(--e-6)}
+.appel-fr__photo{position:relative;border-radius:var(--r-case);overflow:hidden;box-shadow:var(--ombre);rotate:2deg}
+.appel-fr__photo img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.appel-fr__photo .mention{position:absolute;left:12px;bottom:12px;background:var(--noir-60);color:var(--creme);padding:2px 8px;border-radius:var(--r-pilule);font-size:10px;line-height:1.5}
+@media (max-width:860px){.appel-fr__grille{grid-template-columns:1fr}.appel-fr .btn{width:100%}}
+/* Franchise : SITA, la phrase d'accroche en grand ; « Parlons de votre projet » moins blanc et plus serré */
+.sita__slogan{margin-top:var(--e-5);font:400 var(--fs-3)/1.1 var(--titre);text-transform:uppercase}
+.profil .form{background:var(--jaune);padding:var(--e-5) var(--e-5) var(--e-6);box-shadow:none}
+.profil .form fieldset{margin-top:var(--e-3);gap:var(--e-2)}
+.profil .form input,.profil .form textarea{background:var(--creme);border-color:var(--sapin)}
+.profil .form h3,.profil .form label,.profil .form .note{color:var(--sapin-deep)}
+/* Montjean : tout plus grand */
+.lieu__infos h2{font-size:var(--fs-2)}
+.lieu__infos address{font-size:var(--fs-3)}
+.lieu__tel a{font-size:var(--fs-2)}
+.contact-crav__horaires{font-size:var(--fs-4);gap:var(--e-2)}
+.contact-crav__horaires b{min-width:7em}
+.services-mj{gap:var(--e-3);margin-top:var(--e-5)}
+.services-mj li{font-size:var(--fs-petit)}
+.services-mj svg{width:68px;height:68px;padding:14px}
+.contact-crav .btns .btn{height:64px;padding:0 var(--e-8);font-size:var(--fs-4)}
+.contact-crav .lieu__carte{display:block;width:100%;border:0;border-radius:var(--r-case);min-height:480px}
+@media (max-width:860px){
+  .contact-crav .lieu__carte{width:calc(100% + var(--e-fl-1) * 2);margin:var(--e-4) calc(var(--e-fl-1) * -1) calc(var(--e-fl-1) * -1);border-radius:0 0 calc(var(--r-case) * 1.4) calc(var(--r-case) * 1.4);min-height:0;height:auto;aspect-ratio:4/5}
+  .contact-crav .btns .btn{width:100%;padding:0 var(--e-5)}
+}
+@media (max-width:380px){.contact-crav .btns .btn{font-size:16px}.services-mj svg{width:56px;height:56px;padding:11px}}
+@media (max-width:860px){.appel-fr__grille{grid-template-columns:minmax(0,1fr)}.btn--grand{padding:0 var(--e-4);font-size:clamp(15px,4.2vw,18px);letter-spacing:.06em}}
+.rideaux{overflow:hidden}
+/* Histoire épinglée : un vrai bowl détouré à la place des pastilles (Nathan, 06/11) */
+.couches__plat{display:block;width:100%;height:auto;filter:drop-shadow(0 24px 30px var(--noir-50))}
+.couches__bol{aspect-ratio:auto}
+.appel-fr__grille{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+@media (max-width:860px){.appel-fr__grille{grid-template-columns:minmax(0,1fr)}}
+/* Montjean sur téléphone : le bloc et la carte prennent toute la largeur de l'écran ; jour au-dessus des horaires */
+@media (max-width:860px){
+  .contact-crav .lieu{margin-inline:calc(var(--g) * -1);border-radius:0;padding-inline:var(--g)}
+  .contact-crav .lieu__carte{width:calc(100% + var(--g) * 2);margin-inline:calc(var(--g) * -1);border-radius:0}
+}
+@media (max-width:480px){.contact-crav__horaires li{display:grid;gap:2px}.contact-crav__horaires b{min-width:0}}
+/* (plus précis que le style de la page franchise.html, qui passe après) */
+.aplat.profil .form{background:var(--jaune);padding:var(--e-5) var(--e-5) var(--e-6);box-shadow:none}
+.aplat.profil .form input,.aplat.profil .form textarea{background:var(--creme);border-color:var(--sapin)}
+.aplat.profil .form .btn{--bg:var(--sapin);--bd:var(--sapin);--fg:var(--creme)}

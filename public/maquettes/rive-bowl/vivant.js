@@ -72,7 +72,8 @@
     var n = 0, marcheur = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), textes = [];
     while (marcheur.nextNode()) textes.push(marcheur.currentNode);
     textes.forEach(function (t) {
-      var morceaux = parLettre ? Array.from(t.nodeValue) : t.nodeValue.split(/(\s+)/);
+      // on ne coupe QUE sur les espaces normales : l'espace insécable garde « ! ? : ; » collés au mot d'avant (jamais seuls sur une ligne)
+      var morceaux = parLettre ? Array.from(t.nodeValue) : t.nodeValue.split(/([ \t\n\r]+)/);
       var frag = document.createDocumentFragment();
       morceaux.forEach(function (m) {
         if (!m) return;
@@ -215,17 +216,12 @@
 
   /* ---------- 4 bis. Histoire épinglée « Une histoire dans chaque couche » ----------
      La scène reste collée en haut ; pendant les 2 écrans de défilement, le fil en pointillés se dessine (stroke-dashoffset),
-     les 5 étapes s'allument et chaque étape fait tomber ses ingrédients dans le bol. Sans JS ou avec « réduire les animations » : tout est déjà là. */
+     les 5 étapes s'allument ; le vrai bowl reste visible (sans GSAP, il ne bouge pas). Sans JS ou avec « réduire les animations » : tout est déjà là. */
   document.querySelectorAll('.couches').forEach(function (sec) {
     if (reduit || G) return;
     sec.classList.add('couches--vif');
-    garde(sec.querySelector('.couches__bol'), function () {
-      sec.querySelectorAll('.couches__riz, .couches__ing').forEach(function (m) { m.style.transition = 'none'; m.classList.add('la'); });
-      sec.querySelectorAll('.couches__etapes li').forEach(function (e) { e.classList.add('faite'); });
-    }, function () { return !!sec.querySelector('.couches__riz.la'); });
-    var morceaux = [].slice.call(sec.querySelectorAll('.couches__riz, .couches__ing'));
     var etapes = [].slice.call(sec.querySelectorAll('.couches__etapes li'));
-    var sauce = sec.querySelector('.couches__sauce'), fil = sec.querySelector('.couches__fil');
+    var fil = sec.querySelector('.couches__fil');
     suivre(sec, function () {
       var r = sec.getBoundingClientRect(), haut = parseFloat(getComputedStyle(sec.querySelector('.couches__scene')).top) || 0;
       var course = r.height - (window.innerHeight - haut);
@@ -235,8 +231,6 @@
       var actif = 0;
       etapes.forEach(function (e, n) { var a = parseFloat(e.dataset.a); var ok = q >= a + 0.02 || (n === 0 && q > 0); e.classList.toggle('faite', ok); if (ok) actif = n; });
       etapes.forEach(function (e, n) { e.classList.toggle('en-cours', n === actif); });
-      morceaux.forEach(function (m) { var a = parseFloat(m.dataset.a); m.classList.toggle('la', q >= a + 0.02 || (a === 0 && q > 0)); });
-      sauce.style.setProperty('--sauce', (1 - Math.min(1, Math.max(0, (q - 0.8) / 0.16))).toFixed(3));
     });
   });
 
@@ -273,38 +267,14 @@
   });
 
   /* ---------- 4 sexies. Pied de page : 4 ingrédients détourés tombent sur « RIVE BOWL » ---------- */
-  var marque = document.querySelector('.pied__marque');
-  if (marque && !reduit) {
-    var place = [['saumon', 4, -20], ['avocat', 28, 25], ['mangue', 56, -14], ['edamame', 78, 30]];
-    var tombes = place.map(function (d) {
-      var i = document.createElement('img');
-      i.src = 'img/ingredients/' + d[0] + '.webp'; i.alt = ''; i.width = 200; i.height = 200; i.loading = 'lazy';
-      i.className = 'pied__tombe'; i.setAttribute('aria-hidden', 'true');
-      i.style.left = d[1] + '%'; i.style.setProperty('--rot', d[2] + 'deg');
-      marque.parentNode.insertBefore(i, marque);
-      return i;
-    });
-    function placerTombes() {
-      var haut = marque.offsetTop - tombes[0].offsetWidth * 0.55;
-      tombes.forEach(function (i) { i.style.top = haut + 'px'; });
-    }
-    placerTombes();
-    if (window.ResizeObserver) new ResizeObserver(placerTombes).observe(marque);
-    // ils tombent avec un rebond dès que « RIVE BOWL » arrive à l'écran (le bas de page ne défile pas assez pour suivre le scroll)
-    if (!G) {
-      tombes.forEach(function (i, n) { i.style.transitionDelay = (n * 0.12) + 's'; });
-      unefois(marque, '0px 0px -10% 0px', function () { tombes.forEach(function (i) { i.classList.add('pied__tombe--la'); }); });
-      garde(marque, function () { tombes.forEach(function (i) { i.style.transition = 'none'; i.classList.add('pied__tombe--la'); }); },
-        function () { return tombes[0].classList.contains('pied__tombe--la'); });
-    }
-  }
+  var marque = document.querySelector('.pied__marque'), tombes = null;   // (plus d'ingrédients sur RIVE BOWL : retour de Nathan du 06/11)
 
   /* ---------- 5. Les ingrédients qui se baladent sur le chemin en pointillés ---------- */
   document.querySelectorAll('.trajet').forEach(function (sec) {
     var liste = sec.querySelector('.trajet__etapes'), etapes = [].slice.call(sec.querySelectorAll('.trajet__etapes li'));
     var svg = sec.querySelector('.trajet__chemin'), trace = svg && svg.querySelector('path.trace'), fait = svg && svg.querySelector('path.fait');
     var vehicules = [].slice.call(sec.querySelectorAll('.trajet__vehicule'));
-    if (!liste || !svg || !trace || !vehicules.length) return;
+    if (!liste || !svg || !trace) return;
     var L = 0, points = [];
     function dessiner() {
       var b = liste.getBoundingClientRect(), W = b.width, H = b.height;
@@ -608,7 +578,8 @@
       document.querySelectorAll('.t-l, .t-xl, [data-vivant]').forEach(function (el) {
         if (el.closest('.tiroir, .fiche, .une')) return;
         var lettres = el.getAttribute('data-vivant') === 'lettres';
-        var s = SplitText.create(el, { type: lettres ? 'chars' : 'words', tag: 'span', wordsClass: 'mot', charsClass: 'mot' });
+        // mots coupés seulement sur les espaces normales : « suite&nbsp;! » reste UN mot, le « ! » ne peut pas partir seul à la ligne
+        var s = SplitText.create(el, { type: lettres ? 'chars' : 'words', tag: 'span', wordsClass: 'mot', charsClass: 'mot', wordDelimiter: { delimiter: /[ \t\n\r]+/, replaceWith: ' ' }, reduceWhiteSpace: false });
         var cibles = lettres ? s.chars : s.words;
         var depart = { scale: 0, transformOrigin: '50% 100%', y: function () { return rnd(18, 40); }, rotation: function () { return rnd(-pente, pente); } };
         var tw;
@@ -636,48 +607,46 @@
       });
     });
 
-    // 4 bis. Histoire épinglée : ScrollTrigger pin ; à chaque étape, les ingrédients TOMBENT (0,32 s power1.in), se redressent
-    // (0,45 s back.out(2.5)) et le bol s'écrase (×0,88 / ×1,06 puis ×1,03 / ×0,98 puis 1), valeurs du burger CRAV
+    // 4 bis. Histoire épinglée : ScrollTrigger pin. À la 1re étape, le vrai bowl TOMBE dans la scène (0,32 s power1.in), se redresse
+    // (0,45 s back.out(2.5)) et s'écrase (×0,88 / ×1,06 puis ×1,03 / ×0,98 puis 1), valeurs du burger CRAV ; à chaque étape suivante il rebondit
     animsGsap.push(function (c) {
       document.querySelectorAll('.couches').forEach(function (sec) {
         sec.classList.add('couches--vif');
-        var scene = sec.querySelector('.couches__scene'), bol = sec.querySelector('.couches__bol');
+        var scene = sec.querySelector('.couches__scene'), bol = sec.querySelector('.couches__bol'), plat = sec.querySelector('.couches__plat');
         var etapes = [].slice.call(sec.querySelectorAll('.couches__etapes li'));
-        var fil = sec.querySelector('.couches__fil'), sauce = sec.querySelector('.couches__sauce');
-        var morceaux = [].slice.call(sec.querySelectorAll('.couches__riz, .couches__ing'));
+        var fil = sec.querySelector('.couches__fil');
         var paliers = etapes.map(function (e) { return parseFloat(e.dataset.a); });
-        var groupes = paliers.map(function (a) { return morceaux.filter(function (m) { return parseFloat(m.dataset.a) === a; }); });
-        morceaux.forEach(function (m) { m._r = rotDe(m); });
-        gsap.set(morceaux, { autoAlpha: 0 });
+        gsap.set(plat, { autoAlpha: 0 });
         var niveau = 0;
         function ecraser() {
-          gsap.timeline().to(bol, { scaleX: 1.06, scaleY: 0.88, transformOrigin: '50% 70%', duration: 0.06 })
+          gsap.timeline().to(bol, { scaleX: 1.06, scaleY: 0.88, transformOrigin: '50% 80%', duration: 0.06 })
             .to(bol, { scaleX: 0.98, scaleY: 1.03, duration: 0.08 }).to(bol, { scaleX: 1, scaleY: 1, duration: 0.12 });
         }
-        function tomber(k) {
-          var g = groupes[k]; if (!g.length) return;
-          gsap.killTweensOf(g);
+        function arriver() {
+          gsap.killTweensOf(plat);
           gsap.timeline()
-            .fromTo(g, { autoAlpha: 1, yPercent: c.tel ? -220 : -320, scale: 0.8, rotation: function (i, e) { return e._r + rnd(-12, 12); } },
-              { yPercent: 0, scale: 1, duration: 0.32, ease: 'power1.in', stagger: 0.05 })
-            .to(g, { rotation: function (i, e) { return e._r; }, duration: 0.45, ease: 'back.out(2.5)', stagger: 0.05 }, 0.32)
+            .fromTo(plat, { autoAlpha: 1, yPercent: c.tel ? -140 : -200, scale: 0.8, rotation: rnd(-12, 12) }, { yPercent: 0, scale: 1, duration: 0.32, ease: 'power1.in' })
+            .to(plat, { rotation: 0, duration: 0.45, ease: 'back.out(2.5)' }, 0.32)
             .call(ecraser, null, 0.32);
         }
-        function remonter(k) { var g = groupes[k]; gsap.killTweensOf(g); gsap.to(g, { autoAlpha: 0, yPercent: -120, duration: 0.28, ease: 'back.in(1.2)' }); }
+        function repartir() { gsap.killTweensOf(plat); gsap.to(plat, { autoAlpha: 0, yPercent: -120, duration: 0.28, ease: 'back.in(1.2)' }); }
         function maj(p) {
           var q = Math.min(1, p * 1.08), n = 0;
           fil.style.setProperty('--fil', (1 - q).toFixed(3));
           paliers.forEach(function (a, i) { if (q >= a + 0.02 || (i === 0 && q > 0)) n = i + 1; });
-          while (niveau < n) { tomber(niveau); niveau++; }
-          while (niveau > n) { niveau--; remonter(niveau); }
+          if (n !== niveau) {
+            if (niveau === 0 && n > 0) arriver();
+            else if (n === 0) repartir();
+            else if (n > niveau) ecraser();                              // une étape de plus : le bowl rebondit
+            niveau = n;
+          }
           etapes.forEach(function (e, i) { e.classList.toggle('faite', i < n); e.classList.toggle('en-cours', i === Math.max(0, n - 1)); });
-          sauce.style.setProperty('--sauce', (1 - Math.min(1, Math.max(0, (q - 0.8) / 0.16))).toFixed(3));
         }
-        // secours : si l'horloge de GSAP ne tourne pas, on montre le bol complet au lieu d'un bol vide
+        // secours : si l'horloge de GSAP ne tourne pas, on montre le bowl au lieu d'une scène vide
         var image0 = gsap.ticker.frame;
         garde(bol, function () {
-          gsap.set(morceaux, { autoAlpha: 1, yPercent: 0, scale: 1, rotation: function (i, e) { return e._r; } });
-          niveau = groupes.length; fil.style.setProperty('--fil', '0'); sauce.style.setProperty('--sauce', '0');
+          gsap.set(plat, { autoAlpha: 1, yPercent: 0, scale: 1, rotation: 0 });
+          niveau = etapes.length; fil.style.setProperty('--fil', '0');
           etapes.forEach(function (e) { e.classList.add('faite'); });
         }, function () { return niveau > 0 || gsap.ticker.frame > image0 + 10; });
         ScrollTrigger.create({

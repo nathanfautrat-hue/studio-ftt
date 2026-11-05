@@ -109,8 +109,6 @@
 <!-- Page Montjean calquée sur le /contact de CRAV : un bloc de couleur plein écran, l'adresse, les horaires, le téléphone, Commander et une petite carte.
      Prête pour plusieurs adresses : copier le bloc <li class="lieu">. Horaires : brand book p. 11, à confirmer avec le gérant. -->
 <section class="contact-crav c-sapin" id="infos" aria-labelledby="titre-mj">
-  <span class="badge-texte badge-texte--flotte badge-texte--gauche c-jaune" aria-hidden="true">Frais</span>
-  <span class="badge-texte badge-texte--flotte badge-texte--droite c-corail" aria-hidden="true">Local</span>
   <div class="wrap">
     <h1 class="t t-xl" id="titre-mj">Notre restaurant</h1>
     <ul class="lieux">
@@ -134,15 +132,17 @@
         </ul>
           <div class="btns"><a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a><a class="btn btn--contour" href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Itinéraire <span class="fl" aria-hidden="true">→</span></a></div>
         </div>
-        <iframe class="lieu__carte" title="Carte : Rive Bowl, 17 rue d’Anjou à Montjean-sur-Loire" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.8683%2C47.3868%2C-0.8564%2C47.3929&amp;layer=mapnik&amp;marker=47.38987%2C-0.86237" loading="lazy"></iframe>
+        <!-- Carte Google Maps intégrée (demande de Nathan, 06/11). ⚠️ MISE EN LIGNE RÉELLE : Google Maps dépose des cookies.
+             Il faudra la charger seulement après un clic ou un consentement (bandeau cookies, cf. RGPD). Pour la maquette, elle s'affiche directement. -->
+        <iframe class="lieu__carte" title="Carte Google Maps : Rive Bowl, 17 rue d’Anjou à Montjean-sur-Loire" src="https://www.google.com/maps?q=Rive+Bowl,+17+rue+d%27Anjou,+49570+Montjean-sur-Loire&amp;z=15&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </li>
     </ul>
   </div>
 </section>
 </main>
-<a class="bande-cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener" aria-label="Commander chez Rive Bowl">
+<div class="bande-cmd" aria-hidden="true">
   <span class="bande-cmd__piste" aria-hidden="true"><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b></span>
-</a>
+</div>
 <!-- Bas de page façon pokawa.com : bandeau de l'application, puis pied de page crème en 4 colonnes -->
 <section class="bande-appli" data-soie aria-labelledby="titre-bande-appli">
   <div class="wrap">

@@ -94,23 +94,13 @@
 </section>
 
 <!-- Histoire épinglée « Une histoire dans chaque couche » : la section reste à l'écran pendant qu'on défile (3 écrans au plus sur téléphone).
-     Un fil en pointillés se dessine, 5 étapes s'allument et à chaque étape un ingrédient tombe dans le bol. Composition : carte Dishop (1 base, 1 protéine, 5 ingrédients, 2 toppings, 1 sauce). -->
+     Un fil en pointillés se dessine et 5 étapes s'allument ; le bowl tombe à la 1re étape et rebondit à chaque étape. Composition : carte Dishop (1 base, 1 protéine, 5 ingrédients, 2 toppings, 1 sauce). -->
 <section class="couches" aria-labelledby="titre-couches">
   <div class="couches__scene">
     <div class="wrap couches__grille">
       <h2 class="t t-l couches__titre" id="titre-couches">Une histoire dans chaque couche</h2>
-      <div class="couches__bol" aria-hidden="true">
-        <img class="couches__riz" src="img/riz.webp" alt="" width="600" height="600" loading="lazy" data-a="0" />
-        <img class="couches__ing" src="img/ingredients/saumon.webp" alt="" width="200" height="200" loading="lazy" data-a="0.2" style="left:37%;top:37%" />
-        <img class="couches__ing" src="img/ingredients/saumon.webp" alt="" width="200" height="200" loading="lazy" data-a="0.2" style="left:37.0%;top:9.0%;--r:24deg" />
-        <img class="couches__ing" src="img/ingredients/carotte.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:65.0%;top:37.0%" />
-        <img class="couches__ing" src="img/ingredients/radis.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:17.2%;top:56.8%" />
-        <img class="couches__ing" src="img/ingredients/mangue.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:56.8%;top:56.8%" />
-        <img class="couches__ing" src="img/ingredients/concombre.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:56.8%;top:17.2%" />
-        <img class="couches__ing" src="img/ingredients/chou-rouge.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:37.0%;top:65.0%" />
-        <img class="couches__ing" src="img/ingredients/edamame.webp" alt="" width="200" height="200" loading="lazy" data-a="0.6" style="left:9.0%;top:37.0%" />
-        <img class="couches__ing" src="img/ingredients/edamame.webp" alt="" width="200" height="200" loading="lazy" data-a="0.6" style="left:17.2%;top:17.2%;--r:-30deg" />
-        <svg class="couches__sauce" viewBox="0 0 200 200" data-a="0.8"><path pathLength="1" d="M40 92c18-26 44-30 60-12s40 22 58 2M46 120c20-18 40-16 56 0s38 16 54-4" /></svg>
+      <div class="couches__bol">
+        <img class="couches__plat" src="img/bowl-rillauds.webp" alt="Poké rillauds d’Anjou Rive Bowl vu de dessus" width="720" height="720" loading="lazy" />
       </div>
       <ol class="couches__etapes">
         <svg class="couches__fil" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 10 100"><defs><mask id="fil-masque" maskUnits="userSpaceOnUse"><path class="couches__fil-trace" pathLength="1" d="M5 0V100" /></mask></defs><path class="couches__fil-fond" d="M5 0V100" /><path class="couches__fil-fait" d="M5 0V100" mask="url(#fil-masque)" /></svg>
@@ -178,9 +168,9 @@
   <img class="dernier__bol" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki Rive Bowl vu de dessus" width="720" height="720" loading="lazy" />
 </section>
 </main>
-<a class="bande-cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener" aria-label="Commander chez Rive Bowl">
+<div class="bande-cmd" aria-hidden="true">
   <span class="bande-cmd__piste" aria-hidden="true"><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b></span>
-</a>
+</div>
 <!-- Bas de page façon pokawa.com : bandeau de l'application, puis pied de page crème en 4 colonnes -->
 <section class="bande-appli" data-soie aria-labelledby="titre-bande-appli">
   <div class="wrap">

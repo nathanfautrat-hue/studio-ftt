@@ -333,7 +333,7 @@ body.menu-ouvert .haut-page{visibility:hidden}
 @media (max-width:340px){.entete .wrap{padding:0 var(--e-3);gap:var(--e-1)}.burger{width:var(--h-petit);height:var(--h-petit)}}
 
 /* Les bandeaux qui défilent s'arrêtent au survol et au clavier (en plus de « réduire les animations ») */
-.defile-texte:hover .defile-texte__piste,.defile-texte:focus-within .defile-texte__piste,.valeurs-v:hover .valeurs-v__piste{animation-play-state:paused}
+/* les bandeaux ne s'arrêtent jamais au survol (Nathan, 06/11) ; pause seulement avec « réduire les animations » */
 .liste b{font-variant-numeric:tabular-nums}
 
 
