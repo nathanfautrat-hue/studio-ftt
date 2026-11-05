@@ -12,12 +12,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Titan+One&display=swap" rel="stylesheet" />
+<script>/* couvre l'écran avant le 1er affichage : bowl qui se monte (1re page de la visite) ou rideaux (on vient d'une autre page) ; voir vivant.js, partie 10 */try{var d=document.documentElement;if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("rb-vu"))d.classList.add("premier");else if(sessionStorage.getItem("rb-rideaux"))d.classList.add("arrivee")}}catch(e){}</script>
 <link rel="stylesheet" href="rive.css" />
 <link rel="stylesheet" href="rive-blocs.css" />
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<div class="bandeau" role="note"><strong>Maquette</strong> proposée par Studio FTT pour Rive Bowl · photos et visuels de vos supports</div>
 <header class="entete">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
@@ -53,10 +53,10 @@
   </nav>
 </header>
 <main id="contenu">
-<!-- Textes de Rive Bowl, recopiés depuis son brand book 2026 : p. 2 (histoire), 3 (mission), 4 (concept), 8 (ambition), 10 (notre différence), 42 (signature), 46 (fin). -->
+<!-- Version courte (06/11/2026, demande de Nathan : « beaucoup moins de texte »). Le texte retiré est gardé dans CRM/rive-bowl-docs/textes-retires.md. -->
 <section class="p-une" aria-labelledby="titre-page">
   <img src="img/bb-partage.webp" alt="Un poké, un bubble tea et une boisson Rive Bowl levés au soleil (visuel d'illustration du brand book)" width="696" height="574" fetchpriority="high" />
-  <span class="mention">Visuel d’illustration · brand book Rive Bowl</span>
+  <span class="mention">Visuel d’illustration</span>
   <div class="wrap">
     <h1 class="t t-xl" id="titre-page">Notre histoire</h1>
     <p class="lead">On a tous une salade quelque part dans nos souvenirs.</p>
@@ -65,74 +65,31 @@
 
 <section class="sec">
   <div class="wrap duo">
-    <h2 class="t t-l">Et si je la compo&shy;sais à ma façon&nbsp;?</h2>
+    <h2 class="t t-l">Et si je la composais à ma façon&nbsp;?</h2>
     <div class="duo__img"><img src="img/salle-mur.webp" alt="Le mur vert de la salle de Montjean, avec le logo Rive Bowl" width="1024" height="768" /><span class="mention">Photo C. Boisnault / Ôsez Mauges</span></div>
-    <div>
-      <p>Celle que maman ou papa préparait, celle des barbecues d’été, celle qui accompagnait le fromage, la raclette ou la tartiflette. Celle que l’on posait au milieu de la table et dans laquelle chacun piochait, chacun avait son mélange préféré.</p>
-    </div>
+    <div><p class="lead">La salade de maman, celle des barbecues d’été, celle où chacun piochait.</p></div>
   </div>
 </section>
 
-<section class="sec suite">
-  <div class="wrap duo duo--inverse">
-    <h2 class="t t-l">Nous n’avons pas inventé la salade.</h2>
-    <div class="duo__img"><img src="img/bb-bowls.webp" alt="Pokés Rive Bowl à partager sur une table en bois (visuel d'illustration du brand book)" width="726" height="600" /><img class="autocollant" src="img/stickers/etiquette-loire.webp" alt="Illustration Rive Bowl" width="380" height="174" loading="lazy" style="left:4%;bottom:6%;width:clamp(140px,22vw,260px)" /><span class="mention">Visuel d’illustration · brand book Rive Bowl</span></div>
-    <div>
-      <p>Parce qu’une salade, ce n’est pas seulement des ingrédients. C’est du partage, des souvenirs et un peu de notre histoire.</p>
-      <p>C’est de tout cela qu’est né Rive Bowl. L’envie de retrouver les saveurs d’hier, la liberté de composer aujourd’hui et le plaisir de transmettre demain.</p>
-      <p class="forte">Nous lui avons simplement donné une nouvelle façon de raconter nos histoires.</p>
-    </div>
-  </div>
-</section>
-
-<div class="defile-texte c-jaune" role="note" aria-label="Le poké qui vient de chez nous · La Loire dans un bowl · À chaque envie, son Rive Bowl">
-  <div class="defile-texte__piste" aria-hidden="true"><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b></div>
-</div>
-
-<section class="sec mission" aria-label="Notre mission" style="margin-top:0">
-  <img class="mission__bol m1" src="img/bowl-teriyaki.webp" alt="" width="720" height="720" />
-  <img class="mission__bol m2" src="img/bowl-falafel.webp" alt="" width="720" height="720" />
-  <figure class="wrap">
-    <blockquote>«&nbsp;Faire en sorte que chacun puisse manger de tout, <em>manger bien</em> et se faire <em>plaisir</em>, en retrouvant dans chaque bol les saveurs de nos régions et la liberté de composer <span class="main">à sa façon</span>.&nbsp;»</blockquote>
-    <figcaption>Notre mission</figcaption>
-  </figure>
-</section>
-
-<section class="sec qualites" aria-labelledby="titre-concept">
+<section class="citation c-sapin" data-soie aria-label="Notre mission" style="color:var(--creme)">
   <div class="wrap">
-    <h2 class="t t-l titre-sec" id="titre-concept">Plus qu’un bol, une expérience</h2>
-    <ul class="qualites__grille">
-      <li class="qualite c-feuille"><div><h3 class="t-case">Des produits frais &amp; locaux</h3><p>Des ingrédients frais, sélectionnés avec soin, et autant que possible d’origine locale. Parce que la qualité des produits est la base de chaque bon bol.</p></div><img src="img/bowl-crevettes.webp" alt="" width="720" height="720" /></li>
-      <li class="qualite c-jaune"><div><h3 class="t-case">Liberté de composer</h3><p>Des recettes signatures ou des compositions sur mesure, pour s’adapter à toutes les envies, à tous les goûts et à tous les moments de la journée.</p></div><img src="img/bowl-saumon.webp" alt="" width="1000" height="1000" /></li>
-      <li class="qualite c-corail"><div><h3 class="t-case">Rapidité &amp; simplicité</h3><p>Une restauration moderne et accessible, pensée pour les rythmes d’aujourd’hui : sur place ou à emporter.</p></div><img src="img/bowl-crousty.webp" alt="" width="720" height="720" /></li>
-      <li class="qualite c-turquoise"><div><h3 class="t-case">Le goût de nos régions</h3><p>Des saveurs d’ici et d’ailleurs, inspirées de nos régions et de nos producteurs. Une cuisine généreuse, authentique et pleine de caractère.</p></div><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" /></li>
+    <span class="sur">Notre mission</span>
+    <blockquote>«&nbsp;Manger de tout, manger bien et se faire plaisir.&nbsp;»</blockquote>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2 class="t t-l titre-sec">Plus qu’un bol</h2>
+    <ul class="tuiles" style="--n:4">
+      <li class="tuile c-jaune"><h3 class="t-case">Frais &amp; local</h3></li>
+      <li class="tuile c-corail"><h3 class="t-case">La liberté de composer</h3></li>
+      <li class="tuile c-turquoise"><h3 class="t-case">Rapide &amp; simple</h3></li>
+      <li class="tuile c-feuille"><h3 class="t-case">Le goût de nos régions</h3></li>
     </ul>
   </div>
 </section>
 
-<section class="citation c-sapin" data-soie aria-label="Notre ambition" style="color:var(--creme)">
-  <div class="wrap">
-    <span class="sur" style="color:var(--jaune)">Notre ambition</span>
-    <blockquote>«&nbsp;Devenir la référence du poké terroir, en démocratisant une cuisine saine, généreuse et inspirée de nos régions.&nbsp;»</blockquote>
-    <!-- Brand book p. 19-20 : la stratégie de marque et les attentes, en une phrase -->
-    <p>Notre conviction : on peut manger vite, manger bien et retrouver le goût de chez nous.</p>
-  </div>
-</section>
-
-<section class="sec" aria-labelledby="titre-gamme">
-  <div class="wrap">
-    <h2 class="t t-l titre-sec" id="titre-gamme">Notre gamme</h2>
-    <p class="sous">Le goût de nos régions, la liberté de composer.</p>
-    <ul class="tuiles">
-      <li class="tuile c-rose"><img src="img/bowl-teriyaki.webp" alt="" width="720" height="720" /><h3 class="t-case">Une gamme pour tous les goûts</h3><p>Des recettes à base de poulet, saumon, crevettes, falafels ou spécialités du terroir, pour répondre aux différentes préférences alimentaires.</p></li>
-      <li class="tuile c-jaune"><img src="img/bowl-crousty.webp" alt="" width="720" height="720" /><h3 class="t-case">Le sain et le gourmand réunis</h3><p>Des compositions fraîches et équilibrées, mais aussi des recettes plus généreuses, comme notre poulet crousty ou nos rillauds d’Anjou. Parce que bien manger, c’est aussi se faire plaisir.</p></li>
-      <li class="tuile c-turquoise"><img src="img/bowl-saumon.webp" alt="" width="1000" height="1000" /><h3 class="t-case">La liberté de composer</h3><p>Une sélection de bases, protéines, légumes, fruits, toppings et sauces pour permettre à chacun de créer son propre poké, à sa façon.</p></li>
-    </ul>
-    <p class="difference" style="margin-top:var(--e-6);font:var(--fw-titre) var(--fs-4)/var(--lh-moyen) var(--font);color:var(--sapin-deep);max-width:44ch"><b style="color:var(--corail-texte)">Notre différence ?</b> Faire voyager le poké à travers nos régions, sans jamais oublier ses origines.</p>
-  </div>
-</section>
-
-<!-- Brand book p. 25 : les valeurs du concept, en deux bandeaux de grands mots qui défilent (mots pleins, en contour, et 2 en manuscrit) -->
 <section class="valeurs-v" aria-labelledby="titre-valeurs">
   <h2 class="sur" id="titre-valeurs">Nos valeurs</h2>
   <ul class="visuellement-cache"><li>Authentique</li><li>Frais</li><li>Local</li><li>Partage</li><li>Plaisir</li><li>Choix</li><li>Famille</li><li>Équilibré</li><li>Qualité</li><li>Terroir</li><li>Généreux</li><li>Nature</li><li>Rapide</li><li>Saveurs</li><li>Souvenirs</li><li>Tradition</li><li>Fait maison</li><li>Gourmand</li><li>Enfance</li><li>Convivialité</li><li>Découverte</li><li>Personnalisable</li></ul>
@@ -141,21 +98,14 @@
 </section>
 
 <section class="citation c-jaune" aria-label="Notre signature" style="color:var(--sapin-deep)">
-  <div class="wrap">
-    <blockquote>Devenir le numéro 1 de vos souvenirs&nbsp;!</blockquote>
-    <p>Parce que les meilleures saveurs sont celles qu’on n’oublie jamais.</p>
-    <p class="sur" style="margin-top:var(--e-4)">Le poké qui vient de chez nous.</p>
-  </div>
+  <div class="wrap"><blockquote>Devenir le numéro 1 de vos souvenirs&nbsp;!</blockquote></div>
 </section>
 
 <section class="sec">
-  <div class="wrap duo">
-    <img class="autocollant autocollant--libre" src="img/stickers/garcon-bowl.webp" alt="Illustration Rive Bowl" width="360" height="345" loading="lazy" style="position:relative;display:block;width:clamp(110px,16vw,190px);margin-bottom:var(--e-3)" /><h2 class="t t-l">Et main&shy;tenant&nbsp;? Écrivons la suite ensemble&nbsp;!</h2>
-    <div class="duo__img"><img src="img/bb-salle.webp" alt="Salle Rive Bowl avec plantes et logo lumineux (visuel d'illustration du brand book)" width="1104" height="692" /><span class="mention">Visuel d’illustration · brand book Rive Bowl</span></div>
-    <div>
-      <p>Le poké qui vient de chez nous, dans votre région.</p>
-      <a class="btn btn--contour" href="franchise.html">Devenir franchisé <span class="fl" aria-hidden="true">→</span></a>
-    </div>
+  <div class="wrap duo duo--inverse">
+    <h2 class="t t-l">Et maintenant&nbsp;? Écrivons la suite ensemble&nbsp;!</h2>
+    <div class="duo__img"><img src="img/bb-salle.webp" alt="Salle Rive Bowl avec plantes et logo lumineux (visuel d'illustration du brand book)" width="1104" height="692" /><span class="mention">Visuel d’illustration</span></div>
+    <div><a class="btn btn--contour" href="franchise.html">Devenir franchisé <span class="fl" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 </main>
@@ -183,6 +133,7 @@
           <li><a href="la-carte.html">Notre carte</a></li>
           <li><a href="montjean.html">Le restaurant de Montjean</a></li>
           <li><a href="franchise.html">Devenir franchisé</a></li>
+          <li><a href="montjean.html#infos">Contact</a></li>
           <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></li>
         </ul>
       </nav>
@@ -191,17 +142,16 @@
         <ul>
           <li><a href="nos-engagements.html">Produits frais et locaux</a></li>
           <li><a href="nos-engagements.html#terroir">Le goût de nos régions</a></li>
-          <li><a href="montjean.html#infos">Contact</a></li>
         </ul>
       </nav>
       <div>
         <h2>Légal</h2>
         <!-- Pages à créer avant la mise en ligne : mentions légales, confidentialité, CGV, allergènes -->
         <ul>
-          <li><span class="lien-off" aria-disabled="true">Mentions légales <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">Politique de confidentialité <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">CGV <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">Liste des allergènes <small>à venir</small></span></li>
+          <li><span class="lien-off" aria-disabled="true">Mentions légales</span></li>
+          <li><span class="lien-off" aria-disabled="true">Politique de confidentialité</span></li>
+          <li><span class="lien-off" aria-disabled="true">CGV</span></li>
+          <li><span class="lien-off" aria-disabled="true">Liste des allergènes</span></li>
         </ul>
       </div>
       <div class="pied__fin">
@@ -216,7 +166,6 @@
       </div>
     </div>
     <p class="pied__marque" data-vivant="lettres" aria-hidden="true">Rive Bowl</p>
-    <p class="pied__maquette">Maquette privée réalisée par Studio FTT, non publiée.</p>
   </div>
 </footer>
 <script src="rive.js"></script>

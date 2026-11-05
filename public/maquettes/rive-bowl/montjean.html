@@ -6,12 +6,13 @@
 <meta name="robots" content="noindex,nofollow,noarchive" />
 <meta name="googlebot" content="noindex,nofollow,noarchive" />
 <title>Rive Bowl Montjean-sur-Loire · Le restaurant (maquette)</title>
-<meta name="description" content="Rive Bowl à Montjean-sur-Loire : adresse, horaires, services, avis et commande en ligne." />
+<meta name="description" content="Rive Bowl à Montjean-sur-Loire : adresse, horaires, services et commande en ligne." />
 <meta name="theme-color" content="#FDF8F2" />
 <link rel="icon" href="img/logo-rive-bowl.webp" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Titan+One&display=swap" rel="stylesheet" />
+<script>/* couvre l'écran avant le 1er affichage : bowl qui se monte (1re page de la visite) ou rideaux (on vient d'une autre page) ; voir vivant.js, partie 10 */try{var d=document.documentElement;if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("rb-vu"))d.classList.add("premier");else if(sessionStorage.getItem("rb-rideaux"))d.classList.add("arrivee")}}catch(e){}</script>
 <link rel="stylesheet" href="rive.css" />
 <link rel="stylesheet" href="rive-blocs.css" />
 <style>
@@ -70,7 +71,6 @@
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<div class="bandeau" role="note"><strong>Maquette</strong> proposée par Studio FTT pour Rive Bowl · photos issues de vos supports</div>
 <header class="entete">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
@@ -106,123 +106,39 @@
   </nav>
 </header>
 <main id="contenu">
-<section class="mj-une" id="infos" aria-labelledby="titre-mj">
+<!-- Page Montjean calquée sur le /contact de CRAV : un bloc de couleur plein écran, l'adresse, les horaires, le téléphone, Commander et une petite carte.
+     Prête pour plusieurs adresses : copier le bloc <li class="lieu">. Horaires : brand book p. 11, à confirmer avec le gérant. -->
+<section class="contact-crav c-sapin" id="infos" aria-labelledby="titre-mj">
+  <span class="badge-texte badge-texte--flotte badge-texte--gauche c-jaune" aria-hidden="true">Frais</span>
+  <span class="badge-texte badge-texte--flotte badge-texte--droite c-corail" aria-hidden="true">Local</span>
   <div class="wrap">
-    <div>
-      <span class="sur">Le restaurant pilote</span>
-      <h1 class="t t-l" id="titre-mj">Nos restau&shy;rants</h1>
-      <!-- Une fiche par restaurant : pour une nouvelle adresse, copier le bloc <li class="lieu"> (nom, adresse, téléphone, services, carte). -->
-      <ul class="lieux">
-        <li class="lieu">
-      <h2 class="t-case">Rive Bowl Montjean-sur-Loire</h2>
-      <address>17 rue d’Anjou<br />49570 Montjean-sur-Loire (Mauges-sur-Loire)</address>
-      <p class="mj-tel"><a href="tel:+33285358213">02 85 35 82 13</a></p>
-      <ul class="services" aria-label="Services">
-        <li>Sur place</li><li>À emporter</li><li>Click &amp; Collect</li>
-      </ul>
-      <div class="btns">
-        <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-        <a class="btn btn--contour" href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Itinéraire <span class="fl" aria-hidden="true">→</span></a>
-        <a class="btn btn--contour" href="tel:+33285358213">Appeler <span class="fl" aria-hidden="true">→</span></a>
-      </div>
-      <iframe class="lieu__carte" title="Carte : Rive Bowl, 17 rue d’Anjou à Montjean-sur-Loire" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.8683%2C47.3868%2C-0.8564%2C47.3929&amp;layer=mapnik&amp;marker=47.38987%2C-0.86237" loading="lazy" referrerpolicy="no-referrer"></iframe>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <img src="img/salle-montjean.webp" alt="Intérieur de Rive Bowl à Montjean-sur-Loire" width="1024" height="768" fetchpriority="high" />
-      <p class="credit">Photo C. Boisnault / Ôsez Mauges</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="infos">
-      <div class="info monte">
-        <h2 class="t-case">Horaires</h2>
-        <!-- Horaires : brand book Rive Bowl 2026, page 11. Dishop (Click & Collect) affiche d'autres horaires le soir (18&nbsp;h&nbsp;30-21&nbsp;h&nbsp;30) : à confirmer avec le gérant. -->
-        <table>
-          <tr><th>Lundi</th><td>11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30<br />18&nbsp;h&nbsp;30-21&nbsp;h</td></tr>
-          <tr><th>Mardi</th><td>11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30</td></tr>
-          <tr><th>Mercredi</th><td>11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30</td></tr>
-          <tr><th>Jeudi</th><td>11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30</td></tr>
-          <tr><th>Vendredi</th><td>11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30<br />18&nbsp;h&nbsp;30-21&nbsp;h</td></tr>
-          <tr><th>Samedi</th><td>11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30<br />18&nbsp;h&nbsp;30-21&nbsp;h</td></tr>
-          <tr><th>Dimanche</th><td>18&nbsp;h&nbsp;30-21&nbsp;h</td></tr>
-        </table>
-        <p class="note">Horaires à confirmer.</p>
-      </div>
-      <div class="info monte">
-        <h2 class="t-case">Bon à savoir</h2>
-        <!-- Paiement par carte bancaire : fiche Rive Bowl sur La Loire à Vélo (loirebybike.co.uk). Autres moyens à confirmer avec le gérant. -->
-        <p><b>Paiements acceptés :</b> carte bancaire (autres moyens à confirmer).</p>
-        <p><b>Click &amp; Collect :</b> vous commandez en ligne et vous passez récupérer votre poké.</p>
-        <p><b>À vélo :</b> le restaurant est sur le parcours de La Loire à Vélo.</p>
-        <a class="btn btn--contour" href="la-carte.html">Voir la carte <span class="fl" aria-hidden="true">→</span></a>
-      </div>
-    </div>
-    <!-- Brand book p. 14-15 : les façons de commander -->
-    <div class="commander-mj">
-      <h2 class="t t-l" style="color:var(--sapin)">Commandez comme vous voulez</h2>
-      <ul class="tuiles" style="--n:3;margin-top:var(--e-4)">
-        <li class="tuile c-sapin" style="color:var(--creme)"><h3 class="t-case">Bornes de commande</h3><p>Commande sur place rapide, intuitive et autonome.</p></li>
-        <li class="tuile c-jaune"><h3 class="t-case">Sur place</h3><p>Installez-vous en salle, 17 rue d’Anjou.</p></li>
-        <li class="tuile c-corail"><h3 class="t-case">À emporter</h3><p>Votre poké préparé à la commande, à emporter.</p></li>
-        <li class="tuile c-turquoise case"><h3 class="t-case"><a class="case__lien" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Click &amp; Collect</a></h3><p>Commande en ligne, retrait au restaurant.</p><span class="case__fleche" aria-hidden="true">→</span></li>
-        <li class="tuile c-feuille case"><h3 class="t-case"><a class="case__lien" href="https://opn.to/a/SX8eGX" target="_blank" rel="noopener">L’application</a></h3><p>La carte et la commande sur votre téléphone.</p><span class="case__fleche" aria-hidden="true">→</span></li>
-      </ul>
-    </div>
-    <!-- Brand book p. 16 : le service rapide (le pari de l'enseigne) -->
-    <div class="rapide-mj">
-      <h2 class="t t-l">Un service rapide&nbsp;!</h2>
-      <p>Le pari : un temps moyen de commande d’environ 2 minutes.</p>
-      <ul class="rapide-mj__etapes">
-        <li class="c-jaune"><b>1 min 30</b><span>Temps moyen de commande</span></li>
-        <li class="c-corail"><b>30 secondes</b><span>Réalisation d’un poké</span></li>
-        <li class="c-sapin"><b>2 minutes</b><span>Un service au client</span></li>
-      </ul>
-    </div>
-    <!-- Brand book p. 18 : l'univers des restaurants -->
-    <div class="univers-mj monte">
-      <h2 class="t t-l">Des restau&shy;rants qui vous feront voyager</h2>
-      <p class="sous">Un voyage au cœur de nos souvenirs, de notre culture et de nos terroirs.</p>
-      <p>Là où certains choisissent de transporter leurs clients vers des destinations exotiques, nous avons choisi de les faire voyager chez nous. Le bois occupe une place centrale, accompagné de verdure, de matières naturelles, de couleurs chaleureuses et d’une lumière douce.</p>
-      <p class="diff">Notre différence : faire voyager nos clients sans leur faire quitter ce qui leur ressemble.</p>
-    </div>
-    <div class="galerie">
-      <img class="monte" src="img/salle-mur.webp" alt="Le mur vert de la salle avec le logo Rive Bowl" width="1024" height="768" loading="lazy" />
-      <img class="monte" src="img/salle-comptoir.webp" alt="Le comptoir et le mange-debout le long de la vitrine" width="1024" height="768" loading="lazy" />
-    </div>
-    <div class="plan monte">
-      <iframe title="Plan : Rive Bowl, 17 rue d'Anjou à Montjean-sur-Loire" src="https://www.google.com/maps?q=17%20rue%20d%27Anjou%2C%2049570%20Montjean-sur-Loire&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- 6e avis : fiche Google Maps « Rive Bowl », 17 rue d'Anjou, lu le 05/11/2026 (avis 5 étoiles de Sylvain Lefebvre, publié « il y a un mois », visite en juillet), recopié mot pour mot. -->
-<section class="sec avis" aria-labelledby="titre-avis">
-  <div class="wrap"><img class="autocollant" src="img/stickers/bowl-selfie.webp" alt="Illustration Rive Bowl" width="360" height="306" loading="lazy" style="right:4%;top:-2%;width:clamp(90px,12vw,170px)" />
-    <!-- Note et avis : brand book Rive Bowl 2026, page 44 («&nbsp;25 avis Google, novembre 2026&nbsp;»). Textes recopiés tels quels. -->
-    <div class="avis__tete monte">
-      <div>
-        <span class="sur" style="color:var(--jaune)">Ce que nos clients disent de nous</span>
-        <div class="avis__note" style="margin-top:var(--e-2)"><strong>4,8/5</strong><span>25 avis Google</span></div>
-      </div>
-      <a class="btn btn--contour" href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+Montjean-sur-Loire" target="_blank" rel="noopener">Voir tous les avis <span class="fl" aria-hidden="true">→</span></a>
-    </div>
-    <ul class="avis__liste">
-      <li class="monte"><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Les poke bowls étaient délicieux, frais et bien garnis. Le personnel était très agréable et accueillant<br />Je recommande avec plaisir, nous reviendrons&nbsp;!</blockquote><cite>Lilou G.</cite></li>
-      <li class="monte"><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Accueil très sympathique&nbsp;!<br />Poke généreux ( plus petit des formats) ét délicieux 😋<br />Je reviendrai avec plaisir et gourmandise&nbsp;!</blockquote><cite>Manuella B.</cite></li>
-      <li class="monte"><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Essayer ce midi pour la 1ere fois<br />Je recommande les yeux fermés.</blockquote><cite>John G.</cite></li>
-      <li class="monte"><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Les pokés bowl sont excellents&nbsp;!<br />Et les personnes très sympathiques&nbsp;!<br />Je recommande&nbsp;!</blockquote><cite>Gaëlann</cite></li>
-      <li class="monte"><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Repas délicieux portion généreuse qualité des ingrédients génial et le gérant accueillant.<br />En résumé expérience à recommander...</blockquote><cite>Minou PVP TV</cite></li>
-      <li class="monte"><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Super accueil et service rapide&nbsp;!<br />Produit frais et délicieux, composition gourmande avec un large choix d’ingrédients et très bien garni.<br />Je recommande sans hésiter 👍</blockquote><cite>Sylvain L.</cite></li>
+    <h1 class="t t-xl" id="titre-mj">Notre restaurant</h1>
+    <ul class="lieux">
+      <li class="lieu">
+        <div class="lieu__infos">
+          <h2 class="t-case">Montjean-sur-Loire</h2>
+          <address>17 rue d’Anjou<br />49570 Mauges-sur-Loire</address>
+          <p class="lieu__tel"><a href="tel:+33285358213">02 85 35 82 13</a></p>
+          <!-- Services du restaurant (brand book : sur place, à emporter, Click & Collect, bornes de commande). Pictos décoratifs, rien à cliquer. -->
+          <ul class="services-mj">
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 15h22c0 6-5 11-11 11S5 21 5 15z"/><path d="M12 11c-1.5-2 1.5-3 0-5M17 11c-1.5-2 1.5-3 0-5M22 11c-1.5-2 1.5-3 0-5"/></svg><span>Sur place</span></li>
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 11h18l-1.5 15h-15z"/><path d="M12 11V9a4 4 0 0 1 8 0v2"/></svg><span>À emporter</span></li>
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="10" y="4" width="12" height="24" rx="2.5"/><path d="M14.5 24h3"/></svg><span>Click &amp; Collect</span></li>
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="4" width="16" height="16" rx="2"/><path d="M16 20v7M11 27h10M12 9h8M12 13h5"/></svg><span>Bornes de commande</span></li>
+          </ul>
+        <ul class="contact-crav__horaires">
+          <li><b>Lun.</b> 11 h 30-14 h 30 · 18 h 30-21 h</li>
+          <li><b>Mar. à jeu.</b> 11 h 30-14 h 30</li>
+          <li><b>Ven. et sam.</b> 11 h 30-14 h 30 · 18 h 30-21 h</li>
+          <li><b>Dim.</b> 18 h 30-21 h</li>
+        </ul>
+          <div class="btns"><a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a><a class="btn btn--contour" href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Itinéraire <span class="fl" aria-hidden="true">→</span></a></div>
+        </div>
+        <iframe class="lieu__carte" title="Carte : Rive Bowl, 17 rue d’Anjou à Montjean-sur-Loire" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.8683%2C47.3868%2C-0.8564%2C47.3929&amp;layer=mapnik&amp;marker=47.38987%2C-0.86237" loading="lazy"></iframe>
+      </li>
     </ul>
-    <p class="avis__source">Avis Google, novembre 2026.</p>
   </div>
 </section>
-
 </main>
 <a class="bande-cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener" aria-label="Commander chez Rive Bowl">
   <span class="bande-cmd__piste" aria-hidden="true"><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b></span>
@@ -248,6 +164,7 @@
           <li><a href="la-carte.html">Notre carte</a></li>
           <li><a href="montjean.html">Le restaurant de Montjean</a></li>
           <li><a href="franchise.html">Devenir franchisé</a></li>
+          <li><a href="montjean.html#infos">Contact</a></li>
           <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></li>
         </ul>
       </nav>
@@ -256,17 +173,16 @@
         <ul>
           <li><a href="nos-engagements.html">Produits frais et locaux</a></li>
           <li><a href="nos-engagements.html#terroir">Le goût de nos régions</a></li>
-          <li><a href="montjean.html#infos">Contact</a></li>
         </ul>
       </nav>
       <div>
         <h2>Légal</h2>
         <!-- Pages à créer avant la mise en ligne : mentions légales, confidentialité, CGV, allergènes -->
         <ul>
-          <li><span class="lien-off" aria-disabled="true">Mentions légales <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">Politique de confidentialité <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">CGV <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">Liste des allergènes <small>à venir</small></span></li>
+          <li><span class="lien-off" aria-disabled="true">Mentions légales</span></li>
+          <li><span class="lien-off" aria-disabled="true">Politique de confidentialité</span></li>
+          <li><span class="lien-off" aria-disabled="true">CGV</span></li>
+          <li><span class="lien-off" aria-disabled="true">Liste des allergènes</span></li>
         </ul>
       </div>
       <div class="pied__fin">
@@ -281,7 +197,6 @@
       </div>
     </div>
     <p class="pied__marque" data-vivant="lettres" aria-hidden="true">Rive Bowl</p>
-    <p class="pied__maquette">Maquette privée réalisée par Studio FTT, non publiée.</p>
   </div>
 </footer>
 <script src="rive.js"></script>

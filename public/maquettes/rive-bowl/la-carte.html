@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Titan+One&display=swap" rel="stylesheet" />
+<script>/* couvre l'écran avant le 1er affichage : bowl qui se monte (1re page de la visite) ou rideaux (on vient d'une autre page) ; voir vivant.js, partie 10 */try{var d=document.documentElement;if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("rb-vu"))d.classList.add("premier");else if(sessionStorage.getItem("rb-rideaux"))d.classList.add("arrivee")}}catch(e){}</script>
 <link rel="stylesheet" href="rive.css" />
 <link rel="stylesheet" href="rive-blocs.css" />
 <style>
@@ -69,7 +70,6 @@
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<div class="bandeau" role="note"><strong>Maquette</strong> proposée par Studio FTT pour Rive Bowl · photos issues de vos supports</div>
 <header class="entete">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
@@ -105,257 +105,70 @@
   </nav>
 </header>
 <main id="contenu">
-<section class="titre-page">
-  <div class="wrap"><img class="autocollant" src="img/stickers/baguettes.webp" alt="Illustration Rive Bowl" width="200" height="159" loading="lazy" style="right:6%;top:18%;width:clamp(80px,11vw,150px)" />
-    <span class="sur">Une offre pour chaque moment</span>
-    <h1 class="t t-xl" style="margin-top:var(--e-3)">La carte</h1>
+<!-- La carte calquée sur le /menu de CRAV : grande photo et titre énorme, puis les pokés en cartes arrondies (photo, nom, prix, Commander vers Dishop).
+     Pas de « + » ni de panier : la vente en ligne n'est pas comprise. Toutes les lignes de prix retirées sont dans CRM/rive-bowl-docs/textes-retires.md. -->
+<section class="menu-une" aria-labelledby="titre-carte">
+  <img src="img/carte-terroir.webp" alt="" width="900" height="720" fetchpriority="high" />
+  <div class="wrap">
+    <h1 class="t t-xl" id="titre-carte">La carte</h1>
     <p class="lead">Du déjeuner au dîner, une envie, un Rive Bowl.</p>
     <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
   </div>
 </section>
-<nav class="puces" aria-label="Rubriques de la carte">
-  <ul>
-    <li><a href="#signatures">Signatures</a></li>
-    <li><a href="#creation">Création</a></li>
-    <li><a href="#crousty">Crousty Rive</a></li>
-    <li><a href="#chauds">Pokés chauds</a></li>
-    <li><a href="#desserts">Desserts</a></li>
-    <li><a href="#boissons">Bubble teas &amp; boissons</a></li>
-    <li><a href="#terroir">Terroir</a></li>
-    <li><a href="#mini-rive">Mini Rive</a></li>
-    <li><a href="#formules">Formules</a></li>
-    <li><a href="#petite-faim">Petite faim</a></li>
-  </ul>
-</nav>
-<!-- Brand book p. 11 : horaires à confirmer -->
-<section class="sec moments" aria-labelledby="titre-moments">
+
+<!-- La carte en onglets façon CRAV : une rubrique par onglet, des cartes arrondies (photo, nom, phrase courte, prix relevé sur Dishop le 05/11/2026).
+     Sans JS, toutes les rubriques s'affichent l'une sous l'autre. Rien à ajouter au panier : on commande sur Dishop. -->
+<section class="sec menu onglets" aria-labelledby="titre-nos-pokes">
   <div class="wrap">
-    <div class="monte">
-      <h2 class="t t-l" id="titre-moments">Une offre pour chaque moment</h2>
-      <p class="lead">Du déjeuner au dîner, une envie, un Rive Bowl.</p>
+    <h2 class="t t-l titre-sec" id="titre-nos-pokes">Au menu</h2>
+    <div class="onglets__liste" role="tablist" aria-label="Rubriques de la carte">
+      <button class="onglets__bouton" type="button" role="tab" id="onglet-signatures" aria-controls="panneau-signatures" aria-selected="true">Signatures</button>
+      <button class="onglets__bouton" type="button" role="tab" id="onglet-creation" aria-controls="panneau-creation" aria-selected="false" tabindex="-1">Création &amp; formules</button>
+      <button class="onglets__bouton" type="button" role="tab" id="onglet-chaud" aria-controls="panneau-chaud" aria-selected="false" tabindex="-1">Chaud &amp; crousty</button>
+      <button class="onglets__bouton" type="button" role="tab" id="onglet-douceurs" aria-controls="panneau-douceurs" aria-selected="false" tabindex="-1">Desserts &amp; boissons</button>
     </div>
-    <div class="services monte">
-      <div class="service c-jaune"><img class="service__bol" src="img/bowl-crevettes.webp" alt="" width="720" height="720" /><b>Service midi</b><span class="service__h">11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30</span><span class="j">Du lundi au samedi</span></div>
-      <div class="service c-sapin"><img class="service__bol" src="img/bowl-canard.webp" alt="" width="720" height="720" /><b>Service soir</b><span class="service__h">18&nbsp;h&nbsp;30-21&nbsp;h</span><span class="j">Lundi, vendredi, samedi et dimanche</span></div>
+    <div class="onglets__panneau" role="tabpanel" id="panneau-signatures" aria-labelledby="onglet-signatures">
+      <h3 class="onglets__titre">Signatures</h3>
+      <ul class="menu-grille">
+        <li class="plat c-sapin"><div class="plat__img"><img src="img/bowl-teriyaki.webp" alt="" width="720" height="720" loading="lazy" /></div><h4 class="t-case">Poulet teriyaki</h4><p class="plat__desc">Poulet, carotte, concombre, radis, edamame, sauce teriyaki.</p><p class="plat__prix">11,90 €</p></li>
+        <li class="plat c-corail"><div class="plat__img"><img src="img/bowl-crousty.webp" alt="" width="720" height="720" loading="lazy" /></div><h4 class="t-case">Poulet crousty</h4><p class="plat__desc">Le croustillant de la maison.</p><p class="plat__prix">11,90 €</p></li>
+        <li class="plat c-jaune"><div class="plat__img"><img src="img/bowl-rillauds.webp" alt="" width="720" height="720" loading="lazy" /></div><h4 class="t-case">Rillauds d’Anjou</h4><p class="plat__desc">La recette du terroir angevin.</p><p class="plat__prix">11,90 €</p></li>
+        <li class="plat c-turquoise"><div class="plat__img"><img src="img/bowl-saumon.webp" alt="" width="1000" height="1000" loading="lazy" /></div><h4 class="t-case">Saumon mariné</h4><p class="plat__desc">Frais et équilibré.</p><p class="plat__prix">11,90 €</p></li>
+        <li class="plat c-rose"><div class="plat__img"><img src="img/bowl-crevettes.webp" alt="" width="720" height="720" loading="lazy" /></div><h4 class="t-case">Crevettes marinées</h4><p class="plat__desc">Frais et léger.</p><p class="plat__prix">11,90 €</p></li>
+        <li class="plat c-feuille"><div class="plat__img"><img src="img/bowl-falafel.webp" alt="" width="720" height="720" loading="lazy" /></div><h4 class="t-case">Falafel</h4><p class="plat__desc">Le poké végétal.</p><p class="plat__prix">11,90 €</p></li>
+        <li class="plat c-jaune"><div class="plat__img"><img src="img/bowl-canard.webp" alt="" width="720" height="720" loading="lazy" /></div><h4 class="t-case">Effilochés de canard</h4><p class="plat__desc">Une recette signature.</p><p class="plat__prix">11,90 €</p></li>
+        <li class="plat c-corail"><div class="plat__img"><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" loading="lazy" /></div><h4 class="t-case">Maine-et-Loire</h4><p class="plat__desc">Une recette du terroir.</p><p class="plat__prix">11,90 €</p></li>
+      </ul>
     </div>
-    <p class="note-h">Horaires à confirmer.</p>
-  </div>
-</section>
-
-<!-- Rubriques : brand book Rive Bowl 2026, pages 11 à 13. Prix : rivebowl.dishop.co, relevés le 05/11/2026. Pas de prix quand Dishop n'en affiche pas. -->
-<section class="signature" id="signatures" aria-labelledby="t-signatures">
-  <div class="wrap">
-    <div class="sec-tete monte">
-      <div>
-        <h2 class="t t-l" id="t-signatures">Pokés signatures</h2>
-        <p style="margin-top:var(--e-3)">Une recette signature, imaginée par nos chefs pour une combinaison de saveurs authentiques et généreuses.</p>
-      </div>
-      <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
+    <div class="onglets__panneau" role="tabpanel" id="panneau-creation" aria-labelledby="onglet-creation">
+      <h3 class="onglets__titre">Création &amp; formules</h3>
+      <ul class="menu-grille">
+        <li class="plat c-sable plat--photo"><div class="plat__img"><img src="img/carte-terroir.webp" alt="" width="900" height="720" loading="lazy" /></div><h4 class="t-case">Poké création</h4><p class="plat__desc">1 base, 1 protéine, 5 ingrédients, 2 toppings, 1 sauce.</p><p class="plat__prix">12,90 €</p></li>
+        <li class="plat c-rose plat--photo"><div class="plat__img"><img src="img/carte-mini-rive.webp" alt="" width="605" height="668" loading="lazy" /></div><h4 class="t-case">Mini Rive</h4><p class="plat__desc">Le menu des enfants.</p><p class="plat__prix">11,90 €</p></li>
+        <li class="plat c-jaune plat--photo"><div class="plat__img"><img src="img/carte-formule.webp" alt="" width="900" height="720" loading="lazy" /></div><h4 class="t-case">Formules</h4><p class="plat__desc">Pour le midi ou à deux.</p><p class="plat__prix">dès 5,00 €</p></li>
+      </ul>
     </div>
-    <ul class="produits" aria-label="Pokés signatures">
-      <li class="produit c-sapin monte">
-        <img class="bol" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki vu de dessus" width="720" height="720" />
-        <h3>Poulet teriyaki</h3>
-        <p>Riz vinaigré, poulet teriyaki, carotte, concombre, radis, chou rouge mariné, edamame, graines de sésame, sauce teriyaki.</p>
-        <div class="pied-carte"><span class="prix">11,90 €</span></div>
-      </li>
-      <li class="produit c-corail monte">
-        <img class="bol" src="img/bowl-crousty.webp" alt="Poké poulet crousty vu de dessus" width="720" height="720" />
-        <h3>Poulet crousty</h3>
-        <p>Le croustillant de la maison.</p>
-        <div class="pied-carte"><span class="prix">11,90 €</span></div>
-      </li>
-      <li class="produit c-jaune monte">
-        <img class="bol" src="img/bowl-rillauds.webp" alt="Poké rillauds d'anjou vu de dessus" width="720" height="720" />
-        <h3>Rillauds d’Anjou</h3>
-        <p>La recette du terroir angevin.</p>
-        <div class="pied-carte"><span class="prix">11,90 €</span></div>
-      </li>
-      <li class="produit c-turquoise monte">
-        <img class="bol" src="img/bowl-saumon.webp" alt="Poké saumon mariné vu de dessus" width="720" height="720" />
-        <h3>Saumon mariné</h3>
-        <p>Frais et équilibré.</p>
-        <div class="pied-carte"><span class="prix">11,90 €</span></div>
-      </li>
-      <li class="produit c-feuille monte">
-        <img class="bol" src="img/bowl-crevettes.webp" alt="Poké crevettes marinées vu de dessus" width="720" height="720" />
-        <h3>Crevettes marinées</h3>
-        <p>Frais et léger.</p>
-        <div class="pied-carte"><span class="prix">11,90 €</span></div>
-      </li>
-      <li class="produit c-sapin monte">
-        <img class="bol" src="img/bowl-falafel.webp" alt="Poké falafel vu de dessus" width="720" height="720" />
-        <h3>Falafel</h3>
-        <p>Le poké végétal.</p>
-        <div class="pied-carte"><span class="prix">11,90 €</span></div>
-      </li>
-    </ul>
-    <p class="aussi monte">Aussi en signature : <b>Anguille de Loire</b>, <b>Effilochés de canard</b> (11,90 €) et <b>Maine-et-Loire</b> (11,90 €).</p>
+    <div class="onglets__panneau" role="tabpanel" id="panneau-chaud" aria-labelledby="onglet-chaud">
+      <h3 class="onglets__titre">Chaud &amp; crousty</h3>
+      <ul class="menu-grille">
+        <li class="plat c-corail plat--photo"><div class="plat__img"><img src="img/chaud-saumon.webp" alt="" width="900" height="900" loading="lazy" /></div><h4 class="t-case">Pokés chauds</h4><p class="plat__desc">Légumes croquants et bouillon miso.</p><p class="plat__prix">11,90 €</p></li>
+        <li class="plat c-sapin plat--photo"><div class="plat__img"><img src="img/carte-crousty.webp" alt="" width="614" height="388" loading="lazy" /></div><h4 class="t-case">Crousty Rive</h4><p class="plat__desc">Le croustillant, en version bowl.</p><p class="plat__prix">9,00 €</p></li>
+        <li class="plat c-sable plat--photo"><div class="plat__img"><img src="img/carte-aiguillettes.webp" alt="" width="900" height="720" loading="lazy" /></div><h4 class="t-case">Petite faim</h4><p class="plat__desc">À côté, ou pour une pause.</p><p class="plat__prix">dès 5,00 €</p></li>
+      </ul>
+    </div>
+    <div class="onglets__panneau" role="tabpanel" id="panneau-douceurs" aria-labelledby="onglet-douceurs">
+      <h3 class="onglets__titre">Desserts &amp; boissons</h3>
+      <ul class="menu-grille">
+        <li class="plat c-turquoise plat--photo"><div class="plat__img"><img src="img/carte-sweet.webp" alt="" width="900" height="720" loading="lazy" /></div><h4 class="t-case">Desserts</h4><p class="plat__desc">Avec le cremet d’Anjou.</p><p class="plat__prix">dès 2,90 €</p></li>
+        <li class="plat c-sapin plat--photo"><div class="plat__img"><img src="img/carte-latte.webp" alt="" width="900" height="892" loading="lazy" /></div><h4 class="t-case">Bubble teas &amp; cafés</h4><p class="plat__desc">Les boissons fraîches et le Rive café.</p><p class="plat__prix">dès 2,00 €</p></li>
+        <li class="plat c-feuille plat--photo"><div class="plat__img"><img src="img/carte-lemonaid.webp" alt="" width="793" height="900" loading="lazy" /></div><h4 class="t-case">Lemonaid</h4><p class="plat__desc">Citron vert, passion ou orange sanguine.</p><p class="plat__prix">3,50 €</p></li>
+      </ul>
+    </div>
+    <div class="onglets__fin"><a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
+      <p class="source">Prix relevés sur la commande en ligne de Rive Bowl le 5 novembre 2026.</p>
+    </div>
   </div>
 </section>
-<div class="wrap cats">
-<section class="cat monte" id="creation" aria-labelledby="t-creation">
-  <div class="cat__tete c-corail">
-    <img class="bol" src="img/bowl-saumon.webp" alt="Poké création au saumon vu de dessus" width="1000" height="1000" />
-    <h2 class="t-case" id="t-creation">Poké création</h2>
-    <p>Composez le bol qui vous ressemble.</p>
-  </div>
-  <div class="cat__liste">
-    <ul class="liste">
-          <li><span>Poké création<small>Au choix : 1 base, 1 protéine, 5 ingrédients, 2 toppings, 1 sauce.</small></span><b>12,90 €</b></li>
-    </ul>
-    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<section class="cat monte" id="crousty" aria-labelledby="t-crousty">
-  <div class="cat__tete c-jaune">
-    <figure class="cat__photo"><img src="img/carte-crousty.webp" alt="Bowl Crousty Rive au poulet croustillant" width="614" height="388" /></figure>
-    <h2 class="t-case" id="t-crousty">Crousty Rive</h2>
-    <p>Le croustillant, en version bowl.</p>
-  </div>
-  <div class="cat__liste">
-    <ul class="liste">
-          <li><span>Crousty Rive</span><b>9,00 €</b></li>
-          <li><span>Smart des Rive<small>Bowl à prix malin</small></span><b>8,90 €</b></li>
-    </ul>
-    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<section class="cat monte" id="chauds" aria-labelledby="t-chauds">
-  <div class="cat__tete c-sapin">
-    <img class="bol" src="img/chaud-saumon.webp" alt="Poké chaud au saumon vu de dessus" width="720" height="720" />
-    <h2 class="t-case" id="t-chauds">Pokés chauds de saison</h2>
-    <p>Légumes croquants et bouillon miso.</p>
-  </div>
-  <div class="cat__liste">
-    <ul class="liste">
-          <li><span>Le Tartiflette</span><b>11,90 €</b></li>
-          <li><span>Signature chaud saumon</span><b>11,90 €</b></li>
-          <li><span>Signature chaud poulet crousty</span><b>11,90 €</b></li>
-          <li><span>Signature chaud crevettes</span><b>11,90 €</b></li>
-          <li><span>Signature chaud falafel</span><b>11,90 €</b></li>
-          <li><span>Signature chaud canard effilochés</span><b>11,90 €</b></li>
-          <li><span>Signature chaud anguille fumée</span><b>11,90 €</b></li>
-          <li><span>Signature chaud rillauds d’Anjou</span><b>11,90 €</b></li>
-    </ul>
-    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<section class="cat monte" id="desserts" aria-labelledby="t-desserts">
-  <div class="cat__tete c-rose">
-    <img class="bol" src="img/cremet.webp" alt="Pot de cremet d'Anjou Rive Bowl" width="720" height="720" />
-    <h2 class="t-case" id="t-desserts">Desserts signature</h2>
-    <p>Avec le cremet d’Anjou.</p>
-  </div>
-  <div class="cat__liste">
-    <ul class="liste">
-          <li><span>Cremet d’Anjou</span><b>4,90 €</b></li>
-          <li><span>Sweet Signature d’Anjou</span><b>4,90 €</b></li>
-          <li><span>Salade de fruits</span><b>3,50 €</b></li>
-          <li><span>Plaisir de mangue</span><b>3,50 €</b></li>
-          <li><span>Plaisir d’ananas</span><b>3,50 €</b></li>
-          <li><span>Cookie</span><b>2,90 €</b></li>
-    </ul>
-    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<section class="cat monte" id="boissons" aria-labelledby="t-boissons">
-  <div class="cat__tete c-turquoise">
-    <div class="cat__photos"><figure class="cat__photo"><img src="img/carte-bubble.webp" alt="Bubble tea Rive Bowl (visuel d'illustration du brand book)" width="206" height="560" /><span class="cat__mention">Visuel d’illustration · brand book</span></figure><figure class="cat__photo"><img src="img/carte-latte.webp" alt="Latte des Rives dans un gobelet Rive Bowl" width="900" height="892" /></figure></div>
-    <h2 class="t-case" id="t-boissons">Bubble teas &amp; boissons</h2>
-    <p>Les boissons fraîches et le Rive café.</p>
-  </div>
-  <div class="cat__liste">
-    <ul class="liste">
-          <li><span>Bubble teas</span></li>
-          <li><span>Lemonaid citron vert</span><b>3,50 €</b></li>
-          <li><span>Lemonaid fruit de la passion</span><b>3,50 €</b></li>
-          <li><span>Lemonaid orange sanguine</span><b>3,50 €</b></li>
-          <li><span>San Pellegrino 33 cl</span><b>2,50 €</b></li>
-          <li><span>Latte des Rives</span><b>6,50 €</b></li>
-          <li><span>Mocha des Rives</span><b>6,50 €</b></li>
-          <li><span>Latte Anjou</span><b>6,50 €</b></li>
-          <li><span>Café glacé</span><b>dès 3,90 €</b></li>
-          <li><span>Expresso</span><b>2,00 €</b></li>
-          <li><span>Café allongé</span><b>2,20 €</b></li>
-          <li><span>Double expresso</span><b>3,00 €</b></li>
-    </ul>
-    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<section class="cat monte" id="terroir" aria-labelledby="t-terroir">
-  <div class="cat__tete c-feuille">
-    <figure class="cat__photo"><img src="img/carte-terroir.webp" alt="Poké chaud aux rillauds d'Anjou vu de dessus" width="900" height="720" /></figure>
-    <h2 class="t-case" id="t-terroir">Recettes du terroir</h2>
-    <p>Le goût de nos régions.</p>
-  </div>
-  <div class="cat__liste">
-    <ul class="liste">
-          <li><span>Poké signature Rillauds d’Anjou</span><b>11,90 €</b></li>
-          <li><span>Poké signature Maine-et-Loire</span><b>11,90 €</b></li>
-          <li><span>Poké signature Anguille de Loire</span></li>
-          <li><span>Cremet d’Anjou</span><b>4,90 €</b></li>
-    </ul>
-    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<section class="cat monte" id="mini-rive" aria-labelledby="t-mini-rive">
-  <div class="cat__tete c-jaune">
-    <figure class="cat__photo"><img src="img/carte-mini-rive.webp" alt="Menu Mini Rive : un poké, une boisson et un cookie" width="605" height="668" /></figure>
-    <h2 class="t-case" id="t-mini-rive">Mini Rive</h2>
-    <p>Le menu des enfants.</p>
-  </div>
-  <div class="cat__liste">
-    <ul class="liste">
-          <li><span>Mini Rive</span><b>11,90 €</b></li>
-    </ul>
-    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<section class="cat monte" id="formules" aria-labelledby="t-formules">
-  <div class="cat__tete c-sable">
-    <figure class="cat__photo"><img src="img/carte-formule.webp" alt="Formule : un poké, une boisson et un cookie" width="900" height="720" /></figure>
-    <h2 class="t-case" id="t-formules">Formules</h2>
-    <p>Pour le midi ou à deux.</p>
-  </div>
-  <div class="cat__liste">
-    <ul class="liste">
-          <li><span>Formule Midi</span><b>14,90 €</b></li>
-          <li><span>Formule Midi Complète</span><b>17,90 €</b></li>
-          <li><span>Sur la rive à deux</span><b>29,99 €</b></li>
-          <li><span>RiveDeal</span><b>5,00 €</b></li>
-    </ul>
-    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<section class="cat monte" id="petite-faim" aria-labelledby="t-petite-faim">
-  <div class="cat__tete c-corail">
-    <figure class="cat__photo"><img src="img/carte-aiguillettes.webp" alt="Aiguillettes de poulet crousty" width="900" height="720" /></figure>
-    <h2 class="t-case" id="t-petite-faim">Petite faim</h2>
-    <p>À côté, ou pour une pause.</p>
-  </div>
-  <div class="cat__liste">
-    <ul class="liste">
-          <li><span>Pizza saumon</span><b>6,90 €</b></li>
-          <li><span>Pizza poulet crousty</span><b>6,90 €</b></li>
-          <li><span>Aiguillettes de poulet crousty</span><b>5,00 €</b></li>
-          <li><span>Falafel</span><b>5,00 €</b></li>
-          <li><span>Velouté de potimarron, graines de courge</span><b>5,00 €</b></li>
-    </ul>
-    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-</div>
-<p class="wrap source">Prix relevés sur la commande en ligne de Rive Bowl le 5 novembre 2026. Certains produits peuvent être indisponibles selon les jours.</p>
 </main>
 <a class="bande-cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener" aria-label="Commander chez Rive Bowl">
   <span class="bande-cmd__piste" aria-hidden="true"><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b></span>
@@ -381,6 +194,7 @@
           <li><a href="la-carte.html">Notre carte</a></li>
           <li><a href="montjean.html">Le restaurant de Montjean</a></li>
           <li><a href="franchise.html">Devenir franchisé</a></li>
+          <li><a href="montjean.html#infos">Contact</a></li>
           <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></li>
         </ul>
       </nav>
@@ -389,17 +203,16 @@
         <ul>
           <li><a href="nos-engagements.html">Produits frais et locaux</a></li>
           <li><a href="nos-engagements.html#terroir">Le goût de nos régions</a></li>
-          <li><a href="montjean.html#infos">Contact</a></li>
         </ul>
       </nav>
       <div>
         <h2>Légal</h2>
         <!-- Pages à créer avant la mise en ligne : mentions légales, confidentialité, CGV, allergènes -->
         <ul>
-          <li><span class="lien-off" aria-disabled="true">Mentions légales <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">Politique de confidentialité <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">CGV <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">Liste des allergènes <small>à venir</small></span></li>
+          <li><span class="lien-off" aria-disabled="true">Mentions légales</span></li>
+          <li><span class="lien-off" aria-disabled="true">Politique de confidentialité</span></li>
+          <li><span class="lien-off" aria-disabled="true">CGV</span></li>
+          <li><span class="lien-off" aria-disabled="true">Liste des allergènes</span></li>
         </ul>
       </div>
       <div class="pied__fin">
@@ -414,7 +227,6 @@
       </div>
     </div>
     <p class="pied__marque" data-vivant="lettres" aria-hidden="true">Rive Bowl</p>
-    <p class="pied__maquette">Maquette privée réalisée par Studio FTT, non publiée.</p>
   </div>
 </footer>
 <script src="rive.js"></script>

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Titan+One&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="img/bb-salle.webp" />
+<script>/* couvre l'écran avant le 1er affichage : bowl qui se monte (1re page de la visite) ou rideaux (on vient d'une autre page) ; voir vivant.js, partie 10 */try{var d=document.documentElement;if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("rb-vu"))d.classList.add("premier");else if(sessionStorage.getItem("rb-rideaux"))d.classList.add("arrivee")}}catch(e){}</script>
 <link rel="stylesheet" href="rive.css" />
 <link rel="stylesheet" href="rive-blocs.css" />
 <style>
@@ -22,7 +22,6 @@
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<div class="bandeau" role="note"><strong>Maquette</strong> proposée par Studio FTT pour Rive Bowl · photos et visuels de vos supports</div>
 <header class="entete">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
@@ -58,266 +57,126 @@
   </nav>
 </header>
 <main id="contenu">
-<!--
-  GRAND CARROUSEL (le code est dans rive.js, partie « Grand carrousel d’accueil »).
-  Diapos 1, 2, 4 et 5 : visuels d'illustration du brand book Rive Bowl 2026 (pages 17, 45, 18 et 10), fournis par le client,
-  recadrés sans les textes du document. À remplacer par ses vraies photos dès qu'il les envoie.
-  Diapo 3 : la vraie salle de Montjean, photo C. Boisnault / Ôsez Mauges.
-  Bowls : photos des pokés de la page Dishop de Rive Bowl.
-  VIDÉO DU CLIENT (plus tard) : remplacer l'image de la diapo 1 par
-  <video class="diapo__fond" autoplay muted loop playsinline poster="img/bb-salle.webp" src="video/rive-bowl-1080.mp4"></video>
-  (MP4 H.264 sans son, 4 à 6 Mo maximum). Sous prefers-reduced-motion, retirer autoplay et garder l'image.
--->
-<section class="une" aria-roledescription="carrousel" aria-label="Rive Bowl en images">
-  <div class="une__cadre">
-    <div class="une__piste" id="une-piste">
+<!-- Accueil calqué sur la STRUCTURE et les ANIMATIONS de cravburgers.shop (décision de Nathan, 06/11/2026) ; images, textes et code sont à Rive Bowl.
+     Ordre : 1. titre énorme + photos en éventail · 2. bloc sapin, grand bowl et 6 faits · 3. histoire épinglée « Une histoire dans chaque couche » · 4. grande photo ·
+     5. « À emporter » en carrousel · 6. affiche rétro · 7. dernier appel corail · 8. pied de page (bandeau Commander + RIVE BOWL). Le texte retiré est dans CRM/rive-bowl-docs/textes-retires.md. -->
 
-      <div class="diapo diapo--photo actif" role="group" aria-roledescription="diapositive" aria-label="%N%">
-        <img class="diapo__fond" src="img/bb-salle.webp" alt="Salle Rive Bowl : bois clair, plantes suspendues et logo lumineux (visuel d'illustration du brand book)" width="1104" height="692" style="object-position:84% 50%" fetchpriority="high" />
-        <p class="credit">Visuel d’illustration · brand book Rive Bowl</p>
-        <div class="diapo__texte">
-          <h1 class="t t-xl" id="titre-une">La Loire dans un <span class="main">bowl</span></h1>
-          <p class="lead">Le poké qui vient de chez nous.</p>
-        </div>
-      </div>
-
-      <div class="diapo diapo--photo" role="group" aria-roledescription="diapositive" aria-label="%N%">
-        <img class="diapo__fond" src="img/bb-devanture.webp" alt="Devanture Rive Bowl verte avec terrasse (visuel d'illustration du brand book)" width="696" height="440" style="object-position:56% 50%" />
-        <p class="credit">Visuel d’illustration · brand book Rive Bowl</p>
-        <div class="diapo__texte">
-          <h2 class="t t-xl">Le poké terroir</h2>
-          <p class="lead">Du déjeuner au dîner, une envie, un Rive Bowl.</p>
-        </div>
-      </div>
-
-      <div class="diapo diapo--photo" role="group" aria-roledescription="diapositive" aria-label="%N%">
-        <img class="diapo__fond" src="img/salle-montjean.webp" alt="La vraie salle de Rive Bowl à Montjean, du comptoir jusqu'au mur du logo" width="1024" height="768" style="object-position:50% 50%" />
-        <p class="credit">Photo C. Boisnault / Ôsez Mauges</p>
-        <div class="diapo__texte">
-          <h2 class="t t-xl">Bienvenue à Montjean</h2>
-          <p class="lead">17 rue d’Anjou, sur place, à emporter ou en Click &amp; Collect.</p>
-        </div>
-      </div>
-
-      <div class="diapo diapo--photo" role="group" aria-roledescription="diapositive" aria-label="%N%">
-        <img class="diapo__fond" src="img/bb-salle-2.webp" alt="Tables et banquette d'une salle Rive Bowl (visuel d'illustration du brand book)" width="736" height="920" style="object-position:100% 60%" />
-        <p class="credit">Visuel d’illustration · brand book Rive Bowl</p>
-        <div class="diapo__texte">
-          <h2 class="t t-xl">Un voyage au cœur de nos terroirs</h2>
-        </div>
-      </div>
-
-      <div class="diapo diapo--photo" role="group" aria-roledescription="diapositive" aria-label="%N%">
-        <img class="diapo__fond" src="img/bb-bowls.webp" alt="Pokés Rive Bowl sur une table en bois (visuel d'illustration du brand book)" width="726" height="600" style="object-position:50% 50%" />
-        <p class="credit">Visuel d’illustration · brand book Rive Bowl</p>
-        <div class="diapo__texte">
-          <h2 class="t t-xl">Le goût de nos régions</h2>
-          <p class="lead">La liberté de composer.</p>
-        </div>
-      </div>
-
-      <div class="diapo c-corail d-creation" role="group" aria-roledescription="diapositive" aria-label="6 sur 6">
-        <img class="diapo__bol" src="img/bowl-saumon.webp" alt="Poké saumon mariné vu de dessus" width="1000" height="1000" />
-        <div class="diapo__texte">
-          <h2 class="t t-l">Composez le bol qui vous ressemble&nbsp;!</h2>
-          <div class="etiquette" aria-hidden="true"><b>Poké création</b><span>À votre façon</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <div class="une__points" role="group" aria-label="Choisir une photo">
-    <button type="button" aria-label="Photo 1" aria-current="true"></button>
-    <button type="button" aria-label="Photo 2" aria-current="false"></button>
-    <button type="button" aria-label="Photo 3" aria-current="false"></button>
-    <button type="button" aria-label="Photo 4" aria-current="false"></button>
-    <button type="button" aria-label="Photo 5" aria-current="false"></button>
-    <button type="button" aria-label="Photo 6" aria-current="false"></button>
-  </div>
-</section>
-
-<!-- Le grand bowl, le slogan par-dessus et les ingrédients qui volent au défilement (mécanique CRAV « Every layer packed with flavor »).
-     Photos d'illustration : le bowl et les pastilles d'ingrédients viennent du même visuel. -->
-<section class="envolee c-sapin" aria-labelledby="titre-envolee">
-    <img class="ingredient" src="img/ingredients/saumon.webp" alt="" width="200" height="200" loading="lazy" style="left:6%;top:10%" />
-    <img class="ingredient" src="img/ingredients/avocat.webp" alt="" width="200" height="200" loading="lazy" style="left:78%;top:6%" />
-    <img class="ingredient" src="img/ingredients/mangue.webp" alt="" width="200" height="200" loading="lazy" style="left:86%;top:46%" />
-    <img class="ingredient" src="img/ingredients/edamame.webp" alt="" width="200" height="200" loading="lazy" style="left:4%;top:56%" />
-    <img class="ingredient" src="img/ingredients/radis.webp" alt="" width="200" height="200" loading="lazy" style="left:18%;top:78%" />
-    <img class="ingredient" src="img/ingredients/carotte.webp" alt="" width="200" height="200" loading="lazy" style="left:70%;top:76%" />
-  <div class="envolee__scene">
-    <img class="envolee__bol" src="img/bowl-saumon.webp" alt="Poké saumon mariné vu de dessus (visuel d'illustration)" width="1000" height="1000" loading="lazy" />
-    <img class="autocollant autocollant--photo" src="img/stickers/main-gauche.webp" alt="Illustration Rive Bowl" width="180" height="148" loading="lazy" style="left:6%;top:44%;width:clamp(56px,11vw,120px)" />
-    <img class="autocollant autocollant--photo" src="img/stickers/main-droite.webp" alt="Illustration Rive Bowl" width="170" height="140" loading="lazy" style="right:6%;top:40%;width:clamp(56px,11vw,120px)" />
-    <img class="autocollant autocollant--photo" src="img/stickers/yeux.webp" alt="Illustration Rive Bowl" width="200" height="117" loading="lazy" style="left:42%;top:30%;width:clamp(56px,10vw,110px)" />
-  </div>
-  <h2 class="envolee__titre" id="titre-envolee" data-vivant="mots">La Loire dans un <span class="main">bowl</span></h2>
-  <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
-  <img class="autocollant" src="img/stickers/etiquette-frais.webp" alt="Illustration Rive Bowl" width="260" height="147" loading="lazy" style="right:8%;top:12%;width:clamp(96px,14vw,180px)" />
-</section>
-
-<section class="sec pokes" aria-labelledby="titre-pokes">
+<!-- 1. Haut de page : titre énorme, une phrase, Commander, 3 vraies photos de bowls en éventail -->
+<section class="haut-crav" aria-labelledby="titre-une">
   <div class="wrap">
-    <div class="sec-tete monte">
-      <div class="sec-tete__titre"><img class="autocollant" src="img/stickers/saumon-avocat.webp" alt="Illustration Rive Bowl" width="360" height="231" loading="lazy" style="right:-4%;top:-46%;width:clamp(96px,14vw,190px)" /><h2 class="t t-l" id="titre-pokes">À chaque envie, son Rive Bowl.</h2><p class="sous">Le goût de nos régions, la liberté de composer.</p></div>
-      <div class="carrousel__nav">
-        <button type="button" data-cible="glisse-pokes" data-sens="-1" aria-label="Pokés précédents">←</button>
-        <button type="button" data-cible="glisse-pokes" data-sens="1" aria-label="Pokés suivants">→</button>
-      </div>
-    </div>
-    <ul class="glisse" id="glisse-pokes" aria-label="Nos pokés signatures">
-      <li><a class="poke" href="la-carte.html#signatures" data-desc="Riz vinaigré, poulet teriyaki, carotte, concombre, radis, chou rouge mariné, edamame, graines de sésame, sauce teriyaki." data-prix="11,90 €"><span class="poke__img c-sapin"><img src="img/bowl-teriyaki.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Poulet teriyaki</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures" data-desc="La recette du terroir angevin." data-prix="11,90 €"><span class="poke__img c-jaune"><img src="img/bowl-rillauds.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Rillauds d’Anjou</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures" data-desc="Frais et équilibré." data-prix="11,90 €"><span class="poke__img c-corail"><img src="img/bowl-saumon.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Saumon mariné</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures" data-desc="Le croustillant de la maison." data-prix="11,90 €"><span class="poke__img c-turquoise"><img src="img/bowl-crousty.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Poulet crousty</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures" data-desc="Frais et léger." data-prix="11,90 €"><span class="poke__img c-feuille"><img src="img/bowl-crevettes.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Crevettes marinées</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures" data-desc="Le poké végétal." data-prix="11,90 €"><span class="poke__img c-sapin"><img src="img/bowl-falafel.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Falafel</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures" data-desc="Un poké gourmand." data-prix="11,90 €"><span class="poke__img c-jaune"><img src="img/bowl-canard.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Effilochés de canard</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures" data-desc="Le poké de chez nous." data-prix="11,90 €"><span class="poke__img c-corail"><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Maine-et-Loire</span></a></li>
+    <h1 class="t t-xl haut-crav__titre" id="titre-une">La Loire dans un <span class="main">bowl</span></h1>
+    <p class="lead">Le poké qui vient de chez nous.</p>
+    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
+  </div>
+  <div class="eventail" aria-label="Trois pokés Rive Bowl">
+    <img src="img/carte-terroir.webp" alt="Poké du terroir Rive Bowl" width="900" height="720" fetchpriority="high" />
+    <img src="img/chaud-saumon.webp" alt="Poké chaud au saumon Rive Bowl" width="900" height="900" fetchpriority="high" />
+    <img src="img/carte-formule.webp" alt="Formule midi Rive Bowl : un poké, une boisson et un cookie" width="900" height="720" fetchpriority="high" />
+  </div>
+</section>
+
+<!-- 2. Bloc sapin : le grand bowl détouré au centre (il grossit un peu au défilement), 3 faits de chaque côté (brand book, aucun chiffre inventé) -->
+<section class="faits c-sapin" aria-labelledby="titre-faits">
+  <h2 class="visuellement-cache" id="titre-faits">Rive Bowl en bref</h2>
+  <div class="wrap faits__grille">
+    <ul class="faits__col">
+      <li>Fait maison</li>
+      <li>Produits frais &amp; locaux</li>
+      <li>Préparé à la commande</li>
     </ul>
-    <p class="pokes__suite"><a class="btn btn--contour" href="la-carte.html">Toute la carte <span class="fl" aria-hidden="true">→</span></a></p>
-  </div>
-</section>
-
-<!-- Le bowl qui se monte au défilement, couche par couche (idée Tòpas « Un pincho, c'est simple », en images 2D).
-     Animation de présentation seulement : rien à cliquer. Composition d'après la carte (Poké création). -->
-<section class="compose c-sable vague" aria-labelledby="titre-compose">
-  <div class="compose__piste">
-    <div class="wrap compose__scene">
-      <div class="compose__bol" role="img" aria-label="Un poké saumon mariné qui se monte couche par couche (visuel d'illustration)">
-      <img class="compose__couche compose__couche--bord" data-a="0" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" loading="lazy" />
-      <img class="compose__couche" data-a="0.14" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" loading="lazy" style="clip-path:polygon(49% 51%,122.4% 66.6%,123.8% 56.2%,123.8% 45.8%,122.4% 35.4%,119.5% 25.3%,115.2% 15.8%,109.7% 6.9%,103.0% -1.1%,95.2% -8.1%,86.5% -14.0%,86.5% -14.0%)" />
-      <img class="compose__couche" data-a="0.22" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" loading="lazy" style="clip-path:polygon(49% 51%,86.5% -14.0%,77.1% -18.5%,67.1% -21.8%,56.8% -23.6%,46.4% -24.0%,36.0% -22.9%,25.8% -20.3%,16.1% -16.4%,7.1% -11.2%,6.0% -10.4%)" />
-      <img class="compose__couche" data-a="0.30" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" loading="lazy" style="clip-path:polygon(49% 51%,6.0% -10.4%,-2.1% -3.9%,-9.3% 3.8%,-15.3% 12.4%,-20.0% 21.7%,-23.4% 31.6%,-25.4% 41.9%,-25.7% 44.5%)" />
-      <img class="compose__couche" data-a="0.38" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" loading="lazy" style="clip-path:polygon(49% 51%,-25.7% 44.5%,-25.9% 54.9%,-24.6% 65.3%,-21.9% 75.4%,-17.8% 85.0%,-12.4% 94.0%,-12.4% 94.0%)" />
-      <img class="compose__couche" data-a="0.46" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" loading="lazy" style="clip-path:polygon(49% 51%,-12.4% 94.0%,-5.9% 102.1%,1.8% 109.3%,10.4% 115.3%,19.7% 120.0%,29.6% 123.4%,39.9% 125.4%,50.3% 126.0%,60.7% 125.1%,62.0% 124.9%)" />
-      <img class="compose__couche" data-a="0.54" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" loading="lazy" style="clip-path:polygon(49% 51%,62.0% 124.9%,72.2% 122.3%,81.9% 118.4%,90.9% 113.2%,99.2% 106.7%,106.5% 99.2%,112.6% 90.7%,117.5% 81.5%,121.1% 71.7%,122.4% 66.6%)" />
-      <img class="compose__couche compose__couche--centre" data-a=".66" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" loading="lazy" />
-      </div>
-      <div>
-        <img class="autocollant autocollant--libre" src="img/stickers/bowl-marche.webp" alt="Illustration Rive Bowl" width="360" height="337" loading="lazy" style="position:relative;display:block;width:clamp(90px,12vw,150px);margin-bottom:var(--e-2)" /><h2 class="t t-l" id="titre-compose">Un poké, couche par couche</h2>
-        <ol class="compose__etapes">
-          <li data-a="0">Une base<small>Riz, au choix</small></li>
-          <li data-a=".14">Cinq ingrédients<small>Carotte, avocat, concombre, radis, edamame…</small></li>
-          <li data-a=".66">Une protéine<small>Ici, le saumon mariné</small></li>
-          <li data-a=".82">Deux toppings et une sauce<small>Graines de sésame, oignon nouveau…</small></li>
-        </ol>
-        <p class="compose__nom">Poké saumon mariné</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Thèmes en blocs courts (une image, un titre, une phrase, un bouton), façon « Un poké plein de qualités » de Pokawa -->
-<section class="sec blocs" aria-label="Rive Bowl en bref">
-  <div class="wrap">
-    <div class="blocs__grid blocs__grid--2">
-      <a class="bloc" href="notre-histoire.html">
-        <img src="img/bb-partage.webp" alt="" width="696" height="574" />
-        <span class="credit-bloc">Visuel d’illustration · brand book Rive Bowl</span>
-        <h3 class="t-case">Notre histoire</h3>
-        <p>On a tous une salade quelque part dans nos souvenirs.</p>
-        <span class="case__fleche" aria-hidden="true">→</span>
-      </a>
-      <a class="bloc" href="nos-engagements.html">
-        <img src="img/bb-radis.webp" alt="" width="650" height="520" />
-        <span class="credit-bloc">Visuel d’illustration · brand book Rive Bowl</span>
-        <h3 class="t-case">Nos enga&shy;gements</h3>
-        <p>Des produits frais, une exigence de qualité.</p>
-        <span class="case__fleche" aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="defile-texte c-corail inverse" role="note" aria-label="Devenir le numéro 1 de vos souvenirs · Du déjeuner au dîner, une envie, un Rive Bowl · Composez le bol qui vous ressemble">
-  <div class="defile-texte__piste" aria-hidden="true"><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b></div>
-</div>
-
-<!-- Brand book p. 11 : « Une offre pour chaque moment ». Horaires du brand book, à confirmer (Dishop affiche autre chose le soir). -->
-<section class="sec moments" aria-labelledby="titre-moments">
-  <div class="wrap">
-    <div class="monte">
-      <h2 class="t t-l" id="titre-moments">Une offre pour chaque moment</h2>
-      <p class="lead">Du déjeuner au dîner, une envie, un Rive Bowl.</p>
-    </div>
-    <div class="services monte">
-      <div class="service c-jaune"><img class="service__bol" src="img/bowl-crevettes.webp" alt="" width="720" height="720" /><b>Service midi</b><span class="service__h">11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30</span><span class="j">Du lundi au samedi</span></div>
-      <div class="service c-sapin"><img class="service__bol" src="img/bowl-canard.webp" alt="" width="720" height="720" /><b>Service soir</b><span class="service__h">18&nbsp;h&nbsp;30-21&nbsp;h</span><span class="j">Lundi, vendredi, samedi et dimanche</span></div>
-    </div>
-    <p class="note-h">Horaires à confirmer.</p>
-  </div>
-</section>
-
-<!-- Note et avis : brand book Rive Bowl 2026, page 44 (25 avis Google, novembre 2026). Les 5 avis de la page 44 sont recopiés tels quels.
-     Le bandeau répète ces 3 mêmes avis pour défiler sans trou ; les copies sont cachées aux lecteurs d'écran. -->
-<!-- 6e avis : fiche Google Maps « Rive Bowl », 17 rue d'Anjou, lu le 05/11/2026 (avis 5 étoiles de Sylvain Lefebvre, publié « il y a un mois », visite en juillet), recopié mot pour mot. -->
-<section class="sec avis-bande" aria-labelledby="titre-avis">
-  <div class="wrap avis-bande__tete monte">
-    <h2 class="t t-l" id="titre-avis">Ce que nos clients disent de nous</h2>
-    <div class="note">
-      <strong>4,8/5</strong>
-      <div><span>25 avis Google</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Voir les avis sur Google</a></div>
-    </div>
-  </div>
-  <div class="defile">
-    <ul class="defile__piste">
-      <li><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Les poke bowls étaient délicieux, frais et bien garnis. Le personnel était très agréable et accueillant<br />Je recommande avec plaisir, nous reviendrons&nbsp;!</blockquote><cite>Lilou G.</cite></li>
-      <li><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Accueil très sympathique&nbsp;!<br />Poke généreux ( plus petit des formats) ét délicieux 😋<br />Je reviendrai avec plaisir et gourmandise&nbsp;!</blockquote><cite>Manuella B.</cite></li>
-      <li><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Essayer ce midi pour la 1ere fois<br />Je recommande les yeux fermés.</blockquote><cite>John G.</cite></li>
-      <li><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Les pokés bowl sont excellents&nbsp;!<br />Et les personnes très sympathiques&nbsp;!<br />Je recommande&nbsp;!</blockquote><cite>Gaëlann</cite></li>
-      <li><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Repas délicieux portion généreuse qualité des ingrédients génial et le gérant accueillant.<br />En résumé expérience à recommander...</blockquote><cite>Minou PVP TV</cite></li>
-      <li><span class="etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Super accueil et service rapide&nbsp;!<br />Produit frais et délicieux, composition gourmande avec un large choix d’ingrédients et très bien garni.<br />Je recommande sans hésiter 👍</blockquote><cite>Sylvain L.</cite></li>
-      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Les poke bowls étaient délicieux, frais et bien garnis. Le personnel était très agréable et accueillant<br />Je recommande avec plaisir, nous reviendrons&nbsp;!</blockquote><cite>Lilou G.</cite></li>
-      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Accueil très sympathique&nbsp;!<br />Poke généreux ( plus petit des formats) ét délicieux 😋<br />Je reviendrai avec plaisir et gourmandise&nbsp;!</blockquote><cite>Manuella B.</cite></li>
-      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Essayer ce midi pour la 1ere fois<br />Je recommande les yeux fermés.</blockquote><cite>John G.</cite></li>
-      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Les pokés bowl sont excellents&nbsp;!<br />Et les personnes très sympathiques&nbsp;!<br />Je recommande&nbsp;!</blockquote><cite>Gaëlann</cite></li>
-      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Repas délicieux portion généreuse qualité des ingrédients génial et le gérant accueillant.<br />En résumé expérience à recommander...</blockquote><cite>Minou PVP TV</cite></li>
-      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Super accueil et service rapide&nbsp;!<br />Produit frais et délicieux, composition gourmande avec un large choix d’ingrédients et très bien garni.<br />Je recommande sans hésiter 👍</blockquote><cite>Sylvain L.</cite></li>
-    </ul>
-  </div>
-  <div class="wrap avis-bande__pied"><p>Avis Google, novembre 2026.</p></div>
-</section>
-
-<section class="sec blocs" aria-label="Le restaurant et la franchise">
-  <div class="wrap">
-    <div class="blocs__grid blocs__grid--2">
-      <a class="bloc" href="montjean.html">
-        <img src="img/salle-montjean.webp" alt="" width="1024" height="768" />
-        <span class="credit-bloc">Photo C. Boisnault / Ôsez Mauges</span>
-        <h3 class="t-case">Le restau&shy;rant de Montjean</h3>
-        <p>17 rue d’Anjou, sur place, à emporter ou en Click &amp; Collect.</p>
-        <span class="case__fleche" aria-hidden="true">→</span>
-      </a>
-      <a class="bloc" href="franchise.html">
-        <img src="img/bb-devanture.webp" alt="" width="696" height="440" />
-        <span class="credit-bloc">Visuel d’illustration · brand book Rive Bowl</span>
-        <h3 class="t-case">Devenir fran&shy;chisé</h3>
-        <p>Écrivons la suite ensemble&nbsp;!</p>
-        <span class="case__fleche" aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="defile-texte c-turquoise" role="note" aria-label="Le poké terroir · Produits frais et locaux · Le goût de nos régions">
-  <div class="defile-texte__piste" aria-hidden="true"><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b></div>
-</div>
-
-<!-- Grille de photos façon « L'actu sur nos réseaux » de Pokawa. Visuels du brand book signalés comme tels. -->
-<section class="sec reseaux-grille" aria-labelledby="titre-reseaux">
-  <div class="wrap">
-    <h2 class="t t-l" id="titre-reseaux">Rive Bowl en images</h2>
-    <ul class="grille">
-      <li class="g-grand"><img src="img/bb-salle.webp" alt="Salle Rive Bowl avec plantes suspendues et logo lumineux (visuel d'illustration du brand book)" width="1104" height="692" /><span class="g-titre">Healthy &amp; terroir</span><span class="g-mention">Visuel d’illustration · brand book Rive Bowl</span></li>
-      <li class="c-corail"><img class="g-bol" src="img/bowl-saumon.webp" alt="Poké saumon mariné vu de dessus" width="1000" height="1000" /><span class="g-titre">Saumon mariné</span></li>
-      <li><img src="img/salle-montjean.webp" alt="La salle de Rive Bowl à Montjean" width="1024" height="768" /><span class="g-titre">Montjean</span><span class="g-mention">Photo C. Boisnault / Ôsez Mauges</span></li>
-      <li><img src="img/bb-bowls.webp" alt="Pokés Rive Bowl sur une table en bois (visuel d'illustration du brand book)" width="726" height="600" /><span class="g-titre">À partager</span><span class="g-mention">Visuel d’illustration · brand book Rive Bowl</span></li>
-      <li class="c-jaune"><img class="g-bol" src="img/bowl-crousty.webp" alt="Poké poulet crousty vu de dessus" width="720" height="720" /><span class="g-titre">Poulet crousty</span></li>
+    <img class="faits__bol" src="img/bowl-saumon.webp" alt="Poké saumon mariné vu de dessus (visuel d'illustration)" width="1000" height="1000" loading="lazy" />
+    <ul class="faits__col faits__col--droite">
+      <li>Montjean-sur-Loire</li>
+      <li>Sur place ou à emporter</li>
+      <li>Le goût de nos régions</li>
     </ul>
   </div>
 </section>
 
+<!-- Histoire épinglée « Une histoire dans chaque couche » : la section reste à l'écran pendant qu'on défile (3 écrans au plus sur téléphone).
+     Un fil en pointillés se dessine, 5 étapes s'allument et à chaque étape un ingrédient tombe dans le bol. Composition : carte Dishop (1 base, 1 protéine, 5 ingrédients, 2 toppings, 1 sauce). -->
+<section class="couches" aria-labelledby="titre-couches">
+  <div class="couches__scene">
+    <div class="wrap couches__grille">
+      <h2 class="t t-l couches__titre" id="titre-couches">Une histoire dans chaque couche</h2>
+      <div class="couches__bol" aria-hidden="true">
+        <img class="couches__riz" src="img/riz.webp" alt="" width="600" height="600" loading="lazy" data-a="0" />
+        <img class="couches__ing" src="img/ingredients/saumon.webp" alt="" width="200" height="200" loading="lazy" data-a="0.2" style="left:37%;top:37%" />
+        <img class="couches__ing" src="img/ingredients/saumon.webp" alt="" width="200" height="200" loading="lazy" data-a="0.2" style="left:37.0%;top:9.0%;--r:24deg" />
+        <img class="couches__ing" src="img/ingredients/carotte.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:65.0%;top:37.0%" />
+        <img class="couches__ing" src="img/ingredients/radis.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:17.2%;top:56.8%" />
+        <img class="couches__ing" src="img/ingredients/mangue.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:56.8%;top:56.8%" />
+        <img class="couches__ing" src="img/ingredients/concombre.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:56.8%;top:17.2%" />
+        <img class="couches__ing" src="img/ingredients/chou-rouge.webp" alt="" width="200" height="200" loading="lazy" data-a="0.4" style="left:37.0%;top:65.0%" />
+        <img class="couches__ing" src="img/ingredients/edamame.webp" alt="" width="200" height="200" loading="lazy" data-a="0.6" style="left:9.0%;top:37.0%" />
+        <img class="couches__ing" src="img/ingredients/edamame.webp" alt="" width="200" height="200" loading="lazy" data-a="0.6" style="left:17.2%;top:17.2%;--r:-30deg" />
+        <svg class="couches__sauce" viewBox="0 0 200 200" data-a="0.8"><path pathLength="1" d="M40 92c18-26 44-30 60-12s40 22 58 2M46 120c20-18 40-16 56 0s38 16 54-4" /></svg>
+      </div>
+      <ol class="couches__etapes">
+        <svg class="couches__fil" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 10 100"><defs><mask id="fil-masque" maskUnits="userSpaceOnUse"><path class="couches__fil-trace" pathLength="1" d="M5 0V100" /></mask></defs><path class="couches__fil-fond" d="M5 0V100" /><path class="couches__fil-fait" d="M5 0V100" mask="url(#fil-masque)" /></svg>
+        <li data-a="0"><b>La base</b><span>Du riz vinaigré pour commencer.</span></li>
+        <li data-a="0.2"><b>La protéine</b><span>Saumon, poulet, crevettes ou falafel.</span></li>
+        <li data-a="0.4"><b>Fruits et légumes</b><span>Cinq au choix&nbsp;: carotte, radis, mangue…</span></li>
+        <li data-a="0.6"><b>Le croquant</b><span>Deux toppings, comme l’edamame.</span></li>
+        <li data-a="0.8"><b>La sauce</b><span>Une sauce, et c’est prêt.</span></li>
+      </ol>
+      <!-- Composer son bowl : le site le DIT, il ne le fait pas (rien à cliquer, pas de prix). On compose sur la commande en ligne ou au restaurant. -->
+      <div class="couches__fin">
+        <p>Composez le vôtre en ligne ou au restaurant.</p>
+        <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Composer ma commande <span class="fl" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Grande photo pleine largeur : la vraie salle de Montjean (vagues en haut et en bas) -->
+<section class="photo-pleine" aria-label="La salle de Rive Bowl à Montjean">
+  <img src="img/salle-montjean.webp" alt="La vraie salle de Rive Bowl à Montjean, du comptoir jusqu'au mur du logo" width="1024" height="768" loading="lazy" />
+  <span class="mention">Photo C. Boisnault / Ôsez Mauges</span>
+</section>
+
+
+
+<!-- « À emporter » en carrousel : les cartes glissent vers la gauche pendant qu'on descend (sans JS : on les fait défiler au doigt) -->
+<section class="emporter c-jaune" aria-labelledby="titre-emporter">
+  <div class="wrap">
+    <h2 class="t t-l" id="titre-emporter">À emporter</h2>
+    <p class="lead">Commandez en ligne, passez le prendre au restaurant.</p>
+  </div>
+  <div class="emporter__fenetre" tabindex="0" aria-label="Ce qu'on emporte chez Rive Bowl">
+    <ul class="emporter__piste">
+      <li class="emporter__carte c-corail"><img src="img/carte-crousty.webp" alt="" width="614" height="388" loading="lazy" /><span>Le Crousty Rive</span></li>
+      <li class="emporter__carte c-sapin"><img src="img/carte-latte.webp" alt="" width="900" height="892" loading="lazy" /><span>Le Latte des Rives</span></li>
+      <li class="emporter__carte c-turquoise"><img src="img/carte-sweet.webp" alt="" width="900" height="720" loading="lazy" /><span>Le Sweet d’Anjou</span></li>
+      <li class="emporter__carte c-rose"><img src="img/carte-formule.webp" alt="" width="900" height="720" loading="lazy" /><span>La formule midi</span></li>
+      <li class="emporter__carte c-feuille"><img src="img/carte-lemonaid.webp" alt="" width="793" height="900" loading="lazy" /><span>La Lemonaid</span></li>
+    </ul>
+  </div>
+  <div class="wrap"><a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a></div>
+</section>
+
+<!-- Affiche rétro (touche « Pedro Oyarbide », décision du 06/11/2026) : composition d'affiche refaite en code, aucun dessin copié.
+     Damier, rayons qui tournent derrière un vrai bowl détouré, « Rive Bowl » penché, une bulle. Une seule encre sur crème : sapin (le corail ne passe pas en contraste sur le crème). -->
+<section class="affiche" aria-labelledby="titre-affiche">
+  <div class="affiche__cadre">
+    <div class="affiche__fond">
+      <span class="affiche__rayons" aria-hidden="true"></span>
+      <h2 class="affiche__titre" id="titre-affiche">Rive Bowl</h2>
+      <p class="affiche__bulle">Vous allez en redemander&nbsp;!</p>
+      <img class="affiche__bol" src="img/bowl-crousty.webp" alt="Poké poulet crousty Rive Bowl" width="720" height="720" loading="lazy" />
+      <p class="affiche__bas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l3 7.2 7.6.6-5.8 5 1.8 7.5L12 17.8l-6.6 4 1.8-7.5-5.8-5 7.6-.6z"/></svg><span>La Loire dans un bowl</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l3 7.2 7.6.6-5.8 5 1.8 7.5L12 17.8l-6.6 4 1.8-7.5-5.8-5 7.6-.6z"/></svg></p>
+    </div>
+  </div>
+</section>
+
+<!-- Dernier appel façon CRAV : grand bloc corail, titre énorme, Commander, un grand bowl détouré qui grossit doucement au défilement -->
+<section class="dernier c-corail" aria-labelledby="titre-dernier">
+  <div class="wrap">
+    <h2 class="t t-xl" id="titre-dernier">Une envie de poké&nbsp;?</h2>
+    <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
+  </div>
+  <img class="dernier__bol" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki Rive Bowl vu de dessus" width="720" height="720" loading="lazy" />
+</section>
 </main>
 <a class="bande-cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener" aria-label="Commander chez Rive Bowl">
   <span class="bande-cmd__piste" aria-hidden="true"><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b></span>
@@ -343,6 +202,7 @@
           <li><a href="la-carte.html">Notre carte</a></li>
           <li><a href="montjean.html">Le restaurant de Montjean</a></li>
           <li><a href="franchise.html">Devenir franchisé</a></li>
+          <li><a href="montjean.html#infos">Contact</a></li>
           <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></li>
         </ul>
       </nav>
@@ -351,17 +211,16 @@
         <ul>
           <li><a href="nos-engagements.html">Produits frais et locaux</a></li>
           <li><a href="nos-engagements.html#terroir">Le goût de nos régions</a></li>
-          <li><a href="montjean.html#infos">Contact</a></li>
         </ul>
       </nav>
       <div>
         <h2>Légal</h2>
         <!-- Pages à créer avant la mise en ligne : mentions légales, confidentialité, CGV, allergènes -->
         <ul>
-          <li><span class="lien-off" aria-disabled="true">Mentions légales <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">Politique de confidentialité <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">CGV <small>à venir</small></span></li>
-          <li><span class="lien-off" aria-disabled="true">Liste des allergènes <small>à venir</small></span></li>
+          <li><span class="lien-off" aria-disabled="true">Mentions légales</span></li>
+          <li><span class="lien-off" aria-disabled="true">Politique de confidentialité</span></li>
+          <li><span class="lien-off" aria-disabled="true">CGV</span></li>
+          <li><span class="lien-off" aria-disabled="true">Liste des allergènes</span></li>
         </ul>
       </div>
       <div class="pied__fin">
@@ -376,7 +235,6 @@
       </div>
     </div>
     <p class="pied__marque" data-vivant="lettres" aria-hidden="true">Rive Bowl</p>
-    <p class="pied__maquette">Maquette privée réalisée par Studio FTT, non publiée.</p>
   </div>
 </footer>
 <script src="rive.js"></script>

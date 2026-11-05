@@ -6,8 +6,13 @@
   // Menu téléphone (façon Pokawa : panneau plein écran qui glisse depuis la droite, page bloquée derrière)
   var b = document.querySelector('.burger'), t = document.getElementById('tiroir');
   var fermerBtn = t && t.querySelector('.tiroir__fermer');
+  var parHistorique = false;
   function ouvrir(){
+    // le cercle part du bouton menu (façon CRAV)
+    var r = b.getBoundingClientRect();
+    t.style.setProperty('--cx', (r.left + r.width / 2) + 'px'); t.style.setProperty('--cy', (r.top + r.height / 2) + 'px');
     t.classList.add('ouvert'); document.body.classList.add('menu-ouvert');
+    try { history.pushState({ menu: true }, ''); parHistorique = true; } catch(e){}
     b.setAttribute('aria-expanded','true'); b.setAttribute('aria-label','Fermer le menu');
     if(fermerBtn) setTimeout(function(){ fermerBtn.focus(); }, reduit ? 0 : 120);
   }
@@ -16,11 +21,14 @@
     t.classList.remove('ouvert'); document.body.classList.remove('menu-ouvert');
     b.setAttribute('aria-expanded','false'); b.setAttribute('aria-label','Ouvrir le menu');
     if(retour) b.focus();
+    if(parHistorique && retour !== 'histoire'){ parHistorique = false; try { history.back(); } catch(e){} }
   }
+  // le bouton retour du téléphone ferme le menu au lieu de quitter la page
+  window.addEventListener('popstate', function(){ if(t && t.classList.contains('ouvert')){ parHistorique = false; fermer('histoire'); } });
   if(b && t){
     b.addEventListener('click', function(){ t.classList.contains('ouvert') ? fermer(true) : ouvrir(); });
     if(fermerBtn) fermerBtn.addEventListener('click', function(){ fermer(true); });
-    t.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ fermer(false); }); });
+    t.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ parHistorique = false; fermer(false); }); });
     document.addEventListener('keydown', function(k){ if(k.key === 'Escape') fermer(true); });
     var mq = window.matchMedia('(min-width: 1181px)');
     if(mq.addEventListener) mq.addEventListener('change', function(m){ if(m.matches) fermer(false); });
@@ -214,4 +222,38 @@
   window.addEventListener('scroll', verifier, { passive:true });
   setTimeout(verifier, 600);
   setTimeout(function(){ els.forEach(function(x){ x.classList.add('vu'); }); }, 4000);
+  // La carte en onglets : une rubrique à la fois ; flèches gauche/droite, Début et Fin au clavier (sans JS, tout reste affiché)
+  document.querySelectorAll('.onglets').forEach(function (bloc) {
+    var boutons = [].slice.call(bloc.querySelectorAll('[role="tab"]'));
+    var panneaux = boutons.map(function (b) { return document.getElementById(b.getAttribute('aria-controls')); });
+    function choisir(n, focus) {
+      boutons.forEach(function (b, i) {
+        var oui = i === n;
+        b.setAttribute('aria-selected', oui ? 'true' : 'false');
+        b.tabIndex = oui ? 0 : -1;
+        panneaux[i].hidden = !oui;
+      });
+      if (focus) boutons[n].focus();
+      boutons[n].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    }
+    boutons.forEach(function (b, i) {
+      b.addEventListener('click', function () { choisir(i, false); });
+      b.addEventListener('keydown', function (e) {
+        var n = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: boutons.length - 1 }[e.key];
+        if (n === undefined) return;
+        e.preventDefault();
+        choisir((n + boutons.length) % boutons.length, true);
+      });
+    });
+    panneaux.forEach(function (p, i) { p.hidden = i !== 0; });
+  });
+  // Boutons : le texte roule au survol (un double arrive par dessous, comme CRAV). Le double est caché aux lecteurs d'écran.
+  document.querySelectorAll('.btn').forEach(function (b) {
+    if (b.querySelector('.btn__roule') || b.querySelector('img')) return;
+    var ligne = document.createElement('span'); ligne.className = 'btn__ligne';
+    while (b.firstChild) ligne.appendChild(b.firstChild);
+    var double = ligne.cloneNode(true); double.setAttribute('aria-hidden', 'true');
+    var roule = document.createElement('span'); roule.className = 'btn__roule';
+    roule.appendChild(ligne); roule.appendChild(double); b.appendChild(roule);
+  });
 })();

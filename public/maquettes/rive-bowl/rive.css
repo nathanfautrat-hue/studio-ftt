@@ -22,8 +22,8 @@
   --titre:"Titan One","Arial Rounded MT Bold",var(--font);   /* grands titres et étiquettes (choix de Nathan, 06/11/2026) */
   --main:var(--titre);                                          /* le mot mis en avant dans un titre : même police, en couleur */
   /* Échelle de texte (Pokawa : 100 / 70 / 50 / 32 / 20 / 18 / 16 / 14, titres ÷ 2,2 sur téléphone) */
-  --fs-geant:clamp(32px,9vw,104px);
-  --fs-1:clamp(26px,6vw,68px);
+  --fs-geant:clamp(46px,18vw,200px);
+  --fs-1:clamp(40px,17vw,140px);
   --fs-2:clamp(24px,4vw,48px);
   --fs-3:clamp(20px,2.6vw,32px);
   --fs-4:clamp(18px,1.7vw,22px);
@@ -73,7 +73,7 @@ a{color:inherit}
 .skip:focus{left:8px}
 
 /* Typo : titres très gras en capitales, une écriture manuscrite pour 1 ou 2 mots */
-.t{font-weight:var(--fw-noir);text-transform:uppercase;letter-spacing:-.01em;line-height:var(--lh-titre);text-wrap:balance;overflow-wrap:break-word}
+.t{font-weight:var(--fw-noir);text-transform:uppercase;letter-spacing:-.01em;line-height:.95;text-wrap:balance;overflow-wrap:break-word}
 .t-xl{font-size:var(--fs-geant)}
 .t-l{font-size:var(--fs-1)}
 .main{font-family:var(--main);font-weight:var(--fw-main);text-transform:none;letter-spacing:0;color:var(--jaune)}
