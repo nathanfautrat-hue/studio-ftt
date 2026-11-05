@@ -49,6 +49,9 @@
 .fr-split__texte{padding:var(--e-fl-3) var(--g);max-width:680px;display:flex;flex-direction:column;justify-content:center}
 .fr-split--inverse .fr-split__img{order:2}
 .fr-split>*{min-width:0}
+/* Titre trop long pour une demi-colonne (plus de 3 lignes sur ordinateur) : il passe sur toute la largeur, au-dessus de l'image et du texte */
+.fr-split__tete{grid-column:1/-1;width:100%;max-width:var(--largeur);margin:0 auto;padding:var(--e-fl-3) var(--g) 0}
+.fr-split__tete+.fr-split__img,.fr-split__tete~.fr-split__texte{margin-top:var(--e-fl-1)}
 .fr-split h2{color:var(--sapin);hyphens:auto;-webkit-hyphens:auto}
 .fr-split .lead{margin-top:var(--e-3)}
 .fr-split .btn{margin-top:var(--e-5);align-self:flex-start}
@@ -192,10 +195,12 @@
 
 <!-- Brand book p. 10 : notre différence -->
 <section class="fr-split c-rose" aria-labelledby="titre-concept">
-  <div class="fr-split__img"><img class="photo" src="img/bb-bowls.webp" alt="Pokés Rive Bowl servis sur une table (visuel d'illustration du brand book)" width="726" height="600" /><span class="mention">Visuel d’illustration · brand book Rive Bowl</span></div>
-  <div class="fr-split__texte">
+  <header class="fr-split__tete">
     <span class="sur" style="color:var(--corail-texte)">Notre différence</span>
     <h2 class="t t-l" id="titre-concept" style="margin-top:var(--e-3)">Faire voyager le poké à travers nos régions</h2>
+  </header>
+  <div class="fr-split__img"><img class="photo" src="img/bb-bowls.webp" alt="Pokés Rive Bowl servis sur une table (visuel d'illustration du brand book)" width="726" height="600" /><span class="mention">Visuel d’illustration · brand book Rive Bowl</span></div>
+  <div class="fr-split__texte">
     <p class="lead">Sans jamais oublier ses origines.</p>
     <p class="lead">Chaque restaurant garde la même idée et met en avant le goût de sa région et de ses producteurs.</p>
     <ul class="points">
@@ -316,10 +321,12 @@
 
 <!-- Brand book p. 35 : l'approvisionnement -->
 <section class="fr-split fr-split--inverse c-jaune" aria-labelledby="titre-appro">
+  <header class="fr-split__tete">
+    <h2 class="t t-l" id="titre-appro">Une chaîne d’appro&shy;vision&shy;nement perfor&shy;mante</h2>
+  </header>
   <div class="fr-split__img c-turquoise"><img class="bol" src="img/bowl-maineetloire.webp" alt="Poké Maine-et-Loire vu de dessus" width="720" height="720" /></div>
   <div class="fr-split__texte">
-    <h2 class="t t-l" id="titre-appro">Une chaîne d’appro&shy;vision&shy;nement perfor&shy;mante</h2>
-    <p class="forte" style="margin-top:var(--e-3)">Un approvisionnement centralisé pour simplifier le quotidien de nos franchisés.</p>
+    <p class="forte">Un approvisionnement centralisé pour simplifier le quotidien de nos franchisés.</p>
     <ul class="pastilles">
       <li style="background:var(--sable)">Des fournisseurs référencés à l’échelle nationale</li>
       <li style="background:var(--sable)">Des conditions commerciales négociées pour le réseau</li>

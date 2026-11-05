@@ -207,6 +207,8 @@
 .p-une .mention{position:absolute;top:10px;right:12px;font:var(--fw-fort) var(--fs-micro)/var(--lh-moyen) var(--font);color:var(--creme-90);text-shadow:0 1px 3px var(--noir-60)}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-fl-3);align-items:center}
 .duo--inverse .duo__img{order:2}
+/* Titre trop long pour une demi-colonne : premier enfant du .duo, sur toute la largeur, au-dessus de l'image et du texte */
+.duo>h2{grid-column:1/-1;order:-1;max-width:24ch}
 .duo__img{position:relative;border-radius:var(--r-case);background:var(--c,var(--sable));aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .duo__img>img{width:100%;height:100%;object-fit:cover}
 .duo__img>img.bol{width:76%;height:auto;object-fit:contain;border-radius:var(--r-rond)}
