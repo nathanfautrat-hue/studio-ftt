@@ -11,7 +11,7 @@
 <link rel="icon" href="img/logo-rive-bowl.webp" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Caveat+Brush&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Titan+One&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="rive.css" />
 <link rel="stylesheet" href="rive-blocs.css" />
 <style>
@@ -110,7 +110,11 @@
   <div class="wrap">
     <div>
       <span class="sur">Le restaurant pilote</span>
-      <h1 class="t t-l" id="titre-mj">Rive Bowl Montjean-sur-Loire</h1>
+      <h1 class="t t-l" id="titre-mj">Nos restau&shy;rants</h1>
+      <!-- Une fiche par restaurant : pour une nouvelle adresse, copier le bloc <li class="lieu"> (nom, adresse, téléphone, services, carte). -->
+      <ul class="lieux">
+        <li class="lieu">
+      <h2 class="t-case">Rive Bowl Montjean-sur-Loire</h2>
       <address>17 rue d’Anjou<br />49570 Montjean-sur-Loire (Mauges-sur-Loire)</address>
       <p class="mj-tel"><a href="tel:+33285358213">02 85 35 82 13</a></p>
       <ul class="services" aria-label="Services">
@@ -121,6 +125,9 @@
         <a class="btn btn--contour" href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Itinéraire <span class="fl" aria-hidden="true">→</span></a>
         <a class="btn btn--contour" href="tel:+33285358213">Appeler <span class="fl" aria-hidden="true">→</span></a>
       </div>
+      <iframe class="lieu__carte" title="Carte : Rive Bowl, 17 rue d’Anjou à Montjean-sur-Loire" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.8683%2C47.3868%2C-0.8564%2C47.3929&amp;layer=mapnik&amp;marker=47.38987%2C-0.86237" loading="lazy" referrerpolicy="no-referrer"></iframe>
+        </li>
+      </ul>
     </div>
     <div>
       <img src="img/salle-montjean.webp" alt="Intérieur de Rive Bowl à Montjean-sur-Loire" width="1024" height="768" fetchpriority="high" />
@@ -195,7 +202,7 @@
 
 <!-- 6e avis : fiche Google Maps « Rive Bowl », 17 rue d'Anjou, lu le 05/11/2026 (avis 5 étoiles de Sylvain Lefebvre, publié « il y a un mois », visite en juillet), recopié mot pour mot. -->
 <section class="sec avis" aria-labelledby="titre-avis">
-  <div class="wrap">
+  <div class="wrap"><img class="autocollant" src="img/stickers/bowl-selfie.webp" alt="Illustration Rive Bowl" width="360" height="306" loading="lazy" style="right:4%;top:-2%;width:clamp(90px,12vw,170px)" />
     <!-- Note et avis : brand book Rive Bowl 2026, page 44 («&nbsp;25 avis Google, novembre 2026&nbsp;»). Textes recopiés tels quels. -->
     <div class="avis__tete monte">
       <div>
@@ -217,9 +224,9 @@
 </section>
 
 </main>
-<div class="defile-texte c-jaune" role="note" aria-label="La Loire dans un bowl · Le poké qui vient de chez nous · À chaque envie, son Rive Bowl">
-  <div class="defile-texte__piste" aria-hidden="true"><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b></div>
-</div>
+<a class="bande-cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener" aria-label="Commander chez Rive Bowl">
+  <span class="bande-cmd__piste" aria-hidden="true"><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b></span>
+</a>
 <!-- Bas de page façon pokawa.com : bandeau de l'application, puis pied de page crème en 4 colonnes -->
 <section class="bande-appli" data-soie aria-labelledby="titre-bande-appli">
   <div class="wrap">
@@ -273,10 +280,12 @@
         <p><a class="pied__tel" href="tel:+33285358213">02 85 35 82 13</a></p>
       </div>
     </div>
+    <p class="pied__marque" data-vivant="lettres" aria-hidden="true">Rive Bowl</p>
     <p class="pied__maquette">Maquette privée réalisée par Studio FTT, non publiée.</p>
   </div>
 </footer>
 <script src="rive.js"></script>
 <script src="soie.js"></script>
+<script src="vivant.js"></script>
 </body>
 </html>

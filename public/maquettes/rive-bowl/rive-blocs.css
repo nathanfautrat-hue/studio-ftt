@@ -310,3 +310,134 @@
 .une__zone:focus-visible{outline:none}
 .une__zone:focus-visible span{outline:3px solid var(--creme);outline-offset:3px}
 @media (hover:none){.une__zone{display:none}}
+
+/* ===================== SITE VIVANT (vivant.js) : mécanique relevée sur CRAV, sans librairie ===================== */
+:root{--rebond:cubic-bezier(.3,1.9,.5,1);--rebond-doux:cubic-bezier(.34,1.56,.64,1);--retour:cubic-bezier(.6,-0.6,.7,.4)}
+/* 1. Titres mot par mot : taille 0, un peu plus bas, penchés, puis gros rebond (0,72 s, 55 ms entre deux mots) */
+.mot{display:inline-block}
+.vivant .mots-attente .mot{opacity:0;transform:translateY(var(--y,24px)) scale(0) rotate(var(--r,0deg))}
+.vivant .mots-attente.mots-partis .mot{opacity:1;transform:none;transition:transform .72s var(--rebond) var(--d,0ms),opacity .2s linear var(--d,0ms)}
+.vivant .pop-attente{opacity:0;transform:translateY(var(--e-6)) scale(.9) rotate(-2deg)}
+.vivant .pop-attente.pop-parti{opacity:1;transform:none;transition:transform .72s var(--rebond),opacity .3s linear}
+/* 2. Tampons et autocollants : pop penché (0,45 s), ils gardent une légère inclinaison */
+.sur{border:2px solid currentColor;border-radius:var(--r-img);padding:var(--e-1) var(--e-3);transform:rotate(-3deg);transform-origin:left center}
+.vivant .tampon-attente{opacity:0;transform:translateY(var(--e-8)) scale(.8) rotate(var(--r0,-10deg))}
+.vivant .tampon-attente.tampon-parti{opacity:1;transform:rotate(-3deg);transition:transform .45s var(--rebond),opacity .2s linear}
+.sticker{position:absolute;z-index:3;width:clamp(56px,7vw,88px);aspect-ratio:1;border-radius:var(--r-rond);display:grid;place-items:center;background:var(--c,var(--jaune));color:var(--sapin-deep);border:4px solid var(--creme);box-shadow:var(--ombre-bouton);transform:rotate(var(--r1,-8deg));pointer-events:none}
+.sticker svg{width:58%;height:58%}
+.sticker:empty{display:none}
+.vivant .sticker.tampon-attente.tampon-parti{transform:rotate(var(--r1,-8deg))}
+/* 3. Ingrédients qui volent autour du grand titre */
+.envolee{position:relative;overflow:hidden;background:var(--c,var(--sapin));color:var(--creme);padding:var(--e-fl-3) 0 var(--e-fl-4);text-align:center;isolation:isolate}
+.envolee__bol{position:relative;z-index:0;display:block;width:min(74vw,520px);height:auto;margin:0 auto;filter:drop-shadow(0 30px 40px var(--noir-20))}
+.envolee__titre{position:relative;z-index:2;margin-top:calc(var(--fs-geant) * -1.4);font:var(--fw-noir) var(--fs-geant)/var(--lh-titre) var(--font);text-transform:uppercase;letter-spacing:-.01em;text-shadow:0 4px 0 var(--sapin-deep)}
+.envolee__titre .main{color:var(--jaune);text-transform:none}
+.envolee .btn{position:relative;z-index:2;margin-top:var(--e-6)}
+.ingredient{position:absolute;z-index:1;width:clamp(64px,9vw,140px);height:auto;border-radius:var(--r-rond);box-shadow:var(--ombre);transform:rotate(var(--r1,0deg))}
+.envolee--vivante .ingredient{opacity:0;transform:scale(.6) rotate(var(--r0,0deg));transition:transform .28s var(--retour),opacity .2s linear}
+.envolee--vivante .ingredient.la{opacity:1;transform:scale(1) rotate(var(--r1,0deg));transition:transform .45s var(--rebond),opacity .15s linear;animation:flotte 2.5s ease-in-out .5s infinite alternate}
+@keyframes flotte{to{translate:0 calc(var(--e-3) * -1)}}
+/* 4. Le bowl qui se compose au défilement */
+.compose{background:var(--c,var(--sable));color:var(--sapin-deep)}
+.compose__piste{position:relative}
+.compose--vivant .compose__piste{height:260vh}
+.compose__scene{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-fl-2);align-items:center;padding-block:var(--e-fl-3)}
+.compose--vivant .compose__scene{position:sticky;top:var(--h-entete);min-height:calc(100svh - var(--h-entete))}
+.compose__bol{position:relative;width:min(100%,520px);aspect-ratio:1;justify-self:center}
+.compose__bol::before{content:"";position:absolute;inset:7%;border-radius:var(--r-rond);background:radial-gradient(circle at 40% 35%,var(--blanc) 0%,var(--champ) 60%,var(--sable) 100%);box-shadow:inset 0 10px 30px var(--noir-20)}
+.compose__couche{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.compose--vivant .compose__couche{opacity:0;transform:translateY(-22%) scale(1.08);transition:transform .28s var(--retour),opacity .2s linear}
+.compose--vivant .compose__couche.la{opacity:1;transform:none;transition:transform .55s var(--rebond),opacity .15s linear}
+.compose__etapes{list-style:none;display:grid;gap:var(--e-3);margin-top:var(--e-5);counter-reset:etape}
+.compose__etapes li{display:grid;grid-template-columns:auto 1fr;column-gap:var(--e-3);row-gap:0;align-items:center;padding:var(--e-3) var(--e-4);border-radius:var(--r-img);background:var(--creme);font-weight:var(--fw-fort);transition:transform .35s var(--rebond-doux),background-color .3s ease,color .3s ease,opacity .3s ease}
+.compose__etapes li::before{grid-row:span 2;counter-increment:etape;content:counter(etape);display:inline-grid;place-items:center;width:var(--h-petit);height:var(--h-petit);border-radius:var(--r-rond);background:var(--sable);font:var(--fw-noir) var(--fs-4)/1 var(--font)}
+.compose--vivant .compose__etapes li{opacity:.45}
+.compose--vivant .compose__etapes li.faite{opacity:1}
+.compose__etapes li.en-cours{background:var(--sapin);color:var(--creme)}
+@media (min-width:861px){.compose__etapes li.en-cours{transform:translateX(var(--e-2))}}
+.compose__etapes li.en-cours::before{background:var(--jaune);color:var(--sapin-deep)}
+.compose__etapes small{grid-column:2;display:block;font-weight:var(--fw-texte);font-size:var(--fs-petit);opacity:.85}
+.compose__nom{margin-top:var(--e-5);font:var(--fw-noir) var(--fs-2)/var(--lh-titre) var(--font);text-transform:uppercase;color:var(--corail-texte)}
+.compose--vivant .compose__nom{opacity:0;transform:scale(.6) rotate(-6deg);transition:transform .28s var(--retour),opacity .2s linear}
+.compose--fini .compose__nom{opacity:1;transform:rotate(-3deg);transition:transform .6s var(--rebond),opacity .2s linear}
+/* 5. Le trajet du bateau de Loire */
+.trajet__etapes{position:relative;list-style:none;display:grid;gap:var(--e-fl-2);padding:var(--e-6) 0}
+.trajet__chemin{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.trajet__chemin path{fill:none;stroke-linecap:round}
+.trajet__chemin .trace{stroke:var(--sapin-20);stroke-width:var(--e-1);stroke-dasharray:2 14}
+.trajet__chemin .fait{stroke:var(--sapin);stroke-width:var(--e-1)}
+.trajet__vehicule{position:absolute;left:0;top:0;z-index:3;width:clamp(64px,8vw,104px);color:var(--sapin-deep);pointer-events:none;will-change:transform}
+.trajet__etapes li{position:relative;z-index:1;width:min(44%,420px);background:var(--c);border-radius:var(--r-case);padding:var(--e-5);font:var(--fw-titre) var(--fs-texte)/var(--lh-moyen) var(--font);box-shadow:var(--ombre-bouton);transform:rotate(var(--r1,0deg))}
+.trajet__etapes li:nth-child(even){justify-self:end}
+.trajet__etapes .trajet__fin{font:var(--fw-noir) var(--fs-3)/var(--lh-serre) var(--font);text-transform:uppercase;text-align:center}
+.trajet--vivant .trajet__etapes li{opacity:0;transform:translateY(var(--e-8)) scale(.8) rotate(-6deg);transition:transform .28s var(--retour),opacity .2s linear}
+.trajet--vivant .trajet__etapes li.la{opacity:1;transform:rotate(var(--r1,0deg));transition:transform .45s var(--rebond),opacity .15s linear}
+.trajet__etapes li:nth-child(odd){--r1:-1.5deg}.trajet__etapes li:nth-child(even){--r1:1.5deg}
+/* 6. Vagues entre les sections (bord du haut ondulé, dans la couleur de la section) */
+.vague{position:relative}
+.vague::before{content:"";position:absolute;left:0;right:0;bottom:calc(100% - 1px);height:var(--e-6);background:var(--c);-webkit-mask:var(--vague-forme) 0 100%/160px 100% repeat-x;mask:var(--vague-forme) 0 100%/160px 100% repeat-x;pointer-events:none;z-index:1}
+:root{--vague-forme:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 24' preserveAspectRatio='none'%3E%3Cpath d='M0 24V12C20 0 60 0 80 12s60 12 80 0v12z'/%3E%3C/svg%3E")}
+@media (max-width:860px){
+  .compose__scene{grid-template-columns:1fr;gap:var(--e-4);padding-block:var(--e-5)}
+  .compose__bol{width:min(64vw,300px)}
+  .compose__etapes{margin-top:0;gap:var(--e-2)}
+  .compose__etapes li{padding:var(--e-2) var(--e-3)}
+  .trajet__etapes li,.trajet__etapes li:nth-child(even){width:auto;justify-self:stretch;margin-left:var(--e-9)}
+  .trajet__vehicule{width:56px}
+}
+@media (prefers-reduced-motion:reduce){.ingredient{animation:none!important}.compose__etapes li{transition:none}}
+
+/* Autocollants Rive Bowl (planche dessinée, img/stickers/) : posés sur les photos et près des titres, pop penché à l'arrivée */
+.autocollant{position:absolute;z-index:4;height:auto;pointer-events:none;filter:drop-shadow(0 6px 10px var(--noir-20));transform:rotate(var(--r1,-6deg))}
+.autocollant--libre{position:relative;z-index:1}
+.autocollant--photo{filter:drop-shadow(0 4px 6px var(--noir-20))}
+.vivant .autocollant.tampon-attente{opacity:0;transform:translateY(var(--e-6)) scale(.6) rotate(var(--r0,-12deg))}
+.vivant .autocollant.tampon-attente.tampon-parti{opacity:1;transform:rotate(var(--r1,-6deg));transition:transform .45s var(--rebond),opacity .2s linear}
+.sec-tete__titre{position:relative}
+.duo__img{position:relative}
+/* le grand bowl de l'accueil, ses mains et ses yeux */
+.envolee__scene{position:relative;width:min(74vw,520px);margin:0 auto}
+.envolee__scene .envolee__bol{width:100%}
+.envolee__titre{margin-top:calc(var(--fs-geant) * -1.2)}
+@media (max-width:860px){.envolee .autocollant--photo:not([src*="yeux"]){display:none}}
+/* le bowl qui se compose : le bord du bol seul, puis les parts, puis la protéine au centre */
+.compose__couche--bord{-webkit-mask:radial-gradient(circle at 49% 51%,transparent 43.5%,#000 44%);mask:radial-gradient(circle at 49% 51%,transparent 43.5%,#000 44%)}
+.compose__couche--centre{clip-path:circle(26% at 48% 51%)}
+.compose__couche:not(.compose__couche--bord):not(.compose__couche--centre){-webkit-mask:radial-gradient(circle at 48% 51%,transparent 25%,#000 25.5%);mask:radial-gradient(circle at 48% 51%,transparent 25%,#000 25.5%)}
+/* bandeau « Commander » qui défile, juste avant le pied de page : tout le bandeau est le lien */
+.bande-cmd{display:block;overflow:hidden;background:var(--jaune);color:var(--sapin-deep);text-decoration:none;padding:var(--e-3) 0}
+.bande-cmd__piste{display:flex;width:max-content;animation:defile-texte 30s linear infinite}
+.bande-cmd span{font:var(--fw-noir) var(--fs-3)/var(--lh-titre) var(--font);text-transform:uppercase;white-space:nowrap}
+.bande-cmd b{font:var(--fw-noir) var(--fs-3)/var(--lh-titre) var(--font);margin:0 .6em}
+@media (hover:hover){.bande-cmd:hover .bande-cmd__piste{animation-play-state:paused}.bande-cmd:hover{background:var(--jaune-clair)}}
+.bande-cmd:focus-visible{outline:3px solid var(--sapin);outline-offset:-3px}
+@media (prefers-reduced-motion:reduce){.bande-cmd__piste{animation:none}}
+/* « RIVE BOWL » géant au bas du pied de page */
+.pied__marque{margin-top:var(--e-fl-2);font:var(--fw-noir) clamp(56px,17.5vw,300px)/.85 var(--font);text-transform:uppercase;letter-spacing:-.03em;color:var(--sapin);white-space:nowrap;overflow:hidden;text-align:center}
+/* page franchise : les deux chiffres en haut */
+.fr-une__chiffres{list-style:none;display:flex;flex-wrap:wrap;gap:var(--e-3);margin-top:var(--e-6)}
+.fr-une__chiffres li{background:var(--jaune);color:var(--sapin-deep);border-radius:var(--r-case);padding:var(--e-3) var(--e-5);display:flex;flex-direction:column;transform:rotate(-2deg)}
+.fr-une__chiffres li:nth-child(2){background:var(--creme);transform:rotate(1.5deg)}
+.fr-une__chiffres b{font:var(--fw-noir) var(--fs-2)/var(--lh-titre) var(--font);font-variant-numeric:tabular-nums}
+.fr-une__chiffres span{font:var(--fw-titre) var(--fs-mini)/var(--lh-moyen) var(--font);letter-spacing:.08em;text-transform:uppercase}
+.fr-une__note{margin-top:var(--e-2);font-size:var(--fs-mini);opacity:.85}
+@media (min-width:861px){.frise{grid-template-columns:repeat(4,1fr);max-width:none;margin-top:var(--e-fl-1)}}
+/* page Montjean : une fiche par restaurant, avec sa petite carte */
+.lieux{list-style:none;margin-top:var(--e-5);display:grid;gap:var(--e-5)}
+.lieu .t-case{color:var(--jaune)}
+.lieu address{margin-top:var(--e-2)}
+.lieu__carte{display:block;width:100%;height:220px;margin-top:var(--e-5);border:0;border-radius:var(--r-case);background:var(--sapin-deep)}
+/* les bowls de l'accueil débordent de leur tuile de couleur */
+.poke__img{overflow:visible}
+.poke__img img{width:96%;transform:translateY(-6%);filter:drop-shadow(0 14px 16px var(--noir-20));transition:transform .45s var(--rebond),opacity .3s ease}
+@media (hover:hover){.poke:hover .poke__img img{transform:translateY(-10%) rotate(-4deg);opacity:1}}
+.glisse{padding-top:var(--e-6)}
+
+/* Titan One (une seule graisse) pour les grands titres, les étiquettes et les bandeaux ; jamais de faux gras */
+.t,.bande-appli h2,.envolee__titre,.pied__marque,.compose__nom,.defile-texte span,.defile-texte b,.bande-cmd span,.bande-cmd b,.sur,.etiquette span,.trajet__fin,.flux__fin,.valeurs-v span{font-family:var(--titre);font-weight:400;font-synthesis:none;letter-spacing:.01em}
+.main,.sous{font-weight:400;font-synthesis:none}
+
+/* les sections qui portent un autocollant posé */
+.titre-page,.avis{position:relative}
+/* téléphone : 4 ingrédients sur les bords, au-dessus du titre, sans toucher le slogan ni le bouton */
+@media (max-width:860px){.envolee .ingredient{width:56px}.envolee .ingredient:nth-of-type(5),.envolee .ingredient:nth-of-type(6){display:none}.envolee .ingredient:nth-of-type(1){left:3%!important;top:4%!important}.envolee .ingredient:nth-of-type(2){left:auto!important;right:3%!important;top:4%!important}.envolee .ingredient:nth-of-type(3){left:auto!important;right:2%!important;top:30%!important}.envolee .ingredient:nth-of-type(4){left:2%!important;top:30%!important}}

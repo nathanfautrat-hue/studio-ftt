@@ -11,7 +11,7 @@
 <link rel="icon" href="img/logo-rive-bowl.webp" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Caveat+Brush&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Titan+One&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="rive.css" />
 <link rel="stylesheet" href="rive-blocs.css" />
 <style>
@@ -106,7 +106,7 @@
 </header>
 <main id="contenu">
 <section class="titre-page">
-  <div class="wrap">
+  <div class="wrap"><img class="autocollant" src="img/stickers/baguettes.webp" alt="Illustration Rive Bowl" width="200" height="159" loading="lazy" style="right:6%;top:18%;width:clamp(80px,11vw,150px)" />
     <span class="sur">Une offre pour chaque moment</span>
     <h1 class="t t-xl" style="margin-top:var(--e-3)">La carte</h1>
     <p class="lead">Du déjeuner au dîner, une envie, un Rive Bowl.</p>
@@ -357,9 +357,9 @@
 </div>
 <p class="wrap source">Prix relevés sur la commande en ligne de Rive Bowl le 5 novembre 2026. Certains produits peuvent être indisponibles selon les jours.</p>
 </main>
-<div class="defile-texte c-jaune" role="note" aria-label="La Loire dans un bowl · Le poké qui vient de chez nous · À chaque envie, son Rive Bowl">
-  <div class="defile-texte__piste" aria-hidden="true"><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b></div>
-</div>
+<a class="bande-cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener" aria-label="Commander chez Rive Bowl">
+  <span class="bande-cmd__piste" aria-hidden="true"><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b></span>
+</a>
 <!-- Bas de page façon pokawa.com : bandeau de l'application, puis pied de page crème en 4 colonnes -->
 <section class="bande-appli" data-soie aria-labelledby="titre-bande-appli">
   <div class="wrap">
@@ -413,10 +413,12 @@
         <p><a class="pied__tel" href="tel:+33285358213">02 85 35 82 13</a></p>
       </div>
     </div>
+    <p class="pied__marque" data-vivant="lettres" aria-hidden="true">Rive Bowl</p>
     <p class="pied__maquette">Maquette privée réalisée par Studio FTT, non publiée.</p>
   </div>
 </footer>
 <script src="rive.js"></script>
 <script src="soie.js"></script>
+<script src="vivant.js"></script>
 </body>
 </html>

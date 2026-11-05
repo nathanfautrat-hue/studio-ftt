@@ -19,10 +19,11 @@
   --sapin-60:rgba(2,46,33,.6);
   /* Typo : une famille pour tout + une manuscrite pour 1 ou 2 mots */
   --font:"Montserrat",ui-sans-serif,system-ui,sans-serif;
-  --main:"Caveat Brush","Segoe Print",cursive;
+  --titre:"Titan One","Arial Rounded MT Bold",var(--font);   /* grands titres et étiquettes (choix de Nathan, 06/11/2026) */
+  --main:var(--titre);                                          /* le mot mis en avant dans un titre : même police, en couleur */
   /* Échelle de texte (Pokawa : 100 / 70 / 50 / 32 / 20 / 18 / 16 / 14, titres ÷ 2,2 sur téléphone) */
-  --fs-geant:clamp(36px,10vw,112px);
-  --fs-1:clamp(30px,6.4vw,72px);
+  --fs-geant:clamp(32px,9vw,104px);
+  --fs-1:clamp(26px,6vw,68px);
   --fs-2:clamp(24px,4vw,48px);
   --fs-3:clamp(20px,2.6vw,32px);
   --fs-4:clamp(18px,1.7vw,22px);
@@ -334,4 +335,5 @@ body.menu-ouvert .haut-page{visibility:hidden}
 /* Les bandeaux qui défilent s'arrêtent au survol et au clavier (en plus de « réduire les animations ») */
 .defile-texte:hover .defile-texte__piste,.defile-texte:focus-within .defile-texte__piste,.valeurs-v:hover .valeurs-v__piste{animation-play-state:paused}
 .liste b{font-variant-numeric:tabular-nums}
+
 

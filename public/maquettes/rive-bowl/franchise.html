@@ -11,7 +11,7 @@
 <link rel="icon" href="img/logo-rive-bowl.webp" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Caveat+Brush&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Titan+One&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="rive.css" />
 <link rel="stylesheet" href="rive-blocs.css" />
 <style>
@@ -200,11 +200,17 @@
     <h1 class="t t-xl" id="titre-fr">Écrivons la suite ensemble&nbsp;!</h1>
     <p class="lead">Le poké qui vient de chez nous, dans votre région.</p>
     <a class="btn btn--jaune" href="#contact">Nous écrire <span class="fl" aria-hidden="true">→</span></a>
+    <!-- Les deux chiffres en haut, comme une page de recrutement (brand book p. 36 et 31 : objectifs prévisionnels) -->
+    <ul class="fr-une__chiffres">
+      <li><b>15-20&nbsp;%</b><span>Objectif EBITDA</span></li>
+      <li><b>50</b><span>restaurants visés fin 2029</span></li>
+    </ul>
+    <p class="fr-une__note">Objectifs prévisionnels, non contractuels.</p>
   </div>
 </section>
 
 <!-- Brand book p. 8 (ambition) ; p. 31, 33, 43 et 45 (objectifs prévisionnels, tels que donnés par Rive Bowl) -->
-<section class="aplat c-jaune fr-chiffres" aria-labelledby="titre-ambition">
+<section class="vague aplat c-jaune fr-chiffres" aria-labelledby="titre-ambition">
   <div class="wrap">
     <span class="sur" id="titre-ambition">Notre ambition</span>
     <blockquote>«&nbsp;Devenir la référence du poké terroir, <em>en démocratisant une cuisine saine, généreuse</em> et inspirée de nos régions.&nbsp;»</blockquote>
@@ -224,7 +230,7 @@
     <span class="sur" style="color:var(--corail-texte)">Notre différence</span>
     <h2 class="t t-l" id="titre-concept" style="margin-top:var(--e-3)">Faire voyager le poké à travers nos régions</h2>
   </header>
-  <div class="fr-split__img"><img class="photo" src="img/bb-bowls.webp" alt="Pokés Rive Bowl servis sur une table (visuel d'illustration du brand book)" width="726" height="600" /><span class="mention">Visuel d’illustration · brand book Rive Bowl</span></div>
+  <div class="fr-split__img"><img class="photo" src="img/bb-bowls.webp" alt="Pokés Rive Bowl servis sur une table (visuel d'illustration du brand book)" width="726" height="600" /><span class="mention">Visuel d’illustration · brand book Rive Bowl</span><img class="autocollant" src="img/stickers/etiquette-local.webp" alt="Illustration Rive Bowl" width="260" height="152" loading="lazy" style="right:4%;top:6%;width:clamp(96px,14vw,170px)" /></div>
   <div class="fr-split__texte">
     <p class="lead">Sans jamais oublier ses origines.</p>
     <p class="lead">Chaque restaurant garde la même idée et met en avant le goût de sa région et de ses producteurs.</p>
@@ -239,7 +245,7 @@
 </section>
 
 <!-- Brand book p. 36 : « Des franchises rentables », données telles que fournies par Rive Bowl, avec sa mention -->
-<section class="aplat c-sapin fr-finance" aria-labelledby="titre-rentables">
+<section class="vague aplat c-sapin fr-finance" aria-labelledby="titre-rentables">
   <div class="wrap">
     <h2 class="t t-l titre-sec" id="titre-rentables">Des fran&shy;chises rentables</h2>
     <div class="finance">
@@ -289,7 +295,7 @@
 </section>
 
 <!-- Brand book p. 20-21 : les attentes des clients ; « Ce que disent les consommateurs en 2026 », chiffres et sources tels que donnés par Rive Bowl -->
-<section class="aplat c-turquoise fr-attentes" aria-labelledby="titre-attentes">
+<section class="vague aplat c-turquoise fr-attentes" aria-labelledby="titre-attentes">
   <div class="wrap">
     <h2 class="t t-l titre-sec" id="titre-attentes">Ce que nos clients attendent</h2>
     <div class="attentes">
@@ -333,7 +339,7 @@
 </section>
 
 <!-- Brand book p. 32 : les 3 formats de restaurant, en cartes photo sur aplat (comme le bloc final de Pokawa) -->
-<section class="aplat c-turquoise" aria-labelledby="titre-formats">
+<section class="vague aplat c-turquoise" aria-labelledby="titre-formats">
   <div class="wrap">
     <h2 class="t t-l titre-sec" id="titre-formats">3 formats de restau&shy;rant</h2>
     <ul class="tuiles">
@@ -345,25 +351,28 @@
 </section>
 
 <!-- Brand book p. 35 : l'approvisionnement -->
-<!-- Brand book p. 35 : l'approvisionnement, en chemin (les 5 points du brand book, du fournisseur au restaurant) -->
-<section class="aplat c-jaune" aria-labelledby="titre-appro">
+<!-- Brand book p. 35 : l'approvisionnement, du fournisseur à votre restaurant. Un bateau de Loire suit le chemin au défilement
+     (mécanique CRAV « Quality that travels »). Pour changer de véhicule : remplacer img/stickers/bateau-seul.webp. -->
+<section class="aplat c-jaune trajet vague" aria-labelledby="titre-appro">
   <div class="wrap">
     <h2 class="t t-l titre-sec" id="titre-appro">Une chaîne d’appro&shy;vision&shy;nement perfor&shy;mante</h2>
     <p class="forte">Un approvisionnement centralisé pour simplifier le quotidien de nos franchisés.</p>
-    <ol class="flux">
-      <li class="flux__etape c-sapin">Des fournisseurs référencés à l’échelle nationale</li>
-      <li class="flux__etape c-turquoise">Des conditions commerciales négociées pour le réseau</li>
-      <li class="flux__etape c-corail">Des spécialités régionales sélectionnées</li>
-      <li class="flux__etape c-rose">Le respect de la chaîne du froid et de la traçabilité</li>
-      <li class="flux__etape c-feuille">Des livraisons adaptées à chaque restaurant</li>
-      <li class="flux__etape flux__fin c-sapin">Votre restaurant</li>
+    <ol class="trajet__etapes">
+      <li class="c-sapin">Des fournisseurs référencés à l’échelle nationale</li>
+      <li class="c-turquoise">Des conditions commerciales négociées pour le réseau</li>
+      <li class="c-corail">Des spécialités régionales sélectionnées</li>
+      <li class="c-rose">Le respect de la chaîne du froid et de la traçabilité</li>
+      <li class="c-feuille">Des livraisons adaptées à chaque restaurant</li>
+      <li class="c-sapin trajet__fin">Votre restaurant</li>
+      <svg class="trajet__chemin" aria-hidden="true"><path class="trace" /><path class="fait" /></svg>
+      <img class="trajet__vehicule" src="img/stickers/bateau-seul.webp" alt="" width="300" height="217" loading="lazy" />
     </ol>
     <p class="flux__note">Avec Transgourmet, Metro et nos fournisseurs spécialisés.</p>
   </div>
 </section>
 
 <!-- Brand book p. 22 : les partenariats -->
-<section class="aplat c-sable" aria-labelledby="titre-partenariats">
+<section class="vague aplat c-sable" aria-labelledby="titre-partenariats">
   <div class="wrap">
     <h2 class="t t-l titre-sec" id="titre-partenariats">Des partenariats pour ancrer la marque</h2>
     <ul class="tuiles" style="--n:4">
@@ -420,9 +429,9 @@
   </div>
 </section>
 </main>
-<div class="defile-texte c-jaune" role="note" aria-label="La Loire dans un bowl · Le poké qui vient de chez nous · À chaque envie, son Rive Bowl">
-  <div class="defile-texte__piste" aria-hidden="true"><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b></div>
-</div>
+<a class="bande-cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener" aria-label="Commander chez Rive Bowl">
+  <span class="bande-cmd__piste" aria-hidden="true"><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b></span>
+</a>
 <!-- Bas de page façon pokawa.com : bandeau de l'application, puis pied de page crème en 4 colonnes -->
 <section class="bande-appli" data-soie aria-labelledby="titre-bande-appli">
   <div class="wrap">
@@ -476,10 +485,12 @@
         <p><a class="pied__tel" href="tel:+33285358213">02 85 35 82 13</a></p>
       </div>
     </div>
+    <p class="pied__marque" data-vivant="lettres" aria-hidden="true">Rive Bowl</p>
     <p class="pied__maquette">Maquette privée réalisée par Studio FTT, non publiée.</p>
   </div>
 </footer>
 <script src="rive.js"></script>
 <script src="soie.js"></script>
+<script src="vivant.js"></script>
 </body>
 </html>

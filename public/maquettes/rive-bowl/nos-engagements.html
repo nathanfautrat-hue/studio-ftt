@@ -11,7 +11,7 @@
 <link rel="icon" href="img/logo-rive-bowl.webp" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Caveat+Brush&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Titan+One&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="rive.css" />
 <link rel="stylesheet" href="rive-blocs.css" />
 </head>
@@ -66,7 +66,7 @@
 <section class="sec">
   <div class="wrap duo">
     <h2 class="t t-l">Des produits frais &amp; du terroir</h2>
-    <div class="duo__img c-feuille"><img class="bol" src="img/bowl-crevettes.webp" alt="Poké crevettes marinées vu de dessus" width="720" height="720" /></div>
+    <div class="duo__img c-feuille"><img class="bol" src="img/bowl-crevettes.webp" alt="Poké crevettes marinées vu de dessus" width="720" height="720" /><img class="autocollant" src="img/stickers/etiquette-frais.webp" alt="Illustration Rive Bowl" width="260" height="147" loading="lazy" style="right:4%;top:6%;width:clamp(96px,14vw,170px)" /></div>
     <div>
       <p>Chez Rive Bowl, nous sommes convaincus qu’une cuisine de qualité commence par des ingrédients bien choisis. Des produits frais, des associations gourmandes et des recettes inspirées de nos terroirs : voilà ce qui donne du sens à chacun de nos bols.</p>
       <p class="forte">Notre ambition est simple : rendre le bien-manger accessible au quotidien, sans renoncer au goût, à la générosité ni au plaisir.</p>
@@ -81,7 +81,7 @@
       <li class="tuile c-feuille"><img src="img/bowl-falafel.webp" alt="" width="720" height="720" /><h3 class="t-case">Des fruits et légumes frais</h3><p>Préparés avec soin pour préserver leurs saveurs et leurs textures.</p></li>
       <li class="tuile c-jaune"><img src="img/chaud-saumon.webp" alt="" width="900" height="900" /><h3 class="t-case">Des produits de saison privilégiés</h3><p>Pour faire évoluer nos compositions au fil de l’année.</p></li>
       <li class="tuile c-turquoise"><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" /><h3 class="t-case">Des spécialités de nos régions</h3><p>Comme les rillauds d’Anjou ou l’anguille fumée, qui apportent une identité unique à notre carte.</p></li>
-      <li class="tuile c-corail"><img src="img/bowl-saumon.webp" alt="" width="1000" height="1000" /><h3 class="t-case">Des préparations réalisées à la commande</h3><p>Pour permettre à chacun de profiter d’un bol composé selon ses envies.</p></li>
+      <li class="tuile c-corail"><img src="img/bowl-saumon.webp" alt="" width="1000" height="1000" /><h3 class="t-case">Des prépa&shy;rations réalisées à la commande</h3><p>Pour permettre à chacun de profiter d’un bol composé selon ses envies.</p></li>
     </ul>
   </div>
 </section>
@@ -118,9 +118,9 @@
   </div>
 </section>
 </main>
-<div class="defile-texte c-jaune" role="note" aria-label="La Loire dans un bowl · Le poké qui vient de chez nous · À chaque envie, son Rive Bowl">
-  <div class="defile-texte__piste" aria-hidden="true"><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b></div>
-</div>
+<a class="bande-cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener" aria-label="Commander chez Rive Bowl">
+  <span class="bande-cmd__piste" aria-hidden="true"><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b><span>Commander</span><b>→</b><span>À emporter</span><b>·</b><span>Sur place</span><b>·</b><span>Click &amp; Collect</span><b>·</b></span>
+</a>
 <!-- Bas de page façon pokawa.com : bandeau de l'application, puis pied de page crème en 4 colonnes -->
 <section class="bande-appli" data-soie aria-labelledby="titre-bande-appli">
   <div class="wrap">
@@ -174,10 +174,12 @@
         <p><a class="pied__tel" href="tel:+33285358213">02 85 35 82 13</a></p>
       </div>
     </div>
+    <p class="pied__marque" data-vivant="lettres" aria-hidden="true">Rive Bowl</p>
     <p class="pied__maquette">Maquette privée réalisée par Studio FTT, non publiée.</p>
   </div>
 </footer>
 <script src="rive.js"></script>
 <script src="soie.js"></script>
+<script src="vivant.js"></script>
 </body>
 </html>
