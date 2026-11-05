@@ -1,71 +1,147 @@
-// Rive Bowl · maquette v5 · menu téléphone, apparition douce, vidéo d'accueil
+// Rive Bowl · maquette v5 · menu téléphone, carrousels, haut de page, pastilles de la carte, apparition douce
 (function(){
   document.documentElement.classList.add('js');
   var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Menu téléphone
-  var b=document.querySelector('.burger'), t=document.getElementById('tiroir'), e=document.querySelector('.entete');
-  function haut(){ if(e) document.documentElement.style.setProperty('--haut', Math.max(0,e.getBoundingClientRect().bottom)+'px'); }
-  function fermer(){ if(!t) return; t.classList.remove('ouvert'); b.setAttribute('aria-expanded','false'); b.setAttribute('aria-label','Ouvrir le menu'); }
-  if(b&&t){
-    b.addEventListener('click',function(){ haut(); var o=t.classList.toggle('ouvert'); b.setAttribute('aria-expanded',o); b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu'); });
-    t.querySelectorAll('a').forEach(function(a){a.addEventListener('click',fermer)});
-    document.addEventListener('keydown',function(k){ if(k.key==='Escape') fermer(); });
+  // Menu téléphone (façon Pokawa : panneau plein écran qui glisse depuis la droite, page bloquée derrière)
+  var b = document.querySelector('.burger'), t = document.getElementById('tiroir');
+  var fermerBtn = t && t.querySelector('.tiroir__fermer');
+  function ouvrir(){
+    t.classList.add('ouvert'); document.body.classList.add('menu-ouvert');
+    b.setAttribute('aria-expanded','true'); b.setAttribute('aria-label','Fermer le menu');
+    if(fermerBtn) setTimeout(function(){ fermerBtn.focus(); }, reduit ? 0 : 120);
+  }
+  function fermer(retour){
+    if(!t || !t.classList.contains('ouvert')) return;
+    t.classList.remove('ouvert'); document.body.classList.remove('menu-ouvert');
+    b.setAttribute('aria-expanded','false'); b.setAttribute('aria-label','Ouvrir le menu');
+    if(retour) b.focus();
+  }
+  if(b && t){
+    b.addEventListener('click', function(){ t.classList.contains('ouvert') ? fermer(true) : ouvrir(); });
+    if(fermerBtn) fermerBtn.addEventListener('click', function(){ fermer(true); });
+    t.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ fermer(false); }); });
+    document.addEventListener('keydown', function(k){ if(k.key === 'Escape') fermer(true); });
+    var mq = window.matchMedia('(min-width: 1001px)');
+    if(mq.addEventListener) mq.addEventListener('change', function(m){ if(m.matches) fermer(false); });
   }
 
-  // Vidéo d'accueil « on entre dans le restaurant »
-  // Ne se charge que si data-actif="oui" (fichiers déposés), jamais si l'utilisateur
-  // a demandé moins d'animations, ni en mode économie de données.
-  var v=document.querySelector('.une__video');
-  if(v && v.dataset.actif==='oui' && !reduit && !(navigator.connection && navigator.connection.saveData)){
-    var mobile=window.matchMedia('(max-width: 760px)').matches;
-    var src=mobile ? v.dataset.srcMobile : v.dataset.src;
-    if(mobile && v.dataset.posterMobile) v.poster=v.dataset.posterMobile;
-    if(src){
-      v.muted=true; v.setAttribute('muted',''); v.playsInline=true;
-      v.src=src;
-      v.addEventListener('playing',function(){ v.closest('.une').classList.add('avec-video'); },{once:true});
-      var p=v.play(); if(p&&p.catch) p.catch(function(){});
-      // Pause quand la vidéo sort de l'écran (batterie du téléphone)
-      if('IntersectionObserver' in window){
-        new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ var q=v.play(); if(q&&q.catch) q.catch(function(){}); } else { v.pause(); } }); }).observe(v);
-      }
-    }
-  }
-
-  // Grand bandeau à visuels de l'accueil : points, glisser au doigt, défilement automatique lent
-  var sl=document.getElementById('slides');
-  if(sl){
-    var pts=[].slice.call(document.querySelectorAll('.points-slide button'));
-    var n=sl.children.length, cur=0, auto=null;
-    function aller(i){ cur=(i+n)%n; sl.scrollTo({left:sl.clientWidth*cur, behavior: reduit?'auto':'smooth'}); }
-    function maj(){ var i=Math.round(sl.scrollLeft/Math.max(1,sl.clientWidth)); cur=i; pts.forEach(function(p,k){ p.setAttribute('aria-current', k===i?'true':'false'); }); }
-    sl.addEventListener('scroll',function(){ window.requestAnimationFrame(maj); },{passive:true});
-    pts.forEach(function(p,k){ p.addEventListener('click',function(){ arret(); aller(k); }); });
-    function arret(){ if(auto){ clearInterval(auto); auto=null; } }
-    if(!reduit && n>1){
-      auto=setInterval(function(){ if(document.hidden) return; var vid=document.querySelector('.une.avec-video'); if(vid && cur===0) return; aller(cur+1); }, 6500);
-      ['pointerdown','touchstart','wheel','keydown'].forEach(function(ev){ sl.addEventListener(ev,arret,{passive:true,once:true}); });
-    }
-  }
-
-  // Boutons précédent / suivant des carrousels de pokés (ordinateur)
+  // Flèches des carrousels de pokés (nues, comme chez Pokawa, et grisées en bout de liste)
   document.querySelectorAll('[data-cible]').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var c=document.getElementById(btn.dataset.cible); if(!c) return;
-      var carte=c.querySelector('li'); var pas=carte ? carte.getBoundingClientRect().width+18 : c.clientWidth*0.8;
-      c.scrollBy({left:pas*parseInt(btn.dataset.sens,10), behavior: reduit?'auto':'smooth'});
+    var c = document.getElementById(btn.dataset.cible); if(!c) return;
+    var sens = parseInt(btn.dataset.sens, 10);
+    btn.addEventListener('click', function(){
+      var carte = c.querySelector('li'); var pas = carte ? carte.getBoundingClientRect().width + 18 : c.clientWidth * .8;
+      c.scrollBy({ left: pas * sens, behavior: reduit ? 'auto' : 'smooth' });
     });
+    function etat(){
+      btn.disabled = sens < 0 ? c.scrollLeft <= 2 : c.scrollLeft + c.clientWidth >= c.scrollWidth - 2;
+    }
+    c.addEventListener('scroll', function(){ window.requestAnimationFrame(etat); }, { passive:true });
+    window.addEventListener('resize', etat, { passive:true });
+    etat();
   });
 
+  // Bouton rond « haut de page » (comme sur la carte de Pokawa), visible après un écran et demi
+  var haut = document.createElement('a');
+  haut.className = 'haut-page'; haut.href = '#contenu'; haut.setAttribute('aria-label', 'Remonter en haut de la page');
+  haut.innerHTML = '<span aria-hidden="true">↑</span>';
+  haut.addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({ top:0, behavior: reduit ? 'auto' : 'smooth' }); });
+  document.body.appendChild(haut);
+  var attente = false;
+  function majHaut(){ attente = false; haut.classList.toggle('vu', window.scrollY > window.innerHeight * 1.5); }
+  window.addEventListener('scroll', function(){ if(!attente){ attente = true; window.requestAnimationFrame(majHaut); } }, { passive:true });
+  majHaut();
+
+  // Pastilles de la carte : celle de la rubrique à l'écran s'allume
+  var puces = document.querySelector('.puces');
+  if(puces && 'IntersectionObserver' in window){
+    var liens = [].slice.call(puces.querySelectorAll('a[href^="#"]'));
+    var parId = {};
+    liens.forEach(function(a){ parId[a.getAttribute('href').slice(1)] = a; });
+    var ul = puces.querySelector('ul');
+    var spy = new IntersectionObserver(function(en){
+      en.forEach(function(x){
+        if(!x.isIntersecting) return;
+        var a = parId[x.target.id]; if(!a) return;
+        liens.forEach(function(l){ l.removeAttribute('aria-current'); });
+        a.setAttribute('aria-current','true');
+        if(ul){ var g = a.offsetLeft - (ul.clientWidth - a.offsetWidth) / 2; ul.scrollTo({ left: Math.max(0, g), behavior: reduit ? 'auto' : 'smooth' }); }
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    Object.keys(parId).forEach(function(id){ var s = document.getElementById(id); if(s) spy.observe(s); });
+  }
+
+  // Grand carrousel d'accueil, mécanique Pokawa : glissement en 0,5 s, défilement automatique toutes les 5 s
+  // (arrêté dès qu'on touche au carrousel), boucle sans retour en arrière, glisser au doigt, petits points.
+  var une = document.querySelector('.une');
+  if(une){ try { carrousel(une); } catch(err){ une.classList.remove('pret'); } }
+  function carrousel(une){
+    var piste = une.querySelector('.une__piste'), cadre = une.querySelector('.une__cadre');
+    var diapos = [].slice.call(piste.children), n = diapos.length, pts = [].slice.call(une.querySelectorAll('.points button'));
+    if(n < 2) return;
+    var clone = diapos[0].cloneNode(true);
+    clone.setAttribute('aria-hidden','true'); clone.classList.remove('actif');
+    clone.querySelectorAll('a,button').forEach(function(x){ x.setAttribute('tabindex','-1'); });
+    piste.appendChild(clone);
+    var toutes = diapos.concat([clone]);
+    var i = 0, auto = null, enPause = false;
+    une.classList.add('pret');
+    function placer(px){ piste.style.transform = 'translate3d(' + (px !== undefined ? px : -i * cadre.clientWidth) + 'px,0,0)'; }
+    function activer(k){
+      toutes.forEach(function(d, j){
+        if(j === k){ d.classList.add('actif'); return; }
+        if(!d.classList.contains('actif')) return;
+        setTimeout(function(){ d.classList.add('remise'); d.classList.remove('actif'); void d.offsetWidth; d.classList.remove('remise'); }, 600);
+      });
+      var vrai = k % n;
+      pts.forEach(function(p, j){ p.setAttribute('aria-current', j === vrai ? 'true' : 'false'); });
+    }
+    function aller(k, sansAnim){
+      if(sansAnim || reduit) une.classList.add('glisse');
+      i = k; placer(); activer(i);
+      if(sansAnim || reduit){ void piste.offsetWidth; une.classList.remove('glisse'); }
+      if(i === n && !sansAnim){ // la copie de la 1re diapo : on revient au début sans que ça se voie
+        setTimeout(function(){ une.classList.add('glisse'); i = 0; placer(); toutes.forEach(function(d){ d.classList.remove('actif'); }); diapos[0].classList.add('actif'); void piste.offsetWidth; une.classList.remove('glisse'); }, reduit ? 0 : 520);
+      }
+    }
+    function suivant(){ aller(i + 1); }
+    function precedent(){ if(i === 0){ aller(n, true); } aller(i - 1); }
+    function stop(){ enPause = true; if(auto){ clearInterval(auto); auto = null; } }
+    if(!reduit){ auto = setInterval(function(){ if(!document.hidden && !enPause && !doigt) suivant(); }, 5000); }
+    pts.forEach(function(p, j){ p.addEventListener('click', function(){ stop(); aller(j); }); });
+    window.addEventListener('resize', function(){ une.classList.add('glisse'); placer(); void piste.offsetWidth; une.classList.remove('glisse'); }, { passive:true });
+    // Glisser au doigt ou à la souris
+    var doigt = false, x0 = 0, y0 = 0, dx = 0, horizontal = null;
+    cadre.addEventListener('pointerdown', function(e){ if(e.button > 0) return; doigt = true; x0 = e.clientX; y0 = e.clientY; dx = 0; horizontal = null; });
+    cadre.addEventListener('pointermove', function(e){
+      if(!doigt) return;
+      var mx = e.clientX - x0, my = e.clientY - y0;
+      if(horizontal === null && (Math.abs(mx) > 8 || Math.abs(my) > 8)) horizontal = Math.abs(mx) > Math.abs(my);
+      if(!horizontal) return;
+      dx = mx; une.classList.add('glisse'); placer(-i * cadre.clientWidth + dx);
+    });
+    function lacher(){
+      if(!doigt) return; doigt = false; une.classList.remove('glisse');
+      if(horizontal){ stop(); if(dx < -50) suivant(); else if(dx > 50) precedent(); else placer(); }
+    }
+    cadre.addEventListener('pointerup', lacher); cadre.addEventListener('pointercancel', lacher); cadre.addEventListener('pointerleave', lacher);
+    une.addEventListener('keydown', function(e){ if(e.key === 'ArrowRight'){ stop(); suivant(); } if(e.key === 'ArrowLeft'){ stop(); precedent(); } });
+    placer();
+  }
+
+  // Bouton pause du bandeau d'avis (le survol n'existe pas sur téléphone)
+  var bp = document.querySelector('.defile__pause'), df = document.querySelector('.defile');
+  if(bp && df){ bp.addEventListener('click', function(){ var p = df.classList.toggle('pause'); bp.setAttribute('aria-pressed', p); bp.textContent = p ? 'Relancer' : 'Mettre en pause'; }); }
+
   // Apparition douce au défilement
-  var els=document.querySelectorAll('.monte');
-  if(reduit||!('IntersectionObserver' in window)){ els.forEach(function(x){x.classList.add('vu')}); return; }
-  var io=new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('vu'); io.unobserve(x.target); } }); },{rootMargin:'0px 0px -6% 0px',threshold:.06});
-  els.forEach(function(x){io.observe(x)});
+  var els = document.querySelectorAll('.monte');
+  if(reduit || !('IntersectionObserver' in window)){ els.forEach(function(x){ x.classList.add('vu'); }); return; }
+  var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('vu'); io.unobserve(x.target); } }); }, { rootMargin:'0px 0px -6% 0px', threshold:.06 });
+  els.forEach(function(x){ io.observe(x); });
   // Filet de sécurité : si l'observateur ne se déclenche pas, on affiche quand même
-  function verifier(){ var h=window.innerHeight; els.forEach(function(x){ if(x.classList.contains('vu')) return; var r=x.getBoundingClientRect(); if(r.top<h*1.1 && r.bottom>-50) x.classList.add('vu'); }); }
-  window.addEventListener('scroll',verifier,{passive:true});
-  setTimeout(verifier,600);
-  setTimeout(function(){ els.forEach(function(x){x.classList.add('vu')}); },4000);
+  function verifier(){ var h = window.innerHeight; els.forEach(function(x){ if(x.classList.contains('vu')) return; var r = x.getBoundingClientRect(); if(r.top < h * 1.1 && r.bottom > -50) x.classList.add('vu'); }); }
+  window.addEventListener('scroll', verifier, { passive:true });
+  setTimeout(verifier, 600);
+  setTimeout(function(){ els.forEach(function(x){ x.classList.add('vu'); }); }, 4000);
 })();
