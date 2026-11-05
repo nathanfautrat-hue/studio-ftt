@@ -139,6 +139,9 @@
 .service .j{display:block;margin-top:8px;font-weight:700;font-size:15px}
 .moments .note-h{margin-top:10px;font-size:13px;color:var(--ink-2)}
 @media (max-width:860px){.services{grid-template-columns:1fr}}
+/* Les bowls débordent de leur carte : on laisse assez d'espace pour qu'un bowl ne touche jamais la carte voisine */
+@media (min-width:861px){.services{column-gap:72px}}
+@media (max-width:860px){.services{row-gap:40px}.services .service__bol{width:min(38%,170px)}}
 
 /* ============ HISTOIRE SUR APLAT, MISSION ET HORAIRES AVEC DES BOWLS QUI DÉBORDENT ============ */
 .histoire__texte{position:relative;background:var(--sable);border-radius:var(--r);padding:clamp(24px,3vw,40px);padding-top:clamp(70px,8vw,110px);margin-top:70px}
