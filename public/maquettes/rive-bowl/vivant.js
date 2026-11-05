@@ -22,6 +22,44 @@
   if (!('IntersectionObserver' in window)) return;
   racine.classList.add('vivant');                                   // les états de départ ne s'appliquent qu'avec cette classe
 
+  // GSAP (cdnjs, balises defer) : s'il est là, les parties animées passent par lui (bloc « VERSION GSAP » en bas du fichier)
+  var G = !reduit && !!(window.gsap && window.ScrollTrigger && window.SplitText);
+  var animsGsap = [];
+  if (G) { gsap.registerPlugin(ScrollTrigger, SplitText); racine.classList.add('gsap'); }
+
+  /* Garde-temps : rien ne doit rester caché si l'animation ne démarre pas (onglet ouvert en arrière-plan, aperçu de lien,
+     économie d'énergie : requestAnimationFrame et l'horloge de GSAP s'arrêtent). Toutes les 200 ms, en setTimeout :
+     un élément du 1er écran encore caché après 600 ms, ou un titre plus bas resté caché 1 s après son arrivée à l'écran,
+     est affiché en entier, sans animation. Le garde s'arrête tout seul quand tout est affiché. */
+  var gardes = [], minuteurGarde = null, depart = Date.now();
+  function garde(el, forcer, fini) {
+    if (!el) return;
+    var r = el.getBoundingClientRect();
+    gardes.push({ el: el, forcer: forcer, fini: fini, premier: r.top < window.innerHeight && r.bottom > 0, vu: 0 });
+    if (!minuteurGarde) minuteurGarde = setTimeout(verifierGardes, 200);
+  }
+  function verifierGardes() {
+    var h = window.innerHeight, maintenant = Date.now();
+    gardes = gardes.filter(function (g) {
+      try { if (g.fini && g.fini()) return false; } catch (e) {}
+      if (g.premier) { if (maintenant - depart < 600) return true; }
+      else {
+        var r = g.el.getBoundingClientRect(), dedans = r.bottom > 0 && r.top < h;
+        if (!dedans) { g.vu = 0; return true; }
+        if (!g.vu) { g.vu = maintenant; return true; }
+        if (maintenant - g.vu < 1000) return true;
+      }
+      try { g.forcer(); } catch (e) {}
+      return false;
+    });
+    minuteurGarde = gardes.length ? setTimeout(verifierGardes, 200) : null;
+  }
+  // les animations CSS du 1er écran (photos en éventail…) : si elles n'avancent pas, on les termine
+  if (!reduit) document.querySelectorAll('.eventail img').forEach(function (img) {
+    garde(img, function () { img.getAnimations().forEach(function (a) { a.finish(); }); },
+      function () { return img.getAnimations().every(function (a) { return a.playState === 'finished' || a.currentTime > 200; }); });
+  });
+
   function hasard(a, b) { return a + Math.random() * (b - a); }
   function unefois(el, marge, fn) {
     var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { io.disconnect(); fn(); } }, { rootMargin: marge });
@@ -67,7 +105,7 @@
   var hautEcran = window.innerHeight;
   titres.forEach(function (el) {
     if (el.closest('.tiroir, .fiche, .une')) return;              // le carrousel anime ses titres lui-même (plus bas)
-    if (reduit) return;
+    if (reduit || G) return;
     el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
     decouper(el, el.getAttribute('data-vivant') === 'lettres');
     el.classList.add('mots-attente');
@@ -76,9 +114,14 @@
       el.querySelectorAll('.mot').forEach(function (m, n) { m.style.setProperty('--d', Math.min(n * 25, 100) + 'ms'); });
       void el.offsetWidth;
       el.classList.add('mots-partis');
+      var derniers = el.querySelectorAll('.mot');
+      garde(el, function () { derniers.forEach(function (m) { m.style.transition = 'none'; }); },
+        function () { return !derniers.length || getComputedStyle(derniers[derniers.length - 1]).opacity === '1'; });
       return;
     }
     unefois(el, SEUIL_TITRES, function () { el.classList.add('mots-partis'); });
+    garde(el, function () { el.querySelectorAll('.mot').forEach(function (m) { m.style.transition = 'none'; }); el.classList.add('mots-partis'); },
+      function () { return el.classList.contains('mots-partis'); });
   });
   ajuster();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuster);
@@ -108,6 +151,7 @@
       el.style.setProperty('--r0', hasard(-15, 15).toFixed(1) + 'deg');
       el.classList.add('tampon-attente');
       unefois(el, SEUIL_AUTOCOLLANTS, function () { el.classList.add('tampon-parti'); });
+      garde(el, function () { el.style.transition = 'none'; el.classList.add('tampon-parti'); }, function () { return el.classList.contains('tampon-parti'); });
     });
   }
 
@@ -149,7 +193,7 @@
   /* ---------- 3 bis. Le grand bowl du bloc sapin grossit un peu au défilement (0,9 → 1,08) ---------- */
   document.querySelectorAll('.faits').forEach(function (sec) {
     var bol = sec.querySelector('.faits__bol');
-    if (!bol || reduit) return;
+    if (!bol || reduit || G) return;
     suivre(sec, function (p) { bol.style.setProperty('--echelle', (0.9 + 0.18 * p).toFixed(3)); });
   });
 
@@ -173,8 +217,12 @@
      La scène reste collée en haut ; pendant les 2 écrans de défilement, le fil en pointillés se dessine (stroke-dashoffset),
      les 5 étapes s'allument et chaque étape fait tomber ses ingrédients dans le bol. Sans JS ou avec « réduire les animations » : tout est déjà là. */
   document.querySelectorAll('.couches').forEach(function (sec) {
-    if (reduit) return;
+    if (reduit || G) return;
     sec.classList.add('couches--vif');
+    garde(sec.querySelector('.couches__bol'), function () {
+      sec.querySelectorAll('.couches__riz, .couches__ing').forEach(function (m) { m.style.transition = 'none'; m.classList.add('la'); });
+      sec.querySelectorAll('.couches__etapes li').forEach(function (e) { e.classList.add('faite'); });
+    }, function () { return !!sec.querySelector('.couches__riz.la'); });
     var morceaux = [].slice.call(sec.querySelectorAll('.couches__riz, .couches__ing'));
     var etapes = [].slice.call(sec.querySelectorAll('.couches__etapes li'));
     var sauce = sec.querySelector('.couches__sauce'), fil = sec.querySelector('.couches__fil');
@@ -194,7 +242,7 @@
 
   /* ---------- 4 ter. « À emporter » : la piste de cartes glisse vers la gauche pendant qu'on descend ---------- */
   document.querySelectorAll('.emporter').forEach(function (sec) {
-    if (reduit) return;
+    if (reduit || G) return;
     var piste = sec.querySelector('.emporter__piste'), fenetre = sec.querySelector('.emporter__fenetre');
     sec.classList.add('emporter--vif');
     var course = 0;
@@ -211,15 +259,16 @@
 
   /* ---------- 4 quater. Affiche rétro : le damier se dessine, la bulle poppe, les rayons tournent (seulement à l'écran) ---------- */
   document.querySelectorAll('.affiche').forEach(function (sec) {
-    if (reduit) return;
+    if (reduit || G) return;
     sec.classList.add('affiche--vif');
     unefois(sec, '0px 0px -25% 0px', function () { sec.classList.add('affiche--la'); });
+    garde(sec, function () { sec.classList.add('affiche--la'); }, function () { return sec.classList.contains('affiche--la'); });
     new IntersectionObserver(function (e) { sec.classList.toggle('affiche--ecran', e[0].isIntersecting); }).observe(sec);
   });
 
   /* ---------- 4 quinquies. Dernier appel : le grand bowl grossit doucement (0,85 → 1,1) ---------- */
   document.querySelectorAll('.dernier__bol').forEach(function (bol) {
-    if (reduit) return;
+    if (reduit || G) return;
     suivre(bol.parentNode, function (p) { bol.style.setProperty('--echelle', (0.85 + 0.25 * p).toFixed(3)); });
   });
 
@@ -242,8 +291,12 @@
     placerTombes();
     if (window.ResizeObserver) new ResizeObserver(placerTombes).observe(marque);
     // ils tombent avec un rebond dès que « RIVE BOWL » arrive à l'écran (le bas de page ne défile pas assez pour suivre le scroll)
-    tombes.forEach(function (i, n) { i.style.transitionDelay = (n * 0.12) + 's'; });
-    unefois(marque, '0px 0px -10% 0px', function () { tombes.forEach(function (i) { i.classList.add('pied__tombe--la'); }); });
+    if (!G) {
+      tombes.forEach(function (i, n) { i.style.transitionDelay = (n * 0.12) + 's'; });
+      unefois(marque, '0px 0px -10% 0px', function () { tombes.forEach(function (i) { i.classList.add('pied__tombe--la'); }); });
+      garde(marque, function () { tombes.forEach(function (i) { i.style.transition = 'none'; i.classList.add('pied__tombe--la'); }); },
+        function () { return tombes[0].classList.contains('pied__tombe--la'); });
+    }
   }
 
   /* ---------- 5. Les ingrédients qui se baladent sur le chemin en pointillés ---------- */
@@ -299,6 +352,19 @@
     if (window.ResizeObserver) new ResizeObserver(function () { dessiner(); }).observe(liste);
     if (reduit) { placer(1); sec.classList.add('trajet--fini'); return; }
     sec.classList.add('trajet--vivant');
+    if (G) {
+      animsGsap.push(function () {
+        var etat = { t: 0 }, loin = 0;
+        placer(0);
+        ScrollTrigger.create({ trigger: liste, start: 'top 85%', end: 'bottom 45%', onUpdate: function (s) {
+          if (s.progress <= loin) return;
+          loin = s.progress;
+          gsap.to(etat, { t: loin, duration: 0.6, ease: 'power2.out', overwrite: true, onUpdate: function () { placer(etat.t); } });
+        } });
+        garde(liste, function () { placer(1); }, function () { return loin > 0; });
+      });
+      return;
+    }
     suivre(liste, function (p) { placer(Math.min(1, Math.max(0, (p - 0.15) / 0.6))); });
   });
 
@@ -339,7 +405,7 @@
     var v = { svg: svg, p: p, pts: pts, enHaut: enHaut, s: 1, vs: 0, vue: false };
     new IntersectionObserver(function (e) {
       v.vue = e[0].isIntersecting;
-      if (v.vue) relancer(); else { v.s = 1; v.vs = 0; svg.style.transform = ''; }   // hors écran : elle reprend sa forme de repos
+      if (v.vue) relancer(); else if (!G) { v.s = 1; v.vs = 0; svg.style.transform = ''; }   // hors écran : elle reprend sa forme de repos
     }).observe(svg);
     vagues.push(v); return v;
   }
@@ -388,7 +454,7 @@
 
   /* ---------- boucle commune : ne tourne que si une vague ou une photo est à l'écran ---------- */
   var tourne = false, yPrec = window.scrollY, tPrec = performance.now();
-  function relancer() { if (!reduit && !tourne) { tourne = true; tPrec = performance.now(); requestAnimationFrame(boucleVivante); } }
+  function relancer() { if (G) return; if (!reduit && !tourne) { tourne = true; tPrec = performance.now(); requestAnimationFrame(boucleVivante); } }
   function boucleVivante(t) {
     var dt = Math.max(1, t - tPrec); tPrec = t;
     var dy = window.scrollY - yPrec; yPrec = window.scrollY;
@@ -430,6 +496,7 @@
     p.style.setProperty('--r0', hasard(-25, 25).toFixed(1) + 'deg');
     p.classList.add('tampon-attente');
     unefois(t, SEUIL_TITRES, function () { setTimeout(function () { p.classList.add('tampon-parti'); }, 380); });
+    garde(t, function () { p.style.transition = 'none'; p.classList.add('tampon-parti'); }, function () { return p.classList.contains('tampon-parti'); });
   });
 
   /* ---------- 10. Chargement et passage entre les pages (mécanique relevée dans le code de CRAV) ----------
@@ -460,15 +527,44 @@
         '</svg><p class="chargement__texte"><span class="chargement__prepare">On prépare votre bowl…</span><span class="chargement__pret">Prêt&nbsp;!</span></p>';
       document.body.appendChild(chargement);
       memoire('rb-vu', '1');
-      requestAnimationFrame(function () { chargement.classList.add('chargement--parti'); racine.classList.remove('premier'); });
-      setTimeout(function () { chargement.remove(); }, 1700);
+      if (G) {
+        chargement.classList.add('chargement--gsap');
+        racine.classList.remove('premier');
+        var cq = function (s) { return chargement.querySelector(s); }, cbol = cq('.chargement__bol');
+        var ctl = gsap.timeline({ onComplete: function () { chargement.remove(); } });
+        ctl.from(cq('.p-bol'), { scale: 0, transformOrigin: '50% 100%', duration: 0.3, ease: 'back.out(2)' }, 0.05)
+          .from(cq('.chargement__prepare'), { autoAlpha: 0, y: 10, duration: 0.2 }, 0.05);
+        ['.p-riz', '.p-saumon', '.p-avocat', '.p-edamame'].forEach(function (s, k) {
+          var t0 = 0.2 + k * 0.16;                                  // CRAV : 0,22 s entre deux couches → resserré pour tenir en 1,6 s
+          ctl.from(cq(s), { autoAlpha: 0, y: -200, scale: 0.8, rotation: gsap.utils.random(-12, 12), transformOrigin: '50% 100%', duration: 0.3, ease: 'power1.in' }, t0)
+            .to(cbol, { scaleX: 1.06, scaleY: 0.88, transformOrigin: '50% 100%', duration: 0.06 }, t0 + 0.3)
+            .to(cbol, { scaleX: 0.98, scaleY: 1.03, duration: 0.08 }, t0 + 0.36)
+            .to(cbol, { scaleX: 1, scaleY: 1, duration: 0.12 }, t0 + 0.44);
+        });
+        ctl.to(cq('.chargement__prepare'), { autoAlpha: 0, duration: 0.15 }, 0.9)
+          .fromTo(cq('.chargement__pret'), { autoAlpha: 0, scale: 0.6, rotation: -8 }, { autoAlpha: 1, scale: 1, rotation: -3, duration: 0.3, ease: 'back.out(2.5)' }, 0.95)
+          .to(chargement, { yPercent: -110, borderBottomLeftRadius: '50% 22%', borderBottomRightRadius: '50% 22%', duration: 0.42, ease: 'power3.inOut' }, 1.18);
+        setTimeout(function () { if (chargement.parentNode) chargement.remove(); }, 1800);   // secours : jamais plus de 1,8 s d'écran couvert
+      } else {
+        requestAnimationFrame(function () { chargement.classList.add('chargement--parti'); racine.classList.remove('premier'); });
+        setTimeout(function () { chargement.remove(); racine.classList.remove('premier'); }, 1700);
+      }
     } else if (racine.classList.contains('arrivee')) {
       // on arrive d'une autre page : les rideaux couvrent déjà l'écran, ils repartent vers le haut
       memoire('rb-rideaux', null);
       rideaux.classList.add('rideaux--couvre');
       racine.classList.remove('arrivee');
-      requestAnimationFrame(function () { requestAnimationFrame(function () { rideaux.classList.add('rideaux--sort'); }); });
-      setTimeout(function () { rideaux.classList.remove('rideaux--couvre', 'rideaux--sort'); }, 900);
+      var finRideaux = function () { rideaux.classList.remove('rideaux--couvre', 'rideaux--sort'); if (G) gsap.set(rideaux.querySelectorAll('*'), { clearProps: 'all' }); };
+      if (G) {
+        var rr = [].slice.call(rideaux.querySelectorAll('.rideau')), rtx = rideaux.querySelector('.rideaux__texte');
+        gsap.set(rr, { y: 0, yPercent: -15, borderRadius: 0 });
+        gsap.timeline({ onComplete: finRideaux })
+          .to(rtx, { autoAlpha: 0, scale: 1.3, duration: 0.28, ease: 'power1.in' }, 0)
+          .to(rr.slice().reverse(), { yPercent: -130, borderBottomLeftRadius: '50% 18%', borderBottomRightRadius: '50% 18%', duration: 0.6, ease: 'power4.inOut', stagger: 0.06 }, 0.05);
+      } else {
+        requestAnimationFrame(function () { requestAnimationFrame(function () { rideaux.classList.add('rideaux--sort'); }); });
+      }
+      setTimeout(finRideaux, 1000);                                     // secours : les rideaux partent même si l'animation ne tourne pas
     }
 
     document.addEventListener('click', function (e) {
@@ -480,15 +576,204 @@
       if (!/\.html?$|\/$/.test(url.pathname) && url.pathname.indexOf('.') > -1) return; // fichiers (pdf, images…)
       e.preventDefault();
       rideaux.classList.remove('rideaux--sort', 'rideaux--couvre'); void rideaux.offsetWidth;
-      rideaux.classList.add('rideaux--monte');
+      if (G) {
+        // 3 rideaux en dôme : le centre monte d'abord, puis les bords (bord arrondi qui s'aplatit), 0,07 s d'écart
+        rideaux.classList.add('rideaux--couvre');
+        gsap.timeline()
+          .fromTo(rideaux.querySelectorAll('.rideau'), { y: 0, yPercent: 110, borderTopLeftRadius: '50% 18%', borderTopRightRadius: '50% 18%' },
+            { yPercent: -15, borderTopLeftRadius: '0% 0%', borderTopRightRadius: '0% 0%', duration: 0.5, ease: 'power2.out', stagger: 0.07 })
+          .fromTo(rideaux.querySelector('.rideaux__texte'), { autoAlpha: 0, scale: 0.7 }, { autoAlpha: 1, scale: 1, duration: 0.34, ease: 'back.out(2)' }, 0.3);
+      } else rideaux.classList.add('rideaux--monte');
       memoire('rb-rideaux', '1');
       setTimeout(function () { location.href = url.href; }, 560);
     });
     // retour arrière depuis le cache du navigateur : on retire les rideaux tout de suite
-    window.addEventListener('pageshow', function (e) { if (e.persisted) { rideaux.classList.remove('rideaux--monte', 'rideaux--couvre', 'rideaux--sort'); memoire('rb-rideaux', null); } });
+    window.addEventListener('pageshow', function (e) { if (e.persisted) { rideaux.classList.remove('rideaux--monte', 'rideaux--couvre', 'rideaux--sort'); if (G) gsap.set(rideaux.querySelectorAll('*'), { clearProps: 'all' }); memoire('rb-rideaux', null); } });
   } else {
     racine.classList.remove('premier', 'arrivee');
   }
+
+  /* ================= VERSION GSAP (décision de Nathan du 05/11/2026 : « comme CRAV ») =================
+     GSAP 3.15.0 + ScrollTrigger + SplitText, chargés par cdnjs dans chaque page (balises defer).
+     Tout est lancé dans gsap.matchMedia() : animations allégées sur téléphone, aucune avec « réduire les animations ».
+     Si GSAP ne se charge pas, G vaut false et les parties plus haut gardent l'ancienne mécanique (rien n'est caché sans JS).
+     On n'anime que transform et opacity (plus 2 variables CSS de traits SVG et le bord arrondi des rideaux). */
+  if (G) {
+    var rnd = gsap.utils.random;
+    function rotDe(el, nom) { return parseFloat(getComputedStyle(el).getPropertyValue(nom || '--r')) || 0; }
+
+    // 1. Titres : SplitText mot par mot (ou lettre par lettre), chaque mot part de 0, 18 à 40 px plus bas, penché, puis rebondit (CRAV)
+    animsGsap.push(function (c) {
+      var hautEcran = window.innerHeight, pente = c.tel ? 10 : 16;
+      document.querySelectorAll('.t-l, .t-xl, [data-vivant]').forEach(function (el) {
+        if (el.closest('.tiroir, .fiche, .une')) return;
+        var lettres = el.getAttribute('data-vivant') === 'lettres';
+        var s = SplitText.create(el, { type: lettres ? 'chars' : 'words', tag: 'span', wordsClass: 'mot', charsClass: 'mot' });
+        var cibles = lettres ? s.chars : s.words;
+        var depart = { scale: 0, transformOrigin: '50% 100%', y: function () { return rnd(18, 40); }, rotation: function () { return rnd(-pente, pente); } };
+        var tw;
+        if (el.getBoundingClientRect().top < hautEcran) {
+          // titre du premier écran : il rebondit tout de suite, visible en moins de 0,3 s
+          tw = gsap.from(cibles, Object.assign({ duration: 0.5, ease: 'back.out(2.35)', stagger: 0.02 }, depart));
+        } else {
+          tw = gsap.from(cibles, Object.assign({
+            duration: lettres ? 0.75 : 0.72, ease: lettres ? 'back.out(2.6)' : 'back.out(2.35)', stagger: lettres ? 0.03 : 0.055,
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+          }, depart));
+        }
+        garde(el, function () { tw.progress(1); }, function () { return tw.progress() === 1; });
+      });
+      ajuster();
+    });
+
+    // 3 bis et 4 quinquies. Les grands bowls détourés grossissent au défilement (scrub)
+    animsGsap.push(function () {
+      document.querySelectorAll('.faits__bol').forEach(function (bol) {
+        gsap.fromTo(bol, { scale: 0.9 }, { scale: 1.08, ease: 'none', scrollTrigger: { trigger: bol.closest('section'), start: 'top bottom', end: 'bottom top', scrub: true } });
+      });
+      document.querySelectorAll('.dernier__bol').forEach(function (bol) {
+        gsap.fromTo(bol, { scale: 0.85 }, { scale: 1.1, transformOrigin: '50% 30%', ease: 'none', scrollTrigger: { trigger: bol.parentNode, start: 'top bottom', end: 'bottom top', scrub: true } });
+      });
+    });
+
+    // 4 bis. Histoire épinglée : ScrollTrigger pin ; à chaque étape, les ingrédients TOMBENT (0,32 s power1.in), se redressent
+    // (0,45 s back.out(2.5)) et le bol s'écrase (×0,88 / ×1,06 puis ×1,03 / ×0,98 puis 1), valeurs du burger CRAV
+    animsGsap.push(function (c) {
+      document.querySelectorAll('.couches').forEach(function (sec) {
+        sec.classList.add('couches--vif');
+        var scene = sec.querySelector('.couches__scene'), bol = sec.querySelector('.couches__bol');
+        var etapes = [].slice.call(sec.querySelectorAll('.couches__etapes li'));
+        var fil = sec.querySelector('.couches__fil'), sauce = sec.querySelector('.couches__sauce');
+        var morceaux = [].slice.call(sec.querySelectorAll('.couches__riz, .couches__ing'));
+        var paliers = etapes.map(function (e) { return parseFloat(e.dataset.a); });
+        var groupes = paliers.map(function (a) { return morceaux.filter(function (m) { return parseFloat(m.dataset.a) === a; }); });
+        morceaux.forEach(function (m) { m._r = rotDe(m); });
+        gsap.set(morceaux, { autoAlpha: 0 });
+        var niveau = 0;
+        function ecraser() {
+          gsap.timeline().to(bol, { scaleX: 1.06, scaleY: 0.88, transformOrigin: '50% 70%', duration: 0.06 })
+            .to(bol, { scaleX: 0.98, scaleY: 1.03, duration: 0.08 }).to(bol, { scaleX: 1, scaleY: 1, duration: 0.12 });
+        }
+        function tomber(k) {
+          var g = groupes[k]; if (!g.length) return;
+          gsap.killTweensOf(g);
+          gsap.timeline()
+            .fromTo(g, { autoAlpha: 1, yPercent: c.tel ? -220 : -320, scale: 0.8, rotation: function (i, e) { return e._r + rnd(-12, 12); } },
+              { yPercent: 0, scale: 1, duration: 0.32, ease: 'power1.in', stagger: 0.05 })
+            .to(g, { rotation: function (i, e) { return e._r; }, duration: 0.45, ease: 'back.out(2.5)', stagger: 0.05 }, 0.32)
+            .call(ecraser, null, 0.32);
+        }
+        function remonter(k) { var g = groupes[k]; gsap.killTweensOf(g); gsap.to(g, { autoAlpha: 0, yPercent: -120, duration: 0.28, ease: 'back.in(1.2)' }); }
+        function maj(p) {
+          var q = Math.min(1, p * 1.08), n = 0;
+          fil.style.setProperty('--fil', (1 - q).toFixed(3));
+          paliers.forEach(function (a, i) { if (q >= a + 0.02 || (i === 0 && q > 0)) n = i + 1; });
+          while (niveau < n) { tomber(niveau); niveau++; }
+          while (niveau > n) { niveau--; remonter(niveau); }
+          etapes.forEach(function (e, i) { e.classList.toggle('faite', i < n); e.classList.toggle('en-cours', i === Math.max(0, n - 1)); });
+          sauce.style.setProperty('--sauce', (1 - Math.min(1, Math.max(0, (q - 0.8) / 0.16))).toFixed(3));
+        }
+        // secours : si l'horloge de GSAP ne tourne pas, on montre le bol complet au lieu d'un bol vide
+        var image0 = gsap.ticker.frame;
+        garde(bol, function () {
+          gsap.set(morceaux, { autoAlpha: 1, yPercent: 0, scale: 1, rotation: function (i, e) { return e._r; } });
+          niveau = groupes.length; fil.style.setProperty('--fil', '0'); sauce.style.setProperty('--sauce', '0');
+          etapes.forEach(function (e) { e.classList.add('faite'); });
+        }, function () { return niveau > 0 || gsap.ticker.frame > image0 + 10; });
+        ScrollTrigger.create({
+          trigger: scene, pin: true, anticipatePin: 1,
+          start: function () { var h = document.querySelector('.entete'); return 'top ' + (h ? h.offsetHeight : 0); },
+          end: c.tel ? '+=180%' : '+=200%',
+          onUpdate: function (s) { maj(s.progress); }, onRefresh: function (s) { maj(s.progress); }
+        });
+      });
+    });
+
+    // 4 ter. « À emporter » : la piste glisse vers la gauche, liée au défilement (scrub, ease none)
+    animsGsap.push(function (c) {
+      document.querySelectorAll('.emporter').forEach(function (sec) {
+        var piste = sec.querySelector('.emporter__piste'), fenetre = sec.querySelector('.emporter__fenetre');
+        sec.classList.add('emporter--vif');
+        gsap.to(piste, {
+          x: function () { return -Math.max(0, piste.scrollWidth - fenetre.clientWidth); }, ease: 'none',
+          scrollTrigger: { trigger: sec, start: 'top 55%', end: 'bottom 10%', scrub: c.tel ? 0.4 : 0.8, invalidateOnRefresh: true }
+        });
+      });
+    });
+
+    // 4 quater. Affiche rétro : le damier se dessine (classe CSS), la bulle poppe, les rayons tournent seulement quand l'affiche est à l'écran
+    animsGsap.push(function () {
+      document.querySelectorAll('.affiche').forEach(function (sec) {
+        var rayons = sec.querySelector('.affiche__rayons'), bulle = sec.querySelector('.affiche__bulle');
+        sec.classList.add('affiche--vif');
+        var tour = gsap.to(rayons, { rotation: 360, duration: 40, ease: 'none', repeat: -1, paused: true });
+        gsap.set(bulle, { scale: 0 });
+        ScrollTrigger.create({ trigger: sec, start: 'top 75%', once: true, onEnter: function () {
+          sec.classList.add('affiche--la');
+          gsap.to(bulle, { scale: 1, duration: 0.45, ease: 'back.out(2.2)', delay: 1.05 });
+        } });
+        ScrollTrigger.create({ trigger: sec, start: 'top bottom', end: 'bottom top', onToggle: function (s) { if (s.isActive) tour.play(); else tour.pause(); } });
+        garde(sec, function () { sec.classList.add('affiche--la'); gsap.set(bulle, { scale: 1 }); }, function () { return gsap.getProperty(bulle, 'scale') > 0.99; });
+      });
+    });
+
+    // 4 sexies. Pied de page : les 4 ingrédients tombent sur RIVE BOWL, puis sont jonglés en boucle (CRAV), seulement à l'écran
+    animsGsap.push(function (c) {
+      if (!tombes) return;
+      var jongles = [];
+      gsap.set(tombes, { autoAlpha: 0 });
+      ScrollTrigger.create({ trigger: marque, start: 'top 95%', once: true, onEnter: function () {
+        tombes.forEach(function (i, n) {
+          var r = rotDe(i, '--rot');
+          gsap.fromTo(i, { autoAlpha: 1, y: -240, rotation: r + 200 }, { y: 0, rotation: r, duration: 0.9, ease: 'bounce.out', delay: n * 0.12, onComplete: function () {
+            var j = gsap.timeline({ repeat: -1, repeatRefresh: true, delay: rnd(0.2, 0.9) })
+              .to(i, { y: function () { return -window.innerHeight * (c.tel ? rnd(0.12, 0.2) : rnd(0.2, 0.32)); }, rotation: function () { return '+=' + rnd(220, 600); }, duration: 0.55, ease: 'power2.out' })
+              .to(i, { y: 0, duration: 0.75, ease: 'power2.in' })
+              .to({}, { duration: function () { return rnd(0.2, 0.9); } });
+            jongles.push(j);
+          } });
+        });
+      } });
+      garde(marque, function () { tombes.forEach(function (i) { gsap.killTweensOf(i); gsap.set(i, { autoAlpha: 1, y: 0, rotation: rotDe(i, '--rot') }); }); },
+        function () { return gsap.getProperty(tombes[tombes.length - 1], 'autoAlpha') > 0.9 && gsap.getProperty(tombes[tombes.length - 1], 'y') > -5; });
+      ScrollTrigger.create({ trigger: marque, start: 'top bottom', end: 'bottom top', onToggle: function (s) { jongles.forEach(function (j) { if (s.isActive) j.resume(); else j.pause(); }); } });
+    });
+
+    // 7. Vagues « jelly » : elles s'étirent selon la VITESSE de défilement (getVelocity), puis reviennent avec un rebond élastique ;
+    // leurs points ondulent en continu (gsap.ticker), seulement pour les vagues à l'écran
+    animsGsap.push(function (c) {
+      if (!vagues.length) return;
+      var svgs = vagues.map(function (v) { return v.svg; }), max = c.tel ? VAGUE.etirementTel : VAGUE.etirement;
+      var retour = gsap.delayedCall(0.14, function () { gsap.to(svgs, { scaleY: 1, duration: 1.1, ease: 'elastic.out(1, 0.3)', overwrite: true }); }).pause();
+      ScrollTrigger.create({ start: 0, end: 'max', onUpdate: function (s) {
+        var v = Math.min(1, Math.abs(s.getVelocity()) / 3000);
+        gsap.to(svgs, { scaleY: 1 + (max - 1) * v, duration: 0.2, ease: 'power2.out', overwrite: true });
+        retour.restart(true);
+      } });
+      function onde(t) { vagues.forEach(function (v) { if (v.vue) dessinerVague(v, t * 1000); }); }
+      gsap.ticker.add(onde);
+      return function () { gsap.ticker.remove(onde); };
+    });
+
+    // 8. Photos et cartes penchées : sur ordinateur elles suivent le défilement (scrub) ; sur téléphone elles restent juste penchées
+    animsGsap.push(function (c) {
+      flottants.forEach(function (e) {
+        var p = rotDe(e, '--penche');
+        if (c.tel) { gsap.set(e, { rotation: p }); return; }
+        gsap.fromTo(e, { y: 9, rotation: p - 0.75 }, { y: -9, rotation: p + 0.75, ease: 'none', scrollTrigger: { trigger: e, start: 'top bottom', end: 'bottom top', scrub: true } });
+      });
+    });
+
+    gsap.matchMedia().add({ tel: '(max-width: 860px)', ordi: '(min-width: 861px)', reduit: '(prefers-reduced-motion: reduce)' }, function (ctx) {
+      if (ctx.conditions.reduit) return;
+      var nettoyages = [];
+      animsGsap.forEach(function (f) { try { var n = f(ctx.conditions); if (typeof n === 'function') nettoyages.push(n); } catch (e) { if (window.console) console.warn('Rive Bowl · animation ignorée :', e); } });
+      // les polices changent la taille des titres : on recalcule les déclencheurs une fois qu'elles sont prêtes
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
+      return function () { nettoyages.forEach(function (n) { n(); }); };
+    });
+  }
+
 
   /* ---------- 6. Le titre de l'onglet qui change, doucement ---------- */
   if (!reduit) {

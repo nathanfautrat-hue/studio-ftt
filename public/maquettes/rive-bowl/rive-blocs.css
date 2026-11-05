@@ -818,3 +818,13 @@ html.arrivee body::after{background:var(--corail)}
 .p-une .wrap,.menu-une .wrap{padding-top:var(--e-fl-2);padding-bottom:var(--e-fl-3)}
 .p-une h1,.p-une .lead{text-shadow:none}
 .logo{min-height:44px;align-items:center}
+
+/* ===================== VERSION GSAP : GSAP prend la main sur ces éléments (classe .gsap posée par vivant.js) ===================== */
+.gsap .couches--vif{height:auto}
+.gsap .couches--vif .couches__scene{position:relative;top:auto}
+.gsap .couches--vif .couches__ing,.gsap .couches--vif .couches__riz{opacity:1;transform:none;transition:none}
+.gsap .affiche--vif .affiche__rayons{animation:none}
+.gsap .affiche--vif .affiche__bulle{scale:none;transition:none}
+.gsap .pied__tombe{opacity:1;transform:none;transition:none}
+.chargement--gsap .chargement__bol>*,.chargement--gsap .chargement__texte span{opacity:1}
+.chargement--gsap .chargement__pret{opacity:0}
