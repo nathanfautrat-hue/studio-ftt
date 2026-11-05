@@ -231,3 +231,39 @@ body.menu-ouvert .haut-page{visibility:hidden}
 
 /* En-tête sur les petits écrans (barre de défilement comprise) */
 @media (max-width:380px){.logo img{height:34px}.entete .cmd{padding:0 12px;gap:6px}.burger{width:42px;height:42px}}
+
+/* ============ FICHE EN GRAND (poké ou photo) ============
+   Plein écran sur téléphone, grande fenêtre sur ordinateur. Bowl en très grand, nom, description, prix, Commander. */
+.fiche{border:0;padding:0;margin:auto;width:min(1040px,calc(100vw - 48px));max-height:calc(100dvh - 48px);border-radius:var(--r);background:var(--creme);color:var(--sapin-deep);overflow:auto;display:none;grid-template-columns:1.15fr 1fr;opacity:0;transform:translateY(14px);transition:opacity .3s ease,transform .3s ease,overlay .3s allow-discrete,display .3s allow-discrete}
+.fiche[open]{display:grid;opacity:1;transform:none}
+@starting-style{.fiche[open]{opacity:0;transform:translateY(14px)}}
+.fiche::backdrop{background:rgba(2,46,33,.72)}
+.fiche__fermer{position:absolute;top:14px;right:14px;z-index:2;width:46px;height:46px;border-radius:50%;border:0;background:var(--blanc);color:var(--sapin-deep);font:700 26px/1 var(--font);cursor:pointer;box-shadow:0 6px 16px -8px rgba(0,20,15,.5);transition:transform .3s ease}
+.fiche__fermer:active{transform:scale(.9)}
+.fiche__img{display:flex;align-items:center;justify-content:center;background:var(--c,var(--sable));padding:clamp(20px,4vw,48px);min-height:0}
+.fiche__img img{width:100%;max-width:560px;height:auto;border-radius:50%;box-shadow:0 30px 50px -26px rgba(0,10,6,.55)}
+.fiche__texte{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+.fiche h2{font:900 clamp(28px,3.6vw,46px)/1 var(--font);text-transform:uppercase;color:var(--sapin);padding-right:40px}
+.fiche__desc{font-size:clamp(16px,1.4vw,18px);line-height:1.6}
+.fiche__prix{font:900 26px/1 var(--font);color:var(--sapin-deep)}
+.fiche__cmd{align-self:flex-start;margin-top:6px}
+.fiche--photo{grid-template-columns:1fr;background:var(--sapin-deep);width:min(1200px,calc(100vw - 48px))}
+.fiche--photo .fiche__img{background:transparent;padding:0}
+.fiche--photo .fiche__img img{max-width:none;border-radius:0;box-shadow:none;max-height:calc(100dvh - 160px);object-fit:contain}
+.fiche--photo .fiche__texte{padding:14px 20px 18px;color:var(--creme)}
+.fiche--photo h2,.fiche--photo .fiche__prix,.fiche--photo .fiche__cmd{display:none}
+.fiche--photo .fiche__desc{font-size:13px}
+.produit[role="button"],.agrandir{cursor:zoom-in}
+.produit[role="button"] .bol{transition:opacity .3s ease}
+@media (hover:hover){.produit[role="button"]:hover .bol,.agrandir:hover{opacity:.85}}
+.agrandir{transition:opacity .3s ease}
+@media (max-width:860px){
+  .fiche{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0;grid-template-columns:1fr;grid-template-rows:auto 1fr;align-content:start}
+  .fiche__img{padding:56px 24px 24px}
+  .fiche__img img{max-width:min(86vw,420px)}
+  .fiche__texte{justify-content:flex-start;padding:22px var(--g) calc(28px + env(safe-area-inset-bottom))}
+  .fiche__cmd{align-self:stretch}
+  .fiche--photo{width:100vw;height:100dvh;align-content:center;grid-template-rows:auto auto}
+  .fiche--photo .fiche__img{padding:0}
+}
+@media (prefers-reduced-motion:reduce){.fiche,.fiche[open]{transition:none;transform:none}}

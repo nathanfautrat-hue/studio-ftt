@@ -130,6 +130,67 @@
     placer();
   }
 
+  // Fiche en grand : un clic sur un poké ouvre le bowl en très grand (nom, description, prix, Commander) ;
+  // un clic sur une photo du restaurant l'ouvre en grand. Se ferme avec la croix, Échap, un clic à côté ou le bouton retour.
+  (function(){
+    var DISHOP = 'https://rivebowl.dishop.co/';
+    var d = document.createElement('dialog');
+    d.className = 'fiche';
+    d.setAttribute('aria-labelledby', 'fiche-titre');
+    d.innerHTML = '<button class="fiche__fermer" type="button" aria-label="Fermer">×</button>' +
+      '<div class="fiche__img"><img alt="" /></div>' +
+      '<div class="fiche__texte"><h2 id="fiche-titre"></h2><p class="fiche__desc"></p><p class="fiche__prix"></p>' +
+      '<a class="btn btn--jaune fiche__cmd" href="' + DISHOP + '" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a></div>';
+    if(!d.showModal) return; // vieux navigateur : les liens normaux restent
+    document.body.appendChild(d);
+    var img = d.querySelector('.fiche__img img'), boite = d.querySelector('.fiche__img'), titre = d.querySelector('h2'),
+        desc = d.querySelector('.fiche__desc'), prix = d.querySelector('.fiche__prix'), parHistorique = false;
+    function ouvrir(o){
+      d.classList.toggle('fiche--photo', !!o.photo);
+      boite.className = 'fiche__img ' + (o.couleur || '');
+      img.src = o.src; img.alt = o.alt || o.nom || '';
+      titre.textContent = o.nom || ''; desc.textContent = o.desc || ''; prix.textContent = o.prix || '';
+      prix.hidden = !o.prix; desc.hidden = !o.desc;
+      d.showModal(); document.body.classList.add('menu-ouvert');
+      try { history.pushState({ fiche:1 }, ''); parHistorique = true; } catch(e){ parHistorique = false; }
+    }
+    function fermer(){ if(d.open) d.close(); }
+    d.addEventListener('close', function(){
+      document.body.classList.remove('menu-ouvert');
+      if(parHistorique){ parHistorique = false; history.back(); }
+    });
+    window.addEventListener('popstate', function(){ if(d.open){ parHistorique = false; d.close(); } });
+    d.querySelector('.fiche__fermer').addEventListener('click', fermer);
+    d.addEventListener('click', function(e){ if(e.target === d) fermer(); });
+    function couleurDe(el){ var m = el && (el.className.match(/\bc-[a-z]+\b/) || []); return m[0] || 'c-sable'; }
+    // Pokés de l'accueil
+    document.querySelectorAll('.poke').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var im = a.querySelector('img');
+        ouvrir({ src: im.getAttribute('src'), nom: a.querySelector('.poke__nom').textContent, desc: a.dataset.desc, prix: a.dataset.prix, couleur: couleurDe(a.querySelector('.poke__img')) });
+      });
+    });
+    // Cartes produit de la page carte
+    document.querySelectorAll('.produit').forEach(function(li){
+      var im = li.querySelector('img'); if(!im) return;
+      var nom = li.querySelector('h3'); var p = li.querySelector('p'); var px = li.querySelector('.prix');
+      li.setAttribute('tabindex','0'); li.setAttribute('role','button');
+      li.setAttribute('aria-label', 'Voir en grand : ' + (nom ? nom.textContent : ''));
+      function go(){ ouvrir({ src: im.getAttribute('src'), alt: im.alt, nom: nom && nom.textContent, desc: p && p.textContent, prix: px && px.textContent, couleur: couleurDe(li) }); }
+      li.addEventListener('click', go);
+      li.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+    });
+    // Photos du restaurant
+    document.querySelectorAll('.galerie img, .histoire figure img, .mj-une img, .profil__gauche img, .cat__tete img').forEach(function(im){
+      im.classList.add('agrandir'); im.setAttribute('tabindex','0'); im.setAttribute('role','button');
+      var leg = im.closest('figure') && im.closest('figure').querySelector('figcaption');
+      function go(){ ouvrir({ photo: !im.classList.contains('bol'), src: im.getAttribute('src'), alt: im.alt, nom: im.alt, desc: leg ? leg.textContent : '' }); }
+      im.addEventListener('click', go);
+      im.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+    });
+  })();
+
   // Bouton pause du bandeau d'avis (le survol n'existe pas sur téléphone)
   var bp = document.querySelector('.defile__pause'), df = document.querySelector('.defile');
   if(bp && df){ bp.addEventListener('click', function(){ var p = df.classList.toggle('pause'); bp.setAttribute('aria-pressed', p); bp.textContent = p ? 'Relancer' : 'Mettre en pause'; }); }

@@ -12,8 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Caveat+Brush&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="img/loire-pont-mobile.webp" media="(max-width:760px)" />
-<link rel="preload" as="image" href="img/loire-pont.webp" media="(min-width:761px)" />
+<link rel="preload" as="image" href="img/bb-salle.webp" />
 <link rel="stylesheet" href="rive.css" />
 <style>
 /* Accueil v5, construit sur le modèle de pokawa.com : un fond crème du haut en bas, de grandes photos qu'on
@@ -191,7 +190,7 @@
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<div class="bandeau" role="note"><strong>Maquette</strong> proposée par Studio FTT pour Rive Bowl · photos de vos supports et de Wikimedia Commons</div>
+<div class="bandeau" role="note"><strong>Maquette</strong> proposée par Studio FTT pour Rive Bowl · photos et visuels de vos supports</div>
 <header class="entete">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
@@ -228,41 +227,38 @@
 
 <!--
   GRAND CARROUSEL (le code est dans rive.js, partie « Grand carrousel d’accueil »).
-  Photo 1 : « Montjean sur Loire ( Maine et Loire ) », auteur Chbo91, 20/09/2014, Wikimedia Commons,
-  licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), recadrée et compressée.
-  https://commons.wikimedia.org/wiki/File:Montjean_sur_Loire_(_Maine_et_Loire_).jpg
-  Photo 3 : la vraie salle de Montjean, photo C. Boisnault / Ôsez Mauges.
+  Diapos 1, 2, 4 et 5 : visuels d'illustration du brand book Rive Bowl 2026 (pages 17, 45, 18 et 10), fournis par le client,
+  recadrés sans les textes du document. À remplacer par ses vraies photos dès qu'il les envoie.
+  Diapo 3 : la vraie salle de Montjean, photo C. Boisnault / Ôsez Mauges.
   Bowls : photos des pokés de la page Dishop de Rive Bowl.
   VIDÉO DU CLIENT (plus tard) : remplacer l'image de la diapo 1 par
-  <video class="diapo__fond" autoplay muted loop playsinline poster="img/loire-pont.webp" src="video/rive-bowl-1080.mp4"></video>
+  <video class="diapo__fond" autoplay muted loop playsinline poster="img/bb-salle.webp" src="video/rive-bowl-1080.mp4"></video>
   (MP4 H.264 sans son, 4 à 6 Mo maximum). Sous prefers-reduced-motion, retirer autoplay et garder l'image.
 -->
 <section class="une" aria-roledescription="carrousel" aria-label="Rive Bowl en images">
   <div class="une__cadre">
     <div class="une__piste" id="une-piste">
 
-      <div class="diapo diapo--photo actif" role="group" aria-roledescription="diapositive" aria-label="1 sur 4">
-        <picture>
-          <source media="(max-width:760px)" srcset="img/loire-pont-mobile.webp" width="800" height="1200" />
-          <img class="diapo__fond" src="img/loire-pont.webp" alt="Le quai de Montjean et le pont suspendu sur la Loire, au soleil du soir" width="1600" height="1200" fetchpriority="high" />
-        </picture>
-        <p class="credit">Photo Chbo91, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Montjean_sur_Loire_(_Maine_et_Loire_).jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (recadrée)</p>
+      <div class="diapo diapo--photo actif" role="group" aria-roledescription="diapositive" aria-label="%N%">
+        <img class="diapo__fond" src="img/bb-salle.webp" alt="Salle Rive Bowl : bois clair, plantes suspendues et logo lumineux (visuel d'illustration du brand book)" width="1104" height="692" style="object-position:84% 50%" fetchpriority="high" />
+        <p class="credit">Visuel d'illustration · brand book Rive Bowl</p>
         <div class="diapo__texte">
-          <h1 class="t">La Loire dans un <span class="main">bowl</span></h1>
+          <h1 class="t" id="titre-une">La Loire dans un <span class="main">bowl</span></h1>
           <p class="lead">Le poké qui vient de chez nous.</p>
         </div>
       </div>
 
-      <div class="diapo c-sapin d-terroir" role="group" aria-roledescription="diapositive" aria-label="2 sur 4">
-        <img class="diapo__bol" src="img/bowl-maineetloire.webp" alt="Poké Maine-et-Loire vu de dessus" width="720" height="720" />
+      <div class="diapo diapo--photo" role="group" aria-roledescription="diapositive" aria-label="%N%">
+        <img class="diapo__fond" src="img/bb-devanture.webp" alt="Devanture Rive Bowl verte avec terrasse (visuel d'illustration du brand book)" width="696" height="440" style="object-position:56% 50%" />
+        <p class="credit">Visuel d'illustration · brand book Rive Bowl</p>
         <div class="diapo__texte">
-          <h2 class="t">Le goût de nos régions</h2>
-          <div class="etiquette" aria-hidden="true"><b>Maine-et-Loire</b><span>Le poké de chez nous</span></div>
+          <h2 class="t">Le poké terroir</h2>
+          <p class="lead">Du déjeuner au dîner, une envie, un Rive Bowl.</p>
         </div>
       </div>
 
-      <div class="diapo diapo--photo" role="group" aria-roledescription="diapositive" aria-label="3 sur 4">
-        <img class="diapo__fond" src="img/salle-montjean.webp" alt="La salle de Rive Bowl à Montjean, du comptoir jusqu'au mur du logo" width="1024" height="768" decoding="async" />
+      <div class="diapo diapo--photo" role="group" aria-roledescription="diapositive" aria-label="%N%">
+        <img class="diapo__fond" src="img/salle-montjean.webp" alt="La vraie salle de Rive Bowl à Montjean, du comptoir jusqu'au mur du logo" width="1024" height="768" style="object-position:50% 50%" />
         <p class="credit">Photo C. Boisnault / Ôsez Mauges</p>
         <div class="diapo__texte">
           <h2 class="t">Bienvenue à Montjean</h2>
@@ -270,7 +266,24 @@
         </div>
       </div>
 
-      <div class="diapo c-corail d-creation" role="group" aria-roledescription="diapositive" aria-label="4 sur 4">
+      <div class="diapo diapo--photo" role="group" aria-roledescription="diapositive" aria-label="%N%">
+        <img class="diapo__fond" src="img/bb-salle-2.webp" alt="Tables et banquette d'une salle Rive Bowl (visuel d'illustration du brand book)" width="736" height="920" style="object-position:100% 60%" />
+        <p class="credit">Visuel d'illustration · brand book Rive Bowl</p>
+        <div class="diapo__texte">
+          <h2 class="t">Un voyage au cœur de nos terroirs</h2>
+        </div>
+      </div>
+
+      <div class="diapo diapo--photo" role="group" aria-roledescription="diapositive" aria-label="%N%">
+        <img class="diapo__fond" src="img/bb-bowls.webp" alt="Pokés Rive Bowl sur une table en bois (visuel d'illustration du brand book)" width="726" height="600" style="object-position:50% 50%" />
+        <p class="credit">Visuel d'illustration · brand book Rive Bowl</p>
+        <div class="diapo__texte">
+          <h2 class="t">Le goût de nos régions</h2>
+          <p class="lead">La liberté de composer.</p>
+        </div>
+      </div>
+
+      <div class="diapo c-corail d-creation" role="group" aria-roledescription="diapositive" aria-label="6 sur 6">
         <img class="diapo__bol" src="img/bowl-saumon.webp" alt="Poké saumon mariné vu de dessus" width="1000" height="1000" />
         <div class="diapo__texte">
           <h2 class="t">Composez le bol qui vous ressemble&nbsp;!</h2>
@@ -285,6 +298,8 @@
     <button type="button" aria-label="Photo 2" aria-current="false"></button>
     <button type="button" aria-label="Photo 3" aria-current="false"></button>
     <button type="button" aria-label="Photo 4" aria-current="false"></button>
+    <button type="button" aria-label="Photo 5" aria-current="false"></button>
+    <button type="button" aria-label="Photo 6" aria-current="false"></button>
   </div>
 </section>
 
@@ -329,14 +344,14 @@
       </div>
     </div>
     <ul class="glisse" id="glisse-pokes" aria-label="Nos pokés signatures">
-      <li><a class="poke" href="la-carte.html#signatures"><span class="poke__img c-sapin"><img src="img/bowl-teriyaki.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Poulet teriyaki</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures"><span class="poke__img c-jaune"><img src="img/bowl-rillauds.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Rillauds d'Anjou</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures"><span class="poke__img c-corail"><img src="img/bowl-saumon.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Saumon mariné</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures"><span class="poke__img c-turquoise"><img src="img/bowl-crousty.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Poulet crousty</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures"><span class="poke__img c-feuille"><img src="img/bowl-crevettes.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Crevettes marinées</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures"><span class="poke__img c-sapin"><img src="img/bowl-falafel.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Falafel</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures"><span class="poke__img c-jaune"><img src="img/bowl-canard.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Effilochés de canard</span></a></li>
-      <li><a class="poke" href="la-carte.html#signatures"><span class="poke__img c-corail"><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Maine-et-Loire</span></a></li>
+      <li><a class="poke" href="la-carte.html#signatures" data-desc="Riz vinaigré, poulet teriyaki, carotte, concombre, radis, chou rouge mariné, edamame, graines de sésame, sauce teriyaki." data-prix="11,90 €"><span class="poke__img c-sapin"><img src="img/bowl-teriyaki.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Poulet teriyaki</span></a></li>
+      <li><a class="poke" href="la-carte.html#signatures" data-desc="La recette du terroir angevin." data-prix="11,90 €"><span class="poke__img c-jaune"><img src="img/bowl-rillauds.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Rillauds d'Anjou</span></a></li>
+      <li><a class="poke" href="la-carte.html#signatures" data-desc="Frais et équilibré." data-prix="11,90 €"><span class="poke__img c-corail"><img src="img/bowl-saumon.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Saumon mariné</span></a></li>
+      <li><a class="poke" href="la-carte.html#signatures" data-desc="Le croustillant de la maison." data-prix="11,90 €"><span class="poke__img c-turquoise"><img src="img/bowl-crousty.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Poulet crousty</span></a></li>
+      <li><a class="poke" href="la-carte.html#signatures" data-desc="Frais et léger." data-prix="11,90 €"><span class="poke__img c-feuille"><img src="img/bowl-crevettes.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Crevettes marinées</span></a></li>
+      <li><a class="poke" href="la-carte.html#signatures" data-desc="Le poké végétal." data-prix="11,90 €"><span class="poke__img c-sapin"><img src="img/bowl-falafel.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Falafel</span></a></li>
+      <li><a class="poke" href="la-carte.html#signatures" data-desc="Un poké gourmand." data-prix="11,90 €"><span class="poke__img c-jaune"><img src="img/bowl-canard.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Effilochés de canard</span></a></li>
+      <li><a class="poke" href="la-carte.html#signatures" data-desc="Le poké de chez nous." data-prix="11,90 €"><span class="poke__img c-corail"><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Maine-et-Loire</span></a></li>
     </ul>
     <!-- Brand book p. 10 -->
     <p class="difference monte"><b>Notre différence ?</b> Faire voyager le poké à travers nos régions, sans jamais oublier ses origines.</p>
