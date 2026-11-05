@@ -8,7 +8,7 @@
 <title>Rive Bowl · Poké terroir à Montjean-sur-Loire (maquette)</title>
 <meta name="description" content="Maquette privée proposée par Studio FTT pour Rive Bowl, poké terroir au bord de la Loire à Montjean-sur-Loire." />
 <meta name="theme-color" content="#FBF3E4" />
-<link rel="icon" href="img/logo.webp" type="image/webp" />
+<link rel="icon" href="img/logo.webp" type="image/webp" /><!-- logo de l'en-tête : étiquette du pot de cremet d'Anjou sur rivebowl.dishop.co -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
@@ -66,7 +66,9 @@ a{color:inherit}
 .entete{position:sticky;top:0;z-index:40;background:var(--creme);border-bottom:1px solid rgba(11,35,80,.08)}
 .entete .wrap{display:flex;align-items:center;gap:28px;height:76px}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
-.logo img{width:56px;height:56px;border-radius:50%;box-shadow:0 0 0 2px var(--creme),0 0 0 4px var(--loire)}
+.logo img{height:48px;width:auto}
+@media (max-width:420px){.logo img{height:40px}}
+.logo--pied{display:inline-flex;background:var(--creme);border-radius:14px;padding:10px 14px}
 .logo span{font:900 18px/1 var(--display);font-stretch:112%;text-transform:uppercase;color:var(--loire)}
 .nav{display:flex;gap:26px;margin-left:auto}
 .nav a{font:700 15px/1 var(--display);text-decoration:none;color:var(--ink);padding:8px 0;background:linear-gradient(var(--soleil),var(--soleil)) 0 100%/0 2px no-repeat;transition:background-size .4s var(--ease)}
@@ -94,7 +96,7 @@ a{color:inherit}
 .table__texte .kicker{color:var(--loire)}
 .table h1{margin-top:18px;font-size:clamp(76px,11.5vw,190px);color:var(--loire);line-height:.86;white-space:nowrap}
 .table h1 .mot{display:inline-block}
-.table__sous{margin:22px auto 0;max-width:34ch;font:600 clamp(17px,1.5vw,20px)/1.45 var(--display);color:var(--ink)}
+.table__sous{margin:22px auto 0;max-width:34ch;text-wrap:balance;font:600 clamp(17px,1.5vw,20px)/1.45 var(--display);color:var(--ink)}
 .table__boutons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
 
 .bol{position:absolute;z-index:2;left:var(--x);top:var(--y);width:var(--w);aspect-ratio:1;--r:0deg;--s:0deg}
@@ -109,39 +111,35 @@ a{color:inherit}
 .b5{--x:29%;--y:60%;--w:clamp(380px,42vw,620px);--r:6deg}
 .b6{--x:20%;--y:-9%;--w:clamp(120px,11vw,170px);--r:30deg}
 
-/* étiquettes manuscrites */
+/* étiquette manuscrite (sobre, sans flèche) */
 .etiq{position:absolute;z-index:6;display:flex;flex-direction:column;align-items:flex-start;gap:6px;pointer-events:none}
-.etiq .main{font-size:clamp(26px,2.4vw,36px);color:var(--loire-ink);white-space:nowrap}
-.etiq .tag{display:inline-block;background:var(--soleil);color:var(--loire-ink);font:800 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;padding:6px 9px;border-radius:4px;white-space:nowrap;transform:rotate(-2deg)}
-.etiq svg{width:58px;height:44px;color:var(--loire-ink)}
-.etiq--1{left:calc(77% - 150px);top:calc(50% + 40px)}
-.etiq--1 svg{margin-left:120px;margin-top:-4px}
-.etiq--2{left:calc(3% + clamp(180px,19vw,290px) - 10px);top:calc(56% + 30px)}
-.etiq--2 svg{transform:scaleX(-1) rotate(10deg);margin-left:-8px}
+.etiq .main{font-size:clamp(26px,2.4vw,34px);color:var(--loire-ink);white-space:nowrap}
+.etiq .tag{display:inline-block;background:var(--soleil);color:var(--loire-ink);font:800 10px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;padding:6px 9px;border-radius:4px;white-space:nowrap}
+.etiq--1{left:calc(77% - 170px);top:calc(50% + 34px);align-items:flex-end}
 
+/* Téléphone : un bowl entier d'abord, la table ensuite */
 @media (max-width:760px){
-  .table{min-height:860px}
-  .table__texte{padding-top:150px}
+  .table{display:flex;flex-direction:column;align-items:center;min-height:0;padding:22px 0 50vw}
+  .table::after{background:radial-gradient(ellipse 80% 40% at 50% 30%,rgba(251,243,228,.6),transparent 70%)}
+  .b5{position:relative;left:auto;top:auto;width:min(70vw,300px);order:1;--r:0deg}
+  .table__texte{order:2;padding:18px 16px 0}
   .table__texte .kicker{letter-spacing:.16em;font-size:11px;white-space:normal}
-  .table h1{font-size:min(23vw,100px);font-stretch:100%;white-space:normal}
-  .b1{--x:-17%;--y:-4%;--w:47vw;--r:-14deg}
-  .b2{--x:62%;--y:-7%;--w:50vw;--r:18deg}
-  .b6{--x:36%;--y:-9%;--w:28vw}
-  .b3{--x:-24%;--y:71%;--w:46vw}
-  .b4{--x:74%;--y:72%;--w:46vw}
-  .b5{--x:13%;--y:79%;--w:78vw}
-  .etiq--2{display:none}
-  .etiq--1{left:auto;right:14px;top:calc(72% - 70px);align-items:flex-end}
-  .etiq--1 svg{display:none}
-  .etiq .main{font-size:28px}
-  .table__boutons{gap:10px;flex-wrap:nowrap}
-  .table__boutons .btn{padding:0 16px;letter-spacing:.1em}
+  .table h1{margin-top:12px;font-size:min(17vw,76px);font-stretch:100%;white-space:nowrap}
+  .table__sous{margin-top:14px;font-size:16px;max-width:30ch}
+  .table__boutons{gap:10px;flex-wrap:nowrap;margin-top:20px}
+  .table__boutons .btn{padding:0 16px;letter-spacing:.1em;min-height:48px}
+  .b1{--x:-30%;--y:40px;--w:44vw;--r:-14deg}
+  .b2{--x:82%;--y:-14px;--w:40vw;--r:18deg}
+  .b6{--x:80%;--y:calc(min(70vw,300px) - 40px);--w:26vw}
+  .b3{top:auto;bottom:-16vw;left:-14%;width:54vw;--r:24deg}
+  .b4{top:auto;bottom:-8vw;left:52%;width:56vw;--r:-8deg}
+  .etiq--1{display:none}
 }
 @media (max-width:380px){
-  .table h1{font-size:19.5vw}
-  .table__boutons{flex-wrap:wrap}
+  .table h1{font-size:16.5vw}
+  .table__boutons .btn{padding:0 13px;letter-spacing:.06em;font-size:12px}
 }
-@media (max-width:760px) and (max-height:700px){.table__texte{padding-top:150px}}
+@media (max-width:340px){.table__boutons{flex-wrap:wrap}.entete .actions .btn{padding:0 12px;letter-spacing:.06em;font-size:12px}.logo img{height:34px}.burger{width:44px;height:44px}}
 
 /* HISTOIRE */
 .histoire{position:relative;padding:clamp(88px,12vw,170px) 0 clamp(88px,10vw,140px);overflow:hidden}
@@ -156,7 +154,7 @@ a{color:inherit}
 .histoire__bol{position:absolute;left:-7vw;bottom:-6vw;width:clamp(240px,34vw,520px);aspect-ratio:1;z-index:0}
 .histoire__bol .bol__img{--r:-20deg}
 .histoire__grid{position:relative;z-index:1}
-.histoire__photo{grid-column:1/6;grid-row:3;align-self:start;margin-top:48px;max-width:360px;justify-self:end;transform:rotate(-3deg);background:#fff;padding:10px 10px 14px;box-shadow:0 18px 30px -14px rgba(11,35,80,.35)}
+.histoire__photo{grid-column:1/6;grid-row:3;align-self:start;margin-top:48px;max-width:360px;justify-self:end;background:#fff;padding:10px 10px 14px;box-shadow:0 18px 30px -14px rgba(11,35,80,.35)}
 .histoire__photo img{aspect-ratio:4/3;object-fit:cover;width:100%}
 .histoire__photo figcaption{font:600 12px/1.3 var(--display);color:var(--ink-2);margin-top:10px}
 @media (max-width:860px){
@@ -187,7 +185,7 @@ a{color:inherit}
 .plat p{margin-top:8px;display:flex;justify-content:space-between;gap:12px;font-size:15px;color:rgba(251,243,228,.78)}
 .plat .prix{font-weight:800;color:var(--creme);white-space:nowrap}
 .plat .etiq{position:absolute;top:-6px;right:-6px;align-items:flex-end}
-.plat .etiq .main{color:#FFD2A6;font-size:34px;transform:rotate(-6deg)}
+.plat .etiq .main{color:#FFD2A6;font-size:30px}
 .carte .bols{padding-bottom:150px}
 @media (max-width:860px){
   .carte__grid{grid-template-columns:1fr}
@@ -218,7 +216,8 @@ a{color:inherit}
 .montjean__fiche .main{font-size:28px;color:var(--soleil-deep);margin-top:6px}
 .infos{list-style:none;margin-top:22px;display:grid;gap:12px;font-size:16px}
 .infos li{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:baseline}
-.infos span{font:800 11px/1.4 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.infos span.horaires{font:400 16px/1.5 var(--display);letter-spacing:0;text-transform:none;color:var(--ink)}
+.infos span:not(.horaires){font:800 11px/1.4 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
 .montjean__fiche .boutons{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .credit{grid-column:1/9;font-size:12px;color:var(--ink-2);margin-top:10px}
 .carte-maps{margin-top:40px;border-radius:22px;overflow:hidden;aspect-ratio:21/8;background:var(--creme-2)}
@@ -232,9 +231,9 @@ a{color:inherit}
   .montjean__fiche{grid-row:2;margin:-56px 14px 0}
   .credit{grid-row:3}
   .carte-maps{aspect-ratio:4/3}
-  .bientot{grid-template-columns:1fr}
-  .bientot div{flex-wrap:wrap;padding:22px 24px}
-  .bientot strong{font-size:24px}
+  .bientot{grid-template-columns:minmax(0,1fr)}
+  .bientot div{flex-direction:column;align-items:flex-start;gap:12px;padding:22px 24px}
+  .bientot strong{font-size:clamp(18px,6vw,22px);white-space:normal;overflow-wrap:anywhere}
   .infos li{grid-template-columns:1fr;gap:2px}
 }
 
@@ -262,10 +261,25 @@ a{color:inherit}
 .form .btn:disabled{opacity:.55;cursor:not-allowed}
 @media (max-width:860px){.franchise__grid{grid-template-columns:1fr}.form .duo{grid-template-columns:1fr}}
 
+/* Téléphone : rythme plus serré, titres plus courts */
+@media (max-width:760px){
+  .histoire,.carte,.restos,.franchise{padding:68px 0}
+  .histoire{padding-bottom:46vw}
+  .histoire h2,.restos h2,.franchise h2{font-size:clamp(34px,10.4vw,46px)}
+  .carte h2{font-size:clamp(36px,11vw,48px)}
+  .histoire__texte{margin-top:28px}
+  .histoire__photo{margin-top:28px;max-width:100%}
+  .histoire__bol{width:56vw;right:-18vw;bottom:-12vw}
+  .montjean{margin-top:36px}
+  .carte-maps{margin-top:28px}
+  .principes{margin-top:26px}
+  .franchise__grid{gap:40px}
+  .pied{padding:56px 0 28px}
+}
+
 /* PIED DE PAGE */
 .pied{background:var(--loire-ink);color:rgba(251,243,228,.82);padding:72px 0 36px;font-size:15px}
 .pied__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-.pied .logo img{box-shadow:0 0 0 2px var(--loire-ink),0 0 0 4px #FFB46E}
 .pied .logo span{color:var(--creme)}
 .pied h4{font:800 12px/1 var(--display);letter-spacing:.25em;text-transform:uppercase;color:#FFB46E;margin-bottom:16px}
 .pied ul{list-style:none;display:grid;gap:8px}
@@ -298,8 +312,7 @@ a{color:inherit}
 <header class="entete">
   <div class="wrap">
     <a class="logo" href="#accueil" aria-label="Rive Bowl, retour en haut">
-      <img src="img/logo.webp" alt="Logo Rive Bowl, poké terroir" width="56" height="56" />
-      <span>Rive Bowl</span>
+      <img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" />
     </a>
     <nav class="nav" aria-label="Menu principal">
       <a href="#histoire">Notre histoire</a>
@@ -338,11 +351,6 @@ a{color:inherit}
   <div class="etiq etiq--1" aria-hidden="true">
     <span class="main">Rillauds d'Anjou</span>
     <span class="tag">Poké signature</span>
-    <svg viewBox="0 0 60 44" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c10 6 20 16 26 32"/><path d="M22 32l8 6 4-10"/></svg>
-  </div>
-  <div class="etiq etiq--2" aria-hidden="true">
-    <svg viewBox="0 0 60 44" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c10 6 20 16 26 32"/><path d="M22 32l8 6 4-10"/></svg>
-    <span class="main">Crevettes marinées</span>
   </div>
 
   <div class="table__texte">
@@ -358,7 +366,7 @@ a{color:inherit}
 
 <!-- NOTRE HISTOIRE -->
 <section class="histoire" id="histoire" aria-labelledby="titre-histoire">
-  <div class="histoire__bol" aria-hidden="true"><div class="bol__img" data-tourne="0.04"><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" loading="lazy" /></div></div>
+  <div class="histoire__bol" aria-hidden="true"><div class="bol__img"><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" loading="lazy" /></div></div>
   <div class="wrap histoire__grid">
     <span class="kicker apparait">Notre histoire</span>
     <h2 class="titre apparait" id="titre-histoire">Une grande salade au milieu de la table. <em>Et chacun se sert.</em></h2>
@@ -381,39 +389,39 @@ a{color:inherit}
       <span class="kicker">La carte</span>
       <h2 class="titre" id="titre-carte">Les pokés signature</h2>
       <p>Une base généreuse avec avocat, concombre, carottes râpées, radis, chou rouge mariné, édamame et sésame. Au milieu, vous choisissez ce que vous aimez.</p>
-      <p class="carte__aussi">En signature, il y a aussi le poulet crousty et le falafel. Et à la carte : <strong>pokés chauds</strong> au bouillon miso, <strong>bowls à prix malins</strong> dès 8,90&nbsp;€, <strong>formules midi</strong> de 14,90&nbsp;€ à 17,90&nbsp;€, et le cremet d'Anjou en dessert.</p>
+      <p class="carte__aussi">En signature, il y a aussi le poulet crousty et le falafel. Et à la carte : <strong>pokés chauds</strong> au bouillon miso, <strong>bowls à prix malins</strong> dès 8,90&nbsp;€, <strong>formules midi</strong> à 14,90&nbsp;€ et 17,90&nbsp;€<!-- Dishop, rubrique Menus, 05/11/2026 : Formule Midi 14,90 €, Formule Midi Complète 17,90 € -->, et le cremet d'Anjou en dessert.</p>
       <a class="btn btn--solid btn--wrap" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Voir toute la carte et commander <span class="fl" aria-hidden="true">→</span></a>
       <p class="carte__glisse" aria-hidden="true">Faites glisser pour voir les pokés.</p>
     </div>
     <ul class="bols" aria-label="Pokés signature">
       <li class="plat apparait">
-        <div class="bol__img" data-tourne="0.03"><img src="img/bowl-rillauds.webp" alt="Poké signature rillauds d'Anjou" width="720" height="720" loading="lazy" /></div>
+        <div class="bol__img"><img src="img/bowl-rillauds.webp" alt="Poké signature rillauds d'Anjou" width="720" height="720" loading="lazy" /></div>
         <div class="etiq" aria-hidden="true"><span class="main">les recettes d'ici</span></div>
         <h3>Rillauds d'Anjou</h3>
         <p><span>Le poké du terroir angevin</span><span class="prix">11,90&nbsp;€</span></p>
       </li>
       <li class="plat apparait">
-        <div class="bol__img" data-tourne="-0.03"><img src="img/bowl-maineetloire.webp" alt="Poké signature Maine-et-Loire" width="720" height="720" loading="lazy" /></div>
+        <div class="bol__img"><img src="img/bowl-maineetloire.webp" alt="Poké signature Maine-et-Loire" width="720" height="720" loading="lazy" /></div>
         <h3>Maine-et-Loire</h3>
         <p><span>Inspiré de la Loire</span><span class="prix">11,90&nbsp;€</span></p>
       </li>
       <li class="plat apparait">
-        <div class="bol__img" data-tourne="0.03"><img src="img/bowl-saumon.webp" alt="Poké signature saumon mariné" width="1000" height="1000" loading="lazy" /></div>
+        <div class="bol__img"><img src="img/bowl-saumon.webp" alt="Poké signature saumon mariné" width="1000" height="1000" loading="lazy" /></div>
         <h3>Saumon mariné</h3>
         <p><span>Frais et équilibré</span><span class="prix">11,90&nbsp;€</span></p>
       </li>
       <li class="plat apparait">
-        <div class="bol__img" data-tourne="-0.03"><img src="img/bowl-canard.webp" alt="Poké signature effilochés de canard" width="720" height="720" loading="lazy" /></div>
+        <div class="bol__img"><img src="img/bowl-canard.webp" alt="Poké signature effilochés de canard" width="720" height="720" loading="lazy" /></div>
         <h3>Effilochés de canard</h3>
         <p><span>Gourmand</span><span class="prix">11,90&nbsp;€</span></p>
       </li>
       <li class="plat apparait">
-        <div class="bol__img" data-tourne="0.03"><img src="img/bowl-teriyaki.webp" alt="Poké signature poulet teriyaki" width="720" height="720" loading="lazy" /></div>
+        <div class="bol__img"><img src="img/bowl-teriyaki.webp" alt="Poké signature poulet teriyaki" width="720" height="720" loading="lazy" /></div>
         <h3>Poulet teriyaki</h3>
         <p><span>Sauce teriyaki</span><span class="prix">11,90&nbsp;€</span></p>
       </li>
       <li class="plat apparait">
-        <div class="bol__img" data-tourne="-0.03"><img src="img/bowl-crevettes.webp" alt="Poké signature crevettes marinées" width="720" height="720" loading="lazy" /></div>
+        <div class="bol__img"><img src="img/bowl-crevettes.webp" alt="Poké signature crevettes marinées" width="720" height="720" loading="lazy" /></div>
         <h3>Crevettes marinées</h3>
         <p><span>Frais et léger</span><span class="prix">11,90&nbsp;€</span></p>
       </li>
@@ -445,7 +453,8 @@ a{color:inherit}
           <li><span>Adresse</span>17 rue d'Anjou, Montjean-sur-Loire, 49570 Mauges-sur-Loire</li>
           <li><span>Sur place</span>Oui, et à emporter</li>
           <li><span>En ligne</span>Click &amp; Collect</li>
-          <li><span>Horaires</span>À renseigner</li>
+          <!-- Horaires relevés le 05/11/2026 sur rivebowl.dishop.co, fenêtre « Afficher les horaires » (horaires du Click & Collect) -->
+          <li><span>Horaires</span><span class="horaires">Lun., ven., sam. : 11 h 30-14 h 30 et 18 h 30-21 h 30<br />Mar. au jeu. : 11 h 30-14 h 30<br />Dim. : 18 h 30-21 h 30</span></li>
         </ul>
         <div class="boutons">
           <a class="btn btn--solid" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
@@ -505,7 +514,7 @@ a{color:inherit}
   <div class="wrap">
     <div class="pied__grid">
       <div>
-        <a class="logo" href="#accueil"><img src="img/logo.webp" alt="Logo Rive Bowl" width="56" height="56" loading="lazy" /><span>Rive Bowl</span></a>
+        <a class="logo logo--pied" href="#accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" loading="lazy" /></a>
         <p class="pied__mot">Poké terroir. 17 rue d'Anjou, Montjean-sur-Loire, 49570 Mauges-sur-Loire.</p>
       </div>
       <div>
