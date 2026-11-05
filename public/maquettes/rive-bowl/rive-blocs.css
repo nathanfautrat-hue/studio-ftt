@@ -172,7 +172,6 @@
 .g-grand .g-titre{font-size:var(--fs-2);left:24px;bottom:22px}
 .c-corail .g-titre,.c-jaune .g-titre{color:var(--sapin-deep)}
 .g-mention{position:absolute;top:8px;right:10px;font:var(--fw-fort) var(--fs-micro)/var(--lh-serre) var(--font);color:var(--creme-90);text-shadow:0 1px 3px var(--noir-60);text-align:right;max-width:70%}
-.grille__suite{margin-top:var(--e-5);text-align:center}
 @media (hover:hover){.grille li:hover img{opacity:.85}}
 @media (max-width:860px){.grille{grid-template-columns:1fr 1fr;gap:var(--e-2)}.g-titre{font-size:var(--fs-petit);left:10px;bottom:10px}}
 
@@ -211,7 +210,7 @@
 .duo__img{position:relative;border-radius:var(--r-case);background:var(--c,var(--sable));aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .duo__img>img{width:100%;height:100%;object-fit:cover}
 .duo__img>img.bol{width:76%;height:auto;object-fit:contain;border-radius:var(--r-rond)}
-.duo__img .mention{position:absolute;bottom:10px;right:12px;font:var(--fw-fort) var(--fs-micro)/var(--lh-moyen) var(--font);color:var(--creme-90);text-shadow:0 1px 3px var(--noir-60)}
+.duo__img .mention,.fr-split__img .mention,.damier__photo .mention{position:absolute;bottom:10px;right:12px;font:var(--fw-fort) var(--fs-micro)/var(--lh-moyen) var(--font);color:var(--creme-90);text-shadow:0 1px 3px var(--noir-60)}
 .duo h2{color:var(--sapin);hyphens:auto;-webkit-hyphens:auto}
 .duo p{margin-top:var(--e-3);font-size:var(--fs-texte);line-height:var(--lh-texte);max-width:48ch}
 .duo .forte{font-weight:var(--fw-titre);color:var(--corail-texte);font-size:var(--fs-4);line-height:var(--lh-moyen)}
@@ -220,7 +219,7 @@
 .duo__liste h3{color:var(--sapin)}
 .duo__liste p{margin-top:var(--e-1);font-size:var(--fs-petit)}
 @media (max-width:860px){.duo{grid-template-columns:1fr}.duo--inverse .duo__img{order:0}.duo__img{aspect-ratio:4/3}}
-.citation{background:var(--c,var(--sapin));text-align:center;padding:var(--e-fl-4) 0}
+.citation{background:var(--c,var(--sapin));text-align:center;padding:var(--e-fl-3) 0}
 .citation .sur{color:inherit;opacity:.85}
 .citation blockquote{margin:var(--e-3) auto 0;font:var(--fw-noir) var(--fs-2)/var(--lh-serre) var(--font);max-width:26ch}
 .citation p:not(.sur):not(.sous){margin:var(--e-4) auto 0;font-weight:var(--fw-fort);max-width:52ch;font-size:var(--fs-texte)}

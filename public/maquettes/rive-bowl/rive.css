@@ -41,7 +41,7 @@
   --e-fl-3:clamp(40px,6vw,72px);
   --e-fl-4:clamp(48px,8vw,96px);
   --g:clamp(16px,4.5vw,56px);
-  --largeur:1240px;
+  --largeur:1240px; --largeur-large:1440px;
   /* Rayons : 3 seulement (+ le rond) */
   --r-case:22px; --r-img:14px; --r-pilule:999px; --r-rond:50%;
   /* Hauteurs */
@@ -198,7 +198,6 @@ body.menu-ouvert{overflow:hidden}
 .bande-appli{background:var(--sapin);color:var(--creme);padding:var(--e-fl-2) 0}
 .bande-appli .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--e-5) var(--e-8);flex-wrap:wrap}
 .bande-appli h2{font:var(--fw-noir) var(--fs-3)/var(--lh-serre) var(--font);text-transform:uppercase;letter-spacing:-.005em;max-width:32ch;flex:1 1 420px}
-.bande-appli h2 img{display:inline-block;height:.9em;width:auto;vertical-align:-.08em;margin-left:.2em}
 .bande-appli .badges{display:flex;gap:var(--e-3);flex-wrap:wrap}
 .bande-appli .badges a{display:inline-flex;border-radius:var(--r-img)}
 .bande-appli .badges img{height:var(--h-btn);width:auto}
