@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex,nofollow,noarchive" />
+<meta name="googlebot" content="noindex,nofollow,noarchive" />
+<title>Devenir franchisé · Rive Bowl (maquette)</title>
+<meta name="description" content="Ouvrir un Rive Bowl dans ta région : le concept, ce que Rive Bowl apporte et le profil recherché." />
+<meta name="theme-color" content="#FBF3E4" />
+<link rel="icon" href="img/logo-rive-bowl.webp" type="image/webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="rive.css" />
+<style>
+
+.fr-une{position:relative;color:var(--creme);isolation:isolate;min-height:min(70svh,640px);display:flex;align-items:flex-end;padding:clamp(40px,7vw,88px) 0}
+.fr-une img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.fr-une::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,35,80,.25),rgba(11,35,80,.86) 75%)}
+.fr-une .sur{color:var(--soleil-clair)}
+.fr-une h1{margin-top:12px}
+.fr-une .lead{margin-top:16px;color:rgba(251,243,228,.92)}
+.fr-une .btn{margin-top:22px}
+.concept .wrap{display:grid;grid-template-columns:6fr 5fr;gap:clamp(24px,5vw,72px);align-items:start}
+.concept h2{color:var(--loire)}
+.concept .lead+.lead{margin-top:12px}
+.points{list-style:none;display:grid;gap:0}
+.points li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:16px 0;border-top:2px solid rgba(11,35,80,.12);font-weight:600}
+.points li:last-child{border-bottom:2px solid rgba(11,35,80,.12)}
+.points b{font:900 20px/1 var(--font);color:var(--soleil)}
+.apports{background:var(--sable)}
+.apports__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.apport{border-radius:var(--r);padding:24px;background:var(--c);min-height:200px;display:flex;flex-direction:column;gap:10px}
+.apport h3{font:900 20px/1.05 var(--font);font-stretch:108%;text-transform:uppercase}
+.apport p{font-size:15px;opacity:.9}
+.valider{margin-top:16px;font-size:13px;color:var(--ink-2)}
+.profil .wrap{display:grid;grid-template-columns:5fr 6fr;gap:clamp(24px,5vw,72px);align-items:start}
+.profil h2{color:var(--loire)}
+.profil ul{list-style:none;margin-top:20px;display:grid;gap:10px}
+.profil li{background:var(--blanc);border-radius:14px;padding:14px 16px;font-weight:600}
+.form .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:960px){.apports__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){
+  .concept .wrap,.profil .wrap{grid-template-columns:1fr}
+  .form .duo{grid-template-columns:1fr}
+}
+@media (max-width:560px){.apports__grid{grid-template-columns:1fr}.apport{min-height:0}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="bandeau" role="note"><strong>Maquette</strong> proposée par Studio FTT pour Rive Bowl · photos issues de vos supports</div>
+<header class="entete">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
+    <nav class="nav" aria-label="Menu principal">
+      <a href="index.html#histoire">Notre histoire</a>
+      <a href="la-carte.html">La carte</a>
+      <a href="montjean.html">Montjean</a>
+      <a href="franchise.html" aria-current="page">Devenir franchisé</a>
+    </nav>
+    <a class="btn btn--soleil cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="tiroir" aria-label="Ouvrir le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+  </div>
+  <nav class="tiroir" id="tiroir" aria-label="Menu">
+    <a class="lien" href="index.html">Accueil</a>
+    <a class="lien" href="index.html#histoire">Notre histoire</a>
+    <a class="lien" href="la-carte.html">La carte</a>
+    <a class="lien" href="montjean.html">Montjean</a>
+    <a class="lien" href="franchise.html">Devenir franchisé</a>
+    <a class="btn btn--soleil" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander en Click &amp; Collect <span class="fl" aria-hidden="true">→</span></a>
+  </nav>
+</header>
+<main id="contenu">
+<section class="fr-une" aria-labelledby="titre-fr">
+  <img src="img/salle-mur.webp" alt="" width="1024" height="768" fetchpriority="high" style="object-position:50% 30%" />
+  <div class="wrap">
+    <span class="sur">Devenir franchisé</span>
+    <h1 class="t t-xl" id="titre-fr">Ouvre ton Rive Bowl</h1>
+    <p class="lead">Le poké terroir, avec les producteurs de ta région.</p>
+    <a class="btn btn--soleil" href="#contact">Nous écrire <span class="fl" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="sec concept" aria-labelledby="titre-concept">
+  <div class="wrap">
+    <div class="monte">
+      <span class="sur" style="color:var(--soleil)">Le concept</span>
+      <h2 class="t t-l" id="titre-concept" style="margin-top:12px">La même table, partout</h2>
+      <p class="lead" style="margin-top:18px">Rive Bowl est né d'un souvenir de famille : une grande salade au milieu de la table, où chacun se sert.</p>
+      <p class="lead">Chaque restaurant garde cette idée et travaille avec les producteurs de sa région. Les rillauds d'Anjou à Montjean, d'autres recettes ailleurs.</p>
+    </div>
+    <ul class="points monte">
+      <li><b>01</b><span>Des pokés préparés à la commande</span></li>
+      <li><b>02</b><span>Des produits achetés près de chez toi</span></li>
+      <li><b>03</b><span>Sur place, à emporter et en Click &amp; Collect</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec apports" aria-labelledby="titre-apports">
+  <div class="wrap">
+    <div class="sec-tete monte"><h2 class="t t-l" id="titre-apports">Ce que Rive Bowl t'apporte</h2></div>
+    <div class="apports__grid">
+      <div class="apport c-loire monte"><h3>Les recettes</h3><p>La carte signature et la façon de la préparer.</p></div>
+      <div class="apport c-soleil monte"><h3>La marque</h3><p>Le nom, le logo et l'univers Rive Bowl.</p></div>
+      <div class="apport c-feuille monte"><h3>Les producteurs</h3><p>La méthode pour choisir et travailler avec ceux de ta région.</p></div>
+      <div class="apport c-creme monte" style="--c:var(--blanc)"><h3>La commande en ligne</h3><p>Le Click &amp; Collect, prêt dès l'ouverture.</p></div>
+    </div>
+    <p class="valider">Contenu à valider avec Rive Bowl.</p>
+  </div>
+</section>
+
+<section class="sec profil" id="contact" aria-labelledby="titre-profil">
+  <div class="wrap">
+    <div class="monte">
+      <span class="sur" style="color:var(--soleil)">Le profil qu'on cherche</span>
+      <h2 class="t t-l" id="titre-profil" style="margin-top:12px">Toi, peut-être</h2>
+      <ul>
+        <li>Tu aimes recevoir et faire plaisir</li>
+        <li>Tu veux t'installer dans ta région</li>
+        <li>Les produits locaux, ça te parle</li>
+        <li>Tu as envie de gérer ton propre restaurant</li>
+      </ul>
+    </div>
+    <form class="form monte" action="#" onsubmit="return false" aria-describedby="note-form">
+      <h3>Parlons de ton projet</h3>
+      <p class="note" id="note-form">Formulaire désactivé sur la maquette.</p>
+      <fieldset disabled>
+        <div class="duo">
+          <label>Nom<input type="text" name="nom" autocomplete="name" /></label>
+          <label>Téléphone<input type="tel" name="tel" autocomplete="tel" /></label>
+        </div>
+        <label>E-mail<input type="email" name="email" autocomplete="email" /></label>
+        <label>Ville où tu veux ouvrir<input type="text" name="ville" /></label>
+        <label>Ton message<textarea name="message"></textarea></label>
+        <button class="btn btn--loire btn--plein" type="submit" disabled>Envoyer <span class="fl" aria-hidden="true">→</span></button>
+      </fieldset>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="pied">
+  <div class="wrap">
+    <div class="pied__grid">
+      <div>
+        <a class="logo" href="index.html"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" loading="lazy" /></a>
+        <p>Le poké terroir, au bord de la Loire. 17 rue d'Anjou, Montjean-sur-Loire, 49570 Mauges-sur-Loire.</p>
+      </div>
+      <div>
+        <h4>Rive Bowl</h4>
+        <ul>
+          <li><a href="index.html#histoire">Notre histoire</a></li>
+          <li><a href="la-carte.html">La carte</a></li>
+          <li><a href="montjean.html">Le restaurant</a></li>
+          <li><a href="franchise.html">Devenir franchisé</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Commander</h4>
+        <ul>
+          <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Click &amp; Collect</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Itinéraire</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Suivre</h4>
+        <ul>
+          <li>Facebook : lien à ajouter</li>
+          <li>Instagram : lien à ajouter</li>
+          <li>Mentions légales : à venir</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pied__bas"><span>© 2026 Rive Bowl</span><span>Maquette privée réalisée par Studio FTT, non publiée</span></div>
+  </div>
+</footer>
+<script src="rive.js"></script>
+</body>
+</html>
