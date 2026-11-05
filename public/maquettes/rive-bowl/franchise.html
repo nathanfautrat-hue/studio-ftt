@@ -22,9 +22,7 @@
 .aplat+.aplat,.aplat+.citation,.citation+.aplat{margin-top:0}
 
 .fr-une{position:relative;color:var(--creme);isolation:isolate;min-height:min(70svh,620px);display:flex;align-items:flex-end;padding:var(--e-fl-3) 0}
-.fr-une img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;z-index:-2}
-.fr-une::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--sapin-10) 0%,var(--sapin-75) 45%,var(--sapin-90) 80%)}
-.fr-une .sur{color:var(--jaune)}
+.fr-une .sur{color:var(--creme)}
 .fr-une h1{margin-top:var(--e-3)}
 .fr-une .lead{margin-top:var(--e-4);color:var(--creme-90)}
 .fr-une .btn{margin-top:var(--e-5)}
@@ -168,8 +166,7 @@
 <main id="contenu">
 <!-- Enchaînement repris de pokawa.com/franchise : grande photo, chiffres sur aplat, image + texte, données financières sur aplat,
      damier « pourquoi nous rejoindre », accompagnement, cartes photo des formats, formulaire sur aplat. Textes : brand book Rive Bowl 2026. -->
-<section class="fr-une" aria-labelledby="titre-fr">
-  <img src="img/salle-montjean.webp" alt="" width="1024" height="768" fetchpriority="high" />
+<section class="fr-une" data-soie aria-labelledby="titre-fr">
   <div class="wrap">
     <span class="sur">Devenir franchisé</span>
     <h1 class="t t-xl" id="titre-fr">Écrivons la suite ensemble&nbsp;!</h1>
@@ -400,7 +397,7 @@
   <div class="defile-texte__piste" aria-hidden="true"><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b></div>
 </div>
 <!-- Bas de page façon pokawa.com : bandeau de l'application, puis pied de page crème en 4 colonnes -->
-<section class="bande-appli" aria-labelledby="titre-bande-appli">
+<section class="bande-appli" data-soie aria-labelledby="titre-bande-appli">
   <div class="wrap">
     <h2 id="titre-bande-appli">Téléchargez l’app Rive Bowl et profitez de nos offres</h2>
     <div class="badges">
@@ -456,5 +453,6 @@
   </div>
 </footer>
 <script src="rive.js"></script>
+<script src="soie.js"></script>
 </body>
 </html>

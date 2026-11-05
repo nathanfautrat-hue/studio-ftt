@@ -291,3 +291,12 @@
 @media (hover:hover){.case:hover{transform:translateY(-4px);box-shadow:var(--ombre-survol)}}
 .case:active{transform:translateY(-1px)}
 .case:focus-within{outline:3px solid var(--jaune);outline-offset:4px}
+
+/* ============ LE MÉANDRE (accueil) : le slogan suit une courbe de Loire (meandre.js, mécanique du composant 21st « Marquee Along SVG Path ») ============ */
+.meandre{position:relative;overflow:hidden;height:var(--h-meandre);background:var(--c);color:var(--sapin-deep);touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.meandre--glisse{cursor:grabbing}
+.meandre--immobile{cursor:default}
+.meandre__riviere{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.meandre__riviere path{fill:none;stroke:var(--turquoise);stroke-width:var(--e-1);stroke-linecap:round}
+.meandre__mots span{position:absolute;top:0;left:0;offset-anchor:50% 100%;offset-rotate:auto;padding-bottom:var(--e-2);font:var(--fw-noir) var(--fs-3)/var(--lh-titre) var(--font);text-transform:uppercase;white-space:nowrap;will-change:offset-distance}
+.meandre__mots .sep{color:var(--sapin)}
