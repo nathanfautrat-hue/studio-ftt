@@ -169,44 +169,59 @@
   </div>
 </section>
 </main>
+<!-- Bas de page façon pokawa.com : bandeau de l'application, puis pied de page crème en 4 colonnes -->
+<section class="bande-appli" aria-labelledby="titre-bande-appli">
+  <div class="wrap">
+    <h2 id="titre-bande-appli">Téléchargez l'app Rive Bowl et profitez de nos offres <img src="img/soleil.webp" alt="" width="174" height="59" /></h2>
+    <div class="badges">
+      <a href="https://apps.apple.com/fr/app/rive-bowl/id6779418723" target="_blank" rel="noopener"><img src="img/badge-app-store.svg" alt="Télécharger dans l'App Store" width="157" height="52" /></a>
+      <a href="https://play.google.com/store/apps/details?id=com.dishop.rivebowl" target="_blank" rel="noopener"><img src="img/badge-google-play.webp" alt="Disponible sur Google Play" width="175" height="52" /></a>
+    </div>
+  </div>
+</section>
 <footer class="pied">
   <div class="wrap">
-    <p class="pied__signature">La Loire dans un <span class="main">bowl</span>.</p>
     <div class="pied__grid">
-      <div>
-        <a class="logo" href="index.html"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" loading="lazy" /></a>
-        <p>17 rue d'Anjou, Montjean-sur-Loire, 49570 Mauges-sur-Loire.</p>
-        <p><a class="pied__tel" href="tel:+33285358213">02 85 35 82 13</a></p>
-        <p>Midi : 11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30, du lundi au samedi.<br />Soir : 18&nbsp;h&nbsp;30-21&nbsp;h, lundi, vendredi, samedi et dimanche.<br /><small>Horaires à confirmer.</small></p>
-      </div>
-      <div>
-        <h4>Rive Bowl</h4>
+      <nav aria-labelledby="pied-plan">
+        <h2 id="pied-plan">Plan du site</h2>
         <ul>
+          <li><a href="la-carte.html">Notre carte</a></li>
+          <li><a href="montjean.html">Le restaurant de Montjean</a></li>
           <li><a href="index.html#histoire">Notre histoire</a></li>
-          <li><a href="la-carte.html">La carte</a></li>
-          <li><a href="montjean.html">Le restaurant</a></li>
           <li><a href="franchise.html">Devenir franchisé</a></li>
+          <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="pied-engagements">
+        <h2 id="pied-engagements">Nos engagements</h2>
+        <ul>
+          <li><a href="index.html#engagements">Produits frais et locaux</a></li>
+          <li><a href="la-carte.html#terroir">Le goût de nos régions</a></li>
+          <li><a href="montjean.html#infos">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Légal</h2>
+        <!-- Pages à créer avant la mise en ligne : mentions légales, confidentialité, CGV, allergènes -->
+        <ul>
+          <li><span class="lien-off" aria-disabled="true">Mentions légales <small>à venir</small></span></li>
+          <li><span class="lien-off" aria-disabled="true">Politique de confidentialité <small>à venir</small></span></li>
+          <li><span class="lien-off" aria-disabled="true">CGV <small>à venir</small></span></li>
+          <li><span class="lien-off" aria-disabled="true">Liste des allergènes <small>à venir</small></span></li>
         </ul>
       </div>
-      <div>
-        <h4>Commander</h4>
-        <ul>
-          <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Click &amp; Collect</a></li>
-          <li><a href="https://opn.to/a/SX8eGX" target="_blank" rel="noopener">L'application</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Itinéraire</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+Montjean-sur-Loire" target="_blank" rel="noopener">Avis Google</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Suivre</h4>
-        <ul>
-          <li>Instagram : lien à ajouter</li>
-          <li>TikTok : lien à ajouter</li>
-          <li>Mentions légales : à venir</li>
-        </ul>
+      <div class="pied__fin">
+        <h2>Suivez-nous</h2>
+        <div class="reseaux">
+          <a href="https://www.facebook.com/profile.php?id=61587228959349" target="_blank" rel="noopener" aria-label="Rive Bowl sur Facebook"><img src="img/icone-facebook.svg" alt="" width="24" height="24" /></a>
+          <!-- Instagram et TikTok : à ajouter ici quand Rive Bowl donnera les liens de ses comptes (même modèle de lien que Facebook) -->
+        </div>
+        <p class="pied__copy">© 2026 Rive Bowl · Site réalisé par <a href="https://studioftt.fr" target="_blank" rel="noopener">Studio FTT</a></p>
+        <p>17 rue d'Anjou, Montjean-sur-Loire<br />49570 Mauges-sur-Loire</p>
+        <p><a class="pied__tel" href="tel:+33285358213">02 85 35 82 13</a></p>
       </div>
     </div>
-    <div class="pied__bas"><span>© 2026 Rive Bowl</span><span>Maquette privée réalisée par Studio FTT, non publiée</span></div>
+    <p class="pied__maquette">Maquette privée réalisée par Studio FTT, non publiée.</p>
   </div>
 </footer>
 <script src="rive.js"></script>

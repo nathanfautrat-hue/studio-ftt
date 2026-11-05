@@ -155,20 +155,37 @@ body.menu-ouvert{overflow:hidden}
 .sec-tete{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:clamp(24px,4vw,44px)}
 .sec-tete .t{color:var(--sapin)}
 
-/* Pied de page */
-.pied{background:var(--sapin-deep);color:rgba(253,248,242,.85);padding:56px 0 28px;font-size:15px}
-.pied__signature{font:900 clamp(22px,5vw,40px)/1.05 var(--font);text-transform:uppercase;color:var(--creme);margin-bottom:40px;max-width:20ch}
-.pied__signature .main{font-size:1.15em}
-.pied__grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px}
-.pied .logo{background:var(--creme);border-radius:14px;padding:10px 14px;display:inline-flex}
-.pied .logo img{height:44px}
-.pied h4{font:800 11px/1 var(--font);letter-spacing:.2em;text-transform:uppercase;color:var(--jaune);margin-bottom:14px}
-.pied ul{list-style:none;display:grid;gap:8px}
-.pied a{text-decoration:none}
-.pied a:hover{text-decoration:underline}
-.pied p{margin-top:16px;max-width:30ch}
-.pied__bas{margin-top:44px;padding-top:20px;border-top:1px solid rgba(253,248,242,.15);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:rgba(253,248,242,.6)}
-@media (max-width:860px){.pied__grid{grid-template-columns:1fr 1fr}.pied__grid>div:first-child{grid-column:1/-1}}
+/* Bandeau de l'application + pied de page, façon pokawa.com */
+.bande-appli{background:var(--sapin);color:var(--creme);padding:clamp(30px,4vw,44px) 0}
+.bande-appli .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px 40px;flex-wrap:wrap}
+.bande-appli h2{font:900 clamp(22px,3vw,36px)/1.1 var(--font);text-transform:uppercase;letter-spacing:-.005em;max-width:32ch;flex:1 1 420px}
+.bande-appli h2 img{display:inline-block;height:.9em;width:auto;vertical-align:-.08em;margin-left:.2em}
+.bande-appli .badges{display:flex;gap:12px;flex-wrap:wrap}
+.bande-appli .badges a{display:inline-flex;border-radius:10px}
+.bande-appli .badges img{height:50px;width:auto}
+.pied{background:var(--creme);color:var(--sapin-deep);padding:clamp(40px,5vw,64px) 0 26px;font-size:15px}
+.pied__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 32px}
+.pied h2{font:900 14px/1.2 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--sapin);margin-bottom:14px}
+.pied ul{list-style:none;display:grid;gap:10px}
+.pied ul a,.lien-off{font:500 13px/1.35 var(--font);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--sapin-deep);transition:color .3s ease}
+@media (hover:hover){.pied ul a:hover{color:var(--corail-texte)}}
+.lien-off{color:rgba(2,46,33,.45);cursor:not-allowed}
+.lien-off small{font-size:10px;letter-spacing:.08em;margin-left:4px;padding:2px 6px;border-radius:999px;background:rgba(2,46,33,.08)}
+.reseaux{display:flex;gap:10px}
+.reseaux a{width:44px;height:44px;border-radius:50%;background:var(--blanc);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -8px rgba(3,67,47,.4);transition:transform .3s ease}
+@media (hover:hover){.reseaux a:hover{transform:scale(.9)}}
+.reseaux a:active{transform:scale(.9)}
+.reseaux img{width:22px;height:22px}
+.pied__fin p{margin-top:12px;font-size:14px;line-height:1.5}
+.pied__copy{margin-top:18px!important;font-weight:700}
+.pied__fin a{color:var(--sapin-deep)}
+.pied__tel{font:900 18px/1 var(--font);text-decoration:none}
+.pied__maquette{margin-top:34px;padding-top:16px;border-top:1px solid rgba(2,46,33,.12);font-size:12px;color:var(--ink-2)}
+@media (max-width:860px){
+  .pied__grid{grid-template-columns:1fr 1fr}
+  .bande-appli .wrap{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:480px){.pied__grid{grid-template-columns:1fr}}
 
 /* Formulaire désactivé */
 .form{background:var(--blanc);border-radius:var(--r);padding:clamp(22px,4vw,36px);color:var(--ink);box-shadow:0 26px 50px -30px rgba(0,20,15,.5)}
@@ -187,8 +204,6 @@ body.menu-ouvert{overflow:hidden}
 }
 
 /* v5 : téléphone du restaurant (fiche Google) */
-.pied__tel{font:900 20px/1 var(--font);color:var(--jaune);text-decoration:none}
-.pied__tel:hover{text-decoration:underline}
 .mj-tel{margin-top:14px}
 .mj-tel a{font:900 clamp(24px,6vw,34px)/1 var(--font);color:var(--jaune);text-decoration:none;letter-spacing:.01em}
 .mj-tel a:hover{text-decoration:underline}
