@@ -64,7 +64,7 @@ a{color:inherit}
 .burger{display:none;width:46px;height:46px;flex:none;border-radius:50%;border:0;background:var(--sapin);color:var(--creme);cursor:pointer;align-items:center;justify-content:center}
 .burger svg{width:20px;height:20px}
 .tiroir{display:none}
-@media (max-width:1000px){
+@media (max-width:1180px){
   .nav{display:none}
   .entete .cmd{margin-left:auto}
   .burger{display:inline-flex}
@@ -90,7 +90,7 @@ a{color:inherit}
 .tiroir__appli .badges-mini{display:flex;gap:10px;flex-wrap:wrap}
 .tiroir__appli img{height:44px;width:auto}
 body.menu-ouvert{overflow:hidden}
-@media (min-width:1001px){.tiroir{display:none}}
+@media (min-width:1181px){.tiroir{display:none}}
 }
 @media (max-width:420px){.logo img{height:38px}.entete .cmd{padding:0 15px;letter-spacing:.06em;font-size:12px}.entete .wrap{gap:8px}}
 @media (max-width:340px){.logo img{height:31px}.entete .cmd{padding:0 12px;gap:6px}.burger{width:40px;height:40px}}

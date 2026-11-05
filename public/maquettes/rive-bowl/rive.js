@@ -22,7 +22,7 @@
     if(fermerBtn) fermerBtn.addEventListener('click', function(){ fermer(true); });
     t.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ fermer(false); }); });
     document.addEventListener('keydown', function(k){ if(k.key === 'Escape') fermer(true); });
-    var mq = window.matchMedia('(min-width: 1001px)');
+    var mq = window.matchMedia('(min-width: 1181px)');
     if(mq.addEventListener) mq.addEventListener('change', function(m){ if(m.matches) fermer(false); });
   }
 
@@ -78,7 +78,7 @@
   if(une){ try { carrousel(une); } catch(err){ une.classList.remove('pret'); } }
   function carrousel(une){
     var piste = une.querySelector('.une__piste'), cadre = une.querySelector('.une__cadre');
-    var diapos = [].slice.call(piste.children), n = diapos.length, pts = [].slice.call(une.querySelectorAll('.points button'));
+    var diapos = [].slice.call(piste.children), n = diapos.length, pts = [].slice.call(une.querySelectorAll('.une__points button'));
     if(n < 2) return;
     var clone = diapos[0].cloneNode(true);
     clone.setAttribute('aria-hidden','true'); clone.classList.remove('actif');
@@ -182,7 +182,7 @@
       li.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
     });
     // Photos du restaurant
-    document.querySelectorAll('.galerie img, .histoire figure img, .mj-une img, .profil__gauche img, .cat__tete img, .grille img').forEach(function(im){
+    document.querySelectorAll('.galerie img, .histoire figure img, .mj-une img, .profil__gauche img, .cat__tete img, .grille img, .duo__img img, .tuile img.photo').forEach(function(im){
       im.classList.add('agrandir'); im.setAttribute('tabindex','0'); im.setAttribute('role','button');
       var leg = im.closest('figure') && im.closest('figure').querySelector('figcaption');
       function go(){ ouvrir({ photo: !(im.classList.contains('bol') || im.classList.contains('g-bol')), src: im.getAttribute('src'), alt: im.alt, nom: im.alt, desc: leg ? leg.textContent : '' }); }

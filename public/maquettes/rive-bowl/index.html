@@ -14,202 +14,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Caveat+Brush&display=swap" rel="stylesheet" />
 <link rel="preload" as="image" href="img/bb-salle.webp" />
 <link rel="stylesheet" href="rive.css" />
+<link rel="stylesheet" href="rive-blocs.css" />
 <style>
-/* Accueil v5, construit sur le modèle de pokawa.com : un fond crème du haut en bas, de grandes photos qu'on
-   fait glisser, des cartes cliquables sans bouton, et une seule bande de couleur (l'application) avant le pied de page. */
 .sec{padding:clamp(48px,7vw,96px) 0}
 .sec:not(.appli)+.sec:not(.appli){padding-top:0}
-
-/* ============ GRAND CARROUSEL D'ACCUEIL (mécanique Pokawa) ============
-   Diapos qui glissent en 0,5 s (courbe ease), défilement automatique toutes les 5 s qui s'arrête dès que
-   l'on touche au carrousel, zoom très lent de la photo (20 s), petits points sous les photos.
-   Sans JavaScript : les diapos se font défiler au doigt (défilement horizontal natif). */
-.une{background:var(--creme)}
-.une__cadre{position:relative;overflow:hidden}
-.une__piste{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.une__piste::-webkit-scrollbar{display:none}
-.une.pret .une__piste{overflow:visible;scroll-snap-type:none;transition:transform .5s ease;touch-action:pan-y;will-change:transform}
-.une.glisse .une__piste{transition:none}
-.diapo{--h:clamp(520px,calc(100svh - 150px),780px);position:relative;flex:0 0 100%;height:var(--h);overflow:hidden;isolation:isolate;display:flex;align-items:flex-end;scroll-snap-align:start;background:var(--c,var(--sapin));user-select:none;-webkit-user-select:none}
-.diapo img{-webkit-user-drag:none;pointer-events:none}
-.diapo__fond{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1);transition:transform 20s linear}
-.diapo.actif .diapo__fond{transform:scale(1.15)}
-.diapo.actif .diapo__bol{transform:scale(1.05)}
-.diapo.remise .diapo__fond,.diapo.remise .diapo__bol{transition:none}
-.diapo--photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,46,33,0) 40%,rgba(2,46,33,.72) 100%)}
-/* Le bowl reste entier dans la diapo : jamais coupé, jamais sous le texte */
-.diapo__bol{--bw:min(74vw,calc(var(--h) * .46));position:absolute;z-index:-1;width:var(--bw);left:calc(50% - var(--bw) / 2);top:28px;border-radius:50%;transform:scale(1);transition:transform 20s linear;box-shadow:0 30px 50px -26px rgba(0,10,6,.5)}
-.diapo .etiquette{position:absolute;z-index:2;left:var(--g);top:calc(28px + min(74vw,calc(var(--h) * .46)) + 16px)}
-.diapo__texte{width:100%;max-width:1240px;margin:0 auto;padding:0 var(--g) clamp(34px,6vw,64px)}
-.diapo .t{overflow-wrap:normal;font-size:clamp(38px,11vw,112px);line-height:.95;color:var(--creme);max-width:11ch;text-shadow:0 2px 24px rgba(0,20,15,.35)}
-.diapo:not(.diapo--photo) .t{font-size:clamp(32px,9vw,88px);text-shadow:none}
-.diapo .t .main{display:inline-block;font-size:1.1em;line-height:.8;color:var(--jaune)}
-.diapo .lead{margin-top:12px;font-weight:700;color:var(--creme);text-shadow:0 1px 12px rgba(0,20,15,.45)}
-.diapo.c-corail .t,.diapo.c-jaune .t{color:var(--sapin-deep)}
-.d-creation .etiquette b{color:var(--sapin-deep);text-shadow:none}
-.d-creation .etiquette span{background:var(--sapin);color:var(--creme)}
-.credit{position:absolute;right:10px;top:10px;z-index:3;font:600 10px/1.3 var(--font);color:rgba(253,248,242,.9);text-shadow:0 1px 3px rgba(0,0,0,.6);max-width:62%;text-align:right}
-.credit a{color:inherit}
-@media (min-width:861px){
-  .diapo .t{max-width:12ch}
-  .diapo__bol{--bw:min(38vw,calc(var(--h) * .74));left:auto;right:max(5vw,calc((100% - 1240px) / 2 + 20px));top:calc((var(--h) - var(--bw)) / 2)}
-  .diapo .etiquette{top:auto;left:auto;bottom:clamp(34px,6vw,64px);right:calc(max(5vw,calc((100% - 1240px) / 2 + 20px)) + min(38vw,calc(var(--h) * .74)) + 24px)}
-  .diapo:not(.diapo--photo) .diapo__texte{padding-right:calc(min(38vw,calc(var(--h) * .74)) + 48px);align-self:center;padding-bottom:0}
-  .diapo:not(.diapo--photo) .t{font-size:clamp(40px,4.6vw,68px);max-width:none}
-  .diapo:not(.diapo--photo) .etiquette{position:static;margin-top:22px}
-}
-.points{display:flex;justify-content:center;gap:2px;padding:10px 0 0}
-.points button{width:28px;height:28px;border:0;background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0}
-.points button::before{content:"";width:8px;height:8px;border-radius:50%;background:rgba(3,67,47,.22);transition:background-color .3s ease,transform .3s ease}
-.points button[aria-current="true"]::before{background:var(--sapin);transform:scale(1.2)}
-.une:not(.pret) .points{display:none}
-
-/* ============ POKÉS (cartes cliquables, image + nom, comme les rubriques de Pokawa) ============ */
-.pokes .sec-tete .t{max-width:14ch}
-.pokes .sec-tete p{margin-top:8px;font-family:var(--main);font-size:clamp(22px,3vw,30px);color:var(--corail-texte);line-height:1.1}
-.glisse{list-style:none;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--g);gap:20px;margin:0 calc(var(--g) * -1);padding:4px var(--g) 8px;scrollbar-width:none;scroll-behavior:smooth}
-.glisse::-webkit-scrollbar{display:none}
-.glisse>li{flex:0 0 calc((100% - 60px) / 4);scroll-snap-align:start;min-width:0}
-@media (max-width:1100px){.glisse>li{flex-basis:calc((100% - 40px) / 3)}}
-@media (max-width:860px){.glisse>li{flex-basis:68%;max-width:290px}}
-.poke{display:block;text-decoration:none;color:var(--sapin)}
-.poke__img{display:block;aspect-ratio:1;border-radius:var(--r);overflow:hidden;background:var(--c)}
-.poke__img{display:flex;align-items:center;justify-content:center}
-.poke__img img{width:84%;transition:opacity .3s ease}
-.poke__nom{display:block;margin-top:14px;font:900 18px/1.1 var(--font);text-transform:uppercase;transition:color .3s ease}
-@media (hover:hover){.poke:hover .poke__img img{opacity:.8}.poke:hover .poke__nom{color:var(--corail-texte)}}
-.difference{margin-top:28px;font:800 clamp(17px,2vw,22px)/1.35 var(--font);color:var(--sapin-deep);max-width:44ch}
-.difference b{color:var(--corail-texte)}
-.carrousel__nav{display:flex;gap:4px}
-.carrousel__nav button{width:44px;height:44px;border:0;background:transparent;color:var(--sapin);font:900 26px/1 var(--font);cursor:pointer;transition:color .25s ease,transform .25s ease,opacity .25s ease}
-@media (hover:hover){.carrousel__nav button:hover{color:var(--corail-texte);transform:scale(.9)}}
-.carrousel__nav button:active{transform:scale(.9)}
-.carrousel__nav button:disabled{opacity:.25;cursor:default;transform:none}
-@media (max-width:860px){.carrousel__nav{display:none}}
-
-/* ============ PLUS QU'UN BOL (les 4 piliers du brand book, p. 4, en grandes tuiles de couleur) ============ */
-.qualites h2{color:var(--sapin)}
-.qualites__grille{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.qualite{display:grid;grid-template-columns:1fr 38%;gap:18px;align-items:center;border-radius:var(--r);background:var(--c);padding:clamp(22px,2.6vw,32px)}
-.qualite h3{font:900 clamp(21px,2.2vw,28px)/1.05 var(--font);text-transform:uppercase}
-.qualite p{margin-top:12px;font-size:15px;line-height:1.5;font-weight:600}
-.qualite img{width:100%;border-radius:50%;box-shadow:0 18px 30px -18px rgba(0,10,6,.5)}
-/* Sur téléphone, les tuiles se font glisser au doigt, comme les cartes de Pokawa */
-@media (max-width:860px){
-  .qualites__grille,.blocs__grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--g);gap:14px;margin:0 calc(var(--g) * -1);padding:4px var(--g) 8px;scrollbar-width:none}
-  .qualites__grille::-webkit-scrollbar,.blocs__grid::-webkit-scrollbar{display:none}
-  .qualite{flex:0 0 84%;max-width:340px;scroll-snap-align:start;grid-template-columns:1fr;align-content:start}
-  .qualite img{width:62%;justify-self:center;order:-1}
-}
-
-/* ============ HISTOIRE ET MISSION (textes du brand book, p. 2, 3 et 8) ============ */
-.histoire .sur{color:var(--corail-texte)}
-.histoire h2{margin-top:14px;color:var(--sapin);max-width:20ch}
-.histoire__corps{display:grid;grid-template-columns:6fr 5fr;gap:clamp(24px,4vw,56px);margin-top:clamp(22px,3vw,36px);align-items:stretch}
-.histoire__texte p{font-size:clamp(16px,1.3vw,18px);line-height:1.65}
-.histoire__texte p+p{margin-top:14px}
-.histoire__question{font-weight:800;color:var(--corail-texte);font-size:clamp(19px,1.8vw,24px)!important;line-height:1.3!important}
-.histoire__fin{margin-top:22px!important;padding:18px 20px;border-radius:16px;background:var(--rose);font-weight:800;color:var(--sapin-deep)}
-.histoire figure{display:flex;flex-direction:column;min-height:0}
-.histoire figure img{border-radius:var(--r);object-fit:cover;width:100%;height:100%;flex:1;min-height:280px}
-.histoire figcaption{margin-top:8px;font-size:12px;color:var(--ink-2)}
-.mission{text-align:center}
-.mission blockquote{margin:0 auto;max-width:30ch;font:900 clamp(22px,4.2vw,44px)/1.2 var(--font);color:var(--sapin-deep)}
-.mission blockquote em{font-style:normal;color:var(--corail-texte)}
-.mission blockquote .main{color:var(--corail-texte);font-size:1.4em;line-height:.9}
-.mission figcaption{margin-top:18px;font:800 12px/1 var(--font);letter-spacing:.16em;text-transform:uppercase;color:var(--corail-texte)}
-.mission .ambition{margin:22px auto 0;max-width:46ch;font-weight:700;font-size:clamp(15px,1.4vw,18px);color:var(--ink-2)}
-.mission .ambition b{color:var(--sapin-deep)}
-@media (max-width:860px){.histoire__corps{grid-template-columns:1fr}.histoire figure{order:-1}.histoire figure img{aspect-ratio:4/3;height:auto;min-height:0}}
-
-/* ============ AVIS QUI DÉFILENT ============ */
-.avis-bande{overflow:hidden}
-.avis-bande__tete{display:flex;align-items:flex-end;justify-content:space-between;gap:14px 28px;flex-wrap:wrap}
-.avis-bande h2{color:var(--sapin);max-width:15ch}
-.note{display:flex;align-items:center;gap:6px 16px;flex-wrap:wrap}
-.note strong{font:900 clamp(52px,11vw,96px)/.9 var(--font);color:var(--sapin);letter-spacing:-.03em}
-.note span{font:800 12px/1.3 var(--font);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-.note a{display:block;margin-top:4px;color:var(--corail-texte);font-weight:800;text-underline-offset:4px}
-.defile{margin-top:clamp(24px,4vw,40px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.defile__piste{list-style:none;display:flex;gap:16px;width:max-content;padding:4px 0 14px;animation:defile 60s linear infinite}
-.defile:hover .defile__piste,.defile:focus-within .defile__piste,.defile:active .defile__piste{animation-play-state:paused}
-@keyframes defile{to{transform:translate3d(-50%,0,0)}}
-.defile__piste li{flex:0 0 auto;width:min(78vw,370px);background:var(--blanc);color:var(--ink);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:0 14px 30px -22px rgba(3,67,47,.45)}
-.defile__piste blockquote{font-size:16px;line-height:1.5;font-weight:600}
-.defile__piste .etoiles{color:#B97F00;letter-spacing:.12em;font-size:15px}
-.defile__piste cite{margin-top:auto;font-style:normal;font:800 12px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
-.avis-bande__pied{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
-.avis-bande__pied p{font-size:13px;color:var(--ink-2)}
-@media (prefers-reduced-motion:reduce){
-  .defile{-webkit-mask-image:none;mask-image:none}
-  .defile__piste{width:auto;flex-wrap:wrap;padding:0 var(--g);max-width:1240px;margin:0 auto}
-  .defile__piste li[aria-hidden="true"]{display:none}
-  }
-
-/* ============ UNE OFFRE POUR CHAQUE MOMENT (brand book p. 11) ============ */
-.moments h2{color:var(--sapin)}
-.moments .lead{margin-top:10px;font-weight:700}
-.services{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(20px,3vw,30px)}
-.service{background:var(--c,var(--blanc));border-radius:var(--r);padding:22px 24px}
-.service b{display:block;font:900 12px/1 var(--font);letter-spacing:.14em;text-transform:uppercase;color:var(--corail-texte);margin-bottom:10px}
-.service__h{display:block;font:900 clamp(28px,3vw,40px)/1 var(--font);color:var(--sapin);letter-spacing:-.01em;white-space:nowrap}
-.service .j{display:block;margin-top:8px;font-weight:700;font-size:15px}
-.moments .note-h{margin-top:10px;font-size:13px;color:var(--ink-2)}
-@media (max-width:860px){.services{grid-template-columns:1fr}}
-
-/* ============ HISTOIRE SUR APLAT, MISSION ET HORAIRES AVEC DES BOWLS QUI DÉBORDENT ============ */
-.histoire__texte{position:relative;background:var(--sable);border-radius:var(--r);padding:clamp(24px,3vw,40px);padding-top:clamp(70px,8vw,110px);margin-top:70px}
-.histoire__bol{position:absolute;width:150px;top:-70px;right:22px;border-radius:50%;box-shadow:0 18px 30px -16px rgba(0,10,6,.5)}
-.mission{position:relative;background:var(--rose);overflow:hidden;padding:clamp(56px,7vw,96px) 0!important;margin-top:clamp(48px,7vw,96px)}
-.mission__bol{position:absolute;width:clamp(150px,20vw,300px);border-radius:50%;box-shadow:0 22px 36px -20px rgba(0,10,6,.45)}
-.mission__bol.m1{left:max(-60px,calc((100% - 1240px) / 2 - 120px));top:50%;transform:translateY(-50%)}
-.mission__bol.m2{right:max(-60px,calc((100% - 1240px) / 2 - 120px));top:50%;transform:translateY(-50%)}
-.mission figure{position:relative;z-index:1}
-.mission blockquote{max-width:26ch}
-@media (max-width:1100px){.mission__bol.m2{display:none}.mission__bol.m1{position:relative;display:block;left:auto;top:auto;transform:none;width:150px;margin:0 auto 22px}}
-.service{position:relative;overflow:visible;min-height:150px;padding-right:42%!important}
-.service .service__h{color:inherit}
-.service b{color:inherit;opacity:.85}
-.service__bol{position:absolute;width:min(40%,210px);right:-26px;top:50%;transform:translateY(-50%);border-radius:50%;box-shadow:0 18px 30px -18px rgba(0,10,6,.5)}
-.service.c-sapin b{color:var(--jaune);opacity:1}
-@media (max-width:860px){.service{padding-right:40%!important}.service__bol{width:38%;right:-10px}.service__h{font-size:clamp(20px,6.2vw,30px)!important;white-space:normal}}
-
-/* ============ GRILLE DE PHOTOS (façon Instagram de Pokawa : 1 grande + 4 petites) ============ */
-.reseaux-grille h2{color:var(--sapin);margin-bottom:clamp(18px,3vw,30px)}
-.grille{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:14px}
-.grille li{position:relative;overflow:hidden;border-radius:var(--r);aspect-ratio:1;background:var(--c,var(--sapin));isolation:isolate}
-.grille .g-grand{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
-.grille img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:opacity .3s ease}
-.grille img.g-bol{inset:auto;width:76%;height:auto;left:12%;top:8%;border-radius:50%;object-fit:contain}
-.grille li:not(.c-corail):not(.c-jaune)::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,46,33,0) 45%,rgba(2,46,33,.75))}
-.g-titre{position:absolute;left:16px;right:16px;bottom:14px;font:900 clamp(15px,1.8vw,24px)/1 var(--font);text-transform:uppercase;color:var(--creme)}
-.g-grand .g-titre{font-size:clamp(26px,4vw,52px);left:24px;bottom:22px}
-.c-corail .g-titre,.c-jaune .g-titre{color:var(--sapin-deep)}
-.g-mention{position:absolute;top:8px;right:10px;font:600 9px/1.2 var(--font);color:rgba(253,248,242,.9);text-shadow:0 1px 3px rgba(0,0,0,.6);text-align:right;max-width:70%}
-.grille__suite{margin-top:22px;text-align:center}
-@media (hover:hover){.grille li:hover img{opacity:.85}}
-@media (max-width:860px){.grille{grid-template-columns:1fr 1fr;gap:10px}.g-titre{font-size:14px;left:10px;bottom:10px}}
-
-/* ============ CHEZ RIVE BOWL (tuiles photo, comme « Un poké plein de qualités » chez Pokawa) ============ */
-.blocs h2{color:var(--sapin)}
-.blocs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.bloc{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;padding:26px 20px;color:var(--creme);text-decoration:none;isolation:isolate;background:var(--c,var(--sapin))}
-.bloc>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:opacity .3s ease}
-.bloc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,46,33,0) 38%,rgba(2,46,33,.82))}
-@media (hover:hover){.bloc:hover>img{opacity:.85}.bloc:hover .btn{transform:scale(.9)}}
-.bloc:active .btn{transform:scale(.9)}
-.bloc h3{font:900 clamp(22px,5.4vw,30px)/1 var(--font);text-transform:uppercase}
-.bloc .btn{margin-top:16px}
-.bloc--bol::after{display:none}
-.bloc>img.bol{position:absolute;inset:auto;height:auto;object-fit:contain;width:62%;top:8%;left:19%;z-index:-1}
-.bloc--bol h3{color:var(--creme)}
-.credit-bloc{position:absolute;top:10px;right:12px;font-size:10px;color:rgba(253,248,242,.85)}
-@media (max-width:860px){
-  .blocs__grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--g);gap:14px;margin:0 calc(var(--g) * -1);padding:4px var(--g) 8px;scrollbar-width:none}
-  .bloc{flex:0 0 78%;max-width:320px;scroll-snap-align:start;aspect-ratio:4/5}
-  .bloc>img.bol{width:62%;left:19%;top:8%}
-}
-
 </style>
 </head>
 <body>
@@ -219,7 +27,8 @@
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
     <nav class="nav" aria-label="Menu principal">
-      <a href="index.html#histoire">Notre histoire</a>
+      <a href="notre-histoire.html">Notre histoire</a>
+      <a href="nos-engagements.html">Nos engagements</a>
       <a href="la-carte.html">La carte</a>
       <a href="montjean.html">Montjean</a>
       <a href="franchise.html">Devenir franchisé</a>
@@ -233,7 +42,8 @@
       <button class="tiroir__fermer" type="button" aria-label="Fermer le menu">×</button>
     </div>
     <a class="lien" href="index.html" aria-current="page">Accueil</a>
-    <a class="lien" href="index.html#histoire">Notre histoire</a>
+    <a class="lien" href="notre-histoire.html">Notre histoire</a>
+    <a class="lien" href="nos-engagements.html">Nos engagements</a>
     <a class="lien" href="la-carte.html">La carte</a>
     <a class="lien" href="montjean.html">Montjean</a>
     <a class="lien" href="franchise.html">Devenir franchisé</a>
@@ -248,7 +58,6 @@
   </nav>
 </header>
 <main id="contenu">
-
 <!--
   GRAND CARROUSEL (le code est dans rive.js, partie « Grand carrousel d’accueil »).
   Diapos 1, 2, 4 et 5 : visuels d'illustration du brand book Rive Bowl 2026 (pages 17, 45, 18 et 10), fournis par le client,
@@ -317,7 +126,7 @@
 
     </div>
   </div>
-  <div class="points" role="group" aria-label="Choisir une photo">
+  <div class="une__points" role="group" aria-label="Choisir une photo">
     <button type="button" aria-label="Photo 1" aria-current="true"></button>
     <button type="button" aria-label="Photo 2" aria-current="false"></button>
     <button type="button" aria-label="Photo 3" aria-current="false"></button>
@@ -329,44 +138,6 @@
 
 <div class="defile-texte c-jaune" role="note" aria-label="La Loire dans un bowl · Le poké qui vient de chez nous · À chaque envie, son Rive Bowl">
   <div class="defile-texte__piste" aria-hidden="true"><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b><span>La Loire dans un bowl</span><b aria-hidden="true">·</b><span>Le poké qui vient de chez nous</span><b aria-hidden="true">·</b><span>À chaque envie, son Rive Bowl</span><b aria-hidden="true">·</b></div>
-</div>
-
-<!-- Textes de Rive Bowl : brand book 2026, page 2 (histoire) -->
-<section class="sec histoire" id="histoire" aria-labelledby="titre-histoire">
-  <div class="wrap">
-    <span class="sur">Notre histoire</span>
-    <h2 class="t t-l" id="titre-histoire">On a tous une salade quelque part dans nos souvenirs.</h2>
-    <div class="histoire__corps">
-      <div class="histoire__texte">
-        <img class="histoire__bol" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" />
-        <p>Celle que maman ou papa préparait, celle des barbecues d'été, celle qui accompagnait le fromage, la raclette ou la tartiflette. Celle que l'on posait au milieu de la table et dans laquelle chacun piochait, chacun avait son mélange préféré.</p>
-        <p>On s'est tous demandé un jour :</p>
-        <p class="histoire__question">«&nbsp;Et si je la composais à ma façon&nbsp;?&nbsp;»</p>
-        <p>Parce qu'une salade, ce n'est pas seulement des ingrédients. C'est du partage, des souvenirs et un peu de notre histoire.</p>
-        <p>C'est de tout cela qu'est né Rive Bowl. L'envie de retrouver les saveurs d'hier, la liberté de composer aujourd'hui et le plaisir de transmettre demain.</p>
-        <p class="histoire__fin">Nous n'avons pas inventé la salade. Nous lui avons simplement donné une nouvelle façon de raconter nos histoires.</p>
-      </div>
-      <figure>
-        <img src="img/salle-mur.webp" alt="Le mur vert de la salle de Montjean, avec le logo Rive Bowl" width="1024" height="768" decoding="async" />
-        <figcaption>Le restaurant de Montjean · photo C. Boisnault / Ôsez Mauges</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- Brand book p. 3 (mission) et p. 8 (ambition) -->
-<section class="sec mission" aria-label="Notre mission">
-  <img class="mission__bol m1" src="img/bowl-teriyaki.webp" alt="" width="720" height="720" />
-  <img class="mission__bol m2" src="img/bowl-falafel.webp" alt="" width="720" height="720" />
-  <figure class="wrap monte">
-    <blockquote>«&nbsp;Faire en sorte que chacun puisse manger de tout, <em>manger bien</em> et se faire <em>plaisir</em>, en retrouvant dans chaque bol les saveurs de nos régions et la liberté de composer <span class="main">à sa façon</span>.&nbsp;»</blockquote>
-    <figcaption>Notre mission</figcaption>
-    <p class="ambition"><b>Notre ambition :</b> devenir la référence du poké terroir, en démocratisant une cuisine saine, généreuse et inspirée de nos régions.</p>
-  </figure>
-</section>
-
-<div class="defile-texte c-corail inverse" role="note" aria-label="Devenir le numéro 1 de vos souvenirs · Du déjeuner au dîner, une envie, un Rive Bowl · Composez le bol qui vous ressemble">
-  <div class="defile-texte__piste" aria-hidden="true"><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b></div>
 </div>
 
 <section class="sec pokes" aria-labelledby="titre-pokes">
@@ -388,23 +159,35 @@
       <li><a class="poke" href="la-carte.html#signatures" data-desc="Un poké gourmand." data-prix="11,90 €"><span class="poke__img c-jaune"><img src="img/bowl-canard.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Effilochés de canard</span></a></li>
       <li><a class="poke" href="la-carte.html#signatures" data-desc="Le poké de chez nous." data-prix="11,90 €"><span class="poke__img c-corail"><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" /></span><span class="poke__nom">Maine-et-Loire</span></a></li>
     </ul>
-    <!-- Brand book p. 10 -->
-    <p class="difference monte"><b>Notre différence ?</b> Faire voyager le poké à travers nos régions, sans jamais oublier ses origines.</p>
+    <p class="pokes__suite"><a class="btn btn--sapin" href="la-carte.html">Toute la carte <span class="fl" aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
-<!-- Les 4 piliers du concept : brand book p. 4 (mêmes couleurs que dans le document) -->
-<section class="sec qualites" id="engagements" aria-labelledby="titre-concept">
+<!-- Thèmes en blocs courts (une image, un titre, une phrase, un bouton), façon « Un poké plein de qualités » de Pokawa -->
+<section class="sec blocs" aria-label="Rive Bowl en bref">
   <div class="wrap">
-    <div class="sec-tete monte"><h2 class="t t-l" id="titre-concept">Plus qu'un bol, une expérience</h2></div>
-    <ul class="qualites__grille">
-      <li class="qualite c-feuille monte"><div><h3>Des produits frais &amp; locaux</h3><p>Des ingrédients frais, sélectionnés avec soin, et autant que possible d'origine locale. Parce que la qualité des produits est la base de chaque bon bol.</p></div><img src="img/bowl-crevettes.webp" alt="" width="720" height="720" /></li>
-      <li class="qualite c-jaune monte"><div><h3>Liberté de composer</h3><p>Des recettes signatures ou des compositions sur mesure, pour s'adapter à toutes les envies, à tous les goûts et à tous les moments de la journée.</p></div><img src="img/bowl-saumon.webp" alt="" width="720" height="720" /></li>
-      <li class="qualite c-corail monte"><div><h3>Rapidité &amp; simplicité</h3><p>Une restauration moderne et accessible, pensée pour les rythmes d'aujourd'hui : sur place ou à emporter.</p></div><img src="img/bowl-crousty.webp" alt="" width="720" height="720" /></li>
-      <li class="qualite c-turquoise monte"><div><h3>Le goût de nos régions</h3><p>Des saveurs d'ici et d'ailleurs, inspirées de nos régions et de nos producteurs. Une cuisine généreuse, authentique et pleine de caractère.</p></div><img src="img/bowl-maineetloire.webp" alt="" width="720" height="720" /></li>
-    </ul>
+    <div class="blocs__grid blocs__grid--2">
+      <a class="bloc" href="notre-histoire.html">
+        <img src="img/bb-partage.webp" alt="" width="696" height="574" />
+        <span class="credit-bloc">Visuel d'illustration · brand book Rive Bowl</span>
+        <h3>Notre histoire</h3>
+        <p>On a tous une salade quelque part dans nos souvenirs.</p>
+        <span class="btn btn--jaune">Découvrir notre histoire</span>
+      </a>
+      <a class="bloc" href="nos-engagements.html">
+        <img src="img/bb-radis.webp" alt="" width="650" height="520" />
+        <span class="credit-bloc">Visuel d'illustration · brand book Rive Bowl</span>
+        <h3>Nos engagements</h3>
+        <p>Des produits frais, une exigence de qualité.</p>
+        <span class="btn btn--jaune">Nos engagements</span>
+      </a>
+    </div>
   </div>
 </section>
+
+<div class="defile-texte c-corail inverse" role="note" aria-label="Devenir le numéro 1 de vos souvenirs · Du déjeuner au dîner, une envie, un Rive Bowl · Composez le bol qui vous ressemble">
+  <div class="defile-texte__piste" aria-hidden="true"><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b><span>Devenir le numéro 1 de vos souvenirs</span><b aria-hidden="true">·</b><span>Du déjeuner au dîner, une envie, un Rive Bowl</span><b aria-hidden="true">·</b><span>Composez le bol qui vous ressemble</span><b aria-hidden="true">·</b></div>
+</div>
 
 <!-- Brand book p. 11 : « Une offre pour chaque moment ». Horaires du brand book, à confirmer (Dishop affiche autre chose le soir). -->
 <section class="sec moments" aria-labelledby="titre-moments">
@@ -420,10 +203,6 @@
     <p class="note-h">Horaires à confirmer.</p>
   </div>
 </section>
-
-<div class="defile-texte c-turquoise" role="note" aria-label="Le poké terroir · Produits frais et locaux · Le goût de nos régions">
-  <div class="defile-texte__piste" aria-hidden="true"><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b></div>
-</div>
 
 <!-- Note et avis : brand book Rive Bowl 2026, page 44 (25 avis Google, novembre 2026). Les 3 avis sont recopiés tels quels.
      Le bandeau répète ces 3 mêmes avis pour défiler sans trou ; les copies sont cachées aux lecteurs d'écran. -->
@@ -454,6 +233,31 @@
   <div class="wrap avis-bande__pied"><p>Avis Google, novembre 2026.</p></div>
 </section>
 
+<section class="sec blocs" aria-label="Le restaurant et la franchise">
+  <div class="wrap">
+    <div class="blocs__grid blocs__grid--2">
+      <a class="bloc" href="montjean.html">
+        <img src="img/salle-montjean.webp" alt="" width="1024" height="768" />
+        <span class="credit-bloc">Photo C. Boisnault / Ôsez Mauges</span>
+        <h3>Le restaurant de Montjean</h3>
+        <p>17 rue d'Anjou, sur place, à emporter ou en Click &amp; Collect.</p>
+        <span class="btn btn--jaune">Le restaurant</span>
+      </a>
+      <a class="bloc" href="franchise.html">
+        <img src="img/bb-devanture.webp" alt="" width="696" height="440" />
+        <span class="credit-bloc">Visuel d'illustration · brand book Rive Bowl</span>
+        <h3>Devenir franchisé</h3>
+        <p>Écrivons la suite ensemble&nbsp;!</p>
+        <span class="btn btn--jaune">Devenir franchisé</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="defile-texte c-turquoise" role="note" aria-label="Le poké terroir · Produits frais et locaux · Le goût de nos régions">
+  <div class="defile-texte__piste" aria-hidden="true"><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b><span>Le poké terroir</span><b aria-hidden="true">·</b><span>Produits frais et locaux</span><b aria-hidden="true">·</b><span>Le goût de nos régions</span><b aria-hidden="true">·</b></div>
+</div>
+
 <!-- Grille de photos façon « L'actu sur nos réseaux » de Pokawa. Visuels du brand book signalés comme tels. -->
 <section class="sec reseaux-grille" aria-labelledby="titre-reseaux">
   <div class="wrap">
@@ -466,31 +270,6 @@
       <li class="c-jaune"><img class="g-bol" src="img/bowl-crousty.webp" alt="Poké poulet crousty vu de dessus" width="720" height="720" /><span class="g-titre">Poulet crousty</span></li>
     </ul>
     <p class="grille__suite"><a class="btn btn--sapin" href="https://www.facebook.com/profile.php?id=61587228959349" target="_blank" rel="noopener">Suivez-nous sur Facebook</a></p>
-  </div>
-</section>
-
-<section class="sec blocs" aria-labelledby="titre-blocs">
-  <div class="wrap">
-    <div class="sec-tete monte"><h2 class="t t-l" id="titre-blocs">Chez Rive Bowl</h2></div>
-    <div class="blocs__grid">
-      <a class="bloc bloc--bol c-sapin monte" href="la-carte.html">
-        <img class="bol" src="img/bowl-teriyaki.webp" alt="" width="720" height="720" decoding="async" />
-        <h3>La carte</h3>
-        <span class="btn btn--jaune">Découvrir</span>
-      </a>
-      <a class="bloc monte" href="montjean.html">
-        <img src="img/salle-comptoir.webp" alt="" width="1024" height="768" decoding="async" />
-        <span class="credit-bloc">Photo C. Boisnault / Ôsez Mauges</span>
-        <h3>Le restaurant de Montjean</h3>
-        <span class="btn btn--jaune">Découvrir</span>
-      </a>
-      <a class="bloc monte" href="franchise.html">
-        <img src="img/salle-montjean.webp" alt="" width="1024" height="768" decoding="async" />
-        <span class="credit-bloc">Photo C. Boisnault / Ôsez Mauges</span>
-        <h3>Devenir franchisé</h3>
-        <span class="btn btn--jaune">Découvrir</span>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -511,9 +290,10 @@
       <nav aria-labelledby="pied-plan">
         <h2 id="pied-plan">Plan du site</h2>
         <ul>
+          <li><a href="notre-histoire.html">Notre histoire</a></li>
+          <li><a href="nos-engagements.html">Nos engagements</a></li>
           <li><a href="la-carte.html">Notre carte</a></li>
           <li><a href="montjean.html">Le restaurant de Montjean</a></li>
-          <li><a href="index.html#histoire">Notre histoire</a></li>
           <li><a href="franchise.html">Devenir franchisé</a></li>
           <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></li>
         </ul>
@@ -521,8 +301,8 @@
       <nav aria-labelledby="pied-engagements">
         <h2 id="pied-engagements">Nos engagements</h2>
         <ul>
-          <li><a href="index.html#engagements">Produits frais et locaux</a></li>
-          <li><a href="la-carte.html#terroir">Le goût de nos régions</a></li>
+          <li><a href="nos-engagements.html">Produits frais et locaux</a></li>
+          <li><a href="nos-engagements.html#terroir">Le goût de nos régions</a></li>
           <li><a href="montjean.html#infos">Contact</a></li>
         </ul>
       </nav>

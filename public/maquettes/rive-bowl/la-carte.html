@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Caveat+Brush&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="rive.css" />
+<link rel="stylesheet" href="rive-blocs.css" />
 <style>
 
 .titre-page{background:var(--jaune);color:var(--sapin-deep);padding:clamp(40px,7vw,88px) 0 clamp(32px,5vw,56px)}
@@ -62,7 +63,8 @@
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
     <nav class="nav" aria-label="Menu principal">
-      <a href="index.html#histoire">Notre histoire</a>
+      <a href="notre-histoire.html">Notre histoire</a>
+      <a href="nos-engagements.html">Nos engagements</a>
       <a href="la-carte.html" aria-current="page">La carte</a>
       <a href="montjean.html">Montjean</a>
       <a href="franchise.html">Devenir franchisé</a>
@@ -76,7 +78,8 @@
       <button class="tiroir__fermer" type="button" aria-label="Fermer le menu">×</button>
     </div>
     <a class="lien" href="index.html">Accueil</a>
-    <a class="lien" href="index.html#histoire">Notre histoire</a>
+    <a class="lien" href="notre-histoire.html">Notre histoire</a>
+    <a class="lien" href="nos-engagements.html">Nos engagements</a>
     <a class="lien" href="la-carte.html" aria-current="page">La carte</a>
     <a class="lien" href="montjean.html">Montjean</a>
     <a class="lien" href="franchise.html">Devenir franchisé</a>
@@ -113,6 +116,21 @@
     <li><a href="#petite-faim">Petite faim</a></li>
   </ul>
 </nav>
+<!-- Brand book p. 11 : horaires à confirmer -->
+<section class="sec moments" aria-labelledby="titre-moments">
+  <div class="wrap">
+    <div class="monte">
+      <h2 class="t t-l" id="titre-moments">Une offre pour chaque moment</h2>
+      <p class="lead">Du déjeuner au dîner, une envie, un Rive Bowl.</p>
+    </div>
+    <div class="services monte">
+      <div class="service c-jaune"><img class="service__bol" src="img/bowl-crevettes.webp" alt="" width="720" height="720" /><b>Service midi</b><span class="service__h">11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30</span><span class="j">Du lundi au samedi</span></div>
+      <div class="service c-sapin"><img class="service__bol" src="img/bowl-canard.webp" alt="" width="720" height="720" /><b>Service soir</b><span class="service__h">18&nbsp;h&nbsp;30-21&nbsp;h</span><span class="j">Lundi, vendredi, samedi et dimanche</span></div>
+    </div>
+    <p class="note-h">Horaires à confirmer.</p>
+  </div>
+</section>
+
 <!-- Rubriques : brand book Rive Bowl 2026, pages 11 à 13. Prix : rivebowl.dishop.co, relevés le 05/11/2026. Pas de prix quand Dishop n'en affiche pas. -->
 <section class="signature" id="signatures" aria-labelledby="t-signatures">
   <div class="wrap">
@@ -347,9 +365,10 @@
       <nav aria-labelledby="pied-plan">
         <h2 id="pied-plan">Plan du site</h2>
         <ul>
+          <li><a href="notre-histoire.html">Notre histoire</a></li>
+          <li><a href="nos-engagements.html">Nos engagements</a></li>
           <li><a href="la-carte.html">Notre carte</a></li>
           <li><a href="montjean.html">Le restaurant de Montjean</a></li>
-          <li><a href="index.html#histoire">Notre histoire</a></li>
           <li><a href="franchise.html">Devenir franchisé</a></li>
           <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></li>
         </ul>
@@ -357,8 +376,8 @@
       <nav aria-labelledby="pied-engagements">
         <h2 id="pied-engagements">Nos engagements</h2>
         <ul>
-          <li><a href="index.html#engagements">Produits frais et locaux</a></li>
-          <li><a href="la-carte.html#terroir">Le goût de nos régions</a></li>
+          <li><a href="nos-engagements.html">Produits frais et locaux</a></li>
+          <li><a href="nos-engagements.html#terroir">Le goût de nos régions</a></li>
           <li><a href="montjean.html#infos">Contact</a></li>
         </ul>
       </nav>

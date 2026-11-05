@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Caveat+Brush&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="rive.css" />
+<link rel="stylesheet" href="rive-blocs.css" />
 <style>
 
 .fr-une{position:relative;color:var(--creme);isolation:isolate;min-height:min(70svh,620px);display:flex;align-items:flex-end;padding:clamp(40px,7vw,88px) 0}
@@ -61,7 +62,8 @@
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
     <nav class="nav" aria-label="Menu principal">
-      <a href="index.html#histoire">Notre histoire</a>
+      <a href="notre-histoire.html">Notre histoire</a>
+      <a href="nos-engagements.html">Nos engagements</a>
       <a href="la-carte.html">La carte</a>
       <a href="montjean.html">Montjean</a>
       <a href="franchise.html" aria-current="page">Devenir franchisé</a>
@@ -75,7 +77,8 @@
       <button class="tiroir__fermer" type="button" aria-label="Fermer le menu">×</button>
     </div>
     <a class="lien" href="index.html">Accueil</a>
-    <a class="lien" href="index.html#histoire">Notre histoire</a>
+    <a class="lien" href="notre-histoire.html">Notre histoire</a>
+    <a class="lien" href="nos-engagements.html">Nos engagements</a>
     <a class="lien" href="la-carte.html">La carte</a>
     <a class="lien" href="montjean.html">Montjean</a>
     <a class="lien" href="franchise.html" aria-current="page">Devenir franchisé</a>
@@ -138,6 +141,76 @@
   </div>
 </section>
 
+<!-- Brand book p. 32 : les 3 formats de restaurant -->
+<section class="sec" aria-labelledby="titre-formats">
+  <div class="wrap">
+    <h2 class="t t-l titre-sec" id="titre-formats">3 formats de restaurant</h2>
+    <ul class="tuiles">
+      <li class="tuile c-feuille"><img class="photo" src="img/bb-devanture.webp" alt="Devanture Rive Bowl en centre-ville (visuel d'illustration du brand book)" width="696" height="440" /><h3>Centres-villes et communes</h3><p>Implantations de proximité, dans les centres-villes et les communes de différentes tailles. Une clientèle composée d'habitants, de familles et d'actifs recherchant une restauration rapide, gourmande et accessible.</p><span class="mention">Visuel d'illustration · brand book Rive Bowl</span></li>
+      <li class="tuile c-corail"><img class="photo" src="img/bb-salle-2.webp" alt="Salle Rive Bowl avec tables et banquette (visuel d'illustration du brand book)" width="736" height="920" /><h3>Zones d'activités et de bureaux</h3><p>Quartiers d'affaires, parcs d'entreprises et zones tertiaires. Des professionnels recherchant un déjeuner rapide, équilibré et pratique, sur place ou à emporter.</p><span class="mention">Visuel d'illustration · brand book Rive Bowl</span></li>
+      <li class="tuile c-jaune"><img class="photo" src="img/bb-salle.webp" alt="Salle Rive Bowl lumineuse avec plantes (visuel d'illustration du brand book)" width="1104" height="692" /><h3>Zones commerciales et lieux de loisirs</h3><p>Centres commerciaux, cinémas, pôles de loisirs et lieux à forte fréquentation. Une offre adaptée aux familles, aux jeunes adultes et aux consommateurs de passage.</p><span class="mention">Visuel d'illustration · brand book Rive Bowl</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Brand book p. 40 : l'accompagnement -->
+<section class="citation c-sapin" aria-labelledby="titre-accomp" style="color:var(--creme)">
+  <div class="wrap">
+    <h2 class="t t-l" id="titre-accomp" style="color:var(--creme)">Un accompagnement franchisé 5 étoiles</h2>
+    <ul class="tuiles" style="--n:4;margin-top:clamp(22px,3vw,36px);text-align:left;color:var(--sapin-deep)">
+      <li class="tuile c-jaune"><h3>Formation</h3><p>Formation pratique en restaurant et accompagnement à la gestion d'entreprise.</p></li>
+      <li class="tuile c-turquoise"><h3>Qualité &amp; hygiène</h3><p>Protocoles HACCP, fiches recettes et fournisseurs référencés pour garantir les standards du réseau.</p></li>
+      <li class="tuile c-corail"><h3>Marketing &amp; communication</h3><p>Campagnes nationales, supports officiels et outils pour développer la visibilité de chaque restaurant.</p></li>
+      <li class="tuile c-rose"><h3>Accompagnement continu</h3><p>Un interlocuteur réseau pour accompagner les franchisés sur les questions techniques, commerciales et opérationnelles.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Brand book p. 35 : l'approvisionnement (sans nom de fournisseur) -->
+<section class="sec">
+  <div class="wrap duo">
+    <div class="duo__img c-turquoise"><img class="bol" src="img/bowl-maineetloire.webp" alt="Poké Maine-et-Loire vu de dessus" width="720" height="720" /></div>
+    <div>
+      <h2 class="t">Une chaîne d'approvisionnement performante</h2>
+      <p class="forte">Un approvisionnement centralisé pour simplifier le quotidien de nos franchisés.</p>
+      <ul class="pastilles" style="--x:0">
+        <li style="background:var(--sable)">Des fournisseurs référencés à l'échelle nationale</li>
+        <li style="background:var(--sable)">Des conditions commerciales négociées pour le réseau</li>
+        <li style="background:var(--sable)">Des livraisons adaptées à chaque restaurant</li>
+        <li style="background:var(--sable)">Le respect de la chaîne du froid et de la traçabilité</li>
+        <li style="background:var(--sable)">Des spécialités régionales sélectionnées</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Brand book p. 22 : les partenariats -->
+<section class="sec suite" aria-labelledby="titre-partenariats">
+  <div class="wrap">
+    <h2 class="t t-l titre-sec" id="titre-partenariats">Des partenariats pour ancrer la marque</h2>
+    <ul class="tuiles" style="--n:4">
+      <li class="tuile c-feuille"><h3>Sport &amp; bien-être</h3><p>Salles de sport, clubs sportifs, associations, événements fitness et compétitions.</p></li>
+      <li class="tuile c-corail"><h3>Culture &amp; divertissement</h3><p>Cinémas, festivals, concerts, événements culturels et lieux de loisirs.</p></li>
+      <li class="tuile c-jaune"><h3>Vie quotidienne &amp; entreprises</h3><p>Entreprises, espaces de coworking, établissements d'enseignement et événements professionnels.</p></li>
+      <li class="tuile c-turquoise"><h3>Famille &amp; convivialité</h3><p>Activités familiales, événements intergénérationnels et lieux de rencontre.</p></li>
+    </ul>
+    <p class="difference" style="margin-top:22px;font-weight:700;max-width:60ch">Des accords nationaux avec des enseignes partenaires, et pour chaque franchisé, des collaborations adaptées à son territoire.</p>
+  </div>
+</section>
+
+<!-- Brand book p. 37 à 39 : SITA by Rive Bowl -->
+<section class="citation c-feuille" aria-labelledby="titre-sita" style="color:var(--sapin-deep)">
+  <div class="wrap">
+    <span class="sur">Notre innovation</span>
+    <h2 class="t t-l" id="titre-sita" style="margin-top:10px">SITA by Rive Bowl</h2>
+    <p style="font-size:clamp(17px,1.8vw,22px)">L'hygiène alimentaire, simplement. Une application HACCP pensée pour les professionnels de la restauration.</p>
+    <ul class="pastilles" style="justify-content:center">
+      <li>Relevés de températures</li><li>Traçabilité des produits</li><li>Plans de nettoyage</li><li>Contrôles d'hygiène</li><li>Suivi des anomalies</li>
+    </ul>
+    <p class="sur" style="margin-top:22px">Votre HACCP. Complet. Gratuit. Sans abonnement.</p>
+  </div>
+</section>
+
 <section class="sec profil" id="contact" aria-labelledby="titre-profil">
   <div class="wrap">
     <div class="profil__gauche">
@@ -188,9 +261,10 @@
       <nav aria-labelledby="pied-plan">
         <h2 id="pied-plan">Plan du site</h2>
         <ul>
+          <li><a href="notre-histoire.html">Notre histoire</a></li>
+          <li><a href="nos-engagements.html">Nos engagements</a></li>
           <li><a href="la-carte.html">Notre carte</a></li>
           <li><a href="montjean.html">Le restaurant de Montjean</a></li>
-          <li><a href="index.html#histoire">Notre histoire</a></li>
           <li><a href="franchise.html">Devenir franchisé</a></li>
           <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></li>
         </ul>
@@ -198,8 +272,8 @@
       <nav aria-labelledby="pied-engagements">
         <h2 id="pied-engagements">Nos engagements</h2>
         <ul>
-          <li><a href="index.html#engagements">Produits frais et locaux</a></li>
-          <li><a href="la-carte.html#terroir">Le goût de nos régions</a></li>
+          <li><a href="nos-engagements.html">Produits frais et locaux</a></li>
+          <li><a href="nos-engagements.html#terroir">Le goût de nos régions</a></li>
           <li><a href="montjean.html#infos">Contact</a></li>
         </ul>
       </nav>
