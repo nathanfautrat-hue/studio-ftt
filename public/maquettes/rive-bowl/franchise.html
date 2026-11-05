@@ -39,19 +39,16 @@
 .objectifs small{font-size:var(--fs-petit);font-weight:var(--fw-fort)}
 .objectifs__note,.finance__note{margin-top:var(--e-3);font-size:var(--fs-mini)}
 
-/* 2. Grande image + texte, pleine largeur (comme « Rejoins l'aventure ? ») */
-.fr-split{display:grid;grid-template-columns:1fr 1fr;background:var(--c,var(--creme))}
-.fr-split__img{position:relative;overflow:hidden;background:var(--c,var(--sable));display:grid;place-items:center;min-height:100%}
-.fr-split__img>img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.fr-split__img>img.bol{width:min(72%,440px);height:auto;padding:var(--e-fl-2) 0}
-.fr-split__texte{padding:var(--e-fl-3) var(--g);max-width:680px;display:flex;flex-direction:column;justify-content:center}
-.fr-split--inverse .fr-split__img{order:2}
+/* 2. Image + texte (« Notre différence ») : la photo garde une taille raisonnable, posée dans l'aplat */
+.fr-split{display:grid;grid-template-columns:5fr 7fr;align-items:center;gap:var(--e-fl-2);background:var(--c,var(--creme));padding:0 max(var(--g),calc((100% - var(--largeur)) / 2 + var(--g))) var(--e-fl-3)}
 .fr-split>*{min-width:0}
-/* Titre trop long pour une demi-colonne (plus de 3 lignes sur ordinateur) : il passe sur toute la largeur, au-dessus de l'image et du texte */
-.fr-split__tete{grid-column:1/-1;width:100%;max-width:var(--largeur);margin:0 auto;padding:var(--e-fl-3) var(--g) 0}
-.fr-split__tete+.fr-split__img,.fr-split__tete~.fr-split__texte{margin-top:var(--e-fl-1)}
+.fr-split__tete{grid-column:1/-1;padding-top:var(--e-fl-3)}
+.fr-split__img{position:relative;border-radius:var(--r-case);overflow:hidden;aspect-ratio:4/3}
+.fr-split__img>img.photo{width:100%;height:100%;object-fit:cover}
+.fr-split__texte{display:flex;flex-direction:column;justify-content:center}
 .fr-split h2{color:var(--sapin);hyphens:auto;-webkit-hyphens:auto}
 .fr-split .lead{margin-top:var(--e-3)}
+.fr-split .lead:first-child{margin-top:0}
 .fr-split .btn{margin-top:var(--e-5);align-self:flex-start}
 .points{list-style:none;display:grid;margin-top:var(--e-5)}
 .points li{display:grid;grid-template-columns:40px 1fr;gap:var(--e-3);padding:var(--e-3) 0;border-top:2px solid var(--encre-10);font-weight:var(--fw-fort)}
@@ -77,21 +74,42 @@
 .damier__photo{position:relative;border-radius:var(--r-case);overflow:hidden;background:var(--sable)}
 .damier__photo img{width:100%;height:100%;object-fit:cover}
 
-/* 5. Les attentes des clients et les chiffres du marché */
-.stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:var(--e-2);margin-top:var(--e-4)}
-.stats li{background:var(--creme);color:var(--sapin-deep);border-radius:var(--r-img);padding:var(--e-3) var(--e-4);display:flex;flex-direction:column;gap:var(--e-1)}
-.stats b{font:var(--fw-noir) var(--fs-2)/var(--lh-titre) var(--font);color:var(--corail-texte)}
+/* 5. Les attentes des clients : liste, bol et chiffres mélangés sur trois colonnes, en couleurs */
+.attentes{display:grid;grid-template-columns:1fr minmax(0,.8fr) 1.2fr;gap:var(--e-fl-1);align-items:center}
+.attentes__liste{list-style:none;display:grid;gap:var(--e-2)}
+.attentes__liste li{background:var(--c);border-radius:var(--r-pilule);padding:var(--e-3) var(--e-5);font:var(--fw-titre) var(--fs-petit)/var(--lh-moyen) var(--font);width:fit-content;max-width:100%;box-shadow:var(--ombre-bouton)}
+.attentes__liste li:nth-child(even){margin-left:var(--e-7)}
+.attentes__bol{border-radius:var(--r-rond);background:var(--c);aspect-ratio:1;display:grid;place-items:center;padding:var(--e-5);box-shadow:var(--ombre)}
+.attentes__bol img{width:100%;height:auto;filter:drop-shadow(0 12px 18px var(--noir-20))}
+.stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:var(--e-2)}
+.stats li{background:var(--c);border-radius:var(--r-img);padding:var(--e-3) var(--e-4);display:flex;flex-direction:column;gap:var(--e-1)}
+.stats li:nth-child(2){transform:translateY(var(--e-4))}
+.stats li:nth-child(4){transform:translateY(var(--e-4))}
+.stats b{font:var(--fw-noir) var(--fs-2)/var(--lh-titre) var(--font);color:inherit}
 .stats span{font-weight:var(--fw-fort);font-size:var(--fs-petit);line-height:var(--lh-moyen)}
-.stats small,.stats__note small{font-size:var(--fs-mini);color:var(--ink-2)}
-.stats li small{color:var(--ink)}
-.stats__note{margin-top:var(--e-3);font-size:var(--fs-petit);line-height:var(--lh-texte)}
-.aplat .duo{align-items:center}
-.aplat .pastilles li{background:var(--creme)}
+.stats small{font-size:var(--fs-mini);opacity:.85}
+.fr-attentes .forte{margin-top:var(--e-fl-1);max-width:60ch}
+.stats__note{margin-top:var(--e-3);font-size:var(--fs-petit);line-height:var(--lh-texte);max-width:80ch}
+.stats__note small{font-size:var(--fs-mini)}
+
+/* Approvisionnement : un chemin de cases reliées par des flèches qui avancent ; une lumière passe d'une case à l'autre */
+.flux{list-style:none;display:flex;align-items:stretch;gap:var(--e-7);margin-top:var(--e-fl-1);counter-reset:flux}
+.flux__etape{position:relative;flex:1 1 0;min-width:0;background:var(--c);border-radius:var(--r-case);padding:var(--e-5) var(--e-4);font:var(--fw-titre) var(--fs-petit)/var(--lh-moyen) var(--font);display:flex;align-items:center;box-shadow:var(--ombre-bouton);transition:transform .35s ease,box-shadow .35s ease;animation:flux-lumiere 9s ease-in-out infinite}
+.flux__etape:nth-child(2){animation-delay:1.5s}.flux__etape:nth-child(3){animation-delay:3s}.flux__etape:nth-child(4){animation-delay:4.5s}.flux__etape:nth-child(5){animation-delay:6s}.flux__etape:nth-child(6){animation-delay:7.5s}
+.flux__fin{font:var(--fw-noir) var(--fs-4)/var(--lh-serre) var(--font);text-transform:uppercase;justify-content:center;text-align:center}
+/* la flèche entre deux cases : un trait en pointillés qui avance vers la case suivante */
+.flux__etape:not(:last-child)::after{content:"";position:absolute;top:50%;right:calc(var(--e-7) * -1);width:var(--e-7);height:var(--e-3);transform:translateY(-50%);background:linear-gradient(90deg,var(--sapin) 50%,transparent 0) 0 50%/var(--e-3) var(--e-1) repeat-x;animation:flux-trait .9s linear infinite;-webkit-mask:linear-gradient(90deg,#000 70%,transparent 70%);mask:linear-gradient(90deg,#000 70%,transparent 70%)}
+.flux__etape:not(:last-child)::before{content:"";position:absolute;top:50%;right:calc(var(--e-7) * -1 + var(--e-1));transform:translate(0,-50%) rotate(45deg);width:var(--e-2);height:var(--e-2);border-top:3px solid var(--sapin);border-right:3px solid var(--sapin);z-index:1}
+@keyframes flux-trait{to{background-position:var(--e-3) 50%}}
+@keyframes flux-lumiere{0%,12%,100%{transform:none;box-shadow:var(--ombre-bouton)}5%{transform:translateY(calc(var(--e-1) * -1)) scale(1.04);box-shadow:var(--ombre-survol)}}
+@media (hover:hover){.flux:hover .flux__etape{animation-play-state:paused}.flux__etape:hover{transform:translateY(calc(var(--e-1) * -1)) scale(1.04);box-shadow:var(--ombre-survol)}}
+.flux__note{margin-top:var(--e-5);font-weight:var(--fw-fort)}
+@media (prefers-reduced-motion:reduce){.flux__etape,.flux__etape::after{animation:none}}
 
 /* 6. Stratégie : la frise des villes */
 .frise{list-style:none;display:grid;gap:var(--e-2);margin:var(--e-5) auto 0;max-width:620px;text-align:left}
-.frise li{background:var(--creme);border-radius:var(--r-img);padding:var(--e-3) var(--e-4);font-weight:var(--fw-fort);font-size:var(--fs-petit)}
-.frise b{display:block;font:var(--fw-noir) var(--fs-petit)/var(--lh-serre) var(--font);color:var(--corail-texte);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--e-0)}
+.frise li{background:var(--c,var(--creme));color:var(--sapin-deep);border-radius:var(--r-img);padding:var(--e-3) var(--e-4);font-weight:var(--fw-fort);font-size:var(--fs-petit)}
+.frise b{display:block;font:var(--fw-noir) var(--fs-petit)/var(--lh-serre) var(--font);color:var(--sapin);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--e-0)}
 
 /* 7. Profil + formulaire sur aplat (comme le bloc final de Pokawa) */
 .profil .wrap{display:grid;grid-template-columns:5fr 6fr;gap:var(--e-fl-3);align-items:stretch}
@@ -103,14 +121,24 @@
 .profil li{background:var(--creme);color:var(--sapin-deep);border-radius:var(--r-img);padding:var(--e-3) var(--e-4);font-weight:var(--fw-fort)}
 .valider{margin-top:var(--e-4);font-size:var(--fs-petit)}
 .form .duo{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-3)}
+.profil .form{background:var(--creme);color:var(--sapin-deep)}
+.profil .form input,.profil .form textarea{background:var(--blanc);border-color:var(--sapin-50)}
+.profil .form label{color:var(--sapin-deep)}
+.profil .form .note{color:var(--sapin)}
 
 @media (max-width:1399px){.damier{grid-template-columns:1fr 1fr}}
 @media (max-width:960px){.finance__liste{grid-template-columns:1fr 1fr}}
+@keyframes flux-trait-v{to{background-position:50% var(--e-3)}}
 @media (max-width:860px){
   .fr-split{grid-template-columns:1fr}
-  .fr-split--inverse .fr-split__img{order:0}
-  .fr-split__img{min-height:0;aspect-ratio:4/3}
-  .fr-split__img>img.bol{width:min(62%,320px);padding:var(--e-5) 0}
+  .fr-split__img{aspect-ratio:16/10}
+  .attentes{grid-template-columns:1fr}
+  .attentes__bol{width:min(55%,220px);justify-self:center;order:-1}
+  .attentes__liste li:nth-child(even){margin-left:var(--e-5)}
+  .stats li:nth-child(2),.stats li:nth-child(4){transform:none}
+  .flux{flex-direction:column;gap:var(--e-7)}
+  .flux__etape:not(:last-child)::after{top:auto;right:auto;left:50%;bottom:calc(var(--e-7) * -1);width:var(--e-3);height:var(--e-7);transform:translateX(-50%);background:linear-gradient(180deg,var(--sapin) 50%,transparent 0) 50% 0/var(--e-1) var(--e-3) repeat-y;animation-name:flux-trait-v;-webkit-mask:linear-gradient(180deg,#000 70%,transparent 70%);mask:linear-gradient(180deg,#000 70%,transparent 70%)}
+  .flux__etape:not(:last-child)::before{top:auto;right:auto;left:50%;bottom:calc(var(--e-7) * -1 + var(--e-1));transform:translate(-50%,0) rotate(135deg)}
   .finance{grid-template-columns:1fr}
   .objectifs{grid-template-columns:1fr 1fr}
   .profil .wrap{grid-template-columns:1fr}
@@ -261,51 +289,51 @@
 </section>
 
 <!-- Brand book p. 20-21 : les attentes des clients ; « Ce que disent les consommateurs en 2026 », chiffres et sources tels que donnés par Rive Bowl -->
-<section class="aplat c-turquoise" aria-labelledby="titre-attentes">
-  <div class="wrap duo">
-    <div class="duo__img c-jaune"><img class="bol" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki vu de dessus" width="720" height="720" /></div>
-    <div>
-      <h2 class="t t-l" id="titre-attentes">Ce que nos clients attendent</h2>
-      <ul class="pastilles">
-        <li>Manger rapidement, sans sacrifier la qualité</li>
-        <li>Manger sainement, en se faisant plaisir</li>
-        <li>Personnaliser leur repas</li>
-        <li>Retrouver des saveurs authentiques</li>
-        <li>Des prix accessibles, dans un cadre chaleureux</li>
+<section class="aplat c-turquoise fr-attentes" aria-labelledby="titre-attentes">
+  <div class="wrap">
+    <h2 class="t t-l titre-sec" id="titre-attentes">Ce que nos clients attendent</h2>
+    <div class="attentes">
+      <ul class="attentes__liste">
+        <li class="c-jaune">Manger rapidement, sans sacrifier la qualité</li>
+        <li class="c-rose">Manger sainement, en se faisant plaisir</li>
+        <li class="c-sapin">Personnaliser leur repas</li>
+        <li class="c-corail">Retrouver des saveurs authentiques</li>
+        <li class="c-sable">Des prix accessibles, dans un cadre chaleureux</li>
       </ul>
-      <p class="forte">Notre cible : des actifs et des familles qui veulent manger vite, bien et avec du sens.</p>
+      <div class="attentes__bol c-jaune"><img class="bol" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki vu de dessus" width="720" height="720" /></div>
       <ul class="stats">
-        <li><b>91&nbsp;%</b><span>des actifs prennent une pause déjeuner.</span><small>Source : Edenred - Ifop, juil. 2026 (2&nbsp;500 actifs)</small></li>
-        <li><b>86&nbsp;%</b><span>citent la qualité des produits comme raison de leur attachement aux commerces alimentaires de proximité.</span><small>Source : CGAD - CSA, oct. 2026</small></li>
-        <li><b>61&nbsp;%</b><span>déclarent avoir réduit leurs sorties au restaurant et au café.</span><small>Source : CGAD - CSA, oct. 2026</small></li>
-        <li><b>91&nbsp;%</b><span>jugent l’attention personnalisée importante au restaurant.</span><small>Source : Lightspeed, étude Restauration France, 2026</small></li>
+        <li class="c-sapin"><b>91&nbsp;%</b><span>des actifs prennent une pause déjeuner.</span><small>Source : Edenred - Ifop, juil. 2026 (2&nbsp;500 actifs)</small></li>
+        <li class="c-jaune"><b>86&nbsp;%</b><span>citent la qualité des produits comme raison de leur attachement aux commerces alimentaires de proximité.</span><small>Source : CGAD - CSA, oct. 2026</small></li>
+        <li class="c-rose"><b>61&nbsp;%</b><span>déclarent avoir réduit leurs sorties au restaurant et au café.</span><small>Source : CGAD - CSA, oct. 2026</small></li>
+        <li class="c-corail"><b>91&nbsp;%</b><span>jugent l’attention personnalisée importante au restaurant.</span><small>Source : Lightspeed, étude Restauration France, 2026</small></li>
       </ul>
-      <p class="stats__note">La restauration rapide confirme son attractivité : elle répond aux attentes de praticité, rapidité, accessibilité et diversité, dans un contexte où les consommateurs surveillent leurs dépenses. <small>Source : Circana, Tendances Foodservice 2026</small></p>
     </div>
+    <p class="forte">Notre cible : des actifs et des familles qui veulent manger vite, bien et avec du sens.</p>
+    <p class="stats__note">La restauration rapide confirme son attractivité : elle répond aux attentes de praticité, rapidité, accessibilité et diversité, dans un contexte où les consommateurs surveillent leurs dépenses. <small>Source : Circana, Tendances Foodservice 2026</small></p>
   </div>
 </section>
 
 <!-- Brand book p. 30, 31 et 33 : la stratégie de développement et le maillage -->
-<section class="citation c-rose" aria-labelledby="titre-dev" style="color:var(--sapin-deep)">
+<section class="citation fr-strategie" data-soie aria-labelledby="titre-dev" style="color:var(--creme)">
   <div class="wrap">
     <h2 class="t t-l" id="titre-dev">Notre stratégie de déve&shy;lop&shy;pement</h2>
     <ul class="tuiles" style="--n:3;margin-top:var(--e-fl-1);text-align:left">
-      <li class="tuile" style="background:var(--creme)"><h3 class="t-case">Déployer un réseau de fran&shy;chises</h3><p>Dans les villes françaises, en adaptant les implantations aux marchés locaux.</p></li>
-      <li class="tuile" style="background:var(--creme)"><h3 class="t-case">Accompagner chaque entrepreneur</h3><p>De la recherche du local jusqu’à l’ouverture et au suivi de son restaurant.</p></li>
-      <li class="tuile" style="background:var(--creme)"><h3 class="t-case">Construire une marque natio&shy;nale</h3><p>Capable de valoriser les traditions culinaires de chaque territoire.</p></li>
+      <li class="tuile c-jaune"><h3 class="t-case">Déployer un réseau de fran&shy;chises</h3><p>Dans les villes françaises, en adaptant les implantations aux marchés locaux.</p></li>
+      <li class="tuile c-corail"><h3 class="t-case">Accompagner chaque entrepreneur</h3><p>De la recherche du local jusqu’à l’ouverture et au suivi de son restaurant.</p></li>
+      <li class="tuile c-turquoise"><h3 class="t-case">Construire une marque natio&shy;nale</h3><p>Capable de valoriser les traditions culinaires de chaque territoire.</p></li>
     </ul>
     <p>D’abord la France métropolitaine, dans les petites et moyennes villes. Puis les grandes métropoles. L’international à plus long terme, en gardant l’identité du Poké Terroir.</p>
     <ol class="frise">
-      <li><b>2026</b> Ouverture du restaurant pilote, Montjean-sur-Loire (49)</li>
-      <li><b>2026-2027</b> Premières franchises (Sablé-sur-Sarthe, Jallais, Laval…)</li>
-      <li><b>2028</b> Poursuite du maillage national (Ancenis, Saint-Nazaire…)</li>
-      <li><b>Notre ambition</b> Un réseau national de restaurants Poké Terroir, ancré dans chaque territoire</li>
+      <li class="c-jaune"><b>2026</b> Ouverture du restaurant pilote, Montjean-sur-Loire (49)</li>
+      <li class="c-rose"><b>2026-2027</b> Premières franchises (Sablé-sur-Sarthe, Jallais, Laval…)</li>
+      <li class="c-turquoise"><b>2028</b> Poursuite du maillage national (Ancenis, Saint-Nazaire…)</li>
+      <li class="c-corail"><b>Notre ambition</b> Un réseau national de restaurants Poké Terroir, ancré dans chaque territoire</li>
     </ol>
   </div>
 </section>
 
 <!-- Brand book p. 32 : les 3 formats de restaurant, en cartes photo sur aplat (comme le bloc final de Pokawa) -->
-<section class="aplat c-sapin" aria-labelledby="titre-formats">
+<section class="aplat c-turquoise" aria-labelledby="titre-formats">
   <div class="wrap">
     <h2 class="t t-l titre-sec" id="titre-formats">3 formats de restau&shy;rant</h2>
     <ul class="tuiles">
@@ -317,21 +345,20 @@
 </section>
 
 <!-- Brand book p. 35 : l'approvisionnement -->
-<section class="fr-split fr-split--inverse c-jaune" aria-labelledby="titre-appro">
-  <header class="fr-split__tete">
-    <h2 class="t t-l" id="titre-appro">Une chaîne d’appro&shy;vision&shy;nement perfor&shy;mante</h2>
-  </header>
-  <div class="fr-split__img c-turquoise"><img class="bol" src="img/bowl-maineetloire.webp" alt="Poké Maine-et-Loire vu de dessus" width="720" height="720" /></div>
-  <div class="fr-split__texte">
+<!-- Brand book p. 35 : l'approvisionnement, en chemin (les 5 points du brand book, du fournisseur au restaurant) -->
+<section class="aplat c-jaune" aria-labelledby="titre-appro">
+  <div class="wrap">
+    <h2 class="t t-l titre-sec" id="titre-appro">Une chaîne d’appro&shy;vision&shy;nement perfor&shy;mante</h2>
     <p class="forte">Un approvisionnement centralisé pour simplifier le quotidien de nos franchisés.</p>
-    <ul class="pastilles">
-      <li style="background:var(--sable)">Des fournisseurs référencés à l’échelle nationale</li>
-      <li style="background:var(--sable)">Des conditions commerciales négociées pour le réseau</li>
-      <li style="background:var(--sable)">Des livraisons adaptées à chaque restaurant</li>
-      <li style="background:var(--sable)">Le respect de la chaîne du froid et de la traçabilité</li>
-      <li style="background:var(--sable)">Des spécialités régionales sélectionnées</li>
-    </ul>
-    <p style="font-weight:var(--fw-fort);margin-top:var(--e-4)">Avec Transgourmet, Metro et nos fournisseurs spécialisés.</p>
+    <ol class="flux">
+      <li class="flux__etape c-sapin">Des fournisseurs référencés à l’échelle nationale</li>
+      <li class="flux__etape c-turquoise">Des conditions commerciales négociées pour le réseau</li>
+      <li class="flux__etape c-corail">Des spécialités régionales sélectionnées</li>
+      <li class="flux__etape c-rose">Le respect de la chaîne du froid et de la traçabilité</li>
+      <li class="flux__etape c-feuille">Des livraisons adaptées à chaque restaurant</li>
+      <li class="flux__etape flux__fin c-sapin">Votre restaurant</li>
+    </ol>
+    <p class="flux__note">Avec Transgourmet, Metro et nos fournisseurs spécialisés.</p>
   </div>
 </section>
 
@@ -362,7 +389,7 @@
   </div>
 </section>
 
-<section class="aplat c-sapin profil" id="contact" aria-labelledby="titre-profil">
+<section class="aplat c-sapin profil" data-soie id="contact" aria-labelledby="titre-profil">
   <div class="wrap">
     <div class="profil__gauche">
       <span class="sur">Le profil recherché</span>

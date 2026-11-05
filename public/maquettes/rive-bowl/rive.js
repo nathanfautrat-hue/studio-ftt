@@ -110,6 +110,15 @@
     function stop(){ enPause = true; if(auto){ clearInterval(auto); auto = null; } }
     if(!reduit){ auto = setInterval(function(){ if(!document.hidden && !enPause && !doigt) suivant(); }, 5000); }
     pts.forEach(function(p, j){ p.addEventListener('click', function(){ stop(); aller(j); }); });
+    // Zones invisibles à gauche et à droite : la flèche apparaît quand la souris s'approche du bord, un clic change de photo
+    [['prec', 'Photo précédente', '←', function(){ precedent(); }], ['suiv', 'Photo suivante', '→', function(){ suivant(); }]].forEach(function(z){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'une__zone une__zone--' + z[0]; b.setAttribute('aria-label', z[1]);
+      b.innerHTML = '<span aria-hidden="true">' + z[2] + '</span>';
+      b.addEventListener('pointerdown', function(e){ e.stopPropagation(); });
+      b.addEventListener('click', function(){ stop(); z[3](); });
+      cadre.appendChild(b);
+    });
     window.addEventListener('resize', function(){ une.classList.add('glisse'); placer(); void piste.offsetWidth; une.classList.remove('glisse'); }, { passive:true });
     // Glisser au doigt ou à la souris
     var doigt = false, x0 = 0, y0 = 0, dx = 0, horizontal = null;

@@ -292,11 +292,21 @@
 .case:active{transform:translateY(-1px)}
 .case:focus-within{outline:3px solid var(--jaune);outline-offset:4px}
 
-/* ============ LE MÉANDRE (accueil) : le slogan suit une courbe de Loire (meandre.js, mécanique du composant 21st « Marquee Along SVG Path ») ============ */
-.meandre{position:relative;overflow:hidden;height:var(--h-meandre);background:var(--c);color:var(--sapin-deep);touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
-.meandre--glisse{cursor:grabbing}
-.meandre--immobile{cursor:default}
-.meandre__riviere{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.meandre__riviere path{fill:none;stroke:var(--turquoise);stroke-width:var(--e-1);stroke-linecap:round}
-.meandre__mots span{position:absolute;top:0;left:0;offset-anchor:50% 100%;offset-rotate:auto;padding-bottom:var(--e-2);font:var(--fw-noir) var(--fs-3)/var(--lh-titre) var(--font);text-transform:uppercase;white-space:nowrap;will-change:offset-distance}
-.meandre__mots .sep{color:var(--sapin)}
+
+/* Fond « soie » animé (soie.js, 2 zones : bandeau de l'application, en-tête de la page franchise). Le canvas passe sous un voile sapin. */
+[data-soie]{position:relative;isolation:isolate;overflow:hidden;background:var(--soie-repli)}
+[data-soie]::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--soie-voile);pointer-events:none}
+.soie{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-2;pointer-events:none}
+
+/* Carrousel de l'accueil : zones invisibles sur les bords, la flèche apparaît à l'approche de la souris, un clic change de photo */
+.une__zone{position:absolute;top:0;bottom:0;z-index:3;width:max(var(--e-10),9%);border:0;padding:0 var(--e-4);background:transparent;cursor:pointer;display:flex;align-items:center;color:var(--sapin-deep)}
+.une__zone--prec{left:0;justify-content:flex-start}
+.une__zone--suiv{right:0;justify-content:flex-end}
+.une__zone span{display:inline-flex;align-items:center;justify-content:center;width:var(--h-btn);height:var(--h-btn);border-radius:var(--r-rond);background:var(--jaune);font:var(--fw-noir) var(--fs-4)/var(--lh-titre) var(--font);box-shadow:var(--ombre-bouton);opacity:0;transform:scale(.8);transition:opacity .3s ease,transform .3s ease}
+.une__zone--prec span{transform:scale(.8) translateX(var(--e-2))}
+.une__zone--suiv span{transform:scale(.8) translateX(calc(var(--e-2) * -1))}
+@media (hover:hover){.une__zone:hover span{opacity:1;transform:none}.une__zone:active span{transform:scale(.9)}}
+.une__zone:focus-visible span{opacity:1;transform:none}
+.une__zone:focus-visible{outline:none}
+.une__zone:focus-visible span{outline:3px solid var(--creme);outline-offset:3px}
+@media (hover:none){.une__zone{display:none}}
