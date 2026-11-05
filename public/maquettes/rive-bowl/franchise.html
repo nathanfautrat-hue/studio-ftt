@@ -53,6 +53,31 @@
 @media (max-width:860px){.concept .wrap,.profil .wrap{grid-template-columns:1fr}.form .duo{grid-template-columns:1fr}.profil__gauche figure{display:none}}
 @media (max-width:560px){.apports__grid{grid-template-columns:1fr}.apport{min-height:0}}
 
+.stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.stats li{background:var(--sable);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.stats b{font:900 clamp(28px,3.6vw,40px)/1 var(--font);color:var(--corail-texte)}
+.stats span{font-weight:700;font-size:14px;line-height:1.4}
+.stats small,.stats__note small{font-size:11px;color:var(--ink-2)}
+.stats__note{margin-top:12px;font-size:14px;line-height:1.5}
+.objectifs{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(22px,3vw,34px)}
+.objectifs li{background:var(--sapin);color:var(--creme);border-radius:var(--r);padding:20px 14px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.objectifs b{font:900 clamp(34px,5vw,60px)/1 var(--font);color:var(--jaune)}
+.objectifs span{font:800 12px/1.2 var(--font);letter-spacing:.08em;text-transform:uppercase}
+.objectifs small{font-size:13px;font-weight:700}
+.frise{list-style:none;display:grid;gap:10px;margin:22px auto 0;max-width:620px;text-align:left}
+.frise li{background:var(--creme);border-radius:14px;padding:12px 16px;font-weight:600;font-size:15px}
+.frise b{display:block;font:900 14px/1.2 var(--font);color:var(--corail-texte);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.objectifs__note,.finance__note{margin-top:14px;font-size:12px;color:var(--ink-2)}
+.finance{display:grid;grid-template-columns:1fr 1.6fr;gap:16px;align-items:stretch}
+.finance__ebitda{border-radius:var(--r);background:var(--c);padding:28px;display:flex;flex-direction:column;justify-content:center;gap:8px;color:var(--sapin-deep)}
+.finance__ebitda span{font:800 13px/1.2 var(--font);letter-spacing:.1em;text-transform:uppercase}
+.finance__ebitda b{font:900 clamp(44px,7vw,84px)/1 var(--font)}
+.finance__liste{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.finance__liste li{background:var(--sapin);color:var(--creme);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.finance__liste span{font-weight:700;font-size:14px}
+.finance__liste b{font:900 26px/1 var(--font);color:var(--jaune)}
+@media (max-width:860px){.finance{grid-template-columns:1fr}.objectifs{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.stats,.finance__liste{grid-template-columns:1fr}.objectifs li{padding:16px 8px}.objectifs span{font-size:10px;letter-spacing:.04em}}
 </style>
 </head>
 <body>
@@ -128,7 +153,7 @@
   </div>
 </section>
 
-<!-- Brand book p. 20-21 : les attentes des clients, sans aucune statistique -->
+<!-- Brand book p. 20-21 : les attentes des clients -->
 <section class="sec" aria-labelledby="titre-attentes">
   <div class="wrap duo">
     <div class="duo__img c-jaune"><img class="bol" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki vu de dessus" width="720" height="720" /></div>
@@ -142,6 +167,14 @@
         <li style="background:var(--sable)">Des prix accessibles, dans un cadre chaleureux</li>
       </ul>
       <p class="forte">Notre cible : des actifs et des familles qui veulent manger vite, bien et avec du sens.</p>
+      <!-- Brand book p. 21 : « Ce que disent les consommateurs en 2026 », chiffres et sources tels que donnés par Rive Bowl -->
+      <ul class="stats">
+        <li><b>91&nbsp;%</b><span>des actifs prennent une pause déjeuner.</span><small>Source : Edenred - Ifop, juil. 2026 (2&nbsp;500 actifs)</small></li>
+        <li><b>86&nbsp;%</b><span>citent la qualité des produits comme raison de leur attachement aux commerces alimentaires de proximité.</span><small>Source : CGAD - CSA, oct. 2026</small></li>
+        <li><b>61&nbsp;%</b><span>déclarent avoir réduit leurs sorties au restaurant et au café.</span><small>Source : CGAD - CSA, oct. 2026</small></li>
+        <li><b>91&nbsp;%</b><span>jugent l'attention personnalisée importante au restaurant.</span><small>Source : Lightspeed, étude Restauration France, 2026</small></li>
+      </ul>
+      <p class="stats__note">La restauration rapide confirme son attractivité : elle répond aux attentes de praticité, rapidité, accessibilité et diversité, dans un contexte où les consommateurs surveillent leurs dépenses. <small>Source : Circana, Tendances Foodservice 2026</small></p>
     </div>
   </div>
 </section>
@@ -152,14 +185,14 @@
     <h2 class="t t-l titre-sec" id="titre-apports">Ce que le réseau vous apporte</h2>
     <ul class="tuiles" style="--n:4">
       <li class="tuile c-sapin" style="color:var(--creme)"><h3>Une communication nationale et locale</h3><p>La tête de réseau porte l'identité, les campagnes nationales et les contenus sur Instagram, Facebook, TikTok et LinkedIn. Chaque restaurant anime sa communauté locale, avec une seule identité.</p></li>
-      <li class="tuile c-corail"><h3>La fidélisation de vos clients</h3><p>Une stratégie de fidélisation commune au réseau : mieux connaître les clients, leur parler au bon moment et récompenser les habitués.</p></li>
-      <li class="tuile c-jaune"><h3>Un modèle simple à opérer</h3><p>Une restauration rapide, une carte structurée, des processus simplifiés et une identité de marque forte.</p></li>
+      <li class="tuile c-corail"><h3>La fidélisation de vos clients</h3><p>20&nbsp;% des clients réalisent 80&nbsp;% du chiffre d'affaires. D'où un CRM commun au réseau : mieux connaître les clients, leur parler au bon moment avec un message adapté, récompenser les habitués.</p></li>
+      <li class="tuile c-jaune"><h3>Un modèle rentable &amp; facile à opérer</h3><p>Une restauration rapide, une carte structurée, des processus simplifiés et une identité de marque forte.</p></li>
       <li class="tuile c-turquoise"><h3>Une marque qui a de l'avenir</h3><p>Le Poké Terroir : le goût des souvenirs et les traditions culinaires de chez nous, une notoriété que nous construisons ensemble.</p></li>
     </ul>
   </div>
 </section>
 
-<!-- Brand book p. 30, 31 et 33 : la stratégie de développement et le maillage, sans aucun objectif chiffré -->
+<!-- Brand book p. 30, 31 et 33 : la stratégie de développement et le maillage -->
 <section class="citation c-rose" aria-labelledby="titre-dev" style="color:var(--sapin-deep)">
   <div class="wrap">
     <h2 class="t t-l" id="titre-dev">Notre stratégie de développement</h2>
@@ -169,6 +202,20 @@
       <li class="tuile" style="background:var(--creme)"><h3>Construire une marque nationale</h3><p>Capable de valoriser les traditions culinaires de chaque territoire.</p></li>
     </ul>
     <p>D'abord la France métropolitaine, dans les petites et moyennes villes. Puis les grandes métropoles. L'international à plus long terme, en gardant l'identité du Poké Terroir.</p>
+    <!-- Brand book p. 31, 33, 43 et 45 : objectifs prévisionnels et calendrier, tels que donnés par Rive Bowl -->
+    <ul class="objectifs">
+      <li><b>1</b><span>restaurant pilote</span><small>2026</small></li>
+      <li><b>15</b><span>restaurants</span><small>fin 2027</small></li>
+      <li><b>30</b><span>restaurants</span><small>fin 2028</small></li>
+      <li><b>50</b><span>restaurants</span><small>fin 2029</small></li>
+    </ul>
+    <ol class="frise">
+      <li><b>2026</b> Ouverture du restaurant pilote, Montjean-sur-Loire (49)</li>
+      <li><b>2026-2027</b> Premières franchises (Sablé-sur-Sarthe, Jallais, Laval…)</li>
+      <li><b>2028</b> Poursuite du maillage national (Ancenis, Saint-Nazaire…)</li>
+      <li><b>Notre ambition</b> Un réseau national de restaurants Poké Terroir, ancré dans chaque territoire</li>
+    </ol>
+    <p class="objectifs__note">Objectifs prévisionnels de développement du réseau Rive Bowl.</p>
   </div>
 </section>
 
@@ -211,6 +258,7 @@
         <li style="background:var(--sable)">Le respect de la chaîne du froid et de la traçabilité</li>
         <li style="background:var(--sable)">Des spécialités régionales sélectionnées</li>
       </ul>
+      <p style="font-weight:700">Avec Transgourmet, Metro et nos fournisseurs spécialisés.</p>
     </div>
   </div>
 </section>
@@ -226,6 +274,25 @@
       <li class="tuile c-turquoise"><h3>Famille &amp; convivialité</h3><p>Activités familiales, événements intergénérationnels et lieux de rencontre.</p></li>
     </ul>
     <p class="difference" style="margin-top:22px;font-weight:700;max-width:60ch">Des accords nationaux avec des enseignes partenaires, et pour chaque franchisé, des collaborations adaptées à son territoire.</p>
+  </div>
+</section>
+
+<!-- Brand book p. 36 : « Des franchises rentables », données telles que fournies par Rive Bowl, avec sa mention -->
+<section class="sec" aria-labelledby="titre-rentables">
+  <div class="wrap">
+    <h2 class="t t-l titre-sec" id="titre-rentables">Des franchises rentables</h2>
+    <div class="finance">
+      <div class="finance__ebitda c-corail"><span>Objectif EBITDA</span><b>15-20&nbsp;%</b></div>
+      <ul class="finance__liste">
+        <li><span>Food cost (matières premières)</span><b>27-30&nbsp;%</b></li>
+        <li><span>Masse salariale</span><b>20-25&nbsp;%</b></li>
+        <li><span>Redevance d'exploitation</span><b>6&nbsp;%</b></li>
+        <li><span>Redevance communication nationale</span><b>2&nbsp;%</b></li>
+        <li><span>Frais de livraison</span><b>6-10&nbsp;%</b></li>
+        <li><span>Loyer et autres charges fixes</span><b>10&nbsp;%</b></li>
+      </ul>
+    </div>
+    <p class="finance__note">Données indicatives et objectifs prévisionnels, non contractuels. La rentabilité dépend de chaque implantation et de sa gestion.</p>
   </div>
 </section>
 

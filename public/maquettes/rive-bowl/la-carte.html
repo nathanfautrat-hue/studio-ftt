@@ -54,6 +54,17 @@
   .cat__liste .btn{align-self:stretch}
 }
 
+.cat__photo{position:relative;margin:0 0 auto;border-radius:16px;overflow:hidden;width:100%}
+.cat__photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.cat__photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:auto}
+.cat__photos .cat__photo img{aspect-ratio:3/4}
+.cat__mention{position:absolute;left:8px;bottom:6px;font:600 9px/1.2 var(--font);color:rgba(253,248,242,.95);text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.cat__tete{gap:12px}
+@media (max-width:860px){
+  .cat__tete{flex-direction:column;align-items:stretch;flex-wrap:nowrap}
+  .cat__tete .bol{width:min(60%,220px);align-self:center;margin:0 0 6px}
+  .cat__tete h2{flex:none}
+}
 </style>
 </head>
 <body>
@@ -143,37 +154,37 @@
     </div>
     <ul class="produits" aria-label="Pokés signatures">
       <li class="produit c-sapin monte">
-        <img class="bol" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki vu de dessus" width="720" height="720" loading="lazy" />
+        <img class="bol" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki vu de dessus" width="720" height="720" />
         <h3>Poulet teriyaki</h3>
         <p>Riz vinaigré, poulet teriyaki, carotte, concombre, radis, chou rouge mariné, edamame, graines de sésame, sauce teriyaki.</p>
         <div class="pied-carte"><span class="prix">11,90 €</span></div>
       </li>
       <li class="produit c-corail monte">
-        <img class="bol" src="img/bowl-crousty.webp" alt="Poké poulet crousty vu de dessus" width="720" height="720" loading="lazy" />
+        <img class="bol" src="img/bowl-crousty.webp" alt="Poké poulet crousty vu de dessus" width="720" height="720" />
         <h3>Poulet crousty</h3>
         <p>Le croustillant de la maison.</p>
         <div class="pied-carte"><span class="prix">11,90 €</span></div>
       </li>
       <li class="produit c-jaune monte">
-        <img class="bol" src="img/bowl-rillauds.webp" alt="Poké rillauds d'anjou vu de dessus" width="720" height="720" loading="lazy" />
+        <img class="bol" src="img/bowl-rillauds.webp" alt="Poké rillauds d'anjou vu de dessus" width="720" height="720" />
         <h3>Rillauds d'Anjou</h3>
         <p>La recette du terroir angevin.</p>
         <div class="pied-carte"><span class="prix">11,90 €</span></div>
       </li>
       <li class="produit c-turquoise monte">
-        <img class="bol" src="img/bowl-saumon.webp" alt="Poké saumon mariné vu de dessus" width="720" height="720" loading="lazy" />
+        <img class="bol" src="img/bowl-saumon.webp" alt="Poké saumon mariné vu de dessus" width="720" height="720" />
         <h3>Saumon mariné</h3>
         <p>Frais et équilibré.</p>
         <div class="pied-carte"><span class="prix">11,90 €</span></div>
       </li>
       <li class="produit c-feuille monte">
-        <img class="bol" src="img/bowl-crevettes.webp" alt="Poké crevettes marinées vu de dessus" width="720" height="720" loading="lazy" />
+        <img class="bol" src="img/bowl-crevettes.webp" alt="Poké crevettes marinées vu de dessus" width="720" height="720" />
         <h3>Crevettes marinées</h3>
         <p>Frais et léger.</p>
         <div class="pied-carte"><span class="prix">11,90 €</span></div>
       </li>
       <li class="produit c-sapin monte">
-        <img class="bol" src="img/bowl-falafel.webp" alt="Poké falafel vu de dessus" width="720" height="720" loading="lazy" />
+        <img class="bol" src="img/bowl-falafel.webp" alt="Poké falafel vu de dessus" width="720" height="720" />
         <h3>Falafel</h3>
         <p>Le poké végétal.</p>
         <div class="pied-carte"><span class="prix">11,90 €</span></div>
@@ -185,7 +196,7 @@
 <div class="wrap cats">
 <section class="cat monte" id="creation" aria-labelledby="t-creation">
   <div class="cat__tete c-corail">
-    
+    <img class="bol" src="img/bowl-saumon.webp" alt="Poké création au saumon vu de dessus" width="1000" height="1000" />
     <h2 class="t t-m" id="t-creation">Poké création</h2>
     <p>Composez le bol qui vous ressemble.</p>
   </div>
@@ -199,7 +210,7 @@
 
 <section class="cat monte" id="crousty" aria-labelledby="t-crousty">
   <div class="cat__tete c-jaune">
-    
+    <figure class="cat__photo"><img src="img/carte-crousty.webp" alt="Bowl Crousty Rive au poulet croustillant" width="614" height="388" /></figure>
     <h2 class="t t-m" id="t-crousty">Crousty Rive</h2>
     <p>Le croustillant, en version bowl.</p>
   </div>
@@ -214,7 +225,7 @@
 
 <section class="cat monte" id="chauds" aria-labelledby="t-chauds">
   <div class="cat__tete c-sapin">
-    <img class="bol" src="img/chaud-saumon.webp" alt="Poké chaud au saumon vu de dessus" width="720" height="720" loading="lazy" />
+    <img class="bol" src="img/chaud-saumon.webp" alt="Poké chaud au saumon vu de dessus" width="720" height="720" />
     <h2 class="t t-m" id="t-chauds">Pokés chauds de saison</h2>
     <p>Légumes croquants et bouillon miso.</p>
   </div>
@@ -235,7 +246,7 @@
 
 <section class="cat monte" id="desserts" aria-labelledby="t-desserts">
   <div class="cat__tete c-rose">
-    <img class="bol" src="img/cremet.webp" alt="Pot de cremet d'Anjou Rive Bowl" width="720" height="720" loading="lazy" />
+    <img class="bol" src="img/cremet.webp" alt="Pot de cremet d'Anjou Rive Bowl" width="720" height="720" />
     <h2 class="t t-m" id="t-desserts">Desserts signature</h2>
     <p>Avec le cremet d'Anjou.</p>
   </div>
@@ -254,7 +265,7 @@
 
 <section class="cat monte" id="boissons" aria-labelledby="t-boissons">
   <div class="cat__tete c-turquoise">
-    
+    <div class="cat__photos"><figure class="cat__photo"><img src="img/carte-bubble.webp" alt="Bubble tea Rive Bowl (visuel d'illustration du brand book)" width="206" height="560" /><span class="cat__mention">Visuel d'illustration · brand book</span></figure><figure class="cat__photo"><img src="img/carte-latte.webp" alt="Latte des Rives dans un gobelet Rive Bowl" width="900" height="892" /></figure></div>
     <h2 class="t t-m" id="t-boissons">Bubble teas &amp; boissons</h2>
     <p>Les boissons fraîches et le Rive café.</p>
   </div>
@@ -279,7 +290,7 @@
 
 <section class="cat monte" id="terroir" aria-labelledby="t-terroir">
   <div class="cat__tete c-feuille">
-    
+    <figure class="cat__photo"><img src="img/carte-terroir.webp" alt="Poké chaud aux rillauds d'Anjou vu de dessus" width="900" height="720" /></figure>
     <h2 class="t t-m" id="t-terroir">Recettes du terroir</h2>
     <p>Le goût de nos régions.</p>
   </div>
@@ -296,7 +307,7 @@
 
 <section class="cat monte" id="mini-rive" aria-labelledby="t-mini-rive">
   <div class="cat__tete c-jaune">
-    
+    <figure class="cat__photo"><img src="img/carte-mini-rive.webp" alt="Menu Mini Rive : un poké, une boisson et un cookie" width="605" height="668" /></figure>
     <h2 class="t t-m" id="t-mini-rive">Mini Rive</h2>
     <p>Le menu des enfants.</p>
   </div>
@@ -310,7 +321,7 @@
 
 <section class="cat monte" id="formules" aria-labelledby="t-formules">
   <div class="cat__tete c-sable">
-    
+    <figure class="cat__photo"><img src="img/carte-formule.webp" alt="Formule : un poké, une boisson et un cookie" width="900" height="720" /></figure>
     <h2 class="t t-m" id="t-formules">Formules</h2>
     <p>Pour le midi ou à deux.</p>
   </div>
@@ -327,7 +338,7 @@
 
 <section class="cat monte" id="petite-faim" aria-labelledby="t-petite-faim">
   <div class="cat__tete c-corail">
-    
+    <figure class="cat__photo"><img src="img/carte-aiguillettes.webp" alt="Aiguillettes de poulet crousty" width="900" height="720" /></figure>
     <h2 class="t t-m" id="t-petite-faim">Petite faim</h2>
     <p>À côté, ou pour une pause.</p>
   </div>
