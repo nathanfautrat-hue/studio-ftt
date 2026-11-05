@@ -2,3 +2,6 @@
 /tarifs.md /index.md 301
 /projets/marceau /demo/marceau/ 301
 /projets/marceau.md /demo/marceau/ 301
+# Rive Bowl : la page Montjean s'appelle maintenant Restaurants (06/11/2026)
+/maquettes/rive-bowl/montjean.html /maquettes/rive-bowl/restaurants.html 301
+/maquettes/rive-bowl/montjean /maquettes/rive-bowl/restaurants.html 301

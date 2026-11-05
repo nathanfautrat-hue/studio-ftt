@@ -92,7 +92,7 @@
   }
   /* La taille des grands titres s'adapte : si un mot est plus large que la colonne (ex. « restaurant » à 320 px),
      on réduit le titre jusqu'à ce qu'il tienne, sans jamais le couper. Marche aussi sans animation. */
-  var grands = [].slice.call(document.querySelectorAll('.t-l, .t-xl'));
+  var grands = [].slice.call(document.querySelectorAll('.t-l, .t-xl, .t-case'));
   function ajuster() {
     grands.forEach(function (el) {
       el.style.fontSize = '';
@@ -214,25 +214,7 @@
     });
   });
 
-  /* ---------- 4 bis. Histoire épinglée « Une histoire dans chaque couche » ----------
-     La scène reste collée en haut ; pendant les 2 écrans de défilement, le fil en pointillés se dessine (stroke-dashoffset),
-     les 5 étapes s'allument ; le vrai bowl reste visible (sans GSAP, il ne bouge pas). Sans JS ou avec « réduire les animations » : tout est déjà là. */
-  document.querySelectorAll('.couches').forEach(function (sec) {
-    if (reduit || G) return;
-    sec.classList.add('couches--vif');
-    var etapes = [].slice.call(sec.querySelectorAll('.couches__etapes li'));
-    var fil = sec.querySelector('.couches__fil');
-    suivre(sec, function () {
-      var r = sec.getBoundingClientRect(), haut = parseFloat(getComputedStyle(sec.querySelector('.couches__scene')).top) || 0;
-      var course = r.height - (window.innerHeight - haut);
-      var q = Math.min(1, Math.max(0, (haut - r.top) / Math.max(1, course)));   // 0 quand la scène se colle, 1 quand elle repart
-      q = Math.min(1, q * 1.08);                                                // la dernière étape arrive un peu avant la fin
-      fil.style.setProperty('--fil', (1 - q).toFixed(3));
-      var actif = 0;
-      etapes.forEach(function (e, n) { var a = parseFloat(e.dataset.a); var ok = q >= a + 0.02 || (n === 0 && q > 0); e.classList.toggle('faite', ok); if (ok) actif = n; });
-      etapes.forEach(function (e, n) { e.classList.toggle('en-cours', n === actif); });
-    });
-  });
+  /* ---------- 4 bis. « Une histoire dans chaque couche » : sans GSAP, le bowl est simplement là (le mouvement est dans la version GSAP) ---------- */
 
   /* ---------- 4 ter. « À emporter » : la piste de cartes glisse vers la gauche pendant qu'on descend ---------- */
   document.querySelectorAll('.emporter').forEach(function (sec) {
@@ -607,54 +589,28 @@
       });
     });
 
-    // 4 bis. Histoire épinglée : ScrollTrigger pin. À la 1re étape, le vrai bowl TOMBE dans la scène (0,32 s power1.in), se redresse
-    // (0,45 s back.out(2.5)) et s'écrase (×0,88 / ×1,06 puis ×1,03 / ×0,98 puis 1), valeurs du burger CRAV ; à chaque étape suivante il rebondit
+    // 4 bis. « Une histoire dans chaque couche » : quand la section arrive, le vrai bowl TOMBE (0,32 s power1.in), se redresse
+    // (0,45 s back.out(2.5)), s'écrase (×0,88 / ×1,06 puis ×1,03 / ×0,98 puis 1) et fait un petit rebond, comme le burger CRAV.
+    // Il retombe si on remonte puis redescend. Plus de section épinglée (retour de Nathan du 06/11).
     animsGsap.push(function (c) {
       document.querySelectorAll('.couches').forEach(function (sec) {
-        sec.classList.add('couches--vif');
-        var scene = sec.querySelector('.couches__scene'), bol = sec.querySelector('.couches__bol'), plat = sec.querySelector('.couches__plat');
-        var etapes = [].slice.call(sec.querySelectorAll('.couches__etapes li'));
-        var fil = sec.querySelector('.couches__fil');
-        var paliers = etapes.map(function (e) { return parseFloat(e.dataset.a); });
+        var bol = sec.querySelector('.couches__bol'), plat = sec.querySelector('.couches__plat');
+        if (!bol || !plat) return;
         gsap.set(plat, { autoAlpha: 0 });
-        var niveau = 0;
-        function ecraser() {
-          gsap.timeline().to(bol, { scaleX: 1.06, scaleY: 0.88, transformOrigin: '50% 80%', duration: 0.06 })
-            .to(bol, { scaleX: 0.98, scaleY: 1.03, duration: 0.08 }).to(bol, { scaleX: 1, scaleY: 1, duration: 0.12 });
-        }
         function arriver() {
-          gsap.killTweensOf(plat);
+          gsap.killTweensOf([plat, bol]);
           gsap.timeline()
             .fromTo(plat, { autoAlpha: 1, yPercent: c.tel ? -140 : -200, scale: 0.8, rotation: rnd(-12, 12) }, { yPercent: 0, scale: 1, duration: 0.32, ease: 'power1.in' })
             .to(plat, { rotation: 0, duration: 0.45, ease: 'back.out(2.5)' }, 0.32)
-            .call(ecraser, null, 0.32);
+            .to(bol, { scaleX: 1.06, scaleY: 0.88, transformOrigin: '50% 80%', duration: 0.06 }, 0.32)
+            .to(bol, { scaleX: 0.98, scaleY: 1.03, duration: 0.08 })
+            .to(bol, { scaleX: 1, scaleY: 1, duration: 0.12 })
+            .to(plat, { yPercent: -7, duration: 0.18, ease: 'power2.out' }, 0.62)
+            .to(plat, { yPercent: 0, duration: 0.45, ease: 'bounce.out' });
         }
-        function repartir() { gsap.killTweensOf(plat); gsap.to(plat, { autoAlpha: 0, yPercent: -120, duration: 0.28, ease: 'back.in(1.2)' }); }
-        function maj(p) {
-          var q = Math.min(1, p * 1.08), n = 0;
-          fil.style.setProperty('--fil', (1 - q).toFixed(3));
-          paliers.forEach(function (a, i) { if (q >= a + 0.02 || (i === 0 && q > 0)) n = i + 1; });
-          if (n !== niveau) {
-            if (niveau === 0 && n > 0) arriver();
-            else if (n === 0) repartir();
-            else if (n > niveau) ecraser();                              // une étape de plus : le bowl rebondit
-            niveau = n;
-          }
-          etapes.forEach(function (e, i) { e.classList.toggle('faite', i < n); e.classList.toggle('en-cours', i === Math.max(0, n - 1)); });
-        }
-        // secours : si l'horloge de GSAP ne tourne pas, on montre le bowl au lieu d'une scène vide
-        var image0 = gsap.ticker.frame;
-        garde(bol, function () {
-          gsap.set(plat, { autoAlpha: 1, yPercent: 0, scale: 1, rotation: 0 });
-          niveau = etapes.length; fil.style.setProperty('--fil', '0');
-          etapes.forEach(function (e) { e.classList.add('faite'); });
-        }, function () { return niveau > 0 || gsap.ticker.frame > image0 + 10; });
-        ScrollTrigger.create({
-          trigger: scene, pin: true, anticipatePin: 1,
-          start: function () { var h = document.querySelector('.entete'); return 'top ' + (h ? h.offsetHeight : 0); },
-          end: c.tel ? '+=180%' : '+=200%',
-          onUpdate: function (s) { maj(s.progress); }, onRefresh: function (s) { maj(s.progress); }
-        });
+        ScrollTrigger.create({ trigger: bol, start: 'top 80%', onEnter: arriver, onLeaveBack: function () { gsap.killTweensOf(plat); gsap.set(plat, { autoAlpha: 0 }); } });
+        garde(bol, function () { gsap.killTweensOf(plat); gsap.set(plat, { autoAlpha: 1, yPercent: 0, scale: 1, rotation: 0 }); },
+          function () { return gsap.getProperty(plat, 'autoAlpha') > 0.9; });
       });
     });
 

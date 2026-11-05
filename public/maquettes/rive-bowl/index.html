@@ -29,7 +29,7 @@
       <a href="notre-histoire.html">Notre histoire</a>
       <a href="nos-engagements.html">Nos engagements</a>
       <a href="la-carte.html">La carte</a>
-      <a href="montjean.html">Montjean</a>
+      <a href="restaurants.html">Restaurants</a>
       <a href="franchise.html">Devenir franchisé</a>
     </nav>
     <a class="btn btn--jaune cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
@@ -44,7 +44,7 @@
     <a class="lien" href="notre-histoire.html">Notre histoire</a>
     <a class="lien" href="nos-engagements.html">Nos engagements</a>
     <a class="lien" href="la-carte.html">La carte</a>
-    <a class="lien" href="montjean.html">Montjean</a>
+    <a class="lien" href="restaurants.html">Restaurants</a>
     <a class="lien" href="franchise.html">Devenir franchisé</a>
     <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
     <div class="tiroir__appli">
@@ -69,9 +69,9 @@
     <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
   </div>
   <div class="eventail" aria-label="Trois pokés Rive Bowl">
-    <img src="img/carte-terroir.webp" alt="Poké du terroir Rive Bowl" width="900" height="720" fetchpriority="high" />
-    <img src="img/chaud-saumon.webp" alt="Poké chaud au saumon Rive Bowl" width="900" height="900" fetchpriority="high" />
-    <img src="img/carte-formule.webp" alt="Formule midi Rive Bowl : un poké, une boisson et un cookie" width="900" height="720" fetchpriority="high" />
+    <img src="img/chaud-saumon.webp" alt="Poké chaud au saumon Rive Bowl vu de dessus" width="900" height="900" fetchpriority="high" />
+    <img src="img/carte-formule.webp" alt="Formule midi Rive Bowl : un poké saumon, une boisson et un cookie" width="900" height="720" fetchpriority="high" />
+    <img src="img/carte-sweet.webp" alt="Dessert Sweet Signature d’Anjou à la mangue" width="900" height="720" fetchpriority="high" />
   </div>
 </section>
 
@@ -93,28 +93,18 @@
   </div>
 </section>
 
-<!-- Histoire épinglée « Une histoire dans chaque couche » : la section reste à l'écran pendant qu'on défile (3 écrans au plus sur téléphone).
-     Un fil en pointillés se dessine et 5 étapes s'allument ; le bowl tombe à la 1re étape et rebondit à chaque étape. Composition : carte Dishop (1 base, 1 protéine, 5 ingrédients, 2 toppings, 1 sauce). -->
+<!-- « Une histoire dans chaque couche » (retour de Nathan du 06/11) : seulement le titre et le vrai bowl, qui tombe et rebondit
+     quand la section arrive à l'écran (valeurs du burger CRAV). Plus d'étapes, plus de section épinglée. -->
 <section class="couches" aria-labelledby="titre-couches">
-  <div class="couches__scene">
-    <div class="wrap couches__grille">
-      <h2 class="t t-l couches__titre" id="titre-couches">Une histoire dans chaque couche</h2>
-      <div class="couches__bol">
-        <img class="couches__plat" src="img/bowl-rillauds.webp" alt="Poké rillauds d’Anjou Rive Bowl vu de dessus" width="720" height="720" loading="lazy" />
-      </div>
-      <ol class="couches__etapes">
-        <svg class="couches__fil" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 10 100"><defs><mask id="fil-masque" maskUnits="userSpaceOnUse"><path class="couches__fil-trace" pathLength="1" d="M5 0V100" /></mask></defs><path class="couches__fil-fond" d="M5 0V100" /><path class="couches__fil-fait" d="M5 0V100" mask="url(#fil-masque)" /></svg>
-        <li data-a="0"><b>La base</b><span>Du riz vinaigré pour commencer.</span></li>
-        <li data-a="0.2"><b>La protéine</b><span>Saumon, poulet, crevettes ou falafel.</span></li>
-        <li data-a="0.4"><b>Fruits et légumes</b><span>Cinq au choix&nbsp;: carotte, radis, mangue…</span></li>
-        <li data-a="0.6"><b>Le croquant</b><span>Deux toppings, comme l’edamame.</span></li>
-        <li data-a="0.8"><b>La sauce</b><span>Une sauce, et c’est prêt.</span></li>
-      </ol>
-      <!-- Composer son bowl : le site le DIT, il ne le fait pas (rien à cliquer, pas de prix). On compose sur la commande en ligne ou au restaurant. -->
-      <div class="couches__fin">
-        <p>Composez le vôtre en ligne ou au restaurant.</p>
-        <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Composer ma commande <span class="fl" aria-hidden="true">→</span></a>
-      </div>
+  <div class="wrap couches__grille">
+    <h2 class="t t-l couches__titre" id="titre-couches">Une histoire dans chaque couche</h2>
+    <div class="couches__bol">
+      <img class="couches__plat" src="img/bowl-rillauds.webp" alt="Poké rillauds d’Anjou Rive Bowl vu de dessus" width="720" height="720" loading="lazy" />
+    </div>
+    <!-- Composer son bowl : le site le DIT, il ne le fait pas (rien à cliquer, pas de prix). On compose sur la commande en ligne ou au restaurant. -->
+    <div class="couches__fin">
+      <p>Composez le vôtre en ligne ou au restaurant.</p>
+      <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Composer ma commande <span class="fl" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -137,8 +127,8 @@
     <ul class="emporter__piste">
       <li class="emporter__carte c-corail"><img src="img/carte-crousty.webp" alt="" width="614" height="388" loading="lazy" /><span>Le Crousty Rive</span></li>
       <li class="emporter__carte c-sapin"><img src="img/carte-latte.webp" alt="" width="900" height="892" loading="lazy" /><span>Le Latte des Rives</span></li>
-      <li class="emporter__carte c-turquoise"><img src="img/carte-sweet.webp" alt="" width="900" height="720" loading="lazy" /><span>Le Sweet d’Anjou</span></li>
-      <li class="emporter__carte c-rose"><img src="img/carte-formule.webp" alt="" width="900" height="720" loading="lazy" /><span>La formule midi</span></li>
+      <li class="emporter__carte c-turquoise"><img src="img/carte-mini-rive.webp" alt="" width="605" height="668" loading="lazy" /><span>Le Mini Rive</span></li>
+      <li class="emporter__carte c-rose"><img src="img/carte-aiguillettes.webp" alt="" width="900" height="720" loading="lazy" /><span>Les aiguillettes crousty</span></li>
       <li class="emporter__carte c-feuille"><img src="img/carte-lemonaid.webp" alt="" width="793" height="900" loading="lazy" /><span>La Lemonaid</span></li>
     </ul>
   </div>
@@ -190,9 +180,9 @@
           <li><a href="notre-histoire.html">Notre histoire</a></li>
           <li><a href="nos-engagements.html">Nos engagements</a></li>
           <li><a href="la-carte.html">Notre carte</a></li>
-          <li><a href="montjean.html">Le restaurant de Montjean</a></li>
+          <li><a href="restaurants.html">Nos restaurants</a></li>
           <li><a href="franchise.html">Devenir franchisé</a></li>
-          <li><a href="montjean.html#infos">Contact</a></li>
+          <li><a href="restaurants.html#infos">Contact</a></li>
           <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></li>
         </ul>
       </nav>

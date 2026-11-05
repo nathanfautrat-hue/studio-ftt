@@ -256,4 +256,38 @@
     var roule = document.createElement('span'); roule.className = 'btn__roule';
     roule.appendChild(ligne); roule.appendChild(double); b.appendChild(roule);
   });
+  // Rangées de cartes : les titres d'une même rangée prennent la même hauteur (même nombre de lignes), donc les phrases s'alignent
+  function lignes(el) {
+    var r = document.createRange(); r.selectNodeContents(el);
+    // nombre de lignes = nombre de hauteurs différentes des morceaux de texte (à 6 px près)
+    return [].reduce.call(r.getClientRects(), function (acc, x) {
+      if (x.width > 0 && !acc.some(function (a) { return Math.abs(a - x.top) < 6; })) acc.push(x.top);
+      return acc;
+    }, []).length;
+  }
+  function egaliser() {
+    document.querySelectorAll('.tuiles, .damier, .menu-grille').forEach(function (liste) {
+      var cartes = [].slice.call(liste.children), titres = cartes.map(function (c) { return c.querySelector('.t-case, h3, h4'); });
+      titres.forEach(function (t) { if (t) t.style.minHeight = ''; });
+      var rangees = {};
+      cartes.forEach(function (c, i) { if (!titres[i] || !c.offsetParent) return; var k = Math.round(c.getBoundingClientRect().top); (rangees[k] = rangees[k] || []).push(titres[i]); });
+      Object.keys(rangees).forEach(function (k) {
+        var rang = rangees[k];
+        // même nombre de lignes pour tous les titres de la rangée : une taille commune, réduite au besoin (jamais de plus de 25 %)
+        var base = Math.min.apply(null, rang.map(function (t) { return parseFloat(getComputedStyle(t).fontSize); }));
+        var taille = base, essais = 0;
+        function memesLignes() { var n = rang.map(lignes); return n.every(function (x) { return x === n[0]; }); }
+        rang.forEach(function (t) { t.style.fontSize = taille + 'px'; });
+        while (!memesLignes() && taille > base * 0.75 && essais < 12) { taille *= 0.97; rang.forEach(function (t) { t.style.fontSize = taille.toFixed(1) + 'px'; }); essais++; }
+        if (!memesLignes()) { taille = base; rang.forEach(function (t) { t.style.fontSize = taille + 'px'; }); }
+        var h = Math.max.apply(null, rang.map(function (t) { return t.getBoundingClientRect().height; }));
+        rang.forEach(function (t) { t.style.minHeight = h + 'px'; });
+      });
+    });
+  }
+  egaliser();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setTimeout(egaliser, 50); });
+  var largeurEgal = window.innerWidth;
+  window.addEventListener('resize', function () { if (window.innerWidth !== largeurEgal) { largeurEgal = window.innerWidth; setTimeout(egaliser, 150); } });
+  window.addEventListener('load', function () { setTimeout(egaliser, 300); });
 })();

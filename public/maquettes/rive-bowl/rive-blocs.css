@@ -886,3 +886,231 @@ html.arrivee body::after{background:var(--corail)}
 .aplat.profil .form{background:var(--jaune);padding:var(--e-5) var(--e-5) var(--e-6);box-shadow:none}
 .aplat.profil .form input,.aplat.profil .form textarea{background:var(--creme);border-color:var(--sapin)}
 .aplat.profil .form .btn{--bg:var(--sapin);--bd:var(--sapin);--fg:var(--creme)}
+
+/* ===================== RETOURS DE NATHAN (06/11, 2e passe) ===================== */
+/* 1. Éventail : 3 photos différentes, plus écartées, aucune ne cache le plat d'une autre */
+.eventail{gap:clamp(8px,2.4vw,32px);height:auto;align-items:flex-start;padding-top:var(--e-4)}
+.eventail img{width:clamp(100px,28vw,320px);margin:0}
+@media (prefers-reduced-motion:no-preference){
+  .eventail img:nth-child(1){--r:-7deg;--y:8%}
+  .eventail img:nth-child(3){--r:7deg;--y:8%}
+}
+.eventail img:nth-child(1){transform:rotate(-7deg) translateY(8%)}
+.eventail img:nth-child(3){transform:rotate(7deg) translateY(8%)}
+@media (max-width:420px){.eventail img{border-width:4px}}
+/* 2. « Une histoire dans chaque couche » : une colonne, le titre, le bowl, la phrase et le bouton ; plus de section épinglée */
+.couches{padding:var(--e-fl-4) 0 var(--e-fl-3);overflow:hidden}
+.couches__grille,.couches .couches__grille{grid-template-columns:minmax(0,1fr)!important;justify-items:center;gap:var(--e-5)}
+.couches__bol{width:min(80vw,520px)!important;aspect-ratio:auto}
+.couches__titre{grid-column:auto!important}
+/* 3. Un bouton n'est jamais mordu par le bloc suivant : de la place dessous */
+.couches__fin{padding-bottom:var(--e-6)}
+/* 4. Notre histoire : l'origine, un bloc rose avec la photo et le récit du brand book */
+.origine{background:var(--c);color:var(--sapin-deep);padding:var(--e-fl-4) 0}
+.origine__grille{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--e-fl-2);align-items:center}
+.origine__photo{position:relative;border-radius:var(--r-case);overflow:hidden;box-shadow:var(--ombre);rotate:-2deg}
+.origine__photo img{display:block;width:100%;height:auto;aspect-ratio:6/5;object-fit:cover}
+.origine__photo .mention{position:absolute;left:12px;bottom:12px;background:var(--noir-60);color:var(--creme);padding:2px 8px;border-radius:var(--r-pilule);font-size:10px;line-height:1.5}
+.origine .lead{margin-top:var(--e-5)}
+.origine__chute{margin-top:var(--e-4);font:400 var(--fs-3)/1.15 var(--titre);text-transform:uppercase;color:var(--corail-texte)}
+@media (max-width:860px){.origine__grille{grid-template-columns:minmax(0,1fr)}}
+
+/* ===================== CARTE DES PAYS DE LA LOIRE (page Restaurants), façon leoff-paris.com ===================== */
+.carte-pdl{background:var(--c);color:var(--sapin-deep);padding:var(--e-fl-3) 0 var(--e-fl-4);overflow:hidden}
+.carte-pdl .t-xl{text-align:center}
+.carte-pdl .lead{margin:var(--e-3) auto 0;text-align:center}
+.carte-pdl__carte{position:relative;width:min(100%,820px);margin:var(--e-fl-2) auto 0;aspect-ratio:1000/977}
+.carte__svg{display:block;width:100%;height:100%;overflow:visible}
+/* relief cartoon : un socle sapin décalé sous chaque département, trait épais */
+.carte__socle{fill:var(--sapin-deep);transform:translate(16px,20px)}
+.carte__dep{fill:var(--creme);stroke:var(--sapin-deep);stroke-width:3;stroke-linejoin:round;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill .3s cubic-bezier(.165,.84,.44,1)}
+@media (hover:hover){.carte__dep:hover{fill:var(--sable)}}
+/* le département survolé se soulève (copie corail décalée vers le haut, comme le calque rose de Leoff) */
+.carte__haut{fill:var(--corail);stroke:var(--sapin-deep);stroke-width:3;stroke-linejoin:round;vector-effect:non-scaling-stroke;pointer-events:none;opacity:0;transform:none;transition:transform .3s cubic-bezier(.165,.84,.44,1),opacity .2s linear}
+.carte__haut--on{opacity:1;transform:translate(-18px,-22px)}
+/* la Loire : trait épais turquoise cerné de sapin */
+.carte__loire-bord,.carte__loire{fill:none;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.carte__loire-bord{stroke:var(--sapin-deep);stroke-width:22}
+.carte__loire{stroke:var(--turquoise);stroke-width:13}
+/* le nom du département : il monte d'un masque (0,5 s, même courbe que Leoff) */
+.carte__nom{position:absolute;z-index:3;transform:translate(-50%,-50%);overflow:hidden;pointer-events:none;font:400 clamp(20px,5.4vw,52px)/1.1 var(--titre);text-transform:uppercase;color:var(--sapin-deep);white-space:nowrap;padding:0 .08em}
+.carte__nom>span{display:block;transform:translateY(105%);transition:transform .5s cubic-bezier(.165,.84,.44,1);text-shadow:2px 2px 0 var(--creme)}
+.carte__nom--actif>span{transform:none;transition-delay:.1s}
+/* les repères : une photo de bowl dans un rond, au moins 44 px, qui flotte */
+.carte__repere{position:absolute;z-index:4;transform:translate(-50%,-50%);display:grid;justify-items:center;gap:6px;padding:0;border:0;background:none;cursor:pointer;text-decoration:none;color:var(--sapin-deep)}
+.carte__flotte{display:block;width:clamp(48px,11vw,88px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:4px solid var(--creme);box-shadow:4px 5px 0 var(--sapin-deep);background:var(--creme);transition:transform .3s cubic-bezier(.165,.84,.44,1)}
+.carte__flotte img{width:100%;height:100%;object-fit:cover;display:block}
+@media (hover:hover){.carte__repere:hover .carte__flotte{transform:scale(1.08)}}
+.carte__repere:focus-visible{outline:none}.carte__repere:focus-visible .carte__flotte{outline:3px solid var(--sapin-deep);outline-offset:3px}
+.carte__etiquette{font:400 clamp(12px,2.6vw,17px)/1.05 var(--titre);text-transform:uppercase;background:var(--sapin-deep);color:var(--creme);padding:.35em .6em .3em;border-radius:var(--r-pilule);white-space:nowrap;text-align:center}
+.carte__etiquette i{font-style:normal;display:block;color:var(--jaune);font-size:.8em}
+/* « Bientôt » : contour en pointillés, photo un peu passée */
+.carte__repere--bientot .carte__flotte{border:4px dashed var(--sapin-deep);box-shadow:none}
+.carte__repere--bientot .carte__flotte img{opacity:.7;filter:saturate(.6)}
+/* « Votre ville ici ? » : un rond en pointillés avec un + */
+.carte__repere--franchise .carte__flotte{display:grid;place-items:center;border:4px dashed var(--sapin-deep);box-shadow:none;background:var(--jaune-clair)}
+.carte__repere--franchise b{font:400 clamp(26px,6vw,44px)/1 var(--titre);color:var(--sapin-deep)}
+.carte__repere--franchise .carte__etiquette{background:var(--corail);color:var(--sapin-deep)}
+.carte__repere--franchise .carte__etiquette i{color:var(--sapin-deep)}
+.carte--flotte-css .carte__flotte{animation:carte-flotte 2.6s ease-in-out infinite alternate}
+.carte--flotte-css .carte__repere:nth-of-type(2) .carte__flotte{animation-delay:-1.1s}
+@keyframes carte-flotte{to{transform:translateY(-7px)}}
+@media (prefers-reduced-motion:reduce){.carte__flotte,.carte__nom>span,.carte__haut{animation:none;transition:none}}
+/* la fiche du restaurant */
+.carte__fiche{position:absolute;z-index:6;left:var(--fx);top:var(--fy);width:min(300px,86vw);transform:translate(28px,-50%) scale(.92);opacity:0;transform-origin:0 50%;background:var(--creme);color:var(--sapin-deep);border:3px solid var(--sapin-deep);border-radius:24px;box-shadow:6px 7px 0 var(--sapin-deep);padding:var(--e-5) var(--e-5) var(--e-5);transition:transform .35s var(--rebond),opacity .2s linear}
+.carte__fiche--gauche{transform:translate(calc(-100% - 28px),-50%) scale(.92);transform-origin:100% 50%}
+.carte__fiche--ouverte{opacity:1;transform:translate(28px,-50%)}
+.carte__fiche--gauche.carte__fiche--ouverte{transform:translate(calc(-100% - 28px),-50%)}
+.carte__fiche-fermer{position:absolute;top:8px;right:8px;width:44px;height:44px;border:0;border-radius:50%;background:var(--sapin);color:var(--creme);font:700 22px/1 var(--font);cursor:pointer}
+.carte__fiche-statut{font:400 var(--fs-petit)/1 var(--titre);text-transform:uppercase;color:var(--corail-texte)}
+.carte__fiche-ville{margin-top:var(--e-2);font:400 var(--fs-3)/1.05 var(--titre);text-transform:uppercase;padding-right:44px}
+.carte__fiche-adresse{margin-top:var(--e-2);font-weight:var(--fw-fort)}
+.carte__fiche-btns{display:grid;gap:var(--e-2);margin-top:var(--e-4)}
+.carte__fiche-btns .btn{width:100%}
+@media (max-width:600px){
+  /* sur téléphone, la fiche s'ouvre en bas de la carte, sur toute la largeur */
+  .carte__fiche,.carte__fiche--gauche{left:0;right:0;top:auto;bottom:0;width:auto;transform:translateY(16px);transform-origin:50% 100%}
+  .carte__fiche--ouverte,.carte__fiche--gauche.carte__fiche--ouverte{transform:none}
+}
+/* sous la carte : La Flèche, bientôt */
+.lieu--bientot{grid-template-columns:1fr;background:transparent;border:3px dashed var(--creme-20,rgba(253,248,242,.35))}
+.lieu--bientot h2 i{font-style:normal;margin-left:.4em;padding:.2em .6em;border-radius:var(--r-pilule);background:var(--jaune);color:var(--sapin-deep);font-size:.6em;vertical-align:middle}
+.lieu__bientot{margin-top:var(--e-2);font-size:var(--fs-4)}
+.contact-crav .lieux{display:grid;gap:var(--e-fl-1)}
+.carte__nom{text-align:center;line-height:1}
+/* page Restaurants : le bloc sapin sous la carte n'a pas besoin de remplir l'écran */
+.carte-pdl+.contact-crav,.carte-pdl~.contact-crav{min-height:0;padding-top:var(--e-fl-3)}
+/* téléphone : le nom du département s'affiche au-dessus de la carte (il ne cache jamais un repère) */
+@media (max-width:600px){
+  .carte-pdl__carte{margin-top:calc(var(--e-fl-2) + 52px)}
+  .carte__nom{left:50%!important;top:0!important;transform:translate(-50%,-115%)}
+  .carte__nom br{display:none}
+}
+@media (max-width:360px){.carte__etiquette{font-size:10px;padding:.3em .5em .25em}}
+/* Franchise, « Parlons de votre projet » : la salle à l'enseigne lumineuse à côté du formulaire (au-dessus sur téléphone), plus de vide sous Envoyer */
+.aplat.profil .wrap{align-items:start}
+.profil__gauche .profil__photo{flex:none;min-height:0;margin-top:var(--e-6);border-radius:24px;overflow:hidden;rotate:-2deg;box-shadow:6px 7px 0 var(--sapin-deep);position:relative}
+.profil__gauche .profil__photo img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:0}
+.profil__photo .mention{position:absolute;left:12px;bottom:12px;background:var(--noir-60);color:var(--creme);padding:2px 8px;border-radius:var(--r-pilule);font-size:10px;line-height:1.5}
+@media (max-width:860px){.profil__gauche .profil__photo{aspect-ratio:auto;margin-bottom:var(--e-4)}}
+
+/* ===================== LA CARTE : fiche ingrédients et allergènes (façon borne) ===================== */
+.plat{cursor:pointer}
+.plat__ouvrir{margin-top:auto;min-height:44px;padding:0 var(--e-4);border-radius:var(--r-pilule);border:2px solid currentColor;background:transparent;color:inherit;font:400 var(--fs-petit)/1 var(--titre);text-transform:uppercase;letter-spacing:.02em;cursor:pointer;transition:transform .3s ease}
+@media (hover:hover){.plat:hover .plat__ouvrir{transform:scale(1.05)}}
+.plat__ouvrir:focus-visible{outline:3px solid var(--corail-texte);outline-offset:3px}
+body.fiche-plat-ouverte{overflow:hidden}
+.fiche-plat__voile{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:var(--g);background:rgba(2,46,33,.6);opacity:0;transition:opacity .25s linear}
+.fiche-plat__voile--on{opacity:1}
+.fiche-plat{position:relative;width:min(560px,100%);max-height:min(92svh,860px);overflow-y:auto;overscroll-behavior:contain;background:var(--creme);color:var(--sapin-deep);border:3px solid var(--sapin-deep);border-radius:24px;box-shadow:8px 9px 0 var(--sapin-deep);padding:var(--e-5);transform:translateY(24px) scale(.96);transition:transform .4s var(--rebond)}
+.fiche-plat__voile--on .fiche-plat{transform:none}
+.fiche-plat__fermer{position:sticky;top:0;float:right;z-index:2;width:44px;height:44px;margin:-6px -6px 0 0;border:0;border-radius:50%;background:var(--sapin);color:var(--creme);font:700 24px/1 var(--font);cursor:pointer}
+.fiche-plat__photo{display:grid;place-items:center;margin:0 auto var(--e-3);width:min(80%,340px)}
+.fiche-plat__photo img{width:100%;height:auto;filter:drop-shadow(0 16px 20px var(--noir-20))}
+.fiche-plat__photo--cadre{width:100%}
+.fiche-plat__photo--cadre img{aspect-ratio:4/3;object-fit:cover;border-radius:16px;filter:none}
+.fiche-plat__nom{font:400 var(--fs-2)/1.05 var(--titre);text-transform:uppercase}
+.fiche-plat__prix{margin-top:var(--e-1);font:400 var(--fs-4)/1 var(--titre);color:var(--corail-texte)}
+.fiche-plat__titre{margin-top:var(--e-5);font:400 var(--fs-petit)/1 var(--titre);text-transform:uppercase;letter-spacing:.06em;color:var(--sapin)}
+.fiche-plat__ingr{margin-top:var(--e-2);font-size:var(--fs-texte);line-height:var(--lh-texte)}
+.allergs{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:var(--e-2);margin-top:var(--e-3)}
+.allerg{display:grid;justify-items:center;gap:4px;text-align:center;font:var(--fw-fort) 11px/1.15 var(--font);color:var(--sapin);opacity:.38}
+.allerg svg{width:44px;height:44px;padding:9px;border-radius:50%;border:2px solid currentColor;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.allerg--on{opacity:1;color:var(--sapin-deep)}
+.allerg--on svg{background:var(--jaune);border-color:var(--sapin-deep)}
+.fiche-plat__note{margin-top:var(--e-3);font-weight:var(--fw-fort)}
+.fiche-plat__avert{margin-top:var(--e-4);font-size:var(--fs-petit);line-height:1.4;color:var(--sapin-deep)}
+.fiche-plat__cmd{margin-top:var(--e-5);width:100%}
+@media (max-width:600px){
+  .fiche-plat__voile{place-items:end stretch;padding:0}
+  .fiche-plat{width:100%;max-height:92svh;border-radius:24px 24px 0 0;border-width:3px 0 0;box-shadow:none;transform:translateY(40px)}
+}
+@media (prefers-reduced-motion:reduce){.fiche-plat,.fiche-plat__voile{transition:none}}
+.fiche-plat__voile[hidden],.carte__fiche[hidden]{display:none}
+
+/* ===================== RESTAURANTS : plan du quartier à nous (OpenStreetMap), à la place de Google Maps ===================== */
+.plan{position:relative;display:block;overflow:hidden;background:var(--sable);text-decoration:none;color:var(--sapin-deep);isolation:isolate}
+.plan__svg{position:absolute;inset:0;width:100%;height:100%}
+.plan__terre{fill:var(--sable)}
+.plan__eau path{fill:var(--turquoise);stroke:var(--sapin-deep);stroke-width:4;stroke-linejoin:round}
+.plan__rues-bord path,.plan__grandes-bord path,.plan__ponts-bord path,.plan__rues path,.plan__grandes path,.plan__ponts path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.plan__rues-bord path{stroke:var(--sapin-deep);stroke-width:15}
+.plan__grandes-bord path{stroke:var(--sapin-deep);stroke-width:23}
+.plan__ponts-bord path{stroke:var(--sapin-deep);stroke-width:27}
+.plan__rues path{stroke:var(--creme);stroke-width:9}
+.plan__grandes path{stroke:var(--jaune);stroke-width:16}
+.plan__ponts path{stroke:var(--corail);stroke-width:19}
+.plan__loire{font:400 64px/1 var(--titre);text-transform:uppercase;fill:var(--creme);stroke:var(--sapin-deep);stroke-width:5px;paint-order:stroke fill;letter-spacing:.06em}
+.plan__rue{font:400 26px/1 var(--titre);text-transform:uppercase;fill:var(--sapin-deep);stroke:var(--creme);stroke-width:7px;paint-order:stroke fill;text-anchor:middle;dominant-baseline:middle}
+/* le gros repère Rive Bowl, au centre : il poppe puis flotte */
+.plan__repere{position:absolute;left:50%;top:50%;z-index:2;display:grid;justify-items:center;gap:6px;transform:translate(-50%,-62%)}
+.plan__bulle{display:block;width:clamp(64px,16vw,104px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:5px solid var(--creme);box-shadow:5px 6px 0 var(--sapin-deep);background:var(--creme)}
+.plan__bulle img{width:100%;height:100%;object-fit:cover;display:block}
+.plan__nom{font:400 clamp(14px,3.4vw,20px)/1 var(--titre);text-transform:uppercase;background:var(--sapin-deep);color:var(--jaune);padding:.35em .7em .3em;border-radius:var(--r-pilule);white-space:nowrap}
+.plan__action{position:absolute;right:12px;top:12px;z-index:2;font:400 var(--fs-petit)/1 var(--titre);text-transform:uppercase;background:var(--jaune);color:var(--sapin-deep);border:2px solid var(--sapin-deep);border-radius:var(--r-pilule);padding:.7em 1em;min-height:44px;display:inline-flex;align-items:center}
+.plan__credit{position:absolute;left:8px;bottom:8px;z-index:2;font:600 10px/1.4 var(--font);background:var(--noir-60);color:var(--creme);padding:1px 7px;border-radius:var(--r-pilule)}
+@media (hover:hover){.plan:hover .plan__bulle{transform:scale(1.06)}.plan__bulle{transition:transform .3s cubic-bezier(.165,.84,.44,1)}}
+.plan:focus-visible{outline:4px solid var(--jaune);outline-offset:3px}
+@media (prefers-reduced-motion:no-preference){
+  .vivant .plan__bulle{animation:plan-flotte 2.6s ease-in-out infinite alternate}
+}
+@keyframes plan-pop{from{transform:scale(0) rotate(-14deg)}to{transform:none}}
+@keyframes plan-flotte{to{translate:0 -7px}}
+.carte__etiquette .carte__sous{color:var(--creme);font-size:.68em;opacity:.85}
+/* Mauges-sur-Loire : nom plus long, l étiquette part vers la gauche du repère (elle ne touche plus La Flèche) */
+.carte__repere--ouvert{position:absolute}
+.carte__repere--ouvert .carte__etiquette{position:absolute;top:calc(100% + 6px);right:30%;text-align:right}
+
+/* ===================== JAMAIS DE MOT COUPÉ PAR UN TIRET (Nathan, 06/11) : la taille s'adapte (vivant.js « ajuster »), la carte s'élargit ===================== */
+h1,h2,h3,h4,h5,p,li,a,span,b,blockquote,figcaption,.t,.t-case,.btn,.badge-texte{hyphens:none!important;-webkit-hyphens:none!important}
+h1,h2,h3,h4,h5,.t,.t-case,.btn,.carte__etiquette,.plan__nom,.plat__ouvrir{overflow-wrap:normal!important;word-break:normal!important}
+/* cartes pleines : un picto, le titre, une phrase ; mêmes hauteurs, titres alignés (hauteur égalisée par rive.js) */
+.tuile__picto{display:grid;place-items:center;width:52px;height:52px;flex:none;border-radius:50%;background:var(--creme);border:2px solid var(--sapin-deep);color:var(--sapin-deep);box-shadow:3px 3px 0 var(--sapin-deep)}
+.tuile__picto svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tuile .t-case{min-width:0}
+.tuile p{margin-top:var(--e-1)}
+.damier .tuile{justify-content:center;gap:var(--e-3)}
+/* Franchise, « Ce que le réseau vous apporte » : plus de cases carrées à moitié vides ; la rangée prend la hauteur du texte et les photos la remplissent */
+.damier>li{aspect-ratio:auto!important;min-height:250px}
+.damier .tuile{padding:var(--e-5)}
+.damier__photo{min-height:250px}
+.damier__photo img{position:absolute;inset:0;width:100%;height:100%}
+.damier .tuile{justify-content:flex-start}
+.damier>li.tuile{justify-content:flex-start}
+.damier>li{min-height:220px}.damier__photo{min-height:220px}
+/* Retour de Nathan (06/11) : cartes épurées, juste le titre, sans picto ni phrase ajoutée.
+   Pas de grand vide : la carte prend la hauteur du titre, centré, et toutes les cartes d'une rangée ont la même hauteur. */
+.tuiles .tuile:not(:has(img)){justify-content:center;min-height:0;padding:var(--e-6) var(--e-5)}
+.damier>li.tuile{justify-content:center}
+.tuiles .tuile:not(:has(img)) .t-case,.damier>li.tuile .t-case{display:flex;align-items:center}
+
+/* ===================== RESTAURANTS : vraie carte zoomable (MapLibre + OpenFreeMap), le plan SVG reste dessous en secours ===================== */
+.carte-vraie{position:relative;overflow:hidden;background:var(--sable)}
+.carte-vraie>.plan{position:absolute;inset:0;width:100%;height:100%}
+.carte-vraie__map{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .4s linear}
+.carte-vraie--prete .carte-vraie__map{opacity:1;pointer-events:auto}
+.carte-vraie--prete>.plan{visibility:hidden}
+.carte-vraie .maplibregl-ctrl-group{border-radius:14px;overflow:hidden;box-shadow:3px 3px 0 var(--sapin-deep);border:2px solid var(--sapin-deep)}
+.carte-vraie .maplibregl-ctrl-group button{width:44px;height:44px}
+.carte-vraie .maplibregl-ctrl-attrib{font:600 10px/1.4 var(--font);background:rgba(253,248,242,.85)}
+/* épingles rondes aux couleurs de la marque */
+.epingle{display:grid;justify-items:center;padding:0;border:0;background:none;cursor:pointer;filter:drop-shadow(3px 4px 0 rgba(2,46,33,.9))}
+.epingle__rond{position:relative;display:block;width:52px;height:52px;border-radius:50%;border:4px solid var(--corail);background:var(--creme);overflow:hidden}
+.epingle__rond img{width:100%;height:100%;object-fit:cover;display:block}
+.epingle::after{content:"";width:0;height:0;margin-top:-2px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:13px solid var(--corail)}
+.epingle--bientot .epingle__rond{border:4px dashed var(--sapin-deep)}
+.epingle--bientot::after{border-top-color:var(--sapin-deep)}
+.epingle:focus-visible .epingle__rond{outline:3px solid var(--jaune);outline-offset:2px}
+/* la fiche : blanche, coins arrondis, nom, ADRESSE, TÉLÉPHONE, TYPE, croix, bouton */
+.fiche-resto .maplibregl-popup-content{border-radius:18px;padding:18px 20px 18px;box-shadow:4px 5px 0 var(--sapin-deep);border:2px solid var(--sapin-deep);font-family:var(--font);color:var(--sapin-deep);background:#fff}
+.fiche-resto .maplibregl-popup-tip{border-top-color:var(--sapin-deep)}
+.fiche-resto .maplibregl-popup-close-button{width:40px;height:40px;font-size:22px;line-height:1;border-radius:50%;right:4px;top:4px;color:var(--sapin-deep)}
+.fiche-resto__nom{font:400 18px/1.15 var(--titre);text-transform:uppercase;padding-right:30px}
+.fiche-resto__nom i{font-style:normal;font-size:.7em;padding:.15em .5em;border-radius:var(--r-pilule);background:var(--jaune);vertical-align:middle}
+.fiche-resto__infos{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin-top:12px;font-size:14px;line-height:1.35}
+.fiche-resto__infos dt{font:400 11px/1.6 var(--titre);letter-spacing:.06em;text-transform:uppercase;color:var(--sapin)}
+.fiche-resto__infos dd{margin:0;font-weight:700}
+.fiche-resto__infos a{color:inherit}
+.fiche-resto__btn{display:flex;align-items:center;justify-content:center;min-height:44px;margin-top:14px;border-radius:var(--r-pilule);background:var(--jaune);color:var(--sapin-deep);font:800 13px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.carte-vraie .carte-vraie__map,.carte-vraie .carte-vraie__map.maplibregl-map{position:absolute!important;inset:0;width:100%;height:100%}
+.insecable{white-space:nowrap}
