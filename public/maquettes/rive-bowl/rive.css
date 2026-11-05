@@ -267,3 +267,13 @@ body.menu-ouvert .haut-page{visibility:hidden}
   .fiche--photo .fiche__img{padding:0}
 }
 @media (prefers-reduced-motion:reduce){.fiche,.fiche[open]{transition:none;transform:none}}
+
+/* ============ BANDEAUX DE TEXTE QUI DÉFILENT (comme entre les sections de Pokawa) ============ */
+.defile-texte{overflow:hidden;background:var(--c);color:var(--sapin-deep);padding:14px 0}
+.defile-texte.c-turquoise,.defile-texte.c-corail{color:var(--sapin-deep)}
+.defile-texte__piste{display:flex;width:max-content;animation:defile-texte 38s linear infinite}
+.defile-texte.inverse .defile-texte__piste{animation-direction:reverse}
+.defile-texte span{font:900 clamp(18px,2.6vw,28px)/1 var(--font);text-transform:uppercase;white-space:nowrap;letter-spacing:.01em}
+.defile-texte b{font:900 clamp(18px,2.6vw,28px)/1 var(--font);margin:0 .8em}
+@keyframes defile-texte{to{transform:translate3d(-50%,0,0)}}
+@media (prefers-reduced-motion:reduce){.defile-texte__piste{animation:none}}

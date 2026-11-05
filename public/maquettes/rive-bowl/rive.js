@@ -182,10 +182,10 @@
       li.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
     });
     // Photos du restaurant
-    document.querySelectorAll('.galerie img, .histoire figure img, .mj-une img, .profil__gauche img, .cat__tete img').forEach(function(im){
+    document.querySelectorAll('.galerie img, .histoire figure img, .mj-une img, .profil__gauche img, .cat__tete img, .grille img').forEach(function(im){
       im.classList.add('agrandir'); im.setAttribute('tabindex','0'); im.setAttribute('role','button');
       var leg = im.closest('figure') && im.closest('figure').querySelector('figcaption');
-      function go(){ ouvrir({ photo: !im.classList.contains('bol'), src: im.getAttribute('src'), alt: im.alt, nom: im.alt, desc: leg ? leg.textContent : '' }); }
+      function go(){ ouvrir({ photo: !(im.classList.contains('bol') || im.classList.contains('g-bol')), src: im.getAttribute('src'), alt: im.alt, nom: im.alt, desc: leg ? leg.textContent : '' }); }
       im.addEventListener('click', go);
       im.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
     });
