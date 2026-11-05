@@ -37,20 +37,17 @@ a{color:inherit}
 .bandeau{background:var(--encre);color:var(--creme);font:600 12px/1.4 var(--font);text-align:center;padding:8px 14px}
 .bandeau strong{color:var(--jaune)}
 
-/* Boutons : un seul modèle, pilule */
-.btn{--bg:transparent;--fg:currentColor;--bd:transparent;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;border:2px solid var(--bd);background:var(--bg);color:var(--fg);font:800 13px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;transition:transform .4s var(--ease),background-color .2s,color .2s,border-color .2s}
-.btn .fl{font-size:12px;letter-spacing:0;transition:transform .4s var(--ease)}
-.btn:hover .fl{transform:translateX(3px)}
-.btn:active{transform:scale(.96)}
+/* Boutons : UN seul système (même hauteur, même rayon, même marge intérieure partout).
+   .btn--jaune = « Commander » et l'action principale ; .btn--contour = la seule variante secondaire. */
+.btn{--bg:transparent;--fg:var(--sapin);--bd:var(--sapin);box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:2px solid var(--bd);background:var(--bg);color:var(--fg);font:800 13px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;vertical-align:middle}
+.btn .fl{font-size:12px;letter-spacing:0}
 .btn--jaune{--bg:var(--jaune);--bd:var(--jaune);--fg:var(--sapin-deep)}
 .btn--jaune:hover{--bg:var(--jaune-clair);--bd:var(--jaune-clair)}
-.btn--sapin{--bg:var(--sapin);--bd:var(--sapin);--fg:var(--creme)}
-.btn--sapin:hover{--bg:var(--sapin-deep);--bd:var(--sapin-deep)}
-.btn--creme{--bg:var(--creme);--bd:var(--creme);--fg:var(--sapin-deep)}
-.btn--ligne{--bd:currentColor}
-.btn--ligne:hover{--bg:rgba(255,255,255,.12)}
+.btn--contour{--bg:transparent}
+@media (hover:hover){.btn--contour:hover{--bg:rgba(3,67,47,.08)}}
+:is(.c-sapin,.mj-une,.fr-une,.p-une,.bande-appli,.tiroir,.avis,.citation.c-sapin) .btn--contour{--fg:var(--creme);--bd:var(--creme)}
 .btn--plein{width:100%}
-@media (max-width:360px){.btn{padding:0 15px;letter-spacing:.06em;font-size:12px}}
+@media (max-width:380px){.btn{padding:0 16px;gap:6px;letter-spacing:.06em;font-size:12px}}
 
 /* En-tête commun */
 .entete{position:sticky;top:0;z-index:40;background:var(--creme);box-shadow:0 1px 0 rgba(8,50,56,.08)}
@@ -92,8 +89,8 @@ a{color:inherit}
 body.menu-ouvert{overflow:hidden}
 @media (min-width:1181px){.tiroir{display:none}}
 }
-@media (max-width:420px){.logo img{height:38px}.entete .cmd{padding:0 15px;letter-spacing:.06em;font-size:12px}.entete .wrap{gap:8px}}
-@media (max-width:340px){.logo img{height:31px}.entete .cmd{padding:0 12px;gap:6px}.burger{width:40px;height:40px}}
+@media (max-width:420px){.logo img{height:38px}.entete .wrap{gap:8px}}
+@media (max-width:340px){.logo img{height:31px}.burger{width:40px;height:40px}}
 
 /* Bols vus de dessus */
 .bol{border-radius:50%;box-shadow:0 22px 34px -14px rgba(0,20,15,.45),0 4px 10px rgba(0,20,15,.12)}
@@ -120,9 +117,6 @@ body.menu-ouvert{overflow:hidden}
 .produit p{margin-top:6px;font-size:14px;line-height:1.45;opacity:.9}
 .produit .pied-carte{margin-top:auto;padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .produit .prix{font:900 18px/1 var(--font);white-space:nowrap}
-.produit .btn{min-height:40px;padding:0 16px;font-size:12px}
-.produit.c-sapin .btn{--bg:var(--jaune);--bd:var(--jaune);--fg:var(--sapin-deep)}
-.produit:not(.c-sapin) .btn{--bg:var(--sapin);--bd:var(--sapin);--fg:var(--creme)}
 @media (max-width:860px){
   .produits--glisse{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--g);gap:14px;margin:0 calc(var(--g) * -1);padding:4px var(--g) 10px;scrollbar-width:none}
   .produits--glisse::-webkit-scrollbar{display:none}
@@ -132,7 +126,6 @@ body.menu-ouvert{overflow:hidden}
   .produits:not(.produits--glisse) .produit h3{font-size:14px}
   .produits:not(.produits--glisse) .produit p{display:none}
   .produits:not(.produits--glisse) .produit .pied-carte{padding-top:10px;flex-direction:column;align-items:stretch;gap:8px}
-  .produits:not(.produits--glisse) .produit .btn{width:100%;min-height:38px;padding:0 8px;letter-spacing:.04em;font-size:11px}
 }
 
 /* Avis Google (recopiés depuis le brand book, page 44) */
@@ -230,7 +223,7 @@ body.menu-ouvert .haut-page{visibility:hidden}
 @media (prefers-reduced-motion:reduce){.tiroir,.tiroir.ouvert{transition:none}}
 
 /* En-tête sur les petits écrans (barre de défilement comprise) */
-@media (max-width:380px){.logo img{height:34px}.entete .cmd{padding:0 12px;gap:6px}.burger{width:42px;height:42px}}
+@media (max-width:380px){.logo img{height:34px}.burger{width:42px;height:42px}}
 
 /* ============ FICHE EN GRAND (poké ou photo) ============
    Plein écran sur téléphone, grande fenêtre sur ordinateur. Bowl en très grand, nom, description, prix, Commander. */
@@ -277,3 +270,14 @@ body.menu-ouvert .haut-page{visibility:hidden}
 .defile-texte b{font:900 clamp(18px,2.6vw,28px)/1 var(--font);margin:0 .8em}
 @keyframes defile-texte{to{transform:translate3d(-50%,0,0)}}
 @media (prefers-reduced-motion:reduce){.defile-texte__piste{animation:none}}
+
+/* Badges App Store / Google Play : même hauteur que les boutons (48 px), alignés sur la même ligne */
+.badges,.bande-appli .badges{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.badges a{display:inline-flex;height:48px}
+.badges img,.bande-appli .badges img,.tiroir__appli img{height:48px;width:auto;display:block}
+
+/* Le bouton Commander placé à côté des badges garde sa forme de pilule */
+.badges a.btn{border-radius:999px;height:48px}
+.badges a:not(.btn){border-radius:10px}
+/* En-tête à 320 px : on resserre le logo et les marges, le bouton reste identique */
+@media (max-width:340px){.entete .wrap{padding:0 12px;gap:6px}.logo img{height:28px}.burger{width:40px;height:40px}}
