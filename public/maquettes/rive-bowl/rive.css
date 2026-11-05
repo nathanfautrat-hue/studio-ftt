@@ -6,8 +6,8 @@
 
   /* Couleurs : brand book Rive Bowl 2026 (p. 2, 3, 4, 8, 42) */
   --sapin:#03432F; --sapin-deep:#022E21; --encre:#083238;
-  --jaune:#FEB302; --jaune-clair:#FFD15C; --etoile:#B97F00;
-  --corail:#FC6959; --corail-texte:#C8402F;
+  --jaune:#FEB302; --jaune-clair:#FFD15C; --etoile:#946600;
+  --corail:#FC6959; --corail-texte:#B5392A;
   --turquoise:#03A9B5; --feuille:#759A55;
   --creme:#FDF8F2; --rose:#FCE3E9; --sable:#F7EBD8; --blanc:#FFFFFF; --champ:#F4F1EC;
   --ink:#083238; --ink-2:#3F5A5C;
@@ -29,7 +29,7 @@
   --fs-texte:clamp(16px,1.25vw,18px);
   --fs-petit:14px;
   --fs-mini:12px;
-  --fs-micro:10px;
+  --fs-micro:11px;
   --fs-main:1.2em; /* le mot manuscrit, toujours un peu plus grand que le titre qui le porte */
   --fw-main:400; --fw-texte:500; --fw-fort:700; --fw-titre:800; --fw-noir:900;
   --lh-titre:1; --lh-serre:1.15; --lh-moyen:1.35; --lh-texte:1.6;
@@ -60,7 +60,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 [id]{scroll-margin-top:136px}
-body{background:var(--creme);color:var(--ink);font:var(--fw-texte) var(--fs-texte)/var(--lh-texte) var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--creme);color:var(--ink);font:var(--fw-texte) var(--fs-texte)/var(--lh-texte) var(--font);-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--jaune);outline-offset:3px;border-radius:var(--r-img)}
@@ -76,7 +76,7 @@ a{color:inherit}
 .sur{display:inline-block;font:var(--fw-titre) var(--fs-mini)/var(--lh-moyen) var(--font);letter-spacing:.2em;text-transform:uppercase}
 .lead{font-size:var(--fs-4);font-weight:var(--fw-fort);line-height:var(--lh-texte);max-width:46ch}
 /* Titre de case (tuiles, cases photo, piliers, rubriques de la carte, formulaire) : un seul style */
-.t-case{font:var(--fw-noir) var(--fs-4)/var(--lh-serre) var(--font);text-transform:uppercase;letter-spacing:0;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+.t-case{text-wrap:balance;font:var(--fw-noir) var(--fs-4)/var(--lh-serre) var(--font);text-transform:uppercase;letter-spacing:0;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
 /* Sous-titre manuscrit sous un titre de section */
 .sous{font-family:var(--main);font-weight:var(--fw-main);font-size:var(--fs-3);line-height:var(--lh-serre);color:var(--corail-texte);text-transform:none}
 
@@ -183,7 +183,7 @@ body.menu-ouvert{overflow:hidden}
 .avis__liste{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-4);margin-top:var(--e-fl-2)}
 .avis__liste li{background:var(--creme);color:var(--ink);border-radius:var(--r-case);padding:var(--e-5);display:flex;flex-direction:column;gap:var(--e-3)}
 .avis__liste blockquote{font-size:var(--fs-texte);line-height:var(--lh-texte);font-weight:var(--fw-fort)}
-.avis__liste .etoiles{color:var(--jaune);letter-spacing:.12em;font-size:var(--fs-petit)}
+.avis__liste .etoiles{color:var(--etoile);letter-spacing:.12em;font-size:var(--fs-petit)}
 .avis__liste cite{margin-top:auto;font-style:normal;font:var(--fw-titre) var(--fs-mini)/var(--lh-titre) var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
 .avis__source{margin-top:var(--e-4);font-size:var(--fs-petit);color:var(--creme-75)}
 .avis .btn{margin-top:var(--e-5)}
@@ -207,7 +207,7 @@ body.menu-ouvert{overflow:hidden}
 .pied ul{list-style:none;display:grid;gap:var(--e-2)}
 .pied ul a,.lien-off{font:var(--fw-texte) var(--fs-petit)/var(--lh-moyen) var(--font);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--sapin-deep);transition:color .3s ease}
 @media (hover:hover){.pied ul a:hover{color:var(--corail-texte)}}
-.lien-off{color:var(--sapin-50);cursor:not-allowed}
+.lien-off{color:var(--ink-2);cursor:not-allowed}
 .lien-off small{font-size:var(--fs-micro);letter-spacing:.08em;margin-left:var(--e-1);padding:var(--e-0) var(--e-1);border-radius:var(--r-pilule);background:var(--sapin-10)}
 .reseaux{display:flex;gap:var(--e-2)}
 .reseaux a{width:var(--h-rond);height:var(--h-rond);border-radius:var(--r-rond);background:var(--blanc);display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--ombre-bouton);transition:transform .3s ease}
@@ -326,3 +326,7 @@ body.menu-ouvert .haut-page{visibility:hidden}
 .badges a:not(.btn){border-radius:var(--r-img)}
 /* En-tête à 320 px : on resserre le logo et les marges, le bouton reste identique */
 @media (max-width:340px){.entete .wrap{padding:0 var(--e-3);gap:var(--e-1)}.burger{width:var(--h-petit);height:var(--h-petit)}}
+
+/* Les bandeaux qui défilent s'arrêtent au survol et au clavier (en plus de « réduire les animations ») */
+.defile-texte:hover .defile-texte__piste,.defile-texte:focus-within .defile-texte__piste,.valeurs-v:hover .valeurs-v__piste{animation-play-state:paused}
+.liste b{font-variant-numeric:tabular-nums}
