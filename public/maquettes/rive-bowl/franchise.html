@@ -16,68 +16,68 @@
 <link rel="stylesheet" href="rive-blocs.css" />
 <style>
 
-.fr-une{position:relative;color:var(--creme);isolation:isolate;min-height:min(70svh,620px);display:flex;align-items:flex-end;padding:clamp(40px,7vw,88px) 0}
+.fr-une{position:relative;color:var(--creme);isolation:isolate;min-height:min(70svh,620px);display:flex;align-items:flex-end;padding:var(--e-fl-4) 0}
 .fr-une img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;z-index:-2}
-.fr-une::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,46,33,.15) 0%,rgba(2,46,33,.8) 45%,rgba(2,46,33,.94) 80%)}
+.fr-une::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--sapin-10) 0%,var(--sapin-75) 45%,var(--sapin-90) 80%)}
 .fr-une .sur{color:var(--jaune)}
-.fr-une h1{margin-top:12px}
-.fr-une .lead{margin-top:16px;color:rgba(253,248,242,.92)}
-.fr-une .btn{margin-top:22px}
+.fr-une h1{margin-top:var(--e-3)}
+.fr-une .lead{margin-top:var(--e-4);color:var(--creme-90)}
+.fr-une .btn{margin-top:var(--e-5)}
 .ambition{background:var(--sapin);color:var(--creme);text-align:center}
 .ambition .sur{color:var(--jaune)}
-.ambition blockquote{margin:18px auto 0;max-width:28ch;font:900 clamp(22px,4.4vw,44px)/1.2 var(--font)}
+.ambition blockquote{margin:var(--e-4) auto 0;max-width:28ch;font:var(--fw-noir) var(--fs-2)/var(--lh-serre) var(--font)}
 .ambition blockquote em{font-style:normal;color:var(--jaune)}
-.concept .wrap{display:grid;grid-template-columns:6fr 5fr;gap:clamp(24px,5vw,72px);align-items:center}
+.concept .wrap{display:grid;grid-template-columns:6fr 5fr;gap:var(--e-fl-3);align-items:center}
 .concept h2{color:var(--sapin)}
-.concept .lead+.lead{margin-top:12px}
+.concept .lead+.lead{margin-top:var(--e-3)}
 .points{list-style:none;display:grid}
-.points li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:16px 0;border-top:2px solid rgba(8,50,56,.12);font-weight:700}
-.points li:last-child{border-bottom:2px solid rgba(8,50,56,.12)}
-.points b{font:900 20px/1 var(--font);color:var(--corail-texte)}
+.points li{display:grid;grid-template-columns:40px 1fr;gap:var(--e-3);padding:var(--e-4) 0;border-top:2px solid var(--encre-10);font-weight:var(--fw-fort)}
+.points li:last-child{border-bottom:2px solid var(--encre-10)}
+.points b{font:var(--fw-noir) var(--fs-4)/var(--lh-titre) var(--font);color:var(--corail-texte)}
 
-.apports__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.apport{border-radius:var(--r);padding:24px;background:var(--c);display:flex;flex-direction:column;gap:10px}
-.apport h3{font:900 19px/1.1 var(--font);text-transform:uppercase}
-.apport p{font-size:15px;font-weight:600}
-.valider{margin-top:16px;font-size:13px;color:var(--ink-2)}
+.apports__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e-4)}
+.apport{border-radius:var(--r-case);padding:var(--e-6);background:var(--c);display:flex;flex-direction:column;gap:var(--e-2)}
+.apport h3{font:var(--fw-noir) var(--fs-4)/var(--lh-serre) var(--font);text-transform:uppercase}
+.apport p{font-size:var(--fs-petit);font-weight:var(--fw-fort)}
+.valider{margin-top:var(--e-4);font-size:var(--fs-petit);color:var(--ink-2)}
 .concept+.apports,.apports+.profil{padding-top:0}
-.profil .wrap{display:grid;grid-template-columns:5fr 6fr;gap:clamp(24px,5vw,72px);align-items:stretch}
+.profil .wrap{display:grid;grid-template-columns:5fr 6fr;gap:var(--e-fl-3);align-items:stretch}
 .profil__gauche{display:flex;flex-direction:column}
-.profil__gauche figure{flex:1;display:flex;margin-top:20px;min-height:200px}
-.profil__gauche figure img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
+.profil__gauche figure{flex:1;display:flex;margin-top:var(--e-5);min-height:200px}
+.profil__gauche figure img{width:100%;height:100%;object-fit:cover;border-radius:var(--r-case)}
 .profil h2{color:var(--sapin)}
-.profil ul{list-style:none;margin-top:20px;display:grid;gap:10px}
-.profil li{background:var(--blanc);border-radius:14px;padding:14px 16px;font-weight:700}
-.form .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.profil ul{list-style:none;margin-top:var(--e-5);display:grid;gap:var(--e-2)}
+.profil li{background:var(--blanc);border-radius:var(--r-img);padding:var(--e-3) var(--e-4);font-weight:var(--fw-fort)}
+.form .duo{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-3)}
 @media (max-width:960px){.apports__grid{grid-template-columns:1fr 1fr}}
 @media (max-width:860px){.concept .wrap,.profil .wrap{grid-template-columns:1fr}.form .duo{grid-template-columns:1fr}.profil__gauche figure{display:none}}
 @media (max-width:560px){.apports__grid{grid-template-columns:1fr}.apport{min-height:0}}
 
-.stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-.stats li{background:var(--sable);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
-.stats b{font:900 clamp(28px,3.6vw,40px)/1 var(--font);color:var(--corail-texte)}
-.stats span{font-weight:700;font-size:14px;line-height:1.4}
-.stats small,.stats__note small{font-size:11px;color:var(--ink-2)}
-.stats__note{margin-top:12px;font-size:14px;line-height:1.5}
-.objectifs{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(22px,3vw,34px)}
-.objectifs li{background:var(--sapin);color:var(--creme);border-radius:var(--r);padding:20px 14px;display:flex;flex-direction:column;align-items:center;gap:4px}
-.objectifs b{font:900 clamp(34px,5vw,60px)/1 var(--font);color:var(--jaune)}
-.objectifs span{font:800 12px/1.2 var(--font);letter-spacing:.08em;text-transform:uppercase}
-.objectifs small{font-size:13px;font-weight:700}
-.frise{list-style:none;display:grid;gap:10px;margin:22px auto 0;max-width:620px;text-align:left}
-.frise li{background:var(--creme);border-radius:14px;padding:12px 16px;font-weight:600;font-size:15px}
-.frise b{display:block;font:900 14px/1.2 var(--font);color:var(--corail-texte);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
-.objectifs__note,.finance__note{margin-top:14px;font-size:12px;color:var(--ink-2)}
-.finance{display:grid;grid-template-columns:1fr 1.6fr;gap:16px;align-items:stretch}
-.finance__ebitda{border-radius:var(--r);background:var(--c);padding:28px;display:flex;flex-direction:column;justify-content:center;gap:8px;color:var(--sapin-deep)}
-.finance__ebitda span{font:800 13px/1.2 var(--font);letter-spacing:.1em;text-transform:uppercase}
-.finance__ebitda b{font:900 clamp(44px,7vw,84px)/1 var(--font)}
-.finance__liste{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.finance__liste li{background:var(--sapin);color:var(--creme);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px}
-.finance__liste span{font-weight:700;font-size:14px}
-.finance__liste b{font:900 26px/1 var(--font);color:var(--jaune)}
+.stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:var(--e-2);margin-top:var(--e-4)}
+.stats li{background:var(--sable);border-radius:var(--r-img);padding:var(--e-3) var(--e-4);display:flex;flex-direction:column;gap:var(--e-1)}
+.stats b{font:var(--fw-noir) var(--fs-2)/var(--lh-titre) var(--font);color:var(--corail-texte)}
+.stats span{font-weight:var(--fw-fort);font-size:var(--fs-petit);line-height:var(--lh-moyen)}
+.stats small,.stats__note small{font-size:var(--fs-mini);color:var(--ink-2)}
+.stats__note{margin-top:var(--e-3);font-size:var(--fs-petit);line-height:var(--lh-texte)}
+.objectifs{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e-3);margin-top:var(--e-fl-1)}
+.objectifs li{background:var(--sapin);color:var(--creme);border-radius:var(--r-case);padding:var(--e-5) var(--e-3);display:flex;flex-direction:column;align-items:center;gap:var(--e-1)}
+.objectifs b{font:var(--fw-noir) var(--fs-1)/var(--lh-titre) var(--font);color:var(--jaune)}
+.objectifs span{font:var(--fw-titre) var(--fs-mini)/var(--lh-serre) var(--font);letter-spacing:.08em;text-transform:uppercase}
+.objectifs small{font-size:var(--fs-petit);font-weight:var(--fw-fort)}
+.frise{list-style:none;display:grid;gap:var(--e-2);margin:var(--e-5) auto 0;max-width:620px;text-align:left}
+.frise li{background:var(--creme);border-radius:var(--r-img);padding:var(--e-3) var(--e-4);font-weight:var(--fw-fort);font-size:var(--fs-petit)}
+.frise b{display:block;font:var(--fw-noir) var(--fs-petit)/var(--lh-serre) var(--font);color:var(--corail-texte);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--e-0)}
+.objectifs__note,.finance__note{margin-top:var(--e-3);font-size:var(--fs-mini);color:var(--ink-2)}
+.finance{display:grid;grid-template-columns:1fr 1.6fr;gap:var(--e-4);align-items:stretch}
+.finance__ebitda{border-radius:var(--r-case);background:var(--c);padding:var(--e-6);display:flex;flex-direction:column;justify-content:center;gap:var(--e-2);color:var(--sapin-deep)}
+.finance__ebitda span{font:var(--fw-titre) var(--fs-petit)/var(--lh-serre) var(--font);letter-spacing:.1em;text-transform:uppercase}
+.finance__ebitda b{font:var(--fw-noir) var(--fs-1)/var(--lh-titre) var(--font)}
+.finance__liste{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:var(--e-2)}
+.finance__liste li{background:var(--sapin);color:var(--creme);border-radius:var(--r-img);padding:var(--e-4);display:flex;flex-direction:column;gap:var(--e-1)}
+.finance__liste span{font-weight:var(--fw-fort);font-size:var(--fs-petit)}
+.finance__liste b{font:var(--fw-noir) var(--fs-3)/var(--lh-titre) var(--font);color:var(--jaune)}
 @media (max-width:860px){.finance{grid-template-columns:1fr}.objectifs{grid-template-columns:1fr 1fr}}
-@media (max-width:420px){.stats,.finance__liste{grid-template-columns:1fr}.objectifs li{padding:16px 8px}.objectifs span{font-size:10px;letter-spacing:.04em}}
+@media (max-width:420px){.stats,.finance__liste{grid-template-columns:1fr}.objectifs li{padding:var(--e-4) var(--e-2)}.objectifs span{font-size:var(--fs-micro);letter-spacing:.04em}}
 </style>
 </head>
 <body>
@@ -140,8 +140,8 @@
   <div class="wrap">
     <div class="monte">
       <span class="sur" style="color:var(--corail-texte)">Notre différence</span>
-      <h2 class="t t-l" id="titre-concept" style="margin-top:12px">Faire voyager le poké à travers nos régions</h2>
-      <p class="lead" style="margin-top:18px">Sans jamais oublier ses origines.</p>
+      <h2 class="t t-l" id="titre-concept" style="margin-top:var(--e-3)">Faire voyager le poké à travers nos régions</h2>
+      <p class="lead" style="margin-top:var(--e-4)">Sans jamais oublier ses origines.</p>
       <p class="lead">Chaque restaurant garde la même idée et met en avant le goût de sa région et de ses producteurs.</p>
     </div>
     <ul class="points monte">
@@ -196,7 +196,7 @@
 <section class="citation c-rose" aria-labelledby="titre-dev" style="color:var(--sapin-deep)">
   <div class="wrap">
     <h2 class="t t-l" id="titre-dev">Notre stratégie de développement</h2>
-    <ul class="tuiles" style="--n:3;margin-top:clamp(22px,3vw,34px);text-align:left">
+    <ul class="tuiles" style="--n:3;margin-top:var(--e-fl-1);text-align:left">
       <li class="tuile c-sable" style="background:var(--creme)"><h3>Déployer un réseau de franchises</h3><p>Dans les villes françaises, en adaptant les implantations aux marchés locaux.</p></li>
       <li class="tuile" style="background:var(--creme)"><h3>Accompagner chaque entrepreneur</h3><p>De la recherche du local jusqu'à l'ouverture et au suivi de son restaurant.</p></li>
       <li class="tuile" style="background:var(--creme)"><h3>Construire une marque nationale</h3><p>Capable de valoriser les traditions culinaires de chaque territoire.</p></li>
@@ -235,7 +235,7 @@
 <section class="citation c-sapin" aria-labelledby="titre-accomp" style="color:var(--creme)">
   <div class="wrap">
     <h2 class="t t-l" id="titre-accomp" style="color:var(--creme)">Un accompagnement franchisé 5 étoiles</h2>
-    <ul class="tuiles" style="--n:4;margin-top:clamp(22px,3vw,36px);text-align:left;color:var(--sapin-deep)">
+    <ul class="tuiles" style="--n:4;margin-top:var(--e-fl-1);text-align:left;color:var(--sapin-deep)">
       <li class="tuile c-jaune"><h3>Formation</h3><p>Formation pratique en restaurant et accompagnement à la gestion d'entreprise.</p></li>
       <li class="tuile c-turquoise"><h3>Qualité &amp; hygiène</h3><p>Protocoles HACCP, fiches recettes et fournisseurs référencés pour garantir les standards du réseau.</p></li>
       <li class="tuile c-corail"><h3>Marketing &amp; communication</h3><p>Campagnes nationales, supports officiels et outils pour développer la visibilité de chaque restaurant.</p></li>
@@ -258,7 +258,7 @@
         <li style="background:var(--sable)">Le respect de la chaîne du froid et de la traçabilité</li>
         <li style="background:var(--sable)">Des spécialités régionales sélectionnées</li>
       </ul>
-      <p style="font-weight:700">Avec Transgourmet, Metro et nos fournisseurs spécialisés.</p>
+      <p style="font-weight:var(--fw-fort)">Avec Transgourmet, Metro et nos fournisseurs spécialisés.</p>
     </div>
   </div>
 </section>
@@ -273,7 +273,7 @@
       <li class="tuile c-jaune"><h3>Vie quotidienne &amp; entreprises</h3><p>Entreprises, espaces de coworking, établissements d'enseignement et événements professionnels.</p></li>
       <li class="tuile c-turquoise"><h3>Famille &amp; convivialité</h3><p>Activités familiales, événements intergénérationnels et lieux de rencontre.</p></li>
     </ul>
-    <p class="difference" style="margin-top:22px;font-weight:700;max-width:60ch">Des accords nationaux avec des enseignes partenaires, et pour chaque franchisé, des collaborations adaptées à son territoire.</p>
+    <p class="difference" style="margin-top:var(--e-5);font-weight:var(--fw-fort);max-width:60ch">Des accords nationaux avec des enseignes partenaires, et pour chaque franchisé, des collaborations adaptées à son territoire.</p>
   </div>
 </section>
 
@@ -300,12 +300,12 @@
 <section class="citation c-feuille" aria-labelledby="titre-sita" style="color:var(--sapin-deep)">
   <div class="wrap">
     <span class="sur">Notre innovation</span>
-    <h2 class="t t-l" id="titre-sita" style="margin-top:10px">SITA by Rive Bowl</h2>
-    <p style="font-size:clamp(17px,1.8vw,22px)">L'hygiène alimentaire, simplement. Une application HACCP pensée pour les professionnels de la restauration.</p>
+    <h2 class="t t-l" id="titre-sita" style="margin-top:var(--e-2)">SITA by Rive Bowl</h2>
+    <p style="font-size:var(--fs-4)">L'hygiène alimentaire, simplement. Une application HACCP pensée pour les professionnels de la restauration.</p>
     <ul class="pastilles" style="justify-content:center">
       <li>Relevés de températures</li><li>Traçabilité des produits</li><li>Plans de nettoyage</li><li>Contrôles d'hygiène</li><li>Suivi des anomalies</li>
     </ul>
-    <p class="sur" style="margin-top:22px">Votre HACCP. Complet. Gratuit. Sans abonnement.</p>
+    <p class="sur" style="margin-top:var(--e-5)">Votre HACCP. Complet. Gratuit. Sans abonnement.</p>
   </div>
 </section>
 
@@ -313,7 +313,7 @@
   <div class="wrap">
     <div class="profil__gauche">
       <span class="sur" style="color:var(--corail-texte)">Le profil recherché</span>
-      <h2 class="t t-l" id="titre-profil" style="margin-top:12px">Et si c'était vous&nbsp;?</h2>
+      <h2 class="t t-l" id="titre-profil" style="margin-top:var(--e-3)">Et si c'était vous&nbsp;?</h2>
       <ul>
         <li>Vous aimez recevoir et faire plaisir</li>
         <li>Vous voulez vous installer dans votre région</li>

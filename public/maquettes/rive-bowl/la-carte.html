@@ -16,53 +16,53 @@
 <link rel="stylesheet" href="rive-blocs.css" />
 <style>
 
-.titre-page{background:var(--jaune);color:var(--sapin-deep);padding:clamp(40px,7vw,88px) 0 clamp(32px,5vw,56px)}
-.titre-page .lead{margin-top:16px;font-weight:700}
-.titre-page .btn{margin-top:22px}
-.puces{position:sticky;top:70px;z-index:30;background:var(--creme);box-shadow:0 1px 0 rgba(8,50,56,.08)}
-.puces ul{list-style:none;display:flex;gap:8px;overflow-x:auto;padding:12px var(--g);max-width:1240px;margin:0 auto;scrollbar-width:none}
+.titre-page{background:var(--jaune);color:var(--sapin-deep);padding:var(--e-fl-4) 0 var(--e-fl-2)}
+.titre-page .lead{margin-top:var(--e-4);font-weight:var(--fw-fort)}
+.titre-page .btn{margin-top:var(--e-5)}
+.puces{position:sticky;top:var(--h-entete);z-index:30;background:var(--creme);box-shadow:var(--trait)}
+.puces ul{list-style:none;display:flex;gap:var(--e-2);overflow-x:auto;padding:var(--e-3) var(--g);max-width:var(--largeur);margin:0 auto;scrollbar-width:none}
 .puces ul::-webkit-scrollbar{display:none}
-.puces a{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:999px;background:var(--sable);font:800 12px/1 var(--font);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.puces a{display:inline-flex;align-items:center;min-height:var(--h-petit);padding:0 var(--e-3);border-radius:var(--r-pilule);background:var(--sable);font:var(--fw-titre) var(--fs-mini)/var(--lh-titre) var(--font);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
 .puces a{transition:transform .3s ease,background-color .3s ease,color .3s ease}
 @media (hover:hover){.puces a:hover{background:var(--sapin);color:var(--creme);transform:scale(.9)}}
 .puces a:active{transform:scale(.9)}
 .puces a[aria-current="true"]{background:var(--sapin);color:var(--creme)}
-.signature{padding:clamp(40px,7vw,88px) 0 0}
+.signature{padding:var(--e-fl-4) 0 0}
 .signature .sec-tete p{max-width:56ch;color:var(--ink-2)}
-.aussi{margin-top:18px;font-size:15px;color:var(--ink-2)}
+.aussi{margin-top:var(--e-4);font-size:var(--fs-petit);color:var(--ink-2)}
 .aussi b{color:var(--ink)}
-.cats{padding:clamp(40px,7vw,88px) 0;display:grid;gap:clamp(20px,3vw,32px)}
-.cat{display:grid;grid-template-columns:4fr 7fr;border-radius:var(--r);overflow:hidden;background:var(--blanc);box-shadow:0 20px 40px -32px rgba(0,20,15,.5)}
-.cat__tete{background:var(--c);padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;justify-content:flex-end;gap:10px;min-height:200px}
+.cats{padding:var(--e-fl-4) 0;display:grid;gap:var(--e-fl-1)}
+.cat{display:grid;grid-template-columns:4fr 7fr;border-radius:var(--r-case);overflow:hidden;background:var(--blanc);box-shadow:var(--ombre)}
+.cat__tete{background:var(--c);padding:var(--e-fl-1);display:flex;flex-direction:column;justify-content:flex-end;gap:var(--e-2);min-height:200px}
 .cat__tete .bol{width:min(60%,200px);margin-bottom:auto}
-.cat__tete p{font-size:15px;font-weight:600}
-.cat__liste{padding:clamp(18px,3vw,36px);display:flex;flex-direction:column;gap:18px}
+.cat__tete p{font-size:var(--fs-petit);font-weight:var(--fw-fort)}
+.cat__liste{padding:var(--e-fl-1);display:flex;flex-direction:column;gap:var(--e-4)}
 .cat__liste .btn{align-self:flex-start}
 .liste{list-style:none}
-.liste li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid rgba(8,50,56,.1);font-weight:700}
+.liste li{display:flex;justify-content:space-between;align-items:baseline;gap:var(--e-4);padding:var(--e-3) 0;border-bottom:1px solid var(--encre-10);font-weight:var(--fw-fort)}
 .liste li:first-child{padding-top:0}
-.liste small{display:block;font-weight:500;font-size:13px;color:var(--ink-2);margin-top:2px}
-.liste b{font-weight:900;white-space:nowrap}
-.source{font-size:12px;color:var(--ink-2);padding-bottom:40px}
+.liste small{display:block;font-weight:var(--fw-texte);font-size:var(--fs-petit);color:var(--ink-2);margin-top:var(--e-0)}
+.liste b{font-weight:var(--fw-noir);white-space:nowrap}
+.source{font-size:var(--fs-mini);color:var(--ink-2);padding-bottom:var(--e-8)}
 @media (min-width:861px){.signature .produits{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:860px){
   .cat{grid-template-columns:1fr}
-  .cat__tete{min-height:0;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 14px}
+  .cat__tete{min-height:0;flex-direction:row;flex-wrap:wrap;align-items:center;gap:var(--e-1) var(--e-3)}
   .cat__tete .bol{width:80px;margin:0}
   .cat__tete h2{flex:1;min-width:0}
   .cat__tete p{flex-basis:100%}
   .cat__liste .btn{align-self:stretch}
 }
 
-.cat__photo{position:relative;margin:0 0 auto;border-radius:16px;overflow:hidden;width:100%}
+.cat__photo{position:relative;margin:0 0 auto;border-radius:var(--r-img);overflow:hidden;width:100%}
 .cat__photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-.cat__photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:auto}
+.cat__photos{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-2);margin-bottom:auto}
 .cat__photos .cat__photo img{aspect-ratio:3/4}
-.cat__mention{position:absolute;left:8px;bottom:6px;font:600 9px/1.2 var(--font);color:rgba(253,248,242,.95);text-shadow:0 1px 3px rgba(0,0,0,.6)}
-.cat__tete{gap:12px}
+.cat__mention{position:absolute;left:8px;bottom:6px;font:var(--fw-fort) var(--fs-micro)/var(--lh-serre) var(--font);color:var(--creme-90);text-shadow:0 1px 3px var(--noir-60)}
+.cat__tete{gap:var(--e-3)}
 @media (max-width:860px){
   .cat__tete{flex-direction:column;align-items:stretch;flex-wrap:nowrap}
-  .cat__tete .bol{width:min(60%,220px);align-self:center;margin:0 0 6px}
+  .cat__tete .bol{width:min(60%,220px);align-self:center;margin:0 0 var(--e-1)}
   .cat__tete h2{flex:none}
 }
 </style>
@@ -108,7 +108,7 @@
 <section class="titre-page">
   <div class="wrap">
     <span class="sur">Une offre pour chaque moment</span>
-    <h1 class="t t-xl" style="margin-top:12px">La carte</h1>
+    <h1 class="t t-xl" style="margin-top:var(--e-3)">La carte</h1>
     <p class="lead">Du déjeuner au dîner, une envie, un Rive Bowl.</p>
     <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
   </div>
@@ -148,7 +148,7 @@
     <div class="sec-tete monte">
       <div>
         <h2 class="t t-l" id="t-signatures">Pokés signatures</h2>
-        <p style="margin-top:12px">Une recette signature, imaginée par nos chefs pour une combinaison de saveurs authentiques et généreuses.</p>
+        <p style="margin-top:var(--e-3)">Une recette signature, imaginée par nos chefs pour une combinaison de saveurs authentiques et généreuses.</p>
       </div>
       <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
     </div>
