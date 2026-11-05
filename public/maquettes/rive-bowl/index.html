@@ -5,73 +5,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="robots" content="noindex,nofollow,noarchive" />
 <meta name="googlebot" content="noindex,nofollow,noarchive" />
-<title>Rive Bowl · Le poké qui vient de chez nous (maquette)</title>
+<title>Rive Bowl · La Loire dans un bowl (maquette)</title>
 <meta name="description" content="Maquette privée Studio FTT pour Rive Bowl, poké terroir à Montjean-sur-Loire." />
 <meta name="theme-color" content="#FDF8F2" />
 <link rel="icon" href="img/logo-rive-bowl.webp" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Caveat+Brush&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="img/loire-village-mobile.webp" media="(max-width:760px)" />
+<link rel="preload" as="image" href="img/loire-village.webp" media="(min-width:761px)" />
 <link rel="stylesheet" href="rive.css" />
 <style>
 
-.une{position:relative;overflow:hidden;isolation:isolate;background:var(--sapin)}
-.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
-.slides::-webkit-scrollbar{display:none}
-.slide{position:relative;flex:0 0 100%;scroll-snap-align:start;overflow:hidden;background:var(--c);min-height:clamp(560px,calc(100svh - 150px),760px);display:flex;isolation:isolate}
-.slide .bol{position:absolute;z-index:1}
-.slide .etiquette{position:absolute;z-index:3}
-.slide__texte{position:relative;z-index:4;align-self:flex-end;width:100%;max-width:1240px;margin:0 auto;padding:0 var(--g) clamp(48px,7vw,84px)}
-.slide__texte .t{max-width:12ch}
-@media (max-width:860px){.slide__texte .t{font-size:clamp(28px,9vw,40px)}.slide__texte .lead{font-size:15px;margin-top:10px}.slide__btns{margin-top:16px}.slide__texte{padding-bottom:46px}}
-.slide__texte .t .main{font-size:1.18em;line-height:.8;display:inline-block}
-.slide__texte .lead{margin-top:14px;font-weight:700}
-.slide__btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.c-sapin .slide__texte .t,.c-sapin .slide__texte .lead{color:var(--creme)}
-.c-sapin .main{color:var(--jaune)}
-.c-corail .main,.c-jaune .main{color:var(--sapin)}
-/* positions des bowls (téléphone d'abord) */
-.s1 .b-a{width:94vw;max-width:560px;right:-26vw;top:-14vw}
-.s1 .b-b{width:50vw;max-width:320px;left:-16vw;top:34vw}
-.s1 .e-a{right:16px;top:calc(min(94vw,560px) - 40vw)}
-.s2 .b-a{width:96vw;max-width:580px;left:-22vw;top:-16vw}
-.s2 .b-b{width:50vw;max-width:320px;right:-16vw;top:34vw}
-.s2 .e-a{left:16px;top:calc(min(96vw,580px) - 34vw)}
-.s3 .b-a{width:94vw;max-width:560px;right:-20vw;top:-18vw}
-.s3 .b-b{width:50vw;max-width:320px;left:-16vw;top:32vw}
-.s3 .e-a{right:16px;top:calc(min(94vw,560px) - 46vw)}
-.etiquette.sombre span{background:var(--sapin);color:var(--creme)}
-.points-slide{position:absolute;z-index:6;left:0;right:0;bottom:18px;display:flex;justify-content:center;gap:8px}
-.points-slide button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(253,248,242,.5);cursor:pointer;padding:0}
-.points-slide button[aria-current="true"]{background:var(--creme);width:26px;border-radius:6px}
-.une__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity 1s var(--ease)}
-.s1::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(2,46,33,.15),rgba(2,46,33,.85));opacity:0;transition:opacity 1s var(--ease)}
-.une.avec-video .s1 .une__video,.une.avec-video .s1::after{opacity:1}
-.une.avec-video .s1 .bol,.une.avec-video .s1 .etiquette{display:none}
+/* ============ LA VISITE ============
+   Vue de base (sans JS ou animations réduites) : les scènes s'empilent, en images fixes.
+   Avec .anim (posée par visite.js) : une scène fixe à l'écran, le défilement fait avancer dans le lieu. */
+.visite{position:relative;background:var(--sapin-deep);color:var(--creme)}
+.visite__stage{position:relative}
+.scene{position:relative;overflow:hidden;min-height:min(88svh,860px);display:flex;align-items:flex-end;isolation:isolate}
+.scene__photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform-origin:var(--o,50% 50%)}
+.scene--photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,46,33,.28) 0%,rgba(2,46,33,0) 28%,rgba(2,46,33,0) 42%,rgba(2,46,33,.86) 100%)}
+.scene__texte{width:100%;max-width:1240px;margin:0 auto;padding:0 var(--g) clamp(40px,7svh,80px)}
+.scene__texte .t{color:var(--creme);max-width:13ch}
+.scene__texte .lead{margin-top:12px;font-weight:700;color:var(--creme)}
+.scene__btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.scene__titre{font-size:clamp(34px,10vw,92px)}
+.scene h1.t{font-size:clamp(44px,13.5vw,138px);line-height:.92;max-width:11ch}
+.scene h1 .main{display:inline-block;font-size:1.12em;line-height:.8;color:var(--jaune)}
+.credit{position:absolute;right:10px;top:10px;z-index:3;font:600 10px/1.3 var(--font);color:rgba(253,248,242,.86);text-shadow:0 1px 3px rgba(0,0,0,.6);max-width:60%;text-align:right}
+.credit a{color:inherit}
+.s-mur{--o:50% 18%}
+@media (min-width:761px){.s-mur .scene__photo{object-position:50% 20%}.s-mur{--o:52% 17%}}
+
+/* La scène du bowl */
+.scene--bol{background:var(--sapin);align-items:center}
+.bol-cadre{display:grid;grid-template-columns:1fr;gap:clamp(14px,3svh,28px);width:100%;max-width:1240px;margin:0 auto;padding:clamp(22px,4svh,48px) var(--g);align-items:center;justify-items:center;text-align:center}
+.bol-eclate{position:relative;width:min(74vw,44svh,520px);aspect-ratio:1;flex:none}
+.bol-eclate img{position:absolute;display:block;max-width:none}
+.bol-entier{inset:0;width:100%;height:100%;border-radius:50%;box-shadow:0 30px 50px -22px rgba(0,10,6,.6)}
+.morceau{display:none;height:auto;filter:drop-shadow(0 14px 16px rgba(0,10,6,.35))}
+.scene--bol .scene__texte{padding:0;max-width:34rem}
+.scene--bol .t{margin:0 auto;color:var(--creme);max-width:16ch;font-size:clamp(26px,7.4vw,58px)}
+.formule{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:clamp(12px,2.4svh,22px)}
+.formule li{display:inline-flex;align-items:baseline;gap:6px;background:var(--creme);color:var(--sapin-deep);border-radius:999px;padding:8px 14px;font:800 12px/1 var(--font);letter-spacing:.08em;text-transform:uppercase}
+.formule li b{font:900 18px/1 var(--font);color:var(--corail-texte)}
+.scene--bol .scene__btns{justify-content:center}
 @media (min-width:861px){
-  .slide{min-height:min(calc(100svh - 120px),720px)}
-  .slide__texte{align-self:center;padding-bottom:0;padding-right:calc(var(--g) + 44vw)}
-  .slide__texte .lead{max-width:36ch}
-  .slide__texte .t{font-size:clamp(40px,5.4vw,84px)}
-  .s1 .b-a{width:48vw;max-width:none;right:-6vw;top:-10vw}
-  .s1 .b-b{width:24vw;max-width:none;left:auto;right:36vw;top:auto;bottom:-9vw}
-  .s1 .e-a{right:calc(6vw + 30px);top:auto;bottom:calc(10vw + 40px)}
-  .s2 .b-a{width:50vw;max-width:none;left:auto;right:-8vw;top:-14vw}
-  .s2 .b-b{width:22vw;max-width:none;right:38vw;top:auto;bottom:-6vw}
-  .s2 .e-a{left:auto;right:calc(4vw + 30px);top:auto;bottom:calc(8vw + 30px)}
-  .s3 .b-a{width:46vw;max-width:none;right:-4vw;top:-8vw}
-  .s3 .b-b{width:24vw;max-width:none;left:auto;right:38vw;top:auto;bottom:-10vw}
-  .s3 .e-a{right:calc(4vw + 30px);top:auto;bottom:calc(10vw + 30px)}
+  .bol-cadre{grid-template-columns:1fr 1fr;text-align:left;justify-items:start;gap:5vw}
+  .bol-eclate{grid-column:2;grid-row:1;justify-self:center;width:min(34vw,50svh,540px)}
+  .scene--bol .scene__texte{grid-column:1;grid-row:1}
+  .scene--bol .t{margin:0;font-size:clamp(40px,4.6vw,72px)}
+  .formule{justify-content:flex-start}
+  .scene--bol .scene__btns{justify-content:flex-start}
 }
+.visite__barre{display:none}
+.visite__film{display:none}
+
+/* Mode animé */
+.visite.anim{height:560svh}
+.visite.anim .visite__stage{position:sticky;top:var(--entete,70px);height:calc(100svh - var(--entete,70px));overflow:hidden}
+.visite.anim .scene{position:absolute;inset:0;min-height:0;opacity:0}
+.visite.anim .scene:first-child{opacity:1}
+.visite.anim .scene__photo{will-change:transform}
+.visite.anim .bol-entier{display:none}
+.visite.anim .morceau{display:block;will-change:transform}
+.visite.anim .bol-eclate{will-change:transform}
+.visite.anim .formule li{opacity:0;transform:translateY(10px) scale(.94);transition:opacity .45s var(--ease),transform .6s var(--ease)}
+.visite.anim .formule li.vu{opacity:1;transform:none}
+.visite.anim .visite__barre{display:block;position:absolute;left:0;right:0;top:0;height:4px;z-index:5;background:rgba(253,248,242,.18)}
+.visite.anim .visite__barre i{display:block;height:100%;background:var(--jaune);transform-origin:0 50%;transform:scaleX(0)}
+/* Vidéo du client branchée : elle prend la place des 4 photos */
+.visite.avec-film .visite__film{display:block;position:absolute;inset:0;z-index:0}
+.visite__film video,.visite__film canvas{width:100%;height:100%;object-fit:cover;display:none}
+.visite.film-video .visite__film video,.visite.film-images .visite__film canvas{display:block}
+.visite.avec-film .scene--photo{background:transparent}
+.visite.avec-film .scene--photo .scene__photo,.visite.avec-film .scene--photo .credit{visibility:hidden}
+.visite.anim .scene{z-index:1}
+@media (max-width:860px){.scene--bol .scene__btns .btn--ligne{display:none}.scene--bol .scene__btns{margin-top:16px}}
+@media (max-height:740px) and (max-width:860px){
+  .bol-cadre{gap:10px;padding-top:14px;padding-bottom:14px}
+  .bol-eclate{width:min(70vw,36svh)}
+  .scene--bol .t{font-size:clamp(22px,6.6vw,30px)}
+  .formule{gap:6px;margin-top:10px}
+  .scene--bol .formule li{padding:6px 10px;font-size:10px}
+  .scene--bol .formule li b{font-size:15px}
+  .scene--bol .scene__btns{margin-top:12px}
+}
+
+/* ============ POKÉS SIGNATURES (façon grands bowls sur aplats) ============ */
+.phares{padding-bottom:clamp(56px,8vw,100px)}
+.phares .sec-tete .t{max-width:14ch}
+.phares .produits--glisse{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--g);gap:18px;margin:0 calc(var(--g) * -1);padding:4px var(--g) 10px;scrollbar-width:none;scroll-behavior:smooth}
+.phares .produits--glisse::-webkit-scrollbar{display:none}
+.phares .produit{flex:0 0 calc((100% - 54px) / 4);scroll-snap-align:start;overflow:hidden;padding-top:0}
+.phares .produit .bol{width:116%;max-width:none;margin:-12% -8% 14px;box-shadow:none;transition:transform 1s var(--ease)}
+.phares .produit:hover .bol{transform:rotate(8deg) scale(1.03)}
+.phares .produit h3{font-size:21px}
+@media (max-width:1100px){.phares .produit{flex-basis:calc((100% - 36px) / 3)}}
+@media (max-width:860px){.phares .produit{flex:0 0 76%;max-width:310px}}
 .carrousel__nav{display:flex;gap:8px}
 .carrousel__nav button{width:46px;height:46px;border-radius:50%;border:2px solid var(--sapin);background:transparent;color:var(--sapin);font:800 16px/1 var(--font);cursor:pointer}
 .carrousel__nav button:hover{background:var(--sapin);color:var(--creme)}
 @media (max-width:860px){.carrousel__nav{display:none}}
-.phares{padding-bottom:clamp(56px,8vw,100px)}
-.phares .produits--glisse{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--g);gap:18px;margin:0 calc(var(--g) * -1);padding:4px var(--g) 10px;scrollbar-width:none;scroll-behavior:smooth}
-.phares .produits--glisse .produit{flex:0 0 calc((100% - 54px) / 4);scroll-snap-align:start}
-@media (max-width:1100px){.phares .produits--glisse .produit{flex-basis:calc((100% - 36px) / 3)}}
-@media (max-width:860px){.phares .produits--glisse .produit{flex:0 0 74%;max-width:300px}}
+
+/* ============ AVIS QUI DÉFILENT ============ */
+.avis-bande{background:var(--sapin);color:var(--creme);padding:clamp(56px,8vw,104px) 0;overflow:hidden}
+.avis-bande__tete{display:flex;align-items:flex-end;justify-content:space-between;gap:18px 28px;flex-wrap:wrap}
+.avis-bande h2{color:var(--creme);max-width:14ch}
+.avis-bande .note{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap}
+.avis-bande .note strong{font:900 clamp(56px,13vw,112px)/.9 var(--font);color:var(--jaune);letter-spacing:-.03em}
+.avis-bande .note span{font:800 13px/1.3 var(--font);letter-spacing:.14em;text-transform:uppercase}
+.defile{margin-top:clamp(28px,4vw,44px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.defile__piste{list-style:none;display:flex;gap:16px;width:max-content;animation:defile 46s linear infinite}
+.defile:hover .defile__piste,.defile:focus-within .defile__piste{animation-play-state:paused}
+@keyframes defile{to{transform:translate3d(-50%,0,0)}}
+.defile__piste li{flex:0 0 auto;width:min(78vw,380px);background:var(--creme);color:var(--ink);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px}
+.defile__piste blockquote{font-size:16px;line-height:1.5;font-weight:600}
+.defile__piste .etoiles{color:#B97F00;letter-spacing:.12em;font-size:15px}
+.defile__piste cite{margin-top:auto;font-style:normal;font:800 12px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.avis-bande__pied{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px}
+.avis-bande__pied .avis__source{margin-top:0}
+.defile__pause{min-height:40px;padding:0 16px;border-radius:999px;border:2px solid rgba(253,248,242,.5);background:transparent;color:var(--creme);font:800 11px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.defile__pause:hover{border-color:var(--creme)}
+.defile.pause .defile__piste{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){
+  .defile{-webkit-mask-image:none;mask-image:none}
+  .defile__piste{width:auto;flex-wrap:wrap;padding:0 var(--g);max-width:1240px;margin:0 auto}
+  .defile__piste li[aria-hidden="true"]{display:none}
+  .defile__pause{display:none}
+}
+
+/* ============ HISTOIRE, MISSION, PILIERS, BLOCS (textes du brand book) ============ */
 .histoire{background:var(--blanc)}
 .histoire .wrap{display:grid;grid-template-columns:5fr 6fr;gap:clamp(28px,5vw,80px);align-items:start}
 .histoire .sur{color:var(--corail-texte)}
@@ -84,16 +148,16 @@
 .histoire figure img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
 .histoire figcaption{margin-top:8px;font-size:12px;color:var(--ink-2)}
 .mission{background:var(--rose);text-align:center}
-.mission .sur{color:var(--corail-texte)}
-.mission blockquote{margin:18px auto 0;max-width:30ch;font:900 clamp(22px,4.4vw,46px)/1.2 var(--font);color:var(--sapin-deep)}
+.mission blockquote{margin:0 auto;max-width:30ch;font:900 clamp(22px,4.4vw,46px)/1.2 var(--font);color:var(--sapin-deep)}
 .mission blockquote em{font-style:normal;color:var(--corail-texte)}
 .mission blockquote .main{color:var(--corail-texte);font-size:1.4em;line-height:.9}
+.mission figcaption{margin-top:18px;font:800 12px/1 var(--font);letter-spacing:.16em;text-transform:uppercase;color:var(--corail-texte)}
 .piliers__grid{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .pilier{background:var(--c);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px;min-height:240px}
 .pilier h3{font:900 19px/1.1 var(--font);text-transform:uppercase}
 .pilier p{font-size:15px;line-height:1.55;font-weight:600}
 .blocs{background:var(--sable)}
-.blocs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.blocs__grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px}
 .bloc{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;padding:26px 20px;color:var(--creme);text-decoration:none;isolation:isolate;background:var(--c,var(--sapin))}
 .bloc>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
 .bloc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,46,33,0) 35%,rgba(2,46,33,.82))}
@@ -104,7 +168,7 @@
 .bloc--bol::after{display:none}
 .bloc--bol .bol{position:absolute;width:78%;top:7%;left:11%;z-index:-1}
 .bloc--bol h3,.bloc--bol p{color:var(--sapin-deep)}
-.credit-bloc{position:absolute;top:10px;right:12px;font-size:10px;color:rgba(253,248,242,.8)}
+.credit-bloc{position:absolute;top:10px;right:12px;font-size:10px;color:rgba(253,248,242,.85)}
 @media (max-width:960px){.piliers__grid{grid-template-columns:1fr 1fr}}
 @media (max-width:860px){
   .histoire .wrap{grid-template-columns:1fr}
@@ -115,11 +179,31 @@
 }
 @media (max-width:560px){.piliers__grid{grid-template-columns:1fr}.pilier{min-height:0}}
 
+/* ============ APPLICATION ============ */
+.appli{background:var(--jaune);color:var(--sapin-deep);overflow:hidden}
+.appli .wrap{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,5vw,72px);align-items:center}
+.appli h2{color:var(--sapin-deep);max-width:13ch}
+.appli .lead{margin-top:14px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:center}
+.badges a{display:inline-flex;border-radius:10px;transition:transform .4s var(--ease)}
+.badges a:hover{transform:translateY(-2px)}
+.badges a:active{transform:scale(.97)}
+.badges img{height:52px;width:auto}
+.appli__lien{margin-top:18px;font-weight:700;font-size:15px}
+.appli__lien a{color:var(--sapin-deep);text-underline-offset:4px}
+.appli__visuel{position:relative;aspect-ratio:1;width:100%;max-width:460px;justify-self:center}
+.appli__visuel .bol{position:absolute}
+.appli__visuel .b1{width:78%;right:0;top:0}
+.appli__visuel .b2{width:50%;left:0;bottom:0}
+@media (max-width:860px){
+  .appli .wrap{grid-template-columns:1fr}
+  .appli__visuel{max-width:280px;order:-1}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<div class="bandeau" role="note"><strong>Maquette</strong> proposée par Studio FTT pour Rive Bowl · photos issues de vos supports</div>
+<div class="bandeau" role="note"><strong>Maquette</strong> proposée par Studio FTT pour Rive Bowl · photos de vos supports et de Wikimedia Commons</div>
 <header class="entete">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="Rive Bowl, accueil"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" /></a>
@@ -143,65 +227,116 @@
 </header>
 <main id="contenu">
 
-<section class="une" aria-labelledby="titre-une">
-  <div class="slides" id="slides">
-    <div class="slide s1 c-sapin" role="group" aria-roledescription="visuel" aria-label="Poké saumon mariné vu de dessus">
-      <!--
-        VIDÉO D'ARRIÈRE-PLAN «&nbsp;ON ENTRE DANS LE RESTAURANT&nbsp;» (à filmer par Rive Bowl : 15 à 20 s, en marchant
-        lentement du quai de la Loire jusqu'au comptoir).
-        1. Déposer les fichiers dans le dossier video/ :
-           - video/rive-bowl-entree-1080.mp4 (ordinateur, H.264, 1920x1080, sans son, 4 à 6 Mo maximum)
-           - video/rive-bowl-entree-720.mp4  (téléphone, H.264, 720x1280 vertical, sans son, 1,5 à 2,5 Mo maximum)
-        2. Remplacer img/video-attente.webp et img/video-attente-mobile.webp par la première image de chaque vidéo.
-        3. Passer data-actif="non" à data-actif="oui".
-        Elle remplace alors les bowls de ce premier visuel. Vidéo muette, en boucle, lue automatiquement, en
-        playsinline. Jamais chargée si prefers-reduced-motion est activé ou en mode économie de données.
-        En attendant, ce premier visuel montre ses bowls sur fond vert sapin.
-      -->
-      <video class="une__video" muted loop playsinline autoplay preload="none" aria-hidden="true" tabindex="-1"
-        poster="img/video-attente.webp" data-poster-mobile="img/video-attente-mobile.webp"
-        data-src="video/rive-bowl-entree-1080.mp4" data-src-mobile="video/rive-bowl-entree-720.mp4" data-actif="non"></video>
-      <img class="bol b-a" src="img/bowl-saumon.webp" alt="Poké saumon mariné vu de dessus" width="1000" height="1000" fetchpriority="high" />
-      <img class="bol b-b" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki vu de dessus" width="720" height="720" loading="lazy" />
-      <div class="etiquette e-a" aria-hidden="true"><b>Saumon mariné</b><span>Poké signature</span></div>
-      <div class="slide__texte">
-        <h1 class="t t-xl" id="titre-une">Le poké qui vient de <span class="main">chez nous</span></h1>
+<!--
+  LA VISITE (visite.js) : en faisant défiler, on avance dans le lieu.
+  Photos 1 et 2 : Wikimedia Commons, licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), recadrées et compressées.
+    - loire-village : « Montjean-sur-Loire (49) Panorama », auteur GO69, 14/10/2023
+      https://commons.wikimedia.org/wiki/File:Montjean-sur-Loire_(49)_Panorama.jpg
+    - loire-pont : « Montjean sur Loire ( Maine et Loire ) », auteur Chbo91, 20/09/2014
+      https://commons.wikimedia.org/wiki/File:Montjean_sur_Loire_(_Maine_et_Loire_).jpg
+  Photos 3 et 4 : la vraie salle de Montjean, photo C. Boisnault / Ôsez Mauges.
+  Bowl : photo du poké saumon de la page Dishop de Rive Bowl, découpée en 7 morceaux (img/bol/).
+-->
+<section class="visite" id="visite" aria-labelledby="titre-une">
+  <div class="visite__stage">
+    <div class="visite__barre" aria-hidden="true"><i></i></div>
+
+    <!-- Emplacement de la vraie vidéo du client : voir le mode d'emploi dans visite.js -->
+    <div class="visite__film" aria-hidden="true" data-actif="non" data-type="video" data-fin="0.66"
+      data-src="video/visite-1080.mp4" data-src-mobile="video/visite-720.mp4"
+      data-images="video/images/visite-%04d.webp" data-nb="120">
+      <video muted playsinline preload="none" tabindex="-1"></video>
+      <canvas></canvas>
+    </div>
+
+    <div class="scene scene--photo s-village">
+      <picture>
+        <source media="(max-width:760px)" srcset="img/loire-village-mobile.webp" width="800" height="1200" />
+        <img class="scene__photo" src="img/loire-village.webp" alt="Montjean-sur-Loire vu d'en haut, ses toits, la Loire et le pont suspendu" width="1600" height="1200" fetchpriority="high" />
+      </picture>
+      <p class="credit">Photo GO69, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Montjean-sur-Loire_(49)_Panorama.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (recadrée)</p>
+      <div class="scene__texte">
+        <h1 class="t" id="titre-une">La Loire dans un <span class="main">bowl</span></h1>
+        <p class="lead">Le poké qui vient de chez nous, à Montjean-sur-Loire.</p>
+        <div class="scene__btns">
+          <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
+          <a class="btn btn--ligne" href="la-carte.html" style="color:var(--creme)">Voir la carte <span class="fl" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene scene--photo s-quai">
+      <picture>
+        <source media="(max-width:760px)" srcset="img/loire-pont-mobile.webp" width="800" height="1200" />
+        <img class="scene__photo" src="img/loire-pont.webp" alt="Le quai de Montjean et le pont suspendu sur la Loire, au soleil du soir" width="1600" height="1200" decoding="async" />
+      </picture>
+      <p class="credit">Photo Chbo91, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Montjean_sur_Loire_(_Maine_et_Loire_).jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (recadrée)</p>
+      <div class="scene__texte">
+        <h2 class="t scene__titre">Ici, c'est Montjean-sur-Loire</h2>
+        <p class="lead">17 rue d'Anjou, sur place, à emporter ou en Click &amp; Collect.</p>
+      </div>
+    </div>
+
+    <div class="scene scene--photo s-salle">
+      <picture>
+        <source media="(max-width:760px)" srcset="img/salle-montjean-mobile.webp" width="512" height="768" />
+        <img class="scene__photo" src="img/salle-montjean.webp" alt="La salle de Rive Bowl à Montjean, du comptoir jusqu'au mur du logo" width="1024" height="768" decoding="async" />
+      </picture>
+      <p class="credit">Photo C. Boisnault / Ôsez Mauges</p>
+      <div class="scene__texte">
+        <h2 class="t scene__titre">Bienvenue chez Rive Bowl</h2>
         <p class="lead">Du déjeuner au dîner, une envie, un Rive Bowl.</p>
-        <div class="slide__btns"><a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a><a class="btn btn--ligne" href="la-carte.html" style="color:var(--creme)">Voir la carte <span class="fl" aria-hidden="true">→</span></a></div>
       </div>
     </div>
-    <div class="slide s2 c-corail" role="group" aria-roledescription="visuel" aria-label="Poké rillauds d'Anjou vu de dessus">
-      <img class="bol b-a" src="img/bowl-rillauds.webp" alt="Poké rillauds d'Anjou vu de dessus" width="1000" height="1000" loading="lazy" />
-      <img class="bol b-b" src="img/bowl-crousty.webp" alt="Poké poulet crousty vu de dessus" width="720" height="720" loading="lazy" />
-      <div class="etiquette e-a sombre" aria-hidden="true"><b>Rillauds d'Anjou</b><span>Recette du terroir</span></div>
-      <div class="slide__texte">
-        <h2 class="t t-xl">À chaque envie, son Rive Bowl</h2>
+
+    <div class="scene scene--photo s-mur">
+      <picture>
+        <source media="(max-width:760px)" srcset="img/salle-mur-mobile.webp" width="512" height="768" />
+        <img class="scene__photo" src="img/salle-mur.webp" alt="Le mur vert de la salle, avec le logo Rive Bowl et son soleil" width="1024" height="768" decoding="async" />
+      </picture>
+      <p class="credit">Photo C. Boisnault / Ôsez Mauges</p>
+      <div class="scene__texte">
+        <h2 class="t scene__titre">Le poké terroir</h2>
         <p class="lead">Des pokés gourmands et équilibrés, inspirés de nos régions.</p>
-        <div class="slide__btns"><a class="btn btn--sapin" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a><a class="btn btn--ligne" href="la-carte.html" style="color:var(--sapin-deep)">Voir la carte <span class="fl" aria-hidden="true">→</span></a></div>
       </div>
     </div>
-    <div class="slide s3 c-jaune" role="group" aria-roledescription="visuel" aria-label="Poké falafel vu de dessus">
-      <img class="bol b-a" src="img/bowl-falafel.webp" alt="Poké falafel vu de dessus" width="1000" height="1000" loading="lazy" />
-      <img class="bol b-b" src="img/bowl-crevettes.webp" alt="Poké crevettes marinées vu de dessus" width="720" height="720" loading="lazy" />
-      <div class="etiquette e-a sombre" aria-hidden="true"><b>Falafel</b><span>Poké signature</span></div>
-      <div class="slide__texte">
-        <h2 class="t t-xl">Composez le bol qui vous ressemble&nbsp;!</h2>
-        <p class="lead">Au choix : 1 base, 1 protéine, 5 ingrédients, 2 toppings, 1 sauce.</p>
-        <div class="slide__btns"><a class="btn btn--sapin" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a><a class="btn btn--ligne" href="la-carte.html" style="color:var(--sapin-deep)">Voir la carte <span class="fl" aria-hidden="true">→</span></a></div>
+
+    <div class="scene scene--bol">
+      <div class="bol-cadre">
+        <div class="bol-eclate" role="img" aria-label="Poké saumon mariné vu de dessus, qui se sépare en ingrédients">
+          <img class="bol-entier" src="img/bowl-saumon.webp" alt="" width="1000" height="1000" decoding="async" />
+          <img class="morceau morceau--centre" src="img/bol/saumon.webp" alt="" width="551" height="551" style="left:22.5%;top:22.5%;width:55.1%" decoding="async" />
+          <img class="morceau" data-angle="271" src="img/bol/radis.webp" alt="" width="234" height="350" style="left:1.2%;top:31.7%;width:23.4%" decoding="async" />
+          <img class="morceau" data-angle="318" src="img/bol/avocat.webp" alt="" width="381" height="368" style="left:4.8%;top:2.9%;width:38.1%" decoding="async" />
+          <img class="morceau" data-angle="15" src="img/bol/carotte.webp" alt="" width="471" height="294" style="left:37.4%;top:1.2%;width:47.1%" decoding="async" />
+          <img class="morceau" data-angle="72" src="img/bol/concombre.webp" alt="" width="294" height="430" style="left:69.4%;top:15.5%;width:29.4%" decoding="async" />
+          <img class="morceau" data-angle="140" src="img/bol/edamame.webp" alt="" width="480" height="441" style="left:50%;top:54.7%;width:48%" decoding="async" />
+          <img class="morceau" data-angle="215" src="img/bol/chou.webp" alt="" width="459" height="394" style="left:4.2%;top:59.4%;width:45.9%" decoding="async" />
+        </div>
+        <div class="scene__texte">
+          <h2 class="t">Composez le bol qui vous ressemble&nbsp;!</h2>
+          <!-- La formule « Poké création » du brand book (p. 11-13). Animation seulement : aucun choix ici. -->
+          <ol class="formule" aria-label="La formule Poké création">
+            <li><b>1</b> base</li>
+            <li><b>1</b> protéine</li>
+            <li><b>5</b> ingrédients</li>
+            <li><b>2</b> toppings</li>
+            <li><b>1</b> sauce</li>
+          </ol>
+          <div class="scene__btns">
+            <a class="btn btn--jaune" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>
+            <a class="btn btn--ligne" href="la-carte.html" style="color:var(--creme)">Voir la carte <span class="fl" aria-hidden="true">→</span></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="points-slide" role="tablist" aria-label="Choisir un visuel">
-    <button type="button" aria-label="Visuel 1" aria-current="true"></button>
-    <button type="button" aria-label="Visuel 2" aria-current="false"></button>
-    <button type="button" aria-label="Visuel 3" aria-current="false"></button>
   </div>
 </section>
 
 <section class="sec phares" aria-labelledby="titre-phares">
   <div class="wrap">
     <div class="sec-tete monte">
-      <h2 class="t t-l" id="titre-phares">Nos pokés signatures</h2>
+      <h2 class="t t-l" id="titre-phares">À chaque envie, son Rive Bowl.</h2>
       <div class="carrousel__nav">
         <button type="button" data-cible="glisse-phares" data-sens="-1" aria-label="Pokés précédents">←</button>
         <button type="button" data-cible="glisse-phares" data-sens="1" aria-label="Pokés suivants">→</button>
@@ -215,7 +350,7 @@
         <div class="pied-carte"><span class="prix">11,90 €</span><a class="btn" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></div>
       </li>
       <li class="produit c-jaune monte">
-        <img class="bol" src="img/bowl-rillauds.webp" alt="Poké rillauds d'anjou vu de dessus" width="720" height="720" loading="lazy" />
+        <img class="bol" src="img/bowl-rillauds.webp" alt="Poké rillauds d'Anjou vu de dessus" width="720" height="720" loading="lazy" />
         <h3>Rillauds d'Anjou</h3>
         <p>La recette du terroir angevin.</p>
         <div class="pied-carte"><span class="prix">11,90 €</span><a class="btn" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></div>
@@ -251,7 +386,7 @@
         <div class="pied-carte"><span class="prix">11,90 €</span><a class="btn" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></div>
       </li>
       <li class="produit c-corail monte">
-        <img class="bol" src="img/bowl-maineetloire.webp" alt="Poké maine-et-loire vu de dessus" width="720" height="720" loading="lazy" />
+        <img class="bol" src="img/bowl-maineetloire.webp" alt="Poké Maine-et-Loire vu de dessus" width="720" height="720" loading="lazy" />
         <h3>Maine-et-Loire</h3>
         <p>Le poké de chez nous.</p>
         <div class="pied-carte"><span class="prix">11,90 €</span><a class="btn" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander</a></div>
@@ -261,6 +396,36 @@
   </div>
 </section>
 
+<!-- Note et avis : brand book Rive Bowl 2026, page 44 (25 avis Google, novembre 2026). Les 3 avis sont recopiés tels quels, sans un mot de plus.
+     Le bandeau répète ces 3 mêmes avis pour défiler sans trou ; les copies sont cachées aux lecteurs d'écran. -->
+<section class="avis-bande" aria-labelledby="titre-avis">
+  <div class="wrap avis-bande__tete">
+    <h2 class="t t-l" id="titre-avis">Ce que nos clients disent de nous</h2>
+    <div class="note">
+      <strong>4,8/5</strong>
+      <span>25 avis Google</span>
+      <a class="btn btn--jaune" href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Voir les avis <span class="fl" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="defile">
+    <ul class="defile__piste">
+      <li><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Les poke bowls étaient délicieux, frais et bien garnis. Le personnel était très agréable et accueillant<br />Je recommande avec plaisir, nous reviendrons&nbsp;!</blockquote><cite>Lilou G.</cite></li>
+      <li><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Accueil très sympathique&nbsp;!<br />Poke généreux ( plus petit des formats) ét délicieux 😋<br />Je reviendrai avec plaisir et gourmandise&nbsp;!</blockquote><cite>Manuella B.</cite></li>
+      <li><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Essayer ce midi pour la 1ere fois<br />Je recommande les yeux fermés.</blockquote><cite>John G.</cite></li>
+      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Les poke bowls étaient délicieux, frais et bien garnis. Le personnel était très agréable et accueillant<br />Je recommande avec plaisir, nous reviendrons&nbsp;!</blockquote><cite>Lilou G.</cite></li>
+      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Accueil très sympathique&nbsp;!<br />Poke généreux ( plus petit des formats) ét délicieux 😋<br />Je reviendrai avec plaisir et gourmandise&nbsp;!</blockquote><cite>Manuella B.</cite></li>
+      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Essayer ce midi pour la 1ere fois<br />Je recommande les yeux fermés.</blockquote><cite>John G.</cite></li>
+      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Les poke bowls étaient délicieux, frais et bien garnis. Le personnel était très agréable et accueillant<br />Je recommande avec plaisir, nous reviendrons&nbsp;!</blockquote><cite>Lilou G.</cite></li>
+      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Accueil très sympathique&nbsp;!<br />Poke généreux ( plus petit des formats) ét délicieux 😋<br />Je reviendrai avec plaisir et gourmandise&nbsp;!</blockquote><cite>Manuella B.</cite></li>
+      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Essayer ce midi pour la 1ere fois<br />Je recommande les yeux fermés.</blockquote><cite>John G.</cite></li>
+      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Les poke bowls étaient délicieux, frais et bien garnis. Le personnel était très agréable et accueillant<br />Je recommande avec plaisir, nous reviendrons&nbsp;!</blockquote><cite>Lilou G.</cite></li>
+      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Accueil très sympathique&nbsp;!<br />Poke généreux ( plus petit des formats) ét délicieux 😋<br />Je reviendrai avec plaisir et gourmandise&nbsp;!</blockquote><cite>Manuella B.</cite></li>
+      <li aria-hidden="true"><span class="etoiles">★★★★★</span><blockquote>Essayer ce midi pour la 1ere fois<br />Je recommande les yeux fermés.</blockquote><cite>John G.</cite></li>
+    </ul>
+  </div>
+  <div class="wrap avis-bande__pied"><p class="avis__source">Avis Google, novembre 2026.</p><button class="defile__pause" type="button" aria-pressed="false">Mettre en pause</button></div>
+</section>
+
 <!-- Textes de Rive Bowl : brand book 2026, page 2 (histoire), page 3 (mission), page 4 (concept) -->
 <section class="sec histoire" id="histoire" aria-labelledby="titre-histoire">
   <div class="wrap">
@@ -268,7 +433,7 @@
       <span class="sur">Notre histoire</span>
       <h2 class="t t-l" id="titre-histoire">On a tous une salade quelque part dans nos souvenirs.</h2>
       <figure>
-        <img src="img/salle-mur.webp" alt="Le mur vert de la salle Rive Bowl à Montjean, avec le logo au soleil" width="1024" height="768" loading="lazy" />
+        <img src="img/salle-comptoir.webp" alt="Le comptoir et le mange-debout le long de la vitrine, à Montjean" width="1024" height="768" loading="lazy" />
         <figcaption>Le restaurant de Montjean · photo C. Boisnault / Ôsez Mauges</figcaption>
       </figure>
     </div>
@@ -283,11 +448,11 @@
   </div>
 </section>
 
-<section class="sec mission" aria-labelledby="titre-mission">
-  <div class="wrap monte">
-    <span class="sur" id="titre-mission">Notre mission</span>
+<section class="sec mission" aria-label="Notre mission">
+  <figure class="wrap monte">
     <blockquote>«&nbsp;Faire en sorte que chacun puisse manger de tout, <em>manger bien</em> et se faire <em>plaisir</em>, en retrouvant dans chaque bol les saveurs de nos régions et la liberté de composer <span class="main">à sa façon</span>.&nbsp;»</blockquote>
-  </div>
+    <figcaption>Notre mission</figcaption>
+  </figure>
 </section>
 
 <section class="sec piliers" aria-labelledby="titre-concept">
@@ -320,7 +485,7 @@
         <span class="btn btn--jaune">Le restaurant <span class="fl" aria-hidden="true">→</span></span>
       </a>
       <a class="bloc monte" href="franchise.html">
-        <img src="img/salle-comptoir.webp" alt="" width="1024" height="768" loading="lazy" />
+        <img src="img/salle-mur.webp" alt="" width="1024" height="768" loading="lazy" />
         <span class="credit-bloc">Photo C. Boisnault / Ôsez Mauges</span>
         <h3>Devenir franchisé</h3>
         <p>Écrivons la suite ensemble&nbsp;!</p>
@@ -330,34 +495,34 @@
   </div>
 </section>
 
-<section class="sec avis" aria-labelledby="titre-avis">
+<!-- Application Rive Bowl (faite par Dishop). Badges officiels Apple et Google, non modifiés. -->
+<section class="sec appli" aria-labelledby="titre-appli">
   <div class="wrap">
-    <!-- Note et avis : brand book Rive Bowl 2026, page 44 («&nbsp;25 avis Google, novembre 2026&nbsp;»). Textes recopiés tels quels. -->
-    <div class="avis__tete monte">
-      <div>
-        <span class="sur" style="color:var(--jaune)">Ce que nos clients disent de nous</span>
-        <div class="avis__note" style="margin-top:10px"><strong>4,8/5</strong><span>25 avis Google</span></div>
+    <div class="monte">
+      <h2 class="t t-l" id="titre-appli">Téléchargez notre application</h2>
+      <p class="lead">La carte Rive Bowl et la commande, directement sur votre téléphone.</p>
+      <div class="badges">
+        <a href="https://apps.apple.com/fr/app/rive-bowl/id6779418723" target="_blank" rel="noopener"><img src="img/badge-app-store.svg" alt="Télécharger dans l'App Store" width="157" height="52" loading="lazy" /></a>
+        <a href="https://play.google.com/store/apps/details?id=com.dishop.rivebowl" target="_blank" rel="noopener"><img src="img/badge-google-play.webp" alt="Disponible sur Google Play" width="175" height="52" loading="lazy" /></a>
       </div>
-      <a class="btn btn--jaune" href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+Montjean-sur-Loire" target="_blank" rel="noopener">Voir tous les avis <span class="fl" aria-hidden="true">→</span></a>
+      <p class="appli__lien"><a href="https://opn.to/a/SX8eGX" target="_blank" rel="noopener">Un seul lien, pour iPhone comme pour Android</a></p>
     </div>
-    <ul class="avis__liste">
-      <li class="monte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Les poke bowls étaient délicieux, frais et bien garnis. Le personnel était très agréable et accueillant<br />Je recommande avec plaisir, nous reviendrons&nbsp;!</blockquote><cite>Lilou G.</cite></li>
-      <li class="monte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Accueil très sympathique&nbsp;!<br />Poke généreux ( plus petit des formats) ét délicieux 😋<br />Je reviendrai avec plaisir et gourmandise&nbsp;!</blockquote><cite>Manuella B.</cite></li>
-      <li class="monte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>Essayer ce midi pour la 1ere fois<br />Je recommande les yeux fermés.</blockquote><cite>John G.</cite></li>
-    </ul>
-    <p class="avis__source">Avis Google, novembre 2026.</p>
+    <div class="appli__visuel monte" aria-hidden="true">
+      <img class="bol b1" src="img/bowl-rillauds.webp" alt="" width="720" height="720" loading="lazy" />
+      <img class="bol b2" src="img/bowl-teriyaki.webp" alt="" width="720" height="720" loading="lazy" />
+    </div>
   </div>
 </section>
-
 
 </main>
 <footer class="pied">
   <div class="wrap">
-    <p class="pied__signature">Le poké qui vient de chez nous.</p>
+    <p class="pied__signature">La Loire dans un <span class="main">bowl</span>.</p>
     <div class="pied__grid">
       <div>
         <a class="logo" href="index.html"><img src="img/logo-rive-bowl.webp" alt="Rive Bowl, poké terroir" width="420" height="170" loading="lazy" /></a>
         <p>17 rue d'Anjou, Montjean-sur-Loire, 49570 Mauges-sur-Loire.</p>
+        <p><a class="pied__tel" href="tel:+33285358213">02 85 35 82 13</a></p>
         <p>Midi : 11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30, du lundi au samedi.<br />Soir : 18&nbsp;h&nbsp;30-21&nbsp;h, lundi, vendredi, samedi et dimanche.<br /><small>Horaires à confirmer.</small></p>
       </div>
       <div>
@@ -373,8 +538,9 @@
         <h4>Commander</h4>
         <ul>
           <li><a href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Click &amp; Collect</a></li>
+          <li><a href="https://opn.to/a/SX8eGX" target="_blank" rel="noopener">L'application</a></li>
           <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Itinéraire</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+Montjean-sur-Loire" target="_blank" rel="noopener">Avis Google</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rive+Bowl+17+rue+d%27Anjou+Montjean-sur-Loire" target="_blank" rel="noopener">Avis Google</a></li>
         </ul>
       </div>
       <div>
@@ -390,5 +556,11 @@
   </div>
 </footer>
 <script src="rive.js"></script>
+<script src="visite.js"></script>
+<script>
+// Bouton pause du bandeau d'avis (le survol n'existe pas sur téléphone)
+(function(){var b=document.querySelector('.defile__pause'),d=document.querySelector('.defile');if(!b||!d)return;
+b.addEventListener('click',function(){var p=d.classList.toggle('pause');b.setAttribute('aria-pressed',p);b.textContent=p?'Relancer':'Mettre en pause';});})();
+</script>
 </body>
 </html>

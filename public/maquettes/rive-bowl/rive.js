@@ -1,4 +1,4 @@
-// Rive Bowl · maquette v4 · menu téléphone, apparition douce, vidéo d'accueil
+// Rive Bowl · maquette v5 · menu téléphone, apparition douce, vidéo d'accueil
 (function(){
   document.documentElement.classList.add('js');
   var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

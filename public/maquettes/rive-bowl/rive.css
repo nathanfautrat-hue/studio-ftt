@@ -1,4 +1,4 @@
-/* Rive Bowl · maquette v4 (Studio FTT) · styles communs aux 4 pages
+/* Rive Bowl · maquette v5 (Studio FTT) · styles communs aux 4 pages
    Palette relevée sur le brand book Rive Bowl 2026 (pages 2, 3, 4, 8, 42) */
 :root{
   --sapin:#03432F; --sapin-deep:#022E21; --encre:#083238;
@@ -169,3 +169,12 @@ a{color:inherit}
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
   .js .monte{opacity:1;transform:none}
 }
+
+/* v5 : téléphone du restaurant (fiche Google) */
+.pied__tel{font:900 20px/1 var(--font);color:var(--jaune);text-decoration:none}
+.pied__tel:hover{text-decoration:underline}
+.mj-tel{margin-top:14px}
+.mj-tel a{font:900 clamp(24px,6vw,34px)/1 var(--font);color:var(--jaune);text-decoration:none;letter-spacing:.01em}
+.mj-tel a:hover{text-decoration:underline}
+
+a,button{touch-action:manipulation}
