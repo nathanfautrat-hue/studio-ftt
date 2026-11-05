@@ -28,7 +28,7 @@
 .mj-une .credit{font-size:var(--fs-mini);margin-top:var(--e-2);color:var(--creme-75)}
 .infos{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--e-5)}
 .info{background:var(--blanc);border-radius:var(--r-case);padding:var(--e-fl-1);box-shadow:var(--ombre)}
-.info h2{font:var(--fw-noir) var(--fs-4)/var(--lh-titre) var(--font);text-transform:uppercase;color:var(--sapin);margin-bottom:var(--e-4)}
+.info h2{color:var(--sapin);margin-bottom:var(--e-4)}
 .info table{width:100%;border-collapse:collapse;font-size:var(--fs-petit)}
 .info th{text-align:left;font-weight:var(--fw-titre);padding:var(--e-2) var(--e-2) var(--e-2) 0;vertical-align:top;white-space:nowrap}
 .info td{padding:var(--e-2) 0;text-align:right;font-weight:var(--fw-fort)}
@@ -52,8 +52,8 @@
 
 .univers-mj{margin-top:var(--e-fl-3);max-width:62ch}
 .univers-mj h2{color:var(--sapin)}
-.univers-mj .sous{margin-top:var(--e-2);font-family:var(--main);font-size:var(--fs-3);color:var(--corail-texte);line-height:var(--lh-serre)}
-.univers-mj p{margin-top:var(--e-3);font-size:var(--fs-texte);line-height:var(--lh-texte)}
+.univers-mj .sous{margin-top:var(--e-2)}
+.univers-mj p:not(.sous){margin-top:var(--e-3);font-size:var(--fs-texte);line-height:var(--lh-texte)}
 .univers-mj .diff{font-weight:var(--fw-titre);color:var(--sapin-deep)}
 .commander-mj{margin-top:var(--e-fl-3)}
 .rapide-mj{margin-top:var(--e-fl-3)}
@@ -132,7 +132,7 @@
   <div class="wrap">
     <div class="infos">
       <div class="info monte">
-        <h2>Horaires</h2>
+        <h2 class="t-case">Horaires</h2>
         <!-- Horaires : brand book Rive Bowl 2026, page 11. Dishop (Click & Collect) affiche d'autres horaires le soir (18&nbsp;h&nbsp;30-21&nbsp;h&nbsp;30) : à confirmer avec le gérant. -->
         <table>
           <tr><th>Lundi</th><td>11&nbsp;h&nbsp;30-14&nbsp;h&nbsp;30<br />18&nbsp;h&nbsp;30-21&nbsp;h</td></tr>
@@ -146,7 +146,7 @@
         <p class="note">Horaires à confirmer.</p>
       </div>
       <div class="info monte">
-        <h2>Bon à savoir</h2>
+        <h2 class="t-case">Bon à savoir</h2>
         <!-- Paiement par carte bancaire : fiche Rive Bowl sur La Loire à Vélo (loirebybike.co.uk). Autres moyens à confirmer avec le gérant. -->
         <p><b>Paiements acceptés :</b> carte bancaire (autres moyens à confirmer).</p>
         <p><b>Click &amp; Collect :</b> vous commandez en ligne et vous passez récupérer votre poké.</p>
@@ -156,18 +156,18 @@
     </div>
     <!-- Brand book p. 14-15 : les façons de commander -->
     <div class="commander-mj">
-      <h2 class="t t-m" style="color:var(--sapin)">Commandez comme vous voulez</h2>
+      <h2 class="t t-l" style="color:var(--sapin)">Commandez comme vous voulez</h2>
       <ul class="tuiles" style="--n:5;margin-top:var(--e-4)">
-        <li class="tuile c-sapin" style="color:var(--creme)"><h3>Bornes de commande</h3><p>Commande sur place rapide, intuitive et autonome.</p></li>
-        <li class="tuile c-jaune"><h3>Sur place</h3><p>Installez-vous en salle, 17 rue d'Anjou.</p></li>
-        <li class="tuile c-corail"><h3>À emporter</h3><p>Votre poké préparé à la commande, à emporter.</p></li>
-        <li class="tuile c-turquoise case"><h3><a class="case__lien" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Click &amp; Collect</a></h3><p>Commande en ligne, retrait au restaurant.</p><span class="case__fleche" aria-hidden="true">→</span></li>
-        <li class="tuile c-feuille case"><h3><a class="case__lien" href="https://opn.to/a/SX8eGX" target="_blank" rel="noopener">L'application</a></h3><p>La carte et la commande sur votre téléphone.</p><span class="case__fleche" aria-hidden="true">→</span></li>
+        <li class="tuile c-sapin" style="color:var(--creme)"><h3 class="t-case">Bornes de commande</h3><p>Commande sur place rapide, intuitive et autonome.</p></li>
+        <li class="tuile c-jaune"><h3 class="t-case">Sur place</h3><p>Installez-vous en salle, 17 rue d'Anjou.</p></li>
+        <li class="tuile c-corail"><h3 class="t-case">À emporter</h3><p>Votre poké préparé à la commande, à emporter.</p></li>
+        <li class="tuile c-turquoise case"><h3 class="t-case"><a class="case__lien" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Click &amp; Collect</a></h3><p>Commande en ligne, retrait au restaurant.</p><span class="case__fleche" aria-hidden="true">→</span></li>
+        <li class="tuile c-feuille case"><h3 class="t-case"><a class="case__lien" href="https://opn.to/a/SX8eGX" target="_blank" rel="noopener">L'application</a></h3><p>La carte et la commande sur votre téléphone.</p><span class="case__fleche" aria-hidden="true">→</span></li>
       </ul>
     </div>
     <!-- Brand book p. 16 : le service rapide (le pari de l'enseigne) -->
     <div class="rapide-mj">
-      <h2 class="t t-m">Un service rapide&nbsp;!</h2>
+      <h2 class="t t-l">Un service rapide&nbsp;!</h2>
       <p>Le pari : un temps moyen de commande d'environ 2 minutes.</p>
       <ul class="rapide-mj__etapes">
         <li class="c-jaune"><b>1 min 30</b><span>Temps moyen de commande</span></li>
@@ -177,7 +177,7 @@
     </div>
     <!-- Brand book p. 18 : l'univers des restaurants -->
     <div class="univers-mj monte">
-      <h2 class="t t-m">Des restaurants qui vous feront voyager</h2>
+      <h2 class="t t-l">Des restaurants qui vous feront voyager</h2>
       <p class="sous">Un voyage au cœur de nos souvenirs, de notre culture et de nos terroirs.</p>
       <p>Là où certains choisissent de transporter leurs clients vers des destinations exotiques, nous avons choisi de les faire voyager chez nous. Le bois occupe une place centrale, accompagné de verdure, de matières naturelles, de couleurs chaleureuses et d'une lumière douce.</p>
       <p class="diff">Notre différence : faire voyager nos clients sans leur faire quitter ce qui leur ressemble.</p>

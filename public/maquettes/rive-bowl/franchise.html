@@ -37,7 +37,7 @@
 
 .apports__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e-4)}
 .apport{border-radius:var(--r-case);padding:var(--e-6);background:var(--c);display:flex;flex-direction:column;gap:var(--e-2)}
-.apport h3{font:var(--fw-noir) var(--fs-4)/var(--lh-serre) var(--font);text-transform:uppercase}
+
 .apport p{font-size:var(--fs-petit);font-weight:var(--fw-fort)}
 .valider{margin-top:var(--e-4);font-size:var(--fs-petit);color:var(--ink-2)}
 .concept+.apports,.apports+.profil{padding-top:0}
@@ -158,7 +158,7 @@
   <div class="wrap duo">
     <div class="duo__img c-jaune"><img class="bol" src="img/bowl-teriyaki.webp" alt="Poké poulet teriyaki vu de dessus" width="720" height="720" /></div>
     <div>
-      <h2 class="t" id="titre-attentes">Ce que nos clients attendent</h2>
+      <h2 class="t t-l" id="titre-attentes">Ce que nos clients attendent</h2>
       <ul class="pastilles">
         <li style="background:var(--sable)">Manger rapidement, sans sacrifier la qualité</li>
         <li style="background:var(--sable)">Manger sainement, en se faisant plaisir</li>
@@ -184,10 +184,10 @@
   <div class="wrap">
     <h2 class="t t-l titre-sec" id="titre-apports">Ce que le réseau vous apporte</h2>
     <ul class="tuiles" style="--n:4">
-      <li class="tuile c-sapin" style="color:var(--creme)"><h3>Une communication nationale et locale</h3><p>La tête de réseau porte l'identité, les campagnes nationales et les contenus sur Instagram, Facebook, TikTok et LinkedIn. Chaque restaurant anime sa communauté locale, avec une seule identité.</p></li>
-      <li class="tuile c-corail"><h3>La fidélisation de vos clients</h3><p>20&nbsp;% des clients réalisent 80&nbsp;% du chiffre d'affaires. D'où un CRM commun au réseau : mieux connaître les clients, leur parler au bon moment avec un message adapté, récompenser les habitués.</p></li>
-      <li class="tuile c-jaune"><h3>Un modèle rentable &amp; facile à opérer</h3><p>Une restauration rapide, une carte structurée, des processus simplifiés et une identité de marque forte.</p></li>
-      <li class="tuile c-turquoise"><h3>Une marque qui a de l'avenir</h3><p>Le Poké Terroir : le goût des souvenirs et les traditions culinaires de chez nous, une notoriété que nous construisons ensemble.</p></li>
+      <li class="tuile c-sapin" style="color:var(--creme)"><h3 class="t-case">Une communication nationale et locale</h3><p>La tête de réseau porte l'identité, les campagnes nationales et les contenus sur Instagram, Facebook, TikTok et LinkedIn. Chaque restaurant anime sa communauté locale, avec une seule identité.</p></li>
+      <li class="tuile c-corail"><h3 class="t-case">La fidélisation de vos clients</h3><p>20&nbsp;% des clients réalisent 80&nbsp;% du chiffre d'affaires. D'où un CRM commun au réseau : mieux connaître les clients, leur parler au bon moment avec un message adapté, récompenser les habitués.</p></li>
+      <li class="tuile c-jaune"><h3 class="t-case">Un modèle rentable &amp; facile à opérer</h3><p>Une restauration rapide, une carte structurée, des processus simplifiés et une identité de marque forte.</p></li>
+      <li class="tuile c-turquoise"><h3 class="t-case">Une marque qui a de l'avenir</h3><p>Le Poké Terroir : le goût des souvenirs et les traditions culinaires de chez nous, une notoriété que nous construisons ensemble.</p></li>
     </ul>
   </div>
 </section>
@@ -197,9 +197,9 @@
   <div class="wrap">
     <h2 class="t t-l" id="titre-dev">Notre stratégie de développement</h2>
     <ul class="tuiles" style="--n:3;margin-top:var(--e-fl-1);text-align:left">
-      <li class="tuile c-sable" style="background:var(--creme)"><h3>Déployer un réseau de franchises</h3><p>Dans les villes françaises, en adaptant les implantations aux marchés locaux.</p></li>
-      <li class="tuile" style="background:var(--creme)"><h3>Accompagner chaque entrepreneur</h3><p>De la recherche du local jusqu'à l'ouverture et au suivi de son restaurant.</p></li>
-      <li class="tuile" style="background:var(--creme)"><h3>Construire une marque nationale</h3><p>Capable de valoriser les traditions culinaires de chaque territoire.</p></li>
+      <li class="tuile c-sable" style="background:var(--creme)"><h3 class="t-case">Déployer un réseau de franchises</h3><p>Dans les villes françaises, en adaptant les implantations aux marchés locaux.</p></li>
+      <li class="tuile" style="background:var(--creme)"><h3 class="t-case">Accompagner chaque entrepreneur</h3><p>De la recherche du local jusqu'à l'ouverture et au suivi de son restaurant.</p></li>
+      <li class="tuile" style="background:var(--creme)"><h3 class="t-case">Construire une marque nationale</h3><p>Capable de valoriser les traditions culinaires de chaque territoire.</p></li>
     </ul>
     <p>D'abord la France métropolitaine, dans les petites et moyennes villes. Puis les grandes métropoles. L'international à plus long terme, en gardant l'identité du Poké Terroir.</p>
     <!-- Brand book p. 31, 33, 43 et 45 : objectifs prévisionnels et calendrier, tels que donnés par Rive Bowl -->
@@ -224,9 +224,9 @@
   <div class="wrap">
     <h2 class="t t-l titre-sec" id="titre-formats">3 formats de restaurant</h2>
     <ul class="tuiles">
-      <li class="tuile c-feuille"><img class="photo" src="img/bb-devanture.webp" alt="Devanture Rive Bowl en centre-ville (visuel d'illustration du brand book)" width="696" height="440" /><h3>Centres-villes et communes</h3><p>Implantations de proximité, dans les centres-villes et les communes de différentes tailles. Une clientèle composée d'habitants, de familles et d'actifs recherchant une restauration rapide, gourmande et accessible.</p><span class="mention">Visuel d'illustration · brand book Rive Bowl</span></li>
-      <li class="tuile c-corail"><img class="photo" src="img/bb-salle-2.webp" alt="Salle Rive Bowl avec tables et banquette (visuel d'illustration du brand book)" width="736" height="920" /><h3>Zones d'activités et de bureaux</h3><p>Quartiers d'affaires, parcs d'entreprises et zones tertiaires. Des professionnels recherchant un déjeuner rapide, équilibré et pratique, sur place ou à emporter.</p><span class="mention">Visuel d'illustration · brand book Rive Bowl</span></li>
-      <li class="tuile c-jaune"><img class="photo" src="img/bb-salle.webp" alt="Salle Rive Bowl lumineuse avec plantes (visuel d'illustration du brand book)" width="1104" height="692" /><h3>Zones commerciales et lieux de loisirs</h3><p>Centres commerciaux, cinémas, pôles de loisirs et lieux à forte fréquentation. Une offre adaptée aux familles, aux jeunes adultes et aux consommateurs de passage.</p><span class="mention">Visuel d'illustration · brand book Rive Bowl</span></li>
+      <li class="tuile c-feuille"><img class="photo" src="img/bb-devanture.webp" alt="Devanture Rive Bowl en centre-ville (visuel d'illustration du brand book)" width="696" height="440" /><h3 class="t-case">Centres-villes et communes</h3><p>Implantations de proximité, dans les centres-villes et les communes de différentes tailles. Une clientèle composée d'habitants, de familles et d'actifs recherchant une restauration rapide, gourmande et accessible.</p><span class="mention">Visuel d'illustration · brand book Rive Bowl</span></li>
+      <li class="tuile c-corail"><img class="photo" src="img/bb-salle-2.webp" alt="Salle Rive Bowl avec tables et banquette (visuel d'illustration du brand book)" width="736" height="920" /><h3 class="t-case">Zones d'activités et de bureaux</h3><p>Quartiers d'affaires, parcs d'entreprises et zones tertiaires. Des professionnels recherchant un déjeuner rapide, équilibré et pratique, sur place ou à emporter.</p><span class="mention">Visuel d'illustration · brand book Rive Bowl</span></li>
+      <li class="tuile c-jaune"><img class="photo" src="img/bb-salle.webp" alt="Salle Rive Bowl lumineuse avec plantes (visuel d'illustration du brand book)" width="1104" height="692" /><h3 class="t-case">Zones commerciales et lieux de loisirs</h3><p>Centres commerciaux, cinémas, pôles de loisirs et lieux à forte fréquentation. Une offre adaptée aux familles, aux jeunes adultes et aux consommateurs de passage.</p><span class="mention">Visuel d'illustration · brand book Rive Bowl</span></li>
     </ul>
   </div>
 </section>
@@ -236,10 +236,10 @@
   <div class="wrap">
     <h2 class="t t-l" id="titre-accomp" style="color:var(--creme)">Un accompagnement franchisé 5 étoiles</h2>
     <ul class="tuiles" style="--n:4;margin-top:var(--e-fl-1);text-align:left;color:var(--sapin-deep)">
-      <li class="tuile c-jaune"><h3>Formation</h3><p>Formation pratique en restaurant et accompagnement à la gestion d'entreprise.</p></li>
-      <li class="tuile c-turquoise"><h3>Qualité &amp; hygiène</h3><p>Protocoles HACCP, fiches recettes et fournisseurs référencés pour garantir les standards du réseau.</p></li>
-      <li class="tuile c-corail"><h3>Marketing &amp; communication</h3><p>Campagnes nationales, supports officiels et outils pour développer la visibilité de chaque restaurant.</p></li>
-      <li class="tuile c-rose"><h3>Accompagnement continu</h3><p>Un interlocuteur réseau pour accompagner les franchisés sur les questions techniques, commerciales et opérationnelles.</p></li>
+      <li class="tuile c-jaune"><h3 class="t-case">Formation</h3><p>Formation pratique en restaurant et accompagnement à la gestion d'entreprise.</p></li>
+      <li class="tuile c-turquoise"><h3 class="t-case">Qualité &amp; hygiène</h3><p>Protocoles HACCP, fiches recettes et fournisseurs référencés pour garantir les standards du réseau.</p></li>
+      <li class="tuile c-corail"><h3 class="t-case">Marketing &amp; communication</h3><p>Campagnes nationales, supports officiels et outils pour développer la visibilité de chaque restaurant.</p></li>
+      <li class="tuile c-rose"><h3 class="t-case">Accompagnement continu</h3><p>Un interlocuteur réseau pour accompagner les franchisés sur les questions techniques, commerciales et opérationnelles.</p></li>
     </ul>
   </div>
 </section>
@@ -249,7 +249,7 @@
   <div class="wrap duo">
     <div class="duo__img c-turquoise"><img class="bol" src="img/bowl-maineetloire.webp" alt="Poké Maine-et-Loire vu de dessus" width="720" height="720" /></div>
     <div>
-      <h2 class="t">Une chaîne d'approvisionnement performante</h2>
+      <h2 class="t t-l">Une chaîne d'approvisionnement performante</h2>
       <p class="forte">Un approvisionnement centralisé pour simplifier le quotidien de nos franchisés.</p>
       <ul class="pastilles" style="--x:0">
         <li style="background:var(--sable)">Des fournisseurs référencés à l'échelle nationale</li>
@@ -268,10 +268,10 @@
   <div class="wrap">
     <h2 class="t t-l titre-sec" id="titre-partenariats">Des partenariats pour ancrer la marque</h2>
     <ul class="tuiles" style="--n:4">
-      <li class="tuile c-feuille"><h3>Sport &amp; bien-être</h3><p>Salles de sport, clubs sportifs, associations, événements fitness et compétitions.</p></li>
-      <li class="tuile c-corail"><h3>Culture &amp; divertissement</h3><p>Cinémas, festivals, concerts, événements culturels et lieux de loisirs.</p></li>
-      <li class="tuile c-jaune"><h3>Vie quotidienne &amp; entreprises</h3><p>Entreprises, espaces de coworking, établissements d'enseignement et événements professionnels.</p></li>
-      <li class="tuile c-turquoise"><h3>Famille &amp; convivialité</h3><p>Activités familiales, événements intergénérationnels et lieux de rencontre.</p></li>
+      <li class="tuile c-feuille"><h3 class="t-case">Sport &amp; bien-être</h3><p>Salles de sport, clubs sportifs, associations, événements fitness et compétitions.</p></li>
+      <li class="tuile c-corail"><h3 class="t-case">Culture &amp; divertissement</h3><p>Cinémas, festivals, concerts, événements culturels et lieux de loisirs.</p></li>
+      <li class="tuile c-jaune"><h3 class="t-case">Vie quotidienne &amp; entreprises</h3><p>Entreprises, espaces de coworking, établissements d'enseignement et événements professionnels.</p></li>
+      <li class="tuile c-turquoise"><h3 class="t-case">Famille &amp; convivialité</h3><p>Activités familiales, événements intergénérationnels et lieux de rencontre.</p></li>
     </ul>
     <p class="difference" style="margin-top:var(--e-5);font-weight:var(--fw-fort);max-width:60ch">Des accords nationaux avec des enseignes partenaires, et pour chaque franchisé, des collaborations adaptées à son territoire.</p>
   </div>
@@ -324,7 +324,7 @@
       <figure><img src="img/salle-comptoir.webp" alt="Le comptoir de Rive Bowl à Montjean" width="1024" height="768" loading="lazy" /></figure>
     </div>
     <form class="form monte" action="#" onsubmit="return false" aria-describedby="note-form">
-      <h3>Parlons de votre projet</h3>
+      <h3 class="t-case">Parlons de votre projet</h3>
       <p class="note" id="note-form">Formulaire désactivé sur la maquette.</p>
       <fieldset disabled>
         <div class="duo">

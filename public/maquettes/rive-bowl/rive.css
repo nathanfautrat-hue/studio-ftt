@@ -72,10 +72,13 @@ a{color:inherit}
 .t{font-weight:var(--fw-noir);text-transform:uppercase;letter-spacing:-.01em;line-height:var(--lh-titre);text-wrap:balance;overflow-wrap:break-word}
 .t-xl{font-size:var(--fs-geant)}
 .t-l{font-size:var(--fs-1)}
-.t-m{font-size:var(--fs-3)}
 .main{font-family:var(--main);font-weight:var(--fw-main);text-transform:none;letter-spacing:0;color:var(--jaune)}
 .sur{display:inline-block;font:var(--fw-titre) var(--fs-mini)/var(--lh-moyen) var(--font);letter-spacing:.2em;text-transform:uppercase}
-.lead{font-size:var(--fs-4);line-height:var(--lh-texte);max-width:46ch}
+.lead{font-size:var(--fs-4);font-weight:var(--fw-fort);line-height:var(--lh-texte);max-width:46ch}
+/* Titre de case (tuiles, cases photo, piliers, rubriques de la carte, formulaire) : un seul style */
+.t-case{font:var(--fw-noir) var(--fs-4)/var(--lh-serre) var(--font);text-transform:uppercase;letter-spacing:0;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+/* Sous-titre manuscrit sous un titre de section */
+.sous{font-family:var(--main);font-weight:var(--fw-main);font-size:var(--fs-3);line-height:var(--lh-serre);color:var(--corail-texte);text-transform:none}
 
 /* Bandeau maquette */
 .bandeau{background:var(--encre);color:var(--creme);font:var(--fw-fort) var(--fs-mini)/var(--lh-moyen) var(--font);text-align:center;padding:var(--e-2) var(--e-3)}
@@ -142,7 +145,7 @@ body.menu-ouvert{overflow:hidden}
 /* Étiquette produit posée sur la photo (sans flèche) */
 .etiquette{display:inline-flex;flex-direction:column;align-items:flex-start;gap:var(--e-1)}
 .etiquette b{font:var(--fw-noir) var(--fs-4)/var(--lh-titre) var(--font);text-transform:uppercase;color:var(--creme);text-shadow:0 2px 14px var(--noir-75),0 1px 2px var(--noir-50)}
-.etiquette span{background:var(--jaune);color:var(--sapin-deep);font:var(--fw-titre) var(--fs-micro)/var(--lh-titre) var(--font);letter-spacing:.14em;text-transform:uppercase;padding:var(--e-1) var(--e-2);border-radius:var(--r-img)}
+.etiquette span{background:var(--jaune);color:var(--sapin-deep);font:var(--fw-titre) var(--fs-mini)/var(--lh-moyen) var(--font);letter-spacing:.2em;text-transform:uppercase;padding:var(--e-1) var(--e-2);border-radius:var(--r-img)}
 
 /* Couleurs de fond (cartes, blocs) */
 .c-sapin{--c:var(--sapin);color:var(--creme)}
@@ -157,7 +160,7 @@ body.menu-ouvert{overflow:hidden}
 .produits{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-5)}
 .produit{border-radius:var(--r-case);padding:var(--e-5) var(--e-5) var(--e-6);display:flex;flex-direction:column;background:var(--c,var(--sable));min-width:0}
 .produit .bol{width:84%;margin:var(--e-1) auto var(--e-4)}
-.produit h3{font:var(--fw-noir) var(--fs-4)/var(--lh-serre) var(--font);text-transform:uppercase}
+.produit h3,.poke__nom{font:var(--fw-noir) var(--fs-texte)/var(--lh-serre) var(--font);text-transform:uppercase}
 .produit p{margin-top:var(--e-1);font-size:var(--fs-petit);line-height:var(--lh-moyen);opacity:.9}
 .produit .pied-carte{margin-top:auto;padding-top:var(--e-4);display:flex;justify-content:space-between;align-items:center;gap:var(--e-2)}
 .produit .prix{font:var(--fw-noir) var(--fs-texte)/var(--lh-titre) var(--font);white-space:nowrap}
@@ -167,7 +170,6 @@ body.menu-ouvert{overflow:hidden}
   .produits--glisse .produit{flex:0 0 74%;max-width:300px;scroll-snap-align:start}
   .produits:not(.produits--glisse){grid-template-columns:1fr 1fr;gap:var(--e-3)}
   .produits:not(.produits--glisse) .produit{padding:var(--e-3) var(--e-3) var(--e-4)}
-  .produits:not(.produits--glisse) .produit h3{font-size:var(--fs-petit)}
   .produits:not(.produits--glisse) .produit p{display:none}
   .produits:not(.produits--glisse) .produit .pied-carte{padding-top:var(--e-2);flex-direction:column;align-items:stretch;gap:var(--e-2)}
 }
@@ -226,7 +228,7 @@ body.menu-ouvert{overflow:hidden}
 
 /* Formulaire désactivé */
 .form{background:var(--blanc);border-radius:var(--r-case);padding:var(--e-fl-1);color:var(--ink);box-shadow:var(--ombre)}
-.form h3{font:var(--fw-noir) var(--fs-4)/var(--lh-titre) var(--font);text-transform:uppercase;color:var(--sapin)}
+.form h3{color:var(--sapin)}
 .form .note{margin-top:var(--e-2);font-size:var(--fs-petit);color:var(--ink-2)}
 .form fieldset{border:0;margin-top:var(--e-5);display:grid;gap:var(--e-3);min-width:0}
 .form label{display:grid;gap:var(--e-1);font:var(--fw-fort) var(--fs-petit)/var(--lh-serre) var(--font)}
