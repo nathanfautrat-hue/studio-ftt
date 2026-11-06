@@ -1169,3 +1169,7 @@ h1,h2,h3,h4,h5,.t,.t-case,.btn,.carte__etiquette,.plan__nom,.plat__ouvrir{overfl
   .entete .cmd .fl{display:none}
   .entete .logo img{height:26px}
 }
+/* petites mentions (« Visuel d'illustration », crédits des cartes, étiquettes des points) : 12 px au minimum, pour rester lisibles */
+.mention,.p-une .mention,.duo__img .mention,.fr-split__img .mention,.damier__photo .mention,.photo-pleine .mention,.appel-fr__photo .mention,.origine__photo .mention,.profil__photo .mention,.tuile .mention{font-size:12px}
+.plan__credit,.carte-vraie .maplibregl-ctrl-attrib{font-size:12px}
+@media (max-width:360px){.carte__etiquette{font-size:12px}}
