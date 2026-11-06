@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Conditions générales de vente",
   description:
-    "CGV Studio FTT : création de sites web, hébergement et maintenance pour artisans et PME en Sarthe. Modalités, paiement, livraison, garanties.",
+    "CGV Studio FTT : création de sites web, hébergement et maintenance pour artisans, indépendants et PME partout en France. Modalités, paiement, livraison, garanties.",
   alternates: {
     canonical: "/cgv",
   },
@@ -37,7 +37,7 @@ export default function CGV() {
           Conditions générales de vente
         </h1>
         <p className="text-white/50 text-sm mb-12">
-          Version en vigueur depuis le 3 mai 2026.
+          Version en vigueur depuis le 6 novembre 2026.
         </p>
 
         <div className="space-y-10 text-white/70 leading-relaxed">
@@ -122,10 +122,10 @@ export default function CGV() {
               <li>
                 <strong className="text-white">Solde de 70 % avant la mise en ligne.</strong>{" "}
                 Le site est présenté au Client sur une URL de prévisualisation
-                Cloudflare Pages. La mise en ligne sur le nom de domaine final,
-                ainsi que le transfert des accès et du code, ne sont effectués
-                qu&apos;après réception complète du solde. Aucun délai de
-                paiement post-livraison n&apos;est accordé.
+                Cloudflare Pages. La mise en ligne sur le nom de domaine final
+                et la remise des fichiers du site (voir Article 9) ne sont
+                effectuées qu&apos;après réception complète du solde. Aucun
+                délai de paiement post-livraison n&apos;est accordé.
               </li>
             </ul>
             <p className="mt-3">
@@ -229,7 +229,7 @@ export default function CGV() {
               Cloudflare, Studio FTT peut migrer le site vers un hébergeur
               équivalent ou proposer une solution adaptée, avec un préavis
               d&apos;au moins 30 jours. Le Client reste libre de refuser et de
-              récupérer son site selon les modalités de l&apos;alinéa suivant.
+              récupérer les fichiers de son site selon l&apos;Article 9.
             </p>
             <p className="mt-3">
               <strong className="text-white">Continuité en cas d&apos;arrêt d&apos;activité&nbsp;:</strong>{" "}
@@ -253,8 +253,8 @@ export default function CGV() {
               email, avec un préavis d&apos;<strong className="text-white">un mois</strong> avant la prochaine échéance.
             </p>
             <p className="mt-3">
-              La résiliation de la maintenance n&apos;a aucun effet sur
-              l&apos;hébergement, qui reste inclus. Les modifications
+              L&apos;hébergement reste inclus, avec ou sans maintenance&nbsp;:
+              la résiliation de la maintenance n&apos;a aucun effet sur lui. Les modifications
               demandées hors maintenance sont facturées selon l&apos;Article 6.
             </p>
           </div>
@@ -264,12 +264,18 @@ export default function CGV() {
               Article 9 — Propriété intellectuelle
             </h2>
             <p>
-              <strong className="text-white">Code source &amp; designs Studio FTT&nbsp;:</strong>{" "}
-              demeurent la propriété exclusive du Prestataire. Le Client
-              dispose d&apos;une licence d&apos;usage non-exclusive et
-              non-transférable sur le site livré, tant que ce dernier reste
-              hébergé par Studio FTT ou tant qu&apos;une prestation est en
-              cours.
+              <strong className="text-white">Site livré&nbsp;:</strong>{" "}
+              dès réception complète du paiement, le Client dispose d&apos;une
+              licence d&apos;usage perpétuelle sur son site, quel que soit
+              l&apos;hébergeur. Il peut demander à tout moment, gratuitement,
+              la remise des fichiers de son site.
+            </p>
+            <p className="mt-3">
+              <strong className="text-white">Savoir-faire de Studio FTT&nbsp;:</strong>{" "}
+              Studio FTT conserve le droit de réutiliser ses méthodes, ses
+              outils et ses éléments de code génériques pour d&apos;autres
+              projets, sans jamais reprendre les contenus ni l&apos;identité
+              visuelle propres au Client.
             </p>
             <p className="mt-3">
               <strong className="text-white">Contenus du Client&nbsp;</strong>
@@ -287,12 +293,13 @@ export default function CGV() {
             <p className="mt-3">
               <strong className="text-white">Fin de collaboration&nbsp;:</strong>{" "}
               en cas de rupture (à l&apos;initiative du Client ou du
-              Prestataire), le Client conserve son nom de domaine et tous ses
-              contenus, mais ne peut prétendre à la cession du code source
-              ni des designs Studio FTT. Il devra reconstruire son site
-              ailleurs s&apos;il souhaite quitter l&apos;écosystème Studio FTT,
-              sauf en cas d&apos;arrêt d&apos;activité du Prestataire, où
-              l&apos;Article 7 s&apos;applique.
+              Prestataire), le Client conserve son nom de domaine, tous ses
+              contenus et, s&apos;il a réglé l&apos;intégralité des sommes
+              dues, les fichiers de son site, remis gratuitement. S&apos;il
+              souhaite être accompagné pour la mise en ligne chez un autre
+              hébergeur, cette aide est facturée selon l&apos;Article 6 (50&nbsp;€
+              de l&apos;heure). En cas d&apos;arrêt d&apos;activité du
+              Prestataire, l&apos;Article 7 s&apos;applique.
             </p>
           </div>
 
