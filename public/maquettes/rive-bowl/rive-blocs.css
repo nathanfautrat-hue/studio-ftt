@@ -933,7 +933,7 @@ html.arrivee body::after{background:var(--corail)}
 .carte__loire-bord{stroke:var(--sapin-deep);stroke-width:22}
 .carte__loire{stroke:var(--turquoise);stroke-width:13}
 /* le nom du département : il monte d'un masque (0,5 s, même courbe que Leoff) */
-.carte__nom{position:absolute;z-index:3;transform:translate(-50%,-50%);overflow:hidden;pointer-events:none;font:400 clamp(20px,5.4vw,52px)/1.1 var(--titre);text-transform:uppercase;color:var(--sapin-deep);white-space:nowrap;padding:0 .08em}
+.carte__nom{position:absolute;z-index:3;transform:translate(-50%,-50%);overflow:hidden;pointer-events:none;font:400 clamp(14px,2.7vw,26px)/1.1 var(--titre);text-transform:uppercase;color:var(--sapin-deep);white-space:nowrap;padding:0 .08em}
 .carte__nom>span{display:block;transform:translateY(105%);transition:transform .5s cubic-bezier(.165,.84,.44,1);text-shadow:2px 2px 0 var(--creme)}
 .carte__nom--actif>span{transform:none;transition-delay:.1s}
 /* les repères : une photo de bowl dans un rond, au moins 44 px, qui flotte */
@@ -1114,3 +1114,43 @@ h1,h2,h3,h4,h5,.t,.t-case,.btn,.carte__etiquette,.plan__nom,.plat__ouvrir{overfl
 .fiche-resto__btn{display:flex;align-items:center;justify-content:center;min-height:44px;margin-top:14px;border-radius:var(--r-pilule);background:var(--jaune);color:var(--sapin-deep);font:800 13px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
 .carte-vraie .carte-vraie__map,.carte-vraie .carte-vraie__map.maplibregl-map{position:absolute!important;inset:0;width:100%;height:100%}
 .insecable{white-space:nowrap}
+
+/* ===================== RESTAURANTS : repères = un simple point qui pulse (Nathan, 06/11) ===================== */
+.carte__flotte.carte__point,.epingle__rond{position:relative;display:block;width:22px;height:22px;aspect-ratio:auto;border-radius:50%;background:var(--corail);border:3px solid var(--creme);box-shadow:0 0 0 2px var(--sapin-deep);overflow:visible}
+.carte__repere{min-width:44px;min-height:44px;align-content:center}
+.carte__repere--bientot .carte__point,.epingle--bientot .epingle__rond{background:transparent;border:3px dashed var(--sapin-deep);box-shadow:none}
+.carte__point::after,.epingle__rond::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:3px solid var(--corail);opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:no-preference){
+  .carte__point::after,.epingle__rond::after{animation:point-pulse 2.2s cubic-bezier(.165,.84,.44,1) infinite}
+}
+.carte__repere--bientot .carte__point::after,.epingle--bientot .epingle__rond::after{border-color:var(--sapin-deep)}
+@keyframes point-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+.epingle{width:44px;height:44px;place-items:center;filter:none}
+.epingle::after{content:none}
+/* noms des départements : avec GSAP, ce sont les lettres qui arrivent (plus de montée du bloc) */
+.carte--lettres .carte__nom>span{transform:none;transition:none}
+.carte__lettre{display:inline-block}
+.carte--lettres .carte__nom:not(.carte__nom--actif)>span{opacity:0}
+/* La carte : la carte du plat est le bouton (indice discret : curseur, léger soulèvement, contour au clavier) */
+.onglets .plat[role="button"]{cursor:pointer;transition:transform .35s cubic-bezier(.165,.84,.44,1),box-shadow .35s ease}
+@media (hover:hover){.onglets .plat[role="button"]:hover{transform:translateY(-6px);box-shadow:0 16px 28px -18px var(--noir-50)}}
+.onglets .plat[role="button"]:focus-visible{outline:3px solid var(--corail-texte);outline-offset:4px}
+.onglets .plat[role="button"]:active{transform:scale(.98)}
+
+/* ===================== RESTAURANTS : fiche de services par restaurant (façon Pokawa) ===================== */
+.lieu__modes{grid-column:1/-1;position:sticky;top:calc(var(--h-entete) + 8px);z-index:5;display:flex;flex-wrap:wrap;gap:var(--e-2);padding:var(--e-2);margin:calc(var(--e-2) * -1) calc(var(--e-2) * -1) 0;border-radius:var(--r-pilule);background:var(--sapin-deep)}
+.lieu__mode{display:inline-flex;align-items:center;min-height:44px;padding:0 var(--e-4);border-radius:var(--r-pilule);background:var(--creme);color:var(--sapin-deep);font:400 var(--fs-petit)/1 var(--titre);text-transform:uppercase;text-decoration:none;transition:transform .3s cubic-bezier(.165,.84,.44,1)}
+@media (hover:hover){.lieu__mode:hover{transform:scale(1.05);background:var(--jaune)}}
+.lieu__mode:focus-visible{outline:3px solid var(--jaune);outline-offset:2px}
+.services-mj{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
+.services-mj li.service--non{color:var(--creme)}
+.services-mj li.service--non svg{position:relative;background:var(--creme);stroke:var(--corail-texte)}
+.services-mj li.service--non svg{background-image:linear-gradient(135deg,transparent 46%,var(--corail-texte) 46%,var(--corail-texte) 54%,transparent 54%)}
+/* titre local et petite FAQ */
+.faq-locale{background:var(--creme);color:var(--sapin-deep);padding:var(--e-fl-4) 0}
+.faq-locale__grille{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--e-fl-1);margin-top:var(--e-fl-2)}
+.faq-locale h3{font:400 var(--fs-4)/1.15 var(--titre);text-transform:uppercase;color:var(--sapin)}
+.faq-locale p{margin-top:var(--e-2);line-height:var(--lh-texte)}
+@media (max-width:860px){.faq-locale__grille{grid-template-columns:minmax(0,1fr)}}
+.contact-crav{overflow:clip}
+.lieu__infos>.lieu__modes{margin:0 0 var(--e-4);grid-column:auto}

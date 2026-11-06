@@ -52,7 +52,7 @@
       '<dl class="fiche-resto__infos">' +
       '<dt>Adresse</dt><dd>' + (r.adresse || 'À venir') + '</dd>' +
       (r.telephone ? '<dt>Téléphone</dt><dd><a href="tel:' + r.telephone.replace(/\s/g, '').replace(/^0/, '+33') + '">' + r.telephone + '</a></dd>' : '') +
-      '<dt>Type</dt><dd>' + (r.type || 'Poké bar') + '</dd></dl>' + b;
+      '<dt>Type</dt><dd>' + (r.type || 'Poké bar') + '</dd>' + (window.RiveBowlServices ? window.RiveBowlServices.court(r) : '') + '</dl>' + b;
   }
   function demarrer() {
     var ml = window.maplibregl;
@@ -73,6 +73,7 @@
     if (tactile) { map.dragPan.disable(); }                     // un doigt : la page défile ; deux doigts : zoom
     map.touchZoomRotate.disableRotation();
     map.addControl(new ml.NavigationControl({ showCompass: false }), 'top-right');
+    map.setPadding({ top: Math.round(conteneur.clientHeight * (conteneur.clientWidth < 600 ? 0.62 : 0.3)), left: 0, right: 0, bottom: 0 });   // l'épingle plus bas : la fiche a la place de s'ouvrir au-dessus
     var minuteur = setTimeout(secours, 10000);                   // pas de fond de carte au bout de 10 s : on garde le plan
     map.on('load', function () {
       clearTimeout(minuteur);
@@ -83,9 +84,9 @@
         var el = document.createElement('button');
         el.type = 'button'; el.className = 'epingle' + (r.statut === 'bientot' ? ' epingle--bientot' : '');
         el.setAttribute('aria-label', (r.nom || 'Rive Bowl ' + r.ville) + (r.statut === 'bientot' ? ', bientôt' : '') + ' : voir la fiche');
-        el.innerHTML = '<span class="epingle__rond">' + (r.photo ? '<img src="' + r.photo + '" alt="" width="80" height="80" />' : '') + '</span>';
-        var pop = new ml.Popup({ offset: [0, -52], maxWidth: '290px', className: 'fiche-resto', focusAfterOpen: true }).setHTML(fiche(r));
-        new ml.Marker({ element: el, anchor: 'bottom' }).setLngLat([r.lon, r.lat]).setPopup(pop).addTo(map);
+        el.innerHTML = '<span class="epingle__rond"></span>';      // un simple point qui pulse (retour de Nathan du 06/11)
+        var pop = new ml.Popup({ anchor: 'bottom', offset: [0, -18], maxWidth: '290px', className: 'fiche-resto', focusAfterOpen: true }).setHTML(fiche(r));
+        new ml.Marker({ element: el, anchor: 'center' }).setLngLat([r.lon, r.lat]).setPopup(pop).addTo(map);
       });
     });
     map.on('error', function (e) { if (!boite.classList.contains('carte-vraie--prete') && e && e.error && /style/i.test(String(e.error.message))) secours(); });

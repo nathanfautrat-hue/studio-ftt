@@ -71,7 +71,7 @@
       (p.note ? '<p class="fiche-plat__note">' + p.note + '</p>' : '') +
       '<p class="fiche-plat__avert">Allergènes indicatifs, liste exacte à fournir par le restaurant.</p>' +
       '<a class="btn btn--jaune fiche-plat__cmd" href="https://rivebowl.dishop.co/" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>';
-    source = li.querySelector('.plat__ouvrir') || li;
+    source = li;
     voile.hidden = false; document.body.classList.add('fiche-plat-ouverte');
     requestAnimationFrame(function () { voile.classList.add('fiche-plat__voile--on'); });
     setTimeout(function () { voile.classList.add('fiche-plat__voile--on'); }, 60);           // secours si l'animation ne tourne pas
@@ -97,12 +97,12 @@
   });
   window.addEventListener('popstate', function () { if (!voile.hidden) { parHistorique = false; fermer(true); } });
 
-  // chaque plat : toute la carte est cliquable, avec un vrai bouton pour le clavier et les lecteurs d'écran
+  // chaque plat : la carte entière est le bouton (clic, toucher, Entrée ou Espace), sans texte en plus (retour de Nathan du 06/11)
   grille.querySelectorAll('.plat').forEach(function (li) {
-    var b = document.createElement('button');
-    b.type = 'button'; b.className = 'plat__ouvrir'; b.setAttribute('aria-haspopup', 'dialog');
-    b.innerHTML = 'Ingrédients &amp; allergènes';
-    li.appendChild(b);
+    var nom = (li.querySelector('.t-case') || {}).textContent || 'ce plat';
+    li.setAttribute('role', 'button'); li.tabIndex = 0; li.setAttribute('aria-haspopup', 'dialog');
+    li.setAttribute('aria-label', nom + ' : ingrédients et allergènes');
     li.addEventListener('click', function () { ouvrir(li); });
+    li.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ouvrir(li); } });
   });
 })();

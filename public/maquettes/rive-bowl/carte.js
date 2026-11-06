@@ -11,13 +11,24 @@
   var noms = [].slice.call(carte.querySelectorAll('.carte__nom'));
   var reduit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var G = !reduit && window.gsap && window.ScrollTrigger;
+  if (G) carte.classList.add('carte--lettres');
 
   // 1. Départements : soulèvement + nom en grand
   var actif = null;
   function montrer(dep) {
     if (actif === dep) return;
     actif = dep;
-    noms.forEach(function (n) { n.classList.toggle('carte__nom--actif', !!dep && n.dataset.dep === dep.dataset.dep); });
+    noms.forEach(function (n) {
+      var on = !!dep && n.dataset.dep === dep.dataset.dep;
+      n.classList.toggle('carte__nom--actif', on);
+      if (on && G && window.SplitText) {
+        var s = n.querySelector('span');
+        if (!n._lettres) { n._lettres = SplitText.create(s, { type: 'chars', tag: 'span', charsClass: 'carte__lettre' }).chars; }
+        gsap.killTweensOf(n._lettres);
+        gsap.fromTo(n._lettres, { yPercent: 110, autoAlpha: 0, rotation: function () { return gsap.utils.random(-12, 12); } },
+          { yPercent: 0, autoAlpha: 1, rotation: 0, duration: 0.45, ease: 'back.out(2.4)', stagger: 0.035, overwrite: true });
+      }
+    });
     if (!dep) { haut.classList.remove('carte__haut--on'); return; }
     haut.classList.remove('carte__haut--on');
     haut.setAttribute('d', dep.getAttribute('d'));
@@ -46,9 +57,8 @@
     el.style.left = p[0].toFixed(2) + '%'; el.style.top = p[1].toFixed(2) + '%';
     if (r.lien) { el.href = r.lien; } else { el.type = 'button'; el.setAttribute('aria-haspopup', 'dialog'); }
     el.setAttribute('aria-label', r.lien ? r.titre : (r.ville + (r.statut === 'bientot' ? ', bientôt' : '') + ' : voir la fiche'));
-    el.innerHTML = '<span class="carte__flotte">' +
-      (r.photo ? '<img src="' + r.photo + '" alt="" width="120" height="120" loading="lazy" />' : '<b aria-hidden="true">+</b>') +
-      '</span><span class="carte__etiquette">' + (r.etiquette || r.ville) + (r.statut === 'bientot' ? ' <i>Bientôt</i>' : r.statut === 'franchise' ? ' <i>Devenez franchisé</i>' : r.sous ? ' <i class="carte__sous">' + r.sous + '</i>' : '') + '</span>';
+    // un simple point (retour de Nathan du 06/11 : plus de photo dans les repères) ; il poppe puis pulse doucement
+    el.innerHTML = '<span class="carte__flotte carte__point"></span><span class="carte__etiquette">' + (r.etiquette || r.ville) + (r.statut === 'bientot' ? ' <i>Bientôt</i>' : r.statut === 'franchise' ? ' <i>Devenez franchisé</i>' : r.sous ? ' <i class="carte__sous">' + r.sous + '</i>' : '') + '</span>';
     if (!r.lien) el.addEventListener('click', function (e) { e.stopPropagation(); ouvrir(r, el); });
     carte.appendChild(el); reperes.push(el);
   });
