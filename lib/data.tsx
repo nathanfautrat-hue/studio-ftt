@@ -130,7 +130,7 @@ export type FaqItem = { q: string; a: string };
 export const FAQ: FaqItem[] = [
   {
     q: "Combien coûte un site ?",
-    a: "Ça dépend de ce dont vous avez besoin. On en parle 30 minutes, puis je vous envoie un devis clair. Vous payez une fois, sans abonnement obligatoire.",
+    a: "Ça dépend de ce dont vous avez besoin. On en parle 30 minutes, puis je vous envoie un devis clair. Sans abonnement obligatoire, hébergement compris.",
   },
   {
     q: "Combien de temps pour livrer ?",

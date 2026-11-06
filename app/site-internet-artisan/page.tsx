@@ -54,7 +54,7 @@ const CONTENU_SITE = [
 const ARTISAN_FAQ = [
   {
     q: "Combien coûte un site internet pour un artisan ?",
-    a: "Ça dépend de ce qu'il vous faut : nombre de pages, zone d'intervention, fiches Google, Bing et Apple Plans. On en parle 30 minutes et je vous envoie un devis clair. Vous payez une fois, sans abonnement obligatoire.",
+    a: "Ça dépend de ce qu'il vous faut : nombre de pages, zone d'intervention, fiches Google, Bing et Apple Plans. On en parle 30 minutes et je vous envoie un devis clair. Sans abonnement obligatoire, hébergement compris.",
   },
   {
     q: "J'ai déjà du travail avec le bouche-à-oreille, à quoi ça sert ?",
@@ -456,8 +456,7 @@ export default function SiteInternetArtisan() {
                 </div>
               ))}
               <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 8, lineHeight: 1.6 }}>
-                Le prix est fixé sur devis, après un appel de 30 minutes. Vous
-                payez une fois, sans abonnement obligatoire.
+                Le prix est fixé sur devis, après un appel de 30 minutes. Sans abonnement obligatoire, hébergement compris.
               </p>
             </div>
           </Reveal>

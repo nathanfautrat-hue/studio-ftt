@@ -54,7 +54,7 @@ const CONTENU_SITE = [
 const COMMERCE_FAQ = [
   {
     q: "Combien coûte un site pour un commerce ou un garage ?",
-    a: "Ça dépend de ce qu'il vous faut : nombre de pages, prestations, fiches Google, Bing et Apple Plans. On en parle 30 minutes et je vous envoie un devis clair. Vous payez une fois, sans abonnement obligatoire.",
+    a: "Ça dépend de ce qu'il vous faut : nombre de pages, prestations, fiches Google, Bing et Apple Plans. On en parle 30 minutes et je vous envoie un devis clair. Sans abonnement obligatoire, hébergement compris.",
   },
   {
     q: "J'ai déjà une page Facebook ou Instagram, ça ne suffit pas ?",
@@ -401,8 +401,7 @@ export default function SiteInternetCommerce() {
                 </div>
               ))}
               <p style={{ fontSize: 13, color: "var(--ftt-text-dim)", marginTop: 8, lineHeight: 1.6 }}>
-                Le prix est fixé sur devis, après un appel de 30 minutes. Vous
-                payez une fois, sans abonnement obligatoire.
+                Le prix est fixé sur devis, après un appel de 30 minutes. Sans abonnement obligatoire, hébergement compris.
               </p>
             </div>
           </Reveal>

@@ -51,8 +51,7 @@ export default function TarifsSection() {
             >
               Un plombier n&apos;a pas besoin du même site qu&apos;un kiné. On
               s&apos;appelle 30 minutes, vous m&apos;expliquez votre activité, et je
-              vous envoie un devis clair. Vous payez une fois, sans abonnement
-              obligatoire.
+              vous envoie un devis clair. Sans abonnement obligatoire, hébergement compris.
             </p>
           </div>
         </Reveal>
