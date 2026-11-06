@@ -720,26 +720,24 @@ html.premier body::after,html.arrivee body::after{content:"";position:fixed;inse
 html.arrivee body::after{background:var(--corail)}
 @keyframes secours-cache{to{visibility:hidden}}
 .chargement{position:fixed;inset:0;z-index:1000;display:grid;place-content:center;justify-items:center;gap:var(--e-4);background:var(--sapin);color:var(--creme);border-radius:0 0 50% 50% / 0 0 0 0}
-.chargement__bol{width:min(56vw,240px);height:auto;overflow:visible}
-.chargement__bol .p-bol{fill:var(--creme)}
-.chargement__bol .p-riz{fill:var(--champ)}
-.chargement__bol .p-saumon{fill:var(--corail)}
-.chargement__bol .p-avocat{fill:var(--feuille)}
-.chargement__bol .p-edamame{fill:var(--jaune)}
-.chargement__bol>*{opacity:0;transform-box:fill-box;transform-origin:50% 100%}
+.chargement__bol{width:min(90vw,420px,62svh);height:auto;overflow:visible}
+.chargement__bol>g{opacity:0;transform-box:fill-box;transform-origin:50% 100%}
 .chargement__texte{position:relative;font:400 var(--fs-3)/1.1 var(--titre);text-transform:uppercase;text-align:center;min-height:1.2em}
 .chargement__texte span{display:block;opacity:0}
 .chargement__pret{position:absolute;inset:0;color:var(--jaune)}
 /* les couches tombent de haut et se redressent (CRAV : 0,32 s power1.in puis 0,45 s back.out, 0,22 s d'écart → ici resserré pour tenir en 1,6 s) */
-.chargement--parti .p-bol{animation:charge-pop .3s var(--rebond) .05s forwards}
-.chargement--parti .p-riz{animation:charge-tombe .3s cubic-bezier(.55,0,1,.45) .2s forwards}
-.chargement--parti .p-saumon{animation:charge-tombe .3s cubic-bezier(.55,0,1,.45) .36s forwards}
-.chargement--parti .p-avocat{animation:charge-tombe .3s cubic-bezier(.55,0,1,.45) .52s forwards}
-.chargement--parti .p-edamame{animation:charge-tombe .3s cubic-bezier(.55,0,1,.45) .68s forwards}
-.chargement--parti .chargement__bol{animation:charge-ecrase .26s linear .5s,charge-ecrase .26s linear .82s}
+.chargement--parti .p-bol,.chargement--parti .p-bord{transform-box:view-box;transform-origin:200px 340px;animation:charge-pop .26s var(--rebond) .04s forwards}
+.chargement--parti .p-riz{animation:charge-tombe .24s cubic-bezier(.55,0,1,.45) 0.20s forwards}
+.chargement--parti .p-crudites{animation:charge-tombe .24s cubic-bezier(.55,0,1,.45) 0.31s forwards}
+.chargement--parti .p-saumon{animation:charge-tombe .24s cubic-bezier(.55,0,1,.45) 0.42s forwards}
+.chargement--parti .p-avocat{animation:charge-tombe .24s cubic-bezier(.55,0,1,.45) 0.53s forwards}
+.chargement--parti .p-mangue{animation:charge-tombe .24s cubic-bezier(.55,0,1,.45) 0.64s forwards}
+.chargement--parti .p-edamame{animation:charge-tombe .24s cubic-bezier(.55,0,1,.45) 0.75s forwards}
+.chargement--parti .p-sesame{animation:charge-tombe .24s cubic-bezier(.55,0,1,.45) 0.86s forwards}
+.chargement--parti .chargement__bol{animation:charge-ecrase .22s linear .44s,charge-ecrase .22s linear .66s,charge-ecrase .22s linear .88s,charge-ecrase .22s linear 1.1s}
 .chargement--parti .chargement__prepare{animation:charge-texte .9s linear .05s forwards}
-.chargement--parti .chargement__pret{animation:charge-pret .3s var(--rebond) .98s forwards}
-.chargement--parti{animation:charge-leve .42s cubic-bezier(.7,0,.3,1) 1.18s forwards}
+.chargement--parti .chargement__pret{animation:charge-pret .28s var(--rebond) 1s forwards}
+.chargement--parti{animation:charge-leve .4s cubic-bezier(.7,0,.3,1) 1.2s forwards}
 @keyframes charge-pop{from{opacity:1;transform:scale(0)}to{opacity:1;transform:scale(1)}}
 @keyframes charge-tombe{from{opacity:1;transform:translateY(-420%) scale(.8) rotate(12deg)}to{opacity:1;transform:none}}
 @keyframes charge-ecrase{0%{transform:none}23%{transform:scale(1.06,.88)}54%{transform:scale(.98,1.03)}100%{transform:none}}
@@ -804,7 +802,7 @@ html.arrivee body::after{background:var(--corail)}
 .gsap .couches--vif .couches__scene{position:relative;top:auto}
 .gsap .couches--vif .couches__ing,.gsap .couches--vif .couches__riz{opacity:1;transform:none;transition:none}
 .gsap .pied__tombe{opacity:1;transform:none;transition:none}
-.chargement--gsap .chargement__bol>*,.chargement--gsap .chargement__texte span{opacity:1}
+.chargement--gsap .chargement__bol>g,.chargement--gsap .chargement__texte span{opacity:1}
 .chargement--gsap .chargement__pret{opacity:0}
 
 /* ===================== RETOURS DE NATHAN (06/11) ===================== */
@@ -958,12 +956,7 @@ html.arrivee body::after{background:var(--corail)}
 .carte__nom{text-align:center;line-height:1}
 /* page Restaurants : le bloc sapin sous la carte n'a pas besoin de remplir l'écran */
 .carte-pdl+.contact-crav,.carte-pdl~.contact-crav{min-height:0;padding-top:var(--e-fl-3)}
-/* téléphone : le nom du département s'affiche au-dessus de la carte (il ne cache jamais un repère) */
-@media (max-width:600px){
-  .carte-pdl__carte{margin-top:calc(var(--e-fl-2) + 52px)}
-  .carte__nom{left:50%!important;top:0!important;transform:translate(-50%,-115%)}
-  .carte__nom br{display:none}
-}
+/* téléphone : le nom s'affiche sur le département touché, comme sur ordinateur (retour de Nathan du 06/11) ; les noms longs restent sur 2 lignes */
 @media (max-width:360px){.carte__etiquette{font-size:10px;padding:.3em .5em .25em}}
 /* Franchise, « Parlons de votre projet » : la salle à l'enseigne lumineuse à côté du formulaire (au-dessus sur téléphone), plus de vide sous Envoyer */
 .aplat.profil .wrap{align-items:start}
@@ -1133,18 +1126,6 @@ h1,h2,h3,h4,h5,.t,.t-case,.btn,.carte__etiquette,.plan__nom,.plat__ouvrir{overfl
 .contact-crav{overflow:clip}
 .lieu__infos>.lieu__modes{margin:0 0 var(--e-4);grid-column:auto}
 
-/* ===================== ACCUEIL : fond « soie » soleil derrière le titre et les 3 photos (Nathan, 06/11) ===================== */
-/* repli (pas de WebGL, « réduire les animations », avant l'arrivée de la soie) : le même dégradé, fixe */
-:root{--soie-soleil:radial-gradient(55% 70% at 15% 20%,#FFD15C 0%,transparent 70%),radial-gradient(50% 65% at 85% 30%,#FC6959 0%,transparent 70%),radial-gradient(35% 45% at 70% 85%,#03A9B5 0%,transparent 70%),radial-gradient(60% 60% at 30% 80%,#FC6959 0%,transparent 75%),#FEB302}
-.haut-crav[data-soie="soleil"]{background:var(--soie-soleil)}
-.haut-crav[data-soie="soleil"]::before{background:rgba(253,248,242,.16)}
-.haut-crav .soie{opacity:0;transition:opacity 1.2s linear}
-.haut-crav.soie-active .soie{opacity:1}
-.haut-crav .haut-crav__titre{color:var(--sapin-deep)}
-.haut-crav .lead{color:var(--sapin-deep)}
-@media (prefers-reduced-motion:reduce){.haut-crav .soie{transition:none}}
-.haut-crav .t-xl{--double:var(--creme)}
-
 /* ===================== CARTE PDL (Nathan, 06/11) : on ne voit que les points ; nom et fiche au clic ; La Flèche en jaune ===================== */
 .carte__repere .carte__etiquette{opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .25s linear,transform .3s cubic-bezier(.165,.84,.44,1),visibility 0s .25s}
 .carte__repere--actif .carte__etiquette,.carte__repere:focus-visible .carte__etiquette{opacity:1;visibility:visible;transform:none;transition:opacity .25s linear,transform .3s cubic-bezier(.165,.84,.44,1)}
@@ -1156,7 +1137,35 @@ h1,h2,h3,h4,h5,.t,.t-case,.btn,.carte__etiquette,.plan__nom,.plat__ouvrir{overfl
   .carte__fiche,.carte__fiche--gauche{left:0;top:0;transform:translateY(-8px) scale(.96);transform-origin:0 0}
   .carte__fiche--ouverte,.carte__fiche--gauche.carte__fiche--ouverte{transform:none}
 }
-.haut-crav .btn--jaune{--bg:var(--sapin);--bd:var(--sapin);--fg:var(--creme)}
-@media (hover:hover){.haut-crav .btn--jaune:hover{--bg:var(--sapin-deep);--bd:var(--sapin-deep)}}
-.haut-crav[data-soie="soleil"]::before{background:rgba(253,248,242,.22)}
-.haut-crav .lead{text-shadow:0 0 14px rgba(254,179,2,.9),0 0 2px rgba(253,248,242,.6)}
+
+/* ===================== RETOURS TÉLÉPHONE DE NATHAN (06/11, 2e série) ===================== */
+/* Cartes « titre seul » (Plus qu'un bol, franchise) : sur téléphone, une grille 2 × 2 entièrement visible, pas de défilement de côté */
+@media (max-width:860px){
+  .tuiles:not(:has(img)){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible;scroll-snap-type:none;margin:0;padding:0;gap:var(--e-3)}
+  .tuiles:not(:has(img)) .tuile{flex:none;max-width:none;min-width:0;padding:var(--e-5) var(--e-3)}
+  .tuiles:not(:has(img)) .t-case{font-size:clamp(14px,4.4vw,20px);justify-content:center;text-align:center}
+}
+/* franchise : titres faits de mots trop longs pour une demi-largeur (ACCOMPAGNEMENT, DIVERTISSEMENT) → une colonne, tout visible, titre à sa taille normale */
+@media (max-width:860px){
+  .tuiles.tuiles--long{grid-template-columns:minmax(0,1fr)}
+  .tuiles.tuiles--long .tuile{padding:var(--e-4) var(--e-5)}
+  .tuiles.tuiles--long .t-case{font-size:clamp(16px,5vw,22px)}
+}
+/* noms des départements : Maine-et-Loire passe sur 3 lignes sur téléphone et se décale vers l'est pour ne jamais cacher le point de Mauges ;
+   Sarthe est un peu plus haut pour ne pas cacher La Flèche. Les coupures se font après les tirets du nom, jamais au milieu d'un mot. */
+.carte__nom .br-tel{display:none}
+@media (max-width:600px){
+  .carte__nom .br-tel{display:inline}
+  .carte__nom[data-dep="49"]{left:65.5%!important}
+}
+/* La Flèche (bientôt) : point jaune un peu plus gros que Mauges, avec son onde jaune ; zone de toucher de 44 px (les deux cartes) */
+.carte__repere--bientot .carte__point,.epingle--bientot .epingle__rond{width:26px;height:26px}
+.carte__repere--bientot .carte__point::after,.epingle--bientot .epingle__rond::after{border-width:4px;inset:-4px}
+.epingle{min-width:44px;min-height:44px;display:grid}
+/* en-tête à 320-360 px : « Commander » sans flèche et plus compact, logo un peu plus petit ; au moins 8 px entre logo, bouton et menu */
+@media (max-width:360px){
+  .entete .wrap{gap:8px;padding-inline:12px}
+  .entete .cmd{padding-inline:12px;letter-spacing:.04em;min-height:44px}
+  .entete .cmd .fl{display:none}
+  .entete .logo img{height:26px}
+}

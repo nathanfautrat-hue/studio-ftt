@@ -270,7 +270,8 @@
       var cartes = [].slice.call(liste.children), titres = cartes.map(function (c) { return c.querySelector('.t-case, h3, h4'); });
       titres.forEach(function (t) { if (t) t.style.minHeight = ''; });
       var rangees = {};
-      cartes.forEach(function (c, i) { if (!titres[i] || !c.offsetParent) return; var k = Math.round(c.getBoundingClientRect().top); (rangees[k] = rangees[k] || []).push(titres[i]); });
+      var seul = liste.matches('.tuiles') && !liste.querySelector('img');   // cartes « titre seul » : toutes la même taille de titre et la même hauteur
+      cartes.forEach(function (c, i) { if (!titres[i] || !c.offsetParent) return; var k = seul ? 0 : Math.round(c.getBoundingClientRect().top); (rangees[k] = rangees[k] || []).push(titres[i]); });
       Object.keys(rangees).forEach(function (k) {
         var rang = rangees[k];
         // même nombre de lignes pour tous les titres de la rangée : une taille commune, réduite au besoin (jamais de plus de 25 %)
@@ -278,8 +279,12 @@
         var taille = base, essais = 0;
         function memesLignes() { var n = rang.map(lignes); return n.every(function (x) { return x === n[0]; }); }
         rang.forEach(function (t) { t.style.fontSize = taille + 'px'; });
-        while (!memesLignes() && taille > base * 0.75 && essais < 12) { taille *= 0.97; rang.forEach(function (t) { t.style.fontSize = taille.toFixed(1) + 'px'; }); essais++; }
+        while (!memesLignes() && taille > Math.max(base * 0.75, 14) && essais < 12) { taille *= 0.97; rang.forEach(function (t) { t.style.fontSize = taille.toFixed(1) + 'px'; }); essais++; }
         if (!memesLignes()) { taille = base; rang.forEach(function (t) { t.style.fontSize = taille + 'px'; }); }
+        // aucun mot ne doit dépasser de sa carte (pas de césure) : on réduit encore toute la rangée, jusqu'à 14 px au plus petit
+        function deborde() { return rang.some(function (t) { return t.scrollWidth > t.clientWidth + 1; }); }
+        essais = 0;
+        while (deborde() && taille > 14 && essais < 20) { taille = Math.max(14, taille * 0.96); rang.forEach(function (t) { t.style.fontSize = taille.toFixed(1) + 'px'; }); essais++; }
         var h = Math.max.apply(null, rang.map(function (t) { return t.getBoundingClientRect().height; }));
         rang.forEach(function (t) { t.style.minHeight = h + 'px'; });
       });
