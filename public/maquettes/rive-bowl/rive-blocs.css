@@ -654,27 +654,7 @@
 .vivant .emporter--vif .emporter__fenetre{overflow:visible}
 .vivant .emporter--vif .emporter__piste{transform:translate3d(var(--x,0px),0,0);will-change:transform}
 
-/* Affiche rétro : damier, rayons, bowl détouré, titre penché, bulle. Une seule encre (sapin) sur crème. */
-.affiche{background:var(--creme);padding:var(--e-fl-3) var(--g);display:flex;justify-content:center;--encre-affiche:var(--sapin)}
-.affiche--corail{--encre-affiche:var(--corail)}
-.affiche__cadre{position:relative;width:min(100%,620px,calc((100svh - var(--h-entete) - 32px) * .75));aspect-ratio:3/4;padding:clamp(14px,3.4vw,26px);background:repeating-conic-gradient(var(--encre-affiche) 0 25%,var(--creme) 0 50%) 0 0/clamp(28px,6.8vw,52px) clamp(28px,6.8vw,52px)}
-.affiche__fond{position:relative;container-type:inline-size;width:100%;height:100%;overflow:hidden;background:var(--creme);border:3px solid var(--encre-affiche);display:grid;grid-template-rows:auto 1fr auto;justify-items:center;color:var(--encre-affiche)}
-.affiche__rayons{position:absolute;left:33%;top:54%;width:170%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:repeating-conic-gradient(var(--encre-affiche) 0 7.5deg,transparent 0 15deg);-webkit-mask:radial-gradient(closest-side,transparent 22%,#000 23%,#000 70%,transparent 71%);mask:radial-gradient(closest-side,transparent 22%,#000 23%,#000 70%,transparent 71%)}
-.affiche__titre{position:relative;z-index:2;margin-top:7%;font:400 clamp(40px,12vw,92px)/.9 var(--titre);text-transform:uppercase;letter-spacing:.01em;rotate:-7deg;color:var(--encre-affiche);background:var(--creme);padding:.08em .2em;border:3px solid var(--encre-affiche);border-radius:14px;box-shadow:6px 6px 0 var(--encre-affiche);white-space:nowrap}
-.affiche__bol{position:relative;z-index:1;align-self:center;justify-self:start;margin-left:5%;width:52%;height:auto;filter:drop-shadow(0 16px 18px var(--noir-50))}
-.affiche__bulle{position:absolute;z-index:3;right:3%;top:31%;width:max-content;max-width:9.6em;padding:.5em .65em;background:var(--creme);border:3px solid var(--encre-affiche);border-radius:22px;font:400 4.3cqi/1.05 var(--titre);text-transform:uppercase;text-align:center;rotate:9deg;color:var(--encre-affiche);transform-origin:20% 100%}
-.affiche__bulle::after{content:"";position:absolute;z-index:-1;left:16%;bottom:-13px;width:20px;height:20px;background:var(--creme);border-right:3px solid var(--encre-affiche);border-bottom:3px solid var(--encre-affiche);transform:rotate(45deg) skew(12deg,12deg)}
-.affiche__bas{position:relative;z-index:2;display:flex;align-items:center;gap:.5em;margin-bottom:6%;padding:.4em .9em;background:var(--encre-affiche);color:var(--creme);border-radius:999px;font:400 clamp(13px,3.2vw,21px)/1 var(--titre);text-transform:uppercase;white-space:nowrap}
-.affiche__bas svg{width:1em;height:1em;fill:var(--jaune);flex:none}
-@media (prefers-reduced-motion:no-preference){
-  .vivant .affiche--vif .affiche__cadre{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s steps(14,end)}
-  .vivant .affiche--vif.affiche--la .affiche__cadre{clip-path:inset(0)}
-  .vivant .affiche--vif .affiche__rayons{animation:affiche-tourne 40s linear infinite;animation-play-state:paused}
-  .vivant .affiche--vif.affiche--ecran .affiche__rayons{animation-play-state:running}
-  .vivant .affiche--vif .affiche__bulle{scale:0;transition:scale .6s var(--rebond) 1s}
-  .vivant .affiche--vif.affiche--la .affiche__bulle{scale:1}
-}
-@keyframes affiche-tourne{to{rotate:360deg}}
+
 
 /* Dernier appel : grand bloc corail, titre énorme, un bowl détouré qui grossit au défilement */
 .dernier{position:relative;overflow:hidden;background:var(--c);color:var(--sapin-deep);text-align:center;padding:var(--e-fl-4) 0 0}
@@ -823,8 +803,6 @@ html.arrivee body::after{background:var(--corail)}
 .gsap .couches--vif{height:auto}
 .gsap .couches--vif .couches__scene{position:relative;top:auto}
 .gsap .couches--vif .couches__ing,.gsap .couches--vif .couches__riz{opacity:1;transform:none;transition:none}
-.gsap .affiche--vif .affiche__rayons{animation:none}
-.gsap .affiche--vif .affiche__bulle{scale:none;transition:none}
 .gsap .pied__tombe{opacity:1;transform:none;transition:none}
 .chargement--gsap .chargement__bol>*,.chargement--gsap .chargement__texte span{opacity:1}
 .chargement--gsap .chargement__pret{opacity:0}
@@ -1154,3 +1132,31 @@ h1,h2,h3,h4,h5,.t,.t-case,.btn,.carte__etiquette,.plan__nom,.plat__ouvrir{overfl
 @media (max-width:860px){.faq-locale__grille{grid-template-columns:minmax(0,1fr)}}
 .contact-crav{overflow:clip}
 .lieu__infos>.lieu__modes{margin:0 0 var(--e-4);grid-column:auto}
+
+/* ===================== ACCUEIL : fond « soie » soleil derrière le titre et les 3 photos (Nathan, 06/11) ===================== */
+/* repli (pas de WebGL, « réduire les animations », avant l'arrivée de la soie) : le même dégradé, fixe */
+:root{--soie-soleil:radial-gradient(55% 70% at 15% 20%,#FFD15C 0%,transparent 70%),radial-gradient(50% 65% at 85% 30%,#FC6959 0%,transparent 70%),radial-gradient(35% 45% at 70% 85%,#03A9B5 0%,transparent 70%),radial-gradient(60% 60% at 30% 80%,#FC6959 0%,transparent 75%),#FEB302}
+.haut-crav[data-soie="soleil"]{background:var(--soie-soleil)}
+.haut-crav[data-soie="soleil"]::before{background:rgba(253,248,242,.16)}
+.haut-crav .soie{opacity:0;transition:opacity 1.2s linear}
+.haut-crav.soie-active .soie{opacity:1}
+.haut-crav .haut-crav__titre{color:var(--sapin-deep)}
+.haut-crav .lead{color:var(--sapin-deep)}
+@media (prefers-reduced-motion:reduce){.haut-crav .soie{transition:none}}
+.haut-crav .t-xl{--double:var(--creme)}
+
+/* ===================== CARTE PDL (Nathan, 06/11) : on ne voit que les points ; nom et fiche au clic ; La Flèche en jaune ===================== */
+.carte__repere .carte__etiquette{opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .25s linear,transform .3s cubic-bezier(.165,.84,.44,1),visibility 0s .25s}
+.carte__repere--actif .carte__etiquette,.carte__repere:focus-visible .carte__etiquette{opacity:1;visibility:visible;transform:none;transition:opacity .25s linear,transform .3s cubic-bezier(.165,.84,.44,1)}
+/* La Flèche (bientôt) : point jaune plein (le corail est réservé aux restaurants ouverts) */
+.carte__repere--bientot .carte__point,.epingle--bientot .epingle__rond{background:var(--jaune);border:3px solid var(--creme);box-shadow:0 0 0 2px var(--sapin-deep)}
+.carte__repere--bientot .carte__point::after,.epingle--bientot .epingle__rond::after{border-color:var(--jaune)}
+/* ordinateur : la fiche s'ouvre dans la zone vide en haut à gauche de la carte (elle ne cache aucun nom de département) */
+@media (min-width:601px){
+  .carte__fiche,.carte__fiche--gauche{left:0;top:0;transform:translateY(-8px) scale(.96);transform-origin:0 0}
+  .carte__fiche--ouverte,.carte__fiche--gauche.carte__fiche--ouverte{transform:none}
+}
+.haut-crav .btn--jaune{--bg:var(--sapin);--bd:var(--sapin);--fg:var(--creme)}
+@media (hover:hover){.haut-crav .btn--jaune:hover{--bg:var(--sapin-deep);--bd:var(--sapin-deep)}}
+.haut-crav[data-soie="soleil"]::before{background:rgba(253,248,242,.22)}
+.haut-crav .lead{text-shadow:0 0 14px rgba(254,179,2,.9),0 0 2px rgba(253,248,242,.6)}

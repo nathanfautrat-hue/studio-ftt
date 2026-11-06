@@ -66,7 +66,9 @@
   // 3. La fiche : ville, adresse, Commander / Itinéraire ; se ferme au clic dehors, avec Échap et avec le bouton retour
   var source = null, parHistorique = false;
   function ouvrir(r, el) {
+    if (source) source.classList.remove('carte__repere--actif');
     source = el; montrer(null);
+    el.classList.add('carte__repere--actif');            // le nom du point n'apparaît qu'au clic, avec la fiche
     var b = '';
     if (r.commander) b += '<a class="btn btn--jaune" href="' + r.commander + '" target="_blank" rel="noopener">Commander <span class="fl" aria-hidden="true">→</span></a>';
     if (r.itineraire) b += '<a class="btn btn--contour" href="' + r.itineraire + '" target="_blank" rel="noopener">Itinéraire <span class="fl" aria-hidden="true">→</span></a>';
@@ -85,6 +87,7 @@
   function fermer(depuisHistorique) {
     if (fiche.hidden) return;
     fiche.classList.remove('carte__fiche--ouverte'); fiche.hidden = true;
+    if (source) source.classList.remove('carte__repere--actif');
     if (source) source.focus({ preventScroll: true });
     if (parHistorique && !depuisHistorique) { parHistorique = false; try { history.back(); } catch (e) {} }
   }

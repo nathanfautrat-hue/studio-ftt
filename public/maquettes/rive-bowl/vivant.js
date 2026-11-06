@@ -233,15 +233,6 @@
     });
   });
 
-  /* ---------- 4 quater. Affiche rétro : le damier se dessine, la bulle poppe, les rayons tournent (seulement à l'écran) ---------- */
-  document.querySelectorAll('.affiche').forEach(function (sec) {
-    if (reduit || G) return;
-    sec.classList.add('affiche--vif');
-    unefois(sec, '0px 0px -25% 0px', function () { sec.classList.add('affiche--la'); });
-    garde(sec, function () { sec.classList.add('affiche--la'); }, function () { return sec.classList.contains('affiche--la'); });
-    new IntersectionObserver(function (e) { sec.classList.toggle('affiche--ecran', e[0].isIntersecting); }).observe(sec);
-  });
-
   /* ---------- 4 quinquies. Dernier appel : le grand bowl grossit doucement (0,85 → 1,1) ---------- */
   document.querySelectorAll('.dernier__bol').forEach(function (bol) {
     if (reduit || G) return;
@@ -623,22 +614,6 @@
           x: function () { return -Math.max(0, piste.scrollWidth - fenetre.clientWidth); }, ease: 'none',
           scrollTrigger: { trigger: sec, start: 'top 55%', end: 'bottom 10%', scrub: c.tel ? 0.4 : 0.8, invalidateOnRefresh: true }
         });
-      });
-    });
-
-    // 4 quater. Affiche rétro : le damier se dessine (classe CSS), la bulle poppe, les rayons tournent seulement quand l'affiche est à l'écran
-    animsGsap.push(function () {
-      document.querySelectorAll('.affiche').forEach(function (sec) {
-        var rayons = sec.querySelector('.affiche__rayons'), bulle = sec.querySelector('.affiche__bulle');
-        sec.classList.add('affiche--vif');
-        var tour = gsap.to(rayons, { rotation: 360, duration: 40, ease: 'none', repeat: -1, paused: true });
-        gsap.set(bulle, { scale: 0 });
-        ScrollTrigger.create({ trigger: sec, start: 'top 75%', once: true, onEnter: function () {
-          sec.classList.add('affiche--la');
-          gsap.to(bulle, { scale: 1, duration: 0.45, ease: 'back.out(2.2)', delay: 1.05 });
-        } });
-        ScrollTrigger.create({ trigger: sec, start: 'top bottom', end: 'bottom top', onToggle: function (s) { if (s.isActive) tour.play(); else tour.pause(); } });
-        garde(sec, function () { sec.classList.add('affiche--la'); gsap.set(bulle, { scale: 1 }); }, function () { return gsap.getProperty(bulle, 'scale') > 0.99; });
       });
     });
 

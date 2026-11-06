@@ -16,6 +16,9 @@
     '#03432F'                 // vert sapin
   ];
   var VITESSE = 0.6;          // 0 = immobile · 0,86 dans le composant d'origine
+  /* Palette « soleil » (data-soie="soleil", haut de l'accueil, demande de Nathan du 06/11) : jaune dominant, corail, une touche de turquoise, mouvement lent */
+  var SOLEIL = { couleurs: ['#FEB302', '#FFD15C', '#FC6959', '#03A9B5', '#FC6959', '#FFD15C', '#FEB302'], vitesse: 0.22,
+                 tel: { pixels: 350000, densite: 1 }, ordi: { pixels: 1400000, densite: 1.5 } };
   var INTENSITE = 0.47;       // amplitude des vagues (0 à 1) · 0,47 d'origine
   var ECHELLE = 1.3;          // taille des plis (plus grand = plis plus serrés)
   var GRAIN = 0.035;          // grain de la soie (0 = lisse)
@@ -281,17 +284,23 @@ void main() {
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   function rvb(h) { h = h.replace('#', ''); return [parseInt(h.slice(0, 2), 16) / 255, parseInt(h.slice(2, 4), 16) / 255, parseInt(h.slice(4, 6), 16) / 255]; }
-  var cols = COULEURS.slice(0, 8).map(rvb);
-  var nb = cols.length;
-  while (cols.length < 8) cols.push(cols[cols.length - 1]);
-  var plat = new Float32Array(24);
-  cols.forEach(function (c, i) { plat[i * 3] = c[0]; plat[i * 3 + 1] = c[1]; plat[i * 3 + 2] = c[2]; });
+  function palette(liste) {
+    var cols = liste.slice(0, 8).map(rvb), n = cols.length;
+    while (cols.length < 8) cols.push(cols[cols.length - 1]);
+    var plat = new Float32Array(24);
+    cols.forEach(function (c, i) { plat[i * 3] = c[0]; plat[i * 3 + 1] = c[1]; plat[i * 3 + 2] = c[2]; });
+    return { plat: plat, nb: n };
+  }
 
   var tactile = !(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
   var LIM = tactile ? TEL : ORDI;
   var souris = EFFET_SOURIS && !tactile;
 
-  zones.forEach(function (zone) {
+  function lancer(zone) {
+    var soleil = zone.getAttribute('data-soie') === 'soleil';
+    var pal = palette(soleil ? SOLEIL.couleurs : COULEURS), plat = pal.plat, nb = pal.nb;
+    var vitesse = soleil ? SOLEIL.vitesse : VITESSE;
+    var lim = soleil ? (tactile ? SOLEIL.tel : SOLEIL.ordi) : LIM;
     var canvas = document.createElement('canvas');
     canvas.className = 'soie';
     canvas.setAttribute('aria-hidden', 'true');
@@ -331,9 +340,9 @@ void main() {
 
     function taille() {
       var r = canvas.getBoundingClientRect();
-      var dpr = Math.min(window.devicePixelRatio || 1, LIM.densite);
+      var dpr = Math.min(window.devicePixelRatio || 1, lim.densite);
       var w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
-      var k = Math.min(1, Math.sqrt(LIM.pixels / Math.max(1, w * h)));
+      var k = Math.min(1, Math.sqrt(lim.pixels / Math.max(1, w * h)));
       w = Math.max(1, Math.round(w * k)); h = Math.max(1, Math.round(h * k));
       if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; gl.viewport(0, 0, w, h); }
     }
@@ -348,12 +357,12 @@ void main() {
       var suivi = 1 - Math.exp(-12 * dt);
       mx += (tx - mx) * suivi; my += (ty - my) * suivi; pres += (tp - pres) * suivi;
       taille();
-      gl.uniform4f(u.scene, canvas.width, canvas.height, ((now - debut) / 1000) * VITESSE, nb);
+      gl.uniform4f(u.scene, canvas.width, canvas.height, ((now - debut) / 1000) * vitesse, nb);
       gl.uniform4f(u.space, 0.02, 0.0, mx, my);
       gl.uniform4f(u.cursor, souris ? pres : 0, 2.0, 0.3, 0.657);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       zone.soieImages = (zone.soieImages || 0) + 1;   // compteur d'images (sert à vérifier la pause hors écran)
-      if (VITESSE !== 0 || Math.abs(tp - pres) > 0.001) demander();
+      if (vitesse !== 0 || Math.abs(tp - pres) > 0.001) demander();
     }
 
     if (souris) {
@@ -371,5 +380,8 @@ void main() {
     new IntersectionObserver(function (e) { vue = e[0].isIntersecting; if (vue) demander(); else arreter(); }).observe(zone);
     document.addEventListener('visibilitychange', function () { visible = document.visibilityState === 'visible'; if (visible) demander(); else arreter(); });
     canvas.addEventListener('webglcontextlost', function (e) { e.preventDefault(); arreter(); canvas.remove(); zone.classList.remove('soie-active'); });
-  });
+  }
+  // la soie arrive APRÈS le premier affichage : elle ne retarde jamais le titre ni les photos (le dégradé CSS est déjà là)
+  function plusTard(f) { if (window.requestIdleCallback) requestIdleCallback(f, { timeout: 900 }); else setTimeout(f, 300); }
+  zones.forEach(function (zone) { plusTard(function () { lancer(zone); }); });
 })();
